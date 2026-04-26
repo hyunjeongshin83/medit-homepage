@@ -8,658 +8,119 @@
 <style>
 @font-face{font-family:'HCR Dotum';font-style:normal;font-weight:700;font-display:swap;src:url('HANDotumB.ttf') format('truetype')}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;
-  --mint:#00d2b4;--mint2:#00e8c8;--mint-soft:rgba(0,210,180,.08);--mint-border:rgba(0,210,180,.15);
-  --ice:#7df3ff;--lav:#b4a0ff;--coral:#ff8a80;
-  --text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;
-  --card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);
-  --r:16px;
-  --font-head:'HCR Dotum','Noto Sans KR',sans-serif;
-  --font-body:'Noto Sans KR',sans-serif;
-  --font-mono:'IBM Plex Mono',monospace;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:all .3s}
-nav.scrolled{background:rgba(10,15,26,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:.7rem 0}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.4rem}
-.logo em{font-style:normal;color:var(--mint)}
-.nav-links{display:flex;gap:1.5rem;align-items:center}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .3s;position:relative}
-.nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--mint)!important;color:var(--bg)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700!important;font-size:.8rem!important}
-.nav-cta:hover{background:var(--mint2)!important}
-.nav-demo{border:1px solid var(--mint-border)!important;color:var(--mint)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:600!important}
-.nav-demo:hover{background:var(--mint-soft)!important}
-.mob-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:.5rem}
-.mob-toggle span{display:block;width:20px;height:2px;background:var(--text);transition:.3s}
-
-/* ── BUTTONS ── */
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-body);border:none;cursor:pointer}
-.btn-mint{background:var(--mint);color:var(--bg)}.btn-mint:hover{background:var(--mint2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,210,180,.25)}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}.btn-outline:hover{border-color:var(--mint);color:var(--mint)}
-.btn-ghost{background:transparent;color:var(--mint);font-weight:600;padding:.5rem 0}.btn-ghost:hover{text-decoration:underline}
-
-/* ── SECTION COMMON ── */
-.sec{padding:6rem 2rem;max-width:1200px;margin:0 auto}
-.sec-tag{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem;font-weight:500}
-.sec-title{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.3}
-.sec-desc{font-size:.9rem;color:var(--muted);max-width:580px;line-height:1.8;font-weight:300}
-.sec-center{text-align:center}.sec-center .sec-desc{margin:0 auto}
-.sec-divider{border-top:1px solid var(--card-border)}
-
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(0,210,180,.06) 0%,transparent 70%);pointer-events:none}
-.hero-content{max-width:780px;position:relative;z-index:1}
-/* FLOATING PILLS */
-.bg-deco{position:fixed;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s;filter:brightness(1.05) contrast(.95)}
-.bg-deco.show{opacity:.35}
-@keyframes floatG{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(calc(var(--r) + 8deg)) translateY(-20px)}}
-.deco-1{top:12%;left:-3%;width:130px;--r:-12deg;animation:floatG 7s ease-in-out infinite}
-.deco-2{top:22%;right:3%;width:75px;--r:15deg;animation:floatG 5.5s ease-in-out infinite 1s}
-.deco-3{bottom:28%;left:4%;width:100px;--r:6deg;animation:floatG 6s ease-in-out infinite 2s}
-.deco-4{top:55%;right:-2%;width:70px;--r:-20deg;animation:floatG 8s ease-in-out infinite .5s}
-.deco-5{bottom:18%;right:8%;width:160px;--r:-4deg;animation:floatG 6.5s ease-in-out infinite 1.5s}
-.deco-6{top:65%;left:12%;width:65px;--r:25deg;animation:floatG 7.5s ease-in-out infinite 2.8s}
-.hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem .9rem;border-radius:100px;border:1px solid var(--mint-border);background:var(--mint-soft);font-size:.7rem;font-family:var(--font-mono);color:var(--mint);margin-bottom:2rem;letter-spacing:.08em;animation:fadeUp .8s ease-out}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:1.3rem;animation:fadeUp .8s ease-out .1s both}
-.hero h1 .hl{color:var(--mint)}
-.hero .sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;font-weight:300;line-height:1.9;animation:fadeUp .8s ease-out .2s both}
-.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .3s both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
-/* ── STAT STRIP ── */
-.stat-strip{background:var(--bg2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);padding:3rem 2rem}
-.stat-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
-.ss-num{font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--mint);line-height:1}
-.ss-label{font-size:.75rem;color:var(--muted);margin-top:.4rem}
-
-/* ── CARDS ── */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
-.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}
-.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.8rem;transition:all .4s;display:flex;flex-direction:column}
-.card:hover{border-color:var(--mint-border);transform:translateY(-4px)}
-.card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
-.card-tag::after{content:'';flex:1;height:1px;background:var(--card-border)}
-.card-icon{width:50px;height:50px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin-bottom:1rem}
-.card-icon svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:1.5}
-.card h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
-.card p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
-
-/* ── CHANNEL CARDS ── */
-.ch-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;transition:all .4s;display:flex;flex-direction:column}
-.ch-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}
-.ch-head{padding:1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--card-border);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:var(--muted)}
-.ch-badge{padding:.15rem .5rem;border-radius:100px;font-size:.5rem;font-weight:600;letter-spacing:.1em}
-.ch-badge.g{color:#6fcf97;border:1px solid rgba(111,207,151,.25)}.ch-badge.y{color:#f0c866;border:1px solid rgba(240,200,102,.25)}.ch-badge.m{color:var(--mint);border:1px solid var(--mint-border)}
-.ch-vis{padding:2rem;display:flex;align-items:center;justify-content:center;min-height:200px}
-.ch-body{padding:1.3rem;border-top:1px solid var(--card-border);flex:1}
-.ch-body h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
-.ch-body p{font-size:.8rem;color:var(--muted);line-height:1.7}
-
-/* ── DELIVERY ── */
-.del-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.3rem .8rem;text-align:center;transition:all .4s;display:flex;flex-direction:column;align-items:center}
-.del-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}
-.del-n{font-family:var(--font-mono);font-size:.55rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.7rem}
-.del-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin-bottom:.8rem}
-.del-card h3{font-family:var(--font-head);font-size:.88rem;font-weight:700;margin-bottom:.3rem}
-.del-card p{font-size:.7rem;color:var(--muted);line-height:1.5;flex:1}
-
-/* ── DEMO SECTION ── */
-.demo-bg{background:linear-gradient(135deg,rgba(0,210,180,.04) 0%,rgba(125,243,255,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}
-.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;padding:6rem 2rem}
-.demo-preview{background:var(--bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:9/16;max-height:500px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.demo-preview img,.demo-preview iframe{width:100%;height:100%;border:none}
-.demo-phone{position:relative;max-width:280px;margin:0 auto}
-.demo-phone::before{content:'';position:absolute;inset:-4px;border-radius:calc(var(--r) + 4px);border:2px solid var(--mint-border);pointer-events:none}
-.demo-features{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
-.demo-feat{display:flex;align-items:flex-start;gap:.8rem}
-.demo-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);margin-top:.5rem;flex-shrink:0}
-.demo-feat-text h4{font-family:var(--font-head);font-size:.9rem;font-weight:700;margin-bottom:.2rem}
-.demo-feat-text p{font-size:.78rem;color:var(--muted);line-height:1.6}
-
-/* ── TEAM ── */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}
-.team-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;text-align:center;transition:all .4s}
-.team-card:hover{border-color:var(--mint-border)}
-.team-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin:0 auto 1rem;font-family:var(--font-head);font-size:1.4rem;color:var(--bg);font-weight:800}
-.team-card h3{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.3rem}
-.team-card .role{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);letter-spacing:.1em;margin-bottom:.6rem}
-.team-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
-
-/* ── REGULATION ── */
-.reg-bg{background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--card-border)}
-.reg-nums{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
-.reg-n{text-align:center;padding:.8rem;background:rgba(0,210,180,.04);border-radius:10px;border:1px solid var(--mint-border)}
-.reg-n .big{font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)}
-.reg-n .sm{font-size:.65rem;color:var(--muted);margin-top:.2rem}
-
-/* ── NEWS ── */
-.news-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem;transition:all .4s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
-.news-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}
-.news-tag{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.1em;padding:.15rem .5rem;border-radius:100px;border:1px solid;width:fit-content;margin-bottom:.8rem}
-.news-tag.t1{color:var(--mint);border-color:rgba(0,210,180,.2)}.news-tag.t2{color:var(--ice);border-color:rgba(125,243,255,.2)}.news-tag.t3{color:var(--lav);border-color:rgba(180,160,255,.2)}
-.news-card h3{font-family:var(--font-head);font-size:.9rem;font-weight:700;line-height:1.5;margin-bottom:.6rem}
-.news-card p{font-size:.75rem;color:var(--muted);line-height:1.7;flex:1}
-.news-date{font-family:var(--font-mono);font-size:.55rem;color:var(--dim);margin-top:.8rem;letter-spacing:.05em}
-
-/* ── CTA ── */
-.cta-sec{text-align:center;padding:7rem 2rem;position:relative}
-.cta-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,210,180,.05),transparent 70%);pointer-events:none}
-.cta-sec h2{font-family:var(--font-head);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.7rem;line-height:1.25}
-
-/* ── FOOTER ── */
-footer{background:var(--bg2);border-top:1px solid var(--card-border);padding:3rem 2rem 1.5rem}
-.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
-.ft-brand{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:.6rem}
-.ft-brand em{font-style:normal;color:var(--mint)}
-.ft-desc{font-size:.75rem;color:var(--muted);line-height:1.7;margin-bottom:.8rem}
-.ft-col h4{font-family:var(--font-head);font-size:.78rem;font-weight:700;color:var(--white);margin-bottom:.8rem}
-.ft-col a{display:block;font-size:.75rem;color:var(--muted);text-decoration:none;margin-bottom:.5rem;transition:color .3s}
-.ft-col a:hover{color:var(--mint)}
-.ft-bottom{max-width:1200px;margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid var(--card-border);display:flex;justify-content:space-between;font-size:.65rem;color:var(--dim)}
-
-/* ── MOCKUPS ── */
-.kakao-m{background:#fbe64d;border-radius:12px;padding:.8rem;width:100%;max-width:220px;box-shadow:0 8px 30px rgba(0,0,0,.3)}
-.kakao-sender{display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem;font-size:.65rem;color:#3c1e1e;font-weight:600}
-.kakao-av{width:24px;height:24px;border-radius:6px;background:var(--mint);display:grid;place-items:center;color:var(--bg);font-size:.6rem;font-weight:800}
-.kakao-bub{background:#fff;border-radius:0 10px 10px 10px;padding:.6rem;font-size:.68rem;color:#1a1a1a;line-height:1.5}
-.sms-stack{display:flex;flex-direction:column;gap:.4rem;width:100%;max-width:200px}
-.sms-msg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.5rem;font-size:.65rem;color:var(--text)}
-.sms-time{font-family:var(--font-mono);font-size:.5rem;color:var(--mint);margin-bottom:.15rem}
-.v-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
-.v-orb{width:70px;height:70px;border-radius:50%;background:linear-gradient(145deg,#2ecc71,#27ae60);display:grid;place-items:center;position:relative;box-shadow:0 8px 30px rgba(39,174,96,.25)}
-.v-orb::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(39,174,96,.15);animation:vp 2s ease-in-out infinite}
-@keyframes vp{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.5}}
-.v-bars{display:flex;gap:2px;height:16px;align-items:center}
-.v-bars span{width:2.5px;border-radius:2px;background:rgba(39,174,96,.5);animation:vb .6s ease-in-out infinite alternate}
-@keyframes vb{from{height:3px}to{height:var(--h,14px)}}
-
-/* ── SCROLL REVEAL ── */
-.rv{opacity:0;transform:translateY(35px);transition:all .7s ease-out}
-.rv.show{opacity:1;transform:translateY(0)}
-
-/* ── RESPONSIVE ── */
+:root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#00d2b4;--mint2:#00e8c8;--mint-soft:rgba(0,210,180,.08);--mint-border:rgba(0,210,180,.15);--ice:#7df3ff;--ice-s:rgba(125,243,255,.1);--lav:#b4a0ff;--lav-s:rgba(180,160,255,.1);--coral:#ff8a80;--text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;--card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);--r:16px;--font-head:'HCR Dotum','Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
+html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:all .3s}nav.scrolled{background:rgba(10,15,26,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:.7rem 0}.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.4rem}.logo em{font-style:normal;color:var(--mint)}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--white)}.nav-cta{background:var(--mint)!important;color:var(--bg)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700!important;font-size:.8rem!important}.nav-cta:hover{background:var(--mint2)!important}.nav-demo{border:1px solid var(--mint-border)!important;color:var(--mint)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:600!important}.nav-demo:hover{background:var(--mint-soft)!important}.mob-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:.5rem}.mob-toggle span{display:block;width:20px;height:2px;background:var(--text);transition:.3s}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-body);border:none;cursor:pointer}.btn-mint{background:var(--mint);color:var(--bg)}.btn-mint:hover{background:var(--mint2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,210,180,.25)}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}.btn-outline:hover{border-color:var(--mint);color:var(--mint)}
+.sec{padding:6rem 2rem;max-width:1200px;margin:0 auto}.sec-tag{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem;font-weight:500}.sec-title{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.3}.sec-desc{font-size:.9rem;color:var(--muted);max-width:580px;line-height:1.8;font-weight:300}.sec-center{text-align:center}.sec-center .sec-desc{margin:0 auto}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(0,210,180,.06) 0%,transparent 70%);pointer-events:none}.hero-content{max-width:780px;position:relative;z-index:1}
+.bg-deco{position:fixed;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s;filter:brightness(1.05) contrast(.95)}.bg-deco.show{opacity:.35}@keyframes floatG{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(calc(var(--r) + 8deg)) translateY(-20px)}}.deco-1{top:12%;left:-3%;width:130px;--r:-12deg;animation:floatG 7s ease-in-out infinite}.deco-2{top:22%;right:3%;width:75px;--r:15deg;animation:floatG 5.5s ease-in-out infinite 1s}.deco-3{bottom:28%;left:4%;width:100px;--r:6deg;animation:floatG 6s ease-in-out infinite 2s}.deco-4{top:55%;right:-2%;width:70px;--r:-20deg;animation:floatG 8s ease-in-out infinite .5s}.deco-5{bottom:18%;right:8%;width:160px;--r:-4deg;animation:floatG 6.5s ease-in-out infinite 1.5s}.deco-6{top:65%;left:12%;width:65px;--r:25deg;animation:floatG 7.5s ease-in-out infinite 2.8s}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem .9rem;border-radius:100px;border:1px solid var(--mint-border);background:var(--mint-soft);font-size:.7rem;font-family:var(--font-mono);color:var(--mint);margin-bottom:2rem;letter-spacing:.08em;animation:fadeUp .8s ease-out}.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}.hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:1.3rem;animation:fadeUp .8s ease-out .1s both}.hero h1 .hl{color:var(--mint)}.hero .sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;font-weight:300;line-height:1.9;animation:fadeUp .8s ease-out .2s both}.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .3s both}@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.stat-strip{background:var(--bg2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);padding:3rem 2rem}.stat-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}.ss-num{font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--mint);line-height:1}.ss-label{font-size:.75rem;color:var(--muted);margin-top:.4rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;align-items:stretch}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.8rem;transition:all .4s;display:flex;flex-direction:column}.card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}.card-tag::after{content:'';flex:1;height:1px;background:var(--card-border)}.card-icon{width:50px;height:50px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin-bottom:1rem}.card-icon svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:1.5}.card h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.5rem}.card p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
+.ch-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;transition:all .4s;display:flex;flex-direction:column;height:100%}.ch-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.ch-head{padding:1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--card-border);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:var(--muted);min-height:48px}.ch-badge{padding:.15rem .5rem;border-radius:100px;font-size:.5rem;font-weight:600;letter-spacing:.1em}.ch-badge.g{color:#6fcf97;border:1px solid rgba(111,207,151,.25)}.ch-badge.y{color:#f0c866;border:1px solid rgba(240,200,102,.25)}.ch-badge.m{color:var(--mint);border:1px solid var(--mint-border)}.ch-vis{padding:2rem;display:flex;align-items:center;justify-content:center;height:220px}.ch-body{padding:1.3rem;border-top:1px solid var(--card-border);flex:1;display:flex;flex-direction:column}.ch-body h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.4rem}.ch-body p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
+.del-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.3rem .8rem;text-align:center;transition:all .4s;display:flex;flex-direction:column;align-items:center}.del-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.del-n{font-family:var(--font-mono);font-size:.55rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.7rem}.del-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin-bottom:.8rem}.del-card h3{font-family:var(--font-head);font-size:.88rem;font-weight:700;margin-bottom:.3rem}.del-card p{font-size:.7rem;color:var(--muted);line-height:1.5;flex:1}
+.demo-bg{background:linear-gradient(135deg,rgba(0,210,180,.04) 0%,rgba(125,243,255,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;padding:6rem 2rem}.demo-preview{background:var(--bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:9/16;max-height:500px;box-shadow:0 20px 60px rgba(0,0,0,.4)}.demo-phone{position:relative;max-width:280px;margin:0 auto}.demo-phone::before{content:'';position:absolute;inset:-4px;border-radius:calc(var(--r) + 4px);border:2px solid var(--mint-border);pointer-events:none}.demo-features{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}.demo-feat{display:flex;align-items:flex-start;gap:.8rem}.demo-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);margin-top:.5rem;flex-shrink:0}.demo-feat-text h4{font-family:var(--font-head);font-size:.9rem;font-weight:700;margin-bottom:.2rem}.demo-feat-text p{font-size:.78rem;color:var(--muted);line-height:1.6}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}.team-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;text-align:center;transition:all .4s}.team-card:hover{border-color:var(--mint-border)}.team-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin:0 auto 1rem;font-family:var(--font-head);font-size:1.4rem;color:var(--bg);font-weight:800}.team-card h3{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.3rem}.team-card .role{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);letter-spacing:.1em;margin-bottom:.6rem}.team-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
+.reg-bg{background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--card-border)}.reg-nums{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}.reg-n{text-align:center;padding:.8rem;background:rgba(0,210,180,.04);border-radius:10px;border:1px solid var(--mint-border)}.reg-n .big{font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)}.reg-n .sm{font-size:.65rem;color:var(--muted);margin-top:.2rem}
+.news-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem;transition:all .4s;text-decoration:none;color:inherit;display:flex;flex-direction:column}.news-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.news-tag{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.1em;padding:.15rem .5rem;border-radius:100px;border:1px solid;width:fit-content;margin-bottom:.8rem}.news-tag.t1{color:var(--mint);border-color:rgba(0,210,180,.2)}.news-tag.t2{color:var(--ice);border-color:rgba(125,243,255,.2)}.news-tag.t3{color:var(--lav);border-color:rgba(180,160,255,.2)}.news-card h3{font-family:var(--font-head);font-size:.9rem;font-weight:700;line-height:1.5;margin-bottom:.6rem}.news-card p{font-size:.75rem;color:var(--muted);line-height:1.7;flex:1}.news-date{font-family:var(--font-mono);font-size:.55rem;color:var(--dim);margin-top:.8rem;letter-spacing:.05em}
+.cta-sec{text-align:center;padding:7rem 2rem;position:relative}.cta-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,210,180,.05),transparent 70%);pointer-events:none}.cta-sec h2{font-family:var(--font-head);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.7rem;line-height:1.25}
+footer{background:var(--bg2);border-top:1px solid var(--card-border);padding:3rem 2rem 1.5rem}.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}.ft-brand{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:.6rem}.ft-brand em{font-style:normal;color:var(--mint)}.ft-desc{font-size:.75rem;color:var(--muted);line-height:1.7;margin-bottom:.8rem}.ft-col h4{font-family:var(--font-head);font-size:.78rem;font-weight:700;color:var(--white);margin-bottom:.8rem}.ft-col a{display:block;font-size:.75rem;color:var(--muted);text-decoration:none;margin-bottom:.5rem;transition:color .3s}.ft-col a:hover{color:var(--mint)}.ft-bottom{max-width:1200px;margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid var(--card-border);display:flex;justify-content:space-between;font-size:.65rem;color:var(--dim)}
+.kakao-m{background:#fbe64d;border-radius:12px;padding:.8rem;width:100%;max-width:220px;box-shadow:0 8px 30px rgba(0,0,0,.3)}.kakao-sender{display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem;font-size:.65rem;color:#3c1e1e;font-weight:600}.kakao-av{width:24px;height:24px;border-radius:6px;background:var(--mint);display:grid;place-items:center;color:var(--bg);font-size:.6rem;font-weight:800}.kakao-bub{background:#fff;border-radius:0 10px 10px 10px;padding:.6rem;font-size:.68rem;color:#1a1a1a;line-height:1.5}.sms-stack{display:flex;flex-direction:column;gap:.4rem;width:100%;max-width:200px}.sms-msg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.5rem;font-size:.65rem;color:var(--text)}.sms-time{font-family:var(--font-mono);font-size:.5rem;color:var(--mint);margin-bottom:.15rem}.v-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}.v-orb{width:70px;height:70px;border-radius:50%;background:linear-gradient(145deg,#2ecc71,#27ae60);display:grid;place-items:center;position:relative;box-shadow:0 8px 30px rgba(39,174,96,.25)}.v-orb::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(39,174,96,.15);animation:vp 2s ease-in-out infinite}@keyframes vp{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.5}}.v-bars{display:flex;gap:2px;height:16px;align-items:center}.v-bars span{width:2.5px;border-radius:2px;background:rgba(39,174,96,.5);animation:vb .6s ease-in-out infinite alternate}@keyframes vb{from{height:3px}to{height:var(--h,14px)}}
+.rv{opacity:0;transform:translateY(35px);transition:all .7s ease-out}.rv.show{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.grid3,.team-grid{grid-template-columns:1fr 1fr}.grid5{grid-template-columns:repeat(3,1fr)}.demo-grid{grid-template-columns:1fr}.ft-inner{grid-template-columns:1fr 1fr}.stat-strip-inner{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
 @media(max-width:768px){.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,15,26,.98);flex-direction:column;justify-content:center;gap:1.5rem;z-index:99}.nav-links.open{display:flex}.mob-toggle{display:flex}.grid3,.team-grid,.stat-strip-inner{grid-template-columns:1fr}.grid5{grid-template-columns:1fr 1fr}.ft-inner{grid-template-columns:1fr}.ft-bottom{flex-direction:column;gap:.4rem;text-align:center}.demo-phone{max-width:240px}}
-/* ── INTERACTIVE: PILL CURSOR ── */
-body{cursor:none}
-.xh-cursor{position:fixed;width:34px;height:52px;pointer-events:none;z-index:10000;transform:translate(-50%,-20%) rotate(-8deg);filter:drop-shadow(0 3px 8px rgba(0,210,180,.4));transition:transform .3s cubic-bezier(.16,1,.3,1),filter .3s}
-.xh-cursor.hv{transform:translate(-50%,-20%) rotate(6deg) scale(1.2);filter:drop-shadow(0 6px 16px rgba(125,243,255,.5))}
-.xh-cursor.hv svg{filter:hue-rotate(30deg) brightness(1.3)}
-.xh-ring{position:fixed;width:52px;height:52px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:.3;transition:.3s}
-.xh-ring svg{width:100%;height:100%;animation:spinR 8s linear infinite}.xh-ring.hv{opacity:.7;width:66px;height:66px}
-@keyframes spinR{to{transform:rotate(360deg)}}
-nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.demo-phone,.mob-toggle{cursor:none}
-
-/* ── INTERACTIVE: PILL CANVAS ── */
-#pillCvs{position:fixed;bottom:0;left:0;width:100%;height:260px;pointer-events:none;z-index:2}
-#fieldCvs{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s}
-#fieldCvs.on{opacity:1}
-#waveCvs{position:fixed;bottom:0;left:0;width:100%;height:80px;pointer-events:none;z-index:1;opacity:0;transition:opacity 1s}
-#waveCvs.on{opacity:1}
-
-/* ── INTERACTIVE: SOUND TOGGLE ── */
-.stog{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:rgba(10,15,26,.85);backdrop-filter:blur(16px);cursor:none;display:flex;align-items:center;justify-content:center;gap:2px;transition:.4s}
-.stog:hover{border-color:var(--mint);transform:scale(1.08)}
-.stog.active{border-color:var(--mint);box-shadow:0 0 20px rgba(0,210,180,.15)}
-.stog span{display:block;width:3px;border-radius:2px;background:var(--muted);transition:.4s}
-.stog.active span{background:var(--mint);animation:sbar .5s ease-in-out infinite alternate}
-@keyframes sbar{from{height:var(--h,6px)}to{height:calc(var(--h,6px) + 8px)}}
-.stog span:nth-child(1){--h:5px}.stog span:nth-child(2){--h:12px}.stog span:nth-child(3){--h:8px}.stog span:nth-child(4){--h:14px}
-
-/* ── PROGRESS BAR ── */
+body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events:none;z-index:10000;transform:translate(-50%,-20%) rotate(-8deg);filter:drop-shadow(0 3px 8px rgba(0,210,180,.4));transition:transform .3s cubic-bezier(.16,1,.3,1),filter .3s}.xh-cursor.hv{transform:translate(-50%,-20%) rotate(6deg) scale(1.2);filter:drop-shadow(0 6px 16px rgba(125,243,255,.5))}.xh-cursor.hv svg{filter:hue-rotate(30deg) brightness(1.3)}.xh-ring{position:fixed;width:52px;height:52px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:.3;transition:.3s}.xh-ring svg{width:100%;height:100%;animation:spinR 8s linear infinite}.xh-ring.hv{opacity:.7;width:66px;height:66px}@keyframes spinR{to{transform:rotate(360deg)}}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.demo-phone,.mob-toggle{cursor:none}
+#pillCvs{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2}#fieldCvs{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s}#fieldCvs.on{opacity:1}#waveCvs{position:fixed;bottom:0;left:0;width:100%;height:80px;pointer-events:none;z-index:1;opacity:0;transition:opacity 1s}#waveCvs.on{opacity:1}
+.stog{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:rgba(10,15,26,.85);backdrop-filter:blur(16px);cursor:none;display:flex;align-items:center;justify-content:center;gap:2px;transition:.4s}.stog:hover{border-color:var(--mint);transform:scale(1.08)}.stog.active{border-color:var(--mint);box-shadow:0 0 20px rgba(0,210,180,.15)}.stog span{display:block;width:3px;border-radius:2px;background:var(--muted);transition:.4s}.stog.active span{background:var(--mint);animation:sbar .5s ease-in-out infinite alternate}@keyframes sbar{from{height:var(--h,6px)}to{height:calc(var(--h,6px) + 8px)}}.stog span:nth-child(1){--h:5px}.stog span:nth-child(2){--h:12px}.stog span:nth-child(3){--h:8px}.stog span:nth-child(4){--h:14px}
 #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--mint),var(--ice));z-index:101;width:0;transition:width .15s}
-
 @media(max-width:768px){body{cursor:auto}.xh-cursor,.xh-ring{display:none}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.mob-toggle{cursor:auto}}
 </style>
 </head>
 <body>
-
-<!-- ══ INTERACTIVE LAYER ══ -->
 <div id="prog"></div>
-<div class="xh-cursor" id="xhc"><svg viewBox="0 0 28 44" xmlns="http://www.w3.org/2000/svg">
-<!-- 뚜껑 -->
-<rect x="9" y="0" width="10" height="6" rx="2" fill="#b4a0ff" opacity=".9"/>
-<!-- 병목 -->
-<rect x="11" y="6" width="6" height="5" rx="1" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
-<!-- 병 몸체 -->
-<rect x="5" y="11" width="18" height="28" rx="4" fill="rgba(0,210,180,.12)" stroke="#00d2b4" stroke-width="1"/>
-<!-- 액체 -->
-<rect x="6" y="22" width="16" height="16" rx="3" fill="#00d2b4" opacity=".7"/>
-<rect x="6" y="22" width="16" height="8" rx="2" fill="#7df3ff" opacity=".3"/>
-<!-- 라벨 -->
-<rect x="8" y="15" width="12" height="8" rx="1.5" fill="rgba(255,255,255,.15)"/>
-<text x="14" y="20.5" text-anchor="middle" font-size="4" font-weight="700" fill="#00d2b4" font-family="sans-serif">MedIT</text>
-<!-- 하이라이트 -->
-<rect x="7" y="12" width="2.5" height="20" rx="1.2" fill="rgba(255,255,255,.2)"/>
-</svg></div>
+<div class="xh-cursor" id="xhc"><svg viewBox="0 0 28 44" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="0" width="10" height="6" rx="2" fill="#b4a0ff" opacity=".9"/><rect x="11" y="6" width="6" height="5" rx="1" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.2)" stroke-width=".5"/><rect x="5" y="11" width="18" height="28" rx="4" fill="rgba(0,210,180,.12)" stroke="#00d2b4" stroke-width="1"/><rect x="6" y="22" width="16" height="16" rx="3" fill="#00d2b4" opacity=".7"/><rect x="6" y="22" width="16" height="8" rx="2" fill="#7df3ff" opacity=".3"/><rect x="8" y="15" width="12" height="8" rx="1.5" fill="rgba(255,255,255,.15)"/><text x="14" y="20.5" text-anchor="middle" font-size="4" font-weight="700" fill="#00d2b4" font-family="sans-serif">MedIT</text><rect x="7" y="12" width="2.5" height="20" rx="1.2" fill="rgba(255,255,255,.2)"/></svg></div>
 <div class="xh-ring" id="xhr"><svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="24" fill="none" stroke="rgba(0,210,180,.2)" stroke-width=".8" stroke-dasharray="4 6"/></svg></div>
-<canvas id="fieldCvs"></canvas>
-<canvas id="waveCvs"></canvas>
-<canvas id="pillCvs"></canvas>
+<canvas id="fieldCvs"></canvas><canvas id="waveCvs"></canvas><canvas id="pillCvs"></canvas>
 <button class="stog" id="tog" onclick="togSound()" title="사운드 ON/OFF"><span style="height:5px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:14px"></span></button>
+<svg class="bg-deco deco-1" viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg"><rect x="28" y="0" width="24" height="14" rx="4" fill="#b4a0ff"/><rect x="32" y="14" width="16" height="10" rx="2" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.15)" stroke-width=".8"/><rect x="12" y="24" width="56" height="100" rx="12" fill="rgba(0,210,180,.06)" stroke="#00d2b4" stroke-width="1.2"/><rect x="14" y="70" width="52" height="52" rx="10" fill="#00d2b4" opacity=".5"/><rect x="14" y="70" width="52" height="20" rx="6" fill="#7df3ff" opacity=".2"/><rect x="22" y="36" width="36" height="22" rx="4" fill="rgba(255,255,255,.08)"/><text x="40" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#00d2b4" font-family="sans-serif">MedIT</text><rect x="16" y="26" width="5" height="60" rx="2.5" fill="rgba(255,255,255,.12)"/></svg>
+<svg class="bg-deco deco-2" viewBox="0 0 90 34" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="45" height="34" rx="17" fill="#00d2b4" opacity=".7"/><rect x="42" y="0" width="48" height="34" rx="17" fill="#7df3ff" opacity=".6"/><ellipse cx="22" cy="10" rx="12" ry="5" fill="rgba(255,255,255,.3)"/><line x1="44" y1="2" x2="44" y2="32" stroke="rgba(5,14,24,.2)" stroke-width=".8"/></svg>
+<svg class="bg-deco deco-3" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg"><circle cx="35" cy="35" r="33" fill="#b4a0ff" opacity=".4"/><circle cx="27" cy="24" r="8" fill="rgba(255,255,255,.2)"/><line x1="8" y1="35" x2="62" y2="35" stroke="rgba(255,255,255,.1)" stroke-width="1"/></svg>
+<svg class="bg-deco deco-4" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="40" height="28" rx="14" fill="#7df3ff" opacity=".5"/><rect x="38" y="0" width="42" height="28" rx="14" fill="#e8eef4" opacity=".35"/><ellipse cx="20" cy="8" rx="10" ry="4" fill="rgba(255,255,255,.25)"/></svg>
+<svg class="bg-deco deco-5" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="160" height="90" rx="10" fill="rgba(0,210,180,.04)" stroke="rgba(0,210,180,.12)" stroke-width=".8"/><circle cx="28" cy="25" r="12" fill="rgba(0,210,180,.15)"/><circle cx="68" cy="25" r="12" fill="rgba(0,210,180,.15)"/><circle cx="108" cy="25" r="12" fill="rgba(0,210,180,.12)"/><circle cx="28" cy="65" r="12" fill="rgba(125,243,255,.12)"/><circle cx="68" cy="65" r="12" fill="rgba(125,243,255,.12)"/><circle cx="108" cy="65" r="12" fill="rgba(180,160,255,.1)"/></svg>
+<svg class="bg-deco deco-6" viewBox="0 0 70 26" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="35" height="26" rx="13" fill="#00a892" opacity=".45"/><rect x="33" y="0" width="37" height="26" rx="13" fill="#b4a0ff" opacity=".35"/><ellipse cx="17" cy="8" rx="9" ry="3.5" fill="rgba(255,255,255,.2)"/></svg>
 
-<!-- ══ 배경 약 장식 (원본 복원) ══ -->
-<!-- deco-1: 약병 — 좌측 -->
-<svg class="bg-deco deco-1" viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg">
-  <rect x="28" y="0" width="24" height="14" rx="4" fill="#b4a0ff"/>
-  <rect x="32" y="14" width="16" height="10" rx="2" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.15)" stroke-width=".8"/>
-  <rect x="12" y="24" width="56" height="100" rx="12" fill="rgba(0,210,180,.06)" stroke="#00d2b4" stroke-width="1.2"/>
-  <rect x="14" y="70" width="52" height="52" rx="10" fill="#00d2b4" opacity=".5"/>
-  <rect x="14" y="70" width="52" height="20" rx="6" fill="#7df3ff" opacity=".2"/>
-  <rect x="22" y="36" width="36" height="22" rx="4" fill="rgba(255,255,255,.08)"/>
-  <text x="40" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#00d2b4" font-family="sans-serif">MedIT</text>
-  <text x="40" y="62" text-anchor="middle" font-size="5" fill="rgba(0,210,180,.5)" font-family="sans-serif">100ml</text>
-  <rect x="16" y="26" width="5" height="60" rx="2.5" fill="rgba(255,255,255,.12)"/>
-</svg>
+<nav id="nav"><div class="nav-inner"><a href="#" class="logo">Med<em>IT</em></a><div class="nav-links" id="navLinks"><a href="#product">제품</a><a href="#channels">알림 채널</a><a href="#delivery">배송 플로우</a><a href="#demo" class="nav-demo">데모 체험</a><a href="#regulation">규제 전략</a><a href="#team">팀 소개</a><a href="#news">리소스</a><a href="#contact" class="nav-cta">문의하기</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
 
-<!-- deco-2: 민트 캡슐 — 우상단 -->
-<svg class="bg-deco deco-2" viewBox="0 0 90 34" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="45" height="34" rx="17" fill="#00d2b4" opacity=".7"/>
-  <rect x="42" y="0" width="48" height="34" rx="17" fill="#7df3ff" opacity=".6"/>
-  <ellipse cx="22" cy="10" rx="12" ry="5" fill="rgba(255,255,255,.3)"/>
-  <line x1="44" y1="2" x2="44" y2="32" stroke="rgba(5,14,24,.2)" stroke-width=".8"/>
-</svg>
+<section class="hero"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div><h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1><p class="sub">QR 코드 복약 관리부터 AI 음성 안내까지.<br>모든 세대를 위한 스마트 의약품 관리 플랫폼.</p><div class="hero-btns"><a href="#demo" class="btn btn-mint">데모 체험하기 →</a><a href="#product" class="btn btn-outline">솔루션 알아보기</a></div></div></section>
 
-<!-- deco-3: 정제 — 좌하단 -->
-<svg class="bg-deco deco-3" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="35" cy="35" r="33" fill="#b4a0ff" opacity=".4"/>
-  <circle cx="35" cy="35" r="28" fill="rgba(180,160,255,.15)" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
-  <circle cx="27" cy="24" r="8" fill="rgba(255,255,255,.2)"/>
-  <line x1="8" y1="35" x2="62" y2="35" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-  <text x="35" y="38" text-anchor="middle" font-size="7" fill="rgba(255,255,255,.15)" font-family="sans-serif">500mg</text>
-</svg>
+<div class="stat-strip"><div class="stat-strip-inner"><div class="rv"><div class="ss-num" data-t="50">0</div><div class="ss-label">만성질환자 복약 비순응률 (%)</div></div><div class="rv"><div class="ss-num" data-t="125000">0</div><div class="ss-label">연간 비순응 사망자 수 (미국)</div></div><div class="rv"><div class="ss-num" data-t="69">0</div><div class="ss-label">비순응으로 인한 입원 비율 (%)</div></div><div class="rv"><div class="ss-num" data-t="9">0</div><div class="ss-label">연간 비순응 사회적 비용 (조 원)</div></div></div></div>
 
-<!-- deco-4: 아이스 캡슐 — 우측 중간 -->
-<svg class="bg-deco deco-4" viewBox="0 0 80 28" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="40" height="28" rx="14" fill="#7df3ff" opacity=".5"/>
-  <rect x="38" y="0" width="42" height="28" rx="14" fill="#e8eef4" opacity=".35"/>
-  <ellipse cx="20" cy="8" rx="10" ry="4" fill="rgba(255,255,255,.25)"/>
-  <line x1="39" y1="1" x2="39" y2="27" stroke="rgba(5,14,24,.15)" stroke-width=".6"/>
-</svg>
+<section class="sec" id="product"><div class="sec-center rv"><div class="sec-tag">PRODUCT</div><h2 class="sec-title">MedIT은 이렇게 작동합니다</h2><p class="sec-desc">약국 → 환자 → 복약 관리의 전 과정을 디지털로 연결합니다.</p></div><div class="grid3"><div class="card rv"><div class="card-tag">STEP 01</div><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7z"/></svg></div><h3>QR 코드 등록</h3><p>약국에서 조제 시 QR 코드를 생성합니다. 환자는 스마트폰으로 스캔하면 복약 스케줄이 자동 등록됩니다.</p></div><div class="card rv"><div class="card-tag">STEP 02</div><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div><h3>맞춤형 알림 발송</h3><p>카카오톡, SMS, AI 음성 전화 — 환자의 디지털 접근성에 맞는 채널로 복약 시간에 알림을 보냅니다.</p></div><div class="card rv"><div class="card-tag">STEP 03</div><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>복약 기록 · 모니터링</h3><p>환자의 복약 여부를 실시간으로 추적합니다. 약사는 대시보드에서 준수율을 확인하고 부작용을 관리합니다.</p></div></div></section>
 
-<!-- deco-5: 블리스터 팩 — 우하단 -->
-<svg class="bg-deco deco-5" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="160" height="90" rx="10" fill="rgba(0,210,180,.04)" stroke="rgba(0,210,180,.12)" stroke-width=".8"/>
-  <circle cx="28" cy="25" r="12" fill="rgba(0,210,180,.15)" stroke="rgba(0,210,180,.2)" stroke-width=".5"/><circle cx="25" cy="21" r="3" fill="rgba(255,255,255,.15)"/>
-  <circle cx="68" cy="25" r="12" fill="rgba(0,210,180,.15)" stroke="rgba(0,210,180,.2)" stroke-width=".5"/><circle cx="65" cy="21" r="3" fill="rgba(255,255,255,.15)"/>
-  <circle cx="108" cy="25" r="12" fill="rgba(0,210,180,.12)" stroke="rgba(0,210,180,.15)" stroke-width=".5"/><circle cx="105" cy="21" r="3" fill="rgba(255,255,255,.1)"/>
-  <circle cx="28" cy="65" r="12" fill="rgba(125,243,255,.12)" stroke="rgba(125,243,255,.15)" stroke-width=".5"/><circle cx="25" cy="61" r="3" fill="rgba(255,255,255,.12)"/>
-  <circle cx="68" cy="65" r="12" fill="rgba(125,243,255,.12)" stroke="rgba(125,243,255,.15)" stroke-width=".5"/><circle cx="65" cy="61" r="3" fill="rgba(255,255,255,.12)"/>
-  <circle cx="108" cy="65" r="12" fill="rgba(180,160,255,.1)" stroke="rgba(180,160,255,.12)" stroke-width=".5"/>
-  <circle cx="140" cy="25" r="8" fill="rgba(0,210,180,.08)" stroke="rgba(0,210,180,.1)" stroke-width=".3" stroke-dasharray="2 2"/>
-  <circle cx="140" cy="65" r="8" fill="rgba(0,210,180,.06)" stroke="rgba(0,210,180,.08)" stroke-width=".3" stroke-dasharray="2 2"/>
-</svg>
+<section class="sec" id="channels"><div class="sec-center rv"><div class="sec-tag">MULTI-CHANNEL</div><h2 class="sec-title">모든 세대를 위한 3채널 알림</h2><p class="sec-desc">스마트폰이 없어도, 문자를 못 봐도, 놓치지 않습니다.</p></div><div class="grid3"><div class="ch-card rv"><div class="ch-head"><span>01 · KAKAO</span><span class="ch-badge g">PRIMARY</span></div><div class="ch-vis"><div class="kakao-m"><div class="kakao-sender"><div class="kakao-av">M</div>MedIT 복약 알림</div><div class="kakao-bub"><strong>아침 약 복용 시간입니다.</strong><br>혈압약 1정 · 위장약 1정<br>식사 직후 물 한 컵과 함께 드세요.<br><span style="color:#999;font-size:.55rem">오전 08:00 · 복용 완료</span></div></div></div><div class="ch-body"><h3>카카오톡</h3><p>익숙한 메신저로 복약 알림을 받아보세요. 알림톡 표준 양식으로 신뢰할 수 있는 메시지를 전달합니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>02 · SMS</span><span class="ch-badge y">FALLBACK</span></div><div class="ch-vis"><div class="sms-stack"><div class="sms-msg"><div class="sms-time">MedIT · 08:00</div><strong>아침약 복용 시간입니다.</strong><br>혈압약 1정 · 식후 30분</div><div class="sms-msg"><div class="sms-time">MedIT · 14:00</div><strong>점심약 복용 시간입니다.</strong></div><div class="sms-msg"><div class="sms-time">MedIT · 20:00</div><strong>저녁약 복용 시간입니다.</strong></div></div></div><div class="ch-body"><h3>SMS 문자</h3><p>앱 설치 없이 문자로 복용 시간을 안내합니다. 2G 피처폰에서도 동작하도록 설계되어 기기 격차를 줄입니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>03 · VOICE</span><span class="ch-badge m">ASSISTED</span></div><div class="ch-vis"><div class="v-wrap"><div class="v-orb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/><circle cx="9" cy="12" r="3" fill="white" stroke="none"/><path d="M9 15v4"/></svg></div><div class="v-bars"><span style="--h:7px"></span><span style="--h:12px;animation-delay:.1s"></span><span style="--h:16px;animation-delay:.15s"></span><span style="--h:14px;animation-delay:.2s"></span><span style="--h:16px;animation-delay:.25s"></span><span style="--h:12px;animation-delay:.3s"></span><span style="--h:7px;animation-delay:.35s"></span></div></div></div><div class="ch-body"><h3>AI 음성 안내</h3><p>AI가 직접 전화로 복약을 안내합니다. 문자도 읽기 어려운 어르신에게 자연스러운 한국어 음성으로 전달합니다.</p></div></div></div></section>
 
-<!-- deco-6: 라벤더 캡슐 — 좌측 중간 -->
-<svg class="bg-deco deco-6" viewBox="0 0 70 26" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="35" height="26" rx="13" fill="#00a892" opacity=".45"/>
-  <rect x="33" y="0" width="37" height="26" rx="13" fill="#b4a0ff" opacity=".35"/>
-  <ellipse cx="17" cy="8" rx="9" ry="3.5" fill="rgba(255,255,255,.2)"/>
-  <line x1="34" y1="1" x2="34" y2="25" stroke="rgba(5,14,24,.15)" stroke-width=".5"/>
-</svg>
+<section class="sec" id="delivery"><div class="sec-center rv"><div class="sec-tag">DELIVERY FLOW</div><h2 class="sec-title">사진 한 장으로, 약이 도착합니다</h2><p class="sec-desc">기침이 나면 약봉투를 찍으세요. 나머지는 MedIT이 합니다.</p></div><div class="grid5"><div class="del-card rv"><div class="del-n">01 · SYMPTOM</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>증상 발생</h3><p>카카오톡으로 약국에 문의합니다.</p></div><div class="del-card rv"><div class="del-n">02 · PHOTO</div><div class="del-ic" style="background:rgba(125,243,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7df3ff" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3>약봉투 촬영</h3><p>OCR이 약품명·용법을 자동 추출합니다.</p></div><div class="del-card rv"><div class="del-n">03 · VERIFY</div><div class="del-ic" style="background:rgba(180,160,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b4a0ff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>본인 인증</h3><p>휴대폰 본인확인으로 자동 검증합니다.</p></div><div class="del-card rv"><div class="del-n">04 · DISPENSE</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div><h3>약국 조제</h3><p>약사가 확인 후 조제합니다.</p></div><div class="del-card rv"><div class="del-n">05 · DELIVER</div><div class="del-ic" style="background:rgba(0,210,180,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>배송 · 복약지도</h3><p>AI 음성 복약지도 동시 전달.</p></div></div></section>
 
-<!-- ══ NAV ══ -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="logo">Med<em>IT</em></a>
-    <div class="nav-links" id="navLinks">
-      <a href="#product">제품</a>
-      <a href="#channels">알림 채널</a>
-      <a href="#delivery">배송 플로우</a>
-      <a href="#demo" class="nav-demo">데모 체험</a>
-      <a href="#regulation">규제 전략</a>
-      <a href="#team">팀 소개</a>
-      <a href="#news">리소스</a>
-      <a href="#contact" class="nav-cta">문의하기</a>
-    </div>
-    <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+<div class="demo-bg" id="demo"><div class="demo-grid"><div class="rv"><div class="sec-tag">PRODUCT DEMO</div><h2 class="sec-title">직접 체험해 보세요</h2><p class="sec-desc" style="margin-top:.8rem">MedIT 약국 관리 앱의 실제 인터페이스를 데모로 만나보세요. 로그인부터 처방 관리, 복약지도, 부작용 모니터링까지 — 약사의 전체 워크플로우를 경험할 수 있습니다.</p><div class="demo-features"><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>실시간 환자 대시보드</h4><p>복약 준수율, 부작용 신고, 처방 현황을 한눈에 확인합니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>처방전 OCR 인식</h4><p>약봉투 사진을 업로드하면 약품명·용법이 자동 추출됩니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>복약지도 카드 발급</h4><p>환자별 맞춤 복약지도를 디지털 카드로 자동 생성합니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>부작용 모니터링</h4><p>환자가 신고한 부작용을 실시간 추적하고 약사에게 알립니다.</p></div></div></div><div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap"><a href="medit-app-dark.html" target="_blank" class="btn btn-mint">약국 앱 데모 열기 →</a><a href="medit-patient.html" target="_blank" class="btn btn-outline">환자 앱 데모</a></div><p style="font-size:.7rem;color:var(--dim);margin-top:.8rem">데모 로그인: admin / 0000</p></div><div class="rv"><div class="demo-phone"><div class="demo-preview" style="background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin-bottom:1.2rem;font-family:var(--font-head);font-size:1.3rem;font-weight:800;color:var(--bg)">M</div><div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.3rem">MedIT 약국 관리</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:1.5rem">Pharmacy Management System</div><div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1rem;width:100%;text-align:left;margin-bottom:.8rem"><div style="font-size:.6rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:.4rem">TODAY'S OVERVIEW</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem"><div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)">24</div><div style="font-size:.55rem;color:var(--muted)">오늘 처방</div></div><div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--ice)">89%</div><div style="font-size:.55rem;color:var(--muted)">복약 준수율</div></div></div></div><div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:.8rem;width:100%;text-align:left"><div style="font-size:.6rem;color:var(--coral);font-family:var(--font-mono);margin-bottom:.3rem">⚠ ALERT</div><div style="font-size:.65rem;color:var(--text)">김영희 님 — 두통 부작용 신고</div><div style="font-size:.55rem;color:var(--muted);margin-top:.2rem">10분 전 · 아스피린 100mg</div></div></div></div></div></div></div>
 
-<!-- ══ HERO ══ -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div>
-    <h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1>
-    <p class="sub">QR 코드 복약 관리부터 AI 음성 안내까지.<br>모든 세대를 위한 스마트 의약품 관리 플랫폼.</p>
-    <div class="hero-btns">
-      <a href="#demo" class="btn btn-mint">데모 체험하기 →</a>
-      <a href="#product" class="btn btn-outline">솔루션 알아보기</a>
-    </div>
-  </div>
-</section>
+<div class="reg-bg" id="regulation"><section class="sec"><div class="sec-center rv"><div class="sec-tag">REGULATORY STRATEGY</div><h2 class="sec-title">규제를 경쟁력으로</h2><p class="sec-desc">MedIT은 단순한 제품이 아닌, 제도 혁신 플랫폼입니다.</p></div><div class="grid3">
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 011-1h10a1 1 0 011 1v3M9 7h1m4 0h1M9 11h1m4 0h1"/></svg></div><h3>약사법 개정 제안</h3><p>액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송 — 3건의 개정안을 정부입법지원센터에 직접 제출했습니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">3</div><div class="sm">법 개정안 제출</div></div><div class="reg-n"><div class="big">4</div><div class="sm">정부 기관 제안</div></div></div></div>
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--ice-s);border:1px solid rgba(125,243,255,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ice)" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg></div><h3>의료법 제18조 개정</h3><p>2025.12 의료법 개정(취약계층 약 배달 허용)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 제안합니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">'26.12</div><div class="sm">의료법 시행 예정</div></div><div class="reg-n"><div class="big">5</div><div class="sm">규제 경로 동시 추진</div></div></div></div>
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--lav-s);border:1px solid rgba(180,160,255,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lav)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3>해외 벤치마크</h3><p>호주 TGA Special Access, EU EMA 소아 투약, 미국 Amazon Pharmacy 모델을 분석하여 한국형 제도를 설계합니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">4</div><div class="sm">해외 제도 분석</div></div><div class="reg-n"><div class="big">6+</div><div class="sm">학술 논문 인용</div></div></div></div>
+</div></section></div>
 
-<!-- ══ STAT STRIP ══ -->
-<div class="stat-strip">
-  <div class="stat-strip-inner">
-    <div class="rv"><div class="ss-num" data-t="50">0</div><div class="ss-label">만성질환자 복약 비순응률 (%)</div></div>
-    <div class="rv"><div class="ss-num" data-t="125000">0</div><div class="ss-label">연간 비순응 사망자 수 (미국)</div></div>
-    <div class="rv"><div class="ss-num" data-t="69">0</div><div class="ss-label">비순응으로 인한 입원 비율 (%)</div></div>
-    <div class="rv"><div class="ss-num" data-t="9">0</div><div class="ss-label">연간 비순응 사회적 비용 (조 원)</div></div>
-  </div>
-</div>
+<section class="sec" id="team"><div class="sec-center rv"><div class="sec-tag">ABOUT US</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar">신</div><h3>신현정</h3><div class="role">CEO · FOUNDER</div><p>숙명여자대학교 창업보육센터. 디지털 헬스케어 기획, 규제 전략 설계, 약사법·의료법 개정안 4건 직접 제출.</p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice))">AI</div><h3>AI · Engineering</h3><div class="role">TECH TEAM</div><p>OCR 파이프라인, 적응형 3채널 알림, 약사 대시보드 개발. Flask · Claude · KakaoTalk API.</p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#f0c866,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.6rem;color:var(--coral);font-weight:500">추진 중</span></h3><div class="role">ADVISORY</div><p>숙명여대 약학대학 교수진 (약학경제·디지털헬스케어), 보건복지위 정책 자문 네트워크 구축을 추진하고 있습니다.</p></div></div></section>
 
-<!-- ══ PRODUCT — HOW IT WORKS ══ -->
-<section class="sec" id="product">
-  <div class="sec-center rv">
-    <div class="sec-tag">PRODUCT</div>
-    <h2 class="sec-title">MedIT은 이렇게 작동합니다</h2>
-    <p class="sec-desc">약국 → 환자 → 복약 관리의 전 과정을 디지털로 연결합니다.</p>
-  </div>
-  <div class="grid3">
-    <div class="card rv"><div class="card-tag">STEP 01</div><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7z"/></svg></div><h3>QR 코드 등록</h3><p>약국에서 조제 시 QR 코드를 생성합니다. 환자는 스마트폰으로 스캔하면 복약 스케줄이 자동 등록됩니다.</p></div>
-    <div class="card rv"><div class="card-tag">STEP 02</div><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div><h3>맞춤형 알림 발송</h3><p>카카오톡, SMS, AI 음성 전화 — 환자의 디지털 접근성에 맞는 채널로 복약 시간에 알림을 보냅니다.</p></div>
-    <div class="card rv"><div class="card-tag">STEP 03</div><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>복약 기록 · 모니터링</h3><p>환자의 복약 여부를 실시간으로 추적합니다. 약사는 대시보드에서 준수율을 확인하고 부작용을 관리합니다.</p></div>
-  </div>
-</section>
+<section class="sec" id="news"><div class="sec-center rv"><div class="sec-tag">RESOURCES</div><h2 class="sec-title">업계 동향 · 리소스</h2><p class="sec-desc">MedIT이 주목하는 디지털 헬스케어 뉴스</p></div><div class="grid3"><a href="#" class="news-card rv"><div class="news-tag t1">정책</div><h3>의료법 개정안, 취약계층 의약품 배송 허용 — 2026년 12월 시행</h3><p>65세 이상 거동불편 환자, 장애인, 도서벽지 거주자를 대상으로 의약품 배송이 합법화됩니다.</p><div class="news-date">2025.12</div></a><a href="#" class="news-card rv"><div class="news-tag t2">기술</div><h3>Claude, 처방전 OCR 정확도 94% 달성</h3><p>Anthropic의 최신 멀티모달 AI가 한국어 처방전 인식에서 기존 대비 23% 향상된 정확도를 기록했습니다.</p><div class="news-date">2025.09</div></a><a href="#" class="news-card rv"><div class="news-tag t3">연구</div><h3>연하곤란 환자 35%, 약을 씹거나 부수어 복용 — 안전성 우려</h3><p>Doan et al. (2022) 연구에 따르면, 정제를 삼키지 못하는 환자 상당수가 위험한 방법으로 복용합니다.</p><div class="news-date">2022.06</div></a></div></section>
 
-<!-- ══ MULTI-CHANNEL ══ -->
-<section class="sec" id="channels">
-  <div class="sec-center rv"><div class="sec-tag">MULTI-CHANNEL</div><h2 class="sec-title">모든 세대를 위한 3채널 알림</h2><p class="sec-desc">스마트폰이 없어도, 문자를 못 봐도, 놓치지 않습니다.</p></div>
-  <div class="grid3">
-    <div class="ch-card rv">
-      <div class="ch-head"><span>01 · KAKAO</span><span class="ch-badge g">PRIMARY</span></div>
-      <div class="ch-vis"><div class="kakao-m"><div class="kakao-sender"><div class="kakao-av">M</div>MedIT 복약 알림</div><div class="kakao-bub"><strong>아침 약 복용 시간입니다.</strong><br>혈압약 1정 · 위장약 1정<br>식사 직후 물 한 컵과 함께 드세요.<br><span style="color:#999;font-size:.55rem">오전 08:00 · 복용 완료</span></div></div></div>
-      <div class="ch-body"><h3>카카오톡</h3><p>익숙한 메신저로 복약 알림을 받아보세요. 알림톡 표준 양식으로 신뢰할 수 있는 메시지를 전달합니다.</p></div>
-    </div>
-    <div class="ch-card rv">
-      <div class="ch-head"><span>02 · SMS</span><span class="ch-badge y">FALLBACK</span></div>
-      <div class="ch-vis"><div class="sms-stack"><div class="sms-msg"><div class="sms-time">MedIT · 08:00</div><strong>아침약 복용 시간입니다.</strong><br>혈압약 1정 · 식후 30분</div><div class="sms-msg"><div class="sms-time">MedIT · 14:00</div><strong>점심약 복용 시간입니다.</strong></div><div class="sms-msg"><div class="sms-time">MedIT · 20:00</div><strong>저녁약 복용 시간입니다.</strong></div></div></div>
-      <div class="ch-body"><h3>SMS 문자</h3><p>앱 설치 없이 문자로 복용 시간을 안내합니다. 2G 피처폰에서도 동작하도록 설계되어 기기 격차를 줄입니다.</p></div>
-    </div>
-    <div class="ch-card rv">
-      <div class="ch-head"><span>03 · VOICE</span><span class="ch-badge m">ASSISTED</span></div>
-      <div class="ch-vis"><div class="v-wrap"><div class="v-orb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/><circle cx="9" cy="12" r="3" fill="white" stroke="none"/><path d="M9 15v4"/></svg></div><div class="v-bars"><span style="--h:7px"></span><span style="--h:12px;animation-delay:.1s"></span><span style="--h:16px;animation-delay:.15s"></span><span style="--h:14px;animation-delay:.2s"></span><span style="--h:16px;animation-delay:.25s"></span><span style="--h:12px;animation-delay:.3s"></span><span style="--h:7px;animation-delay:.35s"></span></div></div></div>
-      <div class="ch-body"><h3>AI 음성 안내</h3><p>AI가 직접 전화로 복약을 안내합니다. 문자도 읽기 어려운 어르신에게 자연스러운 한국어 음성으로 전달합니다.</p></div>
-    </div>
-  </div>
-</section>
+<section class="cta-sec" id="contact"><h2 class="rv">복약 관리의 미래,<br><span style="color:var(--mint)">지금 시작하세요</span></h2><p class="rv" style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;font-weight:300">MedIT은 약국과 환자를 디지털로 연결하여,<br>단 한 알의 약도 놓치지 않는 세상을 만듭니다.</p><div class="rv" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap"><a href="mailto:hyunjeong.shin@sookmyung.ac.kr" class="btn btn-mint">이메일 문의 →</a><a href="#demo" class="btn btn-outline">데모 체험하기</a></div></section>
 
-<!-- ══ DELIVERY FLOW ══ -->
-<section class="sec" id="delivery">
-  <div class="sec-center rv"><div class="sec-tag">DELIVERY FLOW</div><h2 class="sec-title">사진 한 장으로, 약이 도착합니다</h2><p class="sec-desc">기침이 나면 약봉투를 찍으세요. 나머지는 MedIT이 합니다.</p></div>
-  <div class="grid5">
-    <div class="del-card rv"><div class="del-n">01 · SYMPTOM</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>증상 발생</h3><p>카카오톡으로 약국에 문의합니다.</p></div>
-    <div class="del-card rv"><div class="del-n">02 · PHOTO</div><div class="del-ic" style="background:rgba(125,243,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7df3ff" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3>약봉투 촬영</h3><p>OCR이 약품명·용법을 자동 추출합니다.</p></div>
-    <div class="del-card rv"><div class="del-n">03 · VERIFY</div><div class="del-ic" style="background:rgba(180,160,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b4a0ff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>본인 인증</h3><p>휴대폰 본인확인으로 자동 검증합니다.</p></div>
-    <div class="del-card rv"><div class="del-n">04 · DISPENSE</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div><h3>약국 조제</h3><p>약사가 확인 후 조제합니다.</p></div>
-    <div class="del-card rv"><div class="del-n">05 · DELIVER</div><div class="del-ic" style="background:rgba(0,210,180,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>배송 · 복약지도</h3><p>AI 음성 복약지도 동시 전달.</p></div>
-  </div>
-</section>
-
-<!-- ══ DEMO ══ -->
-<div class="demo-bg" id="demo">
-  <div class="demo-grid">
-    <div class="rv">
-      <div class="sec-tag">PRODUCT DEMO</div>
-      <h2 class="sec-title">직접 체험해 보세요</h2>
-      <p class="sec-desc" style="margin-top:.8rem">MedIT 약국 관리 앱의 실제 인터페이스를 데모로 만나보세요. 로그인부터 처방 관리, 복약지도, 부작용 모니터링까지 — 약사의 전체 워크플로우를 경험할 수 있습니다.</p>
-      <div class="demo-features">
-        <div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>실시간 환자 대시보드</h4><p>복약 준수율, 부작용 신고, 처방 현황을 한눈에 확인합니다.</p></div></div>
-        <div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>처방전 OCR 인식</h4><p>약봉투 사진을 업로드하면 약품명·용법이 자동 추출됩니다.</p></div></div>
-        <div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>복약지도 카드 발급</h4><p>환자별 맞춤 복약지도를 디지털 카드로 자동 생성합니다.</p></div></div>
-        <div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>부작용 모니터링</h4><p>환자가 신고한 부작용을 실시간 추적하고 약사에게 알립니다.</p></div></div>
-      </div>
-      <div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
-        <a href="medit-app-dark.html" target="_blank" class="btn btn-mint">약국 앱 데모 열기 →</a>
-        <a href="index.html" target="_blank" class="btn btn-outline">환자 앱 데모</a>
-      </div>
-      <p style="font-size:.7rem;color:var(--dim);margin-top:.8rem">데모 로그인: admin / 0000</p>
-    </div>
-    <div class="rv">
-      <div class="demo-phone">
-        <div class="demo-preview" style="background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center">
-          <div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin-bottom:1.2rem;font-family:var(--font-head);font-size:1.3rem;font-weight:800;color:var(--bg)">M</div>
-          <div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.3rem">MedIT 약국 관리</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-bottom:1.5rem">Pharmacy Management System</div>
-          <div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1rem;width:100%;text-align:left;margin-bottom:.8rem">
-            <div style="font-size:.6rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:.4rem">TODAY'S OVERVIEW</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
-              <div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)">24</div><div style="font-size:.55rem;color:var(--muted)">오늘 처방</div></div>
-              <div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--ice)">89%</div><div style="font-size:.55rem;color:var(--muted)">복약 준수율</div></div>
-            </div>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:.8rem;width:100%;text-align:left">
-            <div style="font-size:.6rem;color:var(--coral);font-family:var(--font-mono);margin-bottom:.3rem">⚠ ALERT</div>
-            <div style="font-size:.65rem;color:var(--text)">김영희 님 — 두통 부작용 신고</div>
-            <div style="font-size:.55rem;color:var(--muted);margin-top:.2rem">10분 전 · 아스피린 100mg</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ REGULATION ══ -->
-<div class="reg-bg" id="regulation">
-<section class="sec">
-  <div class="sec-center rv"><div class="sec-tag">REGULATORY STRATEGY</div><h2 class="sec-title">규제를 경쟁력으로</h2><p class="sec-desc">MedIT은 단순한 제품이 아닌, 제도 혁신 플랫폼입니다.</p></div>
-  <div class="grid3">
-    <div class="card rv"><h3>🏛 약사법 개정 제안</h3><p>액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송 — 3건의 개정안을 정부입법지원센터에 직접 제출했습니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">3</div><div class="sm">법 개정안 제출</div></div><div class="reg-n"><div class="big">4</div><div class="sm">정부 기관 제안</div></div></div></div>
-    <div class="card rv"><h3>📋 의료법 제18조 개정</h3><p>2025.12 의료법 개정(취약계층 약 배달 허용)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 제안합니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">'26.12</div><div class="sm">의료법 시행 예정</div></div><div class="reg-n"><div class="big">5</div><div class="sm">규제 경로 동시 추진</div></div></div></div>
-    <div class="card rv"><h3>🌍 해외 벤치마크</h3><p>호주 TGA Special Access, EU EMA 소아 투약, 미국 Amazon Pharmacy 모델을 분석하여 한국형 제도를 설계합니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">4</div><div class="sm">해외 제도 분석</div></div><div class="reg-n"><div class="big">6+</div><div class="sm">학술 논문 인용</div></div></div></div>
-  </div>
-</section>
-</div>
-
-<!-- ══ TEAM ══ -->
-<section class="sec" id="team">
-  <div class="sec-center rv"><div class="sec-tag">ABOUT US</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div>
-  <div class="team-grid">
-    <div class="team-card rv">
-      <div class="team-avatar">신</div>
-      <h3>신현정</h3>
-      <div class="role">CEO · FOUNDER</div>
-      <p>숙명여자대학교. 디지털 헬스케어 기획, 규제 전략 설계, 약사법·의료법 개정 제안 주도.</p>
-    </div>
-    <div class="team-card rv">
-      <div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice))">AI</div>
-      <h3>AI · Engineering</h3>
-      <div class="role">TECH TEAM</div>
-      <p>OCR 파이프라인, 적응형 알림 시스템, 약사 대시보드 개발. Flask · Gemini · KakaoTalk API.</p>
-    </div>
-    <div class="team-card rv">
-      <div class="team-avatar" style="background:linear-gradient(135deg,#f0c866,var(--coral))">자</div>
-      <h3>자문 네트워크</h3>
-      <div class="role">ADVISORY</div>
-      <p>숙명여대 약학대학 교수진 (약학경제·디지털헬스케어), 보건복지위 정책 자문.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ NEWS ══ -->
-<section class="sec" id="news">
-  <div class="sec-center rv"><div class="sec-tag">RESOURCES</div><h2 class="sec-title">업계 동향 · 리소스</h2><p class="sec-desc">MedIT이 주목하는 디지털 헬스케어 뉴스</p></div>
-  <div class="grid3">
-    <a href="#" class="news-card rv"><div class="news-tag t1">정책</div><h3>의료법 개정안, 취약계층 의약품 배송 허용 — 2026년 12월 시행</h3><p>65세 이상 거동불편 환자, 장애인, 도서벽지 거주자를 대상으로 의약품 배송이 합법화됩니다.</p><div class="news-date">2025.12</div></a>
-    <a href="#" class="news-card rv"><div class="news-tag t2">기술</div><h3>Gemini Flash 2.0, 처방전 OCR 정확도 94% 달성</h3><p>Google의 최신 멀티모달 AI가 한국어 처방전 인식에서 기존 대비 23% 향상된 정확도를 기록했습니다.</p><div class="news-date">2025.09</div></a>
-    <a href="#" class="news-card rv"><div class="news-tag t3">연구</div><h3>연하곤란 환자 35%, 약을 씹거나 부수어 복용 — 안전성 우려</h3><p>Doan et al. (2022) 연구에 따르면, 정제를 삼키지 못하는 환자 상당수가 위험한 방법으로 복용합니다.</p><div class="news-date">2022.06</div></a>
-  </div>
-</section>
-
-<!-- ══ CTA ══ -->
-<section class="cta-sec" id="contact">
-  <h2 class="rv">복약 관리의 미래,<br><span style="color:var(--mint)">지금 시작하세요</span></h2>
-  <p class="rv" style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;font-weight:300">MedIT은 약국과 환자를 디지털로 연결하여,<br>단 한 알의 약도 놓치지 않는 세상을 만듭니다.</p>
-  <div class="rv" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
-    <a href="mailto:hyunjeong.shin@sookmyung.ac.kr" class="btn btn-mint">이메일 문의 →</a>
-    <a href="#demo" class="btn btn-outline">데모 체험하기</a>
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="ft-inner">
-    <div>
-      <div class="ft-brand">Med<em>IT</em></div>
-      <p class="ft-desc">디지털 복약관리 플랫폼<br>숙명여자대학교 창업보육센터 입주기업</p>
-      <p style="font-size:.68rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p>
-    </div>
-    <div class="ft-col">
-      <h4>제품</h4>
-      <a href="#product">솔루션 개요</a>
-      <a href="#channels">멀티채널 알림</a>
-      <a href="#delivery">배송 플로우</a>
-      <a href="#demo">데모 체험</a>
-      <a href="#">복약지도 카드</a>
-    </div>
-    <div class="ft-col">
-      <h4>규제 · 리소스</h4>
-      <a href="#regulation">약사법 개정 제안</a>
-      <a href="#regulation">의료법 개정 분석</a>
-      <a href="#">규제 샌드박스</a>
-      <a href="#news">업계 동향</a>
-      <a href="#">해외 벤치마크</a>
-    </div>
-    <div class="ft-col">
-      <h4>회사</h4>
-      <a href="#team">팀 소개</a>
-      <a href="#">채용</a>
-      <a href="#">개인정보 처리방침</a>
-      <a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a>
-    </div>
-  </div>
-  <div class="ft-bottom">
-    <span>© 2026 MedIT. All rights reserved.</span>
-    <span>본 서비스는 의학적 진단, 치료, 또는 처방을 제공하지 않습니다.</span>
-  </div>
-</footer>
+<footer><div class="ft-inner"><div><div class="ft-brand">Med<em>IT</em></div><p class="ft-desc">디지털 복약관리 플랫폼<br>숙명여자대학교 창업보육센터 입주기업</p><p style="font-size:.68rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p></div><div class="ft-col"><h4>제품</h4><a href="#product">솔루션 개요</a><a href="#channels">멀티채널 알림</a><a href="#delivery">배송 플로우</a><a href="#demo">데모 체험</a><a href="#">복약지도 카드</a></div><div class="ft-col"><h4>규제 · 리소스</h4><a href="#regulation">약사법 개정 제안</a><a href="#regulation">의료법 개정 분석</a><a href="#">규제 샌드박스</a><a href="#news">업계 동향</a><a href="#">해외 벤치마크</a></div><div class="ft-col"><h4>회사</h4><a href="#team">팀 소개</a><a href="#">채용</a><a href="#">개인정보 처리방침</a><a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a></div></div><div class="ft-bottom"><span>© 2026 MedIT. All rights reserved.</span><span>본 서비스는 의학적 진단, 치료, 또는 처방을 제공하지 않습니다.</span></div></footer>
 
 <script>
-// Nav scroll
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
-// Close mobile nav on link click
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
-// Scroll reveal
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-// Stat counter
 const sObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-t]').forEach(el=>{const t=+el.dataset.t;if(el.dataset.d)return;el.dataset.d=1;let c=0;const s=Math.max(1,Math.ceil(t/50));const i=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(i)}el.textContent=c.toLocaleString()},25)});sObs.unobserve(e.target)}})},{threshold:.3});
 document.querySelectorAll('.stat-strip-inner').forEach(el=>sObs.observe(el));
-// Stagger
 document.querySelectorAll('.grid3,.grid5,.team-grid').forEach(g=>{g.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i*.08)+'s'})});
-// Show floating medicine decorations
 setTimeout(function(){document.querySelectorAll('.bg-deco').forEach(function(el,i){setTimeout(function(){el.classList.add('show')},i*250)})},300);
-// ═══ CURSOR ═══
-var mx=0,my=0,cx=0,cy=0;
-var xhc=document.getElementById('xhc'),xhr=document.getElementById('xhr');
+var mx=0,my=0,cx=0,cy=0;var xhc=document.getElementById('xhc'),xhr=document.getElementById('xhr');
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
 function animCur(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;xhc.style.left=mx+'px';xhc.style.top=my+'px';xhr.style.left=cx+'px';xhr.style.top=cy+'px';requestAnimationFrame(animCur)}animCur();
-document.querySelectorAll('a,button,.card,.ch-card,.del-card,.news-card,.team-card').forEach(function(el){
-  el.addEventListener('mouseenter',function(){xhc.classList.add('hv');xhr.classList.add('hv')});
-  el.addEventListener('mouseleave',function(){xhc.classList.remove('hv');xhr.classList.remove('hv')});
-});
-
-// ═══ PROGRESS BAR ═══
-window.addEventListener('scroll',function(){
-  var sy=scrollY,dh=document.documentElement.scrollHeight-innerHeight;
-  document.getElementById('prog').style.width=((sy/dh)*100)+'%';
-});
-
-// ═══ AUDIO SYSTEM ═══
-var actx=null,mGain=null,pGain=null,dly=null,dlyFb=null,dlyLp=null;
-var oscs=[],sndOn=false,curSec=-1,analyser=null;
+document.querySelectorAll('a,button,.card,.ch-card,.del-card,.news-card,.team-card').forEach(function(el){el.addEventListener('mouseenter',function(){xhc.classList.add('hv');xhr.classList.add('hv')});el.addEventListener('mouseleave',function(){xhc.classList.remove('hv');xhr.classList.remove('hv')})});
+window.addEventListener('scroll',function(){var sy=scrollY,dh=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.width=((sy/dh)*100)+'%'});
+var actx=null,mGain=null,pGain=null,dly=null,dlyFb=null,dlyLp=null,oscs=[],sndOn=false,curSec=-1,analyser=null;
 var chords=[[261.63,329.63,392],[220,261.63,329.63],[293.66,369.99,440],[329.63,415.3,493.88],[349.23,440,523.25],[392,493.88,587.33]];
-
-function initA(){
-  if(actx)return;actx=new(AudioContext||webkitAudioContext)();
-  analyser=actx.createAnalyser();analyser.fftSize=256;
-  mGain=actx.createGain();mGain.gain.value=0;mGain.connect(analyser);analyser.connect(actx.destination);
-  pGain=actx.createGain();pGain.gain.value=0;
-  dly=actx.createDelay(1);dly.delayTime.value=.35;dlyFb=actx.createGain();dlyFb.gain.value=.15;
-  dlyLp=actx.createBiquadFilter();dlyLp.type='lowpass';dlyLp.frequency.value=1000;
-  pGain.connect(mGain);pGain.connect(dly);dly.connect(dlyLp);dlyLp.connect(dlyFb);dlyFb.connect(dly);dlyLp.connect(mGain);
-}
-function buildPad(si){
-  oscs.forEach(function(o){try{o.stop()}catch(e){}});oscs=[];if(!actx)return;
-  var ch=chords[si]||chords[0];
-  ch.forEach(function(f,i){var o=actx.createOscillator();o.type=i===0?'sine':'triangle';o.frequency.value=f*(i===2?.5:.25);o.detune.value=(i-1)*6;var g=actx.createGain();g.gain.value=i===0?.07:.025;o.connect(g);g.connect(pGain);o.start();oscs.push(o)});
-  var sub=actx.createOscillator();sub.type='sine';sub.frequency.value=ch[0]*.125;var sg=actx.createGain();sg.gain.value=.05;sub.connect(sg);sg.connect(pGain);sub.start();oscs.push(sub);
-}
-function sndActivate(){
-  initA();if(actx.state==='suspended')actx.resume();sndOn=true;
-  var now=actx.currentTime;
-  mGain.gain.cancelScheduledValues(now);mGain.gain.setValueAtTime(mGain.gain.value,now);mGain.gain.linearRampToValueAtTime(.6,now+1.2);
-  pGain.gain.cancelScheduledValues(now);pGain.gain.setValueAtTime(0,now);pGain.gain.linearRampToValueAtTime(1,now+1.5);
-  var si=getSec();curSec=si;buildPad(si);
-  document.getElementById('fieldCvs').classList.add('on');document.getElementById('waveCvs').classList.add('on');document.getElementById('tog').classList.add('active');
-}
-function sndDeactivate(){
-  sndOn=false;if(actx){var now=actx.currentTime;mGain.gain.cancelScheduledValues(now);mGain.gain.setValueAtTime(mGain.gain.value,now);mGain.gain.linearRampToValueAtTime(0,now+.6)}
-  document.getElementById('fieldCvs').classList.remove('on');document.getElementById('waveCvs').classList.remove('on');document.getElementById('tog').classList.remove('active');
-}
+function initA(){if(actx)return;actx=new(AudioContext||webkitAudioContext)();analyser=actx.createAnalyser();analyser.fftSize=256;mGain=actx.createGain();mGain.gain.value=0;mGain.connect(analyser);analyser.connect(actx.destination);pGain=actx.createGain();pGain.gain.value=0;dly=actx.createDelay(1);dly.delayTime.value=.35;dlyFb=actx.createGain();dlyFb.gain.value=.15;dlyLp=actx.createBiquadFilter();dlyLp.type='lowpass';dlyLp.frequency.value=1000;pGain.connect(mGain);pGain.connect(dly);dly.connect(dlyLp);dlyLp.connect(dlyFb);dlyFb.connect(dly);dlyLp.connect(mGain)}
+function buildPad(si){oscs.forEach(function(o){try{o.stop()}catch(e){}});oscs=[];if(!actx)return;var ch=chords[si]||chords[0];ch.forEach(function(f,i){var o=actx.createOscillator();o.type=i===0?'sine':'triangle';o.frequency.value=f*(i===2?.5:.25);o.detune.value=(i-1)*6;var g=actx.createGain();g.gain.value=i===0?.07:.025;o.connect(g);g.connect(pGain);o.start();oscs.push(o)});var sub=actx.createOscillator();sub.type='sine';sub.frequency.value=ch[0]*.125;var sg=actx.createGain();sg.gain.value=.05;sub.connect(sg);sg.connect(pGain);sub.start();oscs.push(sub)}
+function sndActivate(){initA();if(actx.state==='suspended')actx.resume();sndOn=true;var now=actx.currentTime;mGain.gain.cancelScheduledValues(now);mGain.gain.setValueAtTime(mGain.gain.value,now);mGain.gain.linearRampToValueAtTime(.6,now+1.2);pGain.gain.cancelScheduledValues(now);pGain.gain.setValueAtTime(0,now);pGain.gain.linearRampToValueAtTime(1,now+1.5);var si=getSec();curSec=si;buildPad(si);document.getElementById('fieldCvs').classList.add('on');document.getElementById('waveCvs').classList.add('on');document.getElementById('tog').classList.add('active')}
+function sndDeactivate(){sndOn=false;if(actx){var now=actx.currentTime;mGain.gain.cancelScheduledValues(now);mGain.gain.setValueAtTime(mGain.gain.value,now);mGain.gain.linearRampToValueAtTime(0,now+.6)}document.getElementById('fieldCvs').classList.remove('on');document.getElementById('waveCvs').classList.remove('on');document.getElementById('tog').classList.remove('active')}
 function togSound(){if(sndOn)sndDeactivate();else sndActivate()}
-function ck(){if(!sndOn||!actx)return;var o=actx.createOscillator();o.type='sine';o.frequency.value=800;var g=actx.createGain();var now=actx.currentTime;g.gain.setValueAtTime(.06,now);g.gain.exponentialRampToValueAtTime(.001,now+.12);o.connect(g);g.connect(mGain);o.start(now);o.stop(now+.15)}
-function playPillTap(){if(!sndOn||!actx)return;var o=actx.createOscillator();o.type='sine';o.frequency.value=2000+Math.random()*1500;var g=actx.createGain();var now=actx.currentTime;g.gain.setValueAtTime(.02,now);g.gain.exponentialRampToValueAtTime(.001,now+.06);o.connect(g);g.connect(mGain);o.start(now);o.stop(now+.07)}
-function playRustle(){
-  if(!sndOn||!actx)return;if(!noiseB)makeNoise();
-  for(var i=0;i<3+Math.floor(Math.random()*3);i++){var src=actx.createBufferSource();src.buffer=noiseB;src.playbackRate.value=.8+Math.random()*.6;var hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=2000+Math.random()*2000;var g=actx.createGain();var now=actx.currentTime;var d=i*.04+Math.random()*.03;var dur=.05+Math.random()*.08;g.gain.setValueAtTime(0,now+d);g.gain.linearRampToValueAtTime(.025,now+d+.005);g.gain.exponentialRampToValueAtTime(.001,now+d+dur);src.connect(hp);hp.connect(g);g.connect(mGain);src.start(now+d);src.stop(now+d+dur+.05)}
-}
-function playRattle(){
-  if(!sndOn||!actx)return;if(!noiseB)makeNoise();
-  for(var i=0;i<4+Math.floor(Math.random()*4);i++){var src=actx.createBufferSource();src.buffer=noiseB;src.playbackRate.value=1.5+Math.random()*.5;var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=800+Math.random()*1500;bp.Q.value=4;var g=actx.createGain();var now=actx.currentTime;var d=i*(.06+Math.random()*.05);var dur=.04+Math.random()*.04;g.gain.setValueAtTime(0,now+d);g.gain.linearRampToValueAtTime(.05,now+d+.002);g.gain.exponentialRampToValueAtTime(.001,now+d+dur);src.connect(bp);bp.connect(g);g.connect(mGain);src.start(now+d);src.stop(now+d+dur+.05);var t=actx.createOscillator();t.type='sine';t.frequency.value=1500+Math.random()*2000;var tg=actx.createGain();tg.gain.setValueAtTime(0,now+d);tg.gain.linearRampToValueAtTime(.015,now+d+.002);tg.gain.exponentialRampToValueAtTime(.001,now+d+.08);t.connect(tg);tg.connect(mGain);t.start(now+d);t.stop(now+d+.1)}
-}
+function playRustle(){if(!sndOn||!actx)return;if(!noiseB)makeNoise();for(var i=0;i<3+Math.floor(Math.random()*3);i++){var src=actx.createBufferSource();src.buffer=noiseB;src.playbackRate.value=.8+Math.random()*.6;var hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=2000+Math.random()*2000;var g=actx.createGain();var now=actx.currentTime;var d=i*.04+Math.random()*.03;var dur=.05+Math.random()*.08;g.gain.setValueAtTime(0,now+d);g.gain.linearRampToValueAtTime(.025,now+d+.005);g.gain.exponentialRampToValueAtTime(.001,now+d+dur);src.connect(hp);hp.connect(g);g.connect(mGain);src.start(now+d);src.stop(now+d+dur+.05)}}
+function playRattle(){if(!sndOn||!actx)return;if(!noiseB)makeNoise();for(var i=0;i<4+Math.floor(Math.random()*4);i++){var src=actx.createBufferSource();src.buffer=noiseB;src.playbackRate.value=1.5+Math.random()*.5;var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=800+Math.random()*1500;bp.Q.value=4;var g=actx.createGain();var now=actx.currentTime;var d=i*(.06+Math.random()*.05);var dur=.04+Math.random()*.04;g.gain.setValueAtTime(0,now+d);g.gain.linearRampToValueAtTime(.05,now+d+.002);g.gain.exponentialRampToValueAtTime(.001,now+d+dur);src.connect(bp);bp.connect(g);g.connect(mGain);src.start(now+d);src.stop(now+d+dur+.05)}}
 var noiseB=null;function makeNoise(){if(!actx)return;var sz=actx.sampleRate*2;noiseB=actx.createBuffer(1,sz,actx.sampleRate);var d=noiseB.getChannelData(0);for(var i=0;i<sz;i++)d[i]=Math.random()*2-1}
-
-// Card sound events
-document.querySelectorAll('.card,.ch-card,.del-card,.news-card,.team-card').forEach(function(c){
-  c.addEventListener('mouseenter',function(){playPillTap()});
-  c.addEventListener('click',function(){ck();playRattle()});
-});
-
-// Section changes
+document.querySelectorAll('.card,.ch-card,.del-card,.news-card,.team-card').forEach(function(c){c.addEventListener('mouseenter',function(){if(!actx)initA();if(actx&&actx.state==='suspended')actx.resume();if(!actx)return;var o=actx.createOscillator();o.type='sine';o.frequency.value=2000+Math.random()*1500;var g=actx.createGain();var now=actx.currentTime;g.gain.setValueAtTime(.015,now);g.gain.exponentialRampToValueAtTime(.001,now+.06);o.connect(g);g.connect(actx.destination);o.start(now);o.stop(now+.07)});c.addEventListener('click',function(){if(!actx)initA();if(actx&&actx.state==='suspended')actx.resume();if(!actx)return;var now=actx.currentTime;var o=actx.createOscillator();o.type='sine';o.frequency.value=800;var g=actx.createGain();g.gain.setValueAtTime(.05,now);g.gain.exponentialRampToValueAtTime(.001,now+.12);o.connect(g);g.connect(actx.destination);o.start(now);o.stop(now+.15);for(var i=0;i<3;i++){var t=actx.createOscillator();t.type='sine';t.frequency.value=1200+Math.random()*1800;var tg=actx.createGain();var d=i*.05+Math.random()*.03;tg.gain.setValueAtTime(0,now+d);tg.gain.linearRampToValueAtTime(.03,now+d+.002);tg.gain.exponentialRampToValueAtTime(.001,now+d+.07);t.connect(tg);tg.connect(actx.destination);t.start(now+d);t.stop(now+d+.09)}})});
 function getSec(){var secs=document.querySelectorAll('section,.demo-bg,.reg-bg,.stat-strip');var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<innerHeight*.5)cur=i});return cur}
 function changeSec(idx){if(!sndOn||!actx||idx===curSec)return;curSec=idx;playRustle();var now=actx.currentTime;pGain.gain.cancelScheduledValues(now);pGain.gain.setValueAtTime(pGain.gain.value,now);pGain.gain.linearRampToValueAtTime(0,now+.4);setTimeout(function(){buildPad(idx);if(actx&&sndOn){var t=actx.currentTime;pGain.gain.cancelScheduledValues(t);pGain.gain.setValueAtTime(0,t);pGain.gain.linearRampToValueAtTime(1,t+.8)}},420)}
-var lsr=0,lsy=0;
-window.addEventListener('scroll',function(){changeSec(getSec());var now=Date.now();if(sndOn&&now-lsr>800&&Math.abs(scrollY-lsy)>150){if(Math.random()>.5)playPillTap();lsr=now}lsy=scrollY});
-
-// ═══ PARTICLE FIELD ═══
+var lsr=0,lsy=0;window.addEventListener('scroll',function(){changeSec(getSec());var now=Date.now();if(sndOn&&now-lsr>800&&Math.abs(scrollY-lsy)>150){lsr=now}lsy=scrollY});
 var fc=document.getElementById('fieldCvs'),fctx=fc.getContext('2d'),pts=[];
 function rsz(){fc.width=innerWidth;fc.height=innerHeight;var wc=document.getElementById('waveCvs');wc.width=innerWidth;wc.height=80}rsz();addEventListener('resize',rsz);
 for(var i=0;i<40;i++)pts.push({x:Math.random()*fc.width,y:Math.random()*fc.height,r:Math.random()*1.2+.4,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,h:165+Math.random()*35,a:Math.random()*.16+.03});
-function drawField(){
-  fctx.clearRect(0,0,fc.width,fc.height);
-  for(var i=0;i<pts.length;i++){var p=pts[i];var dx=mx-p.x,dy=my-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<180&&dist>0){p.vx+=dx/dist*.018;p.vy+=dy/dist*.018}p.vx*=.99;p.vy*=.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>fc.width)p.vx*=-1;if(p.y<0||p.y>fc.height)p.vy*=-1;fctx.beginPath();fctx.arc(p.x,p.y,p.r,0,Math.PI*2);fctx.fillStyle='hsla('+p.h+',70%,55%,'+p.a+')';fctx.fill();
-  for(var j=i+1;j<pts.length;j++){var q=pts[j],d2=Math.sqrt((p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y));if(d2<110){fctx.beginPath();fctx.moveTo(p.x,p.y);fctx.lineTo(q.x,q.y);fctx.strokeStyle='rgba(0,210,180,'+(0.02*(1-d2/110))+')';fctx.lineWidth=.5;fctx.stroke()}}}
-  requestAnimationFrame(drawField)}drawField();
-
-// ═══ WAVEFORM ═══
+function drawField(){fctx.clearRect(0,0,fc.width,fc.height);for(var i=0;i<pts.length;i++){var p=pts[i];var dx=mx-p.x,dy=my-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<180&&dist>0){p.vx+=dx/dist*.018;p.vy+=dy/dist*.018}p.vx*=.99;p.vy*=.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>fc.width)p.vx*=-1;if(p.y<0||p.y>fc.height)p.vy*=-1;fctx.beginPath();fctx.arc(p.x,p.y,p.r,0,Math.PI*2);fctx.fillStyle='hsla('+p.h+',70%,55%,'+p.a+')';fctx.fill();for(var j=i+1;j<pts.length;j++){var q=pts[j],d2=Math.sqrt((p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y));if(d2<110){fctx.beginPath();fctx.moveTo(p.x,p.y);fctx.lineTo(q.x,q.y);fctx.strokeStyle='rgba(0,210,180,'+(0.02*(1-d2/110))+')';fctx.lineWidth=.5;fctx.stroke()}}}requestAnimationFrame(drawField)}drawField();
 var wc=document.getElementById('waveCvs'),wctx=wc.getContext('2d');
 function drawWave(){wctx.clearRect(0,0,wc.width,wc.height);if(!analyser||!sndOn){requestAnimationFrame(drawWave);return}var buf=new Uint8Array(analyser.frequencyBinCount);analyser.getByteFrequencyData(buf);var bw=wc.width/buf.length*2.5,x=0;for(var i=0;i<buf.length;i++){var h=(buf[i]/255)*60;wctx.fillStyle='hsla('+(170+buf[i]*.3)+',70%,55%,.25)';wctx.fillRect(x,wc.height-h,bw-1,h);x+=bw;if(x>wc.width)break}requestAnimationFrame(drawWave)}drawWave();
-
-// ═══ BOUNCING PILLS ═══
 var pc=document.getElementById('pillCvs'),pctx=pc.getContext('2d'),pills=[],flr=0;
 var palettes=[{c:'#00d2b4',b:'#7df3ff'},{c:'#7df3ff',b:'#e8eef4'},{c:'#b4a0ff',b:'#7df3ff'},{c:'#00d2b4',b:'#e8eef4'},{c:'#00a892',b:'#b4a0ff'}];
-function pillRsz(){pc.width=innerWidth;pc.height=260;flr=pc.height-20}pillRsz();addEventListener('resize',pillRsz);
+function pillRsz(){pc.width=innerWidth;pc.height=innerHeight;flr=pc.height-20}pillRsz();addEventListener('resize',pillRsz);
 function mkPill(x){var pl=palettes[Math.floor(Math.random()*palettes.length)],rnd=Math.random()>.7;return{x:x!==undefined?x:Math.random()*pc.width,y:-30,vx:(Math.random()-.5)*2,vy:Math.random()*1.5,rot:Math.random()*Math.PI*2,vrot:(Math.random()-.5)*.15,w:rnd?18:Math.random()*12+22,h:rnd?18:Math.random()*3+9,rnd:rnd,cc:pl.c,bc:pl.b,alpha:Math.random()*.4+.45,bounces:0,life:1}}
 var spT=0;
-document.addEventListener('click',function(e){if(e.clientY>innerHeight-300||Math.random()>.5){var p=mkPill(e.clientX);p.y=Math.max(0,e.clientY-(innerHeight-pc.height));p.vy=Math.random()*3+2;p.vx=(Math.random()-.5)*4;pills.push(p);if(pills.length>20)pills.shift()}});
-function dPill(p){
-  pctx.save();pctx.globalAlpha=p.alpha*p.life;pctx.translate(p.x,p.y);pctx.rotate(p.rot);
-  if(p.rnd){var gr=pctx.createRadialGradient(-p.w*.3,-p.w*.3,0,0,0,p.w);gr.addColorStop(0,p.bc);gr.addColorStop(1,p.cc);pctx.fillStyle=gr;pctx.beginPath();pctx.arc(0,0,p.w/2,0,Math.PI*2);pctx.fill();pctx.fillStyle='rgba(255,255,255,.35)';pctx.beginPath();pctx.arc(-p.w*.2,-p.w*.2,p.w*.18,0,Math.PI*2);pctx.fill();pctx.strokeStyle='rgba(5,14,24,.2)';pctx.lineWidth=.8;pctx.beginPath();pctx.moveTo(-p.w/2,0);pctx.lineTo(p.w/2,0);pctx.stroke()}
-  else{var hw=p.w/2,hh=p.h/2;pctx.fillStyle=p.cc;pctx.beginPath();pctx.arc(-hw+hh,0,hh,Math.PI/2,Math.PI*1.5);pctx.lineTo(0,-hh);pctx.lineTo(0,hh);pctx.closePath();pctx.fill();pctx.fillStyle=p.bc;pctx.beginPath();pctx.arc(hw-hh,0,hh,Math.PI*1.5,Math.PI/2);pctx.lineTo(0,hh);pctx.lineTo(0,-hh);pctx.closePath();pctx.fill();pctx.fillStyle='rgba(255,255,255,.4)';pctx.beginPath();pctx.ellipse(-p.w*.15,-hh*.4,p.w*.3,hh*.3,0,0,Math.PI*2);pctx.fill();pctx.strokeStyle='rgba(5,14,24,.3)';pctx.lineWidth=.7;pctx.beginPath();pctx.moveTo(0,-hh);pctx.lineTo(0,hh);pctx.stroke()}
-  pctx.restore();
-  if(p.y>flr-40){var sd=(p.y-(flr-40))/40;pctx.save();pctx.globalAlpha=sd*.2*p.life;pctx.fillStyle='#000';pctx.beginPath();pctx.ellipse(p.x,flr+8,p.w*.6,3,0,0,Math.PI*2);pctx.fill();pctx.restore()}
-}
-function uPill(p){
-  p.vy+=.25;p.vx*=.995;p.vy*=.998;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;
-  if(p.x<p.w/2){p.x=p.w/2;p.vx*=-.7}if(p.x>pc.width-p.w/2){p.x=pc.width-p.w/2;p.vx*=-.7}
-  if(p.y>flr){p.y=flr;if(Math.abs(p.vy)>.5){p.vy*=-.65;p.vx*=.88;p.vrot*=.7;p.bounces++;if(sndOn&&actx&&Math.abs(p.vy)>2){var o=actx.createOscillator();o.type='sine';o.frequency.value=600+Math.random()*400;var g=actx.createGain();var now=actx.currentTime;g.gain.setValueAtTime(.015,now);g.gain.exponentialRampToValueAtTime(.001,now+.08);o.connect(g);g.connect(mGain);o.start(now);o.stop(now+.1)}}else{p.vy=0;p.vrot*=.9}}
-  if(p.bounces>4)p.life-=.008;
-}
-function drawPills(){
-  pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pills.length<12){pills.push(mkPill());spT=0}
-  for(var i=pills.length-1;i>=0;i--){uPill(pills[i]);if(pills[i].life<=0){pills.splice(i,1);continue}dPill(pills[i])}
-  requestAnimationFrame(drawPills)}drawPills();
+document.addEventListener('click',function(e){var count=8+Math.floor(Math.random()*8);var bx=e.clientX,by=e.clientY;for(var i=0;i<count;i++){var p=mkPill(bx+(Math.random()-.5)*40);p.y=by+Math.random()*20;p.vy=Math.random()*4+1;p.vx=(Math.random()-.5)*6;p.alpha=Math.random()*.5+.4;pills.push(p)}while(pills.length>40)pills.shift();if(sndOn&&actx){var now=actx.currentTime;var o=actx.createOscillator();o.type='sine';o.frequency.value=1200+Math.random()*600;var g=actx.createGain();g.gain.setValueAtTime(.04,now);g.gain.exponentialRampToValueAtTime(.001,now+.15);o.connect(g);g.connect(mGain);o.start(now);o.stop(now+.18);playRattle()}else{initA()}});
+function dPill(p){pctx.save();pctx.globalAlpha=p.alpha*p.life;pctx.translate(p.x,p.y);pctx.rotate(p.rot);if(p.rnd){var gr=pctx.createRadialGradient(-p.w*.3,-p.w*.3,0,0,0,p.w);gr.addColorStop(0,p.bc);gr.addColorStop(1,p.cc);pctx.fillStyle=gr;pctx.beginPath();pctx.arc(0,0,p.w/2,0,Math.PI*2);pctx.fill();pctx.fillStyle='rgba(255,255,255,.35)';pctx.beginPath();pctx.arc(-p.w*.2,-p.w*.2,p.w*.18,0,Math.PI*2);pctx.fill()}else{var hw=p.w/2,hh=p.h/2;pctx.fillStyle=p.cc;pctx.beginPath();pctx.arc(-hw+hh,0,hh,Math.PI/2,Math.PI*1.5);pctx.lineTo(0,-hh);pctx.lineTo(0,hh);pctx.closePath();pctx.fill();pctx.fillStyle=p.bc;pctx.beginPath();pctx.arc(hw-hh,0,hh,Math.PI*1.5,Math.PI/2);pctx.lineTo(0,hh);pctx.lineTo(0,-hh);pctx.closePath();pctx.fill();pctx.fillStyle='rgba(255,255,255,.4)';pctx.beginPath();pctx.ellipse(-p.w*.15,-hh*.4,p.w*.3,hh*.3,0,0,Math.PI*2);pctx.fill()}pctx.restore();if(p.y>flr-40){var sd=(p.y-(flr-40))/40;pctx.save();pctx.globalAlpha=sd*.2*p.life;pctx.fillStyle='#000';pctx.beginPath();pctx.ellipse(p.x,flr+8,p.w*.6,3,0,0,Math.PI*2);pctx.fill();pctx.restore()}}
+function uPill(p){p.vy+=.25;p.vx*=.995;p.vy*=.998;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;if(p.x<p.w/2){p.x=p.w/2;p.vx*=-.7}if(p.x>pc.width-p.w/2){p.x=pc.width-p.w/2;p.vx*=-.7}if(p.y>flr){p.y=flr;if(Math.abs(p.vy)>.5){p.vy*=-.65;p.vx*=.88;p.vrot*=.7;p.bounces++;if(sndOn&&actx&&Math.abs(p.vy)>2){var o=actx.createOscillator();o.type='sine';o.frequency.value=600+Math.random()*400;var g=actx.createGain();var now=actx.currentTime;g.gain.setValueAtTime(.015,now);g.gain.exponentialRampToValueAtTime(.001,now+.08);o.connect(g);g.connect(mGain);o.start(now);o.stop(now+.1)}}else{p.vy=0;p.vrot*=.9}}if(p.bounces>4)p.life-=.008}
+function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pills.length<12){pills.push(mkPill());spT=0}for(var i=pills.length-1;i>=0;i--){uPill(pills[i]);if(pills[i].life<=0){pills.splice(i,1);continue}dPill(pills[i])}requestAnimationFrame(drawPills)}drawPills();
 </script>
 </body>
 </html>
