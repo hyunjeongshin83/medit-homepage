@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#00d2b4">
+<title>MedIT — 나의 복약</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0a0e12;--bg2:#0d1117;--sf:rgba(255,255,255,.04);--sf2:rgba(255,255,255,.07);--ink:#e8ecef;--ink2:#c0c8d0;--ink3:#7a8694;--line:rgba(255,255,255,.08);--mint:#00d2b4;--mint-s:rgba(0,210,180,.12);--ice:#7df3ff;--ice-s:rgba(125,243,255,.1);--lav:#b4a0ff;--lav-s:rgba(180,160,255,.1);--red:#ff6b6b;--red-s:rgba(255,107,107,.1);--r:14px;--font:'Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
+html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--ink);overflow:hidden}
+
+/* LAYOUT */
+.app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;background:var(--bg2);position:relative;overflow:hidden}
+.header{padding:16px 20px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);flex-shrink:0;background:var(--bg2);z-index:10}
+.header h1{font-size:18px;font-weight:700;display:flex;align-items:center;gap:6px}
+.header h1 em{font-style:normal;color:var(--mint);font-weight:800}
+.header .sub{font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.08em}
+.content{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px 16px 100px;-webkit-overflow-scrolling:touch}
+.tab-bar{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(13,17,23,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 0 env(safe-area-inset-bottom,8px);z-index:20}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;border:none;background:none;color:var(--ink3);font-size:10px;font-family:var(--font);cursor:pointer;transition:.2s}
+.tab.active{color:var(--mint)}
+.tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
+.tab.active svg{stroke-width:2.2}
+
+/* CARDS */
+.card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;transition:.2s}
+.card:active{background:var(--sf2);transform:scale(.98)}
+.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.card-title{font-size:14px;font-weight:700}
+.badge{font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:20px;letter-spacing:.06em;font-weight:600}
+.badge-mint{color:var(--mint);border:1px solid var(--mint-s);background:rgba(0,210,180,.05)}
+.badge-ice{color:var(--ice);border:1px solid var(--ice-s)}
+.badge-red{color:var(--red);border:1px solid var(--red-s);background:rgba(255,107,107,.05)}
+.badge-lav{color:var(--lav);border:1px solid var(--lav-s)}
+.sec-title{font-size:13px;font-weight:700;color:var(--ink3);margin:20px 0 10px;display:flex;align-items:center;gap:6px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--line)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;font-family:var(--font);border:none;cursor:pointer;transition:.2s;width:100%}
+.btn:active{transform:scale(.97)}
+.btn-mint{background:var(--mint);color:var(--bg)}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-sm{padding:8px 14px;font-size:12px;width:auto;border-radius:8px}
+
+/* LOGIN */
+.login-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px;text-align:center}
+.login-logo{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin:0 auto 20px;font-size:24px;font-weight:800;color:var(--bg)}
+.login-title{font-size:22px;font-weight:700;margin-bottom:6px}
+.login-sub{font-size:13px;color:var(--ink3);margin-bottom:28px}
+.field{margin-bottom:14px;text-align:left;width:100%}
+.field label{display:block;font-size:11px;font-weight:600;color:var(--ink3);margin-bottom:5px}
+.field input{width:100%;padding:12px 14px;background:var(--sf);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-size:14px;font-family:var(--font);outline:none;transition:.2s}
+.field input:focus{border-color:var(--mint);background:var(--sf2)}
+.login-hint{font-size:11px;color:var(--ink3);margin-top:16px;line-height:1.6}
+
+/* SCHEDULE */
+.sched-card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:10px;display:flex;align-items:center;gap:14px;transition:.3s}
+.sched-card.taken{opacity:.5;border-color:transparent}
+.sched-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--mint);min-width:58px;text-align:center}
+.sched-time small{display:block;font-size:9px;color:var(--ink3);font-weight:500;margin-top:2px}
+.sched-info{flex:1}
+.sched-info .name{font-size:14px;font-weight:600;margin-bottom:3px}
+.sched-info .dose{font-size:11px;color:var(--ink3)}
+.sched-check{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;cursor:pointer;transition:.3s;flex-shrink:0;background:none}
+.sched-check:hover{border-color:var(--mint)}
+.sched-check.done{background:var(--mint);border-color:var(--mint)}
+.sched-check.done svg{stroke:#fff}
+.sched-check svg{width:18px;height:18px;stroke:var(--ink3);fill:none;stroke-width:2.5}
+
+/* MED LIST */
+.med-card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:10px}
+.med-name{font-size:15px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.med-name .dot{width:8px;height:8px;border-radius:50%}
+.med-detail{font-size:12px;color:var(--ink3);line-height:1.7}
+.med-tag{display:inline-flex;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:600;margin-top:6px}
+
+/* SIDE EFFECT */
+.se-form textarea{width:100%;padding:12px;background:var(--sf);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-size:13px;font-family:var(--font);min-height:100px;resize:vertical;outline:none}
+.se-form textarea:focus{border-color:var(--mint)}
+.se-form select{width:100%;padding:12px;background:var(--sf);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-size:13px;font-family:var(--font);outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a8694' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.se-history{margin-top:16px}
+.se-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.se-item:last-child{border:none}
+.se-dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex-shrink:0}
+.se-item .desc{font-size:13px;line-height:1.5}
+.se-item .date{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:4px}
+
+/* PHARMACY */
+.ph-card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.ph-icon{width:42px;height:42px;border-radius:12px;background:var(--mint-s);display:grid;place-items:center;flex-shrink:0}
+.ph-icon svg{width:20px;height:20px;stroke:var(--mint);fill:none;stroke-width:1.8}
+.ph-info{flex:1}
+.ph-name{font-size:14px;font-weight:700;margin-bottom:3px}
+.ph-addr{font-size:11px;color:var(--ink3);margin-bottom:2px}
+.ph-meta{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+.ph-dist{font-family:var(--mono);font-size:12px;color:var(--mint);font-weight:600;flex-shrink:0;align-self:center}
+
+/* STATS */
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stat-box{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-align:center}
+.stat-num{font-size:28px;font-weight:800;font-family:var(--mono)}
+.stat-label{font-size:10px;color:var(--ink3);margin-top:4px}
+
+/* SETTINGS */
+.set-item{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+.set-item:last-child{border:none}
+.set-item .k{font-size:13px;color:var(--ink3)}
+.set-item .v{font-size:13px;font-weight:600;text-align:right}
+.toggle{width:44px;height:24px;border-radius:12px;background:var(--sf2);border:1px solid var(--line);position:relative;cursor:pointer;transition:.3s}
+.toggle.on{background:var(--mint);border-color:var(--mint)}
+.toggle::after{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:2px;left:2px;transition:.3s}
+.toggle.on::after{left:22px}
+
+/* PAGE HIDE */
+.page{display:none}.page.show{display:block}
+
+/* TOAST */
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--mint);color:var(--bg);padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;transition:.3s;z-index:100;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+
+<!-- ══ LOGIN ══ -->
+<div class="page show" id="pg-login">
+  <div class="login-wrap">
+    <div class="login-logo">M</div>
+    <div class="login-title">MedIT</div>
+    <div class="login-sub">나의 복약을 관리합니다</div>
+    <div class="field"><label>전화번호</label><input type="tel" id="l-phone" placeholder="000-0000-0001" value="000-0000-0001"></div>
+    <div class="field"><label>비밀번호</label><input type="password" id="l-pass" placeholder="0000" value="0000"></div>
+    <button class="btn btn-mint" onclick="doLogin()" style="margin-top:6px">로그인</button>
+    <div class="login-hint">데모 계정: <strong>000-0000-0001</strong> / <strong>0000</strong><br>환자: 김영수 (67세, 고혈압·당뇨)</div>
+  </div>
+</div>
+
+<!-- ══ MAIN APP ══ -->
+<div class="page" id="pg-main">
+  <div class="header">
+    <h1>Med<em>IT</em></h1>
+    <div class="sub" id="hdr-date"></div>
+  </div>
+
+  <div class="content" id="content">
+    <!-- HOME -->
+    <div class="page show" id="v-home">
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num" style="color:var(--mint)" id="s-rate">0%</div><div class="stat-label">이번 주 복약 준수율</div></div>
+        <div class="stat-box"><div class="stat-num" style="color:var(--ice)" id="s-left">0</div><div class="stat-label">오늘 남은 복약</div></div>
+      </div>
+      <div class="sec-title">오늘의 복약</div>
+      <div id="sched-list"></div>
+      <div class="sec-title" style="margin-top:24px">알림 이력</div>
+      <div id="noti-list"></div>
+    </div>
+
+    <!-- MEDICATIONS -->
+    <div class="page" id="v-meds">
+      <div class="sec-title">내 복용약</div>
+      <div id="med-list"></div>
+    </div>
+
+    <!-- SIDE EFFECTS -->
+    <div class="page" id="v-side">
+      <div class="sec-title">부작용 신고</div>
+      <div class="se-form card">
+        <div class="field"><label>관련 약품</label>
+          <select id="se-drug"><option value="">선택하세요</option></select>
+        </div>
+        <div class="field"><label>증상</label>
+          <textarea id="se-text" placeholder="어떤 증상이 있나요? 자세히 적어주세요."></textarea>
+        </div>
+        <div class="field"><label>심각도</label>
+          <select id="se-level"><option value="mild">경미 — 일상생활 가능</option><option value="moderate">중간 — 불편하지만 견딜 수 있음</option><option value="severe">심각 — 일상생활 어려움</option></select>
+        </div>
+        <button class="btn btn-mint" onclick="submitSE()">신고 제출</button>
+      </div>
+      <div class="sec-title">신고 이력</div>
+      <div id="se-list"></div>
+    </div>
+
+    <!-- PHARMACY -->
+    <div class="page" id="v-pharm">
+      <div class="sec-title">주변 약국</div>
+      <div id="ph-list"></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="page" id="v-set">
+      <div class="sec-title">내 정보</div>
+      <div class="card">
+        <div class="set-item"><span class="k">이름</span><span class="v" id="set-name">—</span></div>
+        <div class="set-item"><span class="k">나이</span><span class="v" id="set-age">—</span></div>
+        <div class="set-item"><span class="k">전화번호</span><span class="v" id="set-phone">—</span></div>
+        <div class="set-item"><span class="k">등록일</span><span class="v" id="set-reg">—</span></div>
+      </div>
+      <div class="sec-title">알림 설정</div>
+      <div class="card">
+        <div class="set-item"><span class="k">카카오톡 알림</span><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+        <div class="set-item"><span class="k">SMS 문자</span><div class="toggle" onclick="this.classList.toggle('on')"></div></div>
+        <div class="set-item"><span class="k">AI 음성 전화</span><div class="toggle" onclick="this.classList.toggle('on')"></div></div>
+        <div class="set-item"><span class="k">복용 30분 전 미리 알림</span><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+      </div>
+      <div class="sec-title">앱 정보</div>
+      <div class="card">
+        <div class="set-item"><span class="k">버전</span><span class="v">2.0.0</span></div>
+        <div class="set-item"><span class="k">사업자</span><span class="v">MedIT (신현정)</span></div>
+        <div class="set-item"><span class="k">주소</span><span class="v" style="font-size:11px;max-width:200px">서울 용산구 청파로47길 46, 202호</span></div>
+      </div>
+      <button class="btn btn-outline" style="margin-top:16px" onclick="doLogout()">로그아웃</button>
+      <p style="text-align:center;font-size:10px;color:var(--ink3);margin-top:16px;line-height:1.6">본 서비스는 의학적 진단, 치료,<br>또는 처방을 제공하지 않습니다.</p>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar">
+    <button class="tab active" data-v="v-home" onclick="switchTab(this)">
+      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>홈
+    </button>
+    <button class="tab" data-v="v-meds" onclick="switchTab(this)">
+      <svg viewBox="0 0 24 24"><path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>복용약
+    </button>
+    <button class="tab" data-v="v-side" onclick="switchTab(this)">
+      <svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M5.07 19H18.93a2 2 0 001.76-2.93L13.76 4.14a2 2 0 00-3.52 0L3.31 16.07A2 2 0 005.07 19z"/></svg>부작용
+    </button>
+    <button class="tab" data-v="v-pharm" onclick="switchTab(this)">
+      <svg viewBox="0 0 24 24"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg>약국
+    </button>
+    <button class="tab" data-v="v-set" onclick="switchTab(this)">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>설정
+    </button>
+  </div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══ DATA ═══
+var patient = {
+  name:'김영수', age:67, gender:'F', phone:'000-0000-0001',
+  registered:'2025-01-15', channel:'kakao',
+  meds:[
+    {id:'m1',name:'아몰로디핀 5mg',type:'혈압약',color:'var(--mint)',freq:'1일 1회',time:'08:00',meal:'식후',note:'아침 식사 후 복용. 자몽 주스와 함께 복용하지 마세요.'},
+    {id:'m2',name:'메트포르민 500mg',type:'당뇨약',color:'var(--ice)',freq:'1일 2회',time:'08:00,18:00',meal:'식후',note:'식사 직후 복용. 위장 장애 시 식사 중 복용.'},
+    {id:'m3',name:'오메프라졸 20mg',type:'위장약',color:'var(--lav)',freq:'1일 1회',time:'07:30',meal:'식전',note:'아침 식사 30분 전 공복에 복용.'}
+  ],
+  schedules:[
+    {id:'s1',medId:'m3',time:'07:30',label:'오메프라졸 20mg',dose:'1정 · 식전 30분',taken:false},
+    {id:'s2',medId:'m1',time:'08:00',label:'아몰로디핀 5mg',dose:'1정 · 식후',taken:false},
+    {id:'s3',medId:'m2',time:'08:00',label:'메트포르민 500mg',dose:'1정 · 식후',taken:false},
+    {id:'s4',medId:'m2',time:'18:00',label:'메트포르민 500mg',dose:'1정 · 식후',taken:false}
+  ],
+  sideEffects:[
+    {id:'se1',drug:'아몰로디핀 5mg',text:'발목 부종이 약간 있습니다. 저녁에 심해지는 경향.',level:'mild',date:'2026-04-20'},
+    {id:'se2',drug:'메트포르민 500mg',text:'복용 초기 설사 증상. 2주 후 호전됨.',level:'mild',date:'2026-03-15'}
+  ],
+  notifications:[
+    {id:'n1',type:'kakao',msg:'아침 약 복용 시간입니다. 오메프라졸 1정 · 식전 30분',time:'07:30',read:true},
+    {id:'n2',type:'kakao',msg:'아침 약 복용 시간입니다. 아몰로디핀 1정 + 메트포르민 1정 · 식후',time:'08:00',read:true},
+    {id:'n3',type:'sms',msg:'[MedIT] 저녁약 복용 시간입니다. 메트포르민 1정 · 식후',time:'18:00',read:false},
+    {id:'n4',type:'voice',msg:'AI 음성 안내 — 복약 확인 전화 (미응답)',time:'18:30',read:false}
+  ]
+};
+
+var pharmacies=[
+  {name:'동대문건강약국',addr:'서울 동대문구 왕산로 12',dist:'120m',hours:'09:00-21:00',phone:'000-0000-0101'},
+  {name:'한빛약국',addr:'서울 동대문구 장안벚꽃로 42',dist:'350m',hours:'09:00-20:00',phone:'000-0000-0102'},
+  {name:'새봄약국',addr:'서울 동대문구 답십리로 88',dist:'800m',hours:'08:30-19:30',phone:'000-0000-0103'},
+  {name:'우리약국',addr:'서울 동대문구 전농로 15',dist:'1.2km',hours:'09:00-22:00',phone:'000-0000-0104'},
+  {name:'청량리약국',addr:'서울 동대문구 왕산로 134',dist:'1.5km',hours:'08:00-21:00',phone:'000-0000-0105'}
+];
+
+// ═══ UTILS ═══
+function $(s,p){return(p||document).querySelector(s)}
+function $$(s,p){return(p||document).querySelectorAll(s)}
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)}
+
+// ═══ LOGIN ═══
+function doLogin(){
+  var phone=$('#l-phone').value.trim();
+  var pass=$('#l-pass').value.trim();
+  if(phone==='000-0000-0001'&&pass==='0000'){
+    $('#pg-login').classList.remove('show');
+    $('#pg-main').classList.add('show');
+    initApp();
+  } else {
+    toast('전화번호 또는 비밀번호가 일치하지 않습니다');
+  }
+}
+function doLogout(){
+  $('#pg-main').classList.remove('show');
+  $('#pg-login').classList.add('show');
+}
+
+// ═══ TAB ═══
+function switchTab(el){
+  $$('.tab').forEach(function(t){t.classList.remove('active')});
+  el.classList.add('active');
+  var v=el.dataset.v;
+  $$('#content > .page').forEach(function(p){p.classList.remove('show')});
+  $('#'+v).classList.add('show');
+  $('#content').scrollTop=0;
+}
+
+// ═══ INIT ═══
+function initApp(){
+  var now=new Date();
+  var days=['일','월','화','수','목','금','토'];
+  $('#hdr-date').textContent=now.getFullYear()+'.'+(now.getMonth()+1)+'.'+now.getDate()+' ('+days[now.getDay()]+')';
+  $('#set-name').textContent=patient.name+' ('+patient.age+'세)';
+  $('#set-age').textContent=patient.age+'세 · '+patient.gender;
+  $('#set-phone').textContent=patient.phone;
+  $('#set-reg').textContent=patient.registered;
+  renderSchedules();
+  renderMeds();
+  renderNotifications();
+  renderSEHistory();
+  renderPharmacies();
+  renderSEDrugOptions();
+  updateStats();
+}
+
+// ═══ SCHEDULES ═══
+function renderSchedules(){
+  var html='';
+  patient.schedules.forEach(function(s){
+    var h=parseInt(s.time.split(':')[0]);
+    var period=h<12?'오전':'오후';
+    html+='<div class="sched-card'+(s.taken?' taken':'')+'" data-id="'+s.id+'">'+
+      '<div class="sched-time">'+s.time+'<small>'+period+'</small></div>'+
+      '<div class="sched-info"><div class="name">'+esc(s.label)+'</div><div class="dose">'+esc(s.dose)+'</div></div>'+
+      '<div class="sched-check'+(s.taken?' done':'')+'" onclick="takeMed(\''+s.id+'\')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>'+
+    '</div>';
+  });
+  $('#sched-list').innerHTML=html;
+}
+
+function takeMed(id){
+  var s=patient.schedules.find(function(x){return x.id===id});
+  if(!s)return;
+  s.taken=!s.taken;
+  renderSchedules();
+  updateStats();
+  toast(s.taken?'✓ 복용 완료 기록됨':'복용 기록 취소됨');
+}
+
+function updateStats(){
+  var taken=patient.schedules.filter(function(s){return s.taken}).length;
+  var total=patient.schedules.length;
+  var rate=total>0?Math.round(taken/total*100):0;
+  $('#s-rate').textContent=rate+'%';
+  $('#s-rate').style.color=rate>=80?'var(--mint)':rate>=50?'var(--ice)':'var(--red)';
+  $('#s-left').textContent=(total-taken);
+}
+
+// ═══ MEDICATIONS ═══
+function renderMeds(){
+  var html='';
+  patient.meds.forEach(function(m){
+    html+='<div class="med-card">'+
+      '<div class="med-name"><span class="dot" style="background:'+m.color+'"></span>'+esc(m.name)+'</div>'+
+      '<div class="med-detail">'+
+        '<strong>'+esc(m.type)+'</strong> · '+esc(m.freq)+' · '+esc(m.meal)+'<br>'+
+        '복용 시간: '+m.time.replace(',', ' / ')+'<br>'+
+        '<span style="color:var(--ink2)">'+esc(m.note)+'</span>'+
+      '</div>'+
+      '<div class="med-tag" style="background:'+m.color.replace(')',',0.1)').replace('var(','rgba(')+'12,0.1);color:'+m.color+'">'+esc(m.type)+'</div>'+
+    '</div>';
+  });
+  $('#med-list').innerHTML=html;
+}
+
+// ═══ SIDE EFFECTS ═══
+function renderSEDrugOptions(){
+  var sel=$('#se-drug');
+  patient.meds.forEach(function(m){
+    var opt=document.createElement('option');
+    opt.value=m.name;opt.textContent=m.name;
+    sel.appendChild(opt);
+  });
+}
+
+function submitSE(){
+  var drug=$('#se-drug').value;
+  var text=$('#se-text').value.trim();
+  var level=$('#se-level').value;
+  if(!drug){toast('관련 약품을 선택하세요');return}
+  if(!text){toast('증상을 입력하세요');return}
+  var now=new Date();
+  var d=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+  patient.sideEffects.unshift({id:'se'+Date.now(),drug:drug,text:text,level:level,date:d});
+  renderSEHistory();
+  $('#se-drug').value='';$('#se-text').value='';$('#se-level').value='mild';
+  toast('부작용 신고가 제출되었습니다');
+}
+
+function renderSEHistory(){
+  if(patient.sideEffects.length===0){$('#se-list').innerHTML='<p style="font-size:12px;color:var(--ink3);text-align:center;padding:20px">신고 이력이 없습니다.</p>';return}
+  var html='<div class="card">';
+  patient.sideEffects.forEach(function(se){
+    var color=se.level==='severe'?'var(--red)':se.level==='moderate'?'var(--ice)':'var(--mint)';
+    var label=se.level==='severe'?'심각':se.level==='moderate'?'중간':'경미';
+    html+='<div class="se-item"><div class="se-dot" style="background:'+color+'"></div><div><div class="desc"><strong>'+esc(se.drug)+'</strong> · <span style="color:'+color+'">'+label+'</span><br>'+esc(se.text)+'</div><div class="date">'+se.date+'</div></div></div>';
+  });
+  html+='</div>';
+  $('#se-list').innerHTML=html;
+}
+
+// ═══ NOTIFICATIONS ═══
+function renderNotifications(){
+  var html='';
+  patient.notifications.forEach(function(n){
+    var icon=n.type==='kakao'?'💬':n.type==='sms'?'📱':'📞';
+    var ch=n.type==='kakao'?'카카오톡':n.type==='sms'?'SMS':'음성';
+    html+='<div class="card" style="padding:12px 14px;'+(n.read?'opacity:.6':'')+'">'+
+      '<div style="display:flex;align-items:flex-start;gap:10px">'+
+        '<span style="font-size:18px;flex-shrink:0">'+icon+'</span>'+
+        '<div style="flex:1"><div style="font-size:12px;margin-bottom:3px">'+esc(n.msg)+'</div>'+
+          '<div style="font-family:var(--mono);font-size:10px;color:var(--ink3)">'+n.time+' · '+ch+(n.read?'':' · <span style="color:var(--mint)">NEW</span>')+'</div>'+
+        '</div>'+
+      '</div></div>';
+  });
+  $('#noti-list').innerHTML=html;
+}
+
+// ═══ PHARMACIES ═══
+function renderPharmacies(){
+  var html='';
+  pharmacies.forEach(function(p){
+    html+='<div class="ph-card">'+
+      '<div class="ph-icon"><svg viewBox="0 0 24 24"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div>'+
+      '<div class="ph-info"><div class="ph-name">'+esc(p.name)+'</div><div class="ph-addr">'+esc(p.addr)+'</div><div class="ph-meta">'+esc(p.hours)+' · '+esc(p.phone)+'</div></div>'+
+      '<div class="ph-dist">'+p.dist+'</div>'+
+    '</div>';
+  });
+  $('#ph-list').innerHTML=html;
+}
+
+// ═══ ENTER KEY ═══
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&$('#pg-login').classList.contains('show'))doLogin()});
+</script>
+</body>
+</html>
