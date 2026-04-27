@@ -7,14 +7,15 @@
 <title>MedIT — 나의 복약</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'HCR Dotum';font-style:normal;font-weight:700;font-display:swap;src:url('HANDotumB.ttf') format('truetype')}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-:root{--bg:#0a0e12;--bg2:#0d1117;--sf:rgba(255,255,255,.04);--sf2:rgba(255,255,255,.07);--ink:#e8ecef;--ink2:#c0c8d0;--ink3:#7a8694;--line:rgba(255,255,255,.08);--mint:#00d2b4;--mint-s:rgba(0,210,180,.12);--ice:#7df3ff;--ice-s:rgba(125,243,255,.1);--lav:#b4a0ff;--lav-s:rgba(180,160,255,.1);--red:#ff6b6b;--red-s:rgba(255,107,107,.1);--r:14px;--font:'Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
+:root{--bg:#0a0e12;--bg2:#0d1117;--sf:rgba(255,255,255,.04);--sf2:rgba(255,255,255,.07);--ink:#e8ecef;--ink2:#c0c8d0;--ink3:#7a8694;--line:rgba(255,255,255,.08);--mint:#00d2b4;--mint-s:rgba(0,210,180,.12);--ice:#7df3ff;--ice-s:rgba(125,243,255,.1);--lav:#b4a0ff;--lav-s:rgba(180,160,255,.1);--red:#ff6b6b;--red-s:rgba(255,107,107,.1);--r:14px;--font:'HCR Dotum','Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
 html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--ink);overflow:hidden}
 
 /* LAYOUT */
 .app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;background:var(--bg2);position:relative;overflow:hidden}
 .header{padding:16px 20px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);flex-shrink:0;background:var(--bg2);z-index:10}
-.header h1{font-size:18px;font-weight:700;display:flex;align-items:center;gap:6px}
+.header h1{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:18px;font-weight:700;display:flex;align-items:center;gap:6px}
 .header h1 em{font-style:normal;color:var(--mint);font-weight:800}
 .header .sub{font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.08em}
 .content{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px 16px 100px;-webkit-overflow-scrolling:touch}
@@ -28,13 +29,13 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 .card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;transition:.2s}
 .card:active{background:var(--sf2);transform:scale(.98)}
 .card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.card-title{font-size:14px;font-weight:700}
+.card-title{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:14px;font-weight:700}
 .badge{font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:20px;letter-spacing:.06em;font-weight:600}
 .badge-mint{color:var(--mint);border:1px solid var(--mint-s);background:rgba(0,210,180,.05)}
 .badge-ice{color:var(--ice);border:1px solid var(--ice-s)}
 .badge-red{color:var(--red);border:1px solid var(--red-s);background:rgba(255,107,107,.05)}
 .badge-lav{color:var(--lav);border:1px solid var(--lav-s)}
-.sec-title{font-size:13px;font-weight:700;color:var(--ink3);margin:20px 0 10px;display:flex;align-items:center;gap:6px}
+.sec-title{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:13px;font-weight:700;color:var(--ink3);margin:20px 0 10px;display:flex;align-items:center;gap:6px}
 .sec-title::after{content:'';flex:1;height:1px;background:var(--line)}
 
 /* BUTTONS */
@@ -47,7 +48,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 /* LOGIN */
 .login-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:40px;text-align:center}
 .login-logo{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin:0 auto 20px;font-size:24px;font-weight:800;color:var(--bg)}
-.login-title{font-size:22px;font-weight:700;margin-bottom:6px}
+.login-title{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px}
 .login-sub{font-size:13px;color:var(--ink3);margin-bottom:28px}
 .field{margin-bottom:14px;text-align:left;width:100%}
 .field label{display:block;font-size:11px;font-weight:600;color:var(--ink3);margin-bottom:5px}
@@ -61,7 +62,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 .sched-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--mint);min-width:58px;text-align:center}
 .sched-time small{display:block;font-size:9px;color:var(--ink3);font-weight:500;margin-top:2px}
 .sched-info{flex:1}
-.sched-info .name{font-size:14px;font-weight:600;margin-bottom:3px}
+.sched-info .name{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:14px;font-weight:600;margin-bottom:3px}
 .sched-info .dose{font-size:11px;color:var(--ink3)}
 .sched-check{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;cursor:pointer;transition:.3s;flex-shrink:0;background:none}
 .sched-check:hover{border-color:var(--mint)}
@@ -71,7 +72,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 
 /* MED LIST */
 .med-card{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:10px}
-.med-name{font-size:15px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.med-name{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
 .med-name .dot{width:8px;height:8px;border-radius:50%}
 .med-detail{font-size:12px;color:var(--ink3);line-height:1.7}
 .med-tag{display:inline-flex;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:600;margin-top:6px}
@@ -92,7 +93,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 .ph-icon{width:42px;height:42px;border-radius:12px;background:var(--mint-s);display:grid;place-items:center;flex-shrink:0}
 .ph-icon svg{width:20px;height:20px;stroke:var(--mint);fill:none;stroke-width:1.8}
 .ph-info{flex:1}
-.ph-name{font-size:14px;font-weight:700;margin-bottom:3px}
+.ph-name{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:14px;font-weight:700;margin-bottom:3px}
 .ph-addr{font-size:11px;color:var(--ink3);margin-bottom:2px}
 .ph-meta{font-family:var(--mono);font-size:10px;color:var(--ink3)}
 .ph-dist{font-family:var(--mono);font-size:12px;color:var(--mint);font-weight:600;flex-shrink:0;align-self:center}
@@ -100,7 +101,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 /* STATS */
 .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
 .stat-box{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-align:center}
-.stat-num{font-size:28px;font-weight:800;font-family:var(--mono)}
+.stat-num{font-size:28px;font-weight:800;font-family:'HCR Dotum',var(--mono)}
 .stat-label{font-size:10px;color:var(--ink3);margin-top:4px}
 
 /* SETTINGS */
