@@ -30,7 +30,8 @@ footer{background:var(--bg2);border-top:1px solid var(--card-border);padding:3re
 .rv{opacity:0;transform:translateY(35px);transition:all .7s ease-out}.rv.show{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.grid3,.team-grid{grid-template-columns:1fr 1fr}.grid5{grid-template-columns:repeat(3,1fr)}.demo-grid{grid-template-columns:1fr}.ft-inner{grid-template-columns:1fr 1fr}.stat-strip-inner{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
 @media(max-width:768px){.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,15,26,.98);flex-direction:column;justify-content:center;gap:1.5rem;z-index:99}.nav-links.open{display:flex}.mob-toggle{display:flex}.grid3,.team-grid,.stat-strip-inner{grid-template-columns:1fr}.grid5{grid-template-columns:1fr 1fr}.ft-inner{grid-template-columns:1fr}.ft-bottom{flex-direction:column;gap:.4rem;text-align:center}.demo-phone{max-width:240px}}
-body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events:none;z-index:10000;transform:translate(-50%,-20%) rotate(-8deg);filter:drop-shadow(0 3px 8px rgba(0,210,180,.4));transition:transform .3s cubic-bezier(.16,1,.3,1),filter .3s}.xh-cursor.hv{transform:translate(-50%,-20%) rotate(6deg) scale(1.2);filter:drop-shadow(0 6px 16px rgba(125,243,255,.5))}.xh-cursor.hv svg{filter:hue-rotate(30deg) brightness(1.3)}.xh-ring{position:fixed;width:52px;height:52px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:.3;transition:.3s}.xh-ring svg{width:100%;height:100%;animation:spinR 8s linear infinite}.xh-ring.hv{opacity:.7;width:66px;height:66px}@keyframes spinR{to{transform:rotate(360deg)}}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.demo-phone,.mob-toggle{cursor:none}
+body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events:none;z-index:10000;transform:translate(-30%,-15%) rotate(-35deg);filter:drop-shadow(0 3px 10px rgba(201,24,63,.55)) drop-shadow(0 1px 2px rgba(0,0,0,.4));transition:transform .3s cubic-bezier(.16,1,.3,1),filter .3s}.xh-cursor.hv{transform:translate(-30%,-15%) rotate(-20deg) scale(1.2);filter:drop-shadow(0 6px 18px rgba(255,77,109,.7)) drop-shadow(0 2px 4px rgba(0,0,0,.5))}.xh-cursor.hv svg{filter:brightness(1.2) saturate(1.3)}.xh-ring{position:fixed;width:52px;height:52px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:.55;transition:.3s}.xh-ring svg{width:100%;height:100%;animation:spinR 6s linear infinite}.xh-ring.hv{opacity:.9;width:72px;height:72px}.xh-ring.click{animation:ringBurst .8s ease-out}@keyframes spinR{to{transform:rotate(360deg)}}@keyframes ringBurst{0%{transform:translate(-50%,-50%) scale(1) rotate(0deg);opacity:1}50%{transform:translate(-50%,-50%) scale(2.2) rotate(180deg);opacity:.6}100%{transform:translate(-50%,-50%) scale(3.5) rotate(360deg);opacity:0}}
+.xh-ring2{position:fixed;width:38px;height:38px;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.4;transition:.3s}.xh-ring2 svg{width:100%;height:100%;animation:spinR2 4s linear infinite reverse}.xh-ring2.hv{opacity:.7;width:54px;height:54px}@keyframes spinR2{to{transform:rotate(-360deg)}}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.demo-phone,.mob-toggle{cursor:none}
 #pillCvs{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2}#fieldCvs{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s}#fieldCvs.on{opacity:1}#waveCvs{position:fixed;bottom:0;left:0;width:100%;height:80px;pointer-events:none;z-index:1;opacity:0;transition:opacity 1s}#waveCvs.on{opacity:1}
 .stog{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:rgba(10,15,26,.85);backdrop-filter:blur(16px);cursor:none;display:flex;align-items:center;justify-content:center;gap:2px;transition:.4s}.stog:hover{border-color:var(--mint);transform:scale(1.08)}.stog.active{border-color:var(--mint);box-shadow:0 0 20px rgba(0,210,180,.15)}.stog span{display:block;width:3px;border-radius:2px;background:var(--muted);transition:.4s}.stog.active span{background:var(--mint);animation:sbar .5s ease-in-out infinite alternate}@keyframes sbar{from{height:var(--h,6px)}to{height:calc(var(--h,6px) + 8px)}}.stog span:nth-child(1){--h:5px}.stog span:nth-child(2){--h:12px}.stog span:nth-child(3){--h:8px}.stog span:nth-child(4){--h:14px}
 #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--mint),var(--ice));z-index:101;width:0;transition:width .15s}
@@ -39,8 +40,74 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 </head>
 <body>
 <div id="prog"></div>
-<div class="xh-cursor" id="xhc"><svg viewBox="0 0 28 44" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="0" width="10" height="6" rx="2" fill="#b4a0ff" opacity=".9"/><rect x="11" y="6" width="6" height="5" rx="1" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.2)" stroke-width=".5"/><rect x="5" y="11" width="18" height="28" rx="4" fill="rgba(0,210,180,.12)" stroke="#00d2b4" stroke-width="1"/><rect x="6" y="22" width="16" height="16" rx="3" fill="#00d2b4" opacity=".7"/><rect x="6" y="22" width="16" height="8" rx="2" fill="#7df3ff" opacity=".3"/><rect x="8" y="15" width="12" height="8" rx="1.5" fill="rgba(255,255,255,.15)"/><text x="14" y="20.5" text-anchor="middle" font-size="4" font-weight="700" fill="#00d2b4" font-family="sans-serif">MedIT</text><rect x="7" y="12" width="2.5" height="20" rx="1.2" fill="rgba(255,255,255,.2)"/></svg></div>
-<div class="xh-ring" id="xhr"><svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="24" fill="none" stroke="rgba(0,210,180,.2)" stroke-width=".8" stroke-dasharray="4 6"/></svg></div>
+<div class="xh-cursor" id="xhc"><svg viewBox="0 0 28 44" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#ff4d6d"/>
+<stop offset="35%" stop-color="#c9183f"/>
+<stop offset="70%" stop-color="#7d1330"/>
+<stop offset="100%" stop-color="#3d0a1a"/>
+</linearGradient>
+<linearGradient id="capShine" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="rgba(255,220,180,.9)"/>
+<stop offset="100%" stop-color="rgba(255,220,180,0)"/>
+</linearGradient>
+<linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#d4a544"/>
+<stop offset="50%" stop-color="#fde08a"/>
+<stop offset="100%" stop-color="#a87a2a"/>
+</linearGradient>
+<linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#7df3ff" stop-opacity=".9"/>
+<stop offset="100%" stop-color="#00b89a" stop-opacity=".95"/>
+</linearGradient>
+<clipPath id="bottleClip">
+<rect x="6" y="12" width="16" height="26" rx="3"/>
+</clipPath>
+</defs>
+<!-- 뚜껑 (메탈릭 버건디 그라데이션) -->
+<rect x="9" y="0.5" width="10" height="6" rx="1.8" fill="url(#capGrad)"/>
+<!-- 메탈릭 하이라이트 (상단 광택) -->
+<rect x="9.5" y="1" width="9" height="2.2" rx="1.5" fill="url(#capShine)"/>
+<!-- 좌측 반사광 -->
+<rect x="9.5" y="1.5" width=".8" height="4" rx=".4" fill="rgba(255,255,255,.5)"/>
+<!-- 골드 림 (뚜껑 하단 라인) -->
+<rect x="9" y="5.7" width="10" height=".8" fill="url(#goldRim)"/>
+<rect x="9" y="6.3" width="10" height=".25" fill="rgba(0,0,0,.3)"/>
+<!-- 병목 -->
+<rect x="11" y="6" width="6" height="6" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width=".4"/>
+<!-- 병 몸체 (유리) -->
+<rect x="6" y="12" width="16" height="26" rx="3" fill="rgba(255,255,255,.04)" stroke="rgba(125,243,255,.5)" stroke-width=".8"/>
+<!-- 출렁이는 액체 (clipPath 안에서 wave) -->
+<g clip-path="url(#bottleClip)">
+<path id="liquidWave" d="M 6 24 Q 10 22, 14 24 T 22 24 L 22 38 L 6 38 Z" fill="url(#liquidGrad)">
+<animate attributeName="d" 
+  values="M 6 24 Q 10 22, 14 24 T 22 24 L 22 38 L 6 38 Z;
+          M 6 24 Q 10 26, 14 24 T 22 24 L 22 38 L 6 38 Z;
+          M 6 24 Q 10 22, 14 24 T 22 24 L 22 38 L 6 38 Z" 
+  dur="2.5s" repeatCount="indefinite"/>
+</path>
+<!-- 거품/하이라이트 -->
+<circle cx="10" cy="32" r=".8" fill="rgba(255,255,255,.6)"><animate attributeName="cy" values="32;26;32" dur="3s" repeatCount="indefinite"/></circle>
+<circle cx="16" cy="34" r=".5" fill="rgba(255,255,255,.4)"><animate attributeName="cy" values="34;28;34" dur="3.5s" repeatCount="indefinite"/></circle>
+</g>
+<!-- 유리 반사광 (좌측 세로) -->
+<rect x="7.5" y="14" width="1.5" height="18" rx="0.7" fill="rgba(255,255,255,.25)"/>
+<!-- 라벨 (얇은 라인 한 줄로 미니멀) -->
+<line x1="9" y1="20" x2="19" y2="20" stroke="rgba(255,255,255,.3)" stroke-width=".4"/>
+</svg></div>
+<div class="xh-ring" id="xhr"><svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+<!-- 메인 점선 원 -->
+<circle cx="26" cy="26" r="24" fill="none" stroke="#00d2b4" stroke-width="1.4" stroke-dasharray="5 4" opacity=".7"/>
+<!-- 4방향 작은 점 -->
+<circle cx="26" cy="2" r="1.8" fill="#00d2b4"/>
+<circle cx="50" cy="26" r="1.8" fill="#00d2b4"/>
+<circle cx="26" cy="50" r="1.8" fill="#00d2b4"/>
+<circle cx="2" cy="26" r="1.8" fill="#00d2b4"/>
+</svg></div>
+<div class="xh-ring2" id="xhr2"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+<circle cx="19" cy="19" r="17" fill="none" stroke="rgba(0,210,180,.4)" stroke-width=".8" stroke-dasharray="2 8"/>
+</svg></div>
 <canvas id="fieldCvs"></canvas><canvas id="waveCvs"></canvas><canvas id="pillCvs"></canvas>
 <button class="stog" id="tog" onclick="togSound()" title="사운드 ON/OFF"><span style="height:5px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:14px"></span></button>
 <svg class="bg-deco deco-1" viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg"><rect x="28" y="0" width="24" height="14" rx="4" fill="#b4a0ff"/><rect x="32" y="14" width="16" height="10" rx="2" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.15)" stroke-width=".8"/><rect x="12" y="24" width="56" height="100" rx="12" fill="rgba(0,210,180,.06)" stroke="#00d2b4" stroke-width="1.2"/><rect x="14" y="70" width="52" height="52" rx="10" fill="#00d2b4" opacity=".5"/><rect x="14" y="70" width="52" height="20" rx="6" fill="#7df3ff" opacity=".2"/><rect x="22" y="36" width="36" height="22" rx="4" fill="rgba(255,255,255,.08)"/><text x="40" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#00d2b4" font-family="sans-serif">MedIT</text><rect x="16" y="26" width="5" height="60" rx="2.5" fill="rgba(255,255,255,.12)"/></svg>
@@ -105,8 +172,16 @@ document.querySelectorAll('.grid3,.grid5,.team-grid').forEach(g=>{g.querySelecto
 setTimeout(function(){document.querySelectorAll('.bg-deco').forEach(function(el,i){setTimeout(function(){el.classList.add('show')},i*250)})},300);
 var mx=0,my=0,cx=0,cy=0;var xhc=document.getElementById('xhc'),xhr=document.getElementById('xhr');
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
-function animCur(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;xhc.style.left=mx+'px';xhc.style.top=my+'px';xhr.style.left=cx+'px';xhr.style.top=cy+'px';requestAnimationFrame(animCur)}animCur();
-document.querySelectorAll('a,button,.card,.ch-card,.del-card,.news-card,.team-card').forEach(function(el){el.addEventListener('mouseenter',function(){xhc.classList.add('hv');xhr.classList.add('hv')});el.addEventListener('mouseleave',function(){xhc.classList.remove('hv');xhr.classList.remove('hv')})});
+function animCur(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;xhc.style.left=mx+'px';xhc.style.top=my+'px';xhr.style.left=cx+'px';xhr.style.top=cy+'px';var xhr2=document.getElementById('xhr2');if(xhr2){xhr2.style.left=mx+'px';xhr2.style.top=my+'px'}requestAnimationFrame(animCur)}animCur();
+document.querySelectorAll('a,button,.card,.ch-card,.del-card,.news-card,.team-card').forEach(function(el){el.addEventListener('mouseenter',function(){xhc.classList.add('hv');xhr.classList.add('hv');var r2=document.getElementById('xhr2');if(r2)r2.classList.add('hv')});el.addEventListener('mouseleave',function(){xhc.classList.remove('hv');xhr.classList.remove('hv');var r2=document.getElementById('xhr2');if(r2)r2.classList.remove('hv')})});
+
+// Click burst on ring
+document.addEventListener('mousedown',function(){
+  xhr.classList.remove('click');
+  void xhr.offsetWidth;
+  xhr.classList.add('click');
+  setTimeout(function(){xhr.classList.remove('click')},800);
+});
 window.addEventListener('scroll',function(){var sy=scrollY,dh=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.width=((sy/dh)*100)+'%'});
 var actx=null,mGain=null,pGain=null,dly=null,dlyFb=null,dlyLp=null,oscs=[],sndOn=false,curSec=-1,analyser=null;
 var chords=[[261.63,329.63,392],[220,261.63,329.63],[293.66,369.99,440],[329.63,415.3,493.88],[349.23,440,523.25],[392,493.88,587.33]];
@@ -133,17 +208,75 @@ var palettes=[{c:'#00d2b4',b:'#7df3ff'},{c:'#7df3ff',b:'#e8eef4'},{c:'#b4a0ff',b
 function pillRsz(){pc.width=innerWidth;pc.height=innerHeight;flr=pc.height-20}pillRsz();addEventListener('resize',pillRsz);
 function mkPill(x){var pl=palettes[Math.floor(Math.random()*palettes.length)],rnd=Math.random()>.7;return{x:x!==undefined?x:Math.random()*pc.width,y:-30,vx:(Math.random()-.5)*2,vy:Math.random()*1.5,rot:Math.random()*Math.PI*2,vrot:(Math.random()-.5)*.15,w:rnd?18:Math.random()*12+22,h:rnd?18:Math.random()*3+9,rnd:rnd,cc:pl.c,bc:pl.b,alpha:Math.random()*.4+.45,bounces:0,life:1}}
 var spT=0;
-document.addEventListener('click',function(e){var count=8+Math.floor(Math.random()*8);var bx=e.clientX,by=e.clientY;for(var i=0;i<count;i++){var p=mkPill(bx+(Math.random()-.5)*40);p.y=by+Math.random()*20;p.vy=Math.random()*4+1;p.vx=(Math.random()-.5)*6;p.alpha=Math.random()*.5+.4;pills.push(p)}while(pills.length>40)pills.shift();
-// Always play pour sound (auto-init audio)
-if(!actx)initA();if(actx&&actx.state==='suspended')actx.resume();
-if(actx){var now=actx.currentTime;
-// Glass clink (high freq pop)
-var o=actx.createOscillator();o.type='sine';o.frequency.value=1200+Math.random()*600;var g=actx.createGain();g.gain.setValueAtTime(.04,now);g.gain.exponentialRampToValueAtTime(.001,now+.15);o.connect(g);g.connect(actx.destination);o.start(now);o.stop(now+.18);
-// Cascading pill drops (5 ticks)
-for(var j=0;j<5;j++){var t=actx.createOscillator();t.type='sine';t.frequency.value=1800+Math.random()*2000;var tg=actx.createGain();var d=j*.04+Math.random()*.03;tg.gain.setValueAtTime(0,now+d);tg.gain.linearRampToValueAtTime(.025,now+d+.002);tg.gain.exponentialRampToValueAtTime(.001,now+d+.06);t.connect(tg);tg.connect(actx.destination);t.start(now+d);t.stop(now+d+.08)}
-// Rattle layer
-if(!noiseB)makeNoise();if(noiseB){for(var k=0;k<4;k++){var src=actx.createBufferSource();src.buffer=noiseB;src.playbackRate.value=1.5+Math.random()*.5;var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=800+Math.random()*1500;bp.Q.value=4;var gn=actx.createGain();var dd=k*(.06+Math.random()*.05);var dur=.04+Math.random()*.04;gn.gain.setValueAtTime(0,now+dd);gn.gain.linearRampToValueAtTime(.04,now+dd+.002);gn.gain.exponentialRampToValueAtTime(.001,now+dd+dur);src.connect(bp);bp.connect(gn);gn.connect(actx.destination);src.start(now+dd);src.stop(now+dd+dur+.05)}}
+// ═══ 7음계 배경 클릭 사운드 (C major: 도레미파솔라시) ═══
+// 클릭한 x좌표에 따라 음높이 결정, 카드/버튼 클릭 시는 제외
+var scale7 = [
+  {note:'C',  freq:261.63}, // 도
+  {note:'D',  freq:293.66}, // 레
+  {note:'E',  freq:329.63}, // 미
+  {note:'F',  freq:349.23}, // 파
+  {note:'G',  freq:392.00}, // 솔
+  {note:'A',  freq:440.00}, // 라
+  {note:'B',  freq:493.88}  // 시
+];
+function playNote(x, y){
+  if(!actx)initA();
+  if(actx&&actx.state==='suspended')actx.resume();
+  if(!actx)return;
+  // x좌표로 음 선택 (좌→우: 도→시)
+  var idx = Math.floor((x/innerWidth)*7);
+  if(idx<0)idx=0;if(idx>6)idx=6;
+  // y좌표로 옥타브 결정 (위쪽=고음, 아래쪽=저음)
+  var octave = y < innerHeight/3 ? 2 : (y < innerHeight*2/3 ? 1 : 0.5);
+  var freq = scale7[idx].freq * octave;
+  var now = actx.currentTime;
+  // 메인 톤 (sine — 부드러운 종소리)
+  var o = actx.createOscillator();
+  o.type='sine';o.frequency.value=freq;
+  var g = actx.createGain();
+  g.gain.setValueAtTime(0,now);
+  g.gain.linearRampToValueAtTime(.08,now+.01);
+  g.gain.exponentialRampToValueAtTime(.001,now+.6);
+  o.connect(g);g.connect(actx.destination);
+  o.start(now);o.stop(now+.65);
+  // 하모닉 (옥타브 위, 더 작게)
+  var h = actx.createOscillator();
+  h.type='triangle';h.frequency.value=freq*2;
+  var hg = actx.createGain();
+  hg.gain.setValueAtTime(0,now);
+  hg.gain.linearRampToValueAtTime(.025,now+.015);
+  hg.gain.exponentialRampToValueAtTime(.001,now+.4);
+  h.connect(hg);hg.connect(actx.destination);
+  h.start(now);h.stop(now+.45);
+  // 음 표시 토스트
+  showNoteToast(x, y, scale7[idx].note);
 }
+function showNoteToast(x, y, note){
+  var t = document.createElement('div');
+  t.textContent = note;
+  t.style.cssText = 'position:fixed;left:'+x+'px;top:'+y+'px;font-family:var(--font-mono);font-size:1.1rem;font-weight:700;color:var(--mint);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 1s ease-out;text-shadow:0 0 8px rgba(0,210,180,.6)';
+  document.body.appendChild(t);
+  requestAnimationFrame(function(){
+    t.style.transform = 'translate(-50%,-150%)';
+    t.style.opacity = '0';
+  });
+  setTimeout(function(){t.remove()},1100);
+}
+
+document.addEventListener('click',function(e){
+  // 배경 클릭만 — 카드/버튼/링크/네비 위 클릭은 제외
+  var t = e.target;
+  if(t.closest('a,button,.card,.ch-card,.del-card,.news-card,.team-card,nav,footer,input,textarea,select,.demo-phone,.stog')){
+    // 배경 외 영역: 알약 우수수만 (사운드 없음)
+    var count=8+Math.floor(Math.random()*8);var bx=e.clientX,by=e.clientY;
+    for(var i=0;i<count;i++){var p=mkPill(bx+(Math.random()-.5)*40);p.y=by+Math.random()*20;p.vy=Math.random()*4+1;p.vx=(Math.random()-.5)*6;p.alpha=Math.random()*.5+.4;pills.push(p)}
+    while(pills.length>40)pills.shift();
+    return;
+  }
+  // === 배경 클릭: 7음계 + 알약 우수수 ===
+  playNote(e.clientX, e.clientY);
+  var count=8+Math.floor(Math.random()*8);var bx=e.clientX,by=e.clientY;
+  for(var i=0;i<count;i++){var p=mkPill(bx+(Math.random()-.5)*40);p.y=by+Math.random()*20;p.vy=Math.random()*4+1;p.vx=(Math.random()-.5)*6;p.alpha=Math.random()*.5+.4;pills.push(p)}while(pills.length>40)pills.shift();
 });
 
 // ═══ RIGHT CLICK (CONTEXT MENU) — 폭죽 효과 + 사운드 ═══
