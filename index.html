@@ -10,7 +10,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#00d2b4;--mint2:#00e8c8;--mint-soft:rgba(0,210,180,.08);--mint-border:rgba(0,210,180,.15);--ice:#7df3ff;--ice-s:rgba(125,243,255,.1);--lav:#b4a0ff;--lav-s:rgba(180,160,255,.1);--coral:#ff8a80;--text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;--card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);--r:16px;--font-head:'HCR Dotum','Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
 html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:all .3s}nav.scrolled{background:rgba(10,15,26,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:.7rem 0}.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.4rem}.logo em{font-style:normal;color:var(--mint)}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--white)}.nav-cta{background:var(--mint)!important;color:var(--bg)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700!important;font-size:.8rem!important}.nav-cta:hover{background:var(--mint2)!important}.nav-demo{border:1px solid var(--mint-border)!important;color:var(--mint)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:600!important}.nav-demo:hover{background:var(--mint-soft)!important}.mob-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:.5rem}.mob-toggle span{display:block;width:20px;height:2px;background:var(--text);transition:.3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:all .3s}nav.scrolled{background:rgba(10,15,26,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:.7rem 0}.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.4rem}.logo em{font-style:normal;color:var(--mint)}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--white)}.nav-cta{background:var(--mint)!important;color:var(--bg)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700!important;font-size:.8rem!important}.nav-cta:hover{background:var(--mint2)!important}.nav-demo{border:1px solid var(--mint-border)!important;color:var(--mint)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:600!important}.nav-demo:hover{background:var(--mint-soft)!important}.nav-lang{font-size:1.1rem!important;line-height:1!important;padding:.35rem .55rem!important;border:1px solid var(--card-border);border-radius:8px;transition:all .3s;display:inline-flex;align-items:center;justify-content:center;filter:saturate(.85)}.nav-lang:hover{border-color:var(--mint);background:var(--mint-soft);transform:scale(1.08);filter:saturate(1.1)}.mob-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:.5rem}.mob-toggle span{display:block;width:20px;height:2px;background:var(--text);transition:.3s}
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-body);border:none;cursor:pointer}.btn-mint{background:var(--mint);color:var(--bg)}.btn-mint:hover{background:var(--mint2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,210,180,.25)}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}.btn-outline:hover{border-color:var(--mint);color:var(--mint)}
 .sec{padding:6rem 2rem;max-width:1200px;margin:0 auto}.sec-tag{font-family:var(--font-mono);font-size:.65rem;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem;font-weight:500}.sec-title{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.3}.sec-desc{font-size:.9rem;color:var(--muted);max-width:580px;line-height:1.8;font-weight:300}.sec-center{text-align:center}.sec-center .sec-desc{margin:0 auto}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(0,210,180,.06) 0%,transparent 70%);pointer-events:none}.hero-content{max-width:780px;position:relative;z-index:1}
@@ -119,7 +119,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <svg class="bg-deco deco-5" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="160" height="90" rx="10" fill="rgba(0,210,180,.04)" stroke="rgba(0,210,180,.12)" stroke-width=".8"/><circle cx="28" cy="25" r="12" fill="rgba(0,210,180,.15)"/><circle cx="68" cy="25" r="12" fill="rgba(0,210,180,.15)"/><circle cx="108" cy="25" r="12" fill="rgba(0,210,180,.12)"/><circle cx="28" cy="65" r="12" fill="rgba(125,243,255,.12)"/><circle cx="68" cy="65" r="12" fill="rgba(125,243,255,.12)"/><circle cx="108" cy="65" r="12" fill="rgba(180,160,255,.1)"/></svg>
 <svg class="bg-deco deco-6" viewBox="0 0 70 26" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="35" height="26" rx="13" fill="#00a892" opacity=".45"/><rect x="33" y="0" width="37" height="26" rx="13" fill="#b4a0ff" opacity=".35"/><ellipse cx="17" cy="8" rx="9" ry="3.5" fill="rgba(255,255,255,.2)"/></svg>
 
-<nav id="nav"><div class="nav-inner"><a href="#" class="logo">Med<em>IT</em></a><div class="nav-links" id="navLinks"><a href="#product">제품</a><a href="#channels">알림 채널</a><a href="#delivery">배송 플로우</a><a href="#demo" class="nav-demo">데모 체험</a><a href="#regulation">규제 전략</a><a href="#team">팀 소개</a><a href="#news">리소스</a><a href="#contact" class="nav-cta">문의하기</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
+<nav id="nav"><div class="nav-inner"><a href="#" class="logo">Med<em>IT</em></a><div class="nav-links" id="navLinks"><a href="#product">제품</a><a href="#channels">알림 채널</a><a href="#delivery">배송 플로우</a><a href="#home-delivery">재택수령</a><a href="#demo" class="nav-demo">데모 체험</a><a href="#regulation">규제 전략</a><a href="#team">팀 소개</a><a href="#news">리소스</a><a href="#contact" class="nav-cta">문의하기</a><a href="medit-en.html" class="nav-lang" title="English version" aria-label="Switch to English">🇺🇸</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
 
 <section class="hero"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div><h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1><p class="sub">QR 기반 복약 일정 알림부터 음성 안내까지.<br>모든 세대를 위한 디지털 복약 관리 도구입니다.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다.</span></p><div class="hero-btns"><a href="#demo" class="btn btn-mint">데모 체험하기 →</a><a href="#product" class="btn btn-outline">솔루션 알아보기</a></div></div></section>
 
@@ -130,6 +130,87 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <section class="sec" id="channels" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">MULTI-CHANNEL</div><h2 class="sec-title">모든 세대를 위한 3채널 알림</h2><p class="sec-desc">스마트폰이 없어도, 문자를 못 봐도, 놓치지 않습니다.</p></div><div class="grid3"><div class="ch-card rv"><div class="ch-head"><span>01 · KAKAO</span><span class="ch-badge g">PRIMARY</span></div><div class="ch-vis"><div class="kakao-m"><div class="kakao-sender"><div class="kakao-av">M</div>MedIT 복약 알림</div><div class="kakao-bub"><strong>아침 약 복용 시간입니다.</strong><br>혈압약 1정 · 위장약 1정<br>식사 직후 물 한 컵과 함께 드세요.<br><span style="color:#999;font-size:.55rem">오전 08:00 · 복용 완료</span></div></div></div><div class="ch-body"><h3>카카오톡</h3><p>익숙한 메신저로 복약 알림을 받아보세요. 알림톡 표준 양식으로 신뢰할 수 있는 메시지를 전달합니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>02 · SMS</span><span class="ch-badge y">FALLBACK</span></div><div class="ch-vis"><div class="sms-stack"><div class="sms-msg"><div class="sms-time">MedIT · 08:00</div><strong>아침약 복용 시간입니다.</strong><br>혈압약 1정 · 식후 30분</div><div class="sms-msg"><div class="sms-time">MedIT · 14:00</div><strong>점심약 복용 시간입니다.</strong></div><div class="sms-msg"><div class="sms-time">MedIT · 20:00</div><strong>저녁약 복용 시간입니다.</strong></div></div></div><div class="ch-body"><h3>SMS 문자</h3><p>앱 설치 없이 문자로 복용 시간을 안내합니다. 2G 피처폰에서도 동작하도록 설계되어 기기 격차를 줄입니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>03 · VOICE</span><span class="ch-badge m">ASSISTED</span></div><div class="ch-vis"><div class="v-wrap"><div class="v-orb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/><circle cx="9" cy="12" r="3" fill="white" stroke="none"/><path d="M9 15v4"/></svg></div><div class="v-bars"><span style="--h:7px"></span><span style="--h:12px;animation-delay:.1s"></span><span style="--h:16px;animation-delay:.15s"></span><span style="--h:14px;animation-delay:.2s"></span><span style="--h:16px;animation-delay:.25s"></span><span style="--h:12px;animation-delay:.3s"></span><span style="--h:7px;animation-delay:.35s"></span></div></div></div><div class="ch-body"><h3>음성 안내 <span style="font-size:.55rem;color:var(--mint);font-weight:500">기획</span></h3><p>음성 합성 기술을 활용해 복약 시간을 전화로 안내하는 기능을 검토하고 있습니다. 문자 사용이 어려운 사용자를 위한 보조 채널입니다.</p></div></div></div></section>
 
 <section class="sec" id="delivery" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">SERVICE FLOW (계획)</div><h2 class="sec-title">약국과 환자를 디지털로 연결합니다</h2><p class="sec-desc">약국 방문 전 사전 안내 흐름을 디자인합니다. (※ 약 배송은 의료법·약사법 개정에 따라 단계적으로 도입 예정)</p></div><div class="grid5"><div class="del-card rv"><div class="del-n">01 · SYMPTOM</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>증상 기록</h3><p>본인 증상을 약국에 문의 메시지로 전달.</p></div><div class="del-card rv"><div class="del-n">02 · PHOTO</div><div class="del-ic" style="background:rgba(125,243,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7df3ff" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3>약봉투 촬영</h3><p>약봉투 이미지 텍스트 추출(개발 중).</p></div><div class="del-card rv"><div class="del-n">03 · VERIFY</div><div class="del-ic" style="background:rgba(180,160,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b4a0ff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>본인 인증</h3><p>휴대폰 본인확인으로 자동 검증합니다.</p></div><div class="del-card rv"><div class="del-n">04 · DISPENSE</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div><h3>약국 조제</h3><p>약사가 확인 후 조제합니다.</p></div><div class="del-card rv"><div class="del-n">05 · GUIDE</div><div class="del-ic" style="background:rgba(0,210,180,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2h-4M9 11V5a3 3 0 116 0v6"/></svg></div><h3>약사 복약지도</h3><p>약사가 환자에게 직접 복약지도 제공.</p></div></div></section>
+
+<!-- ══ HOME DELIVERY SOLUTION (2026.12.24~) ══ -->
+<section class="sec" id="home-delivery" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem;background:linear-gradient(180deg,var(--bg),var(--bg2))">
+  <div class="sec-center rv">
+    <div class="sec-tag" style="color:var(--coral)">HOME DELIVERY · 2026.12.24~</div>
+    <h2 class="sec-title">재택수령 솔루션</h2>
+    <p class="sec-desc">의료법 개정안 시행에 맞춰, 취약계층 환자에게 안전한 약 수령 경로를 제공합니다.</p>
+  </div>
+  <div style="max-width:1200px;margin:2.5rem auto 0;width:100%;padding:0 2rem">
+    <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
+      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--coral)"></span>
+        법정 재택수령 허용 대상
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;font-size:.85rem;color:var(--muted)">
+        <div>· 섬·벽지 거주자</div>
+        <div>· 장기요양 수급자</div>
+        <div>· 등록장애인</div>
+        <div>· 1·2급 감염병 확진자</div>
+        <div>· 희귀질환자</div>
+      </div>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:1.2rem;line-height:1.6">
+        ※ 보건복지부령으로 정하는 지역 안에서만 허용. 일반 대중 약 배송은 불가.<br>
+        ※ 세부 기준은 향후 시행령·시행규칙에서 마련 예정.
+      </p>
+    </div>
+    <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
+      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--mint)"></span>
+        재택수령 4단계 플로우
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--mint);margin-bottom:.5rem">01 · ELIGIBILITY</div>
+          <div style="font-weight:700;margin-bottom:.4rem">대상자 자격 확인</div>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6">공공시스템 연동으로 환자의 법정 자격(장애·요양·감염병 등)을 자동 검증합니다.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--ice);margin-bottom:.5rem">02 · PRESCRIPTION</div>
+          <div style="font-weight:700;margin-bottom:.4rem">전자처방전 전송</div>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6">의료기관에서 발급한 전자처방전이 환자가 선택한 약국으로 안전하게 전달됩니다.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--lav);margin-bottom:.5rem">03 · DISPENSE</div>
+          <div style="font-weight:700;margin-bottom:.4rem">약사 조제·확인</div>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6">약사가 처방 검토·조제 후 비대면 복약지도를 진행합니다.</p>
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--coral);margin-bottom:.5rem">04 · DELIVERY</div>
+          <div style="font-weight:700;margin-bottom:.4rem">안전 재택수령</div>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6">법정 인증 배송 경로로 환자에게 전달, MedIT 알림으로 복약 추적이 시작됩니다.</p>
+        </div>
+      </div>
+    </div>
+    <div class="rv" style="background:linear-gradient(135deg,rgba(0,210,180,.06),rgba(125,243,255,.06));border:1px solid var(--mint-border);border-radius:var(--r);padding:2rem">
+      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--ice)"></span>
+        MedIT만의 차별점
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;font-size:.85rem;line-height:1.7">
+        <div>
+          <strong style="color:var(--mint)">조제→복약 폐쇄루프</strong><br>
+          <span style="color:var(--muted)">단순 배송이 아닌, 수령 후 복약 추적까지 한 번에.</span>
+        </div>
+        <div>
+          <strong style="color:var(--mint)">3채널 복약 알림 연동</strong><br>
+          <span style="color:var(--muted)">카카오톡·SMS·음성 안내가 수령 직후 자동 활성화.</span>
+        </div>
+        <div>
+          <strong style="color:var(--mint)">약사 직접 복약지도</strong><br>
+          <span style="color:var(--muted)">비대면 환경에서도 약사·환자 양방향 소통.</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:.7rem;color:var(--dim);margin-top:1.5rem;text-align:center;line-height:1.7">
+      ※ 본 솔루션은 의료법 개정안(2026.12.24 시행) 및 약사법 하위 법령에 따라 운영될 예정이며, 일반 대중 약 배송은 포함되지 않습니다.<br>
+      ※ 인증 플랫폼·공공시스템 연동 등 구체 운영 방식은 보건복지부 시행 규정에 따릅니다. <a href="https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1488108" target="_blank" rel="noopener" style="color:var(--mint)">[보건복지부 보도자료]</a>
+    </p>
+  </div>
+</section>
+
 
 <div class="demo-bg" id="demo"><div class="demo-grid"><div class="rv"><div class="sec-tag">PRODUCT DEMO</div><h2 class="sec-title">직접 체험해 보세요</h2><p class="sec-desc" style="margin-top:.8rem">MedIT 약국 협업 인터페이스의 데모를 체험할 수 있습니다. 로그인부터 복약 일정 관리, 복약지도, 이상반응 자가기록까지 — 약사의 디지털 워크플로우를 시연합니다.</p><div class="demo-features"><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>실시간 환자 대시보드</h4><p>복약 일정 진행 상황, 사용자 기록, 처방 안내 현황을 한눈에 확인할 수 있도록 설계 중입니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>약봉투 텍스트 추출</h4><p>약봉투 이미지에서 텍스트를 추출하는 기능을 개발 중입니다. (의료기기 해당 여부 식약처 사전 검토 진행 예정)</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>복약지도 카드 발급</h4><p>환자별 맞춤 복약지도를 디지털 카드로 자동 생성합니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>이상반응 자가기록</h4><p>환자가 본인의 이상반응을 직접 기록할 수 있는 인터페이스를 시연합니다. (※ 의학적 판단은 약사·의사와 상담)</p></div></div></div><div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap"><a href="medit-app-dark.html" target="_blank" class="btn btn-mint">약국 앱 데모 열기 →</a><a href="medit-patient.html" target="_blank" class="btn btn-outline">환자 앱 데모</a></div><p style="font-size:.7rem;color:var(--dim);margin-top:.8rem">※ 데모는 합성 데이터로 구성되어 있으며, 실제 환자 정보는 포함되지 않습니다.</p></div><div class="rv"><div class="demo-phone"><div class="demo-preview" style="background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin-bottom:1.2rem;font-family:var(--font-head);font-size:1.3rem;font-weight:800;color:var(--bg)">M</div><div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.3rem">MedIT 약국 관리</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:1.5rem">Pharmacy Management System</div><div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1rem;width:100%;text-align:left;margin-bottom:.8rem"><div style="font-size:.6rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:.4rem">TODAY'S OVERVIEW</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem"><div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)">24</div><div style="font-size:.55rem;color:var(--muted)">오늘 처방</div></div><div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--ice)">89%</div><div style="font-size:.55rem;color:var(--muted)">복약 준수율</div></div></div></div><div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:.8rem;width:100%;text-align:left"><div style="font-size:.6rem;color:var(--ice);font-family:var(--font-mono);margin-bottom:.3rem">사용자 기록</div><div style="font-size:.65rem;color:var(--text)">데모 사용자 — 이상반응 자가기록</div><div style="font-size:.55rem;color:var(--muted);margin-top:.2rem">예시 데이터 · 합성 시연</div></div></div></div></div></div></div>
 
@@ -395,5 +476,7 @@ function dPill(p){pctx.save();pctx.globalAlpha=p.alpha*p.life;pctx.translate(p.x
 function uPill(p){p.vy+=.25;p.vx*=.995;p.vy*=.998;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;if(p.x<p.w/2){p.x=p.w/2;p.vx*=-.7}if(p.x>pc.width-p.w/2){p.x=pc.width-p.w/2;p.vx*=-.7}if(p.y>flr){p.y=flr;if(Math.abs(p.vy)>.5){p.vy*=-.65;p.vx*=.88;p.vrot*=.7;p.bounces++;if(sndOn&&actx&&Math.abs(p.vy)>2){var o=actx.createOscillator();o.type='sine';o.frequency.value=600+Math.random()*400;var g=actx.createGain();var now=actx.currentTime;g.gain.setValueAtTime(.015,now);g.gain.exponentialRampToValueAtTime(.001,now+.08);o.connect(g);g.connect(mGain);o.start(now);o.stop(now+.1)}}else{p.vy=0;p.vrot*=.9}}if(p.bounces>4)p.life-=.008}
 function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pills.length<12){pills.push(mkPill());spT=0}for(var i=pills.length-1;i>=0;i--){uPill(pills[i]);if(pills[i].life<=0){pills.splice(i,1);continue}dPill(pills[i])}requestAnimationFrame(drawPills)}drawPills();
 </script>
+
+
 </body>
 </html>
