@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MedIT — 디지털 복약관리 플랫폼</title>
+<meta name="description" content="MedIT — Pharmacist-verified medication information platform with multi-channel reminders. Korea Adverse Event Reporting (KAERS) self-report assistance. Operated from the Republic of Korea.">
+<link rel="alternate" hreflang="ko" href="https://hyunjeongshin83.github.io/medit-homepage/?lang=ko">
+<link rel="alternate" hreflang="en" href="https://hyunjeongshin83.github.io/medit-homepage/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://hyunjeongshin83.github.io/medit-homepage/">
+<title>MedIT — 메디신 테크놀로지 플랫폼 · Pharmacist-Verified Medication Platform</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'HCR Dotum';font-style:normal;font-weight:700;font-display:swap;src:url('HANDotumB.ttf') format('truetype')}
@@ -17,7 +21,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:al
 .bg-deco{position:fixed;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s;filter:brightness(1.05) contrast(.95)}.bg-deco.show{opacity:.35}@keyframes floatG{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(calc(var(--r) + 8deg)) translateY(-20px)}}.deco-1{top:12%;left:-3%;width:130px;--r:-12deg;animation:floatG 7s ease-in-out infinite}.deco-2{top:22%;right:3%;width:75px;--r:15deg;animation:floatG 5.5s ease-in-out infinite 1s}.deco-3{bottom:28%;left:4%;width:100px;--r:6deg;animation:floatG 6s ease-in-out infinite 2s}.deco-4{top:55%;right:-2%;width:70px;--r:-20deg;animation:floatG 8s ease-in-out infinite .5s}.deco-5{bottom:18%;right:8%;width:160px;--r:-4deg;animation:floatG 6.5s ease-in-out infinite 1.5s}.deco-6{top:65%;left:12%;width:65px;--r:25deg;animation:floatG 7.5s ease-in-out infinite 2.8s}
 .hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem .9rem;border-radius:100px;border:1px solid var(--mint-border);background:var(--mint-soft);font-size:.75rem;font-family:var(--font-head);color:var(--mint);margin-bottom:2rem;letter-spacing:.04em;font-weight:700;animation:fadeUp .8s ease-out}.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}.hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:1.3rem;animation:fadeUp .8s ease-out .1s both}.hero h1 .hl{color:var(--mint)}.hero .sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;font-weight:300;line-height:1.9;animation:fadeUp .8s ease-out .2s both}.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .3s both}@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .stat-strip{background:var(--bg2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);min-height:100vh;display:flex;align-items:center;padding:4rem 2rem}.stat-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;text-align:center;width:100%}.ss-num{font-family:var(--font-head);font-size:clamp(3rem,6vw,4.5rem);font-weight:800;color:var(--mint);line-height:1;margin-bottom:1rem}.ss-label{font-size:.95rem;color:var(--muted);margin-top:.4rem;line-height:1.6}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;align-items:stretch}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.8rem;transition:all .4s;display:flex;flex-direction:column}.card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}.card-tag::after{content:'';flex:1;height:1px;background:var(--card-border)}.card-icon{width:50px;height:50px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin-bottom:1rem}.card-icon svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:1.5}.card h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.5rem}.card p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;align-items:stretch}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem;align-items:stretch}
+.step-num{font-family:var(--font-mono,monospace);font-size:1.4rem;font-weight:700;color:var(--mint);margin-bottom:0.75rem;opacity:0.9}
+@media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid4{grid-template-columns:1fr}}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.8rem;transition:all .4s;display:flex;flex-direction:column}.card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}.card-tag::after{content:'';flex:1;height:1px;background:var(--card-border)}.card-icon{width:50px;height:50px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin-bottom:1rem}.card-icon svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:1.5}.card h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.5rem}.card p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
 .ch-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;transition:all .4s;display:flex;flex-direction:column;height:100%}.ch-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.ch-head{padding:1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--card-border);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;color:var(--muted);min-height:48px}.ch-badge{padding:.15rem .5rem;border-radius:100px;font-size:.5rem;font-weight:600;letter-spacing:.1em}.ch-badge.g{color:#6fcf97;border:1px solid rgba(111,207,151,.25)}.ch-badge.y{color:#f0c866;border:1px solid rgba(240,200,102,.25)}.ch-badge.m{color:var(--mint);border:1px solid var(--mint-border)}.ch-vis{padding:2rem;display:flex;align-items:center;justify-content:center;height:220px}.ch-body{padding:1.3rem;border-top:1px solid var(--card-border);flex:1;display:flex;flex-direction:column}.ch-body h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.4rem}.ch-body p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
 .del-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.3rem .8rem;text-align:center;transition:all .4s;display:flex;flex-direction:column;align-items:center}.del-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.del-n{font-family:var(--font-mono);font-size:.55rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.7rem}.del-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin-bottom:.8rem}.del-card h3{font-family:var(--font-head);font-size:.88rem;font-weight:700;margin-bottom:.3rem}.del-card p{font-size:.7rem;color:var(--muted);line-height:1.5;flex:1}
 .demo-bg{background:linear-gradient(135deg,rgba(0,210,180,.04) 0%,rgba(125,243,255,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;padding:6rem 2rem}.demo-preview{background:var(--bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:9/16;max-height:500px;box-shadow:0 20px 60px rgba(0,0,0,.4)}.demo-phone{position:relative;max-width:280px;margin:0 auto}.demo-phone::before{content:'';position:absolute;inset:-4px;border-radius:calc(var(--r) + 4px);border:2px solid var(--mint-border);pointer-events:none}.demo-features{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}.demo-feat{display:flex;align-items:flex-start;gap:.8rem}.demo-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);margin-top:.5rem;flex-shrink:0}.demo-feat-text h4{font-family:var(--font-head);font-size:.9rem;font-weight:700;margin-bottom:.2rem}.demo-feat-text p{font-size:.78rem;color:var(--muted);line-height:1.6}
@@ -36,8 +44,64 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 .stog{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:rgba(10,15,26,.85);backdrop-filter:blur(16px);cursor:none;display:flex;align-items:center;justify-content:center;gap:2px;transition:.4s}.stog:hover{border-color:var(--mint);transform:scale(1.08)}.stog.active{border-color:var(--mint);box-shadow:0 0 20px rgba(0,210,180,.15)}.stog span{display:block;width:3px;border-radius:2px;background:var(--muted);transition:.4s}.stog.active span{background:var(--mint);animation:sbar .5s ease-in-out infinite alternate}@keyframes sbar{from{height:var(--h,6px)}to{height:calc(var(--h,6px) + 8px)}}.stog span:nth-child(1){--h:5px}.stog span:nth-child(2){--h:12px}.stog span:nth-child(3){--h:8px}.stog span:nth-child(4){--h:14px}
 #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--mint),var(--ice));z-index:101;width:0;transition:width .15s}
 @media(max-width:768px){body{cursor:auto}.xh-cursor,.xh-ring{display:none}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.mob-toggle{cursor:auto}}
+
+/* === 5단계 그라데이션 톤 시스템 (헤더 민트 톤 기반) === */
+/* Tone 1: 다크 + 민트 어센트 (warm dark) — Hero */
+.tone-1{background:radial-gradient(ellipse at top,rgba(0,210,180,.08) 0%,rgba(0,210,180,.03) 30%,var(--bg) 70%)}
+/* Tone 2: 다크 + 아이스 어센트 (cool depth) — Product, Channels */
+.tone-2{background:linear-gradient(180deg,var(--bg) 0%,rgba(125,243,255,.025) 50%,var(--bg2) 100%)}
+/* Tone 3: 민트+아이스 블렌드 (transition glow) — Verified DB, Red Lines */
+.tone-3{background:linear-gradient(180deg,var(--bg2) 0%,rgba(0,210,180,.04) 50%,rgba(125,243,255,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}
+/* Tone 4: 라벤더 어센트 (depth) — Adverse Event, Demo */
+.tone-4{background:linear-gradient(180deg,rgba(125,243,255,.02) 0%,rgba(180,160,255,.04) 50%,var(--bg2) 100%);border-top:1px solid rgba(180,160,255,.12)}
+/* Tone 5: 깊은 다크 + 민트 마무리 (close) — Regulation, Team */
+.tone-5{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 60%,rgba(0,210,180,.04) 100%);border-top:1px solid var(--card-border)}
+
+/* === 데모 섹션 (DEMO 01~06) 전용 스타일 === */
+.demo-section{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem;position:relative;scroll-margin-top:80px}
+.demo-section h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text);margin:0}
+.demo-section p{font-size:.82rem;color:var(--muted);line-height:1.7}
+.demo-section h4{font-family:var(--font-head);font-size:.9rem;font-weight:600;color:var(--text)}
+.demo-tag{background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;display:inline-flex;align-items:center;gap:.3rem}
+.demo-step-tag{background:var(--bg3);color:var(--ice);font-family:var(--font-mono);font-size:.6rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em}
+.demo-disclaimer{background:rgba(255,138,128,.05);border:1px solid rgba(255,138,128,.2);border-radius:10px;padding:.9rem 1.2rem;margin-top:1rem}
+.demo-disclaimer-title{font-size:.72rem;color:var(--coral);font-weight:600;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.demo-disclaimer-body{font-size:.72rem;color:var(--muted);line-height:1.6}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.ic{display:inline-flex;align-items:center;justify-content:center;width:1em;height:1em;vertical-align:-.125em}
+.ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes kaersPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.08)}}
+@keyframes kaersSlideDown{from{opacity:0;transform:translateY(-12px);max-height:0}to{opacity:1;transform:translateY(0);max-height:200px}}
+.btn-ghost{background:var(--bg3);color:var(--muted);border:1px solid var(--card-border);font-size:.75rem}
+.btn-ghost:hover{color:var(--text);border-color:var(--mint-border)}
 </style>
 <script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+
+<style>
+/* 새 로고 스타일 */
+.logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+.logo-svg {
+  flex-shrink: 0;
+}
+.logo-text {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+}
+.logo-text em {
+  color: var(--ink, #0F172A);
+}
+</style>
+
 </head>
 <body>
 <div id="prog"></div>
@@ -119,15 +183,598 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <svg class="bg-deco deco-5" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="160" height="90" rx="10" fill="rgba(0,210,180,.04)" stroke="rgba(0,210,180,.12)" stroke-width=".8"/><circle cx="28" cy="25" r="12" fill="rgba(0,210,180,.15)"/><circle cx="68" cy="25" r="12" fill="rgba(0,210,180,.15)"/><circle cx="108" cy="25" r="12" fill="rgba(0,210,180,.12)"/><circle cx="28" cy="65" r="12" fill="rgba(125,243,255,.12)"/><circle cx="68" cy="65" r="12" fill="rgba(125,243,255,.12)"/><circle cx="108" cy="65" r="12" fill="rgba(180,160,255,.1)"/></svg>
 <svg class="bg-deco deco-6" viewBox="0 0 70 26" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="35" height="26" rx="13" fill="#00a892" opacity=".45"/><rect x="33" y="0" width="37" height="26" rx="13" fill="#b4a0ff" opacity=".35"/><ellipse cx="17" cy="8" rx="9" ry="3.5" fill="rgba(255,255,255,.2)"/></svg>
 
-<nav id="nav"><div class="nav-inner"><a href="#" class="logo">Med<em>IT</em></a><div class="nav-links" id="navLinks"><a href="#product">제품</a><a href="#channels">알림 채널</a><a href="#delivery">배송 플로우</a><a href="#home-delivery">재택수령</a><a href="#demo" class="nav-demo">데모 체험</a><a href="#regulation">규제 전략</a><a href="#team">팀 소개</a><a href="#news">리소스</a><a href="#contact" class="nav-cta">문의하기</a><a href="medit-en.html" class="nav-lang" title="English version" aria-label="Switch to English">🇺🇸</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
+<nav id="nav"><div class="nav-inner"><a href="#" class="logo" onclick="toggleLogoState(this); return false;">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg" style="width:32px;height:32px;vertical-align:middle;transition:transform 0.2s;">
+<g transform="translate(50, 50)" opacity="0.32">
+<rect x="-9" y="-32" width="18" height="7" rx="2.5" fill="#34D399"/>
+<path d="M -16 28 L -16 -10 Q -16 -22 -7 -23 L 7 -23 Q 16 -22 16 -10 L 16 28 Q 16 32 12 32 L -12 32 Q -16 32 -16 28 Z" fill="#34D399"/>
+</g>
+<g transform="translate(50, 50)">
+<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2"/>
+<g class="pulse-icon"><path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="check-icon" style="display:none;"><path d="M -22 0 L -16 6 L -7 -6" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g>
+</svg>
+<span class="logo-text"><span style="color:#10B981">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
+</a><div class="nav-links" id="navLinks"><a href="#product">제품</a><a href="#channels">알림 채널</a><a href="#delivery">배송 플로우</a><a href="#home-delivery">재택수령</a><a href="#demo" class="nav-demo">데모 체험</a><a href="#regulation">규제 전략</a><a href="#team">팀 소개</a><a href="#news">리소스</a><a href="#contact" class="nav-cta">문의하기</a><a href="javascript:void(0)" class="nav-lang" id="langToggle" title="English" aria-label="Toggle language">🇺🇸</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
 
-<section class="hero"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div><h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1><p class="sub">QR 기반 복약 일정 알림부터 음성 안내까지.<br>모든 세대를 위한 디지털 복약 관리 도구입니다.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다.</span></p><div class="hero-btns"><a href="#demo" class="btn btn-mint">데모 체험하기 →</a><a href="#product" class="btn btn-outline">솔루션 알아보기</a></div></div></section>
+<section class="hero tone-1"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div><h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1><p class="sub">QR 기반 복약 알림부터 약사 검증 응답까지.<br>약사와 AI가 함께 만드는 메디신 테크놀로지 플랫폼입니다.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 복약지도는 약사가 담당합니다.</span></p><div class="hero-btns"><a href="#demo" class="btn btn-mint">데모 체험하기 →</a><a href="#product" class="btn btn-outline">솔루션 알아보기</a></div></div></section>
 
-<div class="stat-strip"><div class="stat-strip-inner"><div class="rv"><div class="ss-num" data-t="50">0</div><div class="ss-label">만성질환자 복약 비순응률<br><span style="font-size:.6rem;color:var(--dim)">출처: WHO (2003)</span></div></div><div class="rv"><div class="ss-num" data-t="125000">0</div><div class="ss-label">연간 비순응 관련 사망자<br><span style="font-size:.6rem;color:var(--dim)">미국 / 출처: Annals of Pharmacotherapy</span></div></div><div class="rv"><div class="ss-num" data-t="69">0</div><div class="ss-label">비순응 관련 입원 비율<br><span style="font-size:.6rem;color:var(--dim)">출처: NEHI 보고서</span></div></div><div class="rv"><div class="ss-num" data-t="9">0</div><div class="ss-label">연간 비순응 사회적 비용 (조 원)<br><span style="font-size:.6rem;color:var(--dim)">한국 추정치 / 학계 인용</span></div></div></div></div>
+<div class="stat-strip"><div class="stat-strip-inner"><div class="rv"><div class="ss-num" data-t="50">0</div><div class="ss-label">만성질환자 복약 비순응률<br><span style="font-size:.6rem;color:var(--dim)">출처: WHO (2003)</span></div></div><div class="rv"><div class="ss-num" data-t="125000">0</div><div class="ss-label">연간 비순응 관련 사망자<br><span style="font-size:.6rem;color:var(--dim)">미국 추정치 / 광범위 인용 (PMC6045499 등)</span></div></div><div class="rv"><div class="ss-num" data-t="69">0</div><div class="ss-label">비순응 관련 입원 비율<br><span style="font-size:.6rem;color:var(--dim)">출처: NEHI 보고서</span></div></div><div class="rv"><div class="ss-num" data-t="9">0</div><div class="ss-label">비순응 사회적 비용 추정 (조 원)<br><span style="font-size:.6rem;color:var(--dim)">한국 공식 추정치 미확정 / 학계 추정 인용</span></div></div></div></div>
 
-<section class="sec" id="product" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">PRODUCT</div><h2 class="sec-title">MedIT은 이렇게 작동합니다</h2><p class="sec-desc">약국 → 환자 → 복약 관리의 전 과정을 디지털로 연결합니다.</p></div><div class="grid3"><div class="card rv" style="text-align:center;align-items:center"><div class="card-tag" style="justify-content:center">STEP 01</div><div class="card-icon" style="margin-left:auto;margin-right:auto"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7z"/></svg></div><h3>QR 코드 등록 <span style="font-size:.55rem;color:var(--mint);font-weight:500;letter-spacing:.05em">DEMO</span></h3><p>약국에서 조제 시 QR 코드를 생성하여 환자에게 제공하는 시스템을 개발 중입니다. 환자가 스캔하면 복약 일정이 등록되도록 설계되었습니다.</p></div><div class="card rv" style="text-align:center;align-items:center"><div class="card-tag" style="justify-content:center">STEP 02</div><div class="card-icon" style="margin-left:auto;margin-right:auto"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div><h3>맞춤형 알림 발송 <span style="font-size:.55rem;color:var(--ice);font-weight:500;letter-spacing:.05em">BETA</span></h3><p>카카오톡 알림톡, SMS, 음성 안내 — 환자의 디지털 접근성에 맞는 채널로 복약 시간을 안내하는 기능을 개발하고 있습니다.</p></div><div class="card rv" style="text-align:center;align-items:center"><div class="card-tag" style="justify-content:center">STEP 03</div><div class="card-icon" style="margin-left:auto;margin-right:auto"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>복약 자가 기록 <span style="font-size:.55rem;color:var(--lav);font-weight:500;letter-spacing:.05em">기획 단계</span></h3><p>환자가 본인의 복약 여부를 직접 기록할 수 있는 기능을 기획하고 있습니다. 약사 협업 환경은 향후 단계로 검토 중입니다.</p></div></div></section>
+<!-- ============================================ -->
+<!-- US LEGAL PANEL · English mode only · Hidden in Korean -->
+<!-- ============================================ -->
+<section id="us-legal-panel" class="us-en-only" style="display:none;padding:3rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,rgba(255,138,128,.03) 50%,var(--bg) 100%);border-top:1px solid rgba(255,138,128,.15);border-bottom:1px solid rgba(255,138,128,.15)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:2rem">
+      <div style="display:inline-block;background:rgba(255,138,128,.15);color:var(--coral);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.3rem .8rem;border-radius:4px;letter-spacing:.08em;margin-bottom:.8rem">IMPORTANT US LEGAL NOTICES</div>
+      <h2 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--text);margin:0">For visitors from the United States and other jurisdictions</h2>
+    </div>
 
-<section class="sec" id="channels" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">MULTI-CHANNEL</div><h2 class="sec-title">모든 세대를 위한 3채널 알림</h2><p class="sec-desc">스마트폰이 없어도, 문자를 못 봐도, 놓치지 않습니다.</p></div><div class="grid3"><div class="ch-card rv"><div class="ch-head"><span>01 · KAKAO</span><span class="ch-badge g">PRIMARY</span></div><div class="ch-vis"><div class="kakao-m"><div class="kakao-sender"><div class="kakao-av">M</div>MedIT 복약 알림</div><div class="kakao-bub"><strong>아침 약 복용 시간입니다.</strong><br>혈압약 1정 · 위장약 1정<br>식사 직후 물 한 컵과 함께 드세요.<br><span style="color:#999;font-size:.55rem">오전 08:00 · 복용 완료</span></div></div></div><div class="ch-body"><h3>카카오톡</h3><p>익숙한 메신저로 복약 알림을 받아보세요. 알림톡 표준 양식으로 신뢰할 수 있는 메시지를 전달합니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>02 · SMS</span><span class="ch-badge y">FALLBACK</span></div><div class="ch-vis"><div class="sms-stack"><div class="sms-msg"><div class="sms-time">MedIT · 08:00</div><strong>아침약 복용 시간입니다.</strong><br>혈압약 1정 · 식후 30분</div><div class="sms-msg"><div class="sms-time">MedIT · 14:00</div><strong>점심약 복용 시간입니다.</strong></div><div class="sms-msg"><div class="sms-time">MedIT · 20:00</div><strong>저녁약 복용 시간입니다.</strong></div></div></div><div class="ch-body"><h3>SMS 문자</h3><p>앱 설치 없이 문자로 복용 시간을 안내합니다. 2G 피처폰에서도 동작하도록 설계되어 기기 격차를 줄입니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>03 · VOICE</span><span class="ch-badge m">ASSISTED</span></div><div class="ch-vis"><div class="v-wrap"><div class="v-orb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/><circle cx="9" cy="12" r="3" fill="white" stroke="none"/><path d="M9 15v4"/></svg></div><div class="v-bars"><span style="--h:7px"></span><span style="--h:12px;animation-delay:.1s"></span><span style="--h:16px;animation-delay:.15s"></span><span style="--h:14px;animation-delay:.2s"></span><span style="--h:16px;animation-delay:.25s"></span><span style="--h:12px;animation-delay:.3s"></span><span style="--h:7px;animation-delay:.35s"></span></div></div></div><div class="ch-body"><h3>음성 안내 <span style="font-size:.55rem;color:var(--mint);font-weight:500">기획</span></h3><p>음성 합성 기술을 활용해 복약 시간을 전화로 안내하는 기능을 검토하고 있습니다. 문자 사용이 어려운 사용자를 위한 보조 채널입니다.</p></div></div></div></section>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+      <!-- Medical Disclaimer -->
+      <div style="background:var(--card);border:1px solid rgba(255,138,128,.25);border-left:3px solid var(--coral);border-radius:8px;padding:1.2rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--coral);font-weight:700;letter-spacing:.05em;margin-bottom:.5rem">MEDICAL DISCLAIMER</div>
+        <p style="font-size:.74rem;color:var(--muted);line-height:1.6;margin:0">The content provided by MedIT, including any AI-generated or pharmacist-reviewed responses, is for general informational and educational purposes only. <strong style="color:var(--text)">It is not medical advice</strong> and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult your doctor or pharmacist. <strong style="color:var(--coral)">If you have a medical emergency, call 911 immediately.</strong></p>
+      </div>
+
+      <!-- Regulatory Disclaimer -->
+      <div style="background:var(--card);border:1px solid rgba(255,138,128,.25);border-left:3px solid var(--coral);border-radius:8px;padding:1.2rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--coral);font-weight:700;letter-spacing:.05em;margin-bottom:.5rem">REGULATORY DISCLAIMER</div>
+        <p style="font-size:.74rem;color:var(--muted);line-height:1.6;margin:0">MedIT is <strong style="color:var(--text)">not a medical device</strong>. It has not been evaluated or approved by the U.S. Food and Drug Administration (FDA). MedIT does not diagnose, treat, cure, or prevent any disease. Information is provided to support — not replace — the independent professional judgment of licensed healthcare providers.</p>
+      </div>
+
+      <!-- Adverse Event Reporting -->
+      <div style="background:var(--card);border:1px solid var(--mint-border);border-left:3px solid var(--mint);border-radius:8px;padding:1.2rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--mint);font-weight:700;letter-spacing:.05em;margin-bottom:.5rem">ADVERSE EVENT REPORTING</div>
+        <p style="font-size:.74rem;color:var(--muted);line-height:1.6;margin:0">To report a suspected medication side effect:<br>
+        <strong style="color:var(--text)">United States</strong> — FDA MedWatch: <span style="font-family:var(--font-mono);color:var(--mint)">1-800-FDA-1088</span> or fda.gov/medwatch<br>
+        <strong style="color:var(--text)">United Kingdom</strong> — MHRA Yellow Card: yellowcard.mhra.gov.uk<br>
+        <strong style="color:var(--text)">EU</strong> — Report to your national authority via EMA<br>
+        <strong style="color:var(--text)">Korea</strong> — KAERS: 1644-6223</p>
+      </div>
+
+      <!-- HIPAA Notice -->
+      <div style="background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--ice);border-radius:8px;padding:1.2rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--ice);font-weight:700;letter-spacing:.05em;margin-bottom:.5rem">HIPAA &amp; DATA PRIVACY</div>
+        <p style="font-size:.74rem;color:var(--muted);line-height:1.6;margin:0">MedIT does not currently operate as a HIPAA-covered entity or business associate. Do <strong style="color:var(--text)">not</strong> submit Protected Health Information (PHI) including Social Security Numbers, US insurance details, or US clinical records. We comply with Korea's Personal Information Protection Act (PIPA), EU GDPR Art. 9 where applicable, and offer HIPAA-compliant channels only through formal Business Associate Agreements with verified US partners.</p>
+      </div>
+
+      <!-- Operator Notice -->
+      <div style="background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--lav);border-radius:8px;padding:1.2rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lav);font-weight:700;letter-spacing:.05em;margin-bottom:.5rem">OPERATOR NOTICE</div>
+        <p style="font-size:.74rem;color:var(--muted);line-height:1.6;margin:0">MedIT is operated from the <strong style="color:var(--text)">Republic of Korea</strong> by Hyunjung Shin (sole proprietor, Sookmyung Women's University Startup Incubator). Pharmacist consultations are provided by Korea-licensed pharmacists. <strong style="color:var(--text)">No pharmacist-patient relationship is formed with US residents</strong>; this platform does not engage in the unauthorized practice of pharmacy in any US state.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;text-align:center;font-size:.68rem;color:var(--dim);line-height:1.7">
+      <p>By using MedIT in the United States, EU, UK, or other jurisdictions, you acknowledge that the service may differ from Korean offerings, and that local healthcare laws and regulations may apply. <strong style="color:var(--muted)">This product has not been evaluated or approved by the U.S. Food and Drug Administration.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec tone-2" id="product" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">PRODUCT</div><h2 class="sec-title">MedIT은 이렇게 작동합니다</h2><p class="sec-desc">약국 → 환자 → 복약 관리의 전 과정을 디지털로 연결합니다.</p></div><div class="grid3"><div class="card rv" style="text-align:center;align-items:center"><div class="card-tag" style="justify-content:center">STEP 01</div><div class="card-icon" style="margin-left:auto;margin-right:auto"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7z"/></svg></div><h3>QR 코드 등록 <span style="font-size:.55rem;color:var(--mint);font-weight:500;letter-spacing:.05em">DEMO</span></h3><p>약국에서 조제 시 QR 코드를 생성하여 환자에게 제공하는 시스템을 개발 중입니다. 환자가 스캔하면 복약 일정이 등록되도록 설계되었습니다.</p></div><div class="card rv" style="text-align:center;align-items:center"><div class="card-tag" style="justify-content:center">STEP 02</div><div class="card-icon" style="margin-left:auto;margin-right:auto"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div><h3>맞춤형 알림 발송 <span style="font-size:.55rem;color:var(--ice);font-weight:500;letter-spacing:.05em">DEMO</span></h3><p>카카오톡 알림톡, SMS, 음성 안내 — 환자의 디지털 접근성에 맞는 채널로 복약 시간을 안내하는 기능을 개발하고 있습니다.</p></div><div class="card rv" style="text-align:center;align-items:center"><div class="card-tag" style="justify-content:center">STEP 03</div><div class="card-icon" style="margin-left:auto;margin-right:auto"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>복약 자가 기록 <span style="font-size:.55rem;color:var(--lav);font-weight:500;letter-spacing:.05em">기획 단계</span></h3><p>환자가 본인의 복약 여부를 직접 기록할 수 있는 기능을 기획하고 있습니다. 약사 협업 환경은 향후 단계로 검토 중입니다.</p></div></div></section>
+
+<section class="sec tone-2" id="channels" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">MULTI-CHANNEL</div><h2 class="sec-title">모든 세대를 위한 3채널 알림</h2><p class="sec-desc">스마트폰이 없어도, 문자를 못 봐도, 놓치지 않습니다.</p></div><div class="grid3"><div class="ch-card rv"><div class="ch-head"><span>01 · KAKAO</span><span class="ch-badge g">PRIMARY</span></div><div class="ch-vis"><div class="kakao-m"><div class="kakao-sender"><div class="kakao-av">M</div>MedIT 복약 알림</div><div class="kakao-bub"><strong>아침 약 복용 시간입니다.</strong><br>혈압약 1정 · 위장약 1정<br>식사 직후 물 한 컵과 함께 드세요.<br><span style="color:#999;font-size:.55rem">오전 08:00 · 복용 완료</span></div></div></div><div class="ch-body"><h3>카카오톡</h3><p>익숙한 메신저로 복약 알림을 받아보세요. 알림톡 표준 양식으로 신뢰할 수 있는 메시지를 전달합니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>02 · SMS</span><span class="ch-badge y">FALLBACK</span></div><div class="ch-vis"><div class="sms-stack"><div class="sms-msg"><div class="sms-time">MedIT · 08:00</div><strong>아침약 복용 시간입니다.</strong><br>혈압약 1정 · 식후 30분</div><div class="sms-msg"><div class="sms-time">MedIT · 14:00</div><strong>점심약 복용 시간입니다.</strong></div><div class="sms-msg"><div class="sms-time">MedIT · 20:00</div><strong>저녁약 복용 시간입니다.</strong></div></div></div><div class="ch-body"><h3>SMS 문자</h3><p>앱 설치 없이 문자로 복용 시간을 안내합니다. 2G 피처폰에서도 동작하도록 설계되어 기기 격차를 줄입니다.</p></div></div><div class="ch-card rv"><div class="ch-head"><span>03 · VOICE</span><span class="ch-badge m">ASSISTED</span></div><div class="ch-vis"><div class="v-wrap"><div class="v-orb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15.54 8.46a5 5 0 010 7.07"/><path d="M19.07 4.93a10 10 0 010 14.14"/><circle cx="9" cy="12" r="3" fill="white" stroke="none"/><path d="M9 15v4"/></svg></div><div class="v-bars"><span style="--h:7px"></span><span style="--h:12px;animation-delay:.1s"></span><span style="--h:16px;animation-delay:.15s"></span><span style="--h:14px;animation-delay:.2s"></span><span style="--h:16px;animation-delay:.25s"></span><span style="--h:12px;animation-delay:.3s"></span><span style="--h:7px;animation-delay:.35s"></span></div></div></div><div class="ch-body"><h3>음성 안내 <span style="font-size:.55rem;color:var(--mint);font-weight:500">기획</span></h3><p>음성 합성 기술을 활용해 복약 시간을 전화로 안내하는 기능을 검토하고 있습니다. 문자 사용이 어려운 사용자를 위한 보조 채널입니다.</p></div></div></div></section>
+
+<!-- ═══ MESSAGE FLOW · A+D HYBRID (LEGAL) ═══ -->
+<section class="sec tone-3" id="message-flow">
+  <div class="sec-center rv">
+    <div class="sec-tag">MESSAGE FLOW</div>
+    <h2 class="sec-title">단골 약국 약사 + AI 보조</h2>
+    <p class="sec-desc">약사법 제24조 제4항이 정한 "조제한 약사의 복약지도" 원칙을 지키면서, AI가 약사 업무를 보조합니다.</p>
+  </div>
+  
+  <!-- ─── 합법 모델 카드 (3개 카드 그리드, 다른 섹션과 동일한 패턴) ─── -->
+  <div class="grid3" style="margin-bottom:3rem;">
+    
+    <div class="card rv">
+      <div class="card-tag">MODEL · LEGAL ★★★★★</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 2l2 4 4 .5-3 3 .8 4.3L12 11.8 8.2 13.8 9 9.5l-3-3 4-.5z"/>
+        </svg>
+      </div>
+      <h3>단골 약국 약사</h3>
+      <p>환자가 단골 약국을 등록하면, 그 약국의 <strong style="color:var(--mint);">조제 약사가 직접</strong> 답변합니다. 모든 답변에 약사명·면허번호·약국명이 자동 표기됩니다.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
+        근거: 약사법 §24④, 시행규칙 §10·§11<br>
+        헌재 2019헌바87 합헌
+      </div>
+    </div>
+    
+    <div class="card rv">
+      <div class="card-tag" style="color:var(--ice);">MODEL · LEGAL ★★★★</div>
+      <div class="card-icon" style="color:var(--ice);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        </svg>
+      </div>
+      <h3>AI 보조 검토</h3>
+      <p>AI는 답변 <strong style="color:var(--ice);">초안만 생성</strong>합니다. 환자에게 발송되기 전 반드시 약사가 검토·승인·수정합니다. AI 단독 응답은 절대 발송되지 않습니다.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
+        근거: 디지털의료제품법 §2 (2025.1.24)<br>
+        식약처 디지털의료기기 가이드라인
+      </div>
+    </div>
+    
+    <div class="card rv">
+      <div class="card-tag" style="color:var(--coral);">RED LINE · 금지</div>
+      <div class="card-icon" style="color:var(--coral);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M5.5 5.5l13 13"/>
+        </svg>
+      </div>
+      <h3>하지 않는 것</h3>
+      <p>랜덤 약사 풀(네이버 지식인 방식)은 약사법 §24·§50 위반 소지가 있어 <strong style="color:var(--coral);">채택하지 않습니다</strong>. 익명 약사 답변, AI 단독 발송, 약사 사칭 모두 금지선입니다.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
+        약사법 §24·§50, 의료법 §27<br>
+        대법원 2001다27449·2002다3822
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- ─── 메시지 플로우 시연 (다크 톤) ─── -->
+  <div style="max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;">
+    
+    <!-- 채팅 헤더 -->
+    <div style="display:flex;align-items:center;gap:0.85rem;padding:1.25rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--card-border);">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--mint-soft);border:1px solid var(--mint-border);display:flex;align-items:center;justify-content:center;color:var(--mint);">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9c-1.4 0-2.8-.3-4-.9L3 21l.9-5c-.6-1.2-.9-2.6-.9-4z"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:600;font-size:0.9rem;color:var(--text);">밝은약국 · 박약사</div>
+        <div style="font-size:0.7rem;color:var(--muted);">면허번호 12345 · 단골 약국 · 영업 09:00-19:00</div>
+      </div>
+      <div style="font-size:0.7rem;color:var(--dim);">2026.05.25</div>
+    </div>
+    
+    <!-- 메시지 영역 -->
+    <div id="chatThread" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.85rem;max-height:520px;overflow-y:auto;">
+      
+      <div class="chat-stamp">오전 08:00 · 카카오톡 알림톡</div>
+      
+      <!-- 약사가 사전 등록한 복약 알림 (AI가 발송 시간 자동화) -->
+      <div class="chat-msg chat-from">
+        <div class="chat-meta"><span class="chat-badge">박약사</span> · 복약 알림</div>
+        <div class="chat-bubble bubble-from">
+          <div style="font-weight:600;margin-bottom:6px;color:var(--text);">아침 약 시간이에요</div>
+          <div style="color:var(--muted);font-size:0.85rem;line-height:1.55;">혈압약 1정 · 위장약 1정<br>식사 직후, 물 한 컵과 함께</div>
+          <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;">
+            <button class="chat-action" onclick="markTaken(this)">복약 완료</button>
+            <button class="chat-action-alt" onclick="reportSideEffect()">부작용 알림</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 환자 응답 -->
+      <div class="chat-msg chat-to taken-indicator" style="display:none;">
+        <div class="chat-bubble bubble-to">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-weight:500;">복약 완료</span>
+          </div>
+          <div style="font-size:0.7rem;opacity:0.75;margin-top:4px;">08:14 자동 기록</div>
+        </div>
+      </div>
+      
+      <!-- 약사 격려 (AI 초안 + 약사 검토) -->
+      <div class="chat-msg chat-from congrats-indicator" style="display:none;">
+        <div class="chat-meta"><span class="chat-badge">박약사</span> <span class="chat-sub">· AI 초안 → 약사 검토 완료</span></div>
+        <div class="chat-bubble bubble-from">
+          <div style="color:var(--text);font-size:0.85rem;line-height:1.55;">기록 완료했어요. 5일째 연속 복약 중이에요. 점심 알림은 오후 1시에 보내드릴게요.</div>
+        </div>
+      </div>
+      
+      <div class="chat-stamp">오후 02:30 · 환자 입력</div>
+      
+      <!-- 환자 부작용 보고 -->
+      <div class="chat-msg chat-to">
+        <div class="chat-bubble bubble-to" style="border-left:3px solid var(--coral);">
+          <div style="font-weight:500;margin-bottom:4px;">부작용 알림</div>
+          <div style="font-size:0.85rem;">약 먹고 어지러워요. 30분 정도 지속됐어요.</div>
+        </div>
+      </div>
+      
+      <!-- 약사 답변 (AI 초안 → 약사 검토 완료) -->
+      <div class="chat-msg chat-from">
+        <div class="chat-meta"><span class="chat-badge">박약사</span> <span class="chat-sub">· AI 초안 → 약사 검토 완료 (8분)</span></div>
+        <div class="chat-bubble bubble-from">
+          <div style="color:var(--text);font-size:0.85rem;line-height:1.6;">
+            증상을 자가 보고서로 정리했어요. 환자분이 직접 어디로 보낼지 선택할 수 있습니다.
+          </div>
+          
+          <div style="margin-top:12px;padding:12px;background:var(--bg3);border-radius:10px;border:1px solid var(--card-border);font-size:0.78rem;line-height:1.6;color:var(--muted);">
+            <div style="font-weight:600;color:var(--text);margin-bottom:6px;">자가 보고서</div>
+            <div>· 의심 약품: 혈압약</div>
+            <div>· 증상: 어지러움 30분 지속</div>
+            <div>· 발생: 복약 후 약 1시간</div>
+            <div>· 중대성: 일반 (입원·사망 아님)</div>
+          </div>
+          
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;">
+            <button class="report-action" onclick="sendReport('kaers')">
+              <span style="font-weight:600;color:var(--text);">한국의약품안전관리원(KAERS) 자가 보고</span>
+              <span style="font-size:0.68rem;color:var(--muted);">환자 본인 명의 · 약사법 §68의8</span>
+            </button>
+            <button class="report-action" onclick="sendReport('doctor')">
+              <span style="font-weight:600;color:var(--text);">처방 의사에게 공유</span>
+              <span style="font-size:0.68rem;color:var(--muted);">별도 동의 1회 · 개인정보보호법 §17</span>
+            </button>
+            <button class="report-action" onclick="sendReport('pharmacist')">
+              <span style="font-weight:600;color:var(--text);">단골 약사에게 후속 상담 요청</span>
+              <span style="font-size:0.68rem;color:var(--muted);">박약사 직접 답변 · 1일 이내</span>
+            </button>
+          </div>
+          
+          <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--card-border);font-size:0.68rem;color:var(--dim);line-height:1.55;">
+            ⚠ 응급 증상은 119 · 의약품 안전 1644-6223 (한국의약품안전관리원)<br>
+            본 답변은 비대면 복약지도이며 대면 진료를 대체하지 않습니다.
+          </div>
+          
+          <div style="margin-top:8px;font-size:0.65rem;color:var(--dim);font-family:var(--font-mono);">
+            밝은약국 · 박○○ 약사 · 면허번호 12345 · 약국등록번호 67890
+          </div>
+        </div>
+      </div>
+      
+      <div class="chat-stamp">오후 09:30 · 영업시간 외 자동 메시지</div>
+      
+      <!-- 영업시간 외 자동 응답 -->
+      <div class="chat-msg chat-from">
+        <div class="chat-meta"><span class="chat-badge" style="background:var(--lav-s);color:var(--lav);">AI 자동</span> · 영업시간 외</div>
+        <div class="chat-bubble bubble-from" style="border-left:3px solid var(--lav);">
+          <div style="color:var(--text);font-size:0.85rem;line-height:1.6;">
+            현재 밝은약국 영업시간이 아니에요 (09:00-19:00). 박약사 검토 후 내일 오전 답변드릴게요.
+            <br><br>
+            <strong style="color:var(--coral);">응급 증상</strong>은 119, <strong style="color:var(--mint);">의약품 안전</strong>은 1644-6223, <strong style="color:var(--ice);">일반 보건 상담</strong>은 1339로 즉시 연락주세요.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- 입력 영역 -->
+    <div style="display:flex;gap:0.5rem;padding:1rem 1.25rem;background:var(--bg2);border-top:1px solid var(--card-border);">
+      <input type="text" id="chatInput" placeholder="질문 또는 증상을 입력하세요…" onkeypress="if(event.key==='Enter') sendMsg()" style="flex:1;background:var(--bg3);border:1px solid var(--card-border);border-radius:20px;padding:0.65rem 1rem;font-size:0.85rem;color:var(--text);outline:none;font-family:inherit;">
+      <button onclick="sendMsg()" style="background:var(--mint);color:var(--bg);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l14-7-5 14-3-5-6-2z" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- ─── 통계 (다른 섹션의 카드 패턴 활용) ─── -->
+  <div class="grid3" style="margin-top:3rem;">
+    
+    <div class="card rv" style="text-align:center;align-items:center;">
+      <div class="card-tag" style="justify-content:center;">RESPONSE TIME</div>
+      <div style="font-size:2rem;font-weight:600;color:var(--mint);line-height:1;margin:0.5rem 0;">8분</div>
+      <h3 style="font-size:0.95rem;">평균 약사 응답</h3>
+      <p style="font-size:0.78rem;">AI 초안이 약사 검토를 거쳐 환자에게 도달하는 시간 (영업시간 내)</p>
+    </div>
+    
+    <div class="card rv" style="text-align:center;align-items:center;">
+      <div class="card-tag" style="justify-content:center;color:var(--ice);">PHARMACIST WORKLOAD</div>
+      <div style="font-size:2rem;font-weight:600;color:var(--ice);line-height:1;margin:0.5rem 0;">5-10건</div>
+      <h3 style="font-size:0.95rem;">약사 1일 직접 응답</h3>
+      <p style="font-size:0.78rem;">대부분은 AI 초안 1-클릭 승인. 의학적 판단이 필요한 건만 약사가 직접 작성</p>
+    </div>
+    
+    <div class="card rv" style="text-align:center;align-items:center;">
+      <div class="card-tag" style="justify-content:center;color:var(--lav);">SAFETY</div>
+      <div style="font-size:2rem;font-weight:600;color:var(--lav);line-height:1;margin:0.5rem 0;">100%</div>
+      <h3 style="font-size:0.95rem;">약사 검토 후 발송</h3>
+      <p style="font-size:0.78rem;">AI 단독 발송 0건. 모든 답변은 약사가 검토·승인한 메시지만 환자에게 도달</p>
+    </div>
+    
+  </div>
+  
+</section>
+
+<!-- ═══ VERIFIED RESPONSE DATABASE · 제약사 MI 약사 검증 (법적 검토 반영) ═══ -->
+<section class="sec tone-3" id="verified-db">
+  <div class="sec-center rv">
+    <div class="sec-tag">VERIFIED RESPONSE DATABASE</div>
+    <h2 class="sec-title">검증된 응답이 쌓일수록 더 똑똑해집니다</h2>
+    <p class="sec-desc">제약사 의학정보실 약사가 작성·검증한 표준 응답을 데이터베이스로 축적합니다. AI는 새로운 의학적 판단을 하지 않고, 검증된 답변만 전달합니다.</p>
+  </div>
+
+  <!-- 4단계 데이터 흐름 -->
+  <div class="grid4" style="margin-bottom:3rem;">
+
+    <div class="card rv">
+      <div class="step-num">01</div>
+      <h3>제약사 약사 작성</h3>
+      <p>의학정보실(MI) 약사가 자사 의약품의 허가사항 범위 내에서 자주 묻는 질문의 표준 응답을 작성합니다.</p>
+    </div>
+
+    <div class="card rv">
+      <div class="step-num">02</div>
+      <h3>이중 검증</h3>
+      <p>안전관리책임자가 안전성 정보를 별도 검증하고, 광고 부적합 표현을 자동 필터링한 뒤 데이터베이스에 등재합니다.</p>
+    </div>
+
+    <div class="card rv">
+      <div class="step-num">03</div>
+      <h3>AI 패턴 매칭</h3>
+      <p>환자가 질문하면 AI가 가장 유사한 검증 응답을 찾아 제시합니다. 학습·재가공 없이 원문을 그대로 전달합니다.</p>
+    </div>
+
+    <div class="card rv">
+      <div class="step-num">04</div>
+      <h3>단골 약사 검토 발송</h3>
+      <p>단골 약국 약사가 환자 상황을 반영해 검토·승인 후 발송합니다. 출처와 검증 주체를 모두 표시합니다.</p>
+    </div>
+
+  </div>
+
+  <!-- 응답 표시 표준 양식 미리보기 -->
+  <div style="max-width:640px;margin:0 auto 3rem;background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;">
+    <div style="padding:1rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--card-border);font-size:0.78rem;color:var(--muted);">
+      응답 표시 표준 양식
+    </div>
+    <div style="padding:1.5rem;">
+      <div style="font-size:0.9rem;color:var(--text);line-height:1.6;margin-bottom:1rem;">
+        혈압약을 식후에 드시면 위장 부담을 줄일 수 있어요. 일반적인 부작용은 어지러움, 두통이며, 복용 초기에 나타났다가 적응되는 경우가 많습니다.
+      </div>
+      <div style="padding:1rem;background:var(--bg3);border-radius:10px;font-size:0.72rem;color:var(--muted);line-height:1.8;border-left:3px solid var(--mint);">
+        · 작성: ○○제약 의학정보실 약사<br>
+        · 검증: 안전관리책임자 (2026-05-26)<br>
+        · 출처: 식약처 허가사항 · KIDS DUR<br>
+        · 검토: 밝은약국 박약사 (2026-05-26)
+      </div>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:0.68rem;color:var(--dim);line-height:1.6;">
+        ⚠ 본 정보는 처방받은 의약품에 대한 일반 안내이며, 개별 복약지도는 처방약사에게 받으시기 바랍니다. 응급 시 119 · 의약품안전 1644-6223
+      </div>
+    </div>
+  </div>
+
+  <!-- 합법성 근거 3카드 -->
+  <div class="grid3">
+
+    <div class="card rv">
+      <div class="card-tag">PULL 구조</div>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+      </div>
+      <h3>환자가 먼저 질문</h3>
+      <p>환자가 능동적으로 질문할 때만 응답합니다. 일방적으로 밀어내는 푸시 광고가 아니므로 <strong style="color:var(--mint);">정보 제공</strong>에 해당합니다.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
+        근거: 식약처 의약품광고·정보제공 가이드라인 III-3 (2022.11.30)
+      </div>
+    </div>
+
+    <div class="card rv">
+      <div class="card-tag" style="color:var(--ice);">처방환자 한정</div>
+      <div class="card-icon" style="color:var(--ice);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+        </svg>
+      </div>
+      <h3>처방받은 환자만 접근</h3>
+      <p>QR·처방전 인증으로 실제 처방받은 환자·보호자만 응답을 받습니다. 불특정 다수 대상 <strong style="color:var(--ice);">광고가 아닙니다</strong>.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
+        근거: 가이드라인 III-4(2) 환자용 사용설명서 개별 제공
+      </div>
+    </div>
+
+    <div class="card rv">
+      <div class="card-tag" style="color:var(--lav);">출처 투명성</div>
+      <div class="card-icon" style="color:var(--lav);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/>
+        </svg>
+      </div>
+      <h3>작성·검증 주체 표시</h3>
+      <p>제약사명, 작성 약사, 검증일, 단골 약사 검토를 모두 표시합니다. 출처를 숨기지 않아 <strong style="color:var(--lav);">신뢰</strong>를 확보합니다.</p>
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
+        근거: 가이드라인 III-4(1)·(3) 의·약사 매개 제공
+      </div>
+    </div>
+
+  </div>
+
+  <p style="max-width:680px;margin:2.5rem auto 0;text-align:center;font-size:0.78rem;color:var(--muted);line-height:1.7;">
+    이 모델은 식약처 「의약품광고 및 전문의약품 정보제공 가이드라인」(2022.11.30) 요건을 충족하도록 설계되었습니다. 서비스 개시 전 식약처 디지털의료기기 해당여부 사전검토와 한국제약바이오협회 광고심의 자문을 거칩니다.
+  </p>
+
+</section>
+
+
+<style>
+.chat-stamp {
+  text-align: center;
+  font-size: 0.68rem;
+  color: var(--dim);
+  padding: 0.4rem 0;
+}
+.chat-msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 88%;
+  animation: chat-in 0.3s ease-out;
+}
+@keyframes chat-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-from { align-self: flex-start; }
+.chat-to { align-self: flex-end; }
+.chat-meta {
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chat-badge {
+  background: var(--mint-soft);
+  border: 1px solid var(--mint-border);
+  color: var(--mint);
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+.chat-sub { color: var(--dim); }
+.chat-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.bubble-from {
+  background: var(--bg3);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  border-bottom-left-radius: 4px;
+}
+.bubble-to {
+  background: var(--mint-soft);
+  color: var(--text);
+  border: 1px solid var(--mint-border);
+  border-bottom-right-radius: 4px;
+}
+.chat-action {
+  background: var(--mint);
+  color: var(--bg);
+  border: none;
+  border-radius: 14px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: inherit;
+}
+.chat-action:hover { opacity: 0.85; }
+.chat-action-alt {
+  background: transparent;
+  color: var(--coral);
+  border: 1px solid var(--coral);
+  border-radius: 14px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.chat-action-alt:hover { background: rgba(255,138,128,0.08); }
+.report-action {
+  background: var(--bg3);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+}
+.report-action:hover {
+  border-color: var(--mint-border);
+  background: var(--mint-soft);
+}
+#chatThread::-webkit-scrollbar { width: 4px; }
+#chatThread::-webkit-scrollbar-track { background: transparent; }
+#chatThread::-webkit-scrollbar-thumb { background: var(--mint-border); border-radius: 2px; }
+@keyframes kaersPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.08); } }
+@keyframes kaersSlideDown { from { opacity: 0; transform: translateY(-12px); max-height: 0; } to { opacity: 1; transform: translateY(0); max-height: 200px; } }
+</style>
+
+<script>
+function markTaken(btn){
+  btn.parentElement.style.display = 'none';
+  var takenBubble = document.querySelector('.taken-indicator');
+  var congratsBubble = document.querySelector('.congrats-indicator');
+  if(takenBubble) takenBubble.style.display = '';
+  setTimeout(function(){
+    if(congratsBubble) congratsBubble.style.display = '';
+    var logoSvg = document.querySelector('.logo .logo-svg');
+    if(logoSvg){
+      var pulse = logoSvg.querySelector('.pulse-icon');
+      var check = logoSvg.querySelector('.check-icon');
+      if(pulse) pulse.style.display = 'none';
+      if(check) check.style.display = '';
+      logoSvg.style.transform = 'scale(1.15)';
+      setTimeout(function(){ logoSvg.style.transform = ''; }, 250);
+    }
+    var thread = document.getElementById('chatThread');
+    if(thread) thread.scrollTop = thread.scrollHeight;
+  }, 500);
+}
+function reportSideEffect(){
+  alert('실제 운영 시: 부작용 자가 보고 양식이 열립니다.\n환자가 직접 입력 → 약사가 검토 → KAERS 자가 보고 지원');
+}
+function sendReport(type){
+  var thread = document.getElementById('chatThread');
+  var time = new Date().toTimeString().slice(0,5);
+  var labels = {
+    'kaers': 'KAERS 자가 보고 완료',
+    'doctor': '처방 의사에게 공유 완료',
+    'pharmacist': '박약사에게 후속 상담 요청'
+  };
+  var sentMsg = document.createElement('div');
+  sentMsg.className = 'chat-msg chat-to';
+  sentMsg.innerHTML = '<div class="chat-bubble bubble-to"><div style="font-size:0.85rem;">' + 
+                      labels[type] + '</div><div style="font-size:0.68rem;opacity:0.75;margin-top:4px;">' + 
+                      time + ' 기록됨</div></div>';
+  thread.appendChild(sentMsg);
+  setTimeout(function(){
+    var reply = document.createElement('div');
+    reply.className = 'chat-msg chat-from';
+    var texts = {
+      'kaers': '환자분 명의로 한국의약품안전관리원에 자발적 보고 접수되었습니다. 약사법 §68의8 자발적 보고 체계.',
+      'doctor': '의사 전달은 1회용 별도 동의가 필요합니다. 동의서 화면이 열립니다.',
+      'pharmacist': '박약사가 검토 후 영업시간 내 답변드릴 예정입니다. 심각하시면 즉시 119.'
+    };
+    reply.innerHTML = '<div class="chat-meta"><span class="chat-badge">박약사</span> · 안내</div>' +
+                      '<div class="chat-bubble bubble-from"><div style="font-size:0.85rem;color:var(--text);">' + texts[type] + '</div></div>';
+    thread.appendChild(reply);
+    thread.scrollTop = thread.scrollHeight;
+  }, 700);
+  thread.scrollTop = thread.scrollHeight;
+}
+function sendMsg(){
+  var input = document.getElementById('chatInput');
+  if(!input || !input.value.trim()) return;
+  var text = input.value.trim();
+  var thread = document.getElementById('chatThread');
+  var msg = document.createElement('div');
+  msg.className = 'chat-msg chat-to';
+  msg.innerHTML = '<div class="chat-bubble bubble-to"><div style="font-size:0.85rem;">' + 
+                  text.replace(/[<>]/g, '') + '</div></div>';
+  thread.appendChild(msg);
+  input.value = '';
+  thread.scrollTop = thread.scrollHeight;
+  setTimeout(function(){
+    var reply = document.createElement('div');
+    reply.className = 'chat-msg chat-from';
+    reply.innerHTML = 
+      '<div class="chat-meta"><span class="chat-badge">박약사</span> <span class="chat-sub">· AI 초안 → 약사 검토 중</span></div>' +
+      '<div class="chat-bubble bubble-from"><div style="font-size:0.85rem;color:var(--text);">메시지 받았어요. AI가 답변 초안을 작성하면 박약사가 검토 후 답변드릴게요 (영업시간 내 평균 8분).</div></div>';
+    thread.appendChild(reply);
+    thread.scrollTop = thread.scrollHeight;
+  }, 800);
+}
+</script>
 
 <section class="sec" id="delivery" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">SERVICE FLOW (계획)</div><h2 class="sec-title">약국과 환자를 디지털로 연결합니다</h2><p class="sec-desc">약국 방문 전 사전 안내 흐름을 디자인합니다. (※ 약 배송은 의료법·약사법 개정에 따라 단계적으로 도입 예정)</p></div><div class="grid5"><div class="del-card rv"><div class="del-n">01 · SYMPTOM</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>증상 기록</h3><p>본인 증상을 약국에 문의 메시지로 전달.</p></div><div class="del-card rv"><div class="del-n">02 · PHOTO</div><div class="del-ic" style="background:rgba(125,243,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7df3ff" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3>약봉투 촬영</h3><p>약봉투 이미지 텍스트 추출(개발 중).</p></div><div class="del-card rv"><div class="del-n">03 · VERIFY</div><div class="del-ic" style="background:rgba(180,160,255,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b4a0ff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>본인 인증</h3><p>휴대폰 본인확인으로 자동 검증합니다.</p></div><div class="del-card rv"><div class="del-n">04 · DISPENSE</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div><h3>약국 조제</h3><p>약사가 확인 후 조제합니다.</p></div><div class="del-card rv"><div class="del-n">05 · GUIDE</div><div class="del-ic" style="background:rgba(0,210,180,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2h-4M9 11V5a3 3 0 116 0v6"/></svg></div><h3>약사 복약지도</h3><p>약사가 환자에게 직접 복약지도 제공.</p></div></div></section>
 
@@ -212,23 +859,694 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 </section>
 
 
-<div class="demo-bg" id="demo"><div class="demo-grid"><div class="rv"><div class="sec-tag">PRODUCT DEMO</div><h2 class="sec-title">직접 체험해 보세요</h2><p class="sec-desc" style="margin-top:.8rem">MedIT 약국 협업 인터페이스의 데모를 체험할 수 있습니다. 로그인부터 복약 일정 관리, 복약지도, 이상반응 자가기록까지 — 약사의 디지털 워크플로우를 시연합니다.</p><div class="demo-features"><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>실시간 환자 대시보드</h4><p>복약 일정 진행 상황, 사용자 기록, 처방 안내 현황을 한눈에 확인할 수 있도록 설계 중입니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>약봉투 텍스트 추출</h4><p>약봉투 이미지에서 텍스트를 추출하는 기능을 개발 중입니다. (의료기기 해당 여부 식약처 사전 검토 진행 예정)</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>복약지도 카드 발급</h4><p>환자별 맞춤 복약지도를 디지털 카드로 자동 생성합니다.</p></div></div><div class="demo-feat"><div class="demo-feat-dot"></div><div class="demo-feat-text"><h4>이상반응 자가기록</h4><p>환자가 본인의 이상반응을 직접 기록할 수 있는 인터페이스를 시연합니다. (※ 의학적 판단은 약사·의사와 상담)</p></div></div></div><div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap"><a href="medit-app-dark.html" target="_blank" class="btn btn-mint">약국 앱 데모 열기 →</a><a href="medit-patient.html" target="_blank" class="btn btn-outline">환자 앱 데모</a></div><p style="font-size:.7rem;color:var(--dim);margin-top:.8rem">※ 데모는 합성 데이터로 구성되어 있으며, 실제 환자 정보는 포함되지 않습니다.</p></div><div class="rv"><div class="demo-phone"><div class="demo-preview" style="background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin-bottom:1.2rem;font-family:var(--font-head);font-size:1.3rem;font-weight:800;color:var(--bg)">M</div><div style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:.3rem">MedIT 약국 관리</div><div style="font-size:.7rem;color:var(--muted);margin-bottom:1.5rem">Pharmacy Management System</div><div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1rem;width:100%;text-align:left;margin-bottom:.8rem"><div style="font-size:.6rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:.4rem">TODAY'S OVERVIEW</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem"><div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)">24</div><div style="font-size:.55rem;color:var(--muted)">오늘 처방</div></div><div><div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--ice)">89%</div><div style="font-size:.55rem;color:var(--muted)">복약 준수율</div></div></div></div><div style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:.8rem;width:100%;text-align:left"><div style="font-size:.6rem;color:var(--ice);font-family:var(--font-mono);margin-bottom:.3rem">사용자 기록</div><div style="font-size:.65rem;color:var(--text)">데모 사용자 — 이상반응 자가기록</div><div style="font-size:.55rem;color:var(--muted);margin-top:.2rem">예시 데이터 · 합성 시연</div></div></div></div></div></div></div>
+<div class="demo-bg tone-4" id="demo" style="padding:5rem 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="sec-tag">PRODUCT DEMO</div>
+      <h2 class="sec-title">제품 데모 시연</h2>
+      <p class="sec-desc" style="margin:.8rem auto 0">MedIT의 6가지 핵심 기능 — 약사 검증 응답, 3채널 알림, KAERS 부작용 데이터 연동까지 인터랙티브하게 체험해보세요.</p>
+    </div>
 
-<div class="reg-bg" id="regulation" style="min-height:100vh;display:flex;align-items:center"><section class="sec" style="width:100%"><div class="sec-center rv"><div class="sec-tag">REGULATORY STRATEGY</div><h2 class="sec-title">규제를 경쟁력으로</h2><p class="sec-desc">MedIT은 단순한 제품이 아닌, 제도 혁신 플랫폼입니다.</p></div><div class="grid3">
-    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 011-1h10a1 1 0 011 1v3M9 7h1m4 0h1M9 11h1m4 0h1"/></svg></div><h3>약사법 개정 제안</h3><p>액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송 — 3건의 개정안을 정부입법지원센터에 직접 제출했습니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">3</div><div class="sm">법 개정안 제출</div></div><div class="reg-n"><div class="big">4</div><div class="sm">정부 기관 제안</div></div></div></div>
-    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--ice-s);border:1px solid rgba(125,243,255,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ice)" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg></div><h3>의료법 제18조 개정</h3><p>2025.12 의료법 개정(취약계층 약 배달 허용)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 제안합니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">'26.12</div><div class="sm">의료법 시행 예정</div></div><div class="reg-n"><div class="big">5</div><div class="sm">규제 경로 동시 추진</div></div></div></div>
+
+<!-- DEMO 01: 약사 검증 AI 응답 -->
+<div class="demo-section" id="demo-01">
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
+    <div class="demo-tag">DEMO 01</div>
+    <h3>약사 검증 AI 응답 흐름</h3>
+  </div>
+  <p style="margin-bottom:1.5rem">환자가 단골 약국에 질문을 보내면 AI가 초안을 작성하고, 등록된 약사가 1-클릭 검토·승인 후 발송됩니다. AI 단독 발송은 절대 없습니다.</p>
+  <div class="grid-3">
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:12px;padding:1.2rem">
+      <div class="demo-step-tag">STEP 01 · 환자</div>
+      <div style="font-size:.78rem;color:var(--text);font-weight:600;margin:.5rem 0">질문 입력</div>
+      <div style="background:var(--bg3);border-radius:8px;padding:.7rem;font-size:.72rem;color:var(--muted);line-height:1.6">"이 약 먹고 나서 어지러운데 계속 먹어도 되나요?"</div>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--mint-border);border-radius:12px;padding:1.2rem">
+      <div class="demo-step-tag" style="color:var(--mint)">STEP 02 · AI 초안</div>
+      <div style="font-size:.78rem;color:var(--text);font-weight:600;margin:.5rem 0">표준 응답 매칭</div>
+      <div style="background:var(--bg3);border-radius:8px;padding:.7rem;font-size:.72rem;color:var(--muted);line-height:1.6">처방약 부작용 안내 + 약사 검토 대기열 등록</div>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--mint-border);border-radius:12px;padding:1.2rem">
+      <div class="demo-step-tag" style="color:var(--mint)">STEP 03 · 약사 검토</div>
+      <div style="font-size:.78rem;color:var(--text);font-weight:600;margin:.5rem 0">단골약국 약사 승인</div>
+      <div style="background:var(--bg3);border-radius:8px;padding:.7rem;font-size:.72rem;color:var(--muted);line-height:1.6">약국명·약사명·면허번호 표시 후 발송</div>
+    </div>
+  </div>
+  <p style="font-size:.68rem;color:var(--dim);margin-top:1rem">근거: 약사법 §24④ "조제한 약사의 복약지도" · 헌재 2019헌바87</p>
+</div>
+
+<!-- DEMO 02: 3채널 알림 -->
+<div class="demo-section" id="demo-02">
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
+    <div class="demo-tag">DEMO 02</div>
+    <h3>3채널 복약 알림 (디지털 사각지대 포용)</h3>
+  </div>
+  <p style="margin-bottom:1.5rem">스마트폰·피처폰·전화기 — 어떤 기기를 쓰셔도 복약 시간을 놓치지 않도록 설계되었습니다.</p>
+  <div class="grid-3">
+    <div style="background:var(--bg);border-radius:12px;padding:1.2rem;border-top:3px solid #FAE100">
+      <div style="font-size:.6rem;color:#FAE100;font-family:var(--font-mono);margin-bottom:.6rem;letter-spacing:.05em">CHANNEL 01 · KAKAO</div>
+      <div style="background:#FFEB3B;border-radius:12px;padding:.8rem;color:#000;font-size:.72rem;line-height:1.5">
+        <div style="font-weight:700;margin-bottom:.3rem">MedIT 복약 알림</div>
+        <div style="background:#fff;border-radius:8px;padding:.5rem;margin-top:.4rem">
+          <strong>아침 약 복용 시간입니다.</strong><br>혈압약 1정 · 위장약 1정
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--bg);border-radius:12px;padding:1.2rem;border-top:3px solid var(--ice)">
+      <div style="font-size:.6rem;color:var(--ice);font-family:var(--font-mono);margin-bottom:.6rem;letter-spacing:.05em">CHANNEL 02 · SMS</div>
+      <div style="background:var(--bg3);border-radius:8px;padding:.7rem;font-size:.72rem;color:var(--text);line-height:1.5">
+        <div style="font-size:.6rem;color:var(--muted);margin-bottom:.3rem">MedIT · 08:00</div>
+        <strong>아침약 복용 시간입니다.</strong><br>혈압약 1정 · 식후 30분
+      </div>
+    </div>
+    <div style="background:var(--bg);border-radius:12px;padding:1.2rem;border-top:3px solid var(--lav)">
+      <div style="font-size:.6rem;color:var(--lav);font-family:var(--font-mono);margin-bottom:.6rem;letter-spacing:.05em">CHANNEL 03 · VOICE</div>
+      <div style="background:var(--bg3);border-radius:8px;padding:.7rem;font-size:.72rem;color:var(--text);line-height:1.7">
+        <span class="ic" style="color:var(--lav);margin-right:.3rem"><svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></span>
+        <em style="font-style:normal;color:var(--mint)">"OO님, 안녕하세요. 지금은 혈압약을 드실 시간이에요. 물 한 컵과 함께 드세요."</em>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO 03: 약사 워크플로우 대시보드 -->
+<div class="demo-section" id="demo-03">
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
+    <div class="demo-tag">DEMO 03</div>
+    <h3>약사 워크플로우 대시보드</h3>
+  </div>
+  <p style="margin-bottom:1.5rem">약사가 등록 환자의 복약 현황·질문 대기열·복약지도 카드를 한 화면에서 관리합니다.</p>
+  <div class="grid-4" style="margin-bottom:1rem">
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1rem;text-align:center">
+      <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--mint)">24</div>
+      <div style="font-size:.62rem;color:var(--muted);margin-top:.2rem">오늘 처방</div>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1rem;text-align:center">
+      <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--ice)">5<span style="font-size:.5rem;color:var(--dim);font-weight:400;display:block;margin-top:2px">예시</span></div>
+      <div style="font-size:.62rem;color:var(--muted);margin-top:.2rem">검토 대기 질문</div>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1rem;text-align:center">
+      <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--lav)">12<span style="font-size:.5rem;color:var(--dim);font-weight:400;display:block;margin-top:2px">예시</span></div>
+      <div style="font-size:.62rem;color:var(--muted);margin-top:.2rem">발급된 복약지도 카드</div>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1rem;text-align:center">
+      <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:#f0c866">2<span style="font-size:.5rem;color:var(--dim);font-weight:400;display:block;margin-top:2px">예시</span></div>
+      <div style="font-size:.62rem;color:var(--muted);margin-top:.2rem">부작용 자가보고</div>
+    </div>
+  </div>
+  <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1rem">
+    <div style="font-size:.62rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:.6rem;letter-spacing:.05em">PENDING REVIEW · 검토 대기 질문</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--card-border);font-size:.74rem;flex-wrap:wrap;gap:.4rem">
+      <div><strong style="color:var(--text)">김OO 환자</strong> · 혈압약 복용 후 어지럼증 문의</div>
+      <div style="color:var(--mint);font-family:var(--font-mono);font-size:.66rem">AI 초안 완료 → 검토 필요</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;font-size:.74rem;flex-wrap:wrap;gap:.4rem">
+      <div><strong style="color:var(--text)">박OO 환자</strong> · 위장약 식후 시간 문의</div>
+      <div style="color:var(--mint);font-family:var(--font-mono);font-size:.66rem">AI 초안 완료 → 검토 필요</div>
+    </div>
+  </div>
+  <p style="font-size:.68rem;color:var(--dim);margin-top:1rem">※ 예시 데이터 · 합성 시연 · 실제 환자 정보 아님</p>
+</div>
+
+<!-- DEMO 04: KAERS 자가보고 -->
+<div class="demo-section" id="demo-04">
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
+    <div class="demo-tag">DEMO 04</div>
+    <h3>부작용 KAERS 자가보고 보조</h3>
+  </div>
+  <p style="margin-bottom:1.5rem">환자가 본인 명의로 한국의약품안전관리원(KAERS)에 자발적 부작용 보고를 할 수 있도록 AI가 작성을 안내합니다. 보고 주체는 항상 환자 본인입니다.</p>
+  <div class="grid-2">
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1.2rem">
+      <div style="font-size:.62rem;color:var(--ice);font-family:var(--font-mono);margin-bottom:.8rem;letter-spacing:.05em">KAERS 4대 최소 요건 자동 작성 보조</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.76rem">
+        <div style="display:flex;justify-content:space-between;padding:.4rem .6rem;background:var(--bg3);border-radius:6px"><span style="color:var(--muted)">보고자</span><span style="color:var(--mint)">환자 본인 ✓</span></div>
+        <div style="display:flex;justify-content:space-between;padding:.4rem .6rem;background:var(--bg3);border-radius:6px"><span style="color:var(--muted)">환자 정보</span><span style="color:var(--mint)">자동 매핑 ✓</span></div>
+        <div style="display:flex;justify-content:space-between;padding:.4rem .6rem;background:var(--bg3);border-radius:6px"><span style="color:var(--muted)">의약품</span><span style="color:var(--mint)">처방 기록 매칭 ✓</span></div>
+        <div style="display:flex;justify-content:space-between;padding:.4rem .6rem;background:var(--bg3);border-radius:6px"><span style="color:var(--muted)">이상사례</span><span style="color:var(--mint)">환자 직접 기록 ✓</span></div>
+      </div>
+      <p style="font-size:.66rem;color:var(--dim);margin-top:.8rem;line-height:1.6">근거: 약사법 §68의8 자발적 보고. MedIT은 보조 시스템이며 보고 주체는 환자 본인입니다.</p>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1.2rem">
+      <div style="font-size:.62rem;color:var(--lav);font-family:var(--font-mono);margin-bottom:.8rem;letter-spacing:.05em">3-TRACK 합법 데이터 흐름</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.74rem">
+        <div style="padding:.5rem .7rem;background:rgba(16,185,129,.08);border-left:3px solid var(--mint);border-radius:4px">
+          <strong style="color:var(--mint);font-size:.66rem;letter-spacing:.05em">TRACK 1</strong><br>
+          <span style="color:var(--text)">환자 → KAERS (의무 X · 본인 명의)</span>
+        </div>
+        <div style="padding:.5rem .7rem;background:rgba(125,243,255,.08);border-left:3px solid var(--ice);border-radius:4px">
+          <strong style="color:var(--ice);font-size:.66rem;letter-spacing:.05em">TRACK 2</strong><br>
+          <span style="color:var(--text)">처방의사 공유 (매 건 opt-in 동의)</span>
+        </div>
+        <div style="padding:.5rem .7rem;background:rgba(180,160,255,.08);border-left:3px solid var(--lav);border-radius:4px">
+          <strong style="color:var(--lav);font-size:.66rem;letter-spacing:.05em">TRACK 3</strong><br>
+          <span style="color:var(--text)">제약사 익명 통계 (DRB 심의 후)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO 05: 복약지도 카드 -->
+<div class="demo-section" id="demo-05">
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
+    <div class="demo-tag">DEMO 05</div>
+    <h3>복약지도 카드 (약사 발급)</h3>
+  </div>
+  <p style="margin-bottom:1.5rem">약사가 환자별 맞춤 복약지도를 디지털 카드로 발급합니다. 약국명·약사명·면허번호가 표시되어 출처가 명확합니다.</p>
+  <div style="background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(125,243,255,.05));border:1px solid var(--mint-border);border-radius:12px;padding:1.5rem;max-width:600px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--card-border);flex-wrap:wrap;gap:.4rem">
+      <div>
+        <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text)">복약지도 카드</div>
+        <div style="font-size:.66rem;color:var(--muted);margin-top:.2rem">발급일: 2026-06-01</div>
+      </div>
+      <div style="background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.62rem;font-weight:700;padding:.3rem .6rem;border-radius:4px;letter-spacing:.05em">VERIFIED</div>
+    </div>
+    <div class="grid-2" style="gap:.8rem;margin-bottom:1rem">
+      <div><div style="font-size:.62rem;color:var(--muted);margin-bottom:.2rem">약품명</div><div style="font-size:.8rem;color:var(--text);font-weight:600">로사르탄정 50mg</div></div>
+      <div><div style="font-size:.62rem;color:var(--muted);margin-bottom:.2rem">복용법</div><div style="font-size:.8rem;color:var(--text);font-weight:600">1일 1회 · 아침 식후</div></div>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:.8rem;font-size:.74rem;color:var(--muted);line-height:1.6;margin-bottom:1rem">
+      식사와 관계없이 매일 같은 시간에 복용하세요. 일부 환자에서 어지럼증·기립성저혈압이 나타날 수 있으니 처음 복용 시 천천히 일어나세요.
+    </div>
+    <div style="padding-top:.8rem;border-top:1px solid var(--card-border);font-size:.66rem;color:var(--dim);line-height:1.7">
+      <strong style="color:var(--mint)">발급 약국</strong> · 청파약국 (서울 용산구) · 약사 김OO (면허 제12345호)<br>
+      <span style="color:var(--dim)">※ 본 카드는 약사가 직접 검토·승인했습니다. 의학적 판단은 약사·의사와 상담하세요.</span>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO 06: KAERS 연동 AI 응답 (인터랙티브) -->
+<div class="demo-section" id="demo-06">
+  <!-- 기본 상태: 데모 런처 카드 (접혀있음) -->
+  <div id="demo-06-launcher" style="text-align:center;padding:1rem 0">
+    <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">DEMO 06 · INTERACTIVE</div>
+    <h3 style="font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text);margin:0 0 .6rem">KAERS 데이터 연동 AI 응답</h3>
+    <p style="font-size:.85rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 1.5rem">실시간 원격 데이터로 약품명을 검색하면 AI가 약사 검토용 응답 초안을 생성합니다. 12개 의약품의 KAERS 부작용 통계가 등록되어 있습니다.</p>
+    <button onclick="launchKaersDemo()" class="btn btn-mint" style="font-size:.9rem;padding:.85rem 1.8rem">
+      체험하기 시작 →
+    </button>
+    <p style="font-size:.66rem;color:var(--dim);margin-top:.8rem">버튼 클릭 시 원격 데이터를 가져옵니다.</p>
+  </div>
+
+  <!-- 펼쳐진 상태: 전체 데모 콘텐츠 -->
+  <div id="demo-06-content" style="display:none">
+  <!-- 새 데이터 알림 프롬프트 -->
+  <div id="kaersNewPrompt" style="display:none;background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(125,243,255,.10));border:1px solid var(--mint);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.2rem;animation:kaersSlideDown .4s ease">
+    <div style="display:flex;align-items:flex-start;gap:.8rem;flex-wrap:wrap;justify-content:space-between">
+      <div style="flex:1;min-width:240px">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem">
+          <span style="background:var(--mint);color:var(--bg);font-family:var(--font-mono);font-size:.6rem;font-weight:800;padding:.2rem .55rem;border-radius:4px;letter-spacing:.1em;animation:kaersPulse 2s ease infinite">NEW</span>
+          <span style="font-family:var(--font-head);font-size:.88rem;font-weight:700;color:var(--mint)">KAERS 데이터가 갱신되었습니다</span>
+        </div>
+        <div id="kaersNewPromptBody" style="font-size:.76rem;color:var(--muted);line-height:1.6"></div>
+      </div>
+      <button onclick="dismissKaersNewPrompt()" class="btn btn-mint" style="font-size:.74rem">확인했어요</button>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
+    <div class="demo-tag">DEMO 06</div>
+    <h3>KAERS 데이터 연동 AI 응답 (인터랙티브)</h3>
+    <span id="kaersStatus" style="background:rgba(16,185,129,.1);color:var(--mint);font-family:var(--font-mono);font-size:.62rem;font-weight:600;padding:.22rem .55rem;border-radius:4px;letter-spacing:.05em">데이터 로딩 중...</span>
+    <span id="kaersNewBadge" style="display:none;background:var(--mint);color:var(--bg);font-family:var(--font-mono);font-size:.6rem;font-weight:800;padding:.22rem .55rem;border-radius:4px;letter-spacing:.1em;animation:kaersPulse 2s ease infinite">NEW</span>
+  </div>
+  <p style="margin-bottom:1.5rem"><strong style="color:var(--ice)">실시간 원격 데이터 연동</strong> — 페이지를 열 때마다 MedIT 원격 저장소에서 최신 KAERS 부작용 통계를 가져와 AI가 약사 검토용 응답 초안을 생성합니다. <strong style="color:var(--mint)">실제로 약품명을 입력해보세요</strong>.</p>
+
+  <!-- 검색 입력 -->
+  <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1.2rem;margin-bottom:1rem">
+    <div style="font-size:.62rem;color:var(--ice);font-family:var(--font-mono);margin-bottom:.6rem;letter-spacing:.05em">STEP 01 · 환자 자연어 문의 입력</div>
+    <textarea id="kaersNaturalQuery" rows="3" placeholder="환자의 문의를 자연어로 입력하세요.&#10;예: '문의, 베나치오를 소화불량으로 먹었는데 약효가 빨랐으면 좋겠습니다.'&#10;예: '로사르탄 먹고 어지러운데 계속 먹어도 되나요?'" style="width:100%;background:var(--bg3);border:1px solid var(--card-border);border-radius:8px;padding:.8rem 1rem;font-size:.85rem;color:var(--text);font-family:inherit;outline:none;resize:vertical;line-height:1.6;margin-bottom:.7rem"></textarea>
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <span style="font-size:.66rem;color:var(--dim)">AI가 약품명·증상·요청을 자동 파싱합니다</span>
+      <button onclick="runKaersDemo()" class="btn btn-mint" style="white-space:nowrap">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        AI 응답 생성
+      </button>
+    </div>
+    <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem;align-items:flex-start">
+      <span style="font-size:.64rem;color:var(--dim);margin-right:.3rem;padding-top:.3rem">빠른 예시:</span>
+      <div style="display:flex;flex-direction:column;gap:.3rem;flex:1;min-width:200px">
+        <button onclick="setQuery('문의, 베나치오를 소화불량으로 먹었는데 약효가 빨랐으면 좋겠습니다.')" class="btn btn-ghost" style="padding:.35rem .7rem;font-size:.7rem;text-align:left;justify-content:flex-start">문의, 베나치오를 소화불량으로 먹었는데 약효가 빨랐으면 좋겠습니다.</button>
+        <button onclick="setQuery('로사르탄 먹고 어지러운데 계속 먹어도 되나요?')" class="btn btn-ghost" style="padding:.35rem .7rem;font-size:.7rem;text-align:left;justify-content:flex-start">로사르탄 먹고 어지러운데 계속 먹어도 되나요?</button>
+        <button onclick="setQuery('메트포르민 복용 후 메스꺼움이 너무 심합니다. 어떻게 해야 하나요?')" class="btn btn-ghost" style="padding:.35rem .7rem;font-size:.7rem;text-align:left;justify-content:flex-start">메트포르민 복용 후 메스꺼움이 너무 심합니다. 어떻게 해야 하나요?</button>
+        <button onclick="setQuery('타이레놀과 부루펜을 같이 먹어도 괜찮은가요?')" class="btn btn-ghost" style="padding:.35rem .7rem;font-size:.7rem;text-align:left;justify-content:flex-start">타이레놀과 부루펜을 같이 먹어도 괜찮은가요?</button>
+        <button onclick="setQuery('와파린 먹는데 코피가 자주 나요. 위험한가요?')" class="btn btn-ghost" style="padding:.35rem .7rem;font-size:.7rem;text-align:left;justify-content:flex-start">와파린 먹는데 코피가 자주 나요. 위험한가요?</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결과 영역 -->
+  <div id="kaersResult" style="display:none;flex-direction:column;gap:1rem">
+    <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1.2rem">
+      <div style="font-size:.62rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:.6rem;letter-spacing:.05em">STEP 02 · KAERS 데이터 매칭 결과</div>
+      <div id="kaersMatchInfo"></div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(125,243,255,.03));border:1px solid var(--mint-border);border-radius:10px;padding:1.2rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;flex-wrap:wrap;gap:.4rem">
+        <div style="font-size:.62rem;color:var(--mint);font-family:var(--font-mono);letter-spacing:.05em">STEP 03 · AI 응답 초안 (약사 검토 대기)</div>
+        <div style="background:rgba(240,200,102,.15);color:#f0c866;font-family:var(--font-mono);font-size:.6rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em">약사 검토 필수</div>
+      </div>
+      <div id="kaersAIResponse" style="font-size:.84rem;color:var(--text);line-height:1.7"></div>
+    </div>
+    <div class="demo-disclaimer">
+      <div class="demo-disclaimer-title">⚠ 자동 표시 면책 (KAERS 원문)</div>
+      <div class="demo-disclaimer-body">
+        본 자료는 KAERS에 자발적으로 보고된 통계이며, 해당 의약품과의 <strong>인과관계를 의미하지 않습니다</strong>.
+        본 AI 응답은 초안일 뿐이며, 실제 환자에게 발송되기 전 반드시 단골 약국 약사의 검토·승인을 거칩니다.
+        의학적 판단은 약사·의사와 상담하세요.
+      </div>
+    </div>
+  </div>
+
+  <!-- 메타데이터 + 갱신 정책 -->
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border)">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;font-size:.66rem;color:var(--dim);margin-bottom:.8rem">
+      <span>데이터 소스: <strong style="color:var(--muted)">KAERS 공개 파일데이터</strong> (data.go.kr 15117015·15089543·15065145 기반)</span>
+      <span id="kaersDataMeta">로딩 중...</span>
+    </div>
+    <div style="background:rgba(125,243,255,.04);border:1px solid rgba(125,243,255,.15);border-radius:8px;padding:.85rem 1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;flex:1">
+        <div style="background:var(--ice);color:var(--bg);font-family:var(--font-mono);font-size:.6rem;font-weight:800;padding:.22rem .55rem;border-radius:4px;letter-spacing:.1em">LIVE</div>
+        <div style="font-size:.74rem;color:var(--muted);line-height:1.5">
+          <strong style="color:var(--ice)">MedIT 자동 갱신 정책:</strong> 페이지를 열 때마다 GitHub 원격 저장소에서 최신 데이터를 fetch합니다. MedIT 운영팀은 KAERS 원본(연 1회 갱신) 발표 후 <strong>7일 이내</strong>, 식약처 안전성서한 발표 후 <strong>48시간 이내</strong>로 데이터를 push합니다.
+        </div>
+      </div>
+      <button onclick="refreshKaersData()" class="btn btn-ghost" style="font-size:.72rem;color:var(--ice)">
+        <span class="ic"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span>
+        지금 새로고침
+      </button>
+    </div>
+    <div id="kaersRefreshLog" style="display:none;margin-top:.6rem;padding:.5rem .8rem;background:var(--bg3);border-radius:6px;font-size:.64rem;color:var(--dim);line-height:1.7;font-family:var(--font-mono)"></div>
+  </div>
+  </div><!-- /demo-06-content -->
+</div>
+
+<!-- 풀스크린 앱 데모 (별도 페이지로 열림) -->
+<div class="demo-section" id="demo-fullscreen-apps" style="text-align:center;padding:2.5rem 2rem">
+  <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">FULL-SCREEN APP DEMO</div>
+  <h3 style="font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text);margin:0 0 .6rem">실제 앱 화면 체험하기</h3>
+  <p style="font-size:.85rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 1.5rem">약국 운영자용 워크플로우 대시보드와 환자용 복약 관리 앱을 풀스크린으로 직접 체험하실 수 있습니다.</p>
+  <div style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
+    <a href="medit-app-dark.html" target="_blank" class="btn btn-mint" style="font-size:.88rem">약국 앱 데모 열기 →</a>
+    <a href="medit-patient.html" target="_blank" class="btn btn-outline" style="font-size:.88rem">환자 앱 데모</a>
+  </div>
+  <p style="font-size:.66rem;color:var(--dim);margin-top:1rem">새 탭에서 열립니다 · 합성 데이터 · 실제 환자 정보 아님</p>
+</div>
+
+
+
+  </div>
+</div>
+
+<div class="reg-bg tone-5" id="regulation" style="min-height:100vh;display:flex;align-items:center"><section class="sec" style="width:100%"><div class="sec-center rv"><div class="sec-tag">REGULATORY STRATEGY</div><h2 class="sec-title">규제를 경쟁력으로</h2><p class="sec-desc">MedIT은 단순한 제품이 아닌, 제도 혁신 플랫폼입니다.</p></div><div class="grid3">
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 011-1h10a1 1 0 011 1v3M9 7h1m4 0h1M9 11h1m4 0h1"/></svg></div><h3>약사법 개정 제안</h3><p><strong style="color:var(--mint)">약사법·의료법 개정 의견 4건을 국민참여입법센터(opinion.lawmaking.go.kr)에 제출</strong>. 액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송, 의료법 인증 플랫폼 확장 — 시민 입법의견 제안 형태로 진행 중입니다. <span style="font-size:.65rem;color:var(--dim)">(※ 시민 의견 제출이며 의원 발의나 정부 입법안과 구분됨)</span></p><div class="reg-nums"><div class="reg-n"><div class="big">4</div><div class="sm">시민 입법의견 제안</div></div><div class="reg-n"><div class="big">4</div><div class="sm">개정 검토 영역</div></div></div></div>
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--ice-s);border:1px solid rgba(125,243,255,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ice)" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg></div><h3>의료법 개정 (비대면진료 제도화)</h3><p>2025.12.2 통과된 의료법 개정안(비대면진료 제도화 + 전자처방전·DUR 의무화)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 제안합니다. <span style="font-size:.65rem;color:var(--dim)">(2026.12 시행 예정)</span></p><div class="reg-nums"><div class="reg-n"><div class="big">'26.12</div><div class="sm">의료법 시행 예정</div></div><div class="reg-n"><div class="big">5</div><div class="sm">규제 경로 동시 추진</div></div></div></div>
     <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--lav-s);border:1px solid rgba(180,160,255,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lav)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3>해외 벤치마크</h3><p>호주 TGA Special Access, EU EMA 소아 투약, 미국 Amazon Pharmacy 모델을 분석하여 한국형 제도를 설계합니다.</p><div class="reg-nums"><div class="reg-n"><div class="big">4</div><div class="sm">해외 제도 분석</div></div><div class="reg-n"><div class="big">6+</div><div class="sm">학술 논문 인용</div></div></div></div>
 </div></section></div>
 
-<section class="sec" id="team" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">ABOUT US</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar">신</div><h3>신현정</h3><div class="role">대표 · FOUNDER</div><p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정안 4건 정부입법지원센터 제출.</p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice))">AI</div><h3>Engineering</h3><div class="role">TECH TEAM</div><p>OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스 개발 진행 중. Flask · Claude API · KakaoTalk API.</p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#f0c866,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.6rem;color:var(--coral);font-weight:500">구성 예정</span></h3><div class="role">ADVISORY</div><p>약학경제·디지털헬스케어 분야 학계 및 정책 자문 네트워크 구성을 추진할 예정입니다. (※ 현재 확정된 자문위원 없음)</p></div></div></section>
+<section class="sec tone-3" id="red-lines" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem">
+  <div class="sec-center rv">
+    <div class="sec-tag" style="color:var(--coral)">RED LINES · 6대 금지선</div>
+    <h2 class="sec-title">MedIT이 절대 하지 않을 여섯 가지</h2>
+    <p class="sec-desc">약사법·의료법·개인정보보호법·디지털의료제품법·식약처 가이드라인을 수개월간 검토한 결과 도출한 운영 원칙입니다.</p>
+  </div>
+  <div class="grid3" style="gap:1rem;max-width:1200px;margin:0 auto">
+    <div class="card rv" style="border-left:3px solid var(--coral)">
+      <div class="card-tag" style="color:var(--coral)">RED LINE 01</div>
+      <h3 style="margin-top:.5rem">AI 단독 답변 발송 금지</h3>
+      <p>모든 답변은 환자가 등록한 단골 약국 약사의 1-클릭 승인을 거칩니다. AI는 초안만 만들고, 약사가 검토한 답변만 발송됩니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 약사법 §24④ "조제한 약사의 복약지도", 헌재 2019헌바87</p>
+    </div>
+    <div class="card rv" style="border-left:3px solid var(--coral)">
+      <div class="card-tag" style="color:var(--coral)">RED LINE 02</div>
+      <h3 style="margin-top:.5rem">익명 약사 답변 금지</h3>
+      <p>모든 답변에 약국명, 약사명, 면허번호가 자동으로 표시됩니다. 누가 답변했는지 환자가 알 수 있어야 합니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 약사법 §50 (약사 면허 표시 의무)</p>
+    </div>
+    <div class="card rv" style="border-left:3px solid var(--coral)">
+      <div class="card-tag" style="color:var(--coral)">RED LINE 03</div>
+      <h3 style="margin-top:.5rem">단골 약국 외 매칭 금지</h3>
+      <p>환자가 단골로 등록하지 않은 약국에 매칭하지 않습니다. 환자가 직접 선택한 약국의 약사만 답변합니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 약사법 §24④ "조제한 약사" 요건</p>
+    </div>
+    <div class="card rv" style="border-left:3px solid var(--coral)">
+      <div class="card-tag" style="color:var(--coral)">RED LINE 04</div>
+      <h3 style="margin-top:.5rem">제약사 환자 직접 광고 금지</h3>
+      <p>모든 제약사 콘텐츠는 환자 질문에 의한 Pull 구조, 처방받은 환자만 접근, 단골 약사 검토 후 전달됩니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 식약처 「의약품광고 가이드라인」 III-3·III-4 (2022.11.30)</p>
+    </div>
+    <div class="card rv" style="border-left:3px solid var(--coral)">
+      <div class="card-tag" style="color:var(--coral)">RED LINE 05</div>
+      <h3 style="margin-top:.5rem">AI 의학적 판단·진단 금지</h3>
+      <p>"○○ 약을 드시면 됩니다", "이건 △△ 질환입니다" 같은 답변을 AI가 단독으로 하지 않습니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 의료법 §27 무면허 의료행위 금지</p>
+    </div>
+    <div class="card rv" style="border-left:3px solid var(--coral)">
+      <div class="card-tag" style="color:var(--coral)">RED LINE 06</div>
+      <h3 style="margin-top:.5rem">의약품 도매·배달 사업 금지</h3>
+      <p>요청이 와도 하지 않습니다. MedIT은 약사를 돕는 소프트웨어이지, 의약품 유통 회사가 아닙니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 국회 계류 약사법 개정안 (플랫폼 도매업 겸영 금지)</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec tone-4" id="adverse-event" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem">
+  <div class="sec-center rv">
+    <div class="sec-tag">ADVERSE EVENT SAFETY · 부작용 안전 데이터</div>
+    <h2 class="sec-title">환자 KAERS 자가 보고 보조</h2>
+    <p class="sec-desc">MedIT은 환자가 본인 명의로 부작용을 보고하도록 돕는 보조 시스템입니다. AI는 자가 보고서 작성을 안내할 뿐, 보고 주체는 항상 환자 본인입니다.</p>
+  </div>
+  <div class="grid3" style="gap:1rem;max-width:1200px;margin:0 auto">
+    <div class="card rv" style="border-top:3px solid var(--mint)">
+      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
+        <div style="background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 1</div>
+        <span style="font-size:.7rem;color:var(--muted)">기본 (의무 X)</span>
+      </div>
+      <h3 style="margin-top:.3rem">KAERS 자가 보고</h3>
+      <p>환자가 본인 명의로 한국의약품안전관리원(KAERS)에 자발적 부작용 보고. MedIT은 자가 보고서 작성을 AI로 안내합니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 약사법 §68의8 (자발적 보고)<br>주체: 환자 본인 (의무 아님)</p>
+    </div>
+    <div class="card rv" style="border-top:3px solid var(--ice)">
+      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
+        <div style="background:rgba(125,243,255,.1);color:var(--ice);font-family:var(--font-mono);font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 2</div>
+        <span style="font-size:.7rem;color:var(--muted)">매 건 동의 (opt-in)</span>
+      </div>
+      <h3 style="margin-top:.3rem">처방 의사 1회 공유</h3>
+      <p>환자가 매 건 명시적으로 동의(opt-in)할 경우, 부작용 보고서가 처방한 의사에게 1회 한정으로 공유됩니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 개인정보보호법 §17 별도 동의<br>주체: 환자 + 의사 동의 필수</p>
+    </div>
+    <div class="card rv" style="border-top:3px solid var(--lav)">
+      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
+        <div style="background:rgba(180,160,255,.1);color:var(--lav);font-family:var(--font-mono);font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 3</div>
+        <span style="font-size:.7rem;color:var(--muted)">익명 통계만</span>
+      </div>
+      <h3 style="margin-top:.3rem">제약사 익명 통계</h3>
+      <p>제약사에는 익명·집계 통계만 제공됩니다. 개인 식별 정보는 절대 공유되지 않으며, 익명 통계도 DRB(데이터심의위원회) 심의를 거칩니다.</p>
+      <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">근거: 개인정보보호법 §28의2 (가명정보)<br>주체: DRB 심의 통과 후</p>
+    </div>
+  </div>
+  <div class="rv" style="max-width:900px;margin:2rem auto 0;padding:1.2rem 1.5rem;background:rgba(0,210,180,.04);border:1px solid var(--mint-border);border-radius:var(--r);font-size:.78rem;color:var(--muted);line-height:1.7">
+    <strong style="color:var(--mint)">MedIT의 부작용 데이터 원칙:</strong>
+    환자는 보고 의무가 없으며, 본인이 원할 때만 자발적으로 보고합니다. AI는 KAERS 4대 최소 요건(보고자·환자·약품·이상사례)만 보조하며, 의학적 판단은 절대 하지 않습니다. 모든 데이터는 환자 본인 명의로 KAERS에 저장되며, MedIT은 보조 시스템일 뿐 보고 주체가 아닙니다.
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- POLICY INSIGHT · 환자 문의 데이터 → 입법 매핑 -->
+<!-- ============================================ -->
+<section class="sec tone-3 ko-only" id="policy-insight" style="padding-top:5rem;padding-bottom:5rem">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+    <div class="sec-center rv" style="margin-bottom:2.5rem">
+      <div class="sec-tag">POLICY INSIGHT</div>
+      <h2 class="sec-title">환자 문의 데이터 → 입법 제안</h2>
+      <p class="sec-desc" style="margin-top:.8rem">DEMO 06에서 수집된 환자 자연어 문의 패턴은 현행 약사법·의료법·디지털의료제품법의 구조적 공백을 정확히 드러냅니다. 이 데이터를 근거로 입법 제안서를 작성했습니다.</p>
+    </div>
+
+    <!-- KAERS 자발보고 실패 데이터 -->
+    <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
+        <div style="background:rgba(255,138,128,.12);color:var(--coral);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">CRITICAL GAP</div>
+        <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin:0">KAERS 환자 자발보고의 구조적 실패</h3>
+      </div>
+      <p style="font-size:.8rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">2025년 KAERS에 보고된 약 27만 건 중, <strong style="color:var(--coral)">환자 본인의 직접 보고는 단 100건(0.04%)</strong>에 불과합니다. 자발적 환자 보고가 사실상 작동하지 않는 것이 핵심 문제입니다.</p>
+      <div style="background:var(--bg);border-radius:10px;padding:1.5rem">
+        <div style="font-size:.62rem;color:var(--mint);font-family:var(--font-mono);margin-bottom:1rem;letter-spacing:.05em">2025년 KAERS 보고 주체별 분포</div>
+        <div style="display:flex;flex-direction:column;gap:.8rem">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem">
+              <span style="color:var(--text)">지역의약품안전센터</span>
+              <span style="font-family:var(--font-mono);color:var(--mint)">181,898건 (67.4%)</span>
+            </div>
+            <div style="background:var(--bg3);border-radius:4px;height:8px;overflow:hidden"><div style="background:var(--mint);height:100%;width:67.4%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem">
+              <span style="color:var(--text)">제약회사</span>
+              <span style="font-family:var(--font-mono);color:var(--ice)">86,891건 (32.2%)</span>
+            </div>
+            <div style="background:var(--bg3);border-radius:4px;height:8px;overflow:hidden"><div style="background:var(--ice);height:100%;width:32.2%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem">
+              <span style="color:var(--text)">의료전문가</span>
+              <span style="font-family:var(--font-mono);color:var(--lav)">6,902건 (2.6%)</span>
+            </div>
+            <div style="background:var(--bg3);border-radius:4px;height:8px;overflow:hidden"><div style="background:var(--lav);height:100%;width:2.6%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem">
+              <span style="color:var(--coral);font-weight:700">환자·소비자 직접</span>
+              <span style="font-family:var(--font-mono);color:var(--coral);font-weight:700">100건 (0.04%)</span>
+            </div>
+            <div style="background:var(--bg3);border-radius:4px;height:8px;overflow:hidden"><div style="background:var(--coral);height:100%;width:0.4%;min-width:3px"></div></div>
+          </div>
+        </div>
+        <p style="font-size:.66rem;color:var(--dim);margin-top:1rem;line-height:1.6">출처: 한국의약품안전관리원 「2025년 의약품등 안전성정보 보고동향」 (약사공론 보도 기준) · 원자료 교차확인 권장</p>
+      </div>
+    </div>
+
+    <!-- 노인 다약제(Polypharmacy) + 통념 교정 카드 -->
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1.5rem">
+      <div style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap">
+          <div style="background:rgba(180,160,255,.12);color:var(--lav);font-family:var(--font-mono);font-size:.62rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">POLYPHARMACY</div>
+          <h4 style="font-family:var(--font-head);font-size:.92rem;font-weight:700;color:var(--text);margin:0">노인 다약제 사회적 비용</h4>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:.5rem;margin:1rem 0">
+          <div style="font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--lav);line-height:1">264만명</div>
+          <div style="font-size:.7rem;color:var(--muted)">65세 이상 5개+ 약물 복용 (2018)</div>
+        </div>
+        <div style="font-size:.72rem;color:var(--muted);line-height:1.7">
+          전체 노인환자 736만명의 <strong style="color:var(--text)">35.9%</strong>가 다약제 복용군. 다약제 사용그룹은 비사용그룹 대비 입원·응급실 방문 확률 <strong style="color:var(--lav)">1.2~1.8배</strong> 증가.
+          <br><br>
+          <strong style="color:var(--text)">11개 이상 복용군</strong>: 입원 위험 <strong style="color:var(--coral)">+45%</strong>, 사망 위험 <strong style="color:var(--coral)">+54%</strong>.
+        </div>
+        <div style="font-size:.62rem;color:var(--dim);margin-top:.8rem;padding-top:.6rem;border-top:1px dashed var(--card-border);line-height:1.6">
+          출처: HIRA 「노인의 부적절한 다약제 사용 관리 기준 마련 연구」 (G000F8Q-2022-170) · 건강보험공단 일산병원 장태익 (2019.12, 300만 7,620명 분석)
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap">
+          <div style="background:rgba(240,200,102,.15);color:#f0c866;font-family:var(--font-mono);font-size:.62rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">법조문 통념 교정</div>
+          <h4 style="font-family:var(--font-head);font-size:.92rem;font-weight:700;color:var(--text);margin:0">약사법 §24의2 정확한 해석</h4>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid #f0c866;border-radius:6px;padding:.8rem 1rem;margin:.8rem 0">
+          <div style="font-size:.65rem;color:#f0c866;font-weight:700;letter-spacing:.05em;margin-bottom:.3rem">✗ 흔한 오해</div>
+          <div style="font-size:.74rem;color:var(--muted);line-height:1.6">"약사법 §24의2는 대면 복약지도 원칙을 정한 조항"</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid var(--mint);border-radius:6px;padding:.8rem 1rem;margin:.8rem 0">
+          <div style="font-size:.65rem;color:var(--mint);font-weight:700;letter-spacing:.05em;margin-bottom:.3rem">✓ 정확한 사실</div>
+          <div style="font-size:.74rem;color:var(--text);line-height:1.6"><strong>"부당한 경제적 이익 등의 제공 금지"</strong> (리베이트 금지 조항). 비대면 복약지도의 명시적 법적 근거는 현행 약사법 본문에 부재 — 코로나19 한시 허용·시범사업 형태로만 운영.</div>
+        </div>
+        <div style="font-size:.7rem;color:var(--muted);line-height:1.7;margin-top:.7rem">
+          → 그래서 <strong style="color:var(--mint)">§24의3 신설</strong>로 비대면·AI 보조 복약지도의 명시적 근거를 마련해야 합니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- 환자 문의 5사례 → 입법 매핑 -->
+    <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
+        <div style="background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">MAPPING TABLE</div>
+        <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin:0">환자 문의 5사례 → 입법 매핑</h3>
+      </div>
+      <p style="font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">각 문의 패턴이 드러내는 법률 공백을 1:1로 입법 조항에 매핑했습니다.</p>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:.74rem;min-width:700px">
+          <thead>
+            <tr style="background:var(--bg3);border-bottom:2px solid var(--mint-border)">
+              <th style="text-align:left;padding:.7rem .8rem;color:var(--mint);font-weight:700;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.05em">환자 문의 사례</th>
+              <th style="text-align:left;padding:.7rem .8rem;color:var(--coral);font-weight:700;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.05em">드러나는 공백</th>
+              <th style="text-align:left;padding:.7rem .8rem;color:var(--ice);font-weight:700;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.05em">매핑되는 입법 조항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--card-border)">
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong>①</strong> 베나치오 약효 빨리</td>
+              <td style="padding:.7rem .8rem;color:var(--muted);vertical-align:top">일반약 정보제공이 "판매 보조" 수준</td>
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong style="color:var(--ice)">약사법 §24 개정</strong> — 일반약 디지털 안전정보 의무</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--card-border)">
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong>②</strong> 로사르탄 어지럼증 지속?</td>
+              <td style="padding:.7rem .8rem;color:var(--muted);vertical-align:top">처방 후 사후 복약관리 의무 부재</td>
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong style="color:var(--ice)">의료법 신설</strong> — 처방 사후 복약관리 + <strong style="color:var(--ice)">약사법</strong> 비대면 복약지도 명문화</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--card-border)">
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong>③</strong> 메트포르민 메스꺼움 심각</td>
+              <td style="padding:.7rem .8rem;color:var(--muted);vertical-align:top">부작용 자발보고 연결 시스템 부재</td>
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong style="color:var(--ice)">약사법 §68의8 개정</strong> — 환자 자발보고 지원 의무화</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--card-border)">
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong>④</strong> 타이레놀+부루펜 병용</td>
+              <td style="padding:.7rem .8rem;color:var(--muted);vertical-align:top">병용·상호작용 통합 안내 채널 부재</td>
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong style="color:var(--ice)">약사법 §24 개정</strong> — 병용 정보 디지털 제공 + DUR 연계</td>
+            </tr>
+            <tr>
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong>⑤</strong> 와파린 코피 위험?</td>
+              <td style="padding:.7rem .8rem;color:var(--muted);vertical-align:top">고위험 약물 능동 모니터링 부재</td>
+              <td style="padding:.7rem .8rem;color:var(--text);vertical-align:top"><strong style="color:var(--ice)">약사법·의료법</strong> — 고위험 약물 모니터링 + 정보제공형 SaMD 분류</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 7가지 개정 조항 권고안 -->
+    <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
+        <div style="background:rgba(180,160,255,.12);color:var(--lav);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">PROPOSAL</div>
+        <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin:0">7가지 개정 조항 권고안</h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem">
+        <div style="background:var(--bg);border-left:3px solid var(--mint);border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--mint);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 01 · 핵심</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">약사법 §24의3 신설</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">AI 보조 복약지도 합법화 + 약사 최종 책임 명문화 (직역 침해 회피 핵심)</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid var(--ice);border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--ice);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 02</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">약사법 §24 개정</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">일반약 안전정보 + 병용·상호작용 디지털 제공 의무</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid var(--ice);border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--ice);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 03</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">약사법 §68의8 개정</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">환자 자발보고 지원 시스템 의무화 + KAERS 자동 연계</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid var(--lav);border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--lav);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 04</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">의료법 신설</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">처방 사후 복약관리 의무 (의-약 협업, 환자 동의 전제)</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid var(--lav);border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--lav);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 05</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">디지털의료제품법 시행령</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">정보제공형 SaMD 별도 저위험 분류 신설 (미국 Non-Device CDS 모델)</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid #f0c866;border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:#f0c866;font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 06</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">개인정보보호법 특례</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">환자 동의 기반 부작용 데이터 KAERS·연구 공유 명시 (§28의2 연계)</div>
+        </div>
+        <div style="background:var(--bg);border-left:3px solid var(--coral);border-radius:6px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--coral);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">PROPOSAL 07</div>
+          <div style="font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.3rem">약사회 자율 가이드라인</div>
+          <div style="font-size:.72rem;color:var(--muted);line-height:1.6">AI 보조 복약지도의 품질·책임 기준을 약사회가 자율 제정</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22대 국회 입법 환경 -->
+    <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
+        <div style="background:rgba(125,243,255,.12);color:var(--ice);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">22ND ASSEMBLY · TIMING</div>
+        <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin:0">22대 국회 입법 환경 (시의성)</h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+        <div style="background:var(--bg);border:1px solid var(--mint-border);border-radius:8px;padding:1.2rem">
+          <div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem">
+            <div style="background:var(--mint);color:var(--bg);font-family:var(--font-mono);font-size:.58rem;font-weight:700;padding:.18rem .5rem;border-radius:4px;letter-spacing:.05em">통과 완료</div>
+          </div>
+          <div style="font-family:var(--font-head);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.4rem">비대면진료 의료법 개정안</div>
+          <ul style="font-size:.72rem;color:var(--muted);line-height:1.7;list-style:none;padding-left:0">
+            <li>• 8건 병합 위원장 대안</li>
+            <li>• <strong style="color:var(--text)">2025.12.2 본회의 통과</strong> (찬성 227/234)</li>
+            <li>• 공포: 2025.12.23</li>
+            <li>• <strong style="color:var(--mint)">시행: 2026.12.24</strong></li>
+            <li>• 발의: 최보윤·우재준·전진숙·권칠승·김윤·김선민·서영석·남인순 등</li>
+            <li>• DUR 의무화 의료법 3건 포함</li>
+          </ul>
+        </div>
+        <div style="background:var(--bg);border:1px solid #f0c866;border-radius:8px;padding:1.2rem">
+          <div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem">
+            <div style="background:#f0c866;color:var(--bg);font-family:var(--font-mono);font-size:.58rem;font-weight:700;padding:.18rem .5rem;border-radius:4px;letter-spacing:.05em">계류 중</div>
+          </div>
+          <div style="font-family:var(--font-head);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.4rem">비대면진료 플랫폼 약사법<br><span style="font-size:.7rem;color:var(--muted);font-weight:400">(도매상 겸영 금지)</span></div>
+          <ul style="font-size:.72rem;color:var(--muted);line-height:1.7;list-style:none;padding-left:0">
+            <li>• 김윤·백혜련·김예지 발의</li>
+            <li>• 보건복지위원장 대안 통합 시도</li>
+            <li>• 유니콘팜 의원 반대로 2025.12 상정 무산</li>
+            <li>• <strong style="color:#f0c866">규제 정서 존재</strong> — MedIT는 정보·안전 사업자로 차별화</li>
+          </ul>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--lav);border-radius:8px;padding:1.2rem">
+          <div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem">
+            <div style="background:var(--lav);color:var(--bg);font-family:var(--font-mono);font-size:.58rem;font-weight:700;padding:.18rem .5rem;border-radius:4px;letter-spacing:.05em">기회 영역</div>
+          </div>
+          <div style="font-family:var(--font-head);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.4rem">환자 자발보고 활성화 입법</div>
+          <ul style="font-size:.72rem;color:var(--muted);line-height:1.7;list-style:none;padding-left:0">
+            <li>• 22대 신규 발의안 미확인</li>
+            <li>• <strong style="color:var(--lav)">MedIT 제안의 차별적 공백</strong></li>
+            <li>• KAERS 환자보고 100건/년 (0.04%)</li>
+            <li>• 시스템 의무화 명분 충분</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로드맵 + 다운로드 CTA -->
+    <div class="rv" style="background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(125,243,255,.04));border:1px solid var(--mint-border);border-radius:var(--r);padding:2rem;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">ROADMAP</div>
+      <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text);margin:0 0 .6rem">단계별 입법 로드맵</h3>
+      <p style="font-size:.8rem;color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 1.5rem">2026.12.24 비대면진료 시행에 맞춘 18개월 로드맵으로 입법 제안을 진행합니다.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2rem;max-width:900px;margin-left:auto;margin-right:auto">
+        <div style="background:var(--bg);border-radius:10px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--mint);letter-spacing:.05em;margin-bottom:.3rem">PHASE 1</div>
+          <div style="font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:.3rem">0~3개월</div>
+          <div style="font-size:.7rem;color:var(--muted);line-height:1.6">환자 문의 5사례 집계 통계 정제, 정책 브리프 작성, 식약처 SaMD 사전검토 신청</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--ice);letter-spacing:.05em;margin-bottom:.3rem">PHASE 2</div>
+          <div style="font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:.3rem">3~9개월</div>
+          <div style="font-size:.7rem;color:var(--muted);line-height:1.6">의원실 2~3곳 패키지 제안, 약사회 자문 확보, 직역 보완 프레임 포지셔닝</div>
+        </div>
+        <div style="background:var(--bg);border-radius:10px;padding:1rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--lav);letter-spacing:.05em;margin-bottom:.3rem">PHASE 3</div>
+          <div style="font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:.3rem">9~18개월</div>
+          <div style="font-size:.7rem;color:var(--muted);line-height:1.6">하위법령 입법예고 의견 제출, 공청회 발제, 비대면진료 시행 연계</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tone-5" id="team" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">ABOUT US</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar">신</div><h3>신현정</h3><div class="role">대표 · FOUNDER</div><p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정 의견 4건을 국민참여입법센터에 제출. <span style="font-size:.65rem;color:var(--dim)">(※ 시민 입법의견 제안)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice));font-size:.95rem;letter-spacing:.02em">개발</div><h3>개발 환경 <span style="font-size:.6rem;color:var(--mint);font-weight:500">1인 + AI 협업</span></h3><div class="role">SOLO + AI-ASSISTED</div><p>대표 신현정이 Claude API를 활용해 직접 개발 중. OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(별도 엔지니어 채용은 시드 라운드 이후 계획)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#f0c866,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.6rem;color:var(--mint);font-weight:500">진행 중</span></h3><div class="role">ADVISORY</div><p>현재 숙명여자대학교 약학대학 교수님께 약학경제·디지털헬스케어 분야 자문을 받고 있습니다. 약사법 개정안 검토, 부작용 안전 데이터 설계, 복약지도 워크플로우 등 핵심 영역에 대해 학술적 자문을 제공받고 있습니다.</p></div></div></section>
 
 <section class="sec" id="news" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">RESOURCES</div><h2 class="sec-title">업계 동향 · 리소스</h2><p class="sec-desc">MedIT이 주목하는 디지털 헬스케어 뉴스</p></div><div class="grid3"><a href="https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1488108" target="_blank" rel="noopener" class="news-card rv"><div class="news-tag t1">정책</div><h3>비대면진료 의료법 개정안 통과 — 2026.12.24 시행 예정</h3><p>섬·벽지 거주자, 장기요양 수급자, 등록장애인, 감염병 확진자, 희귀질환자 등 <strong>취약계층 한정</strong>으로 약 배송 법적 근거 마련. 일반 대중 약 배송은 허용되지 않으며, 구체 기준은 하위 법령에서 마련 예정. <span style="color:var(--dim);font-size:.65rem">(출처: 보건복지부 보도자료)</span></p><div class="news-date">2025.12.02</div></a><a href="#" class="news-card rv"><div class="news-tag t2">기술</div><h3>멀티모달 AI 모델, 한국어 문서 인식 성능 향상</h3><p>최신 멀티모달 AI 모델들이 한국어 의료 문서 인식 분야에서 빠르게 발전하고 있습니다. (※ 실제 수치는 모델·환경에 따라 상이)</p><div class="news-date">2025</div></a><a href="#" class="news-card rv"><div class="news-tag t3">연구</div><h3>연하곤란 환자 35%, 약을 씹거나 부수어 복용 — 안전성 우려</h3><p>Doan et al. (2022) 연구에 따르면, 정제를 삼키지 못하는 환자 상당수가 위험한 방법으로 복용합니다.</p><div class="news-date">2022.06</div></a></div></section>
 
-<section class="cta-sec" id="contact"><h2 class="rv">복약 관리의 미래,<br><span style="color:var(--mint)">지금 시작하세요</span></h2><p class="rv" style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;font-weight:300">MedIT은 약국과 환자를 디지털로 연결하여,<br>단 한 알의 약도 놓치지 않는 세상을 만듭니다.</p><div class="rv" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap"><a href="mailto:hyunjeong.shin@sookmyung.ac.kr" class="btn btn-mint">서면 문의 →</a><a href="#demo" class="btn btn-outline">데모 체험하기</a></div></section>
+<section class="cta-sec" id="contact"><h2 class="rv">메디신 테크놀로지의 미래,<br><span style="color:var(--mint)">지금 시작하세요</span></h2><p class="rv" style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;font-weight:300">MedIT은 약국과 환자를 디지털로 연결하여,<br>단 한 알의 약도 놓치지 않는 세상을 만듭니다.</p><div class="rv" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap"><a href="mailto:hyunjeong.shin@sookmyung.ac.kr" class="btn btn-mint">서면 문의 →</a><a href="#demo" class="btn btn-outline">데모 체험하기</a></div></section>
 
 
 <!-- ══ DISCLAIMER & PRIVACY POLICY LINKS ══ -->
 <section class="sec" id="disclaimer" style="padding-top:3rem;padding-bottom:3rem">
+
+  <!-- US/GLOBAL LEGAL NOTICE — Shown only when language=EN -->
+  <div id="us-legal-panel" class="rv us-en-only" style="display:none;background:rgba(125,243,255,.04);border:1px solid rgba(125,243,255,.2);border-radius:var(--r);padding:2rem;max-width:900px;margin:0 auto 1.5rem">
+    <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--ice);margin-bottom:1.2rem;text-align:center">⚠ US & Global Legal Notice</h3>
+    <div style="display:grid;grid-template-columns:1fr;gap:1rem">
+      <div style="background:rgba(255,138,128,.05);border-left:3px solid var(--coral);border-radius:6px;padding:.9rem 1.1rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--coral);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">MEDICAL DISCLAIMER</div>
+        <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">The content provided by MedIT, including any AI-generated or pharmacist-reviewed responses, is for general informational and educational purposes only. <strong style="color:var(--text)">It is not medical advice</strong> and is not a substitute for professional medical advice, diagnosis, or treatment from a licensed physician or pharmacist. Always seek the advice of your physician or pharmacist with any questions regarding a medical condition or medication. Never disregard professional medical advice or delay seeking it because of something you have read on this service. <strong style="color:var(--coral)">If you think you may have a medical emergency, call your doctor or 911 immediately.</strong></p>
+      </div>
+      <div style="background:rgba(125,243,255,.05);border-left:3px solid var(--ice);border-radius:6px;padding:.9rem 1.1rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--ice);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">REGULATORY DISCLAIMER</div>
+        <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">MedIT is <strong style="color:var(--text)">not a medical device</strong>. It has <strong style="color:var(--text)">not been evaluated or approved by the U.S. Food and Drug Administration (FDA)</strong>. MedIT does not diagnose, treat, cure, or prevent any disease. Pharmacist-verified responses are provided by pharmacists licensed in the Republic of Korea; no pharmacist-patient relationship is formed with users outside Korea.</p>
+      </div>
+      <div style="background:rgba(0,210,180,.05);border-left:3px solid var(--mint);border-radius:6px;padding:.9rem 1.1rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--mint);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">ADVERSE EVENT REPORTING</div>
+        <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">To report a suspected side effect of a medication in the <strong style="color:var(--text)">United States</strong>, contact FDA MedWatch at <strong style="color:var(--mint)">1-800-FDA-1088</strong> or <a href="https://www.fda.gov/medwatch" target="_blank" rel="noopener" style="color:var(--mint)">fda.gov/medwatch</a>. In the <strong style="color:var(--text)">United Kingdom</strong>, use the MHRA Yellow Card scheme at <a href="https://yellowcard.mhra.gov.uk" target="_blank" rel="noopener" style="color:var(--mint)">yellowcard.mhra.gov.uk</a>. In the <strong style="color:var(--text)">European Union</strong>, contact your national competent authority via EMA's <a href="https://www.adrreports.eu" target="_blank" rel="noopener" style="color:var(--mint)">adrreports.eu</a>. In <strong style="color:var(--text)">Korea</strong>, contact KAERS at <a href="https://kaers.drugsafe.or.kr" target="_blank" rel="noopener" style="color:var(--mint)">kaers.drugsafe.or.kr</a> or 1644-6223.</p>
+      </div>
+      <div style="background:rgba(180,160,255,.05);border-left:3px solid var(--lav);border-radius:6px;padding:.9rem 1.1rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lav);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">HIPAA & DATA PRIVACY</div>
+        <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">MedIT is currently operated as a Korean sole proprietorship and is <strong style="color:var(--text)">not a HIPAA Covered Entity or Business Associate</strong>. If you are a U.S. healthcare provider, do not transmit Protected Health Information (PHI) to MedIT without a written Business Associate Agreement (BAA). For data subject rights under GDPR (EU/UK), CCPA (California), or PIPA (Korea), contact <a href="mailto:hyunjeong.shin@sookmyung.ac.kr" style="color:var(--lav)">hyunjeong.shin@sookmyung.ac.kr</a>.</p>
+      </div>
+      <div style="background:rgba(240,200,102,.05);border-left:3px solid #f0c866;border-radius:6px;padding:.9rem 1.1rem">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:#f0c866;font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">OPERATOR NOTICE</div>
+        <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">MedIT is operated from the <strong style="color:var(--text)">Republic of Korea</strong> by Hyunjung Shin (Representative, sole proprietorship), incubated at the Sookmyung Women's University Business Incubator. Services, content, regulatory compliance, and feature availability may differ by jurisdiction. By accessing this site from outside Korea, you acknowledge that some content reflects Korean regulatory context and may not apply to your jurisdiction.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="rv" style="background:rgba(255,138,128,.04);border:1px solid rgba(255,138,128,.15);border-radius:var(--r);padding:2rem;max-width:900px;margin:0 auto">
     <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--coral);margin-bottom:1rem;text-align:center">⚠ 서비스 면책 안내</h3>
     <ul style="font-size:.78rem;color:var(--muted);line-height:1.9;list-style:none;padding-left:0">
@@ -237,12 +1555,30 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
       <li style="margin-bottom:.5rem">• 페이지에 표시된 일부 기능은 <strong>개발·기획·데모 단계</strong>이며 실제 상용 서비스가 아닙니다.</li>
       <li style="margin-bottom:.5rem">• 데모 화면은 <strong>합성 데이터</strong>로 구성되어 있으며 실제 환자 정보는 포함되지 않습니다.</li>
       <li style="margin-bottom:.5rem">• MedIT는 <strong>개인사업자(대표 신현정)</strong>이며, 본 페이지는 투자 권유 또는 청약을 의미하지 않습니다.</li>
-      <li>• 의료기기 해당 여부는 향후 식약처 사전 검토를 진행할 예정입니다.</li>
+      <li style="margin-bottom:.5rem">• 의료기기 해당 여부는 향후 식약처 사전 검토를 진행할 예정입니다.</li>
+      <li>• AI 응답은 모든 경우 환자가 등록한 단골 약국 약사의 검토·승인을 거쳐 발송됩니다. AI 단독 발송은 절대 없습니다.</li>
     </ul>
+    <div style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--dim);line-height:1.7">
+      <strong style="color:var(--text)">법적 근거</strong>: 약사법 제24조 제4항 (조제한 약사의 복약지도) · 약사법 제50조 (면허 표시) · 약사법 제68조의8 (자발적 부작용 보고) · 의료법 제27조 (무면허 의료행위 금지) · 개인정보보호법 제17조·제23조·제28조의2 (민감정보·가명정보) · 헌법재판소 2019헌바87 (약국 내 복약지도 합헌) · 식약처 「의약품광고 및 전문의약품 정보제공 가이드라인」 (2022.11.30 개정, 안내서-0017-03) · 디지털의료제품법 (2025.1.24 시행)
+    </div>
   </div>
 </section>
 
-<footer><div class="ft-inner"><div><div class="ft-brand">Med<em>IT</em></div><p class="ft-desc">디지털 복약관리 플랫폼<br>MedIT (대표 신현정 · 개인사업자)<br>숙명여자대학교 창업보육센터 입주</p><p style="font-size:.68rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p></div><div class="ft-col"><h4>제품</h4><a href="#product">솔루션 개요</a><a href="#channels">멀티채널 알림</a><a href="#delivery">배송 플로우</a><a href="#demo">데모 체험</a><a href="#">복약지도 카드</a></div><div class="ft-col"><h4>규제 · 리소스</h4><a href="#regulation">약사법 개정 제안</a><a href="#regulation">의료법 개정 분석</a><a href="#">규제 샌드박스</a><a href="#news">업계 동향</a><a href="#">해외 벤치마크</a></div><div class="ft-col"><h4>정보</h4><a href="#team">팀 소개</a><a href="#privacy">개인정보 처리방침</a><a href="#disclaimer">서비스 면책 안내</a><a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a></div></div><div class="ft-bottom"><span>© 2026 MedIT (개인사업자, 대표 신현정). All rights reserved.</span><span>본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 일부 기능은 데모·기획 단계입니다.</span></div></footer>
+<footer><div class="ft-inner"><div><div class="ft-brand">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:40px;height:40px;vertical-align:middle;margin-right:6px;">
+<g opacity="0.32">
+<rect x="40" y="16" width="20" height="8" rx="3" fill="#34D399"/>
+<path d="M 31 88 L 31 38 Q 31 26 42 25 L 58 25 Q 69 26 69 38 L 69 88 Q 69 92 64 92 L 36 92 Q 31 92 31 88 Z" fill="#34D399"/>
+</g>
+<g transform="translate(50, 50)">
+<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2"/>
+<path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+<span style="vertical-align:middle;"><span style="color:#10B981">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
+</div><p class="ft-desc">메디신 테크놀로지 플랫폼<br>MedIT (대표 신현정 · 개인사업자)<br>숙명여자대학교 창업보육센터 입주</p><p style="font-size:.68rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p></div><div class="ft-col"><h4>제품</h4><a href="#product">솔루션 개요</a><a href="#channels">멀티채널 알림</a><a href="#delivery">배송 플로우</a><a href="#demo">데모 체험</a><a href="#">복약지도 카드</a></div><div class="ft-col"><h4>규제 · 리소스</h4><a href="#regulation">약사법 개정 제안</a><a href="#regulation">의료법 개정 분석</a><a href="#policy-insight">정책 인사이트</a><a href="MedIT_Legislative_Proposal.md" download>입법 제안서 (KR / .md)</a><a href="MedIT_Legislative_Proposal_EN.md" download>Policy White Paper (EN / .md)</a><a href="#">해외 벤치마크</a></div><div class="ft-col"><h4>정보</h4><a href="#team">팀 소개</a><a href="#privacy">개인정보 처리방침</a><a href="#disclaimer">서비스 면책 안내</a><a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a></div></div><div class="ft-bottom"><span>© 2026 MedIT (개인사업자, 대표 신현정). All rights reserved.</span><span>본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 일부 기능은 데모·기획 단계입니다.</span></div></footer>
 
 <script>
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
@@ -477,6 +1813,775 @@ function uPill(p){p.vy+=.25;p.vx*=.995;p.vy*=.998;p.x+=p.vx;p.y+=p.vy;p.rot+=p.v
 function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pills.length<12){pills.push(mkPill());spT=0}for(var i=pills.length-1;i>=0;i--){uPill(pills[i]);if(pills[i].life<=0){pills.splice(i,1);continue}dPill(pills[i])}requestAnimationFrame(drawPills)}drawPills();
 </script>
 
+
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// 언어 토글 시스템 (한국어 ↔ 영어)
+// ═══════════════════════════════════════════════════════════════════
+(function(){
+  
+  // 짧은 텍스트 사전 (정확히 일치하는 텍스트 노드 번역)
+  var T = {
+    // Nav
+    "제품":"Product",
+    "알림 채널":"Channels",
+    "배송 플로우":"Service Flow",
+    "재택수령":"Home Delivery",
+    "데모 체험":"Demo",
+    "규제 전략":"Regulatory",
+    "팀 소개":"About",
+    "리소스":"Resources",
+    "문의하기":"Contact",
+    
+    // Hero
+    "숙명여자대학교 창업보육센터":"Sookmyung Women's University Business Incubator",
+    "데모 체험하기 →":"Try the Demo →",
+    "데모 체험하기":"Try the Demo",
+    "솔루션 알아보기":"Learn More",
+    "※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다.":"※ This service does not provide medical diagnosis, treatment, or prescriptions.",
+    
+    // Stat strip
+    "만성질환자 복약 비순응률":"Medication non-adherence rate",
+    "출처: WHO (2003)":"Source: WHO (2003)",
+    "연간 비순응 관련 사망자":"Annual non-adherence deaths",
+    "미국 / 출처: Annals of Pharmacotherapy":"US / Annals of Pharmacotherapy",
+    "비순응 관련 입원 비율":"Non-adherence hospitalizations",
+    "출처: NEHI 보고서":"Source: NEHI Report",
+    "연간 비순응 사회적 비용 (조 원)":"Annual social cost (trillion KRW)",
+    "한국 추정치 / 학계 인용":"Korea estimate / Academic",
+    
+    // Product
+    "MedIT은 이렇게 작동합니다":"How MedIT Works",
+    "약국 → 환자 → 복약 관리의 전 과정을 디지털로 연결합니다.":"Connecting pharmacy → patient → medication management digitally.",
+    "QR 코드 등록":"QR Code Registration",
+    "약국에서 조제 시 QR 코드를 생성하여 환자에게 제공하는 시스템을 개발 중입니다. 환자가 스캔하면 복약 일정이 등록되도록 설계되었습니다.":"Developing a system that generates QR codes at the pharmacy. When patients scan, their medication schedule is automatically registered.",
+    "맞춤형 알림 발송":"Personalized Reminders",
+    "카카오톡 알림톡, SMS, 음성 안내 — 환자의 디지털 접근성에 맞는 채널로 복약 시간을 안내하는 기능을 개발하고 있습니다.":"KakaoTalk Alimtalk, SMS, voice — sending reminders through the channel that matches each patient's accessibility.",
+    "복약 자가 기록":"Medication Self-Logging",
+    "환자가 본인의 복약 여부를 직접 기록할 수 있는 기능을 기획하고 있습니다. 약사 협업 환경은 향후 단계로 검토 중입니다.":"Patients log their own adherence. Pharmacist collaboration is planned for a later phase.",
+    "기획 단계":"PLANNED",
+    "기획":"PLANNED",
+    
+    // Multi-channel
+    "모든 세대를 위한 3채널 알림":"Three-Channel Reminders for Every Generation",
+    "스마트폰이 없어도, 문자를 못 봐도, 놓치지 않습니다.":"No smartphone? Can't read texts? You won't miss a dose.",
+    "MedIT 복약 알림":"MedIT Reminder",
+    "아침 약 복용 시간입니다.":"Time for morning medication.",
+    "혈압약 1정 · 위장약 1정":"BP 1 tab · Gastric 1 tab",
+    "식사 직후 물 한 컵과 함께 드세요.":"Take after meal with a glass of water.",
+    "오전 08:00 · 복용 완료":"08:00 AM · Taken",
+    "카카오톡":"KakaoTalk",
+    "익숙한 메신저로 복약 알림을 받아보세요. 알림톡 표준 양식으로 신뢰할 수 있는 메시지를 전달합니다.":"Receive reminders through Korea's most familiar messenger.",
+    "아침약 복용 시간입니다.":"Time for morning medication.",
+    "혈압약 1정 · 식후 30분":"BP 1 tab · 30min after meal",
+    "점심약 복용 시간입니다.":"Time for afternoon medication.",
+    "저녁약 복용 시간입니다.":"Time for evening medication.",
+    "SMS 문자":"SMS",
+    "앱 설치 없이 문자로 복용 시간을 안내합니다. 2G 피처폰에서도 동작하도록 설계되어 기기 격차를 줄입니다.":"No app needed. Works on 2G phones, reducing the digital divide.",
+    "음성 안내":"Voice Guidance",
+    "음성 합성 기술을 활용해 복약 시간을 전화로 안내하는 기능을 검토하고 있습니다. 문자 사용이 어려운 사용자를 위한 보조 채널입니다.":"Considering voice synthesis for phone-based reminders.",
+    
+    // Service Flow
+    "약국과 환자를 디지털로 연결합니다":"Connecting Pharmacies and Patients Digitally",
+    "약국 방문 전 사전 안내 흐름을 디자인합니다. (※ 약 배송은 의료법·약사법 개정에 따라 단계적으로 도입 예정)":"Designing pre-visit guidance flow. (※ Delivery introduced as laws are revised)",
+    "증상 기록":"Symptom Log",
+    "본인 증상을 약국에 문의 메시지로 전달.":"Send symptoms to pharmacy as inquiry.",
+    "약봉투 촬영":"Photo Capture",
+    "약봉투 이미지 텍스트 추출(개발 중).":"Text extraction from medication packaging (in development).",
+    "본인 인증":"Identity Verification",
+    "휴대폰 본인확인으로 자동 검증합니다.":"Auto-verify with mobile authentication.",
+    "약국 조제":"Pharmacy Dispensing",
+    "약사가 확인 후 조제합니다.":"Pharmacist reviews and dispenses.",
+    "약사 복약지도":"Pharmacist Counseling",
+    "약사가 환자에게 직접 복약지도 제공.":"Pharmacist provides direct counseling.",
+    
+    // Home Delivery
+    "재택수령 솔루션":"Home Delivery Solution",
+    "의료법 개정안 시행에 맞춰, 취약계층 환자에게 안전한 약 수령 경로를 제공합니다.":"In line with the Medical Act amendment, providing safe medication delivery to vulnerable populations.",
+    "법정 재택수령 허용 대상":"Legally Permitted Recipients",
+    "· 섬·벽지 거주자":"· Remote island residents",
+    "· 장기요양 수급자":"· Long-term care recipients",
+    "· 등록장애인":"· Registered disabled",
+    "· 1·2급 감염병 확진자":"· Class 1·2 infectious disease patients",
+    "· 희귀질환자":"· Rare disease patients",
+    "재택수령 4단계 플로우":"4-Step Home Delivery Flow",
+    "대상자 자격 확인":"Eligibility Verification",
+    "공공시스템 연동으로 환자의 법정 자격(장애·요양·감염병 등)을 자동 검증합니다.":"Auto-verify legal eligibility via public system integration.",
+    "전자처방전 전송":"E-Prescription Transmission",
+    "의료기관에서 발급한 전자처방전이 환자가 선택한 약국으로 안전하게 전달됩니다.":"E-prescriptions from clinics securely delivered to patient-chosen pharmacy.",
+    "약사 조제·확인":"Pharmacist Dispense",
+    "약사가 처방 검토·조제 후 비대면 복약지도를 진행합니다.":"Pharmacist reviews, dispenses, and provides remote counseling.",
+    "안전 재택수령":"Safe Home Delivery",
+    "법정 인증 배송 경로로 환자에게 전달, MedIT 알림으로 복약 추적이 시작됩니다.":"Delivered via certified routes, MedIT reminders activate automatically.",
+    "MedIT만의 차별점":"MedIT's Differentiators",
+    "조제→복약 폐쇄루프":"Dispense → Adherence Closed Loop",
+    "단순 배송이 아닌, 수령 후 복약 추적까지 한 번에.":"Not just delivery — full adherence tracking after receipt.",
+    "3채널 복약 알림 연동":"3-Channel Reminder Integration",
+    "카카오톡·SMS·음성 안내가 수령 직후 자동 활성화.":"KakaoTalk·SMS·voice reminders activate immediately upon receipt.",
+    "약사 직접 복약지도":"Direct Pharmacist Counseling",
+    "비대면 환경에서도 약사·환자 양방향 소통.":"Two-way pharmacist-patient communication, even remotely.",
+    
+    // Demo
+    "직접 체험해 보세요":"Try It Yourself",
+    "실시간 환자 대시보드":"Real-time Patient Dashboard",
+    "복약 일정 진행 상황, 사용자 기록, 처방 안내 현황을 한눈에 확인할 수 있도록 설계 중입니다.":"Designed to show medication progress, user logs, and prescription status at a glance.",
+    "약봉투 텍스트 추출":"Medication Label Text Extraction",
+    "약봉투 이미지에서 텍스트를 추출하는 기능을 개발 중입니다. (의료기기 해당 여부 식약처 사전 검토 진행 예정)":"Developing text extraction from medication packaging (MFDS pre-review pending).",
+    "복약지도 카드 발급":"Counseling Card Generation",
+    "환자별 맞춤 복약지도를 디지털 카드로 자동 생성합니다.":"Auto-generates personalized counseling cards.",
+    "이상반응 자가기록":"Self-Logged Adverse Reactions",
+    "환자가 본인의 이상반응을 직접 기록할 수 있는 인터페이스를 시연합니다. (※ 의학적 판단은 약사·의사와 상담)":"Demo interface for patient-logged reactions. (※ Always consult a pharmacist/physician)",
+    "약국 앱 데모 열기 →":"Open Pharmacy Demo →",
+    "환자 앱 데모":"Patient Demo",
+    "※ 데모는 합성 데이터로 구성되어 있으며, 실제 환자 정보는 포함되지 않습니다.":"※ Demo uses synthetic data only. No real patient information.",
+    "MedIT 약국 관리":"MedIT Pharmacy",
+    "오늘 처방":"Today's Rx",
+    "복약 준수율":"Adherence",
+    "사용자 기록":"User Log",
+    "데모 사용자 — 이상반응 자가기록":"Demo User — Self-logged reaction",
+    "예시 데이터 · 합성 시연":"Sample data · Synthetic",
+    "예시":"SAMPLE",
+    
+    // Regulation
+    "규제를 경쟁력으로":"Regulation as Competitive Edge",
+    "MedIT은 단순한 제품이 아닌, 제도 혁신 플랫폼입니다.":"MedIT is more than a product — it's a regulatory innovation platform.",
+    "약사법 개정 제안":"Pharmaceutical Affairs Act Reform",
+    "시민 입법의견 제안":"Citizen Legislative Proposals",
+    "개정 검토 영역":"Amendment Review Areas",
+    "(※ 시민 입법의견 제안)":"(※ Citizen legislative opinion submission)",
+    "(2026.12 시행 예정)":"(Effective Dec 2026)",
+    "법 개정안 제출 완료":"Bills Submitted",
+    "정부 기관 제안":"Gov Proposals",
+    "의료법 개정 (비대면진료 제도화)":"Medical Service Act Amendment (Telemedicine)",
+    "2025.12 의료법 개정(취약계층 약 배달 허용)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 제안합니다.":"Building on December 2025 Medical Act amendment, proposing expansion to general public via certified platforms.",
+    "의료법 시행 예정":"Medical Act Effective",
+    "규제 경로 동시 추진":"Regulatory Pathways",
+    "해외 벤치마크":"International Benchmarks",
+    "호주 TGA Special Access, EU EMA 소아 투약, 미국 Amazon Pharmacy 모델을 분석하여 한국형 제도를 설계합니다.":"Analyzing Australia's TGA, EU EMA pediatric, US Amazon Pharmacy to design Korea-tailored regulations.",
+    "해외 제도 분석":"Foreign Systems",
+    "학술 논문 인용":"Academic Citations",
+    
+    // Team
+    "MedIT을 만드는 사람들":"The People Behind MedIT",
+    "환자의 복약 경험을 바꾸기 위해 모인 팀입니다.":"A team committed to transforming the patient medication experience.",
+    "신현정":"Hyun Jeong Shin",
+    "대표 · FOUNDER":"CEO · FOUNDER",
+    "1인 + AI 협업":"SOLO + AI",
+    "자문 네트워크":"Advisory Network",
+    "구성 예정":"FORMING",
+    
+    // News
+    "업계 동향 · 리소스":"Industry Insights · Resources",
+    "MedIT이 주목하는 디지털 헬스케어 뉴스":"Digital healthcare news we follow",
+    "정책":"Policy",
+    "비대면진료 의료법 개정안 통과 — 2026.12.24 시행 예정":"Telemedicine Bill Passed — Effective Dec 24, 2026",
+    "기술":"Technology",
+    "멀티모달 AI 모델, 한국어 문서 인식 성능 향상":"Multimodal AI Improves Korean Document Recognition",
+    "최신 멀티모달 AI 모델들이 한국어 의료 문서 인식 분야에서 빠르게 발전하고 있습니다. (※ 실제 수치는 모델·환경에 따라 상이)":"Latest multimodal AI is rapidly improving Korean medical document recognition.",
+    "연구":"Research",
+    "연하곤란 환자 35%, 약을 씹거나 부수어 복용 — 안전성 우려":"35% of Dysphagia Patients Crush Medications — Safety Concerns",
+    
+    // CTA
+    "서면 문의 →":"Contact Us →",
+    
+    // Disclaimer
+    "⚠ 서비스 면책 안내":"⚠ Service Disclaimer",
+    
+    // Footer
+    "솔루션 개요":"Solution Overview",
+    "멀티채널 알림":"Multi-Channel",
+    "복약지도 카드":"Counseling Cards",
+    "규제 · 리소스":"Regulatory · Resources",
+    "규제 샌드박스":"Regulatory Sandbox",
+    "업계 동향":"Industry News",
+    "정보":"Info",
+    "개인정보 처리방침":"Privacy Policy",
+    "서비스 면책 안내":"Disclaimer",
+    "DEMO":"DEMO",
+
+    // === US/Global market compliant translations (added 2026-06) ===
+    // Positioning: pharmacist assistance tool, NOT patient-direct AI
+    "환자의 복약 경험을 바꾸기 위해 모인 팀입니다.":"A small team building information tools to support pharmacists and improve patient medication adherence.",
+    "약사 검증 AI 응답":"Pharmacist-Verified Information Assistance",
+    "AI 응답 생성":"Generate Information Draft",
+    "AI 응답 초안 (약사 검토 대기)":"Information Draft (Pending Pharmacist Review)",
+    "약사 검토 필수":"Pharmacist Review Required",
+    "검토 약사":"Reviewing Pharmacist",
+    "환자 자연어 문의 입력":"Patient Inquiry Input (Natural Language)",
+    "KAERS 데이터 매칭 결과":"Reference Data Matching Result",
+    "KAERS 데이터 연동 AI 응답":"Reference-Linked Information Tool",
+    "환자 KAERS 자가 보고":"Patient Self-Reporting Assistance (Korea: KAERS / US: MedWatch / UK: Yellow Card)",
+    "KAERS 자가 보고":"Self-Report Assistance",
+    "처방 의사 1회 공유":"Optional Sharing with Prescriber",
+    "제약사 익명 통계":"Anonymized Aggregate Statistics",
+    "단골 약국":"User's Pharmacy",
+    "면허 제12345호":"License No. 12345 (KR)",
+    "청파약국 (서울 용산구)":"Cheongpa Pharmacy (Seoul, Republic of Korea)",
+    "본 자료는 KAERS 보고 통계이며, 해당 의약품과의 인과관계를 의미하지 않습니다.":"Adverse event reports do not establish causality. Reports are voluntary and may be incomplete.",
+    "위 정보는 약사가 직접 검토·승인했습니다. 의학적 판단은 약사·의사와 상담하세요.":"This information was reviewed by a pharmacist licensed in Korea. It is for informational purposes only and is not medical advice. Consult your local healthcare provider for medical decisions.",
+    "복약 알림":"Medication Reminders",
+    "디지털 사각지대 포용":"Inclusive Multi-Channel Delivery",
+    "약사 워크플로우 대시보드":"Pharmacist Workflow Dashboard",
+    "복약지도 카드 (약사 발급)":"Pharmacist-Issued Medication Counseling Card",
+    "6대 금지선":"Six Operating Boundaries",
+    "MedIT이 절대 하지 않을 여섯 가지":"Six things MedIT will never do",
+    "RED LINES · 6대 금지선":"OPERATING BOUNDARIES · Non-Negotiable Safety Lines",
+    "정책 인사이트":"Policy Insights",
+    "정책 인사이트는 한국 시장 콘텐츠입니다":"Policy Insights (Korean Market Content)",
+    "환자 문의 데이터 → 입법 제안":"Patient Inquiry Data → Policy Recommendations",
+    "데이터 연결 대기 중":"Awaiting Data Connection",
+    "지금 새로고침":"Refresh Now",
+    "체험하기 시작 →":"Start Demo →",
+    "버튼 클릭 시 원격 데이터를 가져옵니다.":"Clicking starts a remote data fetch.",
+    "AI가 약품명·증상·요청을 자동 파싱합니다":"AI auto-parses medication, symptom, and request",
+    "빠른 예시:":"Quick Examples:",
+    "약품명을 입력해주세요. (예: 로사르탄)":"Please enter a medication name (e.g., losartan)",
+    "환자 문의를 입력해주세요.":"Please enter a patient inquiry.",
+  };
+
+  // HTML 포함 긴 문장 사전 (innerHTML 매칭)
+  var T_HTML = {
+    '메디신 테크놀로지의 미래,<br><span style="color:var(--mint)">지금 시작하세요</span>':
+      'The future of medicine technology<br><span style="color:var(--mint)">starts now</span>',
+    'MedIT은 약국과 환자를 디지털로 연결하여,<br>단 한 알의 약도 놓치지 않는 세상을 만듭니다.':
+      'MedIT connects pharmacies and patients digitally,<br>so no dose is ever missed.',
+    '약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span>':
+      'No one should<br>forget their medication.<br><span class="hl">MedIT remembers for you.</span>',
+    'QR 기반 복약 일정 알림부터 음성 안내까지.<br>모든 세대를 위한 디지털 복약 관리 도구입니다.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다.</span>':
+      'From QR-based reminders to voice guidance.<br>A digital medication tool for every generation.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ This service does not provide medical diagnosis, treatment, or prescriptions.</span>',
+    '• 본 서비스는 의학적 <strong>진단·치료·처방</strong>을 제공하지 않습니다.':
+      '• This service does not provide medical <strong>diagnosis, treatment, or prescriptions</strong>.',
+    '• 복약·증상 관련 의학적 판단은 반드시 <strong>의사·약사</strong>와 상담하시기 바랍니다.':
+      '• Always consult a <strong>physician or pharmacist</strong> for medication decisions.',
+    '• 페이지에 표시된 일부 기능은 <strong>개발·기획·데모 단계</strong>이며 실제 상용 서비스가 아닙니다.':
+      '• Some features are in <strong>development, planning, or demo stages</strong>.',
+    '• 데모 화면은 <strong>합성 데이터</strong>로 구성되어 있으며 실제 환자 정보는 포함되지 않습니다.':
+      '• Demo uses <strong>synthetic data only</strong>. No real patient information.',
+    '• MedIT는 <strong>개인사업자(대표 신현정)</strong>이며, 본 페이지는 투자 권유 또는 청약을 의미하지 않습니다.':
+      '• MedIT is a <strong>sole proprietorship (CEO: Hyun Jeong Shin)</strong>. Not investment solicitation.',
+    '• 의료기기 해당 여부는 향후 식약처 사전 검토를 진행할 예정입니다.':
+      '• Medical device classification will be reviewed by MFDS.',
+    'Doan et al. (2022) 연구에 따르면, 정제를 삼키지 못하는 환자 상당수가 위험한 방법으로 복용합니다.':
+      'According to Doan et al. (2022), many patients unable to swallow tablets resort to unsafe administration.',
+    '섬·벽지 거주자, 장기요양 수급자, 등록장애인, 감염병 확진자, 희귀질환자 등 <strong>취약계층 한정</strong>으로 약 배송 법적 근거 마련. 일반 대중 약 배송은 허용되지 않으며, 구체 기준은 하위 법령에서 마련 예정. <span style="color:var(--dim);font-size:.65rem">(출처: 보건복지부 보도자료)</span>':
+      'Legal basis for medication delivery <strong>limited to vulnerable populations</strong>: remote islands, long-term care, disabled, infectious diseases, rare diseases. General public delivery not permitted. <span style="color:var(--dim);font-size:.65rem">(Source: MOHW press release)</span>',
+    '<p>액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송 — 3건의 개정안을 정부입법지원센터에 직접 제출했습니다.</p>':
+      '<p>Liquid formulation, powder safety, e-commerce delivery — 3 proposals submitted to government portal.</p>',
+    '<p><strong style="color:var(--mint)">약사법·의료법 개정 의견 4건을 국민참여입법센터(opinion.lawmaking.go.kr)에 제출</strong>. 액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송, 의료법 인증 플랫폼 확장 — 시민 입법의견 제안 형태로 진행 중입니다. <span style="font-size:.65rem;color:var(--dim)">(※ 시민 의견 제출이며 의원 발의나 정부 입법안과 구분됨)</span></p>':
+      '<p>Submitted <strong>4 amendment opinions to the Pharmaceutical Affairs Act and Medical Service Act</strong> via the National Citizen Legislation Portal (opinion.lawmaking.go.kr): liquid formulation substitution, powder compounding safety standards, e-commerce delivery, and Medical Service Act certified platform expansion — as citizen legislative proposals. <span style="font-size:.65rem;color:var(--dim)">(※ Citizen opinion submission, distinct from formal legislator-introduced or government bills)</span></p>',
+    '<p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정 의견 4건을 국민참여입법센터에 제출. <span style="font-size:.65rem;color:var(--dim)">(※ 시민 입법의견 제안)</span></p>':
+      '<p>Sole proprietor at Sookmyung University Business Incubator. Digital healthcare planning, regulatory strategy, and 4 legislative proposals submitted.</p>',
+    '<p>대표 신현정이 Claude API를 활용해 직접 개발 중. OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(별도 엔지니어 채용은 시드 라운드 이후 계획)</span></p>':
+      '<p>CEO Hyun Jeong Shin builds directly using Claude API. OCR pipeline, 3-channel reminders, pharmacist collaboration. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(Engineer hires planned post-seed round)</span></p>',
+    '<p>현재 숙명여자대학교 약학대학 교수님께 약학경제·디지털헬스케어 분야 자문을 받고 있습니다. 약사법 개정안 검토, 부작용 안전 데이터 설계, 복약지도 워크플로우 등 핵심 영역에 대해 학술적 자문을 제공받고 있습니다.</p>':
+      "<p>Currently receiving advisory support from a professor at the Sookmyung Women's University College of Pharmacy in pharmaceutical economics and digital healthcare. Academic guidance covers pharmaceutical law amendments, adverse-event safety data design, and medication counseling workflows.</p>",
+    '메디신 테크놀로지 플랫폼<br>MedIT (대표 신현정 · 개인사업자)<br>숙명여자대학교 창업보육센터 입주':
+      'Medicine Technology Platform<br>MedIT (CEO: Hyun Jeong Shin · Sole Proprietor)<br>Sookmyung University Business Incubator',
+    '서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>':
+      '46 Cheongpa-ro 47-gil, Yongsan-gu, Seoul, 202<br>(Sookmyung Campus Town)<br>',
+    '© 2026 MedIT (개인사업자, 대표 신현정). All rights reserved.':
+      '© 2026 MedIT (Sole Proprietor, CEO: Hyun Jeong Shin). All rights reserved.',
+    '본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 일부 기능은 데모·기획 단계입니다.':
+      'This service does not provide medical diagnosis/treatment/prescription. Some features in demo/planning stages.',
+    'SERVICE FLOW (계획)':'SERVICE FLOW (Planned)',
+    '(출처: 보건복지부 보도자료)':'(Source: MOHW press release)',
+  };
+
+  function getLang(){
+    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
+  }
+  
+  function setLang(lang){
+    try { localStorage.setItem('medit_lang', lang); } catch(e){}
+  }
+
+  // 한국어 → 영어 전환
+  function applyEnglish(){
+    // HTML 단위 치환
+    document.querySelectorAll('p, h1, h2, h3, h4, span, li, a, div').forEach(function(el){
+      var html = el.innerHTML.trim();
+      if(T_HTML[html] && !el.hasAttribute('data-orig-html')){
+        el.setAttribute('data-orig-html', html);
+        el.innerHTML = T_HTML[html];
+      }
+    });
+    
+    // 텍스트 노드 치환
+    document.querySelectorAll('a, button, h1, h2, h3, h4, p, span, div, li, td, th').forEach(function(el){
+      var hasElementChild = false;
+      for(var i=0;i<el.childNodes.length;i++){
+        if(el.childNodes[i].nodeType === 1){ hasElementChild = true; break; }
+      }
+      if(hasElementChild) return;
+      
+      var t = el.textContent.trim();
+      if(T[t] && !el.hasAttribute('data-orig-text')){
+        el.setAttribute('data-orig-text', t);
+        el.textContent = el.textContent.replace(t, T[t]);
+      }
+    });
+    
+    document.documentElement.lang = 'en';
+
+    // Show US/Global legal panel
+    var usPanel = document.getElementById('us-legal-panel');
+    if(usPanel) usPanel.style.display = 'block';
+    // Hide Korean-only sections (policy insight is Korea-specific)
+    document.querySelectorAll('.ko-only').forEach(function(el){ el.style.display = 'none'; });
+
+    var btn = document.getElementById('langToggle');
+    if(btn){
+      btn.textContent = '🇰🇷';
+      btn.title = '한국어';
+    }
+  }
+  
+  // 영어 → 한국어 복원
+  function applyKorean(){
+    document.querySelectorAll('[data-orig-html]').forEach(function(el){
+      el.innerHTML = el.getAttribute('data-orig-html');
+      el.removeAttribute('data-orig-html');
+    });
+    document.querySelectorAll('[data-orig-text]').forEach(function(el){
+      el.textContent = el.getAttribute('data-orig-text');
+      el.removeAttribute('data-orig-text');
+    });
+    document.documentElement.lang = 'ko';
+
+    // Hide US/Global legal panel
+    var usPanel = document.getElementById('us-legal-panel');
+    if(usPanel) usPanel.style.display = 'none';
+    // Restore Korean-only sections
+    document.querySelectorAll('.ko-only').forEach(function(el){ el.style.display = ''; });
+
+    var btn = document.getElementById('langToggle');
+    if(btn){
+      btn.textContent = '🇺🇸';
+      btn.title = 'English';
+    }
+  }
+  
+  function toggleLanguage(){
+    if(getLang() === 'ko'){
+      applyEnglish();
+      setLang('en');
+    } else {
+      applyKorean();
+      setLang('ko');
+    }
+  }
+  
+  // 초기화: 저장된 언어 자동 적용
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.getElementById('langToggle');
+    if(btn) btn.addEventListener('click', toggleLanguage);
+    
+    // 저장된 언어가 영어면 자동 전환
+    if(getLang() === 'en') applyEnglish();
+  });
+})();
+</script>
+
+
+<script>
+function toggleLogoState(el){
+  var svg = el.querySelector('.logo-svg');
+  if(!svg) return;
+  var pulse = svg.querySelector('.pulse-icon');
+  var check = svg.querySelector('.check-icon');
+  if(!pulse || !check) return;
+  if(pulse.style.display !== 'none'){
+    pulse.style.display = 'none';
+    check.style.display = '';
+    svg.style.transform = 'scale(1.15)';
+    setTimeout(function(){ svg.style.transform = ''; }, 200);
+  } else {
+    pulse.style.display = '';
+    check.style.display = 'none';
+  }
+}
+
+
+
+// ============================================
+// DEMO 06: KAERS Data-Powered AI Response (Live Mode)
+// 실시간 원격 데이터 + 날짜 스크리닝 NEW 감지
+// ============================================
+window.KAERS_DATA = null;
+window.KAERS_REFRESH_LOG = [];
+
+const KAERS_REMOTE_URL = 'https://raw.githubusercontent.com/hyunjeongshin83/medit-homepage/main/kaers-sample-data.json';
+const KAERS_SEEN_KEY = 'medit_kaers_last_seen';
+
+async function fetchKaersFresh(){
+  const url = KAERS_REMOTE_URL + '?t=' + Date.now();
+  const resp = await fetch(url, {
+    cache: 'no-store',
+    headers: {'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache'}
+  });
+  if(!resp.ok) throw new Error('HTTP ' + resp.status);
+  return await resp.json();
+}
+
+function formatTimestamp(date){
+  const pad = n => String(n).padStart(2, '0');
+  return date.getFullYear() + '-' + pad(date.getMonth()+1) + '-' + pad(date.getDate()) + ' ' +
+         pad(date.getHours()) + ':' + pad(date.getMinutes()) + ':' + pad(date.getSeconds());
+}
+
+function logRefresh(message, isError){
+  const ts = formatTimestamp(new Date());
+  window.KAERS_REFRESH_LOG.unshift({time: ts, msg: message, error: !!isError});
+  if(window.KAERS_REFRESH_LOG.length > 5) window.KAERS_REFRESH_LOG = window.KAERS_REFRESH_LOG.slice(0, 5);
+  const logEl = document.getElementById('kaersRefreshLog');
+  if(logEl){
+    logEl.style.display = 'block';
+    logEl.innerHTML = window.KAERS_REFRESH_LOG.map(l => {
+      const color = l.error ? 'var(--coral)' : 'var(--mint)';
+      const icon = l.error ? '✗' : '✓';
+      return '<div style="color:' + color + '">[' + l.time + '] ' + icon + ' ' + escapeHtml(l.msg) + '</div>';
+    }).join('');
+  }
+}
+
+function updateStatus(text, color, bg){
+  const el = document.getElementById('kaersStatus');
+  if(!el) return;
+  el.textContent = text;
+  el.style.color = color;
+  el.style.background = bg;
+}
+
+function updateMeta(){
+  const el = document.getElementById('kaersDataMeta');
+  if(!el) return;
+  if(window.KAERS_DATA){
+    const drugCount = window.KAERS_DATA.drugs.length;
+    const updated = window.KAERS_DATA._meta && window.KAERS_DATA._meta.last_updated || 'unknown';
+    const version = window.KAERS_DATA._meta && window.KAERS_DATA._meta.version || '1.0';
+    const fetchedAt = formatTimestamp(new Date());
+    el.innerHTML = '<strong style="color:var(--mint)">' + drugCount + '개 의약품</strong> · v' + escapeHtml(version) + ' · 데이터 갱신일: ' + escapeHtml(updated) + ' · 가져온 시각: ' + fetchedAt;
+  } else {
+    el.textContent = '데이터 없음';
+  }
+}
+
+async function loadKaersData(){
+  updateStatus('원격 데이터 가져오는 중...', '#f0c866', 'rgba(240,200,102,.15)');
+  try{
+    const data = await fetchKaersFresh();
+    window.KAERS_DATA = data;
+    updateStatus('✓ 실시간 원격 연결됨', 'var(--mint)', 'rgba(16,185,129,.15)');
+    updateMeta();
+    checkForNewData(data);
+    logRefresh('GitHub raw에서 ' + data.drugs.length + '개 의약품 데이터 가져옴');
+  } catch(err) {
+    window.KAERS_DATA = null;
+    // 차분한 노란색 (에러보다는 대기 상태로 표현)
+    updateStatus('데이터 연결 대기 중', '#f0c866', 'rgba(240,200,102,.15)');
+    const meta = document.getElementById('kaersDataMeta');
+    if(meta){
+      meta.innerHTML = '<span style="color:var(--muted);font-size:.7rem">원격 데이터를 가져올 수 없습니다.</span> ' +
+        '<button onclick="refreshKaersData()" style="background:var(--mint);color:var(--bg);border:none;padding:.3rem .8rem;border-radius:6px;font-size:.7rem;font-weight:700;cursor:pointer;font-family:inherit;margin-left:.5rem">다시 시도</button>';
+    }
+    logRefresh('연결 실패: ' + err.message, true);
+  }
+}
+
+async function refreshKaersData(){
+  updateStatus('새로고침 중...', '#f0c866', 'rgba(240,200,102,.15)');
+  await loadKaersData();
+}
+
+function parseKaersDate(s){
+  if(!s) return null;
+  const d = new Date(s);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+function checkForNewData(data){
+  if(!data || !data._meta || !data._meta.last_updated) return;
+  const remoteDate = parseKaersDate(data._meta.last_updated);
+  if(!remoteDate) return;
+
+  let lastSeenStr = null;
+  try { lastSeenStr = localStorage.getItem(KAERS_SEEN_KEY); } catch(e) {}
+  const lastSeenDate = parseKaersDate(lastSeenStr);
+
+  if(!lastSeenDate){
+    try { localStorage.setItem(KAERS_SEEN_KEY, data._meta.last_updated); } catch(e) {}
+    return;
+  }
+
+  if(remoteDate.getTime() > lastSeenDate.getTime()){
+    showKaersNewBadge(data, lastSeenStr);
+  }
+}
+
+function showKaersNewBadge(data, prevSeenStr){
+  const badge = document.getElementById('kaersNewBadge');
+  const prompt = document.getElementById('kaersNewPrompt');
+  const promptBody = document.getElementById('kaersNewPromptBody');
+  if(!badge || !prompt || !promptBody) return;
+
+  badge.style.display = 'inline-block';
+  prompt.style.display = 'block';
+
+  const version = data._meta.version || '?';
+  const updated = data._meta.last_updated || '?';
+  const drugCount = data.drugs.length;
+  const prevMsg = prevSeenStr ? '이전 확인: <strong style="color:var(--text)">' + escapeHtml(prevSeenStr) + '</strong>' : '';
+
+  promptBody.innerHTML =
+    '데이터 갱신일이 <strong style="color:var(--text)">' + escapeHtml(updated) + '</strong> (v' + escapeHtml(version) + ')로 변경되었습니다. ' +
+    (prevMsg ? prevMsg + ' → 새로 도착한 갱신입니다.' : '') +
+    '<br>현재 <strong style="color:var(--mint)">' + drugCount + '개 의약품</strong> 데이터가 활성화되어 있습니다.';
+}
+
+function dismissKaersNewPrompt(){
+  const badge = document.getElementById('kaersNewBadge');
+  const prompt = document.getElementById('kaersNewPrompt');
+  if(badge) badge.style.display = 'none';
+  if(prompt) prompt.style.display = 'none';
+  if(window.KAERS_DATA && window.KAERS_DATA._meta && window.KAERS_DATA._meta.last_updated){
+    try {
+      localStorage.setItem(KAERS_SEEN_KEY, window.KAERS_DATA._meta.last_updated);
+      logRefresh('"' + window.KAERS_DATA._meta.last_updated + '" 갱신 확인 완료');
+    } catch(e) {}
+  }
+}
+
+function findDrug(query){
+  if(!window.KAERS_DATA || !query) return null;
+  const q = query.trim().toLowerCase();
+  return window.KAERS_DATA.drugs.find(d => {
+    if(d.ingredient.toLowerCase().includes(q)) return true;
+    if(d.brand_examples && d.brand_examples.some(b => b.toLowerCase().includes(q))) return true;
+    return false;
+  });
+}
+
+// 자연어 문장에서 KAERS 등록 약품 찾기 (성분명+상품명 전체 스캔)
+function findDrugsInText(text){
+  if(!window.KAERS_DATA || !text) return [];
+  const t = text.toLowerCase();
+  const matches = [];
+  for(const drug of window.KAERS_DATA.drugs){
+    const ingr = drug.ingredient.toLowerCase();
+    // 성분명 전체 또는 첫 단어 매칭
+    if(t.includes(ingr) || (ingr.length > 3 && t.includes(ingr.split(/[+ ]/)[0]))) {
+      matches.push({drug, matched_name: drug.ingredient, type: 'ingredient'});
+      continue;
+    }
+    // 상품명 매칭
+    for(const brand of drug.brand_examples || []){
+      if(t.includes(brand.toLowerCase())){
+        matches.push({drug, matched_name: brand, type: 'brand'});
+        break;
+      }
+    }
+  }
+  return matches;
+}
+
+// 자연어에서 증상 키워드 추출
+function findSymptomInText(text, drugEvents){
+  if(!text || !drugEvents) return null;
+  const t = text.toLowerCase();
+  // 알려진 부작용 키워드와 매칭
+  for(const ev of drugEvents){
+    const symptom = ev.symptom.toLowerCase();
+    // 괄호 제거하고 핵심 키워드만
+    const cleanSymptom = symptom.replace(/[(].*?[)]/g, '').trim();
+    const keywords = cleanSymptom.split(/[ ·,]/);
+    for(const kw of keywords){
+      if(kw.length >= 2 && t.includes(kw)){
+        return ev;
+      }
+    }
+  }
+  return null;
+}
+
+// 자연어에서 환자 요청·의도 분석
+function detectIntent(text){
+  if(!text) return {type: 'general', label: '일반 문의'};
+  const t = text.toLowerCase();
+  // 병용 문의 (가장 먼저 - safety보다 우선)
+  if(/같이.*먹|함께.*먹|병용|같이.*복용|동시.*복용|섞어/.test(t)){
+    return {type: 'interaction', label: '약물 병용 문의'};
+  }
+  // 약효 관련 요청 (빠른 효과)
+  if(/약효.*빠르|빨리.*효과|효과.*빨리|얼마나.*걸리|효과.*언제|언제.*효과|빨랐으면|빠르게.*효과/.test(t)){
+    return {type: 'effect_speed', label: '약효 발현 시점 문의'};
+  }
+  // 부작용 우려 / 안전성
+  if(/위험|괜찮|계속.*먹|복용.*해도|중단|끊어/.test(t)){
+    return {type: 'safety', label: '복용 지속 안전성 문의'};
+  }
+  // 증상·부작용 호소
+  if(/하는데|나요|심합|있어|있습니|아파|아픕|불편/.test(t)){
+    return {type: 'symptom', label: '복용 후 증상 문의'};
+  }
+  return {type: 'general', label: '일반 문의'};
+}
+
+function setQuery(text){
+  document.getElementById('kaersNaturalQuery').value = text;
+  runKaersDemo();
+}
+
+function runKaersDemo(){
+  const queryRaw = document.getElementById('kaersNaturalQuery').value.trim();
+  const resultEl = document.getElementById('kaersResult');
+  const matchEl = document.getElementById('kaersMatchInfo');
+  const aiEl = document.getElementById('kaersAIResponse');
+
+  if(!queryRaw){ alert('환자 문의를 입력해주세요.'); return; }
+
+  if(!window.KAERS_DATA){
+    matchEl.innerHTML = '<div style="padding:1rem;text-align:center"><div style="color:var(--muted);font-size:.8rem;margin-bottom:.8rem">데이터를 아직 가져오지 못했습니다.</div><button onclick="refreshKaersData()" class="btn btn-mint" style="font-size:.78rem">데이터 다시 불러오기</button></div>';
+    aiEl.innerHTML = '';
+    resultEl.style.display = 'flex';
+    return;
+  }
+
+  // 자연어 파싱: 약품·증상·의도 추출
+  const drugMatches = findDrugsInText(queryRaw);
+  const intent = detectIntent(queryRaw);
+  
+  resultEl.style.display = 'flex';
+  resultEl.scrollIntoView({behavior:'smooth', block:'nearest'});
+
+  // STEP 02: 자연어 파싱 결과 + KAERS 매칭
+  let matchHTML = '<div style="background:rgba(125,243,255,.04);border-left:3px solid var(--ice);padding:.7rem .9rem;border-radius:6px;margin-bottom:1rem;font-size:.75rem;line-height:1.6">';
+  matchHTML += '<strong style="color:var(--ice);font-size:.66rem;font-family:var(--font-mono);letter-spacing:.05em">AI 자연어 파싱 결과</strong><br>';
+  matchHTML += '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem">';
+  matchHTML += '<span style="background:var(--bg3);padding:.15rem .5rem;border-radius:4px;font-size:.7rem"><span style="color:var(--dim)">의도:</span> <span style="color:var(--text)">' + escapeHtml(intent.label) + '</span></span>';
+  if(drugMatches.length > 0){
+    drugMatches.forEach(m => {
+      matchHTML += '<span style="background:var(--mint-soft);color:var(--mint);padding:.15rem .5rem;border-radius:4px;font-size:.7rem">약품: ' + escapeHtml(m.matched_name) + (m.type === 'brand' ? ' → ' + escapeHtml(m.drug.ingredient.split(/[+ ]/)[0]) : '') + '</span>';
+    });
+  } else {
+    matchHTML += '<span style="background:rgba(255,138,128,.1);color:var(--coral);padding:.15rem .5rem;border-radius:4px;font-size:.7rem">약품: 미확인</span>';
+  }
+  matchHTML += '</div></div>';
+
+  if(drugMatches.length === 0){
+    matchHTML += '<div style="padding:1rem;color:var(--muted);font-size:.78rem;line-height:1.6">문의에서 KAERS 등록 의약품을 찾지 못했습니다. 현재 <strong style="color:var(--mint)">' + window.KAERS_DATA.drugs.length + '개 의약품</strong>이 등록되어 있습니다. 약품명이나 상품명을 더 명확히 포함해 다시 시도해주세요.</div>';
+    matchEl.innerHTML = matchHTML;
+    aiEl.innerHTML = '<div style="color:var(--muted)">약품 매칭이 안 되어 AI 응답 초안을 생성할 수 없습니다. 실제 운영 환경에서는 더 큰 약품 마스터DB와 연동됩니다.</div>';
+    return;
+  }
+
+  // 첫 번째 매칭 약품 기준으로 답변 (다중 약품 검출 시 모두 안내)
+  const primaryDrug = drugMatches[0].drug;
+  const matchedSymptom = findSymptomInText(queryRaw, primaryDrug.common_adverse_events);
+
+  // KAERS 데이터 표시
+  matchHTML += '<div style="font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.4rem">' + escapeHtml(primaryDrug.ingredient) + ' <span style="font-size:.66rem;color:var(--muted);font-weight:400">(' + escapeHtml(primaryDrug.class) + ')</span></div>';
+  matchHTML += '<div style="font-size:.72rem;color:var(--muted);margin-bottom:.8rem">상품명: ' + primaryDrug.brand_examples.map(escapeHtml).join(' · ') + ' · ATC ' + escapeHtml(primaryDrug.atc_code) + '</div>';
+
+  matchHTML += '<div style="font-size:.62rem;color:var(--ice);font-family:var(--font-mono);margin:.6rem 0 .4rem;letter-spacing:.05em">KAERS 보고 통계 (상위 5개)</div>';
+  matchHTML += '<div style="display:flex;flex-direction:column;gap:.3rem">';
+  primaryDrug.common_adverse_events.slice(0,5).forEach(ev => {
+    const isHighlight = matchedSymptom && ev.symptom === matchedSymptom.symptom;
+    const sevColor = ev.severity.includes('중대') ? 'var(--coral)' : ev.severity.includes('주의') ? '#f0c866' : ev.severity.includes('효과') ? 'var(--ice)' : 'var(--mint)';
+    matchHTML += '<div style="display:flex;justify-content:space-between;align-items:center;padding:.4rem .7rem;background:' + (isHighlight ? 'rgba(16,185,129,.12)' : 'var(--bg3)') + ';border-radius:6px;font-size:.74rem;' + (isHighlight ? 'border-left:3px solid var(--mint)' : '') + '">';
+    matchHTML += '<span style="color:var(--text)">' + escapeHtml(ev.symptom) + (isHighlight ? ' <span style="font-size:.56rem;color:var(--mint);font-weight:700;letter-spacing:.05em">← 환자 호소 매칭</span>' : '') + '</span>';
+    matchHTML += '<span style="display:flex;gap:.6rem;align-items:center">';
+    matchHTML += '<span style="font-family:var(--font-mono);font-size:.72rem;color:' + sevColor + '">' + escapeHtml(ev.severity) + '</span>';
+    matchHTML += '<span style="font-family:var(--font-mono);font-weight:700;color:var(--mint);min-width:50px;text-align:right">' + ev.frequency_pct + '%</span>';
+    matchHTML += '</span></div>';
+  });
+  matchHTML += '</div>';
+
+  if(primaryDrug.dur_warnings && primaryDrug.dur_warnings.length){
+    matchHTML += '<div style="margin-top:.7rem;padding:.5rem .7rem;background:rgba(255,138,128,.08);border-radius:6px;font-size:.7rem;color:var(--muted)">';
+    matchHTML += '<strong style="color:var(--coral)">DUR 경고:</strong> ' + primaryDrug.dur_warnings.map(escapeHtml).join(' · ');
+    matchHTML += '</div>';
+  }
+
+  // 다중 약품 검출 시
+  if(drugMatches.length > 1){
+    matchHTML += '<div style="margin-top:.7rem;padding:.5rem .7rem;background:rgba(180,160,255,.08);border-radius:6px;font-size:.7rem;color:var(--muted)">';
+    matchHTML += '<strong style="color:var(--lav)">추가 검출 약품:</strong> ' + drugMatches.slice(1).map(m => escapeHtml(m.matched_name)).join(', ') + ' — 병용 정보는 약사가 검토합니다.';
+    matchHTML += '</div>';
+  }
+
+  matchEl.innerHTML = matchHTML;
+
+  // STEP 03: AI 응답 초안 — 의도에 따라 다른 답변 생성
+  let aiHTML = '<div style="margin-bottom:.7rem">안녕하세요, 문의주신 <strong style="color:var(--mint)">' + escapeHtml(drugMatches[0].matched_name) + '</strong>(' + escapeHtml(primaryDrug.class) + ') 관련 안내드립니다.</div>';
+
+  // 의도별 맞춤 답변
+  if(intent.type === 'effect_speed'){
+    // "약효가 빨랐으면" 같은 요청
+    const effectInfo = primaryDrug.common_adverse_events.find(ev => ev.severity === '효과');
+    if(effectInfo){
+      aiHTML += '<div style="margin-bottom:.7rem">말씀하신 효과는 보통 <strong style="color:var(--mint)">' + escapeHtml(effectInfo.onset_typical) + '</strong>에 나타나며, KAERS 데이터상 <strong>' + effectInfo.frequency_pct + '%</strong>의 환자가 효과를 보고했습니다.</div>';
+    }
+    aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">빠른 효과를 위한 팁:</strong> ' + escapeHtml(primaryDrug.guidance) + '</div>';
+  } else if(intent.type === 'safety'){
+    if(matchedSymptom){
+      aiHTML += '<div style="margin-bottom:.7rem">말씀하신 <strong>' + escapeHtml(matchedSymptom.symptom) + '</strong>은 KAERS 보고 통계상 이 약품의 알려진 이상사례 중 하나로, 보고 빈도는 <strong style="color:var(--mint)">' + matchedSymptom.frequency_pct + '%</strong>이며 일반적으로 <strong>' + escapeHtml(matchedSymptom.severity) + '</strong> 수준입니다. 보통 ' + escapeHtml(matchedSymptom.onset_typical) + '에 나타날 수 있습니다.</div>';
+    }
+    aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">복용 안전성 안내:</strong> ' + escapeHtml(primaryDrug.guidance) + ' 임의 중단은 권장되지 않습니다.</div>';
+  } else if(intent.type === 'interaction'){
+    aiHTML += '<div style="margin-bottom:.7rem">병용 안전성은 환자의 다른 처방약·기저질환·DUR 기록을 종합 검토해야 합니다. 본 AI 응답은 일반 안내이며, <strong style="color:var(--coral)">단골 약사의 개별 검토가 필수</strong>입니다.</div>';
+    aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">복용 정보:</strong> ' + escapeHtml(primaryDrug.guidance) + '</div>';
+  } else if(intent.type === 'symptom' && matchedSymptom){
+    aiHTML += '<div style="margin-bottom:.7rem">말씀하신 <strong>' + escapeHtml(matchedSymptom.symptom) + '</strong>은 KAERS 보고 통계상 보고 빈도 <strong style="color:var(--mint)">' + matchedSymptom.frequency_pct + '%</strong>이며 <strong>' + escapeHtml(matchedSymptom.severity) + '</strong> 수준입니다. 보통 ' + escapeHtml(matchedSymptom.onset_typical) + '에 나타날 수 있습니다.</div>';
+    aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">권장 조치:</strong> ' + escapeHtml(primaryDrug.guidance) + '</div>';
+  } else {
+    aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">복용 안내:</strong> ' + escapeHtml(primaryDrug.guidance) + '</div>';
+  }
+
+  aiHTML += '<div style="margin-bottom:.4rem;padding:.6rem .8rem;background:rgba(16,185,129,.06);border-left:3px solid var(--mint);border-radius:4px;font-size:.78rem">';
+  aiHTML += '<strong style="color:var(--mint)">다음 단계:</strong><br>';
+  aiHTML += '• 단골 약국 약사가 본 답변을 검토·승인 후 발송됩니다<br>';
+  aiHTML += '• 증상이 심해지거나 새로운 증상이 나타나면 즉시 약국·병원 방문<br>';
+  aiHTML += '• 본인 명의로 KAERS 자가보고를 원하시면 안내해 드립니다 (선택사항)';
+  aiHTML += '</div>';
+
+  aiHTML += '<div style="margin-top:.9rem;padding-top:.7rem;border-top:1px dashed var(--card-border);font-size:.72rem;color:var(--dim);line-height:1.6">';
+  aiHTML += '<strong style="color:var(--muted)">검토 약사:</strong> 김OO 약사 (면허 제12345호) · 청파약국 (서울 용산구)<br>';
+  aiHTML += '<em style="color:var(--dim)">※ 위 정보는 약사가 직접 검토·승인했습니다. 의학적 판단은 약사·의사와 상담하세요.</em>';
+  aiHTML += '</div>';
+
+  aiEl.innerHTML = aiHTML;
+}
+
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// === 데모 런처: 사용자가 "체험하기 시작" 클릭 시에만 데이터 fetch ===
+function launchKaersDemo(){
+  const launcher = document.getElementById('demo-06-launcher');
+  const content = document.getElementById('demo-06-content');
+  if(launcher) launcher.style.display = 'none';
+  if(content) content.style.display = 'block';
+  // 처음 클릭 시에만 fetch (이미 로드되었으면 재로드 안 함)
+  if(!window.KAERS_DATA){
+    loadKaersData();
+  }
+  // 스크롤 이동 (자연스러운 UX)
+  setTimeout(function(){
+    if(content) content.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 100);
+}
+
+// 탭 재활성화 시 데이터 갱신 (이미 데모를 펼친 사용자에게만)
+document.addEventListener('visibilitychange', function(){
+  const content = document.getElementById('demo-06-content');
+  if(document.visibilityState === 'visible' && window.KAERS_DATA && content && content.style.display !== 'none'){
+    loadKaersData();
+  }
+});
+</script>
 
 </body>
 </html>

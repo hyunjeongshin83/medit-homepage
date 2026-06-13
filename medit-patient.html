@@ -124,13 +124,41 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 </head>
 <body>
 
+<!-- US/Global Legal Notice — Shown only when lang=en -->
+<div id="us-demo-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,138,128,.95);color:#fff;padding:.6rem 1rem;font-family:-apple-system,sans-serif;font-size:.7rem;line-height:1.5;text-align:center;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.2)">
+  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. In case of a medical emergency, call 911 (US). Report adverse events: FDA MedWatch 1-800-FDA-1088. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.65rem">Dismiss</button>
+</div>
+<script>
+// Auto-show US banner if lang=en
+(function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var lang = params.get('lang') || localStorage.getItem('medit_lang') || 'ko';
+    if(lang === 'en'){
+      var banner = document.getElementById('us-demo-banner');
+      if(banner) banner.style.display = 'block';
+      document.body.style.paddingTop = '70px';
+    }
+  } catch(e){}
+})();
+</script>
+
 <div class="app" id="app">
 
 <!-- ══ LOGIN ══ -->
 <div class="page show" id="pg-login">
   <div class="login-wrap">
-    <div class="login-logo">M</div>
-    <div class="login-title">MedIT</div>
+    <div class="login-logo" style="background:transparent;display:flex;align-items:center;justify-content:center;">
+<svg viewBox="0 0 100 100" style="width:48px;height:48px;">
+<g transform="translate(50, 50)">
+<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2.5"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2.5"/>
+<path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+</g>
+</svg>
+</div>
+    <div class="login-title"><span style="color:#10B981">Med</span>&nbsp;IT</div>
     <div class="login-sub">나의 복약을 관리합니다</div>
     <div class="field"><label>전화번호</label><input type="tel" id="l-phone" placeholder="000-0000-0001" value="000-0000-0001"></div>
     <div class="field"><label>비밀번호</label><input type="password" id="l-pass" placeholder="0000" value="0000"></div>
@@ -446,5 +474,81 @@ function renderPharmacies(){
 // ═══ ENTER KEY ═══
 document.addEventListener('keydown',function(e){if(e.key==='Enter'&&$('#pg-login').classList.contains('show'))doLogin()});
 </script>
+
+<script>
+(function(){
+  // ═══ 데모 페이지 언어 동기화 ═══
+  var TRANS = {"MedIT — 나의 복약": "MedIT — My Medication", "MedIT (신현정)": "MedIT (Hyun Jeong Shin)", "나의 복약을 관리합니다": "Managing My Medication", "로그인": "Login", "로그아웃": "Logout", "아이디": "ID", "비밀번호": "Password", "데모 계정:": "Demo Account:", "홈": "Home", "내 복용약": "My Medications", "복용약": "Medications", "오늘의 복약": "Today's Doses", "오늘 남은 복약": "Remaining Today", "이번 주 복약 준수율": "This Week's Adherence", "복용 30분 전 미리 알림": "30-min Pre-dose Reminder", "관련 약품": "Related Medications", "부작용": "Side Effects", "부작용 신고": "Report Side Effect", "신고 이력": "Report History", "신고 제출": "Submit Report", "증상": "Symptoms", "심각도": "Severity", "경미 — 일상생활 가능": "Mild — Daily life OK", "중간 — 불편하지만 견딜 수 있음": "Moderate — Tolerable", "심각 — 일상생활 어려움": "Severe — Daily life difficult", "선택하세요": "Please select", "약국": "Pharmacy", "주변 약국": "Nearby Pharmacies", "알림": "Notifications", "알림 설정": "Notification Settings", "알림 이력": "Notification History", "카카오톡 알림": "KakaoTalk Reminder", "SMS 문자": "SMS", "AI 음성 전화": "AI Voice Call", "내 정보": "My Info", "이름": "Name", "나이": "Age", "전화번호": "Phone", "주소": "Address", "환자: 김영수 (67세, 고혈압·당뇨)": "Patient: Kim Young-su (67, Hypertension·Diabetes)", "등록일": "Registered", "설정": "Settings", "앱 정보": "App Info", "버전": "Version", "사업자": "Business", "서울 용산구 청파로47길 46, 202호": "46 Cheongpa-ro 47-gil, Yongsan-gu, Seoul, 202", "본 서비스는 의학적 진단, 치료,": "This service does not provide medical diagnosis,", "또는 처방을 제공하지 않습니다.": "treatment, or prescriptions."};
+  
+  function getLang(){
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if(urlLang) {
+      try { localStorage.setItem('medit_lang', urlLang); } catch(e){}
+      return urlLang;
+    }
+    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
+  }
+  
+  function translate(){
+    if(getLang() !== 'en') return;
+    
+    function walk(node){
+      if(node.nodeType === 3){
+        var t = node.nodeValue.trim();
+        if(t && TRANS[t]){
+          node.nodeValue = node.nodeValue.replace(t, TRANS[t]);
+        }
+      } else if(node.nodeType === 1 && !['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(node.tagName)){
+        for(var i=0;i<node.childNodes.length;i++) walk(node.childNodes[i]);
+      }
+    }
+    walk(document.body);
+    
+    document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(function(el){
+      var p = el.getAttribute('placeholder');
+      if(p && TRANS[p]) el.setAttribute('placeholder', TRANS[p]);
+    });
+    
+    document.querySelectorAll('option').forEach(function(el){
+      var t = el.textContent.trim();
+      if(t && TRANS[t]) el.textContent = TRANS[t];
+    });
+    
+    if(TRANS[document.title]){
+      document.title = TRANS[document.title];
+    }
+    
+    document.documentElement.lang = 'en';
+  }
+  
+  function addToggle(){
+    var btn = document.createElement('a');
+    btn.href = 'javascript:void(0)';
+    btn.id = 'demoLangToggle';
+    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
+    btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
+    btn.title = getLang() === 'en' ? '한국어' : 'English';
+    btn.onclick = function(){
+      var newLang = getLang() === 'en' ? 'ko' : 'en';
+      try { localStorage.setItem('medit_lang', newLang); } catch(e){}
+      var url = new URL(window.location.href);
+      url.searchParams.set('lang', newLang);
+      window.location.href = url.toString();
+    };
+    document.body.appendChild(btn);
+  }
+  
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      translate();
+      addToggle();
+    });
+  } else {
+    translate();
+    addToggle();
+  }
+})();
+</script>
+
 </body>
 </html>

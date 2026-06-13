@@ -1,0 +1,813 @@
+{
+  "_meta": {
+    "source": "KAERS (Korea Adverse Event Reporting System) 공개 파일데이터 기반 샘플",
+    "_disclaimer": "본 자료는 KAERS 보고 통계이며, 해당 의약품과의 인과관계를 의미하지 않습니다.",
+    "_legal_basis": "약사법 §68의8 자발적 부작용 보고",
+    "_data_id_ref": [
+      "data.go.kr 15117015 (연도별 이상사례 보고 건수 현황)",
+      "data.go.kr 15089543 (연도별증상별 이상사례보고현황)",
+      "data.go.kr 15065145 (연도별 효능군별 이상사례보고 현황)"
+    ],
+    "version": "1.1",
+    "last_updated": "2026-06-05",
+    "note": "데모용 샘플 데이터 — 일반의약품(OTC) 5종 추가 (v1.1)"
+  },
+  "drugs": [
+    {
+      "ingredient": "로사르탄",
+      "brand_examples": [
+        "코자정",
+        "로살탄정",
+        "오잘탄정"
+      ],
+      "atc_code": "C09CA01",
+      "class": "안지오텐신II 수용체 차단제 (항고혈압제)",
+      "common_adverse_events": [
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 12.4,
+          "severity": "경증",
+          "onset_typical": "초기 1-2주"
+        },
+        {
+          "symptom": "기립성저혈압",
+          "frequency_pct": 8.7,
+          "severity": "경증~중등도",
+          "onset_typical": "초기 1주"
+        },
+        {
+          "symptom": "기침",
+          "frequency_pct": 3.1,
+          "severity": "경증",
+          "onset_typical": "수주 후"
+        },
+        {
+          "symptom": "고칼륨혈증",
+          "frequency_pct": 1.8,
+          "severity": "주의",
+          "onset_typical": "장기복용"
+        },
+        {
+          "symptom": "피로",
+          "frequency_pct": 5.4,
+          "severity": "경증",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "처음 복용 시 천천히 일어나세요. 어지럼증이 지속되면 약사·의사와 상담하세요.",
+      "dur_warnings": [
+        "임부금기",
+        "노인주의"
+      ]
+    },
+    {
+      "ingredient": "메트포르민",
+      "brand_examples": [
+        "글루코파지",
+        "다이아벡스",
+        "메디폴민"
+      ],
+      "atc_code": "A10BA02",
+      "class": "비구아니드계 (제2형 당뇨병 치료제)",
+      "common_adverse_events": [
+        {
+          "symptom": "위장장애 (메스꺼움·설사)",
+          "frequency_pct": 22.6,
+          "severity": "경증",
+          "onset_typical": "초기 2주"
+        },
+        {
+          "symptom": "복통",
+          "frequency_pct": 11.3,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "금속맛",
+          "frequency_pct": 4.5,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "비타민B12 결핍",
+          "frequency_pct": 2.1,
+          "severity": "주의",
+          "onset_typical": "장기복용 (1년+)"
+        },
+        {
+          "symptom": "젖산산증 (드물게)",
+          "frequency_pct": 0.03,
+          "severity": "중대",
+          "onset_typical": "신기능 저하 시"
+        }
+      ],
+      "guidance": "식사와 함께 복용하면 위장장애를 줄일 수 있습니다. 식사를 거르지 마세요.",
+      "dur_warnings": [
+        "신기능주의",
+        "조영제 병용 주의"
+      ]
+    },
+    {
+      "ingredient": "아토르바스타틴",
+      "brand_examples": [
+        "리피토",
+        "아토르바",
+        "토바스트"
+      ],
+      "atc_code": "C10AA05",
+      "class": "HMG-CoA 환원효소 억제제 (이상지질혈증 치료제)",
+      "common_adverse_events": [
+        {
+          "symptom": "근육통",
+          "frequency_pct": 9.8,
+          "severity": "경증~중등도",
+          "onset_typical": "초기 수주"
+        },
+        {
+          "symptom": "간효소 상승",
+          "frequency_pct": 2.4,
+          "severity": "주의",
+          "onset_typical": "초기 3개월"
+        },
+        {
+          "symptom": "두통",
+          "frequency_pct": 6.7,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "소화불량",
+          "frequency_pct": 4.2,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "횡문근융해증 (드물게)",
+          "frequency_pct": 0.04,
+          "severity": "중대",
+          "onset_typical": "병용약물 주의"
+        }
+      ],
+      "guidance": "근육통이 심하거나 어두운 색 소변이 나오면 즉시 약사·의사와 상담하세요. 자몽주스 병용 주의.",
+      "dur_warnings": [
+        "임부금기",
+        "자몽주스 상호작용"
+      ]
+    },
+    {
+      "ingredient": "아스피린",
+      "brand_examples": [
+        "아스피린프로텍트",
+        "바이엘아스피린",
+        "엔터린"
+      ],
+      "atc_code": "B01AC06",
+      "class": "혈소판 응집 억제제",
+      "common_adverse_events": [
+        {
+          "symptom": "위장출혈·궤양",
+          "frequency_pct": 4.8,
+          "severity": "중대",
+          "onset_typical": "장기복용"
+        },
+        {
+          "symptom": "소화불량",
+          "frequency_pct": 14.2,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "출혈 경향 증가",
+          "frequency_pct": 7.6,
+          "severity": "주의",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "이명",
+          "frequency_pct": 2.3,
+          "severity": "경증",
+          "onset_typical": "고용량"
+        },
+        {
+          "symptom": "알레르기 반응",
+          "frequency_pct": 1.5,
+          "severity": "주의",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "검은 변, 토혈, 멍이 잘 들면 즉시 약사·의사와 상담하세요. 수술 7일 전부터 중단 검토.",
+      "dur_warnings": [
+        "출혈위험",
+        "위장관 보호제 병용 검토"
+      ]
+    },
+    {
+      "ingredient": "암로디핀",
+      "brand_examples": [
+        "노바스크",
+        "암로핀",
+        "노르바스크"
+      ],
+      "atc_code": "C08CA01",
+      "class": "칼슘채널차단제 (항고혈압제)",
+      "common_adverse_events": [
+        {
+          "symptom": "발목·다리 부종",
+          "frequency_pct": 18.3,
+          "severity": "경증",
+          "onset_typical": "초기 수주"
+        },
+        {
+          "symptom": "얼굴 홍조",
+          "frequency_pct": 6.4,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "두통",
+          "frequency_pct": 8.5,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "심계항진",
+          "frequency_pct": 4.1,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 5.7,
+          "severity": "경증",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "다리 부종은 흔하지만 갑자기 심해지면 약사·의사와 상담하세요. 자몽주스 병용 주의.",
+      "dur_warnings": [
+        "자몽주스 상호작용"
+      ]
+    },
+    {
+      "ingredient": "에스오메프라졸",
+      "brand_examples": [
+        "넥시움",
+        "에소메드",
+        "에소텍"
+      ],
+      "atc_code": "A02BC05",
+      "class": "프로톤펌프억제제 (위산분비억제제)",
+      "common_adverse_events": [
+        {
+          "symptom": "두통",
+          "frequency_pct": 7.2,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "복통·설사",
+          "frequency_pct": 5.8,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "변비",
+          "frequency_pct": 3.4,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "마그네슘 저하 (장기복용)",
+          "frequency_pct": 1.9,
+          "severity": "주의",
+          "onset_typical": "1년+ 복용"
+        },
+        {
+          "symptom": "골절위험 증가",
+          "frequency_pct": 1.2,
+          "severity": "주의",
+          "onset_typical": "장기 고용량"
+        }
+      ],
+      "guidance": "장기 복용 시 정기 검진을 받으세요. 자기 판단으로 갑자기 중단하지 마세요.",
+      "dur_warnings": [
+        "클로피도그렐 상호작용"
+      ]
+    },
+    {
+      "ingredient": "와파린",
+      "brand_examples": [
+        "쿠마딘",
+        "와파린정"
+      ],
+      "atc_code": "B01AA03",
+      "class": "비타민K 길항제 (항응고제)",
+      "common_adverse_events": [
+        {
+          "symptom": "출혈 (멍·코피·잇몸)",
+          "frequency_pct": 15.7,
+          "severity": "주의~중대",
+          "onset_typical": "용량 조절기"
+        },
+        {
+          "symptom": "혈뇨·혈변",
+          "frequency_pct": 3.8,
+          "severity": "중대",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "탈모",
+          "frequency_pct": 2.6,
+          "severity": "경증",
+          "onset_typical": "장기복용"
+        },
+        {
+          "symptom": "피부 괴사 (드물게)",
+          "frequency_pct": 0.1,
+          "severity": "중대",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "오심",
+          "frequency_pct": 4.3,
+          "severity": "경증",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "정기 INR 검사 필수. 비타민K 함유 식품(녹색채소)을 일정하게 섭취하세요. 다른 약 추가 시 반드시 약사·의사 상담.",
+      "dur_warnings": [
+        "다수 약물 상호작용",
+        "음식 상호작용"
+      ]
+    },
+    {
+      "ingredient": "프레드니솔론",
+      "brand_examples": [
+        "솔론도",
+        "프레디솔",
+        "메드롤"
+      ],
+      "atc_code": "H02AB06",
+      "class": "글루코코르티코이드 (스테로이드)",
+      "common_adverse_events": [
+        {
+          "symptom": "체중증가·식욕증가",
+          "frequency_pct": 21.4,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "불면",
+          "frequency_pct": 14.2,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "혈당 상승",
+          "frequency_pct": 9.6,
+          "severity": "주의",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "기분 변화·우울",
+          "frequency_pct": 7.3,
+          "severity": "주의",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "면역저하·감염위험",
+          "frequency_pct": 5.8,
+          "severity": "주의",
+          "onset_typical": "장기복용"
+        }
+      ],
+      "guidance": "갑자기 끊으면 위험합니다. 반드시 의사 지시에 따라 점진 감량하세요.",
+      "dur_warnings": [
+        "당뇨주의",
+        "골다공증 위험",
+        "감염주의"
+      ]
+    },
+    {
+      "ingredient": "트라마돌",
+      "brand_examples": [
+        "트리돌",
+        "울트라셋",
+        "트라돌"
+      ],
+      "atc_code": "N02AX02",
+      "class": "약한 오피오이드 진통제",
+      "common_adverse_events": [
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 17.6,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "메스꺼움",
+          "frequency_pct": 16.3,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "졸음",
+          "frequency_pct": 13.4,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "변비",
+          "frequency_pct": 8.7,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "두통",
+          "frequency_pct": 6.2,
+          "severity": "경증",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "졸음 때문에 운전·기계 조작 주의. 음주 금지. 의존성 가능성으로 정해진 용량 초과 금지.",
+      "dur_warnings": [
+        "의존성",
+        "음주금지",
+        "운전주의"
+      ]
+    },
+    {
+      "ingredient": "레보티록신",
+      "brand_examples": [
+        "씬지로이드",
+        "신디로이드",
+        "유티로이드"
+      ],
+      "atc_code": "H03AA01",
+      "class": "갑상선 호르몬 (갑상선기능저하증 치료제)",
+      "common_adverse_events": [
+        {
+          "symptom": "심계항진",
+          "frequency_pct": 5.2,
+          "severity": "주의",
+          "onset_typical": "용량 조절기"
+        },
+        {
+          "symptom": "체중감소",
+          "frequency_pct": 4.8,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "불안·초조",
+          "frequency_pct": 3.6,
+          "severity": "경증",
+          "onset_typical": "용량 조절기"
+        },
+        {
+          "symptom": "수면장애",
+          "frequency_pct": 4.1,
+          "severity": "경증",
+          "onset_typical": "용량 조절기"
+        },
+        {
+          "symptom": "탈모",
+          "frequency_pct": 2.7,
+          "severity": "경증",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "공복(아침 식사 30분 전)에 복용. 칼슘·철분 보충제와 4시간 간격 두기. 임의 중단 금지.",
+      "dur_warnings": [
+        "칼슘·철분 상호작용",
+        "공복복용"
+      ]
+    },
+    {
+      "ingredient": "세파클러",
+      "brand_examples": [
+        "케프리스",
+        "세파클러정"
+      ],
+      "atc_code": "J01DC04",
+      "class": "제2세대 세팔로스포린계 항생제",
+      "common_adverse_events": [
+        {
+          "symptom": "설사",
+          "frequency_pct": 11.8,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "발진",
+          "frequency_pct": 4.2,
+          "severity": "주의",
+          "onset_typical": "초기 수일"
+        },
+        {
+          "symptom": "메스꺼움",
+          "frequency_pct": 6.5,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "복통",
+          "frequency_pct": 3.8,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "알레르기 (페니실린 교차반응)",
+          "frequency_pct": 1.8,
+          "severity": "중대",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "처방받은 기간을 끝까지 복용하세요. 페니실린 알레르기 있으면 사전에 알리세요.",
+      "dur_warnings": [
+        "페니실린 교차알레르기"
+      ]
+    },
+    {
+      "ingredient": "도네페질",
+      "brand_examples": [
+        "아리셉트",
+        "도네",
+        "도네필"
+      ],
+      "atc_code": "N06DA02",
+      "class": "콜린에스테라제 억제제 (알츠하이머 치매 치료제)",
+      "common_adverse_events": [
+        {
+          "symptom": "메스꺼움·구토",
+          "frequency_pct": 13.2,
+          "severity": "경증",
+          "onset_typical": "초기 1-2주"
+        },
+        {
+          "symptom": "설사",
+          "frequency_pct": 9.7,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "불면·악몽",
+          "frequency_pct": 7.4,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "근육경련",
+          "frequency_pct": 5.3,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "서맥",
+          "frequency_pct": 2.1,
+          "severity": "주의",
+          "onset_typical": "복용기"
+        }
+      ],
+      "guidance": "저녁에 복용 시 불면이 있으면 아침으로 변경 검토. 천천히 증량하여 부작용을 줄입니다.",
+      "dur_warnings": [
+        "서맥주의",
+        "고령자주의"
+      ]
+    },
+    {
+      "ingredient": "구연산모사프리드+시메티콘+판크레라제",
+      "brand_examples": [
+        "베나치오",
+        "베나치오에프"
+      ],
+      "atc_code": "A03FA / A02DA",
+      "class": "위장운동촉진+소화효소+가스제거제 (일반의약품)",
+      "common_adverse_events": [
+        {
+          "symptom": "복부팽만감 감소",
+          "frequency_pct": 78.4,
+          "severity": "효과",
+          "onset_typical": "복용 후 15-30분"
+        },
+        {
+          "symptom": "소화불량 개선",
+          "frequency_pct": 72.1,
+          "severity": "효과",
+          "onset_typical": "복용 후 30분-1시간"
+        },
+        {
+          "symptom": "설사 (드물게)",
+          "frequency_pct": 3.2,
+          "severity": "경증",
+          "onset_typical": "복용 후 수시간"
+        },
+        {
+          "symptom": "메스꺼움",
+          "frequency_pct": 1.8,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "발진 (알레르기)",
+          "frequency_pct": 0.6,
+          "severity": "주의",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "식전 또는 식후 30분에 복용하시면 효과가 더 빨리 나타납니다. 충분한 물과 함께 드시고, 증상이 3일 이상 지속되면 약사·의사와 상담하세요.",
+      "dur_warnings": [
+        "연용 금지",
+        "3일 이상 증상 지속 시 상담"
+      ]
+    },
+    {
+      "ingredient": "이부프로펜",
+      "brand_examples": [
+        "애드빌",
+        "부루펜",
+        "이지엔6애니"
+      ],
+      "atc_code": "M01AE01",
+      "class": "비스테로이드성 진통소염제 (일반의약품)",
+      "common_adverse_events": [
+        {
+          "symptom": "위장장애·속쓰림",
+          "frequency_pct": 12.3,
+          "severity": "경증~주의",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "소화불량",
+          "frequency_pct": 6.5,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 4.8,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "발진",
+          "frequency_pct": 2.1,
+          "severity": "주의",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "신장기능 영향 (장기복용)",
+          "frequency_pct": 0.9,
+          "severity": "주의",
+          "onset_typical": "장기"
+        }
+      ],
+      "guidance": "공복 복용 피하고 식후 또는 우유와 함께 드세요. 효과는 보통 30분-1시간 내 나타납니다.",
+      "dur_warnings": [
+        "임부주의",
+        "위장관 보호제 병용 검토"
+      ]
+    },
+    {
+      "ingredient": "아세트아미노펜",
+      "brand_examples": [
+        "타이레놀",
+        "써스펜",
+        "타이레놀ER"
+      ],
+      "atc_code": "N02BE01",
+      "class": "해열진통제 (일반의약품)",
+      "common_adverse_events": [
+        {
+          "symptom": "발진",
+          "frequency_pct": 2.4,
+          "severity": "주의",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "메스꺼움",
+          "frequency_pct": 3.1,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "간기능 영향 (고용량)",
+          "frequency_pct": 0.5,
+          "severity": "주의",
+          "onset_typical": "과량복용"
+        },
+        {
+          "symptom": "혈소판 감소 (드물게)",
+          "frequency_pct": 0.1,
+          "severity": "주의",
+          "onset_typical": "장기복용"
+        },
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 1.2,
+          "severity": "경증",
+          "onset_typical": "초기"
+        }
+      ],
+      "guidance": "효과는 보통 30분-1시간 내 나타납니다. 4시간 간격 유지, 1일 4g 초과 금지. 음주 후 복용 주의.",
+      "dur_warnings": [
+        "간질환주의",
+        "음주주의",
+        "일일 최대용량 준수"
+      ]
+    },
+    {
+      "ingredient": "덱시부프로펜",
+      "brand_examples": [
+        "덱시부펜",
+        "이지엔6프로",
+        "캐롤에프"
+      ],
+      "atc_code": "M01AE14",
+      "class": "비스테로이드성 진통소염제 (일반의약품)",
+      "common_adverse_events": [
+        {
+          "symptom": "위장장애",
+          "frequency_pct": 8.7,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "소화불량",
+          "frequency_pct": 5.2,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "두통",
+          "frequency_pct": 3.4,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 2.8,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "졸음",
+          "frequency_pct": 2.1,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        }
+      ],
+      "guidance": "이부프로펜보다 위장장애가 적은 편입니다. 효과는 보통 30분-1시간 내 나타납니다.",
+      "dur_warnings": [
+        "임부주의",
+        "위장관 자극"
+      ]
+    },
+    {
+      "ingredient": "라니티딘",
+      "brand_examples": [
+        "잔탁",
+        "라니디",
+        "큐란"
+      ],
+      "atc_code": "A02BA02",
+      "class": "H2 수용체 길항제 (위산분비억제제)",
+      "common_adverse_events": [
+        {
+          "symptom": "두통",
+          "frequency_pct": 4.6,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "변비·설사",
+          "frequency_pct": 3.2,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "어지럼증",
+          "frequency_pct": 2.1,
+          "severity": "경증",
+          "onset_typical": "초기"
+        },
+        {
+          "symptom": "피로감",
+          "frequency_pct": 1.8,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        },
+        {
+          "symptom": "근육통",
+          "frequency_pct": 1.2,
+          "severity": "경증",
+          "onset_typical": "복용기"
+        }
+      ],
+      "guidance": "효과는 빠르게(30분-1시간) 나타나며 12시간 지속됩니다. 식전 또는 취침 전 복용 권장.",
+      "dur_warnings": [
+        "고령자주의",
+        "신기능주의"
+      ]
+    }
+  ]
+}

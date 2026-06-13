@@ -516,11 +516,40 @@
 </head>
 <body>
 
+<!-- US/Global Legal Notice — Shown only when lang=en -->
+<div id="us-demo-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,138,128,.95);color:#fff;padding:.6rem 1rem;font-family:-apple-system,sans-serif;font-size:.7rem;line-height:1.5;text-align:center;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.2)">
+  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. Report adverse events: US FDA MedWatch 1-800-FDA-1088 · UK Yellow Card · Korea KAERS 1644-6223. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.65rem">Dismiss</button>
+</div>
+<script>
+// Auto-show US banner if lang=en
+(function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var lang = params.get('lang') || localStorage.getItem('medit_lang') || 'ko';
+    if(lang === 'en'){
+      var banner = document.getElementById('us-demo-banner');
+      if(banner) banner.style.display = 'block';
+      document.body.style.paddingTop = '70px';
+    }
+  } catch(e){}
+})();
+</script>
+
 <!-- =============== LOGIN SCREEN =============== -->
 <div class="login-screen hidden" id="login-screen">
   <div class="login-box">
     <div class="login-brand">
-      <div class="logo"><span>Med</span>it<em>.</em></div>
+      <div class="logo" style="display:inline-flex;align-items:center;gap:8px;">
+<svg viewBox="0 0 100 100" style="width:32px;height:32px;flex-shrink:0;">
+<g transform="translate(50, 50)">
+<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="transparent" stroke="#10B981" stroke-width="2.5"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2.5"/>
+<path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+</g>
+</svg>
+<span style="font-weight:700;letter-spacing:0.5px;"><span style="color:#10B981">Med</span>&nbsp;<em style="font-style:normal;">IT</em></span>
+</div>
       <div class="sub">복약 관리 시스템</div>
     </div>
     <div class="login-title">로그인</div>
@@ -2429,7 +2458,87 @@ function generateSingleReport(r) {
   + '<p>병원 리포트: ' + new Date().toLocaleString('ko-KR') + '</p></div>'
   + '<div class="note"><strong>참고사항</strong><br>본 리포트는 MedIT 복약관리시스템에서 자동 생성된 참고자료입니다. 복용약의 알려진 부작용 데이터베이스와 환자 보고 증상을 매칭한 결과이며, 의학적 진단이 아닙니다. 처방 변경 및 치료 결정은 담당 의사의 전문적 판단에 따릅니다.</div>'
   + '<div class="footer">MedIT · 숙명여대 창업보육센터</div>'
-  + '</body></html>');
+  + '
+<script>
+(function(){
+  // ═══ 데모 페이지 언어 동기화 ═══
+  // 홈페이지에서 ?lang=en 또는 localStorage에 저장된 언어로 자동 전환
+  
+  var TRANS = {"MedIT — 복약 관리 시스템": "MedIT — Pharmacy Management", "복약 관리 시스템": "Pharmacy Management", "MedIT 약국 관리": "MedIT Pharmacy", "로그인": "Login", "로그아웃": "Logout", "아이디": "ID", "비밀번호": "Password", "약사 계정으로 접속해주세요.": "Please log in with a pharmacist account.", "데모 계정": "Demo Account", "· admin / 0000 (관리자) 또는 pharm / 0000 (약사)": "· admin / 0000 (Admin) or pharm / 0000 (Pharmacist)", "홈": "Home", "처방 관리": "Prescriptions", "처방전 접수 데모": "Prescription Demo", "배송 조제": "Delivery Prep", "복약": "Adherence", "복약 관리": "Adherence Mgmt", "약국 찾기 · 단골등록": "Find Pharmacy", "환자": "Patients", "약사": "Pharmacists", "약사 관리": "Pharmacist Mgmt", "알림": "Notifications", "부작용 신고": "Adverse Events", "감사 로그": "Audit Log", "설정": "Settings", "더보기": "More", "POS 연동": "POS Integration"};
+  
+  function getLang(){
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if(urlLang) {
+      try { localStorage.setItem('medit_lang', urlLang); } catch(e){}
+      return urlLang;
+    }
+    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
+  }
+  
+  function translate(){
+    if(getLang() !== 'en') return;
+    
+    // 텍스트 노드 순회하며 번역
+    function walk(node){
+      if(node.nodeType === 3){
+        var t = node.nodeValue.trim();
+        if(t && TRANS[t]){
+          node.nodeValue = node.nodeValue.replace(t, TRANS[t]);
+        }
+      } else if(node.nodeType === 1 && !['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(node.tagName)){
+        for(var i=0;i<node.childNodes.length;i++) walk(node.childNodes[i]);
+      }
+    }
+    walk(document.body);
+    
+    // input placeholder도 처리
+    document.querySelectorAll('input[placeholder]').forEach(function(el){
+      var p = el.getAttribute('placeholder');
+      if(p && TRANS[p]) el.setAttribute('placeholder', TRANS[p]);
+    });
+    
+    // title 태그도
+    if(TRANS[document.title]){
+      document.title = TRANS[document.title];
+    }
+    
+    // html lang 변경
+    document.documentElement.lang = 'en';
+  }
+  
+  // 언어 토글 버튼 추가
+  function addToggle(){
+    var btn = document.createElement('a');
+    btn.href = 'javascript:void(0)';
+    btn.id = 'demoLangToggle';
+    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
+    btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
+    btn.title = getLang() === 'en' ? '한국어' : 'English';
+    btn.onclick = function(){
+      var newLang = getLang() === 'en' ? 'ko' : 'en';
+      try { localStorage.setItem('medit_lang', newLang); } catch(e){}
+      // URL 파라미터 갱신하며 리로드
+      var url = new URL(window.location.href);
+      url.searchParams.set('lang', newLang);
+      window.location.href = url.toString();
+    };
+    document.body.appendChild(btn);
+  }
+  
+  // DOMContentLoaded 후 실행
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      translate();
+      addToggle();
+    });
+  } else {
+    translate();
+    addToggle();
+  }
+})();
+</script>
+
+</body></html>');
   w.document.close();
   w.print();
 }
@@ -2465,7 +2574,87 @@ window.generateSideEffectPDF = function() {
     + '<td>' + (r.hospitalReported ? '생성됨' : '-') + '</td></tr>').join('')
   + '</table>'
   + '<div class="note"><strong>참고사항</strong><br>본 리포트는 MedIT 복약관리시스템에서 자동 생성된 참고자료입니다. 복용약의 알려진 부작용 데이터베이스와 환자 보고 증상을 매칭한 결과이며, 의학적 진단이 아닙니다.</div>'
-  + '<div class="footer">MedIT · 숙명여대 창업보육센터</div></body></html>');
+  + '<div class="footer">MedIT · 숙명여대 창업보육센터</div>
+<script>
+(function(){
+  // ═══ 데모 페이지 언어 동기화 ═══
+  // 홈페이지에서 ?lang=en 또는 localStorage에 저장된 언어로 자동 전환
+  
+  var TRANS = {"MedIT — 복약 관리 시스템": "MedIT — Pharmacy Management", "복약 관리 시스템": "Pharmacy Management", "MedIT 약국 관리": "MedIT Pharmacy", "로그인": "Login", "로그아웃": "Logout", "아이디": "ID", "비밀번호": "Password", "약사 계정으로 접속해주세요.": "Please log in with a pharmacist account.", "데모 계정": "Demo Account", "· admin / 0000 (관리자) 또는 pharm / 0000 (약사)": "· admin / 0000 (Admin) or pharm / 0000 (Pharmacist)", "홈": "Home", "처방 관리": "Prescriptions", "처방전 접수 데모": "Prescription Demo", "배송 조제": "Delivery Prep", "복약": "Adherence", "복약 관리": "Adherence Mgmt", "약국 찾기 · 단골등록": "Find Pharmacy", "환자": "Patients", "약사": "Pharmacists", "약사 관리": "Pharmacist Mgmt", "알림": "Notifications", "부작용 신고": "Adverse Events", "감사 로그": "Audit Log", "설정": "Settings", "더보기": "More", "POS 연동": "POS Integration"};
+  
+  function getLang(){
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if(urlLang) {
+      try { localStorage.setItem('medit_lang', urlLang); } catch(e){}
+      return urlLang;
+    }
+    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
+  }
+  
+  function translate(){
+    if(getLang() !== 'en') return;
+    
+    // 텍스트 노드 순회하며 번역
+    function walk(node){
+      if(node.nodeType === 3){
+        var t = node.nodeValue.trim();
+        if(t && TRANS[t]){
+          node.nodeValue = node.nodeValue.replace(t, TRANS[t]);
+        }
+      } else if(node.nodeType === 1 && !['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(node.tagName)){
+        for(var i=0;i<node.childNodes.length;i++) walk(node.childNodes[i]);
+      }
+    }
+    walk(document.body);
+    
+    // input placeholder도 처리
+    document.querySelectorAll('input[placeholder]').forEach(function(el){
+      var p = el.getAttribute('placeholder');
+      if(p && TRANS[p]) el.setAttribute('placeholder', TRANS[p]);
+    });
+    
+    // title 태그도
+    if(TRANS[document.title]){
+      document.title = TRANS[document.title];
+    }
+    
+    // html lang 변경
+    document.documentElement.lang = 'en';
+  }
+  
+  // 언어 토글 버튼 추가
+  function addToggle(){
+    var btn = document.createElement('a');
+    btn.href = 'javascript:void(0)';
+    btn.id = 'demoLangToggle';
+    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
+    btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
+    btn.title = getLang() === 'en' ? '한국어' : 'English';
+    btn.onclick = function(){
+      var newLang = getLang() === 'en' ? 'ko' : 'en';
+      try { localStorage.setItem('medit_lang', newLang); } catch(e){}
+      // URL 파라미터 갱신하며 리로드
+      var url = new URL(window.location.href);
+      url.searchParams.set('lang', newLang);
+      window.location.href = url.toString();
+    };
+    document.body.appendChild(btn);
+  }
+  
+  // DOMContentLoaded 후 실행
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      translate();
+      addToggle();
+    });
+  } else {
+    translate();
+    addToggle();
+  }
+})();
+</script>
+
+</body></html>');
   w.document.close();
   w.print();
   render();
@@ -3810,6 +3999,86 @@ window.renderAudit = renderAudit;
 window.logout = logout;
 
 init();
+</script>
+
+
+<script>
+(function(){
+  // ═══ 데모 페이지 언어 동기화 ═══
+  // 홈페이지에서 ?lang=en 또는 localStorage에 저장된 언어로 자동 전환
+  
+  var TRANS = {"MedIT — 복약 관리 시스템": "MedIT — Pharmacy Management", "복약 관리 시스템": "Pharmacy Management", "MedIT 약국 관리": "MedIT Pharmacy", "로그인": "Login", "로그아웃": "Logout", "아이디": "ID", "비밀번호": "Password", "약사 계정으로 접속해주세요.": "Please log in with a pharmacist account.", "데모 계정": "Demo Account", "· admin / 0000 (관리자) 또는 pharm / 0000 (약사)": "· admin / 0000 (Admin) or pharm / 0000 (Pharmacist)", "홈": "Home", "처방 관리": "Prescriptions", "처방전 접수 데모": "Prescription Demo", "배송 조제": "Delivery Prep", "복약": "Adherence", "복약 관리": "Adherence Mgmt", "약국 찾기 · 단골등록": "Find Pharmacy", "환자": "Patients", "약사": "Pharmacists", "약사 관리": "Pharmacist Mgmt", "알림": "Notifications", "부작용 신고": "Adverse Events", "감사 로그": "Audit Log", "설정": "Settings", "더보기": "More", "POS 연동": "POS Integration"};
+  
+  function getLang(){
+    var urlLang = new URLSearchParams(window.location.search).get('lang');
+    if(urlLang) {
+      try { localStorage.setItem('medit_lang', urlLang); } catch(e){}
+      return urlLang;
+    }
+    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
+  }
+  
+  function translate(){
+    if(getLang() !== 'en') return;
+    
+    // 텍스트 노드 순회하며 번역
+    function walk(node){
+      if(node.nodeType === 3){
+        var t = node.nodeValue.trim();
+        if(t && TRANS[t]){
+          node.nodeValue = node.nodeValue.replace(t, TRANS[t]);
+        }
+      } else if(node.nodeType === 1 && !['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(node.tagName)){
+        for(var i=0;i<node.childNodes.length;i++) walk(node.childNodes[i]);
+      }
+    }
+    walk(document.body);
+    
+    // input placeholder도 처리
+    document.querySelectorAll('input[placeholder]').forEach(function(el){
+      var p = el.getAttribute('placeholder');
+      if(p && TRANS[p]) el.setAttribute('placeholder', TRANS[p]);
+    });
+    
+    // title 태그도
+    if(TRANS[document.title]){
+      document.title = TRANS[document.title];
+    }
+    
+    // html lang 변경
+    document.documentElement.lang = 'en';
+  }
+  
+  // 언어 토글 버튼 추가
+  function addToggle(){
+    var btn = document.createElement('a');
+    btn.href = 'javascript:void(0)';
+    btn.id = 'demoLangToggle';
+    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
+    btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
+    btn.title = getLang() === 'en' ? '한국어' : 'English';
+    btn.onclick = function(){
+      var newLang = getLang() === 'en' ? 'ko' : 'en';
+      try { localStorage.setItem('medit_lang', newLang); } catch(e){}
+      // URL 파라미터 갱신하며 리로드
+      var url = new URL(window.location.href);
+      url.searchParams.set('lang', newLang);
+      window.location.href = url.toString();
+    };
+    document.body.appendChild(btn);
+  }
+  
+  // DOMContentLoaded 후 실행
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      translate();
+      addToggle();
+    });
+  } else {
+    translate();
+    addToggle();
+  }
+})();
 </script>
 
 </body>
