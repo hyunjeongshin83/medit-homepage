@@ -2956,9 +2956,9 @@ function renderPOSBridge() {
           </div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">CDC 스트리밍</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 트리거</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">주기 폴링</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;"><span style="font-family:'JetBrains Mono',monospace">CDC</span> 스트리밍</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;"><span style="font-family:'JetBrains Mono',monospace">DB</span> 트리거</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">주기 폴링</span>
         </div>
         <button onclick="simulateDBSignal()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
           DB 신호 시뮬레이션 시작 →
@@ -2998,9 +2998,9 @@ function renderPOSBridge() {
           <div style="margin-top:6px;color:#64748b;font-size:9.5px;">[+ 6 more mappings...]</div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">스키마 분석</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">코드 생성</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">정확도 100%</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">스키마 분석</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">코드 생성</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">정확도 <span style="font-family:'JetBrains Mono',monospace">100%</span></span>
         </div>
         <button onclick="runLLMMapping()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
           LLM 자동 매핑 실행 →
@@ -3980,7 +3980,7 @@ function renderGovernance() {
       who: '각 약국 · 면허 약사',
       role: '현장 적용 + 환자 책임',
       items: [
-        '환자 동의서 (PIPA §15·§17)',
+        '환자 동의서 (PIPA 제15조·제17조)',
         '처방 검토 + AI 응답 검수',
         '부작용 신고 자율 판단',
         '지역 약국 네트워크 협업'
@@ -4046,9 +4046,9 @@ function renderGovernance() {
     <div style="margin-top:14px;background:#0F172A;border:1px solid #1e293b;border-radius:12px;padding:16px 18px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#6ee7b7;letter-spacing:1.5px;margin-bottom:6px;">LEGAL FOUNDATION</div>
       <div style="font-size:13px;color:#cbd5e1;line-height:1.7;">
-        <strong style="color:#6ee7b7;">약사법</strong> §24 · §24의2 · §68의8 ·
-        <strong style="color:#6ee7b7;">의료법</strong> §27 ·
-        <strong style="color:#6ee7b7;">PIPA</strong> §15 · §17 · §28의2 (가명정보)
+        <strong style="color:#6ee7b7;">약사법</strong> 제24조 · 제24조의2 · 제68조의8 ·
+        <strong style="color:#6ee7b7;">의료법</strong> 제27조 ·
+        <strong style="color:#6ee7b7;">PIPA</strong> 제15조 · 제17조 · 제28조의2 (가명정보)
       </div>
     </div>
   `;
