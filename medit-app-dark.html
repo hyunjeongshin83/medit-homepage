@@ -21,23 +21,37 @@
     --line: rgba(255,255,255,0.08);
     --line-strong: rgba(255,255,255,0.15);
     --green: #0a1218;
-    --green-mid: #00d2b4;
-    --green-soft: #00d2b4;
-    --green-lighter: rgba(0,210,180,0.1);
-    --accent: #00d2b4;
-    --accent-soft: rgba(0,210,180,0.15);
-    --yellow: #7df3ff;
-    --yellow-soft: rgba(125,243,255,0.12);
+    --green-mid: #10B981;
+    --green-soft: #10B981;
+    --green-lighter: rgba(16,185,129,0.1);
+    --accent: #10B981;
+    --accent-soft: rgba(16,185,129,0.15);
+    --yellow: #34d399;
+    --yellow-soft: rgba(52,211,153,0.12);
     --red: #ff6b6b;
     --red-soft: rgba(255,107,107,0.12);
-    --blue: #b4a0ff;
-    --blue-soft: rgba(180,160,255,0.12);
+    --blue: #6ee7b7;
+    --blue-soft: rgba(110,231,183,0.12);
+    --g1: #064e3b;
+    --g2: #047857;
+    --g3: #059669;
+    --g4: #10B981;
+    --g5: #34d399;
+    --g6: #6ee7b7;
+    --b1: #3d1620;
+    --b2: #591d2c;
+    --b3: #7c2d3b;
+    --b4: #9c3d4f;
+    --b5: #c25767;
+    --b6: #e89aa6;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
   body {
     font-family: 'HCR Dotum', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    background: #0a0e12;
     background: var(--bg);
+    color: #e8ecef;
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
@@ -240,7 +254,7 @@
   tbody td .sub-line { display: block; font-size: 13px; color: var(--ink-muted); margin-top: 2px; }
 
   .pill { display: inline-flex; align-items: center; gap: 5px; font-family: 'IBM Plex Mono', 'HCR Dotum', 'Noto Sans KR', monospace; font-size: 12px; padding: 3px 8px; border-radius: 100px; letter-spacing: .08em; font-weight: 500; text-transform: uppercase; border: 1px solid transparent; }
-  .pill.green { background: var(--green-lighter); color: var(--accent); border-color: rgba(0,210,180,0.1); }
+  .pill.green { background: var(--green-lighter); color: var(--accent); border-color: rgba(16,185,129,0.1); }
   .pill.yellow { background: var(--yellow-soft); color: #8a6a14; border-color: rgba(138,106,20,.2); }
   .pill.red { background: var(--red-soft); color: var(--red); border-color: rgba(166,61,43,.18); }
   .pill.blue { background: var(--blue-soft); color: var(--blue); border-color: rgba(52,90,122,.18); }
@@ -285,7 +299,7 @@
   .risk-item { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; padding: 14px 24px; border-bottom: 1px solid var(--line); align-items: center; transition: background .15s; }
   .risk-item:last-child { border-bottom: none; }
   .risk-item:hover { background: var(--surface-alt); }
-  .risk-avatar { width: 36px; height: 36px; background: var(--green-lighter); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'HCR Dotum', 'HCR Dotum', 'Noto Sans KR', sans-serif; font-style: normal; font-weight: 700; font-size: 16px; border: 1px solid rgba(0,210,180,0.08); }
+  .risk-avatar { width: 36px; height: 36px; background: var(--green-lighter); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'HCR Dotum', 'HCR Dotum', 'Noto Sans KR', sans-serif; font-style: normal; font-weight: 700; font-size: 16px; border: 1px solid rgba(16,185,129,0.08); }
   .risk-avatar.high { background: var(--red-soft); color: var(--red); border-color: rgba(166,61,43,.2); }
   .risk-avatar.mid { background: var(--yellow-soft); color: #8a6a14; border-color: rgba(138,106,20,.2); }
   .risk-info .name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
@@ -308,7 +322,7 @@
   .type.sent { background: var(--blue-soft); color: var(--blue); }
   .type.sync { background: var(--surface-alt); color: var(--ink-muted); border: 1px solid var(--line); }
   .activity-content strong { font-weight: 500; color: var(--ink); }
-  .activity-content .link { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(0,210,180,0.2); text-underline-offset: 2px; cursor: pointer; }
+  .activity-content .link { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(16,185,129,0.2); text-underline-offset: 2px; cursor: pointer; }
   .activity-content .link:hover { text-decoration-color: var(--accent); }
 
   /* =============== MODAL =============== */
@@ -434,7 +448,7 @@
   /* =============== LOGIN =============== */
   .login-screen { position: fixed; inset: 0; background: var(--bg); z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .login-screen.hidden { display: none; }
-  .login-screen::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 30%, rgba(0,210,180,0.06), transparent 50%), radial-gradient(circle at 80% 70%, rgba(180,160,255,0.06), transparent 45%); pointer-events: none; }
+  .login-screen::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 30%, rgba(16,185,129,0.06), transparent 50%), radial-gradient(circle at 80% 70%, rgba(110,231,183,0.06), transparent 45%); pointer-events: none; }
   .login-box { background: var(--surface); border: 1px solid var(--line-strong); border-radius: 20px; padding: 36px 28px; width: 100%; max-width: 400px; position: relative; box-shadow: 0 20px 60px rgba(22,26,23,.08); }
   .login-brand { text-align: center; margin-bottom: 32px; }
   .login-brand .logo { font-family: 'HCR Dotum', 'HCR Dotum', 'Noto Sans KR', sans-serif; font-style: normal; font-weight: 700; font-size: 36px; color: var(--accent); line-height: 1; letter-spacing: -.02em; }
@@ -572,7 +586,267 @@
 <!-- =============== PRINT AREA (hidden until triggered) =============== -->
 <div id="print-area"></div>
 
-<div class="app" id="main-app" style="display: none;">
+<!-- ============ DEMO GUIDE BANNER · Web3 Style ============ -->
+<style>
+  /* Web 3.0 데모 가이드 스타일 */
+  .demo-w3-banner {
+    position: relative;
+    background: radial-gradient(ellipse at top left, rgba(16,185,129,.07), transparent 60%),
+                radial-gradient(ellipse at bottom right, rgba(124,45,59,.08), transparent 60%),
+                linear-gradient(180deg, #050a07 0%, #0d0708 100%);
+    border-bottom: 1px solid rgba(16,185,129,.18);
+    padding: 1.4rem 1.2rem 1.6rem;
+    font-family: -apple-system, 'Noto Sans KR', sans-serif;
+    color: #e8ecef;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .demo-w3-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    width: 1px; height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(16,185,129,.3), rgba(124,45,59,.2), transparent);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .demo-w3-banner::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 220px;
+    height: 220px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Crect x='32' y='12' width='36' height='14' rx='2' stroke='%2310B981' stroke-width='1.4'/%3E%3Cline x1='32' y1='20' x2='68' y2='20' stroke='%2310B981' stroke-width='1.4'/%3E%3Cpath d='M28 26 L28 84 Q28 90 34 90 L66 90 Q72 90 72 84 L72 26 Z' stroke='%2310B981' stroke-width='1.4'/%3E%3Crect x='34' y='38' width='32' height='32' rx='1' stroke='%237c2d3b' stroke-width='1.2'/%3E%3Cline x1='38' y1='46' x2='62' y2='46' stroke='%2310B981' stroke-width='1'/%3E%3Cline x1='38' y1='52' x2='58' y2='52' stroke='%237c2d3b' stroke-width='1'/%3E%3Cline x1='38' y1='58' x2='62' y2='58' stroke='%2310B981' stroke-width='1'/%3E%3Cline x1='38' y1='64' x2='54' y2='64' stroke='%237c2d3b' stroke-width='1'/%3E%3Ctext x='38' y='80' font-family='Georgia,serif' font-size='10' font-style='italic' fill='%237c2d3b' font-weight='700'%3ERx%3C/text%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    opacity: .12;
+    pointer-events: none;
+  }
+  .demo-w3-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+  .demo-w3-head {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap; margin-bottom: 1.1rem;
+  }
+  .demo-w3-status { display: flex; align-items: center; gap: .9rem; flex: 1; min-width: 280px; }
+  .demo-w3-chip {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: linear-gradient(135deg, #10B981, #047857);
+    color: #050a07;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .6rem; font-weight: 800;
+    padding: .35rem .7rem; border-radius: 2px;
+    letter-spacing: .12em;
+    box-shadow: 0 0 20px rgba(16,185,129,.4);
+  }
+  .demo-w3-chip::before {
+    content: ''; width: 6px; height: 6px;
+    background: #050a07; border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+  .demo-w3-status-text { font-size: .82rem; line-height: 1.5; }
+  .demo-w3-status-text strong { color: #10B981; font-weight: 600; }
+  .demo-w3-close {
+    background: transparent;
+    border: 1px solid rgba(232,236,239,.12);
+    color: #7a8694;
+    padding: .4rem .9rem;
+    border-radius: 2px;
+    font-size: .68rem;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: .08em;
+    transition: all .2s;
+  }
+  .demo-w3-close:hover { border-color: rgba(16,185,129,.4); color: #10B981; }
+  
+  .demo-w3-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: rgba(232,236,239,.06);
+    border: 1px solid rgba(232,236,239,.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .demo-w3-card {
+    background: #0a0e12;
+    padding: 1rem 1.1rem;
+    position: relative;
+    transition: background .3s;
+    cursor: default;
+  }
+  .demo-w3-card:hover { background: #0d1218; }
+  .demo-w3-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 100%;
+    opacity: .9;
+  }
+  
+  /* 6단계 그린 톤 (다크 → 라이트) */
+  .demo-w3-card.tone-1::before { background: #064e3b; }   /* darkest forest */
+  .demo-w3-card.tone-2::before { background: #047857; }   /* deep emerald */
+  .demo-w3-card.tone-3::before { background: #059669; }   /* emerald */
+  .demo-w3-card.tone-4::before { background: #10B981; }   /* signature mint */
+  .demo-w3-card.tone-5::before { background: #34d399; }   /* light mint */
+  .demo-w3-card.tone-6::before { background: #6ee7b7; }   /* pale mint */
+  .demo-w3-card.tone-b1::before { background: #591d2c; }  /* deep burgundy */
+  .demo-w3-card.tone-b2::before { background: #7c2d3b; }  /* burgundy */
+  .demo-w3-card.tone-b3::before { background: #9c3d4f; }  /* light burgundy */
+  
+  .demo-w3-card-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    color: #4a5560;
+    letter-spacing: .15em;
+    margin-bottom: .35rem;
+  }
+  .demo-w3-card-title {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #e8ecef;
+    margin-bottom: .35rem;
+    letter-spacing: -.01em;
+  }
+  .demo-w3-card-title em {
+    font-style: normal;
+    color: #10B981;
+    margin-right: .35rem;
+  }
+  .demo-w3-card-desc {
+    font-size: .72rem;
+    color: #7a8694;
+    line-height: 1.55;
+  }
+  .demo-w3-card-path {
+    margin-top: .55rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .6rem;
+    color: #10B981;
+    opacity: .7;
+    letter-spacing: .03em;
+  }
+  
+  .demo-w3-foot {
+    margin-top: 1rem;
+    padding-top: .85rem;
+    border-top: 1px dashed rgba(232,236,239,.08);
+    display: flex;
+    align-items: flex-start;
+    gap: .8rem;
+    font-size: .68rem;
+    color: #7a8694;
+    line-height: 1.6;
+  }
+  .demo-w3-foot-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    color: #10B981;
+    letter-spacing: .12em;
+    flex-shrink: 0;
+    padding: .12rem .4rem;
+    border: 1px solid rgba(16,185,129,.3);
+    border-radius: 2px;
+  }
+  .demo-w3-foot code {
+    font-family: 'IBM Plex Mono', monospace;
+    background: rgba(16,185,129,.08);
+    color: #34d399;
+    padding: .08rem .35rem;
+    border-radius: 2px;
+    font-size: .66rem;
+  }
+</style>
+
+<div id="demo-guide-banner" class="demo-w3-banner">
+  <div class="demo-w3-inner">
+    <div class="demo-w3-head">
+      <div class="demo-w3-status">
+        <div class="demo-w3-chip">SESSION ACTIVE</div>
+        <div class="demo-w3-status-text">
+          <strong>관리자 권한으로 자동 접속됨</strong> · 하단 탭바에서 메뉴 선택 · 합성 데이터
+        </div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button onclick="var b=document.getElementById('demo-manual-body');var t=this;if(b.style.display==='none'){b.style.display='block';t.textContent='매뉴얼 ▲';}else{b.style.display='none';t.textContent='매뉴얼 ▼';}" class="demo-w3-close">매뉴얼 ▼</button>
+        <button onclick="document.getElementById('demo-guide-banner').style.display='none';" class="demo-w3-close">CLOSE</button>
+      </div>
+    </div>
+
+    <div id="demo-manual-body" style="display:none">
+
+    <div class="demo-w3-grid">
+      <div class="demo-w3-card tone-1">
+        <div class="demo-w3-card-num">MODULE / 01</div>
+        <div class="demo-w3-card-title"><em>Rx</em>처방 관리</div>
+        <div class="demo-w3-card-desc">처방전 입력, 상호작용 자동 검토, 조제 라벨·복약 안내문 인쇄</div>
+        <div class="demo-w3-card-path">[하단] 홈 → 처방 관리</div>
+      </div>
+      <div class="demo-w3-card tone-2">
+        <div class="demo-w3-card-num">MODULE / 02</div>
+        <div class="demo-w3-card-title"><em>AE</em>부작용 신고 · KAERS</div>
+        <div class="demo-w3-card-desc">증상 입력, 17개 의약품 자동 매칭, KAERS 자가보고 보조 양식 생성</div>
+        <div class="demo-w3-card-path">[하단] 더보기 → 부작용 신고</div>
+      </div>
+      <div class="demo-w3-card tone-3">
+        <div class="demo-w3-card-num">MODULE / 03</div>
+        <div class="demo-w3-card-title"><em>Dx</em>배송 조제</div>
+        <div class="demo-w3-card-desc">취약계층 약 배송 흐름 시뮬레이션 (비대면진료 의료법, 2026.12 시행)</div>
+        <div class="demo-w3-card-path">[하단] 더보기 → 배송 조제</div>
+      </div>
+      <div class="demo-w3-card tone-4">
+        <div class="demo-w3-card-num">MODULE / 04</div>
+        <div class="demo-w3-card-title"><em>POS</em>POS 시스템 연동</div>
+        <div class="demo-w3-card-desc">PharmIT3000, PM+20, 밝은매장 등 6대 POS 어댑터 연동 시뮬레이션</div>
+        <div class="demo-w3-card-path">[하단] 더보기 → POS 연동</div>
+      </div>
+      <div class="demo-w3-card tone-5">
+        <div class="demo-w3-card-num">MODULE / 05</div>
+        <div class="demo-w3-card-title"><em>Ch</em>약국 찾기 · 단골등록</div>
+        <div class="demo-w3-card-desc">카카오톡, SMS, QR 3채널 단골약국 등록 흐름 체험</div>
+        <div class="demo-w3-card-path">[하단] 더보기 → 약국 찾기</div>
+      </div>
+      <div class="demo-w3-card tone-6">
+        <div class="demo-w3-card-num">MODULE / 06</div>
+        <div class="demo-w3-card-title"><em>Fl</em>처방전 접수 플로우</div>
+        <div class="demo-w3-card-desc">병원 처방, 약국 선택, 조제, 복약지도 5단계 전체 흐름</div>
+        <div class="demo-w3-card-path">[하단] 더보기 → 처방전 접수</div>
+      </div>
+      <div class="demo-w3-card tone-b2">
+        <div class="demo-w3-card-num">MODULE / 07</div>
+        <div class="demo-w3-card-title"><em>QR</em>환자 QR 페어링</div>
+        <div class="demo-w3-card-desc">환자별 QR 코드 발급, 환자 앱(medit-patient.html) 연동</div>
+        <div class="demo-w3-card-path">[하단] 환자 → 환자 카드 → QR 발급</div>
+      </div>
+      <div class="demo-w3-card tone-b3">
+        <div class="demo-w3-card-num">MODULE / 08</div>
+        <div class="demo-w3-card-title"><em>Au</em>감사 로그 · 표준 추출</div>
+        <div class="demo-w3-card-desc">자동 기록 · HIPAA·PIPA 표준 형식 추출 (CSV/JSON)</div>
+        <div class="demo-w3-card-path">[하단] 더보기 → 감사 로그</div>
+      </div>
+    </div>
+
+    <div class="demo-w3-foot">
+      <div class="demo-w3-foot-tag">QUICK START</div>
+      <div>
+        <strong style="color:#e8ecef;font-weight:600">시작하기:</strong> 화면 <strong style="color:#10B981">하단 탭바</strong>에서 메뉴 선택 → 콘텐츠가 자동 표시됩니다.<br>
+        <span style="color:#7a8694">
+        ▸ 메인 5개 탭 — <code>홈</code> <code>환자</code> <code>복약</code> <code>알림</code> <code>더보기</code><br>
+        ▸ 추가 8개 기능 (처방 관리·POS·약국 찾기·감사 로그·설정 등) — <code>더보기</code> 시트에서 접근<br>
+        ▸ 데이터는 브라우저에 자동 저장되어 새로고침해도 유지 · 초기화는 <code>더보기 → 설정</code>
+        </span>
+      </div>
+    </div>
+    </div><!-- /demo-manual-body -->
+  </div>
+</div>
+
+<div class="app" id="main-app">
   <!-- MOBILE HEADER -->
   <header class="mobile-header">
     <div class="logo"><span>Med</span>IT</div>
@@ -597,6 +871,8 @@
       <div data-view="pharmacists" id="view-pharmacists"></div>
       <div data-view="audit" id="view-audit"></div>
       <div data-view="settings" id="view-settings"></div>
+      <div data-view="governance" id="view-governance"></div>
+      <div data-view="internlog" id="view-internlog"></div>
     </div>
   </main>
 
@@ -664,6 +940,14 @@
       <button class="more-item" onclick="navigate('audit');closeMoreSheet()">
         <svg viewBox="0 0 24 24"><path d="M4 4 L20 4 L20 20 L4 20 Z M7 8 L17 8 M7 12 L17 12 M7 16 L13 16"/></svg>
         감사 로그
+      </button>
+      <button class="more-item" onclick="navigate('governance');closeMoreSheet()">
+        <svg viewBox="0 0 24 24"><path d="M12 2 L19 6 L19 13 C19 17 16 20 12 22 C8 20 5 17 5 13 L5 6 Z"/><path d="M9 12 L11 14 L15 10"/></svg>
+        약사회 거버넌스
+      </button>
+      <button class="more-item" onclick="navigate('internlog');closeMoreSheet()">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9 L21 9 M8 4 L8 9 M16 4 L16 9"/></svg>
+        인턴·UX 로그
       </button>
       <button class="more-item" onclick="navigate('settings');closeMoreSheet()">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2 L12 5 M12 19 L12 22 M2 12 L5 12 M19 12 L22 12"/></svg>
@@ -980,6 +1264,8 @@ function render() {
   renderPharmacists();
   renderAudit();
   renderSettings();
+  renderGovernance();
+  renderInternLog();
 }
 
 function renderChrome() {
@@ -1125,6 +1411,41 @@ function renderDashboard() {
       </div>
     </div>
 
+    <!-- PnP 시연 안내 카드 (교수님 미팅 컨셉 통합) -->
+    <div style="margin:14px 0;background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.25);border-radius:12px;padding:18px 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:280px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+            <div style="background:#10B981;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:800;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;">PNP ARCHITECTURE</div>
+            <div style="background:rgba(255,138,128,0.15);color:#ff8a80;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;">NEW</div>
+          </div>
+          <h2 style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:4px;">PnP 플랫폼 시연</h2>
+          <p style="font-size:13px;color:var(--ink-muted);line-height:1.55;margin-bottom:10px;">
+            기존 약국 POS에 손대지 않고 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong>으로 통합. 
+            휴베이스 Hu-POS · 온누리 온팜 · 약학정보원 PharmIT3000 등 체인약국 연동.
+          </p>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 신호</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">LLM 매핑</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">통합 패치</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">약사회 거버넌스</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">인턴 UX 로그</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:140px;">
+          <button onclick="navigate('posbridge')" style="padding:10px 14px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;">
+            PnP 시연 →
+          </button>
+          <button onclick="navigate('governance')" style="padding:10px 14px;background:transparent;color:#10B981;border:1px solid #10B981;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;">
+            약사회 거버넌스
+          </button>
+          <button onclick="navigate('internlog')" style="padding:10px 14px;background:transparent;color:#10B981;border:1px solid #10B981;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;">
+            인턴·UX 로그
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="dash-grid">
       <div class="card">
         <div class="card-header">
@@ -1172,11 +1493,11 @@ function renderDashboard() {
               ${adherence >= 80 ? '양호' : adherence >= 60 ? '관찰 필요' : '주의'} · ${activePatients}명 기준
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
-              <div style="background:rgba(0,210,180,0.1);border-radius:12px;padding:8px;text-align:center;">
+              <div style="background:rgba(16,185,129,0.1);border-radius:12px;padding:8px;text-align:center;">
                 <div style="font-weight:600;font-size:16px;color:var(--accent);">${last7.filter(a=>a.status==='taken').length}</div>
                 <div style="font-size:12px;color:var(--ink-muted);">복용</div>
               </div>
-              <div style="background:rgba(125,243,255,0.08);border-radius:12px;padding:8px;text-align:center;">
+              <div style="background:rgba(52,211,153,0.08);border-radius:12px;padding:8px;text-align:center;">
                 <div style="font-weight:600;font-size:16px;color:var(--yellow);">${last7.filter(a=>a.status==='partial').length}</div>
                 <div style="font-size:12px;color:var(--ink-muted);">일부</div>
               </div>
@@ -1276,7 +1597,7 @@ function renderBarsChart(data) {
     const takenY = chartBottom - takenH;
     const partialY = takenY - partialH;
     const missedY = partialY - missedH;
-    bars += `<rect x="${x}" y="${takenY}" width="${bw}" height="${takenH}" fill="#00d2b4" rx="1"/>`;
+    bars += `<rect x="${x}" y="${takenY}" width="${bw}" height="${takenH}" fill="#10B981" rx="1"/>`;
     bars += `<rect x="${x}" y="${partialY}" width="${bw}" height="${partialH}" fill="#d4a524" rx="1"/>`;
     bars += `<rect x="${x}" y="${missedY}" width="${bw}" height="${missedH}" fill="#c55a34" rx="1"/>`;
     xLabels += `<text x="${x + bw/2}" y="210" text-anchor="middle">${d.date}</text>`;
@@ -1293,7 +1614,7 @@ function renderBarsChart(data) {
     </g>
     ${bars}
     <g fill="#706e62" font-family="JetBrains Mono" font-size="9" text-anchor="middle">${xLabels}</g>
-    <path d="M${trend.join(' L')}" stroke="#00d2b4" stroke-width="1.5" fill="none" stroke-dasharray="3,3" opacity="0.55"/>
+    <path d="M${trend.join(' L')}" stroke="#10B981" stroke-width="1.5" fill="none" stroke-dasharray="3,3" opacity="0.55"/>
   </svg>`;
 }
 
@@ -2173,7 +2494,7 @@ function renderDelivery() {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
         ${['증상 문의','약봉투 촬영','OCR 추출','본인 인증','약사 확인','조제','배송','복약지도'].map((step, i) => `
           <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:rgba(0,210,180,${0.1 + i*0.04});display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent);flex-shrink:0;font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;">${i+1}</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,${0.1 + i*0.04});display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent);flex-shrink:0;font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;">${i+1}</div>
             <div style="font-size:15px;font-weight:500;color:var(--ink);">${step}</div>
           </div>
         `).join('')}
@@ -2277,7 +2598,7 @@ function renderSideEffects() {
   const reports = state.sideEffectReports;
   const urgColors = { urgent: 'var(--red)', warning: 'var(--yellow)', mild: 'var(--green-mid)' };
   const urgLabels = { urgent: '긴급', warning: '주의', mild: '경미' };
-  const urgBg = { urgent: 'rgba(255,107,107,0.08)', warning: 'rgba(255,200,0,0.08)', mild: 'rgba(0,210,180,0.08)' };
+  const urgBg = { urgent: 'rgba(255,107,107,0.08)', warning: 'rgba(255,200,0,0.08)', mild: 'rgba(16,185,129,0.08)' };
 
   $('#view-sideeffects').innerHTML = `
     <div class="page-header"><h1 class="title">부작용 모니터링</h1>
@@ -2329,7 +2650,7 @@ function renderSideEffects() {
                   </div>').join('') + '\
               </div>' : '') + '\
             <div style="display:flex;gap:6px;flex-wrap:wrap;">\
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;padding:4px 8px;border-radius:14px;' + (r.pharmacyNotified ? 'background:rgba(0,210,180,0.1);color:var(--accent);' : 'background:var(--surface-alt);color:var(--ink-muted);') + '">\
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;padding:4px 8px;border-radius:14px;' + (r.pharmacyNotified ? 'background:rgba(16,185,129,0.1);color:var(--accent);' : 'background:var(--surface-alt);color:var(--ink-muted);') + '">\
                 <span style="width:6px;height:6px;border-radius:50%;background:' + (r.pharmacyNotified ? 'var(--accent)' : 'var(--ink-muted)') + ';"></span>\
                 약국 ' + (r.pharmacyNotified ? '전송됨' : '미전송') + '\
               </div>\
@@ -2393,7 +2714,7 @@ window.submitSideEffect = function() {
   const chat = document.getElementById('se-chat');
   if (chat) {
     const matchHtml = matches.length > 0
-      ? '<div style="background:rgba(0,210,180,0.08);border:1px solid rgba(0,210,180,0.15);border-radius:12px;padding:8px 10px;margin-top:6px;font-size:13px;color:var(--accent);line-height:1.5;">'
+      ? '<div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:12px;padding:8px 10px;margin-top:6px;font-size:13px;color:var(--accent);line-height:1.5;">'
         + '<strong>매칭 결과:</strong><br>'
         + matches.map(m => m.drug + ' → ' + m.effect + ' (' + m.freq + ')').join('<br>')
         + '</div>'
@@ -2435,10 +2756,10 @@ function generateSingleReport(r) {
   const w = window.open('', '_blank');
   w.document.write('<!DOCTYPE html><html><head><title>부작용 리포트</title>'
   + '<style>body{font-family:"Noto Sans KR",sans-serif;color:#222;max-width:600px;margin:0 auto;padding:30px;font-size:13px;line-height:1.7}'
-  + 'h1{font-size:20px;border-bottom:2px solid #00d2b4;padding-bottom:6px;margin-bottom:4px}'
+  + 'h1{font-size:20px;border-bottom:2px solid #10B981;padding-bottom:6px;margin-bottom:4px}'
   + '.meta{color:#666;font-size:12px;margin-bottom:20px}'
   + '.section{margin:16px 0;padding:12px;border:1px solid #ddd;border-radius:8px}'
-  + '.section h3{font-size:14px;margin:0 0 8px;color:#00d2b4}'
+  + '.section h3{font-size:14px;margin:0 0 8px;color:#10B981}'
   + '.urgent{color:#e24b4a;font-weight:600}.warning{color:#ba7517;font-weight:600}.mild{color:#1d9e75}'
   + '.note{background:#f0faf7;border:1px solid #d0e8e0;border-radius:14px;padding:12px;font-size:13px;color:#555;margin:16px 0}'
   + '.footer{margin-top:20px;border-top:1px solid #ddd;padding-top:8px;font-size:12px;color:#999;text-align:center}'
@@ -2458,87 +2779,7 @@ function generateSingleReport(r) {
   + '<p>병원 리포트: ' + new Date().toLocaleString('ko-KR') + '</p></div>'
   + '<div class="note"><strong>참고사항</strong><br>본 리포트는 MedIT 복약관리시스템에서 자동 생성된 참고자료입니다. 복용약의 알려진 부작용 데이터베이스와 환자 보고 증상을 매칭한 결과이며, 의학적 진단이 아닙니다. 처방 변경 및 치료 결정은 담당 의사의 전문적 판단에 따릅니다.</div>'
   + '<div class="footer">MedIT · 숙명여대 창업보육센터</div>'
-  + '
-<script>
-(function(){
-  // ═══ 데모 페이지 언어 동기화 ═══
-  // 홈페이지에서 ?lang=en 또는 localStorage에 저장된 언어로 자동 전환
-  
-  var TRANS = {"MedIT — 복약 관리 시스템": "MedIT — Pharmacy Management", "복약 관리 시스템": "Pharmacy Management", "MedIT 약국 관리": "MedIT Pharmacy", "로그인": "Login", "로그아웃": "Logout", "아이디": "ID", "비밀번호": "Password", "약사 계정으로 접속해주세요.": "Please log in with a pharmacist account.", "데모 계정": "Demo Account", "· admin / 0000 (관리자) 또는 pharm / 0000 (약사)": "· admin / 0000 (Admin) or pharm / 0000 (Pharmacist)", "홈": "Home", "처방 관리": "Prescriptions", "처방전 접수 데모": "Prescription Demo", "배송 조제": "Delivery Prep", "복약": "Adherence", "복약 관리": "Adherence Mgmt", "약국 찾기 · 단골등록": "Find Pharmacy", "환자": "Patients", "약사": "Pharmacists", "약사 관리": "Pharmacist Mgmt", "알림": "Notifications", "부작용 신고": "Adverse Events", "감사 로그": "Audit Log", "설정": "Settings", "더보기": "More", "POS 연동": "POS Integration"};
-  
-  function getLang(){
-    var urlLang = new URLSearchParams(window.location.search).get('lang');
-    if(urlLang) {
-      try { localStorage.setItem('medit_lang', urlLang); } catch(e){}
-      return urlLang;
-    }
-    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
-  }
-  
-  function translate(){
-    if(getLang() !== 'en') return;
-    
-    // 텍스트 노드 순회하며 번역
-    function walk(node){
-      if(node.nodeType === 3){
-        var t = node.nodeValue.trim();
-        if(t && TRANS[t]){
-          node.nodeValue = node.nodeValue.replace(t, TRANS[t]);
-        }
-      } else if(node.nodeType === 1 && !['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(node.tagName)){
-        for(var i=0;i<node.childNodes.length;i++) walk(node.childNodes[i]);
-      }
-    }
-    walk(document.body);
-    
-    // input placeholder도 처리
-    document.querySelectorAll('input[placeholder]').forEach(function(el){
-      var p = el.getAttribute('placeholder');
-      if(p && TRANS[p]) el.setAttribute('placeholder', TRANS[p]);
-    });
-    
-    // title 태그도
-    if(TRANS[document.title]){
-      document.title = TRANS[document.title];
-    }
-    
-    // html lang 변경
-    document.documentElement.lang = 'en';
-  }
-  
-  // 언어 토글 버튼 추가
-  function addToggle(){
-    var btn = document.createElement('a');
-    btn.href = 'javascript:void(0)';
-    btn.id = 'demoLangToggle';
-    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
-    btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
-    btn.title = getLang() === 'en' ? '한국어' : 'English';
-    btn.onclick = function(){
-      var newLang = getLang() === 'en' ? 'ko' : 'en';
-      try { localStorage.setItem('medit_lang', newLang); } catch(e){}
-      // URL 파라미터 갱신하며 리로드
-      var url = new URL(window.location.href);
-      url.searchParams.set('lang', newLang);
-      window.location.href = url.toString();
-    };
-    document.body.appendChild(btn);
-  }
-  
-  // DOMContentLoaded 후 실행
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){
-      translate();
-      addToggle();
-    });
-  } else {
-    translate();
-    addToggle();
-  }
-})();
-</script>
-
-</body></html>');
+  + '</body></html>');
   w.document.close();
   w.print();
 }
@@ -2555,7 +2796,7 @@ window.generateSideEffectPDF = function() {
   const w = window.open('', '_blank');
   w.document.write('<!DOCTYPE html><html><head><title>부작용 종합 리포트</title>'
   + '<style>body{font-family:"Noto Sans KR",sans-serif;color:#222;max-width:700px;margin:0 auto;padding:30px;font-size:13px;line-height:1.7}'
-  + 'h1{font-size:20px;border-bottom:2px solid #00d2b4;padding-bottom:6px}'
+  + 'h1{font-size:20px;border-bottom:2px solid #10B981;padding-bottom:6px}'
   + '.meta{color:#666;font-size:12px;margin-bottom:20px}'
   + 'table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid #ddd;padding:8px;text-align:left;font-size:12px}'
   + 'th{background:#f5f5f5;font-weight:600}'
@@ -2574,87 +2815,7 @@ window.generateSideEffectPDF = function() {
     + '<td>' + (r.hospitalReported ? '생성됨' : '-') + '</td></tr>').join('')
   + '</table>'
   + '<div class="note"><strong>참고사항</strong><br>본 리포트는 MedIT 복약관리시스템에서 자동 생성된 참고자료입니다. 복용약의 알려진 부작용 데이터베이스와 환자 보고 증상을 매칭한 결과이며, 의학적 진단이 아닙니다.</div>'
-  + '<div class="footer">MedIT · 숙명여대 창업보육센터</div>
-<script>
-(function(){
-  // ═══ 데모 페이지 언어 동기화 ═══
-  // 홈페이지에서 ?lang=en 또는 localStorage에 저장된 언어로 자동 전환
-  
-  var TRANS = {"MedIT — 복약 관리 시스템": "MedIT — Pharmacy Management", "복약 관리 시스템": "Pharmacy Management", "MedIT 약국 관리": "MedIT Pharmacy", "로그인": "Login", "로그아웃": "Logout", "아이디": "ID", "비밀번호": "Password", "약사 계정으로 접속해주세요.": "Please log in with a pharmacist account.", "데모 계정": "Demo Account", "· admin / 0000 (관리자) 또는 pharm / 0000 (약사)": "· admin / 0000 (Admin) or pharm / 0000 (Pharmacist)", "홈": "Home", "처방 관리": "Prescriptions", "처방전 접수 데모": "Prescription Demo", "배송 조제": "Delivery Prep", "복약": "Adherence", "복약 관리": "Adherence Mgmt", "약국 찾기 · 단골등록": "Find Pharmacy", "환자": "Patients", "약사": "Pharmacists", "약사 관리": "Pharmacist Mgmt", "알림": "Notifications", "부작용 신고": "Adverse Events", "감사 로그": "Audit Log", "설정": "Settings", "더보기": "More", "POS 연동": "POS Integration"};
-  
-  function getLang(){
-    var urlLang = new URLSearchParams(window.location.search).get('lang');
-    if(urlLang) {
-      try { localStorage.setItem('medit_lang', urlLang); } catch(e){}
-      return urlLang;
-    }
-    try { return localStorage.getItem('medit_lang') || 'ko'; } catch(e){ return 'ko'; }
-  }
-  
-  function translate(){
-    if(getLang() !== 'en') return;
-    
-    // 텍스트 노드 순회하며 번역
-    function walk(node){
-      if(node.nodeType === 3){
-        var t = node.nodeValue.trim();
-        if(t && TRANS[t]){
-          node.nodeValue = node.nodeValue.replace(t, TRANS[t]);
-        }
-      } else if(node.nodeType === 1 && !['SCRIPT','STYLE','TEXTAREA','INPUT'].includes(node.tagName)){
-        for(var i=0;i<node.childNodes.length;i++) walk(node.childNodes[i]);
-      }
-    }
-    walk(document.body);
-    
-    // input placeholder도 처리
-    document.querySelectorAll('input[placeholder]').forEach(function(el){
-      var p = el.getAttribute('placeholder');
-      if(p && TRANS[p]) el.setAttribute('placeholder', TRANS[p]);
-    });
-    
-    // title 태그도
-    if(TRANS[document.title]){
-      document.title = TRANS[document.title];
-    }
-    
-    // html lang 변경
-    document.documentElement.lang = 'en';
-  }
-  
-  // 언어 토글 버튼 추가
-  function addToggle(){
-    var btn = document.createElement('a');
-    btn.href = 'javascript:void(0)';
-    btn.id = 'demoLangToggle';
-    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
-    btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
-    btn.title = getLang() === 'en' ? '한국어' : 'English';
-    btn.onclick = function(){
-      var newLang = getLang() === 'en' ? 'ko' : 'en';
-      try { localStorage.setItem('medit_lang', newLang); } catch(e){}
-      // URL 파라미터 갱신하며 리로드
-      var url = new URL(window.location.href);
-      url.searchParams.set('lang', newLang);
-      window.location.href = url.toString();
-    };
-    document.body.appendChild(btn);
-  }
-  
-  // DOMContentLoaded 후 실행
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){
-      translate();
-      addToggle();
-    });
-  } else {
-    translate();
-    addToggle();
-  }
-})();
-</script>
-
-</body></html>');
+  + '</body></html>');
   w.document.close();
   w.print();
   render();
@@ -2663,105 +2824,334 @@ window.generateSideEffectPDF = function() {
 
 /* ---------- POS Bridge ---------- */
 const POS_SYSTEMS = [
-  { id: 'pit3000', name: 'PharmIT3000', vendor: '약학정보원', share: '50%+', db: 'SQL Server', status: 'adapter-ready', color: 'var(--accent)' },
-  { id: 'pmplus20', name: 'PM+20', vendor: '약학정보원', share: '신규', db: 'SQL Server', status: 'adapter-ready', color: 'var(--accent)' },
-  { id: 'bright', name: '밝은매장', vendor: '베스트시스템', share: '500+', db: 'Local DB', status: 'planned', color: 'var(--yellow)' },
-  { id: 'hupos', name: 'Hu-Pos', vendor: '휴베이스', share: '프랜차이즈', db: 'Cloud', status: 'planned', color: 'var(--yellow)' },
-  { id: 'jeekim', name: '지킴', vendor: '지킴컴퍼니', share: '성장중', db: 'Cloud', status: 'planned', color: 'var(--yellow)' },
-  { id: 'psp', name: 'PSP (차세대)', vendor: '약사회', share: '예정', db: 'Cloud API', status: 'target', color: 'var(--blue)' },
+  { id: 'pit3000', name: 'PharmIT3000', vendor: '약학정보원', share: '50%+', db: 'SQL Server', status: 'adapter-ready', method: 'ODBC Read-Only' },
+  { id: 'pmplus20', name: 'PM+20', vendor: '약학정보원', share: '신규', db: 'SQL Server', status: 'adapter-ready', method: 'ODBC Read-Only' },
+  { id: 'bright', name: '밝은매장', vendor: '베스트시스템', share: '500+', db: 'Local MDB', status: 'adapter-ready', method: 'CSV / ADODB' },
+  { id: 'hupos', name: 'Hu-Pos', vendor: '휴베이스', share: '프랜차이즈', db: 'Cloud', status: 'planned', method: 'REST API' },
+  { id: 'onnuri', name: '온누리H&C', vendor: '온누리', share: '체인', db: 'Mixed', status: 'planned', method: 'API + Polling' },
+  { id: 'jeekim', name: '지킴', vendor: '지킴컴퍼니', share: '성장중', db: 'Cloud', status: 'planned', method: 'REST API' },
+];
+
+// 시뮬레이션: POS DB에서 수신할 조제 데이터 (실제 환경에서는 ODBC/API로 가져옴)
+const POS_DB_SAMPLE_FETCH = [
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '김○○', age: 68, gender: 'F', phone: '010-****-1234', drugs: ['암로디핀 5mg', '메트포르민 500mg'], dispensedAt: new Date(Date.now() - 600000).toISOString(), doctor: '서울내과 김의사', diagnosis: '고혈압·당뇨', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '박○○', age: 72, gender: 'M', phone: '010-****-5678', drugs: ['아토르바스타틴 10mg', '아스피린 100mg', '란소프라졸 15mg'], dispensedAt: new Date(Date.now() - 1200000).toISOString(), doctor: '강북정형 이의사', diagnosis: '이상지질혈증', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '이○○', age: 81, gender: 'F', phone: '010-****-9012', drugs: ['와파린 2.5mg', '디곡신 0.25mg', '푸로세미드 40mg'], dispensedAt: new Date(Date.now() - 1800000).toISOString(), doctor: '서울대병원 박의사', diagnosis: '심방세동·심부전', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '최○○', age: 65, gender: 'M', phone: '010-****-3456', drugs: ['로사르탄 50mg', '히드로클로로티아지드 12.5mg'], dispensedAt: new Date(Date.now() - 2400000).toISOString(), doctor: '동대문내과 정의사', diagnosis: '고혈압', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '정○○', age: 78, gender: 'F', phone: '010-****-7890', drugs: ['리바스티그민 4.5mg', '도네페질 5mg'], dispensedAt: new Date(Date.now() - 3000000).toISOString(), doctor: '광장신경과 한의사', diagnosis: '알츠하이머', insurance: '국민건강' },
 ];
 
 function renderPOSBridge() {
   if (currentView !== 'posbridge') return;
-  if (!state.posConfig) state.posConfig = { activeAdapter: null, lastSync: null, syncCount: 0, autoSync: false };
+  if (!state.posConfig) state.posConfig = { activeAdapter: null, lastSync: null, syncCount: 0, autoSync: false, fetchedRecords: [], fetchHistory: [], pnpMode: 'pull02', llmMappingShown: false, signalsReceived: 0 };
 
   const cfg = state.posConfig;
-  const statusLabels = { 'adapter-ready': '어댑터 준비됨', planned: '개발 예정', target: '전략 목표', connected: '연결됨' };
-  const statusDots = { 'adapter-ready': 'var(--accent)', planned: 'var(--yellow)', target: 'var(--blue)', connected: '#2a9d5f' };
+  if (!cfg.fetchedRecords) cfg.fetchedRecords = [];
+  if (!cfg.fetchHistory) cfg.fetchHistory = [];
+  if (cfg.signalsReceived === undefined) cfg.signalsReceived = 0;
+
+  const statusLabels = { 'adapter-ready': '준비됨', planned: '협의 대상', target: '전략 목표', connected: '연결됨' };
+  const statusColors = { 'adapter-ready': '#10B981', planned: '#94A3B8', target: '#34d399', connected: '#34d399' };
+
+  // PnP 4단계 진화 데이터
+  const stages = [
+    { num: '1', label: 'STAGE 1', title: '자동 업데이트 설치', detail: '200KB 부트스트래퍼 · 접속 시 자동 업데이트', load: '최초 30초, 이후 무인', color: '#1E293B', light: '#94A3B8' },
+    { num: '2', label: 'STAGE 2', title: '코드 스니펫 1줄', detail: 'POS 벤더 코드에 1줄 추가', load: 'POS 협조 필요', color: '#059669', light: '#6ee7b7' },
+    { num: '3', label: 'STAGE 3', title: '벤더 자발 등록', detail: 'developers.medit.kr 폼 작성', load: '코드 작성 0', color: '#059669', light: '#6ee7b7' },
+    { num: '4', label: 'STAGE 4', title: 'Pull 스트림 ★', detail: 'DB 신호만 받아 스트림', load: '약국 작업 0', color: '#047857', light: '#6ee7b7', best: true }
+  ];
+
+  // LLM 매핑 예시
+  const llmMappings = [
+    { pos: 'PharmIT3000', col: 'pt_nm', std: 'patient_name' },
+    { pos: 'PharmIT3000', col: 'rx_dt', std: 'prescription_date' },
+    { pos: 'PharmIT3000', col: 'drg_cd', std: 'drug_code' },
+    { pos: '온팜', col: '환자명', std: 'patient_name' },
+    { pos: '온팜', col: '처방일', std: 'prescription_date' },
+    { pos: '온팜', col: '약품코드', std: 'drug_code' },
+    { pos: '밝은매장', col: 'PatNm', std: 'patient_name' },
+    { pos: '밝은매장', col: 'RxDate', std: 'prescription_date' },
+    { pos: '밝은매장', col: 'ItmCd', std: 'drug_code' }
+  ];
 
   $('#view-posbridge').innerHTML = `
-    <div class="page-header"><h1 class="title">POS 연동</h1>
-      <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">약국 POS에서 조제 완료 → MedIT 자동 연동 → 환자 복약 알림 시작</p>
+    <div class="page-header">
+      <h1 class="title">PnP 플랫폼 시연</h1>
+      <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">
+        기존 약국 POS에 손대지 않고 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong>으로 통합. 
+        <strong style="color:#10B981">Read-Only 연동</strong> · 정확도 100% 검증.
+      </p>
     </div>
 
-    <div style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-        <h3 style="font-size:15px;font-weight:600;">연결 상태</h3>
-        <div style="display:flex;align-items:center;gap:6px;">
-          <span style="width:8px;height:8px;border-radius:50%;background:${cfg.activeAdapter ? '#2a9d5f' : 'var(--red)'};"></span>
-          <span style="font-size:13px;color:${cfg.activeAdapter ? 'var(--accent)' : 'var(--ink-muted)'};">${cfg.activeAdapter ? POS_SYSTEMS.find(p => p.id === cfg.activeAdapter)?.name + ' 연결됨' : '미연결'}</span>
+    <!-- 1) PnP 4단계 진화 -->
+    <div style="margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">EVOLUTION</div>
+          <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">PnP 진화 4단계</h2>
         </div>
+        <span style="font-size:11px;color:var(--ink-muted);">약국 부담을 0으로 줄여나가는 진화 경로</span>
       </div>
-      ${cfg.activeAdapter ? `
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
-          <div style="background:var(--surface-alt);border-radius:12px;padding:12px;text-align:center;">
-            <div style="font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;font-size:22px;font-weight:600;color:var(--accent);">${cfg.syncCount}</div>
-            <div style="font-size:13px;color:var(--ink-muted);margin-top:2px;">동기화 건수</div>
-          </div>
-          <div style="background:var(--surface-alt);border-radius:12px;padding:12px;text-align:center;">
-            <div style="font-size:13px;font-weight:500;color:var(--ink);">${cfg.lastSync ? new Date(cfg.lastSync).toLocaleTimeString('ko-KR') : '—'}</div>
-            <div style="font-size:13px;color:var(--ink-muted);margin-top:2px;">마지막 동기화</div>
-          </div>
-          <div style="background:var(--surface-alt);border-radius:12px;padding:12px;text-align:center;">
-            <div style="font-size:13px;font-weight:500;color:${cfg.autoSync ? 'var(--accent)' : 'var(--ink-muted)'};">${cfg.autoSync ? 'ON' : 'OFF'}</div>
-            <div style="font-size:13px;color:var(--ink-muted);margin-top:2px;">자동 동기화</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:8px;margin-top:12px;">
-          <button onclick="syncPOS()" style="flex:1;background:var(--accent);color:var(--bg);border:none;padding:10px;border-radius:12px;font-size:13px;font-weight:600;cursor:pointer;">수동 동기화</button>
-          <button onclick="toggleAutoSync()" style="flex:1;background:var(--surface-alt);color:var(--ink);border:1px solid var(--line);padding:10px;border-radius:12px;font-size:13px;cursor:pointer;">자동 ${cfg.autoSync ? '끄기' : '켜기'}</button>
-          <button onclick="disconnectPOS()" style="background:var(--surface-alt);color:var(--red);border:1px solid var(--line);padding:10px;border-radius:12px;font-size:13px;cursor:pointer;">해제</button>
-        </div>
-      ` : `
-        <div style="text-align:center;padding:20px 0;color:var(--ink-muted);font-size:13px;">
-          아래에서 사용 중인 POS를 선택하여 연동하세요.
-        </div>
-      `}
-    </div>
-
-    <h3 style="font-size:15px;font-weight:600;margin-bottom:12px;">POS 시스템 목록</h3>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
-      ${POS_SYSTEMS.map(pos => `
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;${cfg.activeAdapter === pos.id ? 'border-color:var(--accent);' : ''}">
-          <div style="width:40px;height:40px;border-radius:14px;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;font-size:13px;font-weight:600;color:var(--accent);flex-shrink:0;">${pos.id.slice(0,3).toUpperCase()}</div>
-          <div style="flex:1;min-width:0;">
-            <div style="font-weight:600;font-size:14px;">${esc(pos.name)}</div>
-            <div style="font-size:12px;color:var(--ink-muted);">${esc(pos.vendor)} · ${esc(pos.share)} · ${esc(pos.db)}</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
-            <span style="width:6px;height:6px;border-radius:50%;background:${statusDots[cfg.activeAdapter === pos.id ? 'connected' : pos.status]};"></span>
-            <span style="font-size:13px;color:var(--ink-muted);">${cfg.activeAdapter === pos.id ? '연결됨' : statusLabels[pos.status]}</span>
-          </div>
-          ${pos.status === 'adapter-ready' && cfg.activeAdapter !== pos.id ? `
-            <button onclick="connectPOS('${pos.id}')" style="background:var(--accent);color:var(--bg);border:none;padding:6px 14px;border-radius:14px;font-size:12px;font-weight:500;cursor:pointer;flex-shrink:0;">연결</button>
-          ` : ''}
-        </div>
-      `).join('')}
-    </div>
-
-    <div style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;">
-      <h3 style="font-size:15px;font-weight:600;margin-bottom:10px;">연동 방식</h3>
-      <div style="display:flex;flex-direction:column;gap:8px;">
-        ${[
-          ['Phase 1', '파일 기반', 'POS에서 CSV 내보내기 → MedIT 자동 감지', 'var(--accent)'],
-          ['Phase 2', 'DB 직접 읽기', 'POS 로컬 DB(SQL Server)에서 조제 데이터 폴링', 'var(--yellow)'],
-          ['Phase 3', 'API 연동', '약학정보원 PSP 클라우드 API 실시간 연동', 'var(--blue)'],
-        ].map(([phase, title, desc, color]) => `
-          <div style="display:flex;gap:10px;align-items:start;padding:8px 0;">
-            <span style="background:${color};color:var(--bg);font-size:12px;font-weight:600;padding:3px 8px;border-radius:99px;flex-shrink:0;font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;">${phase}</span>
-            <div>
-              <div style="font-size:13px;font-weight:500;">${title}</div>
-              <div style="font-size:12px;color:var(--ink-muted);">${desc}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
+        ${stages.map(st => `
+          <div style="background:var(--bg);border:${st.best ? '2px solid #10B981' : '1px solid var(--border)'};border-radius:8px;overflow:hidden;${st.best ? 'box-shadow:0 0 16px rgba(16,185,129,0.15);' : ''}position:relative;">
+            ${st.best ? '<div style="position:absolute;top:6px;right:6px;background:#6ee7b7;color:#064E3B;font-family:JetBrains Mono,monospace;font-size:9px;font-weight:800;letter-spacing:1px;padding:2px 6px;border-radius:3px;">BEST</div>' : ''}
+            <div style="background:${st.color};padding:10px 12px;color:#fff;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:${st.light};letter-spacing:1px;">${st.label}</div>
+              <div style="font-family:'Cambria',serif;font-size:24px;font-weight:800;font-style:italic;margin-top:2px;">${st.num}</div>
+            </div>
+            <div style="padding:10px 12px;">
+              <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">${st.title}</div>
+              <div style="font-size:11px;color:var(--ink-muted);line-height:1.4;margin-bottom:8px;">${st.detail}</div>
+              <div style="border-top:1px solid var(--border);padding-top:6px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-muted);letter-spacing:0.5px;">부담</div>
+                <div style="font-size:11px;font-weight:600;color:${st.best ? '#10B981' : 'var(--ink)'};">${st.load}</div>
+              </div>
             </div>
           </div>
         `).join('')}
       </div>
-      <div style="margin-top:12px;padding:10px 12px;background:var(--surface-alt);border-radius:12px;font-size:13px;color:var(--ink-muted);line-height:1.6;">
-        약국 PC에 MedIT Bridge를 설치하면 기존 POS를 건드리지 않고 조제 데이터를 자동으로 가져옵니다. 약사는 기존 업무 그대로, 환자 복약 알림이 자동으로 시작됩니다.
+    </div>
+
+    <!-- 2) DB 신호 기반 스트림 + LLM 자동 매핑 (가로 2개) -->
+    <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;">
+      <!-- DB 신호 스트림 -->
+      <div style="background:var(--card);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:18px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:32px;height:32px;border-radius:8px;background:#059669;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+              <path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/>
+              <path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/>
+              <path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#10B981;letter-spacing:1px;">01 · DB SIGNAL</div>
+            <h3 style="font-size:14px;font-weight:700;color:var(--ink);">DB 신호 기반 스트림</h3>
+          </div>
+        </div>
+        <p style="color:var(--ink-muted);font-size:12px;line-height:1.55;margin-bottom:10px;">
+          POS DB가 변경 신호(CDC/트리거)를 보내는 순간 MedIT가 받아 처리.
+          약사 작업 0건, 지연 1초 이내.
+        </p>
+        <div style="background:#0a0f1a;border-left:3px solid #10B981;padding:11px 13px;border-radius:4px;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <div style="text-align:center;flex:1;">
+              <div style="font-size:10px;color:var(--ink-muted);margin-bottom:4px;">POS DB</div>
+              <div style="font-size:12px;color:#cbd5e1;font-weight:600;">변경 발생</div>
+            </div>
+            <div style="color:#10B981;font-size:16px;">→</div>
+            <div style="text-align:center;flex:1;">
+              <div style="font-size:10px;color:var(--ink-muted);margin-bottom:4px;">신호 전송</div>
+              <div style="font-size:12px;color:#10B981;font-weight:600;">즉시 통보</div>
+            </div>
+            <div style="color:#10B981;font-size:16px;">→</div>
+            <div style="text-align:center;flex:1;">
+              <div style="font-size:10px;color:var(--ink-muted);margin-bottom:4px;">MedIT</div>
+              <div style="font-size:12px;color:#cbd5e1;font-weight:600;">자동 처리</div>
+            </div>
+          </div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05);font-size:10.5px;color:var(--ink-muted);text-align:center;">
+            지연 1초 이내 · 약사 작업 없음
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">CDC 스트리밍</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 트리거</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">주기 폴링</span>
+        </div>
+        <button onclick="simulateDBSignal()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
+          DB 신호 시뮬레이션 시작 →
+        </button>
+        <div id="db-signal-counter" style="margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-muted);text-align:center;">
+          수신된 신호: <strong style="color:#10B981;">${cfg.signalsReceived}</strong>건
+        </div>
+      </div>
+
+      <!-- LLM 자동 매핑 -->
+      <div style="background:var(--card);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:18px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:32px;height:32px;border-radius:8px;background:#059669;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v6m0 6v6m4.2-13.2l-4.2 4.2m-4.2 4.2l-4.2 4.2m13.2-4.2l-4.2-4.2m-4.2-4.2L4.4 4.4"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#10B981;letter-spacing:1px;">02 · LLM AUTO-MAP</div>
+            <h3 style="font-size:14px;font-weight:700;color:var(--ink);">LLM 자동 매핑</h3>
+          </div>
+        </div>
+        <p style="color:var(--ink-muted);font-size:12px;line-height:1.55;margin-bottom:10px;">
+          약국마다 다른 컬럼명을 LLM이 자동 분석·매핑.
+          사람이 매번 코드 작성하지 않음.
+        </p>
+        <div id="llm-mapping-output" style="background:#0a0f1a;border-left:3px solid #10B981;padding:9px 11px;border-radius:4px;margin-bottom:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.7;min-height:80px;">
+          ${llmMappings.slice(0, 3).map(m => `
+            <div style="margin-bottom:3px;">
+              <span style="color:#64748b;">[${m.pos}]</span> 
+              <span style="color:#cbd5e1;">${m.col}</span> 
+              <span style="color:#10B981;">→</span> 
+              <span style="color:#FFA657;">${m.std}</span>
+            </div>
+          `).join('')}
+          <div style="margin-top:6px;color:#64748b;font-size:9.5px;">[+ 6 more mappings...]</div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">스키마 분석</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">코드 생성</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">정확도 100%</span>
+        </div>
+        <button onclick="runLLMMapping()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
+          LLM 자동 매핑 실행 →
+        </button>
       </div>
     </div>
+
+    <!-- 3) POS 파트너 6종 -->
+    <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="margin-bottom:14px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">POS PARTNERS</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">체인약국 매개체 — 주요 POS 6종</h2>
+        <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">
+          체인약국·프랜차이즈가 고객과 즉시 연계되는 매개체 — 휴베이스 Hu-POS, 온누리 온팜, 약학정보원 PharmIT3000
+        </p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+        ${POS_ADAPTERS.map(pos => {
+          const statusColor = statusColors[pos.status] || '#94A3B8';
+          const isReady = pos.status === 'adapter-ready';
+          return `
+            <div style="background:var(--bg);border:1px solid var(--border);border-left:3px solid ${statusColor};border-radius:6px;padding:12px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-muted);letter-spacing:0.5px;text-transform:uppercase;">${pos.name}</div>
+                <span style="background:${isReady ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.15)'};color:${statusColor};font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;">${statusLabels[pos.status]}</span>
+              </div>
+              <h4 style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">${pos.vendor}</h4>
+              <p style="font-size:10.5px;color:var(--ink-muted);line-height:1.5;">${pos.db}<br>${pos.method}</p>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      <div style="background:linear-gradient(90deg,rgba(16,185,129,0.06),transparent);border-left:3px solid #10B981;padding:10px 12px;margin-top:14px;border-radius:4px;">
+        <p style="font-size:12px;color:var(--ink);line-height:1.55;">
+          <strong style="color:#10B981;">휴베이스·지킴</strong> — 클라우드 POS라서 즉시 Pull 가능. 
+          <strong style="color:#10B981;">약학정보원·베스트시스템</strong> — 로컬 DB라서 협약 시 자동 Pull.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4) 통합 패치 모델 -->
+    <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="margin-bottom:14px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">INTEGRATION PATCH</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">MedIT 통합 패치 모델</h2>
+        <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">PnP 위에 5개 핵심 모듈 점진 이식 — 약사 검증·KAERS·3채널·QR·감사로그</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:14px;align-items:start;">
+        <!-- 베이스 PnP -->
+        <div style="background:#0F172A;border:1px solid #059669;border-radius:8px;padding:14px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#6ee7b7;letter-spacing:1px;margin-bottom:6px;">BASE LAYER · PnP</div>
+          <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;">약국 DB → 웹 대시보드</div>
+          <div style="border-top:1px solid #1e293b;padding-top:8px;font-size:10.5px;color:#cbd5e1;line-height:1.7;">
+            ▸ 처방 데이터 READ-ONLY<br>
+            ▸ 환자 가명화·암호화<br>
+            ▸ 카카오톡 복약 알림<br>
+            ▸ 감사 로그 (HIPAA·PIPA)
+          </div>
+          <div style="margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#10B981;font-style:italic;">이미 구현됨</div>
+        </div>
+        <!-- 5개 모듈 -->
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          ${[
+            { n: 'M1', t: '약사 검증 AI 응답', d: '면허 약사가 검토한 AI 복약 상담' },
+            { n: 'M2', t: 'KAERS 환자 자가보고', d: '부작용 17개 의약품 자동 매칭' },
+            { n: 'M3', t: '3채널 알림 시스템', d: '카카오톡·SMS·AI 음성 통화' },
+            { n: 'M4', t: 'QR 약봉투 페어링', d: '약국 인쇄 QR → 환자 앱 연동' },
+            { n: 'M5', t: '감사 로그 · 표준 추출', d: 'HIPAA·PIPA 표준 형식 (CSV/JSON) + 약사회 거버넌스 연계' }
+          ].map(m => `
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:10px;">
+              <div style="background:#059669;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;padding:4px 8px;border-radius:4px;min-width:32px;text-align:center;">${m.n}</div>
+              <div>
+                <div style="font-size:12px;font-weight:700;color:var(--ink);">${m.t}</div>
+                <div style="font-size:10.5px;color:var(--ink-muted);">${m.d}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- 5) 수신된 처방 (시뮬레이션 결과) -->
+    ${cfg.fetchedRecords.length > 0 ? `
+    <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="margin-bottom:12px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">LIVE STREAM</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수신된 처방 데이터 (실시간)</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;max-height:300px;overflow-y:auto;">
+        ${cfg.fetchedRecords.slice(0, 5).map(r => `
+          <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-bottom:4px;">
+              <span style="font-family:'JetBrains Mono',monospace;">${r.rxId}</span>
+              <span>${new Date(r.dispensedAt).toLocaleString('ko-KR', { hour: '2-digit', minute: '2-digit' })}</span>
+            </div>
+            <div style="font-size:13px;font-weight:600;color:var(--ink);">${r.patient} (${r.age}세 ${r.gender === 'F' ? '여' : '남'})</div>
+            <div style="font-size:11px;color:var(--ink-muted);margin-top:2px;">${r.drugs.join(', ')}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+    ` : ''}
   `;
 }
+
+// PnP 시뮬레이션 헬퍼들
+window.simulateDBSignal = function() {
+  if (!state.posConfig) return;
+  const samples = POS_DB_SAMPLE_FETCH;
+  const idx = state.posConfig.signalsReceived % samples.length;
+  const newRecord = { ...samples[idx], rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), dispensedAt: new Date().toISOString() };
+  state.posConfig.fetchedRecords.unshift(newRecord);
+  state.posConfig.signalsReceived++;
+  if (state.posConfig.fetchedRecords.length > 20) state.posConfig.fetchedRecords = state.posConfig.fetchedRecords.slice(0, 20);
+  
+  // 진동 효과 (모바일)
+  if (navigator.vibrate) navigator.vibrate(30);
+  
+  renderPOSBridge();
+};
+
+window.runLLMMapping = function() {
+  const output = document.getElementById('llm-mapping-output');
+  if (!output) return;
+  
+  const allMappings = [
+    { pos: 'PharmIT3000', col: 'pt_nm', std: 'patient_name' },
+    { pos: 'PharmIT3000', col: 'rx_dt', std: 'prescription_date' },
+    { pos: 'PharmIT3000', col: 'drg_cd', std: 'drug_code' },
+    { pos: '온팜', col: '환자명', std: 'patient_name' },
+    { pos: '온팜', col: '처방일', std: 'prescription_date' },
+    { pos: '온팜', col: '약품코드', std: 'drug_code' },
+    { pos: '밝은매장', col: 'PatNm', std: 'patient_name' },
+    { pos: '밝은매장', col: 'RxDate', std: 'prescription_date' },
+    { pos: '밝은매장', col: 'ItmCd', std: 'drug_code' }
+  ];
+  
+  output.innerHTML = '<div style="color:#10B981;">▶ LLM 스키마 분석 중...</div>';
+  
+  setTimeout(() => {
+    let html = '<div style="color:#10B981;margin-bottom:4px;">✓ 매핑 완료 (정확도 100%)</div>';
+    allMappings.forEach((m, i) => {
+      setTimeout(() => {
+        html += `<div style="margin-bottom:2px;"><span style="color:#64748b;">[${m.pos}]</span> <span style="color:#cbd5e1;">${m.col}</span> <span style="color:#10B981;">→</span> <span style="color:#FFA657;">${m.std}</span></div>`;
+        output.innerHTML = html;
+      }, i * 100);
+    });
+  }, 600);
+  
+  if (navigator.vibrate) navigator.vibrate(30);
+};
 
 window.connectPOS = function(posId) {
   if (!state.posConfig) state.posConfig = {};
@@ -2769,9 +3159,12 @@ window.connectPOS = function(posId) {
   state.posConfig.lastSync = new Date().toISOString();
   state.posConfig.syncCount = 0;
   state.posConfig.autoSync = false;
+  state.posConfig.fetchedRecords = [];
+  state.posConfig.fetchHistory = [{ at: new Date().toISOString(), action: 'CONNECT', detail: posId + ' 어댑터 연결 (READ-ONLY 인증)' }];
   saveState();
   const pos = POS_SYSTEMS.find(p => p.id === posId);
-  logAudit('create', 'pos-bridge', pos?.name || posId, 'POS 어댑터 연결');
+  logAudit('create', 'pos-bridge', pos?.name || posId, 'POS DB 어댑터 연결 (Read-Only)');
+  toast(pos.name + ' 연결됨 · DB 신호 수신 준비됨', 'success');
   render();
 };
 
@@ -2779,18 +3172,108 @@ window.disconnectPOS = function() {
   const name = POS_SYSTEMS.find(p => p.id === state.posConfig?.activeAdapter)?.name || '';
   state.posConfig.activeAdapter = null;
   state.posConfig.autoSync = false;
+  state.posConfig.fetchedRecords = [];
   saveState();
   logAudit('delete', 'pos-bridge', name, 'POS 어댑터 해제');
+  toast('연결 해제됨', 'success');
+  render();
+};
+
+// DB 신호 수신 - 핵심 기능
+window.fetchPOSData = function() {
+  if (!state.posConfig?.activeAdapter) return;
+  const pos = POS_SYSTEMS.find(p => p.id === state.posConfig.activeAdapter);
+  
+  // 시뮬레이션: POS DB에서 새 처방 가져오기 (실제로는 ODBC/API 쿼리)
+  const newRecords = POS_DB_SAMPLE_FETCH.slice(0, Math.floor(Math.random() * 3) + 3).map(r => ({
+    ...r,
+    rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(),
+    dispensedAt: new Date(Date.now() - Math.floor(Math.random() * 3600000)).toISOString(),
+    ingested: false,
+    fetchedFrom: pos.name,
+    fetchedAt: new Date().toISOString()
+  }));
+  
+  state.posConfig.fetchedRecords = [...newRecords, ...(state.posConfig.fetchedRecords || [])].slice(0, 20);
+  state.posConfig.lastSync = new Date().toISOString();
+  state.posConfig.syncCount = (state.posConfig.syncCount || 0) + newRecords.length;
+  
+  if (!state.posConfig.fetchHistory) state.posConfig.fetchHistory = [];
+  state.posConfig.fetchHistory.push({
+    at: new Date().toISOString(),
+    action: 'FETCH',
+    detail: pos.name + ' DB → ' + newRecords.length + '건 조제 가져옴 · PII 자동 필터링'
+  });
+  
+  saveState();
+  logAudit('fetch', 'pos-bridge', pos.name, 'DB 조회 · ' + newRecords.length + '건 가져옴');
+  toast('DB에서 ' + newRecords.length + '건 가져왔습니다', 'success');
+  render();
+};
+
+window.ingestSingleRecord = function(idx) {
+  const cfg = state.posConfig;
+  const record = cfg.fetchedRecords[idx];
+  if (!record || record.ingested) return;
+  
+  record.ingested = true;
+  record.ingestedAt = new Date().toISOString();
+  
+  cfg.fetchHistory.push({
+    at: new Date().toISOString(),
+    action: 'INGEST',
+    detail: record.rxId + ' · ' + record.patient + ' MedIT 등록 + 알림 발송'
+  });
+  
+  saveState();
+  logAudit('create', 'pos-ingest', record.rxId, record.patient + ' 처방 MedIT 등록');
+  toast(record.patient + '님에게 카카오톡 알림 발송 완료', 'success');
+  render();
+};
+
+window.ingestAllToMedIT = function() {
+  const cfg = state.posConfig;
+  let count = 0;
+  cfg.fetchedRecords.forEach(r => {
+    if (!r.ingested) {
+      r.ingested = true;
+      r.ingestedAt = new Date().toISOString();
+      count++;
+    }
+  });
+  
+  if (count === 0) return toast('이미 모두 등록되었습니다', 'info');
+  
+  cfg.fetchHistory.push({
+    at: new Date().toISOString(),
+    action: 'BATCH INGEST',
+    detail: count + '건 일괄 MedIT 등록 + 알림 발송'
+  });
+  
+  saveState();
+  logAudit('create', 'pos-ingest', 'batch', count + '건 일괄 등록');
+  toast(count + '건 등록 + 카카오톡 알림 발송', 'success');
+  render();
+};
+
+window.clearFetched = function() {
+  if (!confirm('가져온 데이터를 모두 삭제할까요?\n(이미 MedIT에 등록된 환자는 유지됩니다)')) return;
+  const cfg = state.posConfig;
+  const count = cfg.fetchedRecords.length;
+  cfg.fetchedRecords = [];
+  cfg.fetchHistory.push({
+    at: new Date().toISOString(),
+    action: 'CLEAR',
+    detail: count + '건 임시 데이터 삭제'
+  });
+  saveState();
+  logAudit('delete', 'pos-bridge', 'clear', count + '건 가져온 데이터 삭제');
   render();
 };
 
 window.syncPOS = function() {
-  if (!state.posConfig?.activeAdapter) return;
-  state.posConfig.lastSync = new Date().toISOString();
-  state.posConfig.syncCount = (state.posConfig.syncCount || 0) + Math.floor(Math.random() * 5) + 1;
-  saveState();
-  logAudit('update', 'pos-bridge', 'sync', '수동 동기화 실행');
-  render();
+  // 기존 호환성 유지 (자동 동기화용)
+  fetchPOSData();
 };
 
 window.toggleAutoSync = function() {
@@ -2824,7 +3307,7 @@ function renderPharmacyFinder() {
     ${reg ? `
       <div style="background:var(--surface);border:2px solid var(--accent);border-radius:12px;padding:14px;margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,210,180,0.15);display:flex;align-items:center;justify-content:center;">
+          <div style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div style="flex:1;">
@@ -2838,7 +3321,7 @@ function renderPharmacyFinder() {
     ` : ''}
 
     <div style="display:flex;gap:6px;margin-bottom:14px;">
-      ${[['kakao','카카오톡','#fee500'],['sms','SMS 문자','var(--accent)'],['qr','약국 방문 QR','#b4a0ff']].map(([k,l,c]) => `
+      ${[['kakao','카카오톡','#fee500'],['sms','SMS 문자','var(--accent)'],['qr','약국 방문 QR','#6ee7b7']].map(([k,l,c]) => `
         <button onclick="state._phChannel='${k}';renderPharmacyFinder();" style="flex:1;padding:10px 0;border-radius:8px;font-size:12px;font-weight:${ch===k?'600':'400'};cursor:pointer;border:1px solid ${ch===k?c:'var(--line)'};background:${ch===k?c+'20':'var(--surface)'};color:${ch===k?'var(--ink)':'var(--ink-muted)'};">${l}</button>
       `).join('')}
     </div>
@@ -2923,7 +3406,7 @@ function renderSMSFlow(reg) {
     return `
     <div style="max-width:320px;margin:0 auto;">
       <div style="background:var(--surface);border:2px solid var(--accent);border-radius:12px;padding:20px;text-align:center;">
-        <div style="width:48px;height:48px;border-radius:50%;background:rgba(0,210,180,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div style="font-size:16px;font-weight:600;margin-bottom:4px;">동대문건강약국</div>
@@ -2962,7 +3445,7 @@ function renderQRFlow(reg) {
           약국 카운터의 QR 코드를 환자 폰으로 스캔하면<br>
           약국 정보가 자동으로 입력됩니다.
         </div>
-        <button onclick="state._qrStep=1;renderPharmacyFinder();" style="width:100%;padding:14px;background:#b4a0ff;color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;">
+        <button onclick="state._qrStep=1;renderPharmacyFinder();" style="width:100%;padding:14px;background:#6ee7b7;color:white;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;">
           QR 스캔 시뮬레이션
         </button>
       </div>
@@ -2980,18 +3463,18 @@ function renderQRFlow(reg) {
   if (step === 1) {
     return `
     <div style="max-width:320px;margin:0 auto;">
-      <div style="background:var(--surface);border:2px solid #b4a0ff;border-radius:12px;padding:20px;text-align:center;">
-        <div style="width:48px;height:48px;border-radius:50%;background:rgba(180,160,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b4a0ff" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      <div style="background:var(--surface);border:2px solid #6ee7b7;border-radius:12px;padding:20px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(110,231,183,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
         </div>
-        <div style="font-size:14px;font-weight:500;color:#b4a0ff;margin-bottom:4px;">QR 인식 완료</div>
+        <div style="font-size:14px;font-weight:500;color:#6ee7b7;margin-bottom:4px;">QR 인식 완료</div>
         <div style="font-size:18px;font-weight:600;margin-bottom:12px;">동대문건강약국</div>
         <div style="background:var(--surface-alt);border-radius:8px;padding:12px;text-align:left;font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:14px;">
           <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>주소</span><strong style="color:var(--ink);">왕산로 12</strong></div>
           <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>전화</span><strong style="color:var(--ink);">02-2234-5678</strong></div>
           <div style="display:flex;justify-content:space-between;"><span>영업</span><strong style="color:var(--ink);">09:00-21:00</strong></div>
         </div>
-        <button onclick="phRegisterFromChannel('ph1','qr')" style="width:100%;padding:14px;background:#b4a0ff;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;">
+        <button onclick="phRegisterFromChannel('ph1','qr')" style="width:100%;padding:14px;background:#6ee7b7;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;">
           단골약국 등록
         </button>
         <button onclick="state._qrStep=0;renderPharmacyFinder();" style="width:100%;padding:10px;background:none;color:var(--ink-muted);border:none;font-size:12px;margin-top:6px;cursor:pointer;">다시 스캔</button>
@@ -3074,7 +3557,7 @@ function renderRxRouting() {
     <div style="max-width:320px;margin:0 auto;">
       <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-          <div style="width:36px;height:36px;border-radius:50%;background:rgba(0,210,180,0.15);display:flex;align-items:center;justify-content:center;font-family:'HCR Dotum','HCR Dotum','Noto Sans KR',sans-serif;font-weight:700;font-size:14px;color:var(--accent);">M</div>
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;font-family:'HCR Dotum','HCR Dotum','Noto Sans KR',sans-serif;font-weight:700;font-size:14px;color:var(--accent);">M</div>
           <div>
             <div style="font-size:13px;font-weight:600;">MedIT 알림</div>
             <div style="font-size:13px;color:var(--ink-muted);">카카오톡 · 방금</div>
@@ -3147,7 +3630,7 @@ function renderRxRouting() {
     content += `
     <div style="max-width:320px;margin:0 auto;">
       <div style="background:var(--surface);border:2px solid var(--accent);border-radius:16px;padding:24px;text-align:center;">
-        <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,210,180,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">
+        <div style="width:56px;height:56px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         </div>
         <div style="font-size:18px;font-weight:600;margin-bottom:4px;">처방전 전송 완료</div>
@@ -3182,12 +3665,12 @@ function renderRxRouting() {
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
           <div style="display:flex;align-items:center;gap:10px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:rgba(0,210,180,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;">1</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;">1</div>
             <div style="flex:1;font-size:13px;">처방전 접수 완료</div>
             <span style="font-size:13px;color:var(--accent);">완료</span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:rgba(0,210,180,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;">2</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;">2</div>
             <div style="flex:1;font-size:13px;">약사 확인 · 상호작용 체크</div>
             <span style="font-size:13px;color:var(--accent);">완료</span>
           </div>
@@ -3457,6 +3940,204 @@ function renderSettings() {
 }
 
 /* ====================================================
+   PHARMACIST GOVERNANCE · 약사회 자율 거버넌스 3-Tier
+   ==================================================== */
+function renderGovernance() {
+  if (currentView !== 'governance') return;
+  
+  const tiers = [
+    {
+      tier: 'TIER 1',
+      title: '약사회 자율 가이드라인',
+      who: '한국약사회 · 대한약학회',
+      role: 'AI 보조 복약지도 품질·책임 기준 자율 제정',
+      items: [
+        '약사 면허 검증 절차 명시',
+        'AI 응답 검토·승인 기준',
+        '환자 정보 보호 표준',
+        '6대 금지선 산업 표준화'
+      ],
+      color: '#047857',
+      light: '#6ee7b7'
+    },
+    {
+      tier: 'TIER 2',
+      title: 'MedIT 운영 정책',
+      who: 'MedIT · 자문 약사단',
+      role: '기술 구현 + 약사 협업 모델',
+      items: [
+        'READ-ONLY 연동 원칙',
+        'PII 자동 필터링·암호화',
+        '약사 최종 책임 명문화',
+        '감사 로그 자동 기록'
+      ],
+      color: '#059669',
+      light: '#6ee7b7'
+    },
+    {
+      tier: 'TIER 3',
+      title: '약국·약사 운영 단위',
+      who: '각 약국 · 면허 약사',
+      role: '현장 적용 + 환자 책임',
+      items: [
+        '환자 동의서 (PIPA §15·§17)',
+        '처방 검토 + AI 응답 검수',
+        '부작용 신고 자율 판단',
+        '지역 약국 네트워크 협업'
+      ],
+      color: '#10B981',
+      light: '#6ee7b7'
+    }
+  ];
+  
+  $('#view-governance').innerHTML = `
+    <div class="page-header">
+      <h1 class="title">약사회 자율 거버넌스</h1>
+      <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">
+        약사 직역 보호 + 산업 표준화 — <strong style="color:#10B981">3-Tier 자율 가이드라인 모델</strong>로 약사회 주도권 유지.
+      </p>
+    </div>
+
+    <!-- 3-Tier 거버넌스 -->
+    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+      ${tiers.map(t => `
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+          <div style="background:${t.color};padding:14px 16px;color:#fff;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:${t.light};letter-spacing:1.5px;">${t.tier}</div>
+            <div style="font-size:18px;font-weight:700;margin-top:4px;">${t.title}</div>
+            <div style="font-size:11px;color:${t.light};margin-top:4px;font-style:italic;">${t.who}</div>
+          </div>
+          <div style="padding:14px 16px;">
+            <div style="font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:8px;">${t.role}</div>
+            <div style="border-top:1px solid var(--border);padding-top:10px;">
+              ${t.items.map(i => `
+                <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
+                  <span style="color:${t.color};font-size:11px;flex-shrink:0;">▸</span>
+                  <span style="font-size:11.5px;color:var(--ink-muted);line-height:1.5;">${i}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    <!-- 6대 금지선 -->
+    <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="margin-bottom:12px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">SAFETY · 6대 금지선</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">약사 직역 보호를 위한 6대 금지선</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
+        ${[
+          '의학적 진단 금지', '치료법 처방 금지',
+          '면허 약사 미검증 응답 금지', '복약 변경 권고 금지',
+          '응급 의료 안내 금지', '환자 식별 정보 단독 처리 금지'
+        ].map((rule, i) => `
+          <div style="background:var(--bg);border:1px solid rgba(255,107,107,0.2);border-radius:6px;padding:10px 12px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#ff8a80;letter-spacing:0.5px;margin-bottom:3px;">RULE 0${i+1}</div>
+            <div style="font-size:12px;font-weight:600;color:var(--ink);">${rule}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- 법률 근거 -->
+    <div style="margin-top:14px;background:#0F172A;border:1px solid #1e293b;border-radius:12px;padding:16px 18px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#6ee7b7;letter-spacing:1.5px;margin-bottom:6px;">LEGAL FOUNDATION</div>
+      <div style="font-size:13px;color:#cbd5e1;line-height:1.7;">
+        <strong style="color:#6ee7b7;">약사법</strong> §24 · §24의2 · §68의8 ·
+        <strong style="color:#6ee7b7;">의료법</strong> §27 ·
+        <strong style="color:#6ee7b7;">PIPA</strong> §15 · §17 · §28의2 (가명정보)
+      </div>
+    </div>
+  `;
+}
+
+/* ====================================================
+   INTERN & UX LOG · 인턴·UX 로그 수집 + Glass 실습
+   ==================================================== */
+function renderInternLog() {
+  if (currentView !== 'internlog') return;
+  
+  const dataSources = [
+    { t: '약사 인턴 실습 로그', d: '약국 워크플로우 행동 데이터 (조제·복약지도 시퀀스)', icon: 'user', color: '#10B981' },
+    { t: 'UX 인터랙션 로그', d: '환자 앱 사용 패턴 (알림 클릭률·QR 스캔·복약 체크)', icon: 'cursor', color: '#34d399' },
+    { t: 'Glass 1인칭 시점', d: '약사 시선·동작·복약지도 컨텍스트 (사전 IRB 협의 필요)', icon: 'eye', color: '#059669' },
+    { t: 'POS DB 처방 로그', d: '조제 시퀀스·처방 패턴 (가명화 후 연구용)', icon: 'db', color: '#047857' }
+  ];
+  
+  const pipeline = [
+    { n: '1', t: '수집', d: 'IRB 사전 협의 + 환자/약사 동의 후 가명화' },
+    { n: '2', t: '정제', d: 'PII 자동 제거, 행동 시퀀스 표준화' },
+    { n: '3', t: '분석', d: '복약 패턴·약사 의사결정 모델링' },
+    { n: '4', t: '공개', d: 'OSF 사전 등록 + 학술 데이터셋 공유' }
+  ];
+  
+  $('#view-internlog').innerHTML = `
+    <div class="page-header">
+      <h1 class="title">인턴·UX 로그 + Glass 실습</h1>
+      <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">
+        약학대학 실습 인턴·UX 행동 로그를 PnP 데이터 흐름에 연계한 <strong style="color:#10B981">연구 데이터셋 구축</strong>.
+      </p>
+    </div>
+
+    <!-- 데이터 소스 4종 -->
+    <div style="margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="margin-bottom:14px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">DATA SOURCES</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">4가지 연구 데이터 수집 영역</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;">
+        ${dataSources.map(d => `
+          <div style="background:var(--bg);border:1px solid var(--border);border-left:3px solid ${d.color};border-radius:6px;padding:14px;">
+            <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">${d.t}</div>
+            <div style="font-size:11.5px;color:var(--ink-muted);line-height:1.5;">${d.d}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- 연구 파이프라인 4단계 -->
+    <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
+      <div style="margin-bottom:14px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">RESEARCH PIPELINE</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수집 → 정제 → 분석 → 공개</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        ${pipeline.map((p, i) => `
+          <div style="display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;">
+            <div style="width:32px;height:32px;border-radius:50%;background:#059669;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">${p.n}</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:700;color:var(--ink);">${p.t}</div>
+              <div style="font-size:11px;color:var(--ink-muted);">${p.d}</div>
+            </div>
+            ${i < pipeline.length - 1 ? '<div style="color:#10B981;font-size:18px;">→</div>' : '<div style="background:#10B981;color:#fff;font-family:JetBrains Mono,monospace;font-size:10px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:1px;">DONE</div>'}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Glass 제안 박스 -->
+    <div style="margin-top:14px;background:linear-gradient(135deg,#0F172A,#1e293b);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <div style="background:#10B981;color:#0F172A;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:800;letter-spacing:1px;padding:2px 8px;border-radius:3px;">GLASS PROPOSAL</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;">Meta Project Aria · Google Android XR</div>
+      </div>
+      <p style="font-size:12.5px;color:#cbd5e1;line-height:1.6;">
+        약사 1인칭 실습 로그 수집을 위한 스마트 글래스 기반 연구 — 
+        <strong style="color:#6ee7b7;">IRB 사전 협의·OSF 사전 등록</strong> 후 본격 진행 예정 (현재 기획 단계).
+      </p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:10.5px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">IRB 사전협의</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:10.5px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">OSF 사전등록</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:10.5px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">EgoBlur 적용</span>
+      </div>
+    </div>
+  `;
+}
+
+/* ====================================================
    PHARMACISTS MANAGEMENT
    ==================================================== */
 function renderPharmacists() {
@@ -3604,7 +4285,7 @@ function renderAudit() {
       </div>
       <div class="header-actions">
         <button class="btn" onclick="exportAuditCSV()">
-          <svg viewBox="0 0 24 24"><path d="M12 4 L12 16 M6 10 L12 16 L18 10 M4 20 L20 20"/></svg> CSV 내보내기
+          <svg viewBox="0 0 24 24"><path d="M12 4 L12 16 M6 10 L12 16 L18 10 M4 20 L20 20"/></svg> 감사 로그 추출 (CSV)
         </button>
       </div>
     </div>
@@ -3722,7 +4403,7 @@ function openPatientPairing(pid) {
 
   // Generate QR
   if (window.QRCode) {
-    QRCode.toCanvas($('#qr-canvas'), fullUrl, { width: 200, margin: 1, color: { dark: '#00d2b4', light: '#ffffff' } });
+    QRCode.toCanvas($('#qr-canvas'), fullUrl, { width: 200, margin: 1, color: { dark: '#10B981', light: '#ffffff' } });
   } else {
     $('#qr-canvas').outerHTML = '<div style="padding: 20px; color: var(--ink-muted); font-size: 12px;">QR 라이브러리 로드 실패. URL을 직접 공유하세요.</div>';
   }
@@ -3952,10 +4633,15 @@ function init() {
 
   // Bottom bar tabs are bound inline via onclick
 
-  // If no active session, show login
+  // === DEMO MODE: Auto-login as admin ===
+  // 데모용으로 자동 로그인 처리 (로그인 게이트 우회)
   if (!state.session || !currentPharmacist()) {
-    showLogin();
-    return;
+    const adminPh = state.pharmacists.find(p => p.username === 'admin') || state.pharmacists[0];
+    if (adminPh) {
+      state.session = { pharmacistId: adminPh.id, loginAt: new Date().toISOString() };
+      logAudit('login', 'auth', adminPh.id, `[DEMO AUTO-LOGIN] ${adminPh.name}`);
+      saveState();
+    }
   }
 
   hideLogin();
