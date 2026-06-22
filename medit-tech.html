@@ -198,171 +198,263 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 </g>
 </svg>
 <span class="logo-text"><span style="color:#10B981">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
-</a><div class="nav-links" id="navLinks"><a href="#for-patients">환자</a><a href="#for-pharmacists">약사</a><a href="#for-partners">파트너</a><a href="#demo" class="nav-demo">데모 체험</a><a href="medit-tech.html">기술 자료</a><a href="#team">팀 소개</a><a href="#contact" class="nav-cta">문의하기</a><a href="javascript:void(0)" class="nav-lang" id="langToggle" title="English" aria-label="Toggle language">🇺🇸</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
+</a><div class="nav-links" id="navLinks"><a href="index.html">← 메인으로</a><a href="#pnp-architecture">PnP 아키텍처</a><a href="#demo" class="nav-demo">데모 체험</a><a href="medit-app-dark.html">데모 페이지</a><a href="#contact" class="nav-cta">기술 협업 문의</a><a href="javascript:void(0)" class="nav-lang" id="langToggle" title="English" aria-label="Toggle language">🇺🇸</a></div><button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button></div></nav>
+
+<!-- 기술 안내 페이지 표시 배너 -->
+<div style="background:linear-gradient(90deg,rgba(16,185,129,.08),rgba(16,185,129,.04));border-top:1px solid rgba(16,185,129,.2);border-bottom:1px solid rgba(16,185,129,.2);padding:1.5rem 2rem;margin-top:64px;text-align:center">
+  <div style="max-width:1100px;margin:0 auto">
+    <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g4);letter-spacing:.25em;font-weight:700;margin-bottom:.4rem">TECHNICAL DOCUMENTATION</div>
+    <h2 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.3rem;letter-spacing:-.01em">기술 안내 자료 · 파트너 발송용</h2>
+    <p style="font-size:.85rem;color:var(--muted);line-height:1.6;margin:0">
+      POS 벤더·체인약국·연구기관 협업 검토용 기술 문서입니다.
+      <a href="index.html" style="color:var(--g4);text-decoration:none;border-bottom:1px dashed var(--g4)">← 일반 안내는 메인 페이지로</a>
+    </p>
+  </div>
+</div>
 
 <section class="hero tone-1"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div><h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1><p class="sub">QR 기반 복약 알림부터 약사 검증 응답까지.<br>약사와 AI가 함께 만드는 메디신 테크놀로지 플랫폼입니다.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 복약지도는 약사가 담당합니다.</span></p><div class="hero-btns"><a href="#demo" class="btn btn-mint">데모 체험하기 →</a><a href="#product" class="btn btn-outline">솔루션 알아보기</a></div></div></section>
 
 <div class="stat-strip"><div class="stat-strip-inner"><div class="rv"><div class="ss-num" data-t="50">0</div><div class="ss-label">만성질환자 복약 비순응률<br><span style="font-size:.6rem;color:var(--dim)">출처: WHO (2003)</span></div></div><div class="rv"><div class="ss-num" data-t="125000">0</div><div class="ss-label">연간 비순응 관련 사망자<br><span style="font-size:.6rem;color:var(--dim)">미국 추정치 / 광범위 인용 (PMC6045499 등)</span></div></div><div class="rv"><div class="ss-num" data-t="69">0</div><div class="ss-label">비순응 관련 입원 비율<br><span style="font-size:.6rem;color:var(--dim)">출처: NEHI 보고서</span></div></div><div class="rv"><div class="ss-num" data-t="9">0</div><div class="ss-label">비순응 사회적 비용 추정 (조 원)<br><span style="font-size:.6rem;color:var(--dim)">한국 공식 추정치 미확정 / 학계 추정 인용</span></div></div></div></div>
 
 <!-- ============================================ -->
-<!-- 청중 선택 가이드 · 환자/약사/파트너 -->
+<!-- PnP PLATFORM ARCHITECTURE · 교수님 미팅 핵심 컨셉 -->
 <!-- ============================================ -->
-<section class="sec ko-only" id="audience" style="padding:5rem 2rem 4rem;background:var(--bg)">
-  <div class="sec-center rv" style="margin-bottom:3rem">
-    <div class="sec-tag" style="color:var(--g4)">WHO ARE YOU?</div>
-    <h2 class="sec-title">어떻게 도와드릴까요?</h2>
-    <p class="sec-desc">MedIT은 환자·약사·파트너 모두를 위한 플랫폼입니다.<br>관심 있는 영역을 선택해주세요.</p>
+<section class="sec ko-only" id="pnp-architecture" style="background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);padding-top:5rem;padding-bottom:5rem;border-top:1px solid rgba(16,185,129,.1);border-bottom:1px solid rgba(16,185,129,.1)">
+  <div class="sec-center rv">
+    <div class="sec-tag" style="color:var(--g4)">PNP PLATFORM ARCHITECTURE</div>
+    <h2 class="sec-title">PnP 플랫폼 아키텍처</h2>
+    <p class="sec-desc">기존 약국 POS에 손대지 않고, <strong style="color:var(--g4)">DB 신호 기반 스트림 + LLM 자동 매핑</strong>으로<br>약국 단위 무인 배포 · 정확도 100% 검증 통합 매개체</p>
   </div>
 
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;padding:0 1rem">
-    <a href="#for-patients" class="rv" style="text-decoration:none;background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:2rem 1.8rem;transition:all .3s;display:block">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.8rem">FOR PATIENTS</div>
-      <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em">환자분이세요?</h3>
-      <p style="color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:1.2rem">복약을 잊지 않도록 도와드리고, 약사님이 직접 확인한 안전한 정보를 받아보세요.</p>
-      <div style="color:var(--g4);font-size:.9rem;font-weight:600">자세히 보기 →</div>
-    </a>
-
-    <a href="#for-pharmacists" class="rv" style="text-decoration:none;background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:2rem 1.8rem;transition:all .3s;display:block">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.8rem">FOR PHARMACISTS</div>
-      <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em">약사이신가요?</h3>
-      <p style="color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:1.2rem">약사 직역을 보호하면서 AI를 보조 도구로 활용하는 검증된 워크플로를 제공합니다.</p>
-      <div style="color:var(--g4);font-size:.9rem;font-weight:600">자세히 보기 →</div>
-    </a>
-
-    <a href="#for-partners" class="rv" style="text-decoration:none;background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:2rem 1.8rem;transition:all .3s;display:block">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.8rem">FOR PARTNERS</div>
-      <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em">파트너이신가요?</h3>
-      <p style="color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:1.2rem">POS 벤더·체인약국·기관 협업을 위한 PnP 플랫폼 기술 자료를 안내드립니다.</p>
-      <div style="color:var(--g4);font-size:.9rem;font-weight:600">자세히 보기 →</div>
-    </a>
+  <!-- 4단계 진화 카드 -->
+  <div class="rv" style="max-width:1280px;margin:3rem auto 0;padding:0 1.5rem">
+    <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--g4);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.7rem">EVOLUTION</div>
+    <h3 style="font-family:var(--font-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--text);margin-bottom:.5rem">점점 더 가벼워지는 연결</h3>
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:2rem">약국 부담을 0으로 줄여나가는 4단계</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
+      <!-- Stage 1 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:#1E293B;padding:1rem;color:#fff">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:#94A3B8;letter-spacing:.1em">STAGE 1</div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;font-style:italic;margin-top:.2rem">1</div>
+        </div>
+        <div style="padding:1rem">
+          <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.4rem">자동 업데이트 설치</h3>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem">200KB 부트스트래퍼 · 접속 시 자동 업데이트</p>
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:.6rem">
+            <span style="font-family:var(--font-mono);font-size:.55rem;color:#94A3B8;letter-spacing:.1em">부담</span>
+            <div style="font-size:.78rem;color:var(--text);font-weight:600">최초 30초, 이후 무인</div>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 2 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:var(--g3);padding:1rem;color:#fff">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--g6);letter-spacing:.1em">STAGE 2</div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;font-style:italic;margin-top:.2rem">2</div>
+        </div>
+        <div style="padding:1rem">
+          <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.4rem">코드 스니펫 1줄</h3>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem">POS 벤더가 자기 코드에 1줄 추가</p>
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:.6rem">
+            <span style="font-family:var(--font-mono);font-size:.55rem;color:var(--g4);letter-spacing:.1em">부담</span>
+            <div style="font-size:.78rem;color:var(--text);font-weight:600">POS 벤더 협조 필요</div>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 3 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:var(--g3);padding:1rem;color:#fff">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--g6);letter-spacing:.1em">STAGE 3</div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;font-style:italic;margin-top:.2rem">3</div>
+        </div>
+        <div style="padding:1rem">
+          <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.4rem">벤더 자발 등록</h3>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem">developers.medit.kr 폼만 작성</p>
+          <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:.6rem">
+            <span style="font-family:var(--font-mono);font-size:.55rem;color:var(--g4);letter-spacing:.1em">부담</span>
+            <div style="font-size:.78rem;color:var(--text);font-weight:600">코드 작성 0</div>
+          </div>
+        </div>
+      </div>
+      <!-- Stage 4 - BEST -->
+      <div style="background:var(--card);border:2px solid var(--g4);border-radius:8px;overflow:hidden;position:relative;box-shadow:0 0 20px rgba(16,185,129,.15)">
+        <div style="position:absolute;top:.8rem;right:.8rem;background:var(--g6);color:var(--g1);font-family:var(--font-mono);font-size:.55rem;font-weight:800;letter-spacing:.15em;padding:.2rem .5rem;border-radius:3px;z-index:1">BEST</div>
+        <div style="background:var(--g2);padding:1rem;color:#fff">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--g6);letter-spacing:.1em">STAGE 4</div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;font-style:italic;margin-top:.2rem">4</div>
+        </div>
+        <div style="padding:1rem">
+          <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.4rem">Pull 스트림 <span style="color:var(--g4)">★</span></h3>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem">MedIT가 DB 신호만 받아 자동 처리</p>
+          <div style="border-top:1px solid rgba(16,185,129,.2);padding-top:.6rem">
+            <span style="font-family:var(--font-mono);font-size:.55rem;color:var(--g4);letter-spacing:.1em">부담</span>
+            <div style="font-size:.78rem;color:var(--g4);font-weight:700">약국 작업 0</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<!-- ============================================ -->
-<!-- FOR PATIENTS · 환자용 -->
-<!-- ============================================ -->
-<section class="sec ko-only" id="for-patients" style="padding:5rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid rgba(16,185,129,.08);border-bottom:1px solid rgba(16,185,129,.08)">
-  <div style="max-width:1100px;margin:0 auto;padding:0 1rem">
-    <div class="rv" style="margin-bottom:2.5rem">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.7rem">FOR PATIENTS</div>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em;line-height:1.3">환자분께</h2>
-      <p style="font-size:1rem;color:var(--muted);line-height:1.8;font-weight:300">약을 잊지 않게, 안전하게 복용하실 수 있도록 도와드립니다.</p>
+  <!-- DB 신호 + LLM 자동 매핑 (Pull 스트림 상세) -->
+  <div class="rv" style="max-width:1280px;margin:4rem auto 0;padding:0 1.5rem">
+    <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--g4);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.7rem">PULL STREAM</div>
+    <h3 style="font-family:var(--font-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--text);margin-bottom:.5rem">핵심 기술</h3>
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:2rem">DB 신호만 받아 스트림 처리 + LLM 자동 매핑</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1.2rem">
+      <!-- DB 신호 스트림 -->
+      <div style="background:var(--card);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:1.6rem">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem">
+          <div style="width:36px;height:36px;border-radius:8px;background:var(--g3);display:flex;align-items:center;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--g4);letter-spacing:.1em">01 · DB SIGNAL</div>
+            <h3 style="font-family:var(--font-head);font-size:1.15rem;font-weight:700;color:var(--text)">DB 신호 기반 스트림</h3>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:1rem">POS DB가 변경 신호(CDC/트리거)를 보내는 순간 MedIT가 받아 처리. 약사 작업 0, 지연 1초 이내.</p>
+        
+        <div style="background:#0a0f1a;border-left:3px solid var(--g4);padding:1rem;border-radius:4px;margin-bottom:.8rem">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:.8rem">
+            <div style="text-align:center;flex:1">
+              <div style="font-size:.7rem;color:var(--muted);margin-bottom:.3rem">POS DB</div>
+              <div style="font-size:.85rem;color:var(--soft);font-weight:600">변경 발생</div>
+            </div>
+            <div style="color:var(--g4);font-size:1.1rem">→</div>
+            <div style="text-align:center;flex:1">
+              <div style="font-size:.7rem;color:var(--muted);margin-bottom:.3rem">신호 전송</div>
+              <div style="font-size:.85rem;color:var(--g4);font-weight:600">즉시 통보</div>
+            </div>
+            <div style="color:var(--g4);font-size:1.1rem">→</div>
+            <div style="text-align:center;flex:1">
+              <div style="font-size:.7rem;color:var(--muted);margin-bottom:.3rem">MedIT</div>
+              <div style="font-size:.85rem;color:var(--soft);font-weight:600">자동 처리</div>
+            </div>
+          </div>
+          <div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.05);font-size:.72rem;color:var(--muted);text-align:center">지연 1초 이내 · 약사 작업 없음</div>
+        </div>
+        
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+          <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.3rem .6rem;border-radius:99px;font-size:.7rem;color:var(--g4)"><span style="font-family:var(--font-mono)">CDC</span> 스트리밍</div>
+          <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.3rem .6rem;border-radius:99px;font-size:.7rem;color:var(--g4)"><span style="font-family:var(--font-mono)">DB</span> 트리거</div>
+          <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.3rem .6rem;border-radius:99px;font-size:.7rem;color:var(--g4)">주기 폴링</div>
+        </div>
+      </div>
+      
+      <!-- LLM 자동 매핑 -->
+      <div style="background:var(--card);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:1.6rem">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem">
+          <div style="width:36px;height:36px;border-radius:8px;background:var(--g3);display:flex;align-items:center;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m4.2-13.2l-4.2 4.2m-4.2 4.2l-4.2 4.2m13.2-4.2l-4.2-4.2m-4.2-4.2L4.4 4.4"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--g4);letter-spacing:.1em">02 · LLM AUTO-MAP</div>
+            <h3 style="font-family:var(--font-head);font-size:1.15rem;font-weight:700;color:var(--text)">LLM 자동 매핑</h3>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:1rem">약국마다 다른 컬럼명(<code style="background:rgba(16,185,129,.1);padding:.1rem .35rem;border-radius:3px;font-size:.75rem;color:var(--g4)">pt_nm</code>, <code style="background:rgba(16,185,129,.1);padding:.1rem .35rem;border-radius:3px;font-size:.75rem;color:var(--g4)">환자명</code>, <code style="background:rgba(16,185,129,.1);padding:.1rem .35rem;border-radius:3px;font-size:.75rem;color:var(--g4)">PatNm</code>)을 LLM이 자동 분석·매핑.</p>
+        
+        <div style="background:#0a0f1a;border-left:3px solid var(--g4);padding:.8rem;border-radius:4px;margin-bottom:.8rem">
+          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g6);line-height:1.7">
+            <span style="color:#94A3B8">// 자동 매핑 생성</span><br>
+            pt_nm <span style="color:var(--g4)">→</span> patient_name<br>
+            환자명 <span style="color:var(--g4)">→</span> patient_name<br>
+            PatNm <span style="color:var(--g4)">→</span> patient_name
+          </div>
+        </div>
+        
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+          <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.3rem .6rem;border-radius:99px;font-size:.7rem;color:var(--g4)">스키마 분석</div>
+          <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.3rem .6rem;border-radius:99px;font-size:.7rem;color:var(--g4)">코드 생성</div>
+          <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.3rem .6rem;border-radius:99px;font-size:.7rem;color:var(--g4)">정확도 <span style="font-family:var(--font-mono)">100%</span></div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-bottom:2.5rem">
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.6rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">01 · 약 처방받기</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약국에서 QR 약봉투</h4>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7">약사님이 처방한 약 봉투에 인쇄된 QR을 스마트폰으로 찍기만 하면 됩니다.</p>
-      </div>
-
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.6rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">02 · 복용 알림</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">3채널 알림</h4>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7">카카오톡 · SMS · AI 음성 전화 중 본인이 편한 방식으로 받으세요. 어르신께는 음성 전화를 권장합니다.</p>
-      </div>
-
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.6rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">03 · 궁금하신 점</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약사 검증 응답</h4>
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.7">약에 대한 질문은 AI가 정리한 후 반드시 약사님이 확인한 답변만 받아보실 수 있습니다.</p>
-      </div>
+  <!-- POS 파트너 6종 (휴베이스·온누리·약학정보원 명시) -->
+  <div class="rv" style="max-width:1280px;margin:4rem auto 0;padding:0 1.5rem">
+    <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--g4);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.7rem">POS PARTNERS</div>
+    <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.5rem">
+      <h3 style="font-family:var(--font-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--text);margin:0">체인약국 매개체</h3>
+      <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:var(--font-mono);font-size:.65rem;font-weight:700;padding:.3rem .7rem;border-radius:4px;letter-spacing:.1em;border:1px solid rgba(148,163,184,.3)">IN PROGRESS · 추진 예정</span>
     </div>
-
-    <div class="rv" style="background:rgba(255,138,128,.06);border-left:3px solid var(--coral);padding:1.2rem 1.4rem;border-radius:6px">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--coral);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">⚠ 중요 안내</div>
-      <p style="color:var(--text);font-size:.92rem;line-height:1.7;margin:0">
-        본 서비스는 <strong>의학적 진단·치료·처방을 제공하지 않습니다.</strong>
-        복약지도는 약사가 담당하며, MedIT은 약사의 안전한 복약 관리를 돕는 보조 시스템입니다.
-        증상이 있으시면 반드시 의사·약사와 직접 상담하세요.
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:.5rem">주요 약국 POS 6종 연동 계획</p>
+    <p style="color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:.8rem">클라우드 POS(휴베이스 Hu-POS·지킴)는 즉시 Pull 가능 · 로컬 DB(약학정보원·베스트시스템·온누리)는 협약 후 자동 Pull</p>
+    <div style="background:rgba(148,163,184,.06);border-left:3px solid #94A3B8;padding:.7rem 1rem;border-radius:4px;margin-bottom:2rem">
+      <p style="color:var(--text);font-size:.85rem;line-height:1.6;margin:0">
+        <strong style="color:#94A3B8">현재 상태:</strong> 본 매개체 모델은 추진 예정 단계입니다. 표시된 6종 POS는 협업 검토 중이며, 정식 협약은 단계적으로 추진됩니다.
       </p>
     </div>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem">
+      <!-- PharmIT3000 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--g4);border-radius:6px;padding:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.1em">PHARMIT3000</div>
+          <div style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em">LOCAL · 협약 후 Pull</div>
+        </div>
+        <h4 style="font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">약학정보원</h4>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.5">SQL Server (로컬)<br>Pull 01 · CDC 스트리밍</p>
+      </div>
+      <!-- PM+20 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--g4);border-radius:6px;padding:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.1em">PM+20</div>
+          <div style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em">LOCAL · 협약 후 Pull</div>
+        </div>
+        <h4 style="font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">약학정보원</h4>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.5">SQL Server (로컬)<br>Pull 03 · DB 트리거</p>
+      </div>
+      <!-- 밝은매장 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--g4);border-radius:6px;padding:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.1em">밝은매장</div>
+          <div style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em">LOCAL · 협약 후 Pull</div>
+        </div>
+        <h4 style="font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">베스트시스템</h4>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.5">MDB / ADODB<br>Pull 02 · 주기 폴링</p>
+      </div>
+      <!-- Hu-POS -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid #475569;border-radius:6px;padding:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.1em">HU-POS</div>
+          <div style="background:rgba(16,185,129,.15);color:var(--g4);font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em">CLOUD · 즉시 Pull</div>
+        </div>
+        <h4 style="font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">휴베이스</h4>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.5">Cloud + Local<br>Pull 01 · REST API</p>
+      </div>
+      <!-- 온팜 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid #475569;border-radius:6px;padding:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.1em">온팜</div>
+          <div style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em">LOCAL · 협약 후 Pull</div>
+        </div>
+        <h4 style="font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">온누리 H&amp;C</h4>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.5">Cloud + Local<br>Pull 02 · API Polling</p>
+      </div>
+      <!-- 지킴 -->
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-left:3px solid #475569;border-radius:6px;padding:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+          <div style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.1em">지킴</div>
+          <div style="background:rgba(16,185,129,.15);color:var(--g4);font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em">CLOUD · 즉시 Pull</div>
+        </div>
+        <h4 style="font-family:var(--font-head);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">지킴컴퍼니</h4>
+        <p style="font-size:.72rem;color:var(--muted);line-height:1.5">Cloud<br>Pull 01 · REST API</p>
+      </div>
+    </div>
+    
+    <div style="background:linear-gradient(90deg,rgba(16,185,129,.05),transparent);border-left:3px solid var(--g4);padding:1rem 1.2rem;margin-top:1.5rem;border-radius:4px">
+      <p style="font-size:.85rem;color:var(--text);line-height:1.6"><strong style="color:var(--g4)">휴베이스·지킴</strong> — 클라우드 POS라서 즉시 Pull 가능. <strong style="color:var(--g4)">약학정보원·베스트시스템</strong> — 로컬 DB라서 협약 시 자동 Pull.</p>
+    </div>
   </div>
-</section>
 
-<!-- ============================================ -->
-<!-- FOR PHARMACISTS · 약사용 -->
-<!-- ============================================ -->
-<section class="sec ko-only" id="for-pharmacists" style="padding:5rem 2rem;background:var(--bg)">
-  <div style="max-width:1100px;margin:0 auto;padding:0 1rem">
-    <div class="rv" style="margin-bottom:2.5rem">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.7rem">FOR PHARMACISTS</div>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em;line-height:1.3">약사님께</h2>
-      <p style="font-size:1rem;color:var(--muted);line-height:1.8;font-weight:300">약사 직역을 침해하지 않습니다. AI는 약사 업무를 보조하는 도구일 뿐, 약사 검증을 거치지 않은 답변은 환자에게 전달되지 않습니다.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-bottom:2.5rem">
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--g4);border-radius:10px;padding:1.6rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">RULE 01</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">AI 단독 답변 금지</h4>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7">모든 환자 응답은 약사 검증 단계를 거칩니다. AI는 초안만 생성하고 발송은 약사가 결정합니다.</p>
-      </div>
-
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--g4);border-radius:10px;padding:1.6rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">RULE 02</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약사 실명 책임</h4>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7">검증한 약사의 면허번호·이름이 응답에 명기됩니다. 익명 답변은 허용되지 않습니다.</p>
-      </div>
-
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--g4);border-radius:10px;padding:1.6rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">RULE 03</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">진단·처방 금지</h4>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7">의학적 진단·치료·처방은 제공하지 않습니다. 약사 직역 내 복약지도·약학 정보만 다룹니다.</p>
-      </div>
-    </div>
-
-    <div class="rv" style="background:var(--card);border:1px solid var(--g4);border-radius:10px;padding:1.6rem 1.8rem">
-      <h4 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--g4);margin-bottom:1rem">법률 근거</h4>
-      <p style="color:var(--muted);font-size:.92rem;line-height:1.8;margin:0">
-        <strong style="color:var(--text)">약사법 제24조·제24조의2·제50조·제68조의8</strong> (복약지도 의무, 약사 면허, 광고 규제) ·
-        <strong style="color:var(--text)">의료법 제27조</strong> (무면허 의료행위 금지) ·
-        <strong style="color:var(--text)">개인정보보호법 제15조·제17조·제28조의2</strong> (정보 수집·이용·가명처리)
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!-- FOR PARTNERS · 파트너용 -->
-<!-- ============================================ -->
-<section class="sec ko-only" id="for-partners" style="padding:5rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid rgba(16,185,129,.08);border-bottom:1px solid rgba(16,185,129,.08)">
-  <div style="max-width:1100px;margin:0 auto;padding:0 1rem">
-    <div class="rv" style="margin-bottom:2.5rem">
-      <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.7rem">FOR PARTNERS</div>
-      <h2 style="font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em;line-height:1.3">파트너님께</h2>
-      <p style="font-size:1rem;color:var(--muted);line-height:1.8;font-weight:300">POS 벤더·체인약국·연구기관·정부기관 협업을 환영합니다.<br>기존 시스템에 손대지 않는 PnP 플랫폼으로 즉시 통합 가능합니다.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2rem">
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.4rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">POS 벤더</div>
-        <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">POS Vendors</h4>
-        <p style="color:var(--muted);font-size:.85rem;line-height:1.6">기존 POS에 손대지 않고 DB 신호 기반 자동 통합. 약학정보원·휴베이스·온누리·베스트시스템 등.</p>
-      </div>
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.4rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">체인약국</div>
-        <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">Pharmacy Chains</h4>
-        <p style="color:var(--muted);font-size:.85rem;line-height:1.6">고객 복약 관리를 약국 단위로 자동화. 약사 부담은 0, 환자 만족도는 증대.</p>
-      </div>
-      <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.4rem 1.4rem">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">연구기관·정부</div>
-        <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">Research · Gov</h4>
-        <p style="color:var(--muted);font-size:.85rem;line-height:1.6">약사법·의료법·PIPA 준수 설계. 의견서·법령 개선·산학협력 환영.</p>
-      </div>
-    </div>
-
-    <div class="rv" style="background:var(--card);border:2px solid var(--g4);border-radius:12px;padding:2rem 2rem;text-align:center;box-shadow:0 0 24px rgba(16,185,129,.1)">
-      <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.6rem">PNP PLATFORM ARCHITECTURE</div>
-      <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em">기술 안내 자료</h3>
-      <p style="color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto">
-        4단계 진화 모델 · DB 신호 기반 스트림 · LLM 자동 매핑 · POS 6종 매트릭스 ·<br>
-        통합 패치 모델 · 약사회 거버넌스 · 법률 근거 등 상세 기술 자료를 확인하실 수 있습니다.
-      </p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="medit-tech.html" class="btn btn-mint" style="display:inline-block">기술 안내 자료 보기 →</a>
-        <a href="medit-app-dark.html" class="btn btn-outline" style="display:inline-block">데모 체험하기</a>
-      </div>
-    </div>
+  <!-- 데모 체험 CTA -->
+  <div class="rv" style="text-align:center;margin-top:3rem">
+    <a href="medit-app-dark.html" target="_blank" class="btn btn-mint" style="font-size:.95rem;padding:.85rem 1.8rem">PnP 데모 체험하기 →</a>
   </div>
 </section>
 

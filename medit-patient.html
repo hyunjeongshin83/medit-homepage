@@ -9,17 +9,17 @@
 <style>
 @font-face{font-family:'HCR Dotum';font-style:normal;font-weight:700;font-display:swap;src:url('HANDotumB.ttf') format('truetype')}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-:root{--bg:#0a0e12;--bg2:#0d1117;--sf:rgba(255,255,255,.04);--sf2:rgba(255,255,255,.07);--ink:#e8ecef;--ink2:#c0c8d0;--ink3:#7a8694;--line:rgba(255,255,255,.08);--mint:#10B981;--mint-s:rgba(16,185,129,.12);--ice:#34d399;--ice-s:rgba(52,211,153,.1);--lav:#6ee7b7;--lav-s:rgba(110,231,183,.1);--red:#ff6b6b;--red-s:rgba(255,107,107,.1);--g1:#064e3b;--g2:#047857;--g3:#059669;--g4:#10B981;--g5:#34d399;--g6:#6ee7b7;--b1:#3d1620;--b2:#591d2c;--b3:#7c2d3b;--b4:#9c3d4f;--b5:#c25767;--b6:#e89aa6;--r:14px;--font:'HCR Dotum','Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
+:root{--bg:#0a0e12;--bg2:#0d1117;--sf:rgba(255,255,255,.04);--sf2:rgba(255,255,255,.07);--ink:#e8ecef;--ink2:#c0c8d0;--ink3:#7a8694;--line:rgba(255,255,255,.08);--mint:#10B981;--mint-s:rgba(16,185,129,.12);--ice:#34d399;--ice-s:rgba(52,211,153,.1);--lav:#6ee7b7;--lav-s:rgba(110,231,183,.1);--red:#ff6b6b;--red-s:rgba(255,107,107,.1);--g1:#064e3b;--g2:#047857;--g3:#059669;--g4:#10B981;--g5:#34d399;--g6:#6ee7b7;--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--r:14px;--font:'HCR Dotum','Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
 html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--ink);overflow:hidden}
 
 /* LAYOUT */
 .app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;background:var(--bg2);position:relative;overflow:hidden}
 .header{padding:24px 20px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);flex-shrink:0;background:linear-gradient(135deg,#0d1117 0%,#1a0d12 100%);z-index:10;position:relative;overflow:hidden}
-.header::before{content:'';position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:140px;height:140px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3C!-- bottle cap --%3E%3Crect x='32' y='12' width='36' height='14' rx='2' stroke='%2310B981' stroke-width='1.4'/%3E%3Cline x1='32' y1='20' x2='68' y2='20' stroke='%2310B981' stroke-width='1.4'/%3E%3C!-- bottle body --%3E%3Cpath d='M28 26 L28 84 Q28 90 34 90 L66 90 Q72 90 72 84 L72 26 Z' stroke='%2310B981' stroke-width='1.4'/%3E%3C!-- label outline --%3E%3Crect x='34' y='38' width='32' height='32' rx='1' stroke='%237c2d3b' stroke-width='1.2'/%3E%3C!-- label text lines --%3E%3Cline x1='38' y1='46' x2='62' y2='46' stroke='%2310B981' stroke-width='1'/%3E%3Cline x1='38' y1='52' x2='58' y2='52' stroke='%237c2d3b' stroke-width='1'/%3E%3Cline x1='38' y1='58' x2='62' y2='58' stroke='%2310B981' stroke-width='1'/%3E%3Cline x1='38' y1='64' x2='54' y2='64' stroke='%237c2d3b' stroke-width='1'/%3E%3C!-- Rx serif --%3E%3Ctext x='38' y='80' font-family='Georgia,serif' font-size='10' font-style='italic' fill='%237c2d3b' font-weight='700'%3ERx%3C/text%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center;background-size:contain;opacity:.22;pointer-events:none}
+.header::before{content:'';position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:140px;height:140px;background-image:url("data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'>%20<defs>%20<linearGradient%20id='cap'%20x1='0%'%20y1='0%'%20x2='100%'%20y2='100%'>%20<stop%20offset='0%'%20stop-color='#334155'/>%20<stop%20offset='100%'%20stop-color='#0F172A'/>%20</linearGradient>%20<linearGradient%20id='rim'%20x1='0%'%20y1='0%'%20x2='100%'%20y2='0%'>%20<stop%20offset='0%'%20stop-color='#047857'/>%20<stop%20offset='50%'%20stop-color='#10B981'/>%20<stop%20offset='100%'%20stop-color='#047857'/>%20</linearGradient>%20<linearGradient%20id='liq'%20x1='0%'%20y1='0%'%20x2='0%'%20y2='100%'>%20<stop%20offset='0%'%20stop-color='#34d399'%20stop-opacity='0.7'/>%20<stop%20offset='100%'%20stop-color='#10B981'%20stop-opacity='0.9'/>%20</linearGradient>%20<clipPath%20id='clip'>%20<path%20d='M28%2028%20L28%2084%20Q28%2090%2034%2090%20L66%2090%20Q72%2090%2072%2084%20L72%2028%20Z'/>%20</clipPath>%20</defs>%20<rect%20x='32'%20y='12'%20width='36'%20height='14'%20rx='2'%20fill='url%28#cap%29'/>%20<rect%20x='33'%20y='13.5'%20width='34'%20height='3'%20rx='1.5'%20fill='rgba%28255,255,255,0.25%29'/>%20<rect%20x='32'%20y='25'%20width='36'%20height='2.5'%20fill='url%28#rim%29'/>%20<path%20d='M28%2028%20L28%2084%20Q28%2090%2034%2090%20L66%2090%20Q72%2090%2072%2084%20L72%2028%20Z'%20fill='rgba%28255,255,255,0.08%29'%20stroke='rgba%28255,255,255,0.4%29'%20stroke-width='1.2'/>%20<g%20clip-path='url%28#clip%29'>%20<path%20d='M28%2058%20Q40%2054,%2050%2058%20T72%2058%20L72%2090%20L28%2090%20Z'%20fill='url%28#liq%29'/>%20</g>%20<rect%20x='34'%20y='42'%20width='32'%20height='20'%20rx='1.5'%20fill='rgba%28255,255,255,0.15%29'%20stroke='rgba%28255,255,255,0.35%29'%20stroke-width='0.8'/>%20<text%20x='50'%20y='55'%20text-anchor='middle'%20font-family='sans-serif'%20font-size='8'%20font-weight='700'%20fill='#6EE7B7'%20letter-spacing='-0.3'>MedIT</text>%20<rect%20x='30'%20y='35'%20width='2.5'%20height='30'%20rx='1.2'%20fill='rgba%28255,255,255,0.2%29'/>%20</svg>");background-repeat:no-repeat;background-position:right center;background-size:contain;opacity:.22;pointer-events:none}
 .header > *{position:relative;z-index:1}
 .header h1{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:20px;font-weight:700;display:flex;align-items:center;gap:6px;letter-spacing:-.01em}
 .header h1 em{font-style:normal;color:var(--mint);font-weight:800;text-shadow:0 0 12px rgba(16,185,129,.5)}
-.header .sub{font-family:var(--mono);font-size:10px;color:var(--b6);letter-spacing:.12em;text-transform:uppercase}
+.header .sub{font-family:var(--mono);font-size:10px;color:var(--g6);letter-spacing:.12em;text-transform:uppercase}
 .content{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px 16px 100px;-webkit-overflow-scrolling:touch}
 .tab-bar{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(13,17,23,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 0 env(safe-area-inset-bottom,8px);z-index:20}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;border:none;background:none;color:var(--ink3);font-size:10px;font-family:var(--font);cursor:pointer;transition:.2s}
@@ -38,7 +38,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 .badge-red{color:var(--red);border:1px solid var(--red-s);background:rgba(255,107,107,.05)}
 .badge-lav{color:var(--lav);border:1px solid var(--lav-s)}
 .sec-title{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:13px;font-weight:700;color:var(--ink2);margin:20px 0 10px;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
-.sec-title::before{content:'';width:3px;height:14px;background:linear-gradient(180deg,var(--mint),var(--b3));border-radius:2px}
+.sec-title::before{content:'';width:3px;height:14px;background:linear-gradient(180deg,var(--mint),var(--g3));border-radius:2px}
 .sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
 
 /* BUTTONS */
@@ -105,7 +105,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
 .stat-box{background:var(--sf);border:1px solid var(--line);border-radius:var(--r);padding:14px;text-align:center;position:relative;overflow:hidden}
 .stat-box:first-child{border-left:3px solid var(--mint)}
-.stat-box:last-child{border-left:3px solid var(--b3)}
+.stat-box:last-child{border-left:3px solid var(--g3)}
 .stat-num{font-size:28px;font-weight:800;font-family:'HCR Dotum',var(--mono)}
 .stat-label{font-size:10px;color:var(--ink3);margin-top:4px;font-family:var(--mono);letter-spacing:.05em}
 
@@ -154,12 +154,19 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 <div class="page show" id="pg-login">
   <div class="login-wrap">
     <div class="login-logo" style="background:transparent;display:flex;align-items:center;justify-content:center;">
-<svg viewBox="0 0 100 100" style="width:48px;height:48px;">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:64px;filter:drop-shadow(0 4px 12px rgba(16,185,129,.35));">
+<!-- 배경 약병 (흐릿한 그린) -->
+<g transform="translate(50, 50)" opacity="0.32">
+<rect x="-9" y="-32" width="18" height="7" rx="2.5" fill="#34D399"/>
+<path d="M -16 28 L -16 -10 Q -16 -22 -7 -23 L 7 -23 Q 16 -22 16 -10 L 16 28 Q 16 32 12 32 L -12 32 Q -16 32 -16 28 Z" fill="#34D399"/>
+</g>
+<!-- 앞 캡슐 (그린/화이트) -->
 <g transform="translate(50, 50)">
 <path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
-<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2.5"/>
-<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2.5"/>
-<path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2"/>
+<!-- 펄스(심전도) 아이콘 -->
+<path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>
 </div>
@@ -184,7 +191,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
     <div class="page show" id="v-home">
       <div class="stat-row">
         <div class="stat-box"><div class="stat-num" style="color:var(--mint)" id="s-rate">0%</div><div class="stat-label">이번 주 복약 준수율</div></div>
-        <div class="stat-box"><div class="stat-num" style="color:var(--b5)" id="s-left">0</div><div class="stat-label">오늘 남은 복약</div></div>
+        <div class="stat-box"><div class="stat-num" style="color:var(--g5)" id="s-left">0</div><div class="stat-label">오늘 남은 복약</div></div>
       </div>
       <div class="sec-title">오늘의 복약</div>
       <div id="sched-list"></div>
