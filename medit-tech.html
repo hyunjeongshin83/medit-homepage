@@ -102,6 +102,86 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 }
 </style>
 
+<style id="book-css">
+/* ===== 데모 영상 · 약국 시범 이용 · 데모 예약 (2026-10) ===== */
+.team-avatar.dog{width:92px;height:92px;background:none;border-radius:0;display:block;padding:0;margin:0 auto 1rem}
+.team-avatar.dog svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 14px rgba(16,185,129,.28))}
+.vid-wrap{max-width:1100px;margin:0 auto 2.8rem}
+.vid-head{text-align:center;margin-bottom:1.6rem}
+.vid-head h3{font-family:var(--font-head);font-size:1.25rem;font-weight:700;margin:.3rem 0 .5rem}
+.vid-head p{font-size:.82rem;color:var(--muted);line-height:1.8;max-width:560px;margin:0 auto}
+.vid-grid{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,.8fr);gap:1.4rem;align-items:start}
+.vid{margin:0;background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:.8rem;overflow:hidden}
+.vid video{display:block;width:100%;height:auto;border-radius:10px;background:#050a12}
+.vid-phone video{max-width:300px;margin:0 auto}
+.vid figcaption{display:flex;flex-direction:column;gap:.25rem;padding:.8rem .3rem .2rem;font-size:.76rem;color:var(--muted);line-height:1.6}
+.vid figcaption strong{color:var(--text);font-size:.88rem}
+.vid figcaption a{color:var(--mint);text-decoration:none;font-weight:600;margin-top:.2rem}
+.vid-note{text-align:center;font-size:.7rem;color:var(--dim);margin:1rem 0 1.2rem}
+.vid-cta{text-align:center}
+.pl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem}
+.pl-steps .card{padding:1.5rem}
+.pl-num{font-family:var(--font-mono);font-size:.62rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.6rem}
+.pl-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.4rem}
+.pl-box{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem 1.6rem}
+.pl-box.yes{border-color:var(--mint-border)}
+.pl-box h3{font-family:var(--font-head);font-size:.98rem;margin:0 0 .9rem}
+.pl-box ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.pl-box li{font-size:.8rem;color:var(--muted);line-height:1.7;padding-left:1.3rem;position:relative}
+.pl-box li::before{content:'';position:absolute;left:0}
+.pl-box.yes li::before{width:.45rem;height:.45rem;border-radius:50%;background:var(--mint);top:.6em}
+.pl-box.no li::before{width:.6rem;height:2px;background:var(--dim);top:.85em}
+.pl-measure{margin-top:1.2rem;background:var(--card);border:1px dashed var(--mint-border);border-radius:var(--r);padding:1.3rem 1.6rem}
+.pl-measure h3{font-family:var(--font-head);font-size:.95rem;margin:0 0 .4rem}
+.pl-measure p{font-size:.78rem;color:var(--muted);line-height:1.7;margin:0}
+.pl-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.pl-chips span{font-size:.74rem;color:var(--mint2);border:1px solid var(--mint-border);background:var(--mint-soft);border-radius:999px;padding:.3rem .8rem}
+.pl-note{font-size:.72rem;color:var(--dim);line-height:1.8;margin:1rem auto 0;text-align:center;max-width:720px}
+.pl-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
+.bk-wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1.6rem;margin-top:2.2rem;align-items:start}
+.bk-form,.bk-side{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.8rem}
+.bk-form fieldset{border:0;margin:0 0 1.2rem;padding:0;min-width:0}
+.bk-form legend,.bk-l{font-size:.76rem;font-weight:600;color:var(--text);margin-bottom:.45rem;display:block;padding:0}
+.bk-types{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.bk-types label{border:1px solid var(--card-border);border-radius:10px;padding:.75rem .9rem;font-size:.8rem;color:var(--muted);cursor:pointer;display:flex;gap:.5rem;align-items:center;transition:.2s}
+.bk-types input{accent-color:var(--mint)}
+.bk-types label:has(input:checked){border-color:var(--mint);color:var(--text);background:var(--mint-soft)}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.bk-f{margin-bottom:1rem;min-width:0}
+.bk-f input[type=text],.bk-f input[type=email],.bk-f input[type=tel],.bk-f input[type=date],.bk-f select,.bk-f textarea{width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:.72rem .85rem;color:var(--text);font:inherit;font-size:.84rem;color-scheme:dark}
+.bk-f textarea{min-height:92px;resize:vertical}
+.bk-f input:focus,.bk-f select:focus,.bk-f textarea:focus,.bk-consent input:focus-visible,.bk-types input:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+.bk-f .err{border-color:var(--coral)!important}
+.bk-hint{font-size:.68rem;color:var(--dim);margin-top:.3rem;line-height:1.6}
+.bk-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bk-consent{font-size:.78rem;color:var(--muted);display:flex;gap:.6rem;align-items:flex-start;line-height:1.6;margin-top:.4rem}
+.bk-consent input{margin-top:.28rem;accent-color:var(--mint)}
+.bk-detail{margin:.6rem 0 1.2rem;font-size:.72rem;color:var(--muted);line-height:1.8}
+.bk-detail summary{cursor:pointer;color:var(--mint)}
+.bk-detail ul{margin:.5rem 0 0;padding-left:1.1rem}
+.bk-detail a{color:var(--mint)}
+.bk-status{font-size:.8rem;margin-top:.9rem;line-height:1.7;min-height:1.2em}
+.bk-status.ok{color:var(--mint2)}.bk-status.bad{color:var(--coral)}
+.bk-status a{color:inherit;text-decoration:underline}
+.bk-done{text-align:center;padding:1.4rem .4rem}
+.bk-done h3{font-family:var(--font-head);font-size:1.2rem;margin:0 0 .6rem;color:var(--mint2)}
+.bk-done p{font-size:.84rem;color:var(--muted);line-height:1.8;margin:.3rem 0}
+.bk-side h3{font-family:var(--font-head);font-size:.98rem;margin:0 0 1rem}
+.bk-side ol{margin:0 0 1.2rem;padding:0;list-style:none;display:grid;gap:.9rem;counter-reset:bk}
+.bk-side li{counter-increment:bk;font-size:.8rem;color:var(--muted);line-height:1.7;padding-left:2.1rem;position:relative}
+.bk-side li::before{content:counter(bk);position:absolute;left:0;top:0;width:1.45rem;height:1.45rem;border-radius:50%;border:1px solid var(--mint-border);background:var(--mint-soft);color:var(--mint);font:600 .7rem var(--font-mono);display:grid;place-items:center}
+.bk-side p{font-size:.76rem;color:var(--muted);line-height:1.8;margin:0 0 .6rem}
+.bk-side .bk-sep{border-top:1px solid var(--card-border);margin:1.1rem 0}
+.btn[disabled]{opacity:.6;cursor:progress}
+.pv-wrap{max-width:860px;margin:0 auto}
+.pv-wrap h3{font-family:var(--font-head);font-size:.95rem;margin:1.4rem 0 .4rem;color:var(--text)}
+.pv-wrap p,.pv-wrap li{font-size:.8rem;color:var(--muted);line-height:1.85}
+.pv-wrap ul{margin:.3rem 0 0;padding-left:1.1rem}
+.pv-wrap a{color:var(--mint)}
+@media(max-width:860px){.bk-wrap,.pl-cols,.pl-steps{grid-template-columns:1fr}}
+@media(max-width:768px){.vid-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.bk-row,.bk-types{grid-template-columns:1fr}.bk-form,.bk-side{padding:1.3rem}}
+</style>
 </head>
 <body>
 <div id="prog"></div>
@@ -1119,8 +1199,9 @@ function sendMsg(){
     <div class="rv" style="text-align:center;margin-bottom:2.5rem">
       <div class="sec-tag">PRODUCT DEMO</div>
       <h2 class="sec-title">제품 데모 시연</h2>
-      <p class="sec-desc" style="margin:.8rem auto 0">MedIT의 6가지 핵심 기능 — 약사 검증 응답, 3채널 알림, KAERS 부작용 데이터 연동까지 인터랙티브하게 체험해보세요.</p>
+      <p class="sec-desc" style="margin:.8rem auto 0" data-en="MedIT's 6 core features: pharmacist-verified replies, 3-channel reminders, and side-effect example data based on public KAERS statistics. Try them interactively.">MedIT의 6가지 핵심 기능 — 약사 검증 응답, 3채널 알림, KAERS 공개 통계를 참고한 부작용 예시 데이터까지 직접 체험해 보세요.</p>
     </div>
+<div class="rv vid-wrap" id="demo-videos"><div class="vid-head"><div class="sec-tag" style="margin:0">VIDEO</div><h3 data-en="Watch First">영상으로 먼저 보기</h3><p data-en="Before trying it yourself, watch about 70 seconds of each screen. All screens use synthetic patient data.">직접 체험하기 전에, 실제 화면을 약 70초씩 보여드립니다. 모든 화면은 가상 환자 데이터입니다.</p></div><div class="vid-grid"><figure class="vid vid-desk"><video controls playsinline preload="none" poster="media/demo-pharmacist.jpg" width="1280" height="720" aria-label="약사용 화면 시연 영상"><source src="media/demo-pharmacist.mp4" type="video/mp4"></video><figcaption><strong data-en="Pharmacist screen">약사용 화면</strong><span data-en="Patient list · today&#x27;s schedule · side-effect monitoring · prescription queue">환자 목록 · 오늘의 복약 스케줄 · 부작용 모니터링 · 처방 큐</span><a href="medit-app-dark.html" target="_blank" rel="noopener" data-en="Try the pharmacist demo →">약사 데모 직접 체험 →</a></figcaption></figure><figure class="vid vid-phone"><video controls playsinline preload="none" poster="media/demo-patient.jpg" width="390" height="844" aria-label="환자용 앱 시연 영상"><source src="media/demo-patient.mp4" type="video/mp4"></video><figcaption><strong data-en="Patient app">환자용 앱</strong><span data-en="Dose log · my medications · symptom report · notification channels">복약 기록 · 내 약 · 증상 신고 · 알림 채널</span><a href="medit-patient.html" target="_blank" rel="noopener" data-en="Try the patient demo →">환자 데모 직접 체험 →</a></figcaption></figure></div><p class="vid-note" data-en="Captions in the videos are in Korean. All data is synthetic; no real patient information is shown.">영상 속 자막은 한국어입니다. 데이터는 모두 가상이며 실제 환자 정보는 없습니다.</p><div class="vid-cta"><a href="index.html#book" data-book="demo" class="btn btn-mint" data-en="Book a Demo →">데모 예약하기 →</a></div></div>
 
 
 <!-- DEMO 01: 약사 검증 AI 응답 -->
@@ -1763,7 +1844,7 @@ function sendMsg(){
   </div>
 </section>
 
-<section class="sec tone-5" id="team" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">ABOUT US</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar">신</div><h3>신현정</h3><div class="role">대표 · FOUNDER</div><p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정 의견 4건을 국민참여입법센터에 제출. <span style="font-size:.65rem;color:var(--dim)">(※ 시민 입법의견 제안)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice));font-size:.95rem;letter-spacing:.02em">개발</div><h3>개발 환경 <span style="font-size:.6rem;color:var(--mint);font-weight:500">1인 + AI 협업</span></h3><div class="role">SOLO + AI-ASSISTED</div><p>대표 신현정이 Claude API를 활용해 직접 개발 중. OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(별도 엔지니어 채용은 시드 라운드 이후 계획)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#059669,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.6rem;color:var(--mint);font-weight:500">진행 중</span></h3><div class="role">ADVISORY</div><p>현재 숙명여자대학교 약학대학 교수님께 약학경제·디지털헬스케어 분야 자문을 받고 있습니다. 약사법 개정안 검토, 부작용 안전 데이터 설계, 복약지도 워크플로우 등 핵심 영역에 대해 학술적 자문을 제공받고 있습니다.</p></div></div></section>
+<section class="sec tone-5" id="team" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">ABOUT US</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar dog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="안경을 쓴 강아지 마스코트"> <circle cx="50" cy="50" r="50" fill="#6ee7b7"/> <path d="M25 29C10 29 7 57 15 68C21 75 32 64 34 49C35 38 33 29 25 29Z" fill="#047857"/> <path d="M75 29C90 29 93 57 85 68C79 75 68 64 66 49C65 38 67 29 75 29Z" fill="#047857"/> <path d="M24 38C17 40 16 55 20 61C24 64 28 56 29 48C29 43 28 38 24 38Z" fill="#059669"/> <path d="M76 38C83 40 84 55 80 61C76 64 72 56 71 48C71 43 72 38 76 38Z" fill="#059669"/> <ellipse cx="50" cy="56" rx="28" ry="26" fill="#f0fdf4"/> <ellipse cx="50" cy="69" rx="13.5" ry="9.5" fill="#d1fae5"/> <path d="M31 38Q38 34 45 38M55 38Q62 34 69 38" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round"/> <circle cx="38" cy="51" r="10.5" fill="#ffffff" fill-opacity=".55" stroke="#064e3b" stroke-width="3.2"/> <circle cx="62" cy="51" r="10.5" fill="#ffffff" fill-opacity=".55" stroke="#064e3b" stroke-width="3.2"/> <path d="M48.5 50Q50 47.5 51.5 50" fill="none" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/> <path d="M27.5 49L21 46.5M72.5 49L79 46.5" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/> <circle cx="38" cy="52" r="3" fill="#064e3b"/> <circle cx="62" cy="52" r="3" fill="#064e3b"/> <circle cx="39" cy="51" r="1" fill="#fff"/> <circle cx="63" cy="51" r="1" fill="#fff"/> <path d="M43.5 63Q50 58.5 56.5 63Q55.5 69 50 70Q44.5 69 43.5 63Z" fill="#064e3b"/> <path d="M50 70V74M50 74Q45.5 78.5 41.5 75M50 74Q54.5 78.5 58.5 75" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M47 77Q50 85.5 53 77Z" fill="#34d399"/> </svg></div><h3>신현정</h3><div class="role">대표 · FOUNDER</div><p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정 의견 4건을 국민참여입법센터에 제출. <span style="font-size:.65rem;color:var(--dim)">(※ 시민 입법의견 제안)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice));font-size:.95rem;letter-spacing:.02em">개발</div><h3>개발 환경 <span style="font-size:.6rem;color:var(--mint);font-weight:500">1인 + AI 협업</span></h3><div class="role">SOLO + AI-ASSISTED</div><p>대표 신현정이 Claude API를 활용해 직접 개발 중. OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(별도 엔지니어 채용은 시드 라운드 이후 계획)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#059669,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.6rem;color:var(--mint);font-weight:500">진행 중</span></h3><div class="role">ADVISORY</div><p>현재 숙명여자대학교 약학대학 교수님께 약학경제·디지털헬스케어 분야 자문을 받고 있습니다. 약사법 개정안 검토, 부작용 안전 데이터 설계, 복약지도 워크플로우 등 핵심 영역에 대해 학술적 자문을 제공받고 있습니다.</p></div></div></section>
 
 <section class="sec" id="news" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag">RESOURCES</div><h2 class="sec-title">업계 동향 · 리소스</h2><p class="sec-desc">MedIT이 주목하는 디지털 헬스케어 뉴스</p></div><div class="grid3"><a href="https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1488108" target="_blank" rel="noopener" class="news-card rv"><div class="news-tag t1">정책</div><h3>비대면진료 의료법 개정안 통과 — 2026.12.24 시행 예정</h3><p>섬·벽지 거주자, 장기요양 수급자, 등록장애인, 감염병 확진자, 희귀질환자 등 <strong>취약계층 한정</strong>으로 약 배송 법적 근거 마련. 일반 대중 약 배송은 허용되지 않으며, 구체 기준은 하위 법령에서 마련 예정. <span style="color:var(--dim);font-size:.65rem">(출처: 보건복지부 보도자료)</span></p><div class="news-date">2025.12.02</div></a><a href="#" class="news-card rv"><div class="news-tag t2">기술</div><h3>멀티모달 AI 모델, 한국어 문서 인식 성능 향상</h3><p>최신 멀티모달 AI 모델들이 한국어 의료 문서 인식 분야에서 빠르게 발전하고 있습니다. (※ 실제 수치는 모델·환경에 따라 상이)</p><div class="news-date">2025</div></a><a href="#" class="news-card rv"><div class="news-tag t3">연구</div><h3>연하곤란 환자 35%, 약을 씹거나 부수어 복용 — 안전성 우려</h3><p>Doan et al. (2022) 연구에 따르면, 정제를 삼키지 못하는 환자 상당수가 위험한 방법으로 복용합니다.</p><div class="news-date">2022.06</div></a></div></section>
 
@@ -1834,7 +1915,7 @@ function sendMsg(){
 </g>
 </svg>
 <span style="vertical-align:middle;"><span style="color:#10B981">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
-</div><p class="ft-desc">메디신 테크놀로지 플랫폼<br>MedIT (대표 신현정 · 개인사업자)<br>숙명여자대학교 창업보육센터 입주</p><p style="font-size:.68rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p></div><div class="ft-col"><h4>제품</h4><a href="#product">솔루션 개요</a><a href="#channels">멀티채널 알림</a><a href="#delivery">배송 플로우</a><a href="#demo">데모 체험</a><a href="#">복약지도 카드</a></div><div class="ft-col"><h4>규제 · 리소스</h4><a href="#regulation">약사법 개정 제안</a><a href="#regulation">의료법 개정 분석</a><a href="#policy-insight">정책 인사이트</a><a href="MedIT_Legislative_Proposal.md" download>입법 제안서 (KR / .md)</a><a href="MedIT_Legislative_Proposal_EN.md" download>Policy White Paper (EN / .md)</a><a href="#">해외 벤치마크</a></div><div class="ft-col"><h4>정보</h4><a href="#team">팀 소개</a><a href="#privacy">개인정보 처리방침</a><a href="#disclaimer">서비스 면책 안내</a><a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a></div></div><div class="ft-bottom"><span>© 2026 MedIT (개인사업자, 대표 신현정). All rights reserved.</span><span>본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 일부 기능은 데모·기획 단계입니다.</span></div></footer>
+</div><p class="ft-desc">메디신 테크놀로지 플랫폼<br>MedIT (대표 신현정 · 개인사업자)<br>숙명여자대학교 창업보육센터 입주</p><p style="font-size:.68rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p></div><div class="ft-col"><h4>제품</h4><a href="#product">솔루션 개요</a><a href="#channels">멀티채널 알림</a><a href="#delivery">배송 플로우</a><a href="#demo">데모 체험</a><a href="#">복약지도 카드</a></div><div class="ft-col"><h4>규제 · 리소스</h4><a href="#regulation">약사법 개정 제안</a><a href="#regulation">의료법 개정 분석</a><a href="#policy-insight">정책 인사이트</a><a href="MedIT_Legislative_Proposal.md" download>입법 제안서 (KR / .md)</a><a href="MedIT_Legislative_Proposal_EN.md" download>Policy White Paper (EN / .md)</a><a href="#">해외 벤치마크</a></div><div class="ft-col"><h4>정보</h4><a href="#team">팀 소개</a><a href="index.html#privacy">개인정보 처리방침</a><a href="#disclaimer">서비스 면책 안내</a><a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a></div></div><div class="ft-bottom"><span>© 2026 MedIT (개인사업자, 대표 신현정). All rights reserved.</span><span>본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 일부 기능은 데모·기획 단계입니다.</span></div></footer>
 
 <script>
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
@@ -2852,5 +2933,22 @@ document.addEventListener('visibilitychange', function(){
 });
 </script>
 
+<script>
+(function(){
+  function apply(){
+    var en = (window.__BK_LANG || document.documentElement.lang) === 'en';
+    document.querySelectorAll('[data-en]').forEach(function(e){
+      if(!e.hasAttribute('data-ko')) e.setAttribute('data-ko', e.textContent);
+      e.textContent = en ? e.getAttribute('data-en') : e.getAttribute('data-ko');
+    });
+    document.querySelectorAll('[data-ph-en]').forEach(function(e){
+      if(!e.hasAttribute('data-ph-ko')) e.setAttribute('data-ph-ko', e.getAttribute('placeholder') || '');
+      e.setAttribute('placeholder', en ? e.getAttribute('data-ph-en') : e.getAttribute('data-ph-ko'));
+    });
+  }
+  try{ new MutationObserver(apply).observe(document.documentElement,{attributes:true,attributeFilter:['lang']}); }catch(e){}
+  apply();
+})();
+</script>
 </body>
 </html>
