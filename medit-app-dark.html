@@ -1417,12 +1417,12 @@ function renderDashboard() {
         <div style="flex:1;min-width:280px;">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
             <div style="background:#10B981;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:800;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;">PNP ARCHITECTURE</div>
-            <div style="background:rgba(255,138,128,0.15);color:#ff8a80;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;">NEW</div>
+            <div style="background:rgba(255,138,128,0.15);color:#ff8a80;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;">시뮬레이션</div>
           </div>
           <h2 style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:4px;">PnP 플랫폼 시연</h2>
           <p style="font-size:13px;color:var(--ink-muted);line-height:1.55;margin-bottom:10px;">
-            기존 약국 POS에 손대지 않고 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong>으로 통합. 
-            휴베이스 Hu-POS · 온누리 온팜 · 약학정보원 PharmIT3000 등 체인약국 연동.
+            기존 약국 POS를 바꾸지 않고 연결하는 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong> 구조를 샘플 데이터로 보여 드립니다. 
+            휴베이스 Hu-POS · 온누리 온팜 · 약학정보원 PharmIT3000는 연동 협의 대상이며, 실제 연동은 아직 아닙니다.
           </p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;">
             <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 신호</span>
@@ -2850,7 +2850,7 @@ function renderPOSBridge() {
   if (!cfg.fetchHistory) cfg.fetchHistory = [];
   if (cfg.signalsReceived === undefined) cfg.signalsReceived = 0;
 
-  const statusLabels = { 'adapter-ready': '준비됨', planned: '협의 대상', target: '전략 목표', connected: '연결됨' };
+  const statusLabels = { 'adapter-ready': '시뮬레이션', planned: '협의 대상', target: '전략 목표', connected: '연결됨' };
   const statusColors = { 'adapter-ready': '#10B981', planned: '#94A3B8', target: '#34d399', connected: '#34d399' };
 
   // PnP 4단계 진화 데이터
@@ -2878,8 +2878,8 @@ function renderPOSBridge() {
     <div class="page-header">
       <h1 class="title">PnP 플랫폼 시연</h1>
       <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">
-        기존 약국 POS에 손대지 않고 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong>으로 통합. 
-        <strong style="color:#10B981">Read-Only 연동</strong> · 정확도 100% 검증.
+        기존 약국 POS를 바꾸지 않고 연결하는 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong> 구조를 시뮬레이션합니다.
+        <strong style="color:#10B981">읽기 전용(Read-Only) 방식 설계</strong> · 샘플 데이터 기준 시연.
       </p>
     </div>
 
@@ -3000,7 +3000,7 @@ function renderPOSBridge() {
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
           <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">스키마 분석</span>
           <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">코드 생성</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">정확도 <span style="font-family:'JetBrains Mono',monospace">100%</span></span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">샘플 데이터 시연</span>
         </div>
         <button onclick="runLLMMapping()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
           LLM 자동 매핑 실행 →
@@ -3017,7 +3017,7 @@ function renderPOSBridge() {
           <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 7px;border-radius:3px;letter-spacing:1px;border:1px solid rgba(148,163,184,.3);">IN PROGRESS · 추진 예정</span>
         </div>
         <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">
-          체인약국·프랜차이즈가 고객과 즉시 연계되는 매개체 — 휴베이스 Hu-POS, 온누리 온팜, 약학정보원 PharmIT3000
+          체인약국·프랜차이즈와 고객을 잇는 매개체 구상 — 연동 협의 대상: 휴베이스 Hu-POS, 온누리 온팜, 약학정보원 PharmIT3000
         </p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
@@ -3038,8 +3038,8 @@ function renderPOSBridge() {
       </div>
       <div style="background:linear-gradient(90deg,rgba(16,185,129,0.06),transparent);border-left:3px solid #10B981;padding:10px 12px;margin-top:14px;border-radius:4px;">
         <p style="font-size:12px;color:var(--ink);line-height:1.55;">
-          <strong style="color:#10B981;">휴베이스·지킴</strong> — 클라우드 POS라서 즉시 Pull 가능. 
-          <strong style="color:#10B981;">약학정보원·베스트시스템</strong> — 로컬 DB라서 협약 시 자동 Pull.
+          <strong style="color:#10B981;">휴베이스·지킴</strong> — 클라우드 방식이라 API 제공 여부를 확인한 뒤 연결을 협의할 예정입니다. 
+          <strong style="color:#10B981;">약학정보원·베스트시스템</strong> — 로컬 DB 방식이라 협약 후 연결 방식을 정할 예정입니다.
         </p>
       </div>
     </div>
@@ -3144,7 +3144,7 @@ window.runLLMMapping = function() {
   output.innerHTML = '<div style="color:#10B981;">▶ LLM 스키마 분석 중...</div>';
   
   setTimeout(() => {
-    let html = '<div style="color:#10B981;margin-bottom:4px;">✓ 매핑 완료 (정확도 100%)</div>';
+    let html = '<div style="color:#10B981;margin-bottom:4px;">✓ 매핑 완료 (샘플 데이터 시뮬레이션)</div>';
     allMappings.forEach((m, i) => {
       setTimeout(() => {
         html += `<div style="margin-bottom:2px;"><span style="color:#64748b;">[${m.pos}]</span> <span style="color:#cbd5e1;">${m.col}</span> <span style="color:#10B981;">→</span> <span style="color:#FFA657;">${m.std}</span></div>`;

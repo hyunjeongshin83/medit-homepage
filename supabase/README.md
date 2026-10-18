@@ -22,3 +22,9 @@
 
 ## 접수 내용 보기
 Supabase 대시보드 > Table Editor > `demo_requests`. 처리한 건은 `status`를 `contacted`, `scheduled`, `done`, `declined`로 바꿔 두세요.
+
+## 새 신청 알림
+- 예약작업 "MedIT 데모 예약 신청 알림"이 매일 오전 8시~밤 10시, 2시간마다(12분) `notified_at`이 비어 있고 `status = 'new'`인 행을 확인합니다.
+- 있으면 카카오톡 "나에게 보내기"로 건수와 희망일만 알리고, 전송에 성공한 행에만 `notified_at`을 채웁니다.
+- 이름·이메일·전화·문의 내용은 카카오톡에 담지 않습니다 (개인정보 처리방침의 "제3자 제공 없음"과 맞추기 위함).
+- 마이그레이션: `migrations/20261018b_demo_requests_notified_at.sql`
