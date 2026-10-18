@@ -1109,6 +1109,7 @@ function sendMsg(){
       ※ 본 솔루션은 의료법 개정안(2026.12.24 시행) 및 약사법 하위 법령에 따라 운영될 예정이며, 일반 대중 약 배송은 포함되지 않습니다.<br>
       ※ 인증 플랫폼·공공시스템 연동 등 구체 운영 방식은 보건복지부 시행 규정에 따릅니다. <a href="https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1488108" target="_blank" rel="noopener" style="color:var(--mint)">[보건복지부 보도자료]</a>
     </p>
+    <p id="rx-law-timeline" style="font-size:.7rem;color:var(--dim);margin-top:.6rem;text-align:center;line-height:1.7;max-width:760px;margin-left:auto;margin-right:auto">※ 적용 기준: 2026.12.23까지는 현행 비대면진료 시범사업 지침(보건복지부 공고 제2025-736호), 2026.12.24부터는 개정 의료법이 적용됩니다. 시행규칙은 입법예고 단계라 내용이 바뀔 수 있습니다. MedIT은 비대면진료 중개매체 해당 여부를 검토하며, 해당하면 시행 후 3개월 안에 신고합니다. 특정 의료기관·약국을 추천하거나 연결 대가를 받지 않습니다.</p>
   </div>
 </section>
 
@@ -1307,7 +1308,7 @@ function sendMsg(){
   <div id="demo-06-launcher" style="text-align:center;padding:1rem 0">
     <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.66rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">DEMO 06 · INTERACTIVE</div>
     <h3 style="font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text);margin:0 0 .6rem">KAERS 데이터 연동 AI 응답</h3>
-    <p style="font-size:.85rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 1.5rem">실시간 원격 데이터로 약품명을 검색하면 AI가 약사 검토용 응답 초안을 생성합니다. 12개 의약품의 KAERS 부작용 통계가 등록되어 있습니다.</p>
+    <p style="font-size:.85rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 1.5rem">실시간 원격 데이터로 약품명을 검색하면 AI가 약사 검토용 응답 초안을 생성합니다. 17개 의약품의 시연용 예시 통계가 등록되어 있으며, 실제 KAERS 품목별 원시자료가 아닙니다.</p>
     <button onclick="launchKaersDemo()" class="btn btn-mint" style="font-size:.9rem;padding:.85rem 1.8rem">
       체험하기 시작 →
     </button>
@@ -1369,8 +1370,8 @@ function sendMsg(){
     </div>
     <div style="background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(52,211,153,.03));border:1px solid var(--mint-border);border-radius:10px;padding:1.2rem">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;flex-wrap:wrap;gap:.4rem">
-        <div style="font-size:.62rem;color:var(--mint);font-family:var(--font-mono);letter-spacing:.05em">STEP 03 · AI 응답 초안 (약사 검토 대기)</div>
-        <div style="background:rgba(240,200,102,.15);color:#059669;font-family:var(--font-mono);font-size:.6rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em">약사 검토 필수</div>
+        <div style="font-size:.62rem;color:var(--mint);font-family:var(--font-mono);letter-spacing:.05em">STEP 03 · AI 생성 답변 초안 (약사 검토 대기)</div>
+        <div style="background:rgba(240,200,102,.15);color:#059669;font-family:var(--font-mono);font-size:.6rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em">AI 생성 · 약사 검토 필수</div>
       </div>
       <div id="kaersAIResponse" style="font-size:.84rem;color:var(--text);line-height:1.7"></div>
     </div>
@@ -1378,7 +1379,7 @@ function sendMsg(){
       <div class="demo-disclaimer-title">⚠ 자동 표시 면책 (KAERS 원문)</div>
       <div class="demo-disclaimer-body">
         본 자료는 KAERS에 자발적으로 보고된 통계이며, 해당 의약품과의 <strong>인과관계를 의미하지 않습니다</strong>.
-        본 AI 응답은 초안일 뿐이며, 실제 환자에게 발송되기 전 반드시 단골 약국 약사의 검토·승인을 거칩니다.
+        본 답변은 생성형 AI가 작성한 초안일 뿐이며, 실제 환자에게 발송되기 전 반드시 단골 약국 약사의 검토·승인을 거칩니다.
         의학적 판단은 약사·의사와 상담하세요.
       </div>
     </div>
@@ -1387,7 +1388,7 @@ function sendMsg(){
   <!-- 메타데이터 + 갱신 정책 -->
   <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border)">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;font-size:.66rem;color:var(--dim);margin-bottom:.8rem">
-      <span>데이터 소스: <strong style="color:var(--muted)">KAERS 공개 파일데이터</strong> (data.go.kr 15117015·15089543·15065145 기반)</span>
+      <span>데이터 소스: <strong style="color:var(--muted)">시연용 예시 데이터</strong> (한국의약품안전관리원 공개 집계 통계 data.go.kr 15117015·15089543·15065145를 참고. 품목별 수치는 공개 API로 제공되지 않음)</span>
       <span id="kaersDataMeta">로딩 중...</span>
     </div>
     <div style="background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.15);border-radius:8px;padding:.85rem 1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between">
@@ -1799,6 +1800,7 @@ function sendMsg(){
     </div>
   </div>
 
+  <div class="rv" style="max-width:900px;margin:0 auto 2rem;text-align:center"><div class="sec-tag" style="justify-content:center">DESIGN PRINCIPLES</div><h3 style="font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin:.4rem 0 .3rem">법령 대응 설계 원칙</h3><p style="font-size:.78rem;color:var(--muted);line-height:1.7;margin:0">현행 약사법·의료법·개인정보 보호법 검토 결과를 설계에 반영한 4가지 원칙입니다.</p><div class="grid4" style="margin-top:1.4rem;text-align:left"><div class="card" style="padding:1.3rem"><div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--mint)"><path d="M24 6L38 11V23C38 32 32 38 24 42C16 38 10 32 10 23V11Z"/><path d="M17 24L22 29L31 19"/></g></svg></div><h3 style="font-size:.9rem;margin-bottom:.4rem">약사 확인 후 발송</h3><p style="font-size:.74rem;line-height:1.6">AI가 만든 답변은 약사가 검토·승인한 뒤에만 환자에게 갑니다.</p></div><div class="card" style="padding:1.3rem"><div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--mint)"><rect x="10" y="7" width="28" height="34" rx="3"/><path d="M10 14H38"/><rect x="16" y="20" width="7" height="7"/><rect x="26" y="20" width="7" height="7"/><rect x="16" y="30" width="7" height="7"/><path d="M27 31H33M30 31V37"/></g></svg></div><h3 style="font-size:.9rem;margin-bottom:.4rem">QR에는 토큰만</h3><p style="font-size:.74rem;line-height:1.6">QR에 개인정보를 담지 않고, 약봉투의 법정 기재사항은 그대로 표기합니다.</p></div><div class="card" style="padding:1.3rem"><div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--mint)"><circle cx="24" cy="27" r="14"/><path d="M24 19V27L30 31"/><path d="M20 6H28M24 6V13"/></g></svg></div><h3 style="font-size:.9rem;margin-bottom:.4rem">7일 자동 파기</h3><p style="font-size:.74rem;line-height:1.6">복약 종료 후 7일 안에 MedIT 사본을 파기합니다. (개발 중인 설계 원칙)</p></div><div class="card" style="padding:1.3rem"><div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--mint)"><rect x="6" y="11" width="36" height="26" rx="4"/><path d="M6 14L24 28L42 14"/></g></svg></div><h3 style="font-size:.9rem;margin-bottom:.4rem">환자가 직접 발송</h3><p style="font-size:.74rem;line-height:1.6">병원·약국 문자는 환자가 확인한 뒤 직접 보내며, 연결 대가를 받지 않습니다.</p></div></div></div>
   <div class="rv" style="background:rgba(255,138,128,.04);border:1px solid rgba(255,138,128,.15);border-radius:var(--r);padding:2rem;max-width:900px;margin:0 auto">
     <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--coral);margin-bottom:1rem;text-align:center">⚠ 서비스 면책 안내</h3>
     <ul style="font-size:.78rem;color:var(--muted);line-height:1.9;list-style:none;padding-left:0">
@@ -1808,10 +1810,12 @@ function sendMsg(){
       <li style="margin-bottom:.5rem">• 데모 화면은 <strong>합성 데이터</strong>로 구성되어 있으며 실제 환자 정보는 포함되지 않습니다.</li>
       <li style="margin-bottom:.5rem">• MedIT는 <strong>개인사업자(대표 신현정)</strong>이며, 본 페이지는 투자 권유 또는 청약을 의미하지 않습니다.</li>
       <li style="margin-bottom:.5rem">• 의료기기 해당 여부는 향후 식약처 사전 검토를 진행할 예정입니다.</li>
+      <li style="margin-bottom:.5rem">• 챗봇·안내 답변은 생성형 AI가 작성하며, 화면에 AI 생성 표시를 합니다.</li>
+      <li style="margin-bottom:.5rem">• 복약 종료 후 7일 안에 MedIT 사본의 건강정보를 파기하는 것을 설계 원칙으로 개발 중입니다. 약국이 보관하는 조제기록(5년)은 약국 책임입니다.</li>
       <li>• AI 응답은 모든 경우 환자가 등록한 단골 약국 약사의 검토·승인을 거쳐 발송됩니다. AI 단독 발송은 절대 없습니다.</li>
     </ul>
     <div style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--dim);line-height:1.7">
-      <strong style="color:var(--text)">법적 근거</strong>: 약사법 제24조 제4항 (조제한 약사의 복약지도) · 약사법 제50조 (면허 표시) · 약사법 제68조의8 (자발적 부작용 보고) · 의료법 제27조 (무면허 의료행위 금지) · 개인정보보호법 제17조·제23조·제28조의2 (민감정보·가명정보) · 헌법재판소 2019헌바87 (약국 내 복약지도 합헌) · 식약처 「의약품광고 및 전문의약품 정보제공 가이드라인」 (2022.11.30 개정, 안내서-0017-03) · 디지털의료제품법 (2025.1.24 시행)
+      <strong style="color:var(--text)">법적 근거</strong>: 약사법 제24조 제4항 (조제한 약사의 복약지도) · 약사법 제50조 (면허 표시) · 약사법 제68조의8 (자발적 부작용 보고) · 의료법 제27조 (무면허 의료행위 금지 · 제3항 영리 목적 환자 소개·알선 금지) · 인공지능 기본법 제31조 (생성형 AI 고지·표시) · 개인정보보호법 제17조·제23조·제28조의2 (민감정보·가명정보) · 헌법재판소 2019헌바87 (약국 내 복약지도 합헌) · 식약처 「의약품광고 및 전문의약품 정보제공 가이드라인」 (2022.11.30 개정, 안내서-0017-03) · 디지털의료제품법 (2025.1.24 시행)
     </div>
   </div>
 </section>
@@ -2092,6 +2096,17 @@ function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pil
     "데모 체험하기":"Try the Demo",
     "솔루션 알아보기":"Learn More",
     "※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다.":"※ This service does not provide medical diagnosis, treatment, or prescriptions.",
+    "법령 대응 설계 원칙":"Design Principles for Legal Compliance",
+    "현행 약사법·의료법·개인정보 보호법 검토 결과를 설계에 반영한 4가지 원칙입니다.":"Four principles that reflect our review of current pharmacy, medical service, and personal data protection laws.",
+    "약사 확인 후 발송":"Sent only after pharmacist review",
+    "AI가 만든 답변은 약사가 검토·승인한 뒤에만 환자에게 갑니다.":"AI-generated replies reach patients only after a pharmacist reviews and approves them.",
+    "QR에는 토큰만":"Token-only QR codes",
+    "QR에 개인정보를 담지 않고, 약봉투의 법정 기재사항은 그대로 표기합니다.":"QR codes carry no personal data, and the legally required labeling stays on the medication bag.",
+    "7일 자동 파기":"Auto-deletion within 7 days",
+    "복약 종료 후 7일 안에 MedIT 사본을 파기합니다. (개발 중인 설계 원칙)":"MedIT's copy is deleted within 7 days after the medication course ends. (Design principle under development)",
+    "환자가 직접 발송":"Patients send messages themselves",
+    "병원·약국 문자는 환자가 확인한 뒤 직접 보내며, 연결 대가를 받지 않습니다.":"Patients review and send hospital or pharmacy messages themselves; MedIT takes no referral fees.",
+    "※ 적용 기준: 2026.12.23까지는 현행 비대면진료 시범사업 지침(보건복지부 공고 제2025-736호), 2026.12.24부터는 개정 의료법이 적용됩니다. 시행규칙은 입법예고 단계라 내용이 바뀔 수 있습니다. MedIT은 비대면진료 중개매체 해당 여부를 검토하며, 해당하면 시행 후 3개월 안에 신고합니다. 특정 의료기관·약국을 추천하거나 연결 대가를 받지 않습니다.":"※ Applicable rules: until Dec 23, 2026, the current telemedicine pilot guidelines apply (MOHW Notice No. 2025-736); from Dec 24, 2026, the amended Medical Service Act applies. The enforcement rule is still in the pre-announcement stage and may change. MedIT is reviewing whether it qualifies as a telemedicine intermediary and will file a report within 3 months of enforcement if it does. MedIT does not recommend specific institutions or take referral fees.",
     
     // Stat strip
     "만성질환자 복약 비순응률":"Medication non-adherence rate",
@@ -2259,6 +2274,8 @@ function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pil
     "AI 응답 생성":"Generate Information Draft",
     "AI 응답 초안 (약사 검토 대기)":"Information Draft (Pending Pharmacist Review)",
     "약사 검토 필수":"Pharmacist Review Required",
+    "AI 생성 · 약사 검토 필수":"AI-generated · Pharmacist Review Required",
+    "STEP 03 · AI 생성 답변 초안 (약사 검토 대기)":"STEP 03 · AI-generated Reply Draft (Pending Pharmacist Review)",
     "검토 약사":"Reviewing Pharmacist",
     "환자 자연어 문의 입력":"Patient Inquiry Input (Natural Language)",
     "KAERS 데이터 매칭 결과":"Reference Data Matching Result",
@@ -2781,7 +2798,7 @@ function runKaersDemo(){
     }
     aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">복용 안전성 안내:</strong> ' + escapeHtml(primaryDrug.guidance) + ' 임의 중단은 권장되지 않습니다.</div>';
   } else if(intent.type === 'interaction'){
-    aiHTML += '<div style="margin-bottom:.7rem">병용 안전성은 환자의 다른 처방약·기저질환·DUR 기록을 종합 검토해야 합니다. 본 AI 응답은 일반 안내이며, <strong style="color:var(--coral)">단골 약사의 개별 검토가 필수</strong>입니다.</div>';
+    aiHTML += '<div style="margin-bottom:.7rem">병용 안전성은 환자의 다른 처방약·기저질환·DUR 기록을 종합 검토해야 합니다. 본 답변은 생성형 AI가 작성한 일반 안내이며, <strong style="color:var(--coral)">단골 약사의 개별 검토가 필수</strong>입니다.</div>';
     aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">복용 정보:</strong> ' + escapeHtml(primaryDrug.guidance) + '</div>';
   } else if(intent.type === 'symptom' && matchedSymptom){
     aiHTML += '<div style="margin-bottom:.7rem">말씀하신 <strong>' + escapeHtml(matchedSymptom.symptom) + '</strong>은 KAERS 보고 통계상 보고 빈도 <strong style="color:var(--mint)">' + matchedSymptom.frequency_pct + '%</strong>이며 <strong>' + escapeHtml(matchedSymptom.severity) + '</strong> 수준입니다. 보통 ' + escapeHtml(matchedSymptom.onset_typical) + '에 나타날 수 있습니다.</div>';
