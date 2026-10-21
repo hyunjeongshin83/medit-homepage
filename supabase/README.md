@@ -34,3 +34,20 @@ Supabase 대시보드 > Table Editor > `demo_requests`. 처리한 건은 `status
 - 캠퍼스타운 허브의 미팅 예약(`kind = 'meeting'`)이 같은 함수와 테이블을 씁니다. 배포된 함수 코드가 최신본이며 이 폴더의 사본과 다를 수 있습니다.
 - 접수 함수는 `purge_after`를 180일로 넣습니다. 처리방침은 3개월이므로 `migrations/20261021_demo_requests_purge_policy.sql`의 트리거가 demo·pilot 행을 3개월로 덮어씁니다.
 - 함수를 다시 배포할 때 `verify_jwt`가 꺼져 있어야 합니다. 배포 뒤 토큰 없이 한 번 호출해 확인하세요.
+
+## PnP 설치 (시리얼 발급·확인·진행 기록)
+
+약국에 설치 프로그램을 전달하는 기능입니다. 환자 정보는 받지 않습니다.
+
+- 구성: 설치 화면 `medit-install.html` → 함수 `supabase/functions/pnp-install` → 표 3개(`pnp_install_serials`, `pnp_install_events`, `pnp_install_failures`)와 함수(`pnp_issue_serial`, `pnp_redeem`, `pnp_report`). 설치 프로그램은 `install/medit-pnp.py`(Python 표준 라이브러리만 사용)이고, 같은 폴더의 `.sha256`으로 무결성을 확인합니다.
+- 표는 모두 행 단위 보안을 켜고 정책을 두지 않았습니다. 함수는 service_role만 실행할 수 있습니다.
+- 시리얼(`MEDIT-XXXX-XXXX-XXXX`)은 해시로만 저장합니다. 발급할 때 한 번만 보이므로 바로 전달하세요.
+- 발급(SQL 편집기): `select public.pnp_issue_serial('○○약국', '메모', 14, true, false, null);` (약국명, 메모, 만료 일수, 면허 확인 여부, 협약·동의 확인 여부, 사용 횟수)
+- 열쇠 두 개
+  - `license_verified`: 약사 면허를 확인했을 때만 true. false이면 설치를 시작할 수 없습니다.
+  - `agreement_confirmed`: 업체 협약, 약사 동의, 개인정보 검토가 끝났을 때만 true. false이면 샘플 구조(`--sample`)만 쓸 수 있고, 실제 약국 프로그램의 구조 읽기(`--vendor-ok`)는 막힙니다.
+- 진행 단계: issued → claimed → mapping → approved → verified (취소는 revoked). 진행 기록은 허용된 키만 남기고 나머지는 서버에서 버립니다.
+- 보기: `설치_시리얼_목록`, `설치_진행_기록`
+- 환자 데이터 읽기·전송(`sync`)은 잠겨 있습니다. 협약·동의·개인정보 검토 뒤에 구현합니다.
+- 적용 방식: `migrations/20261021c_pnp_install.sql`을 표, 함수 두 묶음, 보기로 나누어 적용했습니다. 이 파일의 마지막에 있는 오래된 기록 정리 작업(cron)은 아직 적용하지 않았습니다. 적용 전까지 기록은 자동으로 지워지지 않습니다.
+- 오입력 제한: 같은 접속지에서 10분에 12번 잘못 입력하면 막힙니다. 허용 출처는 홈페이지 주소 하나와 출처 표시가 없는 설치 프로그램입니다.

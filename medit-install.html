@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="MedIT PnP 설치. 약사 면허 확인 뒤 받은 시리얼로 설치 프로그램과 설치 방법(시리얼·링크·Claude)을 확인합니다. 환자 데이터는 읽거나 보내지 않습니다.">
+<link rel="icon" type="image/png" sizes="64x64" href="media/favicon.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+<link rel="canonical" href="https://hyunjeongshin83.github.io/medit-homepage/medit-install.html">
+<title>MedIT PnP 설치</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#10B981;--mint2:#34d399;--mint-soft:rgba(16,185,129,.08);--mint-border:rgba(16,185,129,.25);--g4:#10B981;--g6:#6ee7b7;--text:#e8e4dc;--muted:#9a9488;--dim:#6a655e;--white:#fff;--card:rgba(14,22,38,.72);--card-border:rgba(255,255,255,.08);--warn:#f5b84b;--bad:#f08a8a;--r:14px;--font-head:'Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--g6)}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--card-border)}
+.nav-in{max-width:960px;margin:0 auto;padding:.8rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--font-head);font-weight:800;font-size:1.25rem;color:var(--white);text-decoration:none}.logo em{font-style:normal;color:var(--mint)}
+.nav-in a.back{font-size:.85rem;color:var(--muted);text-decoration:none}.nav-in a.back:hover{color:var(--g6)}
+main{max-width:960px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.tag{font-family:var(--font-mono);font-size:.7rem;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.6rem}
+h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:.6rem}
+.badge{display:inline-block;font-family:var(--font-mono);font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:.25rem .65rem;border-radius:6px;border:1px solid var(--mint-border);background:var(--mint-soft);color:var(--g6);vertical-align:middle}
+.lead{font-size:.95rem;color:var(--muted);font-weight:300;margin-bottom:1.8rem;max-width:720px}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.4rem}
+.card+.card{margin-top:1rem}
+label.lbl{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem}
+.row{display:flex;gap:.6rem;flex-wrap:wrap}
+input[type=text]{flex:1 1 240px;min-width:0;background:var(--bg);color:var(--white);border:1px solid var(--card-border);border-radius:10px;padding:.85rem 1rem;font-family:var(--font-mono);font-size:1rem;letter-spacing:.06em;text-transform:uppercase}
+input[type=text]:focus{outline:2px solid var(--mint);outline-offset:1px;border-color:var(--mint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.85rem 1.4rem;border-radius:10px;font-size:.9rem;font-weight:700;font-family:var(--font-body);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background .2s,transform .2s;min-height:44px}
+.btn-mint{background:var(--mint);color:#04130d}.btn-mint:hover{background:var(--mint2);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--g6);border-color:var(--mint-border)}.btn-line:hover{background:var(--mint-soft)}
+.btn:disabled{opacity:.55;cursor:wait;transform:none}
+.btn:focus-visible,.tab:focus-visible,summary:focus-visible{outline:2px solid var(--mint2);outline-offset:2px}
+.note{font-size:.8rem;color:var(--dim);margin-top:.7rem}
+#status{margin-top:.9rem;font-size:.88rem;min-height:1.4em}
+#status.err{color:var(--bad)}#status.ok{color:var(--g6)}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:.8rem;margin-bottom:1.2rem}
+.sum div{background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:.7rem .9rem}
+.sum small{display:block;font-size:.7rem;color:var(--dim);letter-spacing:.08em;font-family:var(--font-mono)}
+.sum b{font-size:.95rem;font-weight:700;word-break:break-word}
+.mode-sample{color:var(--warn)}.mode-live{color:var(--g6)}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.tab{flex:1 1 150px;background:var(--bg);color:var(--muted);border:1px solid var(--card-border);border-radius:10px;padding:.75rem .9rem;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--font-body);min-height:44px}
+.tab[aria-selected=true]{color:var(--white);border-color:var(--mint);background:var(--mint-soft)}
+.panel[hidden]{display:none}
+.panel h3{font-size:1rem;font-weight:700;margin:.2rem 0 .5rem}
+.panel p,.panel li{font-size:.88rem;color:var(--muted)}
+.panel ol{padding-left:1.2rem;margin:.4rem 0 .8rem}.panel li{margin:.25rem 0}
+pre,.code{background:#070b13;border:1px solid var(--card-border);border-radius:10px;padding:.8rem 1rem;font-family:var(--font-mono);font-size:.8rem;color:#cfe9dd;white-space:pre-wrap;word-break:break-all;line-height:1.6}
+.cmd{display:flex;gap:.5rem;align-items:flex-start;margin:.35rem 0}.cmd .code{flex:1;min-width:0}
+.cmd .who{font-size:.72rem;color:var(--warn);font-family:var(--font-mono);display:block;margin-top:.15rem}
+.copy{flex:none;min-height:44px;padding:.5rem .8rem;font-size:.8rem}
+details{margin-top:.7rem}summary{cursor:pointer;font-size:.85rem;color:var(--g6);font-weight:600;min-height:32px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.two h3{font-size:.95rem;margin-bottom:.4rem}.two ul{list-style:none}.two li{font-size:.85rem;color:var(--muted);padding:.3rem 0 .3rem 1.3rem;position:relative}
+.two li::before{content:'';position:absolute;left:0;top:.75rem;width:.55rem;height:.55rem;border-radius:50%}
+.yes li::before{background:var(--mint)}.no li::before{background:var(--bad)}
+.hash{font-family:var(--font-mono);font-size:.72rem;color:var(--dim);word-break:break-all}
+footer{max-width:960px;margin:0 auto;padding:0 1.25rem 3rem;font-size:.78rem;color:var(--dim)}
+@media(max-width:640px){.two{grid-template-columns:1fr}.cmd{flex-direction:column;align-items:stretch}.copy{width:100%}.btn{width:100%}.row .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="nav-in"><a class="logo" href="index.html">Med<em>IT</em></a><a class="back" href="medit-tech.html#pnp-install">← 기술 자료</a></div></nav>
+<main>
+  <div class="tag">PnP INSTALL</div>
+  <h1>PnP 설치 <span class="badge">V1 · 샘플·매핑 단계</span></h1>
+  <p class="lead">약사 면허를 확인한 뒤 받은 시리얼을 입력하면 설치 프로그램과 설치 방법 3가지(시리얼 · 링크 · Claude)가 나옵니다. 이 단계의 설치는 약국 프로그램의 표·열 이름을 확인해 연결 설정을 만드는 것까지이며, 환자 데이터는 읽거나 보내지 않습니다.</p>
+
+  <section class="card" aria-labelledby="serial-h">
+    <label class="lbl" id="serial-h" for="serial">설치 시리얼</label>
+    <form id="serial-form" class="row" autocomplete="off">
+      <input type="text" id="serial" name="serial" inputmode="text" maxlength="24" spellcheck="false" autocapitalize="characters" placeholder="MEDIT-XXXX-XXXX-XXXX" aria-describedby="status">
+      <button type="submit" class="btn btn-mint" id="check-btn">확인</button>
+    </form>
+    <div id="status" role="status" aria-live="polite"></div>
+    <p class="note">시리얼이 없다면 <a href="index.html#book">시범 이용 신청</a>에서 요청해 주세요. 약사 면허를 확인한 뒤 발급합니다.</p>
+  </section>
+
+  <section id="result" hidden>
+    <div class="card">
+      <div class="sum">
+        <div><small>PHARMACY</small><b id="r-label"></b></div>
+        <div><small>MODE</small><b id="r-mode"></b></div>
+        <div><small>EXPIRES</small><b id="r-exp"></b></div>
+        <div><small>설치 프로그램 확인 횟수</small><b id="r-left"></b></div>
+      </div>
+      <p id="r-mode-note" class="note" style="margin:0 0 1.1rem"></p>
+
+      <div class="tabs" role="tablist" aria-label="설치 방법">
+        <button class="tab" role="tab" id="t-serial" aria-controls="p-serial" aria-selected="true">시리얼로 설치</button>
+        <button class="tab" role="tab" id="t-link" aria-controls="p-link" aria-selected="false" tabindex="-1">링크로 설치</button>
+        <button class="tab" role="tab" id="t-llm" aria-controls="p-llm" aria-selected="false" tabindex="-1">Claude로 설치</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-serial" aria-labelledby="t-serial">
+        <h3>1. 설치 프로그램 받기</h3>
+        <p>Python 3.8 이상이 있는 약국 PC(Windows·Mac)에서 쓰는 파일 하나입니다. 다른 프로그램은 설치하지 않습니다.</p>
+        <div class="row" style="margin:.6rem 0">
+          <a class="btn btn-mint" href="install/medit-pnp.py" download="medit-pnp.py">medit-pnp.py 받기</a>
+        </div>
+        <p class="hash">SHA-256 <span id="hash">불러오는 중…</span></p>
+        <h3 style="margin-top:1.1rem">2. 명령 실행 (명령 프롬프트 또는 터미널)</h3>
+        <p>Windows에서 <code>python</code>이 안 되면 <code>py</code>로 바꿔 입력하세요.</p>
+        <div id="cmds"></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-link" aria-labelledby="t-link" hidden>
+        <h3>약사에게 보낼 링크</h3>
+        <p>링크를 열면 이 시리얼이 입력된 화면이 열립니다. 약사 본인에게만 보내 주세요. 주소의 <code>#</code> 뒤는 서버로 전송되지 않으며, 열자마자 주소창에서 지워집니다.</p>
+        <div class="cmd"><div class="code" id="link-text"></div><button type="button" class="btn btn-line copy" data-copy="link-text">복사</button></div>
+        <p class="note">링크로 연 뒤에는 같은 화면에서 "시리얼로 설치" 또는 "Claude로 설치"를 이어서 진행합니다.</p>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-llm" aria-labelledby="t-llm" hidden>
+        <h3>Claude에 로그인해서 LLM으로 설치</h3>
+        <ol>
+          <li>claude.ai에 로그인합니다. (명령을 직접 실행시키려면 Claude Code에 <code>claude login</code>으로 로그인)</li>
+          <li>아래 "안내문 복사"를 누르고, 새 대화에 붙여넣습니다.</li>
+          <li>Claude가 명령을 안내하거나 실행하며 진행합니다. 구조 확인과 매핑 초안은 Claude가 돕습니다.</li>
+          <li><b>승인(approve)만은 약사가 직접</b> 터미널에서 입력해야 합니다. 사람이 직접 입력하는 터미널이 아니면 프로그램이 거절합니다.</li>
+        </ol>
+        <div class="row" style="margin:.6rem 0">
+          <button type="button" class="btn btn-mint" data-copy="prompt-text" id="copy-prompt">안내문 복사</button>
+          <a class="btn btn-line" href="https://claude.ai/new" target="_blank" rel="noopener">Claude 열기</a>
+        </div>
+        <details><summary>복사되는 안내문 보기</summary><pre id="prompt-text"></pre></details>
+        <p class="note">안내문에는 시리얼이 들어 있습니다. 본인 계정의 대화에만 붙여넣으세요. 환자 정보는 대화에 붙여넣지 않도록 안내문에 적혀 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="card two">
+      <div class="yes"><h3>이 설치가 하는 일</h3><ul>
+        <li>약국 프로그램 이름 후보 확인(이름만)</li>
+        <li>표·열의 이름과 형식 확인</li>
+        <li>복약지도에 쓸 항목 연결 초안 만들기</li>
+        <li>가상 데이터 3건으로 점검, 설정 저장</li></ul></div>
+      <div class="no"><h3>하지 않는 일</h3><ul>
+        <li>환자·처방 내용(행 데이터) 읽기와 전송</li>
+        <li>약사 승인 없이 설정 확정</li>
+        <li>협약·동의·개인정보 검토 전 실제 약국 프로그램 접속</li>
+        <li>약사 확인 없는 안내문 발송</li></ul></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>서버로 가는 정보: 시리얼 확인과 단계 결과(이름·건수·지문)뿐이며 환자 정보는 없습니다. 환자 데이터 전송 기능은 업체 협약·약사 동의·개인정보 검토가 끝난 뒤 구현합니다. 문의는 <a href="index.html#book">시범 이용 신청</a>으로 남겨 주세요.</p>
+</footer>
+
+<script>
+(function(){
+  var API='https://xaclqvveppvccdpebzsz.supabase.co/functions/v1/pnp-install';
+  var BASE='https://hyunjeongshin83.github.io/medit-homepage/';
+  var $=function(id){return document.getElementById(id)};
+  var serial='', info=null, sha='';
+  var form=$('serial-form'), input=$('serial'), status=$('status'), btn=$('check-btn');
+
+  var ERR={
+    invalid:'시리얼이 맞지 않습니다. MEDIT-XXXX-XXXX-XXXX 형식인지 확인해 주세요.',
+    expired:'시리얼 사용 기간이 지났습니다. 새 시리얼을 요청해 주세요.',
+    revoked:'폐기된 시리얼입니다. 새 시리얼을 요청해 주세요.',
+    license_pending:'약사 면허 확인이 아직 끝나지 않았습니다. 확인이 끝나면 사용할 수 있습니다.',
+    limit:'이 시리얼의 확인 횟수를 모두 사용했습니다. 새 시리얼을 요청해 주세요.',
+    rate_limited:'잘못된 입력이 많아 잠시 막혔습니다. 10분 뒤 다시 시도해 주세요.',
+    network:'서버에 연결하지 못했습니다. 인터넷 연결을 확인하고 다시 시도해 주세요.',
+    server:'서버에 문제가 있습니다. 잠시 뒤 다시 시도해 주세요.'
+  };
+
+  function normalize(v){
+    var r=String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+    if(r.length!==17||r.slice(0,5)!=='MEDIT') return '';
+    return 'MEDIT-'+r.slice(5,9)+'-'+r.slice(9,13)+'-'+r.slice(13,17);
+  }
+  function setStatus(msg,cls){status.textContent=msg||'';status.className=cls||''}
+
+  // 링크로 열린 경우: 시리얼을 입력칸에 넣고 주소창에서는 지운다(자동 확인은 하지 않는다)
+  (function fromHash(){
+    var m=/[#&]s=([^&]+)/.exec(location.hash||'');
+    if(!m) return;
+    try{input.value=decodeURIComponent(m[1]).slice(0,24)}catch(e){}
+    try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+    setStatus('링크로 받은 시리얼이 입력되었습니다. "확인"을 눌러 주세요.');
+  })();
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var s=normalize(input.value);
+    if(!s){setStatus(ERR.invalid,'err');input.focus();return}
+    btn.disabled=true;setStatus('확인하는 중…');
+    var ctl=new AbortController(), t=setTimeout(function(){ctl.abort()},15000);
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'check',serial:s}),signal:ctl.signal})
+      .then(function(r){return r.json().catch(function(){return {ok:false,error:'server'}})})
+      .catch(function(){return {ok:false,error:'network'}})
+      .then(function(res){
+        clearTimeout(t);btn.disabled=false;
+        if(!res||!res.ok){setStatus(ERR[res&&res.error]||ERR.server,'err');$('result').hidden=true;return}
+        serial=s;info=res;input.value=s;
+        setStatus('확인되었습니다.','ok');
+        render();
+      });
+  });
+
+  function el(tag,cls,text){var n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n}
+
+  function render(){
+    $('r-label').textContent=info.pharmacy_label;
+    var live=info.mode==='live-ready';
+    var m=$('r-mode');m.textContent=live?'실연동 가능':'샘플 전용';m.className=live?'mode-live':'mode-sample';
+    $('r-mode-note').textContent=live
+      ?'협약·동의·개인정보 검토가 끝난 약국입니다. 실제 약국 프로그램의 구조 확인이 가능하지만, 환자 데이터 전송 기능은 아직 없습니다.'
+      :'협약·동의·개인정보 검토 전이라 샘플 구조로만 설치 과정을 진행합니다. 실제 약국 프로그램에는 접속하지 않습니다.';
+    $('r-exp').textContent=String(info.expires_at||'').slice(0,10);
+    $('r-left').textContent=(info.redeems_left!=null?info.redeems_left:'-')+'회 남음';
+    buildCommands();
+    $('link-text').textContent=BASE+'medit-install.html#s='+serial;
+    $('prompt-text').textContent=buildPrompt();
+    $('result').hidden=false;
+    $('result').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});
+  }
+
+  function buildCommands(){
+    var box=$('cmds');box.textContent='';
+    var items=[
+      ['python medit-pnp.py redeem '+serial,'시리얼 확인'],
+      ['python medit-pnp.py detect','약국 프로그램 이름 확인(이름만)'],
+      ['python medit-pnp.py schema --sample','구조 확인(샘플 구조)'+(info.mode==='live-ready'?' · 실제 DB는 --sqlite 파일 또는 --odbc env:이름 --vendor-ok':'')],
+      ['python medit-pnp.py map','연결 초안 만들기'],
+      ['python medit-pnp.py approve','약사가 직접 입력 — 확인 문구를 직접 타이핑'],
+      ['python medit-pnp.py verify','가상 데이터로 점검하고 설정 저장']
+    ];
+    items.forEach(function(it,i){
+      var row=el('div','cmd');
+      var wrap=el('div'); wrap.style.cssText='flex:1;min-width:0';
+      var code=el('div','code',it[0]);code.id='cmd-'+i;
+      var who=el('span','who',(i+1)+'. '+it[1]);
+      wrap.appendChild(code);wrap.appendChild(who);
+      var b=el('button','btn btn-line copy','복사');b.type='button';b.setAttribute('data-copy','cmd-'+i);
+      row.appendChild(wrap);row.appendChild(b);box.appendChild(row);
+    });
+  }
+
+  function buildPrompt(){
+    var live=info.mode==='live-ready';
+    return [
+'당신은 약국 PC에 MedIT PnP 설치 프로그램을 설치·설정하도록 돕는 도우미입니다. 아래 규칙을 반드시 지키세요.',
+'',
+'[규칙]',
+'1. 약국 DB의 행(환자·처방 내용)을 읽거나 출력하거나 이 대화에 붙여넣지 마세요. 표와 열의 이름·형식만 다룹니다.',
+'2. 약사 승인 단계(approve)는 약사 본인이 터미널에서 직접 입력해야 합니다. 대신 실행하거나 확인 문구를 입력하지 마세요. 방법만 안내하세요.',
+'3. 설치 모드가 "샘플 전용"이면 실제 약국 프로그램에 접속하지 말고 schema --sample 만 사용하세요.',
+'4. 약국 프로그램 업체와 협의되지 않은 방식(데이터베이스 직접 접속 등)은 제안하지 마세요. 모르면 멈추고 약사에게 물으세요.',
+'5. 약사가 동의하지 않은 프로그램은 설치하지 마세요. Python이 없으면 설치해도 되는지 먼저 물으세요.',
+'6. DB 비밀번호나 연결 문자열을 대화나 명령줄에 쓰지 마세요. 필요하면 약사가 환경변수 MEDIT_ODBC_CONN 에 직접 설정하고 --odbc env:MEDIT_ODBC_CONN 으로 쓰게 하세요.',
+'7. 시리얼은 이 대화 밖으로 공유하지 마세요.',
+'',
+'[설치 정보]',
+'- 약국: '+info.pharmacy_label,
+'- 모드: '+(live?'실연동 가능(협약·동의·검토 완료). 그래도 환자 데이터 전송은 아직 구현되어 있지 않습니다.':'샘플 전용'),
+'- 시리얼: '+serial,
+'- 설치 프로그램: '+BASE+'install/medit-pnp.py',
+'- SHA-256: '+(sha||'(확인 페이지에서 확인)'),
+'',
+'[진행 순서] 명령을 직접 실행할 수 없으면 약사에게 하나씩 실행해 달라고 하고, 결과 중 표·열 이름과 상태 메시지만 붙여 달라고 하세요. Windows에서는 python 대신 py 를 써야 할 수 있습니다.',
+'1. 설치 프로그램을 내려받아 SHA-256 이 위와 같은지 확인합니다.',
+'2. python medit-pnp.py redeem '+serial,
+'3. python medit-pnp.py detect',
+'4. python medit-pnp.py schema --sample'+(live?'  (약사가 업체 협의 방식임을 확인했을 때만 --sqlite 파일 또는 --odbc env:MEDIT_ODBC_CONN 과 --vendor-ok)':''),
+'5. python medit-pnp.py map  → 결과를 약사에게 쉬운 말로 보여 주고, 틀린 항목은 mapping.proposed.json 을 고친 뒤 map --recheck 를 실행합니다.',
+'6. 약사에게 python medit-pnp.py approve 를 직접 실행하도록 안내합니다.',
+'7. python medit-pnp.py verify  → 설정 완료.',
+'',
+'[끝났을 때] python medit-pnp.py status 결과를 요약하고, 환자 데이터 전송(sync)은 아직 잠겨 있다는 점도 함께 알려 주세요.'
+    ].join('\n');
+  }
+
+  // 설치 프로그램 해시(같은 사이트의 파일). 받지 못하면 안내문에는 확인 요청 문구가 들어간다.
+  fetch('install/medit-pnp.py.sha256',{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){
+    var m=/^[0-9a-f]{64}/.exec((t||'').trim());
+    sha=m?m[0]:'';$('hash').textContent=sha||'불러오지 못했습니다';
+    if(info) $('prompt-text').textContent=buildPrompt();
+  }).catch(function(){$('hash').textContent='불러오지 못했습니다'});
+
+  // 탭
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function select(t){
+    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;$(x.getAttribute('aria-controls')).hidden=!on});
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t)});
+    t.addEventListener('keydown',function(e){
+      var k=e.key,n=-1;
+      if(k==='ArrowRight')n=(i+1)%tabs.length;else if(k==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;
+      if(n>=0){e.preventDefault();select(tabs[n]);tabs[n].focus()}
+    });
+  });
+
+  // 복사
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('[data-copy]');if(!b)return;
+    var src=$(b.getAttribute('data-copy'));if(!src)return;
+    var txt=src.textContent,orig=b.textContent;
+    function done(ok){b.textContent=ok?'복사됨':'직접 선택해 복사해 주세요';setTimeout(function(){b.textContent=orig},1800)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){done(true)},function(){fallback()})}else fallback();
+    function fallback(){
+      try{var ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();var ok=document.execCommand('copy');document.body.removeChild(ta);done(ok)}catch(err){done(false)}
+    }
+  });
+})();
+</script>
+</body>
+</html>
