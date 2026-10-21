@@ -310,7 +310,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
   <div class="rv" style="max-width:1280px;margin:3rem auto 0;padding:0 1.5rem">
     <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--g4);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.7rem">EVOLUTION</div>
     <h3 style="font-family:var(--font-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--text);margin-bottom:.5rem">점점 더 가벼워지는 연결</h3>
-    <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:2rem">약국 부담을 0으로 줄여나가는 4단계</p>
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:2rem">약국 부담을 줄여나가는 4단계 (설계 목표)</p>
     
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:1rem">
       <!-- Stage 1 -->
@@ -324,7 +324,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
           <p style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem">200KB 부트스트래퍼 · 접속 시 자동 업데이트</p>
           <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:.6rem">
             <span style="font-family:var(--font-mono);font-size:.55rem;color:#94A3B8;letter-spacing:.1em">부담</span>
-            <div style="font-size:.78rem;color:var(--text);font-weight:600">최초 30초, 이후 무인</div>
+            <div style="font-size:.78rem;color:var(--text);font-weight:600">최초 설치 후 무인 운영 (목표)</div>
           </div>
         </div>
       </div>
@@ -370,7 +370,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
           <p style="font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem">MedIT가 DB 신호만 받아 자동 처리</p>
           <div style="border-top:1px solid rgba(16,185,129,.2);padding-top:.6rem">
             <span style="font-family:var(--font-mono);font-size:.55rem;color:var(--g4);letter-spacing:.1em">부담</span>
-            <div style="font-size:.78rem;color:var(--g4);font-weight:700">약국 작업 0</div>
+            <div style="font-size:.78rem;color:var(--g4);font-weight:700">약국 작업 최소화 (목표)</div>
           </div>
         </div>
       </div>
@@ -395,7 +395,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
             <h3 style="font-family:var(--font-head);font-size:1.15rem;font-weight:700;color:var(--text)">DB 신호 기반 스트림</h3>
           </div>
         </div>
-        <p style="color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:1rem">POS DB가 변경 신호(CDC/트리거)를 보내는 순간 MedIT가 받아 처리. 약사 작업 0, 지연 1초 이내.</p>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:1rem">POS DB가 변경 신호(CDC/트리거)를 보내는 순간 MedIT가 받아 처리하는 구조를 설계 중입니다. 약사 작업 최소화와 지연 1초 이내는 목표입니다.</p>
         
         <div style="background:#0a0f1a;border-left:3px solid var(--g4);padding:1rem;border-radius:4px;margin-bottom:.8rem">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:.8rem">
@@ -414,7 +414,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
               <div style="font-size:.85rem;color:var(--soft);font-weight:600">자동 처리</div>
             </div>
           </div>
-          <div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.05);font-size:.72rem;color:var(--muted);text-align:center">지연 1초 이내 · 약사 작업 없음</div>
+          <div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.05);font-size:.72rem;color:var(--muted);text-align:center">지연 1초 이내 · 약사 작업 최소화 (목표)</div>
         </div>
         
         <div style="display:flex;gap:.8rem;flex-wrap:wrap">
@@ -529,6 +529,68 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
     
     <div style="background:linear-gradient(90deg,rgba(16,185,129,.05),transparent);border-left:3px solid var(--g4);padding:1rem 1.2rem;margin-top:1.5rem;border-radius:4px">
       <p style="font-size:.85rem;color:var(--text);line-height:1.6"><strong style="color:var(--g4)">휴베이스·지킴</strong> — 클라우드 방식이라 API 제공 여부를 확인한 뒤 연결을 협의할 예정입니다. <strong style="color:var(--g4)">약학정보원·베스트시스템</strong> — 로컬 DB 방식이라 협약 후 연결 방식을 정할 예정입니다.</p>
+    </div>
+  </div>
+
+  <!-- PnP 설치와 전송 흐름 · 설계 중 -->
+  <div class="rv" id="pnp-install" style="max-width:1280px;margin:4rem auto 0;padding:0 1.5rem">
+    <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--g4);letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:.7rem">INSTALL &amp; SEND</div>
+    <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.5rem">
+      <h3 style="font-family:var(--font-head);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--text);margin:0">설치와 전송 흐름</h3>
+      <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:var(--font-mono);font-size:.65rem;font-weight:700;padding:.3rem .7rem;border-radius:4px;letter-spacing:.1em;border:1px solid rgba(148,163,184,.3)">IN DESIGN · 설계 중</span>
+    </div>
+    <p style="font-size:.9rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1.6rem">약국 PC에 설치 프로그램을 받아 실행하면, 약국 프로그램을 확인하고 복약지도와 카카오톡·문자 안내에 필요한 항목만 MedIT으로 보내는 흐름입니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:1rem">
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:#1E293B;padding:.8rem 1rem;color:#fff;display:flex;align-items:baseline;gap:.6rem">
+          <span style="font-family:var(--font-mono);font-size:.6rem;color:#94A3B8;letter-spacing:.1em">STEP 1</span>
+        </div>
+        <div style="padding:1rem">
+          <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">면허 확인 후 받기</h4>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin:0">약사 면허를 확인한 뒤 약국별 링크나 초대 코드로 설치 프로그램을 내려받습니다. 설치 파일을 이메일에 첨부하지 않습니다.</p>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:#1E293B;padding:.8rem 1rem;color:#fff;display:flex;align-items:baseline;gap:.6rem">
+          <span style="font-family:var(--font-mono);font-size:.6rem;color:#94A3B8;letter-spacing:.1em">STEP 2</span>
+        </div>
+        <div style="padding:1rem">
+          <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">약국 프로그램 확인</h4>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin:0">설치 프로그램이 약국 PC에서 쓰는 약국 프로그램(PharmIT3000, PM+20, 밝은매장 등)과 DB 종류를 확인합니다. 업체와 협의된 방식만 씁니다.</p>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:#1E293B;padding:.8rem 1rem;color:#fff;display:flex;align-items:baseline;gap:.6rem">
+          <span style="font-family:var(--font-mono);font-size:.6rem;color:#94A3B8;letter-spacing:.1em">STEP 3</span>
+        </div>
+        <div style="padding:1rem">
+          <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">LLM 설치 도우미</h4>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin:0">LLM이 약국 프로그램과 DB 구조를 분석해 설치 설정안과 컬럼 매핑안을 만듭니다(예: pt_nm → patient_name). 약사가 화면에서 확인하고 승인하면 설치 프로그램이 적용합니다.</p><span style="display:inline-block;margin-top:.7rem;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.25rem .6rem;border-radius:99px;font-size:.68rem;color:var(--g4)">약사 승인</span>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:#1E293B;padding:.8rem 1rem;color:#fff;display:flex;align-items:baseline;gap:.6rem">
+          <span style="font-family:var(--font-mono);font-size:.6rem;color:#94A3B8;letter-spacing:.1em">STEP 4</span>
+        </div>
+        <div style="padding:1rem">
+          <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">필요한 항목만 읽기</h4>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin:0">읽기 전용으로 복약지도와 카카오톡·문자 안내에 필요한 항목만 가져옵니다. 전체 DB를 가져가지 않습니다.</p>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden">
+        <div style="background:#1E293B;padding:.8rem 1rem;color:#fff;display:flex;align-items:baseline;gap:.6rem">
+          <span style="font-family:var(--font-mono);font-size:.6rem;color:#94A3B8;letter-spacing:.1em">STEP 5</span>
+        </div>
+        <div style="padding:1rem">
+          <h4 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.4rem">약사 확인 후 발송</h4>
+          <p style="font-size:.78rem;color:var(--muted);line-height:1.6;margin:0">안내문은 약사가 확인한 뒤 환자에게 전송됩니다. 약사 확인 없이 AI가 단독으로 발송하지 않습니다.</p><span style="display:inline-block;margin-top:.7rem;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:.25rem .6rem;border-radius:99px;font-size:.68rem;color:var(--g4)">약사 승인</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(148,163,184,.06);border-left:3px solid #94A3B8;padding:.7rem 1rem;border-radius:4px;margin-top:1.5rem">
+      <p style="color:var(--text);font-size:.85rem;line-height:1.6;margin:0">
+        <strong style="color:#94A3B8">현재 상태:</strong> 설계 중입니다. 설치 프로그램은 아직 없습니다. 약국 프로그램 업체와의 협약, 약사 동의, 개인정보 검토를 거친 뒤 구현합니다. 데모는 샘플 데이터 시뮬레이션입니다.
+      </p>
     </div>
   </div>
 
