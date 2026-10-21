@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="64x64" href="media/favicon.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <title>MedIT — 복약 관리 시스템</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <style>
-@font-face{font-family:'HCR Dotum';font-style:normal;font-weight:700;font-display:swap;src:url('HANDotumB.ttf') format('truetype')}
   :root {
     --bg: #0a0e12;
     --bg-main: #0d1117;
@@ -79,7 +80,7 @@
   }
   .med-card * { user-select: text; -webkit-user-select: text; }
   .med-card .mc-label {
-    font-size: 10px; letter-spacing: 0.3em; color: #a09888;
+    font-size: 11px; letter-spacing: 0.3em; color: #a09888;
     text-transform: uppercase; margin-bottom: 4px;
   }
   .med-card .mc-name {
@@ -94,7 +95,7 @@
     padding-top: 12px; border-top: 1px solid #e0dbd2;
   }
   .med-card .mc-footer {
-    font-size: 9px; color: #b8b0a4; letter-spacing: 0.15em;
+    font-size: 11px; color: #b8b0a4; letter-spacing: 0.15em;
     margin-top: 10px; text-align: right;
   }
   .med-card .mc-line {
@@ -150,7 +151,7 @@
   .tab-btn.active { color: var(--accent); }
   .tab-btn .tab-badge {
     position: absolute; top: 2px; right: calc(50% - 18px);
-    background: var(--red); color: white; font-size: 10px; font-weight: 600;
+    background: var(--red); color: white; font-size: 11px; font-weight: 600;
     min-width: 14px; height: 14px; border-radius: 99px; display: flex; align-items: center; justify-content: center;
     font-family: 'IBM Plex Mono', 'HCR Dotum', 'Noto Sans KR', monospace;
   }
@@ -303,7 +304,7 @@
   .risk-avatar.high { background: var(--red-soft); color: var(--red); border-color: rgba(166,61,43,.2); }
   .risk-avatar.mid { background: var(--yellow-soft); color: #8a6a14; border-color: rgba(138,106,20,.2); }
   .risk-info .name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
-  .risk-info .meta { font-family: 'IBM Plex Mono', 'HCR Dotum', 'Noto Sans KR', monospace; font-size: 10.5px; color: var(--ink-muted); letter-spacing: .05em; }
+  .risk-info .meta { font-family: 'IBM Plex Mono', 'HCR Dotum', 'Noto Sans KR', monospace; font-size: 11px; color: var(--ink-muted); letter-spacing: .05em; }
   .risk-score { text-align: right; }
   .risk-score .val { font-family: 'IBM Plex Mono', 'HCR Dotum', 'Noto Sans KR', monospace; font-size: 14px; font-weight: 500; color: var(--ink); }
   .risk-score .val.high { color: var(--red); }
@@ -526,13 +527,17 @@
 
   #print-area { position: absolute; left: -9999px; }
   #print-area.printing { position: static; left: 0; }
+
+/* QA 2026-10-21 */
+:focus-visible{outline:2px solid #10B981;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
 <!-- US/Global Legal Notice — Shown only when lang=en -->
 <div id="us-demo-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,138,128,.95);color:#fff;padding:.6rem 1rem;font-family:-apple-system,sans-serif;font-size:.7rem;line-height:1.5;text-align:center;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.2)">
-  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. Report adverse events: US FDA MedWatch 1-800-FDA-1088 · UK Yellow Card · Korea KAERS 1644-6223. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.65rem">Dismiss</button>
+  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. Report adverse events: US FDA MedWatch 1-800-FDA-1088 · UK Yellow Card · Korea KAERS 1644-6223. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.7rem">Dismiss</button>
 </div>
 <script>
 // Auto-show US banner if lang=en
@@ -570,11 +575,11 @@
     <div class="login-sub">약사 계정으로 접속해주세요.</div>
     <div class="field">
       <label>아이디</label>
-      <input type="text" id="login-username" placeholder="admin" autocomplete="username">
+      <input type="text" id="login-username" aria-label="아이디" placeholder="admin" autocomplete="username">
     </div>
     <div class="field">
       <label>비밀번호</label>
-      <input type="password" id="login-password" placeholder="0000" autocomplete="current-password">
+      <input type="password" id="login-password" aria-label="비밀번호" placeholder="0000" autocomplete="current-password">
     </div>
     <button class="btn primary" id="login-submit" style="width: 100%; justify-content: center; padding: 16px; font-size: 17px; border-radius: 12px;">로그인</button>
     <div class="login-hint">
@@ -636,7 +641,7 @@
     background: linear-gradient(135deg, #10B981, #047857);
     color: #050a07;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: .6rem; font-weight: 800;
+    font-size: .7rem; font-weight: 800;
     padding: .35rem .7rem; border-radius: 2px;
     letter-spacing: .12em;
     box-shadow: 0 0 20px rgba(16,185,129,.4);
@@ -655,7 +660,7 @@
     color: #7a8694;
     padding: .4rem .9rem;
     border-radius: 2px;
-    font-size: .68rem;
+    font-size: .7rem;
     cursor: pointer;
     font-family: 'IBM Plex Mono', monospace;
     letter-spacing: .08em;
@@ -701,7 +706,7 @@
   
   .demo-w3-card-num {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: .58rem;
+    font-size: .7rem;
     color: #4a5560;
     letter-spacing: .15em;
     margin-bottom: .35rem;
@@ -726,7 +731,7 @@
   .demo-w3-card-path {
     margin-top: .55rem;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: .6rem;
+    font-size: .7rem;
     color: #10B981;
     opacity: .7;
     letter-spacing: .03em;
@@ -739,13 +744,13 @@
     display: flex;
     align-items: flex-start;
     gap: .8rem;
-    font-size: .68rem;
+    font-size: .7rem;
     color: #7a8694;
     line-height: 1.6;
   }
   .demo-w3-foot-tag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: .58rem;
+    font-size: .7rem;
     color: #10B981;
     letter-spacing: .12em;
     flex-shrink: 0;
@@ -759,7 +764,7 @@
     color: #34d399;
     padding: .08rem .35rem;
     border-radius: 2px;
-    font-size: .66rem;
+    font-size: .7rem;
   }
 </style>
 
@@ -1414,10 +1419,10 @@ function renderDashboard() {
     <!-- PnP 시연 안내 카드 (교수님 미팅 컨셉 통합) -->
     <div style="margin:14px 0;background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.25);border-radius:12px;padding:18px 20px;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:280px;">
+        <div style="flex:1;min-width:min(280px,100%);">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-            <div style="background:#10B981;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:800;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;">PNP ARCHITECTURE</div>
-            <div style="background:rgba(255,138,128,0.15);color:#ff8a80;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;">시뮬레이션</div>
+            <div style="background:#10B981;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:3px 8px;border-radius:3px;">PNP ARCHITECTURE</div>
+            <div style="background:rgba(255,138,128,0.15);color:#ff8a80;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;">시뮬레이션</div>
           </div>
           <h2 style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:4px;">PnP 플랫폼 시연</h2>
           <p style="font-size:13px;color:var(--ink-muted);line-height:1.55;margin-bottom:10px;">
@@ -1425,11 +1430,11 @@ function renderDashboard() {
             휴베이스 Hu-POS · 온누리 온팜 · 약학정보원 PharmIT3000는 연동 협의 대상이며, 실제 연동은 아직 아닙니다.
           </p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;">
-            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 신호</span>
-            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">LLM 매핑</span>
-            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">통합 패치</span>
-            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">약사회 거버넌스</span>
-            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;font-family:'JetBrains Mono',monospace;">인턴 UX 로그</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 신호</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">LLM 매핑</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">통합 패치</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">약사회 거버넌스</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">인턴 UX 로그</span>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;min-width:140px;">
@@ -1514,7 +1519,7 @@ function renderDashboard() {
             const best = d.t >= 80 ? 'var(--accent)' : d.t >= 50 ? 'var(--yellow)' : d.t > 0 ? 'var(--red)' : 'var(--surface-alt)';
             return `<div style="text-align:center;">
               <div style="width:100%;aspect-ratio:1;border-radius:14px;background:${best};opacity:${d.t > 0 ? 0.2 + d.t/100*0.8 : 0.15};margin-bottom:2px;" title="${d.date}: 복용 ${d.t}%"></div>
-              <div style="font-size:10px;color:var(--ink-muted);font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;">${d.date.split('.')[1]}</div>
+              <div style="font-size:11px;color:var(--ink-muted);font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;">${d.date.split('.')[1]}</div>
             </div>`;
           }).join('')}
         </div>
@@ -1687,7 +1692,7 @@ function renderPrescriptions() {
       </div>
       <div class="search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16 16 L21 21"/></svg>
-        <input type="text" placeholder="환자명, Rx ID, 약품, 의원 검색" id="rx-search" value="${esc(rxFilter.q)}">
+        <input type="text" aria-label="환자·처방·약품·의원 검색" placeholder="환자명, Rx ID, 약품, 의원 검색" id="rx-search" value="${esc(rxFilter.q)}">
       </div>
     </div>
 
@@ -1966,7 +1971,7 @@ function renderPatients() {
       </div>
       <div class="search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16 16 L21 21"/></svg>
-        <input type="text" placeholder="이름, 연락처, 주소 검색" id="pt-search" value="${esc(ptFilter.q)}">
+        <input type="text" aria-label="환자 검색" placeholder="이름, 연락처, 주소 검색" id="pt-search" value="${esc(ptFilter.q)}">
       </div>
     </div>
 
@@ -2611,12 +2616,12 @@ function renderSideEffects() {
         <div style="font-size:12px;color:var(--ink-muted);text-align:center;padding:10px 0;">환자가 증상을 보내면 여기에 대화가 표시됩니다</div>
       </div>
       <div style="margin-bottom:10px;">
-        <select id="se-patient" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font-size:14px;">
+        <select id="se-patient" aria-label="환자 선택" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font-size:14px;">
           ${state.patients.map(p => '<option value="' + p.id + '">' + esc(p.name) + ' (' + p.age + '세)</option>').join('')}
         </select>
       </div>
       <div style="display:flex;gap:8px;">
-        <input id="se-symptom" type="text" placeholder="증상을 입력하세요 (예: 어지러워요)" style="flex:1;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font-size:14px;box-sizing:border-box;">
+        <input id="se-symptom" type="text" aria-label="증상 입력" placeholder="증상을 입력하세요 (예: 어지러워요)" style="flex:1;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font-size:14px;box-sizing:border-box;">
         <button onclick="submitSideEffect()" style="background:var(--accent);color:var(--bg);border:none;padding:10px 16px;border-radius:12px;font-size:14px;font-weight:600;flex-shrink:0;cursor:pointer;">전송</button>
       </div>
       <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:8px;">
@@ -2887,7 +2892,7 @@ function renderPOSBridge() {
     <div style="margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
         <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">EVOLUTION</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">EVOLUTION</div>
           <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">PnP 진화 4단계</h2>
         </div>
         <span style="font-size:11px;color:var(--ink-muted);">약국 부담을 0으로 줄여나가는 진화 경로</span>
@@ -2895,16 +2900,16 @@ function renderPOSBridge() {
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
         ${stages.map(st => `
           <div style="background:var(--bg);border:${st.best ? '2px solid #10B981' : '1px solid var(--border)'};border-radius:8px;overflow:hidden;${st.best ? 'box-shadow:0 0 16px rgba(16,185,129,0.15);' : ''}position:relative;">
-            ${st.best ? '<div style="position:absolute;top:6px;right:6px;background:#6ee7b7;color:#064E3B;font-family:JetBrains Mono,monospace;font-size:9px;font-weight:800;letter-spacing:1px;padding:2px 6px;border-radius:3px;">BEST</div>' : ''}
+            ${st.best ? '<div style="position:absolute;top:6px;right:6px;background:#6ee7b7;color:#064E3B;font-family:JetBrains Mono,monospace;font-size:11px;font-weight:800;letter-spacing:1px;padding:2px 6px;border-radius:3px;">BEST</div>' : ''}
             <div style="background:${st.color};padding:10px 12px;color:#fff;">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:${st.light};letter-spacing:1px;">${st.label}</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:${st.light};letter-spacing:1px;">${st.label}</div>
               <div style="font-family:'Cambria',serif;font-size:24px;font-weight:800;font-style:italic;margin-top:2px;">${st.num}</div>
             </div>
             <div style="padding:10px 12px;">
               <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">${st.title}</div>
               <div style="font-size:11px;color:var(--ink-muted);line-height:1.4;margin-bottom:8px;">${st.detail}</div>
               <div style="border-top:1px solid var(--border);padding-top:6px;">
-                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-muted);letter-spacing:0.5px;">부담</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-muted);letter-spacing:0.5px;">부담</div>
                 <div style="font-size:11px;font-weight:600;color:${st.best ? '#10B981' : 'var(--ink)'};">${st.load}</div>
               </div>
             </div>
@@ -2926,7 +2931,7 @@ function renderPOSBridge() {
             </svg>
           </div>
           <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#10B981;letter-spacing:1px;">01 · DB SIGNAL</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1px;">01 · DB SIGNAL</div>
             <h3 style="font-size:14px;font-weight:700;color:var(--ink);">DB 신호 기반 스트림</h3>
           </div>
         </div>
@@ -2937,28 +2942,28 @@ function renderPOSBridge() {
         <div style="background:#0a0f1a;border-left:3px solid #10B981;padding:11px 13px;border-radius:4px;margin-bottom:10px;">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
             <div style="text-align:center;flex:1;">
-              <div style="font-size:10px;color:var(--ink-muted);margin-bottom:4px;">POS DB</div>
+              <div style="font-size:11px;color:var(--ink-muted);margin-bottom:4px;">POS DB</div>
               <div style="font-size:12px;color:#cbd5e1;font-weight:600;">변경 발생</div>
             </div>
             <div style="color:#10B981;font-size:16px;">→</div>
             <div style="text-align:center;flex:1;">
-              <div style="font-size:10px;color:var(--ink-muted);margin-bottom:4px;">신호 전송</div>
+              <div style="font-size:11px;color:var(--ink-muted);margin-bottom:4px;">신호 전송</div>
               <div style="font-size:12px;color:#10B981;font-weight:600;">즉시 통보</div>
             </div>
             <div style="color:#10B981;font-size:16px;">→</div>
             <div style="text-align:center;flex:1;">
-              <div style="font-size:10px;color:var(--ink-muted);margin-bottom:4px;">MedIT</div>
+              <div style="font-size:11px;color:var(--ink-muted);margin-bottom:4px;">MedIT</div>
               <div style="font-size:12px;color:#cbd5e1;font-weight:600;">자동 처리</div>
             </div>
           </div>
-          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05);font-size:10.5px;color:var(--ink-muted);text-align:center;">
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:var(--ink-muted);text-align:center;">
             지연 1초 이내 · 약사 작업 없음
           </div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;"><span style="font-family:'JetBrains Mono',monospace">CDC</span> 스트리밍</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;"><span style="font-family:'JetBrains Mono',monospace">DB</span> 트리거</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">주기 폴링</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;"><span style="font-family:'JetBrains Mono',monospace">CDC</span> 스트리밍</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;"><span style="font-family:'JetBrains Mono',monospace">DB</span> 트리거</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;">주기 폴링</span>
         </div>
         <button onclick="simulateDBSignal()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
           DB 신호 시뮬레이션 시작 →
@@ -2978,7 +2983,7 @@ function renderPOSBridge() {
             </svg>
           </div>
           <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#10B981;letter-spacing:1px;">02 · LLM AUTO-MAP</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1px;">02 · LLM AUTO-MAP</div>
             <h3 style="font-size:14px;font-weight:700;color:var(--ink);">LLM 자동 매핑</h3>
           </div>
         </div>
@@ -2986,7 +2991,7 @@ function renderPOSBridge() {
           약국마다 다른 컬럼명을 LLM이 자동 분석·매핑.
           사람이 매번 코드 작성하지 않음.
         </p>
-        <div id="llm-mapping-output" style="background:#0a0f1a;border-left:3px solid #10B981;padding:9px 11px;border-radius:4px;margin-bottom:10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;line-height:1.7;min-height:80px;">
+        <div id="llm-mapping-output" style="background:#0a0f1a;border-left:3px solid #10B981;padding:9px 11px;border-radius:4px;margin-bottom:10px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;min-height:80px;">
           ${llmMappings.slice(0, 3).map(m => `
             <div style="margin-bottom:3px;">
               <span style="color:#64748b;">[${m.pos}]</span> 
@@ -2995,12 +3000,12 @@ function renderPOSBridge() {
               <span style="color:#FFA657;">${m.std}</span>
             </div>
           `).join('')}
-          <div style="margin-top:6px;color:#64748b;font-size:9.5px;">[+ 6 more mappings...]</div>
+          <div style="margin-top:6px;color:#64748b;font-size:11px;">[+ 6 more mappings...]</div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">스키마 분석</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">코드 생성</span>
-          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:10px;color:#10B981;">샘플 데이터 시연</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;">스키마 분석</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;">코드 생성</span>
+          <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;">샘플 데이터 시연</span>
         </div>
         <button onclick="runLLMMapping()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
           LLM 자동 매핑 실행 →
@@ -3011,27 +3016,27 @@ function renderPOSBridge() {
     <!-- 3) POS 파트너 6종 -->
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">POS PARTNERS</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">POS PARTNERS</div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:3px;">
           <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin:0;">체인약국 매개체 — 주요 POS 6종</h2>
-          <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:3px 7px;border-radius:3px;letter-spacing:1px;border:1px solid rgba(148,163,184,.3);">IN PROGRESS · 추진 예정</span>
+          <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3px 7px;border-radius:3px;letter-spacing:1px;border:1px solid rgba(148,163,184,.3);">IN PROGRESS · 추진 예정</span>
         </div>
         <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">
           체인약국·프랜차이즈와 고객을 잇는 매개체 구상 — 연동 협의 대상: 휴베이스 Hu-POS, 온누리 온팜, 약학정보원 PharmIT3000
         </p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-        ${POS_ADAPTERS.map(pos => {
+        ${POS_SYSTEMS.map(pos => {
           const statusColor = statusColors[pos.status] || '#94A3B8';
           const isReady = pos.status === 'adapter-ready';
           return `
             <div style="background:var(--bg);border:1px solid var(--border);border-left:3px solid ${statusColor};border-radius:6px;padding:12px;">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-                <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-muted);letter-spacing:0.5px;text-transform:uppercase;">${pos.name}</div>
-                <span style="background:${isReady ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.15)'};color:${statusColor};font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;">${statusLabels[pos.status]}</span>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-muted);letter-spacing:0.5px;text-transform:uppercase;">${pos.name}</div>
+                <span style="background:${isReady ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.15)'};color:${statusColor};font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;">${statusLabels[pos.status]}</span>
               </div>
               <h4 style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;">${pos.vendor}</h4>
-              <p style="font-size:10.5px;color:var(--ink-muted);line-height:1.5;">${pos.db}<br>${pos.method}</p>
+              <p style="font-size:11px;color:var(--ink-muted);line-height:1.5;">${pos.db}<br>${pos.method}</p>
             </div>
           `;
         }).join('')}
@@ -3047,22 +3052,22 @@ function renderPOSBridge() {
     <!-- 4) 통합 패치 모델 -->
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">INTEGRATION PATCH</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">INTEGRATION PATCH</div>
         <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">MedIT 통합 패치 모델</h2>
         <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">PnP 위에 5개 핵심 모듈 점진 이식 — 약사 검증·KAERS·3채널·QR·감사로그</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:14px;align-items:start;">
         <!-- 베이스 PnP -->
         <div style="background:#0F172A;border:1px solid #059669;border-radius:8px;padding:14px;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#6ee7b7;letter-spacing:1px;margin-bottom:6px;">BASE LAYER · PnP</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6ee7b7;letter-spacing:1px;margin-bottom:6px;">BASE LAYER · PnP</div>
           <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;">약국 DB → 웹 대시보드</div>
-          <div style="border-top:1px solid #1e293b;padding-top:8px;font-size:10.5px;color:#cbd5e1;line-height:1.7;">
+          <div style="border-top:1px solid #1e293b;padding-top:8px;font-size:11px;color:#cbd5e1;line-height:1.7;">
             ▸ 처방 데이터 READ-ONLY<br>
             ▸ 환자 가명화·암호화<br>
             ▸ 카카오톡 복약 알림<br>
             ▸ 감사 로그 (HIPAA·PIPA)
           </div>
-          <div style="margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#10B981;font-style:italic;">이미 구현됨</div>
+          <div style="margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;font-style:italic;">이미 구현됨</div>
         </div>
         <!-- 5개 모듈 -->
         <div style="display:flex;flex-direction:column;gap:6px;">
@@ -3077,7 +3082,7 @@ function renderPOSBridge() {
               <div style="background:#059669;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;padding:4px 8px;border-radius:4px;min-width:32px;text-align:center;">${m.n}</div>
               <div>
                 <div style="font-size:12px;font-weight:700;color:var(--ink);">${m.t}</div>
-                <div style="font-size:10.5px;color:var(--ink-muted);">${m.d}</div>
+                <div style="font-size:11px;color:var(--ink-muted);">${m.d}</div>
               </div>
             </div>
           `).join('')}
@@ -3089,7 +3094,7 @@ function renderPOSBridge() {
     ${cfg.fetchedRecords.length > 0 ? `
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:12px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">LIVE STREAM</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">LIVE STREAM</div>
         <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수신된 처방 데이터 (실시간)</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;max-height:300px;overflow-y:auto;">
@@ -3314,7 +3319,7 @@ function renderPharmacyFinder() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div style="flex:1;">
-            <div style="font-size:10px;color:var(--accent);font-weight:500;">단골약국</div>
+            <div style="font-size:11px;color:var(--accent);font-weight:500;">단골약국</div>
             <div style="font-size:15px;font-weight:600;">${esc(reg.name)}</div>
             <div style="font-size:12px;color:var(--ink-muted);">${esc(reg.addr)} · ${esc(reg.phone)}</div>
           </div>
@@ -4006,7 +4011,7 @@ function renderGovernance() {
       ${tiers.map(t => `
         <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
           <div style="background:${t.color};padding:14px 16px;color:#fff;">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:${t.light};letter-spacing:1.5px;">${t.tier}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:${t.light};letter-spacing:1.5px;">${t.tier}</div>
             <div style="font-size:18px;font-weight:700;margin-top:4px;">${t.title}</div>
             <div style="font-size:11px;color:${t.light};margin-top:4px;font-style:italic;">${t.who}</div>
           </div>
@@ -4028,7 +4033,7 @@ function renderGovernance() {
     <!-- 6대 금지선 -->
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:12px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">SAFETY · 6대 금지선</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">SAFETY · 6대 금지선</div>
         <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">약사 직역 보호를 위한 6대 금지선</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;">
@@ -4038,7 +4043,7 @@ function renderGovernance() {
           '응급 의료 안내 금지', '환자 식별 정보 단독 처리 금지'
         ].map((rule, i) => `
           <div style="background:var(--bg);border:1px solid rgba(255,107,107,0.2);border-radius:6px;padding:10px 12px;">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#ff8a80;letter-spacing:0.5px;margin-bottom:3px;">RULE 0${i+1}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#ff8a80;letter-spacing:0.5px;margin-bottom:3px;">RULE 0${i+1}</div>
             <div style="font-size:12px;font-weight:600;color:var(--ink);">${rule}</div>
           </div>
         `).join('')}
@@ -4047,7 +4052,7 @@ function renderGovernance() {
 
     <!-- 법률 근거 -->
     <div style="margin-top:14px;background:#0F172A;border:1px solid #1e293b;border-radius:12px;padding:16px 18px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#6ee7b7;letter-spacing:1.5px;margin-bottom:6px;">LEGAL FOUNDATION</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6ee7b7;letter-spacing:1.5px;margin-bottom:6px;">LEGAL FOUNDATION</div>
       <div style="font-size:13px;color:#cbd5e1;line-height:1.7;">
         <strong style="color:#6ee7b7;">약사법</strong> 제24조 · 제24조의2 · 제68조의8 ·
         <strong style="color:#6ee7b7;">의료법</strong> 제27조 ·
@@ -4088,7 +4093,7 @@ function renderInternLog() {
     <!-- 데이터 소스 4종 -->
     <div style="margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">DATA SOURCES</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">DATA SOURCES</div>
         <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">4가지 연구 데이터 수집 영역</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;">
@@ -4104,7 +4109,7 @@ function renderInternLog() {
     <!-- 연구 파이프라인 4단계 -->
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#10B981;letter-spacing:1.5px;">RESEARCH PIPELINE</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">RESEARCH PIPELINE</div>
         <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수집 → 정제 → 분석 → 공개</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;">
@@ -4115,7 +4120,7 @@ function renderInternLog() {
               <div style="font-size:13px;font-weight:700;color:var(--ink);">${p.t}</div>
               <div style="font-size:11px;color:var(--ink-muted);">${p.d}</div>
             </div>
-            ${i < pipeline.length - 1 ? '<div style="color:#10B981;font-size:18px;">→</div>' : '<div style="background:#10B981;color:#fff;font-family:JetBrains Mono,monospace;font-size:10px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:1px;">DONE</div>'}
+            ${i < pipeline.length - 1 ? '<div style="color:#10B981;font-size:18px;">→</div>' : '<div style="background:#10B981;color:#fff;font-family:JetBrains Mono,monospace;font-size:11px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:1px;">DONE</div>'}
           </div>
         `).join('')}
       </div>
@@ -4124,7 +4129,7 @@ function renderInternLog() {
     <!-- Glass 제안 박스 -->
     <div style="margin-top:14px;background:linear-gradient(135deg,#0F172A,#1e293b);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:18px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        <div style="background:#10B981;color:#0F172A;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:800;letter-spacing:1px;padding:2px 8px;border-radius:3px;">GLASS PROPOSAL</div>
+        <div style="background:#10B981;color:#0F172A;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:1px;padding:2px 8px;border-radius:3px;">GLASS PROPOSAL</div>
         <div style="font-size:13px;font-weight:700;color:#fff;">Meta Project Aria · Google Android XR</div>
       </div>
       <p style="font-size:12.5px;color:#cbd5e1;line-height:1.6;">
@@ -4132,9 +4137,9 @@ function renderInternLog() {
         <strong style="color:#6ee7b7;">IRB 사전 협의·OSF 사전 등록</strong> 후 본격 진행 예정 (현재 기획 단계).
       </p>
       <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:10.5px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">IRB 사전협의</span>
-        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:10.5px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">OSF 사전등록</span>
-        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:10.5px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">EgoBlur 적용</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">IRB 사전협의</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">OSF 사전등록</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">EgoBlur 적용</span>
       </div>
     </div>
   `;
@@ -4295,11 +4300,11 @@ function renderAudit() {
 
     <div class="filter-bar">
       <div class="filters">
-        <select onchange="auditFilter.who = this.value; renderAudit();" style="padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); font-size: 13px;">
+        <select aria-label="작업자 필터" onchange="auditFilter.who = this.value; renderAudit();" style="padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); font-size: 13px;">
           <option value="all">전체 약사</option>
           ${state.pharmacists.map(p => `<option value="${p.id}" ${auditFilter.who === p.id ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}
         </select>
-        <select onchange="auditFilter.action = this.value; renderAudit();" style="padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); font-size: 13px;">
+        <select aria-label="작업 유형 필터" onchange="auditFilter.action = this.value; renderAudit();" style="padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); font-size: 13px;">
           <option value="all">전체 작업</option>
           ${actions.map(a => `<option value="${a}" ${auditFilter.action === a ? 'selected' : ''}>${esc(a)}</option>`).join('')}
         </select>
