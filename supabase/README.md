@@ -42,7 +42,7 @@ Supabase 대시보드 > Table Editor > `demo_requests`. 처리한 건은 `status
 - 구성: 설치 화면 `medit-install.html` → 함수 `supabase/functions/pnp-install` → 표 3개(`pnp_install_serials`, `pnp_install_events`, `pnp_install_failures`)와 함수(`pnp_issue_serial`, `pnp_redeem`, `pnp_report`). 설치 프로그램은 `install/medit-pnp.py`(Python 표준 라이브러리만 사용)이고, 같은 폴더의 `.sha256`으로 무결성을 확인합니다.
 - 표는 모두 행 단위 보안을 켜고 정책을 두지 않았습니다. 함수는 service_role만 실행할 수 있습니다.
 - 시리얼(`MEDIT-XXXX-XXXX-XXXX`)은 해시로만 저장합니다. 발급할 때 한 번만 보이므로 바로 전달하세요.
-- 발급(SQL 편집기): `select public.pnp_issue_serial('○○약국', '메모', 14, true, false, null);` (약국명, 메모, 만료 일수, 면허 확인 여부, 협약·동의 확인 여부, 사용 횟수)
+- 발급(SQL 편집기): `select public.pnp_issue_serial('○○약국', 'serial', 14, false, false, '메모');` (약국명, 전달 방식 `serial`·`link`·`llm`, 만료 일수 1~90, 면허 확인 여부, 협약·동의 확인 여부, 메모). 면허·협약 칸은 확인한 뒤 `pnp_install_serials` 표에서 켭니다.
 - 열쇠 두 개
   - `license_verified`: 약사 면허를 확인했을 때만 true. false이면 설치를 시작할 수 없습니다.
   - `agreement_confirmed`: 업체 협약, 약사 동의, 개인정보 검토가 끝났을 때만 true. false이면 샘플 구조(`--sample`)만 쓸 수 있고, 실제 약국 프로그램의 구조 읽기(`--vendor-ok`)는 막힙니다.
