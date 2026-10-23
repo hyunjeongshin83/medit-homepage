@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-MedIT PnP 설치 프로그램 v1.0.0
+MedIT PnP 설치 프로그램 v1.0.1
 
 약국 PC에서 약국 프로그램의 "구조(표·열 이름)"만 확인해, 복약지도 안내에 쓸 항목의 연결 설정(매핑)을 만든다.
 
@@ -27,7 +27,7 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 DEFAULT_ENDPOINT = "https://xaclqvveppvccdpebzsz.supabase.co/functions/v1/pnp-install"
 ENDPOINT = os.environ.get("MEDIT_PNP_ENDPOINT", DEFAULT_ENDPOINT)
 APPROVE_PHRASE = "승인합니다"
@@ -472,12 +472,17 @@ def cmd_approve(ctx, a):
     if typed != APPROVE_PHRASE:
         print("승인하지 않았습니다.")
         return EXIT_BLOCKED, {"ok": False, "error": "not_approved"}
+    # 서버 기록이 먼저다. 서버는 map 단계에서 보고받은 지문과 이 승인의 지문이 같을 때만 승인 상태로 바꾼다.
+    # (초안 파일을 map 뒤에 고쳤다면 hash_mismatch 로 거절되고, map --recheck 로 다시 보고해야 한다.)
+    res = api("report", st["serial"], step="approve", ok=True, detail={"mapping_hash": h})
+    if not res.get("ok"):
+        err = res.get("error")
+        print("서버에 승인을 기록하지 못해 승인하지 않았습니다:", ERROR_TEXT.get(err, err))
+        return (EXIT_NET if err == "network" else EXIT_BLOCKED), {"ok": False, "error": err}
     approved = dict(mapping, mapping_hash=h, approved_at=now_iso())
     write_json(ctx.path("mapping.approved.json"), approved)
     st["approved_hash"] = h
     write_json(ctx.path("state.json"), st, private=True)
-    report(ctx, st, "mapping", True, {"fields": list(fields), "coverage": coverage(fields, catalog), "mapping_hash": h})
-    res = report(ctx, st, "approve", True, {"mapping_hash": h})
     print("승인되었습니다. 다음:  python medit-pnp.py verify")
     return EXIT_OK, {"ok": True, "mapping_hash": h, "server": res.get("status")}
 
