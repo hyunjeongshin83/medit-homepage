@@ -831,25 +831,26 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
     <div class="card rv" style="text-align:center;align-items:center;">
       <div class="card-tag" style="justify-content:center;">RESPONSE TIME</div>
       <div style="font-size:2rem;font-weight:600;color:var(--mint);line-height:1;margin:0.5rem 0;">8분</div>
-      <h3 style="font-size:0.95rem;">평균 약사 응답</h3>
-      <p style="font-size:0.78rem;">AI 초안이 약사 검토를 거쳐 환자에게 도달하는 시간 (영업시간 내)</p>
+      <h3 style="font-size:0.95rem;">약사 응답 목표</h3>
+      <p style="font-size:0.78rem;">설계 목표 예시 · AI 초안이 약사 검토를 거쳐 환자에게 도달하는 시간 (영업시간 내)</p>
     </div>
     
     <div class="card rv" style="text-align:center;align-items:center;">
       <div class="card-tag" style="justify-content:center;color:var(--ice);">PHARMACIST WORKLOAD</div>
       <div style="font-size:2rem;font-weight:600;color:var(--ice);line-height:1;margin:0.5rem 0;">5-10건</div>
-      <h3 style="font-size:0.95rem;">약사 1일 직접 응답</h3>
-      <p style="font-size:0.78rem;">대부분은 AI 초안 1-클릭 승인. 의학적 판단이 필요한 건만 약사가 직접 작성</p>
+      <h3 style="font-size:0.95rem;">약사 1일 직접 응답 (예상)</h3>
+      <p style="font-size:0.78rem;">예상 · 대부분은 AI 초안 1-클릭 승인. 의학적 판단이 필요한 건만 약사가 직접 작성</p>
     </div>
     
     <div class="card rv" style="text-align:center;align-items:center;">
       <div class="card-tag" style="justify-content:center;color:var(--lav);">SAFETY</div>
       <div style="font-size:2rem;font-weight:600;color:var(--lav);line-height:1;margin:0.5rem 0;">100%</div>
       <h3 style="font-size:0.95rem;">약사 검토 후 발송</h3>
-      <p style="font-size:0.78rem;">AI 단독 발송 0건. 모든 답변은 약사가 검토·승인한 메시지만 환자에게 도달</p>
+      <p style="font-size:0.78rem;">설계 원칙 · AI 단독 발송 없음. 모든 답변은 약사가 검토·승인한 메시지만 환자에게 도달하도록 설계</p>
     </div>
     
   </div>
+  <p style="font-size:.72rem;color:var(--dim);text-align:center;margin-top:1.2rem;line-height:1.7">※ 위 수치(8분·5-10건·100%)는 설계 목표와 예상치를 보여 주는 예시이며 실제 운영 실적이 아닙니다. 시범 이용 기간에 약국과 함께 처음 측정합니다.</p>
   
 </section>
 
@@ -922,7 +923,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
         </svg>
       </div>
       <h3>환자가 먼저 질문</h3>
-      <p>환자가 능동적으로 질문할 때만 응답합니다. 일방적으로 밀어내는 푸시 광고가 아니므로 <strong style="color:var(--mint);">정보 제공</strong>에 해당합니다.</p>
+      <p>환자가 능동적으로 질문할 때만 응답합니다. 일방적으로 밀어내는 푸시 광고가 아니라 <strong style="color:var(--mint);">정보 제공</strong>에 해당하도록 설계했습니다.</p>
       <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
         근거: 식약처 의약품광고·정보제공 가이드라인 III-3 (2022.11.30)
       </div>
@@ -936,7 +937,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
         </svg>
       </div>
       <h3>처방받은 환자만 접근</h3>
-      <p>QR·처방전 인증으로 실제 처방받은 환자·보호자만 응답을 받습니다. 불특정 다수 대상 <strong style="color:var(--ice);">광고가 아닙니다</strong>.</p>
+      <p>QR·처방전 인증으로 실제 처방받은 환자·보호자만 응답을 받습니다. 불특정 다수 대상 <strong style="color:var(--ice);">광고가 되지 않도록</strong> 설계했습니다.</p>
       <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--card-border);font-size:.7rem;color:var(--muted);line-height:1.6;">
         근거: 가이드라인 III-4(2) 환자용 사용설명서 개별 제공
       </div>
@@ -959,7 +960,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
   </div>
 
   <p style="max-width:680px;margin:2.5rem auto 0;text-align:center;font-size:0.78rem;color:var(--muted);line-height:1.7;">
-    이 모델은 식약처 「의약품광고 및 전문의약품 정보제공 가이드라인」(2022.11.30) 요건을 충족하도록 설계되었습니다. 서비스 개시 전 식약처 디지털의료기기 해당여부 사전검토와 한국제약바이오협회 광고심의 자문을 거칩니다.
+    이 모델은 식약처 「의약품광고 및 전문의약품 정보제공 가이드라인」(2022.11.30) 요건에 맞도록 설계 중이며, 적합 여부는 서비스 개시 전 식약처 디지털의료기기 해당여부 사전검토와 한국제약바이오협회 광고심의 자문으로 확인할 예정입니다.
   </p>
 
 </section>
@@ -1157,7 +1158,7 @@ function sendMsg(){
   <div class="sec-center rv">
     <div class="sec-tag" style="color:var(--coral)">HOME DELIVERY · 2026.12.24~</div>
     <h2 class="sec-title">재택수령 솔루션</h2>
-    <p class="sec-desc">의료법 개정안 시행에 맞춰, 취약계층 환자에게 안전한 약 수령 경로를 제공합니다.</p>
+    <p class="sec-desc">의료법 개정안이 시행되면, 취약계층 환자에게 안전한 약 수령 경로를 제공할 계획입니다.</p>
   </div>
   <div style="max-width:1200px;margin:2.5rem auto 0;width:100%;padding:0 2rem">
     <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
@@ -2286,7 +2287,7 @@ function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pil
     
     // Home Delivery
     "재택수령 솔루션":"Home Delivery Solution",
-    "의료법 개정안 시행에 맞춰, 취약계층 환자에게 안전한 약 수령 경로를 제공합니다.":"In line with the Medical Act amendment, providing safe medication delivery to vulnerable populations.",
+    "의료법 개정안이 시행되면, 취약계층 환자에게 안전한 약 수령 경로를 제공할 계획입니다.":"Once the Medical Act amendment takes effect, we plan to provide a safe medication-receiving route for vulnerable patients.",
     "법정 재택수령 허용 대상":"Legally Permitted Recipients",
     "· 섬·벽지 거주자":"· Remote island residents",
     "· 장기요양 수급자":"· Long-term care recipients",
