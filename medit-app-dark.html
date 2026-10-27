@@ -535,7 +535,7 @@
 
 <!-- US/Global Legal Notice — Shown only when lang=en -->
 <div id="us-demo-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,138,128,.95);color:#fff;padding:.6rem 1rem;font-family:-apple-system,sans-serif;font-size:.7rem;line-height:1.5;text-align:center;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.2)">
-  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. Report adverse events: US FDA MedWatch 1-800-FDA-1088 · UK Yellow Card · Korea KAERS 1644-6223. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.7rem">Dismiss</button>
+  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. Report adverse events: US FDA MedWatch 1-800-FDA-1088 · UK Yellow Card · Korea (Korea Institute of Drug Safety &amp; Risk Management, drug side-effect consultation) 1644-6223. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.7rem">Dismiss</button>
 </div>
 <script>
 // Auto-show US banner if lang=en
@@ -817,7 +817,7 @@
       <div class="demo-w3-card tone-6">
         <div class="demo-w3-card-num">MODULE / 06</div>
         <div class="demo-w3-card-title"><em>Fl</em>처방전 접수 플로우</div>
-        <div class="demo-w3-card-desc">병원 처방, 약국 선택, 조제, 복약지도 5단계 전체 흐름</div>
+        <div class="demo-w3-card-desc">병원 처방, 환자가 직접 약국 선택, 조제, 복약지도(약사 수행) 5단계 시연 흐름</div>
         <div class="demo-w3-card-path">[하단] 더보기 → 처방전 접수</div>
       </div>
       <div class="demo-w3-card tone-b2">
@@ -987,12 +987,12 @@ const INTERACTIONS = [
   { drugs: ['클로피도그렐', '에소메프라졸'], severity: 'mid', msg: 'CYP2C19 저해 가능' },
   { drugs: ['심바스타틴', '클래리스로마이신'], severity: 'high', msg: '횡문근융해증 위험' },
   { drugs: ['심바스타틴', '아지트로마이신'], severity: 'mid', msg: '근병증 위험 증가' },
-  { drugs: ['디곡신', '아미오다론'], severity: 'high', msg: '디곡신 농도 상승. 용량 감량 필요' },
+  { drugs: ['디곡신', '아미오다론'], severity: 'high', msg: '디곡신 농도 상승 가능. 용량 조정 여부는 처방한 의사·약사와 상의하세요' },
   { drugs: ['메트포르민', '조영제'], severity: 'high', msg: '신부전 시 유산증 위험' },
   { drugs: ['세르트랄린', '트라마돌'], severity: 'high', msg: '세로토닌 증후군 위험' },
   { drugs: ['파록세틴', '트라마돌'], severity: 'high', msg: '세로토닌 증후군 위험' },
   { drugs: ['에날라프릴', '칼륨'], severity: 'mid', msg: '고칼륨혈증 위험' },
-  { drugs: ['암로디핀', '심바스타틴'], severity: 'mid', msg: '심바스타틴 용량 20mg 이하 권장' },
+  { drugs: ['암로디핀', '심바스타틴'], severity: 'mid', msg: '병용 시 심바스타틴 고용량(20mg 초과) 제한 사례가 알려져 있음. 용량은 처방한 의사·약사와 상의하세요' },
 ];
 
 function checkInteractions(drugs) {
@@ -1382,7 +1382,7 @@ function renderDashboard() {
       <div class="header-actions">
         <button class="btn" onclick="navigate('monitoring')">
           <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9 L20 9 M9 4 L9 20"/></svg>
-          복약 모니터링
+          복약 현황
         </button>
         <button class="btn primary" onclick="openPrescriptionForm()">
           <svg viewBox="0 0 24 24"><path d="M12 5 L12 19 M5 12 L19 12"/></svg>
@@ -2497,7 +2497,7 @@ function renderDelivery() {
     <div style="margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;">
       <h3 style="font-size:18px;font-weight:600;margin-bottom:16px;">배송 조제 플로우</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
-        ${['증상 문의','약봉투 촬영','OCR 추출','본인 인증','약사 확인','조제','배송','복약지도'].map((step, i) => `
+        ${['처방전·복용약 문의','약봉투 촬영','OCR 추출','본인 인증','약사 확인','조제','약 수령(법령 허용 방식)','복약지도'].map((step, i) => `
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,${0.1 + i*0.04});display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent);flex-shrink:0;font-family:'IBM Plex Mono','HCR Dotum','Noto Sans KR',monospace;">${i+1}</div>
             <div style="font-size:15px;font-weight:500;color:var(--ink);">${step}</div>
@@ -2505,7 +2505,7 @@ function renderDelivery() {
         `).join('')}
       </div>
       <p style="margin-top:14px;font-size:14px;color:var(--ink-muted);line-height:1.7;">
-        의료법 제34조의2 (2026.12 시행) 취약계층 대상 의약품 배송 허용. MedIT은 일반 대중 확대를 위한 규제 개혁을 병행 추진 중입니다.
+        의료법 제34조의5(2026.12.24 시행): 섬·벽지 거주자 등 5개 대상에 한해, 보건복지부령으로 정하는 지역에서 약국 밖 인도를 허용합니다. 일반 대중 약 배송은 현행법상 허용되지 않으며, 일반 대중 확대는 MedIT의 입법 의견(제안) 단계입니다.
       </p>
     </div>
   `;
@@ -2606,7 +2606,7 @@ function renderSideEffects() {
   const urgBg = { urgent: 'rgba(255,107,107,0.08)', warning: 'rgba(255,200,0,0.08)', mild: 'rgba(16,185,129,0.08)' };
 
   $('#view-sideeffects').innerHTML = `
-    <div class="page-header"><h1 class="title">부작용 모니터링</h1>
+    <div class="page-header"><h1 class="title">부작용 기록·확인</h1>
       <p style="color:var(--ink-muted);margin-top:4px;font-size:13px;">환자 카톡/문자 → 부작용 매칭 → 약국 알림 → 병원 리포트</p>
     </div>
 
@@ -3549,7 +3549,7 @@ function renderRxRouting() {
   if (currentView !== 'rxrouting') return;
   const v = $('#view-rxrouting');
 
-  const stepTitles = ['문자 수신', '약국 선택', '처방전 전송', '조제 대기', '복약지도 완료'];
+  const stepTitles = ['문자 수신', '약국 직접 선택', '처방전 전송', '조제 대기', '복약 안내 완료'];
 
   let content = '';
 
@@ -3582,10 +3582,10 @@ function renderRxRouting() {
           환자: <strong>김숙명</strong>님<br>
           처방: 혈압약 외 2건<br>
           발행일: ${new Date().toLocaleDateString('ko-KR')}<br><br>
-          아래 버튼을 눌러 <strong>약국을 선택</strong>하시면 바로 조제를 시작합니다.
+          아래 버튼을 눌러 <strong>환자분이 직접 약국을 선택</strong>하시면 선택한 약국에서 조제를 시작합니다.
         </div>
         <button onclick="rxStep=1;renderRxRouting();" style="width:100%;padding:12px;background:var(--accent);color:var(--bg);border:none;border-radius:14px;font-size:15px;font-weight:600;cursor:pointer;">
-          병원 근처 약국 선택하기
+          근처 약국 직접 선택하기
         </button>
       </div>
       <div style="text-align:center;font-size:13px;color:var(--ink-muted);">환자 폰에 이렇게 보입니다</div>
@@ -3635,7 +3635,7 @@ function renderRxRouting() {
           `).join('')}
         </div>
       </div>
-      <div style="text-align:center;font-size:13px;color:var(--ink-muted);margin-top:8px;">약국을 탭하면 처방전이 바로 전송됩니다</div>
+      <div style="text-align:center;font-size:13px;color:var(--ink-muted);margin-top:8px;">환자가 직접 고른 약국으로 처방전이 전송됩니다 (시연용 가상 약국 · 특정 약국을 추천하거나 연결 대가를 받지 않습니다)</div>
     </div>`;
   }
 
@@ -3685,7 +3685,7 @@ function renderRxRouting() {
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:28px;height:28px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;">2</div>
-            <div style="flex:1;font-size:13px;">약사 확인 · 상호작용 체크</div>
+            <div style="flex:1;font-size:13px;">약사 확인 · 상호작용 정보 확인</div>
             <span style="font-size:13px;color:var(--accent);">완료</span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
@@ -3695,7 +3695,7 @@ function renderRxRouting() {
           </div>
           <div style="display:flex;align-items:center;gap:10px;opacity:0.4;">
             <div style="width:28px;height:28px;border-radius:50%;background:var(--surface-alt);display:flex;align-items:center;justify-content:center;font-size:12px;">4</div>
-            <div style="flex:1;font-size:13px;">복약지도 준비</div>
+            <div style="flex:1;font-size:13px;">복약 안내 준비 (약사 복약지도 참고)</div>
             <span style="font-size:13px;color:var(--ink-muted);">대기</span>
           </div>
         </div>
@@ -3703,7 +3703,7 @@ function renderRxRouting() {
           예상 소요시간: <strong style="color:var(--ink);">약 10분</strong>
         </div>
         <button onclick="rxStep=4;renderRxRouting();" style="width:100%;padding:12px;background:var(--accent);color:var(--bg);border:none;border-radius:14px;font-size:14px;font-weight:600;cursor:pointer;">
-          조제 완료 → 복약지도
+          조제 완료 → 복약 안내 (시연)
         </button>
       </div>
     </div>`;
@@ -3719,16 +3719,16 @@ function renderRxRouting() {
     content += `
     <div style="max-width:340px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:16px;">
-        <div style="font-size:18px;font-weight:600;">복약지도 카드</div>
+        <div style="font-size:18px;font-weight:600;">복약 안내 카드 (약사 검토 전 초안)</div>
         <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;">좌우로 넘기세요 · 길게 눌러 텍스트 복사</div>
-        <div style="font-size:11px;color:#ff8a80;margin-top:6px;line-height:1.5;">※ 예시 문구, 약사 감수 전입니다. 실제 복약지도가 아닙니다.</div>
+        <div style="font-size:11px;color:#ff8a80;margin-top:6px;line-height:1.5;">※ 시연용 예시 문구이며 약사 감수 전입니다. 약사가 복약지도 때 참고하는 안내 자료의 예시일 뿐 실제 복약지도가 아닙니다.</div>
       </div>
 
       <div class="med-cards-scroll" id="med-cards">
         ${meds.map((m, i) => `
           <div class="med-card" id="med-card-${i}">
             <div>
-              <div class="mc-label">복약지도 · ${m.purpose}</div>
+              <div class="mc-label">복약 안내 · ${m.purpose}</div>
               <div class="mc-name">${m.name}</div>
               <div class="mc-line"></div>
               <div class="mc-dose">${m.dose.replace(/\\n/g, '<br>')}</div>
@@ -3783,7 +3783,7 @@ window.copyCardText = function() {
   const idx = Math.round(scrollLeft / cardWidth);
   const card = cards[idx] || cards[0];
   if (!card) return;
-  const text = card.innerText;
+  const text = card.innerText + '\n\n※ 시연용 예시입니다. 실제 복약지도가 아닙니다.';
   navigator.clipboard.writeText(text).then(() => {
     const btn = event.target;
     btn.textContent = '✓ 복사됨';
@@ -3800,13 +3800,13 @@ window.copyCardText = function() {
 
 window.copyAllCards = function() {
   const cards = document.querySelectorAll('.med-card');
-  let text = '📋 복약지도\n━━━━━━━━━━━━━━━\n\n';
+  let text = '📋 복약 안내 (시연 · 약사 검토 전 예시)\n━━━━━━━━━━━━━━━\n\n';
   cards.forEach((card, i) => {
     const lines = card.innerText.split('\n').filter(l => l.trim());
     text += lines.join('\n') + '\n\n';
     if (i < cards.length - 1) text += '───────────────\n\n';
   });
-  text += '━━━━━━━━━━━━━━━\nMedIT 복약관리시스템';
+  text += '━━━━━━━━━━━━━━━\n※ 시연용 예시입니다. 실제 복약지도가 아닙니다. 복용 관련 판단은 처방한 의사·약사와 상의하세요.\nMedIT 복약관리시스템';
   navigator.clipboard.writeText(text).then(() => {
     const btn = event.target;
     btn.textContent = '✓ 전체 복사됨';
@@ -3816,15 +3816,15 @@ window.copyAllCards = function() {
 
 window.shareCards = function() {
   const cards = document.querySelectorAll('.med-card');
-  let text = '📋 복약지도\n\n';
+  let text = '📋 복약 안내 (시연 · 약사 검토 전 예시)\n\n';
   cards.forEach(card => {
     const lines = card.innerText.split('\n').filter(l => l.trim());
     text += lines.join('\n') + '\n\n';
   });
-  text += 'MedIT 복약관리시스템';
+  text += '※ 시연용 예시입니다. 실제 복약지도가 아닙니다. 복용 관련 판단은 처방한 의사·약사와 상의하세요.\nMedIT 복약관리시스템';
 
   if (navigator.share) {
-    navigator.share({ title: '복약지도', text }).catch(() => {});
+    navigator.share({ title: '복약 안내 (시연)', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text).then(() => alert('클립보드에 복사되었습니다.\n카카오톡이나 문자에 붙여넣기 하세요.'));
   }
@@ -3995,7 +3995,7 @@ function renderGovernance() {
       who: '각 약국 · 면허 약사',
       role: '현장 적용 + 환자 책임',
       items: [
-        '환자 동의서 (PIPA 제15조·제17조)',
+        '환자 동의서 (PIPA 제15조 수집·이용, 제17조 제3자 제공, 제23조 민감정보)',
         '처방 검토 + AI 응답 검수',
         '부작용 신고 자율 판단',
         '지역 약국 네트워크 협업'
@@ -4064,9 +4064,10 @@ function renderGovernance() {
     <div style="margin-top:14px;background:#0F172A;border:1px solid #1e293b;border-radius:12px;padding:16px 18px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6ee7b7;letter-spacing:1.5px;margin-bottom:6px;">LEGAL FOUNDATION</div>
       <div style="font-size:13px;color:#cbd5e1;line-height:1.7;">
-        <strong style="color:#6ee7b7;">약사법</strong> 제24조 · 제24조의2 · 제68조의8 ·
-        <strong style="color:#6ee7b7;">의료법</strong> 제27조 ·
-        <strong style="color:#6ee7b7;">PIPA</strong> 제15조 · 제17조 · 제28조의2 (가명정보)
+        참고한 법령(법률 자문이 아닌 설계 참고용):
+        <strong style="color:#6ee7b7;">약사법</strong> 제24조(복약지도 등) · 제24조의2(경제적 이익 제공 금지) · 제68조의8(제조업자·약국개설자 등의 부작용 보고 의무. 환자 자발보고의 근거 조항은 아님) ·
+        <strong style="color:#6ee7b7;">의료법</strong> 제27조(무면허 의료행위 금지·영리 목적 환자 소개·알선 금지) ·
+        <strong style="color:#6ee7b7;">PIPA</strong> 제15조(수집·이용) · 제17조(제3자 제공) · 제23조(민감정보) · 제28조의2(가명정보)
       </div>
     </div>
   `;
@@ -4524,9 +4525,9 @@ function printPatientGuide(pid) {
 
       <h2>일반 복약 수칙</h2>
       <div class="notice">
-        <strong>정시 복용</strong> — 처방된 용법·용량을 임의로 변경하지 마세요. 복용을 잊은 경우, 다음 복용 시간이 가까우면 한 번의 복용을 건너뛰고 평소대로 복용합니다.<br>
+        <strong>정시 복용</strong> — 처방된 용법·용량을 임의로 변경하지 마세요. 복용을 잊은 경우의 대처는 약마다 다르므로 처방한 의사·약사에게 확인하세요.<br>
         <strong>보관</strong> — 직사광선을 피하고 습기 없는 서늘한 곳에 보관하세요. 유아 손이 닿지 않는 곳에 두세요.<br>
-        <strong>이상 반응</strong> — 피부 발진, 호흡곤란, 심한 구토 등이 있을 경우 즉시 복용을 중단하고 약국 또는 병원에 연락하세요.
+        <strong>이상 반응</strong> — 피부 발진, 호흡곤란, 심한 구토 등이 있을 경우 응급 시 119, 그 외에는 즉시 처방한 의사·약사에게 연락해 복용 계속 여부를 상의하세요.
       </div>
 
       <div class="footer">
