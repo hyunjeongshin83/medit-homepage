@@ -71,7 +71,7 @@ footer{max-width:960px;margin:0 auto;padding:0 1.25rem 3rem;font-size:.78rem;col
 <main>
   <div class="tag">PnP INSTALL</div>
   <h1>PnP 설치 <span class="badge">V1 · 샘플·매핑 단계</span></h1>
-  <p class="lead">약사 면허를 확인한 뒤 받은 시리얼을 입력하면 설치 프로그램과 설치 방법 3가지(시리얼 · 링크 · Claude)가 나옵니다. 이 단계의 설치는 약국 프로그램의 표·열 이름을 확인해 연결 설정을 만드는 것까지이며, 환자 데이터는 읽거나 보내지 않습니다.</p>
+  <p class="lead">약사 면허를 확인한 뒤 받은 시리얼을 입력하면 설치 프로그램과 설치 방법 3가지(시리얼 · 링크 · Claude)가 나옵니다. 이 단계의 설치는 약국 프로그램의 표·열 이름을 확인해 연결 설정을 만드는 것까지이며, 환자 데이터는 읽거나 보내지 않습니다. 서버로 가는 정보의 전체 범위는 이 페이지 맨 아래에 적었습니다.</p>
 
   <section class="card" aria-labelledby="serial-h">
     <label class="lbl" id="serial-h" for="serial">설치 시리얼</label>
@@ -120,6 +120,7 @@ footer{max-width:960px;margin:0 auto;padding:0 1.25rem 3rem;font-size:.78rem;col
 
       <div class="panel" role="tabpanel" id="p-llm" aria-labelledby="t-llm" hidden>
         <h3>Claude에 로그인해서 LLM으로 설치</h3>
+        <p class="note" style="margin:0 0 .7rem"><b>Anthropic과 제휴·보증 관계가 없는 제3자 서비스 이용 안내입니다.</b> Claude는 Anthropic의 서비스이며, MedIT은 Anthropic의 제휴사·보증을 받은 업체가 아닙니다.</p>
         <ol>
           <li>claude.ai에 로그인합니다. (명령을 직접 실행시키려면 Claude Code에 <code>claude login</code>으로 로그인)</li>
           <li>아래 "안내문 복사"를 누르고, 새 대화에 붙여넣습니다.</li>
@@ -150,7 +151,15 @@ footer{max-width:960px;margin:0 auto;padding:0 1.25rem 3rem;font-size:.78rem;col
   </section>
 </main>
 <footer>
-  <p>서버로 가는 정보: 시리얼 확인과 단계 결과(이름·건수·지문)뿐이며 환자 정보는 없습니다. 환자 데이터 전송 기능은 업체 협약·약사 동의·개인정보 검토가 끝난 뒤 구현합니다. 문의는 <a href="index.html#book">시범 이용 신청</a>으로 남겨 주세요.</p>
+  <p><b>서버로 가는 정보</b> — 환자·처방 내용(행 데이터)은 포함되지 않습니다.</p>
+  <ul style="margin:.4rem 0 .6rem 1.1rem">
+    <li><b>시리얼</b>: 확인·사용할 때 입력한 시리얼</li>
+    <li><b>단계 결과</b>: 감지된 약국 프로그램 이름(후보 목록과 일치한 이름 최대 5개, 직접 지정했다면 그 이름), 등록된 ODBC 데이터 원본의 개수(이름은 보내지 않음), 운영체제 종류(예: Windows), 표·열의 개수와 확인 방식, 연결한 항목 이름·연결 비율·지문(해시), 가상 데이터 점검 건수</li>
+    <li><b>시리얼을 잘못 입력한 경우</b>: 오입력 횟수 제한을 위해 접속 IP를 해시값으로 바꾸어 저장합니다(IP 원문은 저장하지 않음). 이 값은 2일 뒤 삭제할 예정이며, 자동 삭제 설정은 아직 적용 전입니다.</li>
+    <li><b>통신 과정</b>: 서버는 접속 IP를 볼 수 있고, 서버 운영 환경의 기본 접속 기록이 별도로 남을 수 있습니다.</li>
+  </ul>
+  <p>설치 프로그램은 Windows의 설치 목록을 이 컴퓨터 안에서 읽고, 후보 이름과 일치한 것만 보냅니다. 환자 데이터 전송 기능은 업체 협약·약사 동의·개인정보 검토가 끝난 뒤 구현합니다. 문의는 <a href="index.html#book">시범 이용 신청</a>으로 남겨 주세요.</p>
+  <p style="margin-top:.5rem">Claude는 Anthropic의 서비스이며, MedIT은 Anthropic과 제휴·보증 관계가 없습니다. "Claude로 설치"는 제3자 서비스 이용 안내입니다.</p>
 </footer>
 
 <script>

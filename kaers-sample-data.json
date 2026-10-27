@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "KAERS (Korea Adverse Event Reporting System) 공개 파일데이터 기반 샘플",
-    "_disclaimer": "본 자료는 KAERS 보고 통계이며, 해당 의약품과의 인과관계를 의미하지 않습니다.",
+    "_disclaimer": "본 자료는 시연용 가상 수치이며 실제 KAERS 통계가 아닙니다. 해당 의약품과의 인과관계를 의미하지도 않습니다.",
     "_legal_basis": "약사법 §68의8 자발적 부작용 보고",
     "_data_id_ref": [
       "data.go.kr 15117015 (연도별 이상사례 보고 건수 현황)",

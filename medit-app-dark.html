@@ -807,7 +807,7 @@
       <div class="demo-w3-card tone-4">
         <div class="demo-w3-card-num">MODULE / 04</div>
         <div class="demo-w3-card-title"><em>POS</em>POS 시스템 연동</div>
-        <div class="demo-w3-card-desc">PharmIT3000, PM+20, 밝은매장 등 6대 POS 어댑터 연동 시뮬레이션</div>
+        <div class="demo-w3-card-desc">POS 연동 구조 시뮬레이션 · 표시된 업체는 연동 협의 예정 대상(협의 전, 제휴 관계 아님)</div>
         <div class="demo-w3-card-path">[하단] 더보기 → POS 연동</div>
       </div>
       <div class="demo-w3-card tone-5">
@@ -831,7 +831,7 @@
       <div class="demo-w3-card tone-b3">
         <div class="demo-w3-card-num">MODULE / 08</div>
         <div class="demo-w3-card-title"><em>Au</em>감사 로그 · 표준 추출</div>
-        <div class="demo-w3-card-desc">자동 기록 · HIPAA·PIPA 표준 형식 추출 (CSV/JSON)</div>
+        <div class="demo-w3-card-desc">시연용 자동 기록 · HIPAA·PIPA 형식을 참고한 내보내기(설계, CSV/JSON)</div>
         <div class="demo-w3-card-path">[하단] 더보기 → 감사 로그</div>
       </div>
     </div>
@@ -948,11 +948,11 @@
       </button>
       <button class="more-item" onclick="navigate('governance');closeMoreSheet()">
         <svg viewBox="0 0 24 24"><path d="M12 2 L19 6 L19 13 C19 17 16 20 12 22 C8 20 5 17 5 13 L5 6 Z"/><path d="M9 12 L11 14 L15 10"/></svg>
-        약사회 거버넌스
+        약사회 거버넌스 (제안)
       </button>
       <button class="more-item" onclick="navigate('internlog');closeMoreSheet()">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9 L21 9 M8 4 L8 9 M16 4 L16 9"/></svg>
-        인턴·UX 로그
+        인턴·UX 로그 (구상)
       </button>
       <button class="more-item" onclick="navigate('settings');closeMoreSheet()">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2 L12 5 M12 19 L12 22 M2 12 L5 12 M19 12 L22 12"/></svg>
@@ -1033,14 +1033,14 @@ function seedData() {
   ];
 
   const prescriptions = [
-    { id: 'rx1', patientId: 'p1', drugs: [{ name: '암로디핀 5mg', dosage: '1일 1회, 아침 식후', duration: 30, quantity: 30 }, { name: '메트포르민 500mg', dosage: '1일 2회, 식후', duration: 30, quantity: 60 }], issuedBy: '서울내과', doctor: '박정훈', issuedAt: today, status: 'pending', notes: '' },
-    { id: 'rx2', patientId: 'p2', drugs: [{ name: '로수바스타틴 10mg', dosage: '1일 1회, 취침전', duration: 90, quantity: 90 }], issuedBy: '하나클리닉', doctor: '정미영', issuedAt: today, status: 'dispensing', notes: '' },
-    { id: 'rx3', patientId: 'p3', drugs: [{ name: '레보티록신 50mcg', dosage: '1일 1회, 아침 공복', duration: 60, quantity: 60 }, { name: '칼슘 500mg', dosage: '1일 1회, 저녁 식후', duration: 60, quantity: 60 }], issuedBy: '동대문가정의학', doctor: '김연우', issuedAt: today, status: 'pending', notes: '' },
-    { id: 'rx4', patientId: 'p4', drugs: [{ name: '에소메프라졸 20mg', dosage: '1일 1회, 아침 공복', duration: 14, quantity: 14 }, { name: '모사프리드 5mg', dosage: '1일 3회, 식후', duration: 14, quantity: 42 }], issuedBy: '우리가정의학', doctor: '윤세진', issuedAt: yesterday, status: 'completed', notes: '' },
-    { id: 'rx5', patientId: 'p5', drugs: [{ name: '세티리진 10mg', dosage: '1일 1회, 취침전', duration: 30, quantity: 30 }, { name: '몬테루카스트 10mg', dosage: '1일 1회, 취침전', duration: 30, quantity: 30 }], issuedBy: '청담이비인후과', doctor: '강민석', issuedAt: yesterday, status: 'completed', notes: '' },
-    { id: 'rx6', patientId: 'p6', drugs: [{ name: '와파린 2mg', dosage: '1일 1회, 저녁 식후', duration: 30, quantity: 30 }, { name: '아스피린 100mg', dosage: '1일 1회, 아침 식후', duration: 30, quantity: 30 }], issuedBy: '서울내과', doctor: '박정훈', issuedAt: today, status: 'pending', notes: '' },
-    { id: 'rx7', patientId: 'p7', drugs: [{ name: '엽산 1mg', dosage: '1일 1회, 아침', duration: 90, quantity: 90 }, { name: '철분제', dosage: '1일 1회, 저녁', duration: 90, quantity: 90 }], issuedBy: '미즈여성의원', doctor: '이소미', issuedAt: twoDaysAgo, status: 'completed', notes: '' },
-    { id: 'rx8', patientId: 'p8', drugs: [{ name: '레보도파/카르비도파 100/25mg', dosage: '1일 3회, 식사 1시간 전', duration: 30, quantity: 90 }], issuedBy: '서울신경과', doctor: '남기현', issuedAt: twoDaysAgo, status: 'completed', notes: '' },
+    { id: 'rx1', patientId: 'p1', drugs: [{ name: '암로디핀 5mg', dosage: '1일 1회, 아침 식후', duration: 30, quantity: 30 }, { name: '메트포르민 500mg', dosage: '1일 2회, 식후', duration: 30, quantity: 60 }], issuedBy: '○○내과(가상)', doctor: '박정훈', issuedAt: today, status: 'pending', notes: '' },
+    { id: 'rx2', patientId: 'p2', drugs: [{ name: '로수바스타틴 10mg', dosage: '1일 1회, 취침전', duration: 90, quantity: 90 }], issuedBy: '○○클리닉(가상)', doctor: '정미영', issuedAt: today, status: 'dispensing', notes: '' },
+    { id: 'rx3', patientId: 'p3', drugs: [{ name: '레보티록신 50mcg', dosage: '1일 1회, 아침 공복', duration: 60, quantity: 60 }, { name: '칼슘 500mg', dosage: '1일 1회, 저녁 식후', duration: 60, quantity: 60 }], issuedBy: '○○가정의학과(가상)', doctor: '김연우', issuedAt: today, status: 'pending', notes: '' },
+    { id: 'rx4', patientId: 'p4', drugs: [{ name: '에소메프라졸 20mg', dosage: '1일 1회, 아침 공복', duration: 14, quantity: 14 }, { name: '모사프리드 5mg', dosage: '1일 3회, 식후', duration: 14, quantity: 42 }], issuedBy: '△△가정의학과(가상)', doctor: '윤세진', issuedAt: yesterday, status: 'completed', notes: '' },
+    { id: 'rx5', patientId: 'p5', drugs: [{ name: '세티리진 10mg', dosage: '1일 1회, 취침전', duration: 30, quantity: 30 }, { name: '몬테루카스트 10mg', dosage: '1일 1회, 취침전', duration: 30, quantity: 30 }], issuedBy: '○○이비인후과(가상)', doctor: '강민석', issuedAt: yesterday, status: 'completed', notes: '' },
+    { id: 'rx6', patientId: 'p6', drugs: [{ name: '와파린 2mg', dosage: '1일 1회, 저녁 식후', duration: 30, quantity: 30 }, { name: '아스피린 100mg', dosage: '1일 1회, 아침 식후', duration: 30, quantity: 30 }], issuedBy: '○○내과(가상)', doctor: '박정훈', issuedAt: today, status: 'pending', notes: '' },
+    { id: 'rx7', patientId: 'p7', drugs: [{ name: '엽산 1mg', dosage: '1일 1회, 아침', duration: 90, quantity: 90 }, { name: '철분제', dosage: '1일 1회, 저녁', duration: 90, quantity: 90 }], issuedBy: '○○여성의원(가상)', doctor: '이소미', issuedAt: twoDaysAgo, status: 'completed', notes: '' },
+    { id: 'rx8', patientId: 'p8', drugs: [{ name: '레보도파/카르비도파 100/25mg', dosage: '1일 3회, 식사 1시간 전', duration: 30, quantity: 90 }], issuedBy: '○○신경과(가상)', doctor: '남기현', issuedAt: twoDaysAgo, status: 'completed', notes: '' },
   ];
 
   // Adherence log: generate 14 days of schedule/records
@@ -1078,7 +1078,7 @@ function seedData() {
 
   return {
     version: '0.5',
-    pharmacy: { name: '동대문건강약국', address: '서울 동대문구 왕산로 12', license: '제0000-약-0000호', phone: '000-0000-0100' },
+    pharmacy: { name: '가상약국 A', address: '서울 ○○구 ○○로 12 (가상 주소)', license: '제0000-약-0000호', phone: '000-0000-0100' },
     pharmacist: { name: '김수진', license: '약사면허 제00001호' }, // legacy - for display fallback
     pharmacists: [
       { id: 'ph1', username: 'admin', passHash: hashPass('0000'), name: '김수진', license: '약사면허 제00001호', role: 'admin', createdAt: '2024-08-01' },
@@ -1135,6 +1135,8 @@ function loadState() {
     const raw = localStorage.getItem(KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
+      // 예전 데모 데이터에 실존할 수 있는 약국·의원 상호가 남아 있으면 가상 명칭의 새 데모 데이터로 교체
+      if (parsed && parsed.pharmacy && parsed.pharmacy.name === '동대문건강약국') return seedData();
       // Auto-migrate v0.4 -> v0.5
       if (parsed.version === '0.4') {
         parsed.version = '0.5';
@@ -1427,13 +1429,13 @@ function renderDashboard() {
           <h2 style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:4px;">PnP 플랫폼 시연</h2>
           <p style="font-size:13px;color:var(--ink-muted);line-height:1.55;margin-bottom:10px;">
             기존 약국 POS를 바꾸지 않고 연결하는 <strong style="color:#10B981">DB 신호 기반 스트림 + LLM 자동 매핑</strong> 구조를 샘플 데이터로 보여 드립니다. 
-            휴베이스 Hu-POS · 온누리 온팜 · 약학정보원 PharmIT3000는 연동 협의 대상이며, 실제 연동은 아직 아닙니다.
+            휴베이스 Hu-POS · 온누리 온팜 · 약학정보원 PharmIT3000는 연동 협의 예정 대상(협의 전, 제휴 관계 아님)이며, 실제 연동은 아직 아닙니다.
           </p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;">
             <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">DB 신호</span>
             <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">LLM 매핑</span>
             <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">통합 패치</span>
-            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">약사회 거버넌스</span>
+            <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">약사회 거버넌스 (제안)</span>
             <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;font-family:'JetBrains Mono',monospace;">인턴 UX 로그</span>
           </div>
         </div>
@@ -1442,7 +1444,7 @@ function renderDashboard() {
             PnP 시연 →
           </button>
           <button onclick="navigate('governance')" style="padding:10px 14px;background:transparent;color:#10B981;border:1px solid #10B981;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;">
-            약사회 거버넌스
+            약사회 거버넌스 (제안)
           </button>
           <button onclick="navigate('internlog')" style="padding:10px 14px;background:transparent;color:#10B981;border:1px solid #10B981;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;">
             인턴·UX 로그
@@ -1749,7 +1751,7 @@ function openPrescriptionForm(rxId = null) {
         <select id="rx-patient"><option value="">— 선택 —</option>${patientOptions}</select>
       </div>
       <div class="field-row">
-        <div class="field"><label>발행 의원<span class="req">*</span></label><input type="text" id="rx-issuedBy" value="${esc(rx?.issuedBy || '')}" placeholder="예: 서울내과"></div>
+        <div class="field"><label>발행 의원<span class="req">*</span></label><input type="text" id="rx-issuedBy" value="${esc(rx?.issuedBy || '')}" placeholder="예: ○○내과(가상)"></div>
         <div class="field"><label>처방 의사<span class="req">*</span></label><input type="text" id="rx-doctor" value="${esc(rx?.doctor || '')}" placeholder="예: 박정훈"></div>
       </div>
       <div class="field-row">
@@ -2712,7 +2714,7 @@ window.submitSideEffect = function() {
   logAudit('notify', 'pharmacy', patient.name, '부작용 신고 약국 자동 전송: ' + symptom);
 
   if (urgency === 'urgent') {
-    alert('⚠ 긴급 증상입니다!\n즉시 119 또는 응급실 방문을 안내하세요.\n보호자에게 자동 알림이 발송됩니다.');
+    alert('⚠ 긴급 증상입니다! (시연 화면)\n즉시 119 또는 응급실 방문을 안내하세요.\n보호자 알림은 시연이라 실제로 발송되지 않습니다.');
   }
 
   // Update chat display
@@ -2828,22 +2830,24 @@ window.generateSideEffectPDF = function() {
 
 
 /* ---------- POS Bridge ---------- */
+// 주의: 아래 업체명은 '연동 협의 예정 대상'일 뿐이며 현재 협의 전·제휴 관계가 아닙니다.
+// db/method 값은 MedIT의 설계 가정이며, 업체 약관·허락 확인 전 단계입니다 (업체가 확인한 사실이 아님).
 const POS_SYSTEMS = [
-  { id: 'pit3000', name: 'PharmIT3000', vendor: '약학정보원', share: '50%+', db: 'SQL Server', status: 'adapter-ready', method: 'ODBC Read-Only' },
-  { id: 'pmplus20', name: 'PM+20', vendor: '약학정보원', share: '신규', db: 'SQL Server', status: 'adapter-ready', method: 'ODBC Read-Only' },
-  { id: 'bright', name: '밝은매장', vendor: '베스트시스템', share: '500+', db: 'Local MDB', status: 'adapter-ready', method: 'CSV / ADODB' },
-  { id: 'hupos', name: 'Hu-Pos', vendor: '휴베이스', share: '프랜차이즈', db: 'Cloud', status: 'planned', method: 'REST API' },
-  { id: 'onnuri', name: '온누리H&C', vendor: '온누리', share: '체인', db: 'Mixed', status: 'planned', method: 'API + Polling' },
-  { id: 'jeekim', name: '지킴', vendor: '지킴컴퍼니', share: '성장중', db: 'Cloud', status: 'planned', method: 'REST API' },
+  { id: 'pit3000', name: 'PharmIT3000', vendor: '약학정보원', share: '미확인', db: 'SQL Server (가정)', status: 'adapter-ready', method: 'ODBC Read-Only (가정)' },
+  { id: 'pmplus20', name: 'PM+20', vendor: '약학정보원', share: '미확인', db: 'SQL Server (가정)', status: 'adapter-ready', method: 'ODBC Read-Only (가정)' },
+  { id: 'bright', name: '밝은매장', vendor: '베스트시스템', share: '미확인', db: 'Local MDB (가정)', status: 'adapter-ready', method: 'CSV / ADODB (가정)' },
+  { id: 'hupos', name: 'Hu-Pos', vendor: '휴베이스', share: '미확인', db: 'Cloud (가정)', status: 'planned', method: 'REST API (가정)' },
+  { id: 'onnuri', name: '온누리H&C', vendor: '온누리', share: '미확인', db: 'Mixed (가정)', status: 'planned', method: 'API + Polling (가정)' },
+  { id: 'jeekim', name: '지킴', vendor: '지킴컴퍼니', share: '미확인', db: 'Cloud (가정)', status: 'planned', method: 'REST API (가정)' },
 ];
 
 // 시뮬레이션: POS DB에서 수신할 조제 데이터 (실제 환경에서는 ODBC/API로 가져옴)
 const POS_DB_SAMPLE_FETCH = [
-  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '김○○', age: 68, gender: 'F', phone: '010-****-1234', drugs: ['암로디핀 5mg', '메트포르민 500mg'], dispensedAt: new Date(Date.now() - 600000).toISOString(), doctor: '서울내과 김의사', diagnosis: '고혈압·당뇨', insurance: '국민건강' },
-  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '박○○', age: 72, gender: 'M', phone: '010-****-5678', drugs: ['아토르바스타틴 10mg', '아스피린 100mg', '란소프라졸 15mg'], dispensedAt: new Date(Date.now() - 1200000).toISOString(), doctor: '강북정형 이의사', diagnosis: '이상지질혈증', insurance: '국민건강' },
-  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '이○○', age: 81, gender: 'F', phone: '010-****-9012', drugs: ['와파린 2.5mg', '디곡신 0.25mg', '푸로세미드 40mg'], dispensedAt: new Date(Date.now() - 1800000).toISOString(), doctor: '서울대병원 박의사', diagnosis: '심방세동·심부전', insurance: '국민건강' },
-  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '최○○', age: 65, gender: 'M', phone: '010-****-3456', drugs: ['로사르탄 50mg', '히드로클로로티아지드 12.5mg'], dispensedAt: new Date(Date.now() - 2400000).toISOString(), doctor: '동대문내과 정의사', diagnosis: '고혈압', insurance: '국민건강' },
-  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '정○○', age: 78, gender: 'F', phone: '010-****-7890', drugs: ['리바스티그민 4.5mg', '도네페질 5mg'], dispensedAt: new Date(Date.now() - 3000000).toISOString(), doctor: '광장신경과 한의사', diagnosis: '알츠하이머', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '김○○', age: 68, gender: 'F', phone: '010-****-1234', drugs: ['암로디핀 5mg', '메트포르민 500mg'], dispensedAt: new Date(Date.now() - 600000).toISOString(), doctor: '○○내과(가상) 김의사', diagnosis: '고혈압·당뇨', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '박○○', age: 72, gender: 'M', phone: '010-****-5678', drugs: ['아토르바스타틴 10mg', '아스피린 100mg', '란소프라졸 15mg'], dispensedAt: new Date(Date.now() - 1200000).toISOString(), doctor: '○○정형외과(가상) 이의사', diagnosis: '이상지질혈증', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '이○○', age: 81, gender: 'F', phone: '010-****-9012', drugs: ['와파린 2.5mg', '디곡신 0.25mg', '푸로세미드 40mg'], dispensedAt: new Date(Date.now() - 1800000).toISOString(), doctor: '○○병원(가상) 박의사', diagnosis: '심방세동·심부전', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '최○○', age: 65, gender: 'M', phone: '010-****-3456', drugs: ['로사르탄 50mg', '히드로클로로티아지드 12.5mg'], dispensedAt: new Date(Date.now() - 2400000).toISOString(), doctor: '○○내과(가상) 정의사', diagnosis: '고혈압', insurance: '국민건강' },
+  { rxId: 'RX-' + Math.random().toString(36).slice(2, 8).toUpperCase(), patient: '정○○', age: 78, gender: 'F', phone: '010-****-7890', drugs: ['리바스티그민 4.5mg', '도네페질 5mg'], dispensedAt: new Date(Date.now() - 3000000).toISOString(), doctor: '○○신경과(가상) 한의사', diagnosis: '알츠하이머', insurance: '국민건강' },
 ];
 
 function renderPOSBridge() {
@@ -2855,28 +2859,28 @@ function renderPOSBridge() {
   if (!cfg.fetchHistory) cfg.fetchHistory = [];
   if (cfg.signalsReceived === undefined) cfg.signalsReceived = 0;
 
-  const statusLabels = { 'adapter-ready': '시뮬레이션', planned: '협의 대상', target: '전략 목표', connected: '연결됨' };
+  const statusLabels = { 'adapter-ready': '시뮬레이션 · 협의 전', planned: '협의 예정 · 협의 전', target: '전략 목표', connected: '연결됨' };
   const statusColors = { 'adapter-ready': '#10B981', planned: '#94A3B8', target: '#34d399', connected: '#34d399' };
 
   // PnP 4단계 진화 데이터
   const stages = [
     { num: '1', label: 'STAGE 1', title: '자동 업데이트 설치', detail: '200KB 부트스트래퍼 · 접속 시 자동 업데이트', load: '최초 30초, 이후 무인', color: '#1E293B', light: '#94A3B8' },
     { num: '2', label: 'STAGE 2', title: '코드 스니펫 1줄', detail: 'POS 벤더 코드에 1줄 추가', load: 'POS 협조 필요', color: '#059669', light: '#6ee7b7' },
-    { num: '3', label: 'STAGE 3', title: '벤더 자발 등록', detail: 'developers.medit.kr 폼 작성', load: '코드 작성 0', color: '#059669', light: '#6ee7b7' },
+    { num: '3', label: 'STAGE 3', title: '벤더 자발 등록', detail: 'developers.example.invalid 폼 작성 (가상 주소)', load: '코드 작성 0', color: '#059669', light: '#6ee7b7' },
     { num: '4', label: 'STAGE 4', title: 'Pull 스트림 ★', detail: 'DB 신호만 받아 스트림', load: '약국 작업 0', color: '#047857', light: '#6ee7b7', best: true }
   ];
 
-  // LLM 매핑 예시
+  // 매핑 예시 (가상 컬럼명 — 특정 업체의 실제 DB 구조가 아님)
   const llmMappings = [
-    { pos: 'PharmIT3000', col: 'pt_nm', std: 'patient_name' },
-    { pos: 'PharmIT3000', col: 'rx_dt', std: 'prescription_date' },
-    { pos: 'PharmIT3000', col: 'drg_cd', std: 'drug_code' },
-    { pos: '온팜', col: '환자명', std: 'patient_name' },
-    { pos: '온팜', col: '처방일', std: 'prescription_date' },
-    { pos: '온팜', col: '약품코드', std: 'drug_code' },
-    { pos: '밝은매장', col: 'PatNm', std: 'patient_name' },
-    { pos: '밝은매장', col: 'RxDate', std: 'prescription_date' },
-    { pos: '밝은매장', col: 'ItmCd', std: 'drug_code' }
+    { pos: '가상 POS A', col: 'pt_nm', std: 'patient_name' },
+    { pos: '가상 POS A', col: 'rx_dt', std: 'prescription_date' },
+    { pos: '가상 POS A', col: 'drg_cd', std: 'drug_code' },
+    { pos: '가상 POS B', col: '환자명', std: 'patient_name' },
+    { pos: '가상 POS B', col: '처방일', std: 'prescription_date' },
+    { pos: '가상 POS B', col: '약품코드', std: 'drug_code' },
+    { pos: '가상 POS C', col: 'PatNm', std: 'patient_name' },
+    { pos: '가상 POS C', col: 'RxDate', std: 'prescription_date' },
+    { pos: '가상 POS C', col: 'ItmCd', std: 'drug_code' }
   ];
 
   $('#view-posbridge').innerHTML = `
@@ -2895,7 +2899,7 @@ function renderPOSBridge() {
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">EVOLUTION</div>
           <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">PnP 진화 4단계</h2>
         </div>
-        <span style="font-size:11px;color:var(--ink-muted);">약국 부담을 0으로 줄여나가는 진화 경로</span>
+        <span style="font-size:11px;color:var(--ink-muted);">약국 부담을 0으로 줄여나가는 진화 경로 (설계안)</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
         ${stages.map(st => `
@@ -2936,8 +2940,8 @@ function renderPOSBridge() {
           </div>
         </div>
         <p style="color:var(--ink-muted);font-size:12px;line-height:1.55;margin-bottom:10px;">
-          POS DB가 변경 신호(CDC/트리거)를 보내는 순간 MedIT가 받아 처리.
-          약사 작업 0건, 지연 1초 이내.
+          POS DB가 변경 신호(CDC/트리거)를 보내는 순간 MedIT가 받아 처리하는 구조를 설계 중입니다.
+          약사 작업 0건, 지연 1초 이내는 설계 목표이며 측정한 값이 아닙니다.
         </p>
         <div style="background:#0a0f1a;border-left:3px solid #10B981;padding:11px 13px;border-radius:4px;margin-bottom:10px;">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
@@ -2957,7 +2961,7 @@ function renderPOSBridge() {
             </div>
           </div>
           <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:var(--ink-muted);text-align:center;">
-            지연 1초 이내 · 약사 작업 없음
+            지연 1초 이내 · 약사 작업 없음 (설계 목표)
           </div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
@@ -2988,8 +2992,8 @@ function renderPOSBridge() {
           </div>
         </div>
         <p style="color:var(--ink-muted);font-size:12px;line-height:1.55;margin-bottom:10px;">
-          약국마다 다른 컬럼명을 LLM이 자동 분석·매핑.
-          사람이 매번 코드 작성하지 않음.
+          약국마다 다른 컬럼명을 LLM이 자동 분석·매핑하는 구조를 설계 중입니다.
+          아래 실행은 미리 적어 둔 가상 샘플 매핑을 보여 주는 규칙 기반 시연이며, 실제 LLM을 호출하지 않습니다.
         </p>
         <div id="llm-mapping-output" style="background:#0a0f1a;border-left:3px solid #10B981;padding:9px 11px;border-radius:4px;margin-bottom:10px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;min-height:80px;">
           ${llmMappings.slice(0, 3).map(m => `
@@ -3008,7 +3012,7 @@ function renderPOSBridge() {
           <span style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:99px;font-size:11px;color:#10B981;">샘플 데이터 시연</span>
         </div>
         <button onclick="runLLMMapping()" style="width:100%;padding:10px;background:#10B981;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">
-          LLM 자동 매핑 실행 →
+          LLM 자동 매핑 시연 (규칙 기반) →
         </button>
       </div>
     </div>
@@ -3016,13 +3020,16 @@ function renderPOSBridge() {
     <!-- 3) POS 파트너 6종 -->
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">POS PARTNERS</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">POS TARGETS (협의 전)</div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:3px;">
-          <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin:0;">체인약국 매개체 — 주요 POS 6종</h2>
-          <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3px 7px;border-radius:3px;letter-spacing:1px;border:1px solid rgba(148,163,184,.3);">IN PROGRESS · 추진 예정</span>
+          <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin:0;">체인약국 매개체 — 연동 협의 예정 POS 6종</h2>
+          <span style="background:rgba(148,163,184,.15);color:#94A3B8;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3px 7px;border-radius:3px;letter-spacing:1px;border:1px solid rgba(148,163,184,.3);">추진 예정 · 협의 전</span>
         </div>
         <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">
-          체인약국·프랜차이즈와 고객을 잇는 매개체 구상 — 연동 협의 대상: 휴베이스 Hu-POS, 온누리 온팜, 약학정보원 PharmIT3000
+          체인약국·프랜차이즈와 고객을 잇는 매개체 구상 — 연동 협의 예정 대상(협의 전, 제휴 관계 아님): 휴베이스 Hu-POS, 온누리 온팜, 약학정보원 PharmIT3000
+        </p>
+        <p style="font-size:11px;color:var(--ink-muted);margin-top:6px;line-height:1.5;border-left:2px solid rgba(148,163,184,.4);padding-left:8px;">
+          카드의 DB 종류·접근 방식은 MedIT의 설계 가정이며 업체가 확인한 내용이 아닙니다. 업체 약관·허락 확인 전, 설계 단계입니다.
         </p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
@@ -3031,7 +3038,7 @@ function renderPOSBridge() {
           const isReady = pos.status === 'adapter-ready';
           return `
             <div style="background:var(--bg);border:1px solid var(--border);border-left:3px solid ${statusColor};border-radius:6px;padding:12px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:6px;">
                 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-muted);letter-spacing:0.5px;text-transform:uppercase;">${pos.name}</div>
                 <span style="background:${isReady ? 'rgba(16,185,129,0.15)' : 'rgba(148,163,184,0.15)'};color:${statusColor};font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;">${statusLabels[pos.status]}</span>
               </div>
@@ -3043,8 +3050,8 @@ function renderPOSBridge() {
       </div>
       <div style="background:linear-gradient(90deg,rgba(16,185,129,0.06),transparent);border-left:3px solid #10B981;padding:10px 12px;margin-top:14px;border-radius:4px;">
         <p style="font-size:12px;color:var(--ink);line-height:1.55;">
-          <strong style="color:#10B981;">휴베이스·지킴</strong> — 클라우드 방식이라 API 제공 여부를 확인한 뒤 연결을 협의할 예정입니다. 
-          <strong style="color:#10B981;">약학정보원·베스트시스템</strong> — 로컬 DB 방식이라 협약 후 연결 방식을 정할 예정입니다.
+          <strong style="color:#10B981;">휴베이스·지킴</strong> — 클라우드 방식으로 가정하며, API 제공 여부를 확인한 뒤 연결을 협의할 예정입니다(협의 전).
+          <strong style="color:#10B981;">약학정보원·베스트시스템</strong> — 로컬 DB 방식으로 가정하며, 협의·약관 확인 후 연결 방식을 정할 예정입니다(협의 전).
         </p>
       </div>
     </div>
@@ -3054,7 +3061,7 @@ function renderPOSBridge() {
       <div style="margin-bottom:14px;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">INTEGRATION PATCH</div>
         <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">MedIT 통합 패치 모델</h2>
-        <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">PnP 위에 5개 핵심 모듈 점진 이식 — 약사 검증·KAERS·3채널·QR·감사로그</p>
+        <p style="font-size:12px;color:var(--ink-muted);margin-top:4px;">PnP 위에 5개 핵심 모듈 점진 이식 구상(설계 단계) — 약사 검증·KAERS·3채널·QR·감사로그</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:14px;align-items:start;">
         <!-- 베이스 PnP -->
@@ -3062,21 +3069,21 @@ function renderPOSBridge() {
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6ee7b7;letter-spacing:1px;margin-bottom:6px;">BASE LAYER · PnP</div>
           <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;">약국 DB → 웹 대시보드</div>
           <div style="border-top:1px solid #1e293b;padding-top:8px;font-size:11px;color:#cbd5e1;line-height:1.7;">
-            ▸ 처방 데이터 READ-ONLY<br>
-            ▸ 환자 가명화·암호화<br>
-            ▸ 카카오톡 복약 알림<br>
-            ▸ 감사 로그 (HIPAA·PIPA)
+            ▸ 처방 데이터 READ-ONLY (설계)<br>
+            ▸ 환자 가명화·암호화 (설계)<br>
+            ▸ 카카오톡 복약 알림 (설계)<br>
+            ▸ 감사 로그 — HIPAA·PIPA 형식을 참고한 내보내기 (설계)
           </div>
-          <div style="margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;font-style:italic;">이미 구현됨</div>
+          <div style="margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;font-style:italic;line-height:1.5;">설계 중 (샘플 단계 · 환자 데이터 읽기는 잠겨 있음)</div>
         </div>
         <!-- 5개 모듈 -->
         <div style="display:flex;flex-direction:column;gap:6px;">
           ${[
-            { n: 'M1', t: '약사 검증 AI 응답', d: '면허 약사가 검토한 AI 복약 상담' },
-            { n: 'M2', t: 'KAERS 환자 자가보고', d: '부작용 17개 의약품 자동 매칭' },
-            { n: 'M3', t: '3채널 알림 시스템', d: '카카오톡·SMS·AI 음성 통화' },
-            { n: 'M4', t: 'QR 약봉투 페어링', d: '약국 인쇄 QR → 환자 앱 연동' },
-            { n: 'M5', t: '감사 로그 · 표준 추출', d: 'HIPAA·PIPA 표준 형식 (CSV/JSON) + 약사회 거버넌스 연계' }
+            { n: 'M1', t: '약사 검증 AI 응답 (설계)', d: '면허 약사가 검토하도록 설계 중인 AI 복약 상담 · 운영 전' },
+            { n: 'M2', t: 'KAERS 환자 자가보고 (시연)', d: '샘플 17개 의약품과 부작용 매칭 시연' },
+            { n: 'M3', t: '3채널 알림 시스템 (설계)', d: '카카오톡·SMS · AI 음성 통화는 기획 중' },
+            { n: 'M4', t: 'QR 약봉투 페어링 (설계)', d: '약국 인쇄 QR → 환자 앱 연동 구상' },
+            { n: 'M5', t: '감사 로그 · 내보내기 (설계)', d: 'HIPAA·PIPA 형식을 참고한 내보내기(CSV/JSON) + 약사회 거버넌스 연계는 제안 단계(협의 전)' }
           ].map(m => `
             <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 10px;display:flex;align-items:center;gap:10px;">
               <div style="background:#059669;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;padding:4px 8px;border-radius:4px;min-width:32px;text-align:center;">${m.n}</div>
@@ -3094,8 +3101,8 @@ function renderPOSBridge() {
     ${cfg.fetchedRecords.length > 0 ? `
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:12px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">LIVE STREAM</div>
-        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수신된 처방 데이터 (실시간)</h2>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">SIMULATED STREAM</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수신된 처방 데이터 (시뮬레이션 · 가상 샘플)</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;max-height:300px;overflow-y:auto;">
         ${cfg.fetchedRecords.slice(0, 5).map(r => `
@@ -3135,21 +3142,21 @@ window.runLLMMapping = function() {
   if (!output) return;
   
   const allMappings = [
-    { pos: 'PharmIT3000', col: 'pt_nm', std: 'patient_name' },
-    { pos: 'PharmIT3000', col: 'rx_dt', std: 'prescription_date' },
-    { pos: 'PharmIT3000', col: 'drg_cd', std: 'drug_code' },
-    { pos: '온팜', col: '환자명', std: 'patient_name' },
-    { pos: '온팜', col: '처방일', std: 'prescription_date' },
-    { pos: '온팜', col: '약품코드', std: 'drug_code' },
-    { pos: '밝은매장', col: 'PatNm', std: 'patient_name' },
-    { pos: '밝은매장', col: 'RxDate', std: 'prescription_date' },
-    { pos: '밝은매장', col: 'ItmCd', std: 'drug_code' }
+    { pos: '가상 POS A', col: 'pt_nm', std: 'patient_name' },
+    { pos: '가상 POS A', col: 'rx_dt', std: 'prescription_date' },
+    { pos: '가상 POS A', col: 'drg_cd', std: 'drug_code' },
+    { pos: '가상 POS B', col: '환자명', std: 'patient_name' },
+    { pos: '가상 POS B', col: '처방일', std: 'prescription_date' },
+    { pos: '가상 POS B', col: '약품코드', std: 'drug_code' },
+    { pos: '가상 POS C', col: 'PatNm', std: 'patient_name' },
+    { pos: '가상 POS C', col: 'RxDate', std: 'prescription_date' },
+    { pos: '가상 POS C', col: 'ItmCd', std: 'drug_code' }
   ];
-  
-  output.innerHTML = '<div style="color:#10B981;">▶ LLM 스키마 분석 중...</div>';
-  
+
+  output.innerHTML = '<div style="color:#10B981;">▶ 샘플 매핑 불러오는 중 (규칙 기반 시연 · LLM 호출 아님)...</div>';
+
   setTimeout(() => {
-    let html = '<div style="color:#10B981;margin-bottom:4px;">✓ 매핑 완료 (샘플 데이터 시뮬레이션)</div>';
+    let html = '<div style="color:#10B981;margin-bottom:4px;">✓ 샘플 매핑 표시 (가상 컬럼명 · 규칙 기반 시연)</div>';
     allMappings.forEach((m, i) => {
       setTimeout(() => {
         html += `<div style="margin-bottom:2px;"><span style="color:#64748b;">[${m.pos}]</span> <span style="color:#cbd5e1;">${m.col}</span> <span style="color:#10B981;">→</span> <span style="color:#FFA657;">${m.std}</span></div>`;
@@ -3168,11 +3175,11 @@ window.connectPOS = function(posId) {
   state.posConfig.syncCount = 0;
   state.posConfig.autoSync = false;
   state.posConfig.fetchedRecords = [];
-  state.posConfig.fetchHistory = [{ at: new Date().toISOString(), action: 'CONNECT', detail: posId + ' 어댑터 연결 (READ-ONLY 인증)' }];
+  state.posConfig.fetchHistory = [{ at: new Date().toISOString(), action: 'CONNECT', detail: posId + ' 어댑터 연결 시뮬레이션 (실제 연결 아님)' }];
   saveState();
   const pos = POS_SYSTEMS.find(p => p.id === posId);
   logAudit('create', 'pos-bridge', pos?.name || posId, 'POS DB 어댑터 연결 (Read-Only)');
-  toast(pos.name + ' 연결됨 · DB 신호 수신 준비됨', 'success');
+  toast(pos.name + ' 연결 시뮬레이션 · 실제 POS 연결 아님', 'success');
   render();
 };
 
@@ -3210,12 +3217,12 @@ window.fetchPOSData = function() {
   state.posConfig.fetchHistory.push({
     at: new Date().toISOString(),
     action: 'FETCH',
-    detail: pos.name + ' DB → ' + newRecords.length + '건 조제 가져옴 · PII 자동 필터링'
+    detail: pos.name + ' DB → ' + newRecords.length + '건 조제 가져옴 시뮬레이션 (가상 샘플)'
   });
   
   saveState();
   logAudit('fetch', 'pos-bridge', pos.name, 'DB 조회 · ' + newRecords.length + '건 가져옴');
-  toast('DB에서 ' + newRecords.length + '건 가져왔습니다', 'success');
+  toast('가상 샘플 ' + newRecords.length + '건을 가져오는 시뮬레이션입니다', 'success');
   render();
 };
 
@@ -3230,12 +3237,12 @@ window.ingestSingleRecord = function(idx) {
   cfg.fetchHistory.push({
     at: new Date().toISOString(),
     action: 'INGEST',
-    detail: record.rxId + ' · ' + record.patient + ' MedIT 등록 + 알림 발송'
+    detail: record.rxId + ' · ' + record.patient + ' MedIT 등록 + 알림 발송 시연'
   });
   
   saveState();
   logAudit('create', 'pos-ingest', record.rxId, record.patient + ' 처방 MedIT 등록');
-  toast(record.patient + '님에게 카카오톡 알림 발송 완료', 'success');
+  toast(record.patient + '님 카카오톡 알림 발송 시연 (실제 발송 없음)', 'success');
   render();
 };
 
@@ -3260,7 +3267,7 @@ window.ingestAllToMedIT = function() {
   
   saveState();
   logAudit('create', 'pos-ingest', 'batch', count + '건 일괄 등록');
-  toast(count + '건 등록 + 카카오톡 알림 발송', 'success');
+  toast(count + '건 등록 + 카카오톡 알림 발송 시연 (실제 발송 없음)', 'success');
   render();
 };
 
@@ -3292,13 +3299,14 @@ window.toggleAutoSync = function() {
 };
 
 /* ---------- Pharmacy Finder ---------- */
+// 시연용 가상 약국 목록 — 실제 약국 상호·주소·전화번호가 아닙니다.
 const DEMO_PHARMACIES = [
-  { id: 'ph1', name: '동대문건강약국', addr: '서울 동대문구 왕산로 12', road: '왕산로 12', dist: 120, phone: '000-0000-0101', lat: 37.5712, lng: 127.0095, hours: '09:00-21:00', holiday: false },
-  { id: 'ph2', name: '한빛약국', addr: '서울 동대문구 장안벚꽃로 42', road: '장안벚꽃로 42', dist: 350, phone: '000-0000-0102', lat: 37.5698, lng: 127.0132, hours: '09:00-20:00', holiday: false },
-  { id: 'ph3', name: '새봄약국', addr: '서울 동대문구 답십리로 88', road: '답십리로 88', dist: 800, phone: '000-0000-0103', lat: 37.5665, lng: 127.0178, hours: '08:30-19:30', holiday: true },
-  { id: 'ph4', name: '우리약국', addr: '서울 동대문구 천호대로 200', road: '천호대로 200', dist: 1200, phone: '02-2244-7777', lat: 37.5744, lng: 127.0211, hours: '09:00-22:00', holiday: false },
-  { id: 'ph5', name: '미래약국', addr: '서울 동대문구 한천로 55', road: '한천로 55', dist: 1500, phone: '02-2232-3333', lat: 37.5731, lng: 127.0055, hours: '09:30-20:00', holiday: false },
-  { id: 'ph6', name: '숙명약국', addr: '서울 용산구 청파로 47길 100', road: '청파로47길 100', dist: 4200, phone: '02-710-9114', lat: 37.5462, lng: 126.9647, hours: '09:00-18:00', holiday: true },
+  { id: 'ph1', name: '가상약국 A', addr: '서울 ○○구 ○○로 12 (가상 주소)', road: '○○로 12 (가상)', dist: 120, phone: '000-0000-0101', hours: '09:00-21:00', holiday: false },
+  { id: 'ph2', name: '가상약국 B', addr: '서울 ○○구 □□로 42 (가상 주소)', road: '□□로 42 (가상)', dist: 350, phone: '000-0000-0102', hours: '09:00-20:00', holiday: false },
+  { id: 'ph3', name: '가상약국 C', addr: '서울 ○○구 △△로 88 (가상 주소)', road: '△△로 88 (가상)', dist: 800, phone: '000-0000-0103', hours: '08:30-19:30', holiday: true },
+  { id: 'ph4', name: '가상약국 D', addr: '서울 ○○구 ◇◇대로 200 (가상 주소)', road: '◇◇대로 200 (가상)', dist: 1200, phone: '000-0000-0104', hours: '09:00-22:00', holiday: false },
+  { id: 'ph5', name: '가상약국 E', addr: '서울 ○○구 ☆☆로 55 (가상 주소)', road: '☆☆로 55 (가상)', dist: 1500, phone: '000-0000-0105', hours: '09:30-20:00', holiday: false },
+  { id: 'ph6', name: '가상약국 F', addr: '서울 □□구 ○○로 100 (가상 주소)', road: '○○로 100 (가상)', dist: 4200, phone: '000-0000-0106', hours: '09:00-18:00', holiday: true },
 ];
 
 function renderPharmacyFinder() {
@@ -3364,9 +3372,9 @@ function renderKakaoFlow(reg) {
     return `
     <div style="max-width:320px;margin:0 auto;">
       <div style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px;text-align:center;">
-        <div style="font-size:13px;color:var(--ink-muted);margin-bottom:6px;">GPS 위치 기반 검색</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-bottom:6px;">위치 기반 검색 시연 (가상 데이터)</div>
         <div style="font-size:18px;font-weight:600;color:var(--accent);margin-bottom:4px;">주변 약국 6곳</div>
-        <div style="font-size:11px;color:var(--ink-muted);">반경 2km · 카카오맵 PM9 API</div>
+        <div style="font-size:11px;color:var(--ink-muted);">시연용 가상 약국 목록 · 실제 위치·지도 검색이 아닙니다</div>
       </div>
       ${DEMO_PHARMACIES.map(p => {
         const d = p.dist < 1000 ? p.dist + 'm' : (p.dist/1000).toFixed(1) + 'km';
@@ -3399,12 +3407,12 @@ function renderSMSFlow(reg) {
           <div style="margin-left:auto;font-size:11px;color:var(--ink-muted);">방금</div>
         </div>
         <div style="background:var(--surface-alt);border-radius:10px;padding:14px;font-size:14px;color:var(--ink);line-height:1.7;">
-          [MedIT] 동대문건강약국에서 보내드립니다.<br><br>
+          [MedIT] 가상약국 A에서 보내드립니다. (시연용 문자)<br><br>
           복약 알림 서비스에 등록하시면 약 드실 시간에 카카오톡/문자로 알려드립니다.<br><br>
           아래 링크를 눌러 등록해주세요.
         </div>
         <button onclick="state._smsStep=1;renderPharmacyFinder();" style="width:100%;margin-top:12px;padding:14px;background:var(--accent);color:var(--bg);border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;">
-          medit.kr/join/dong123 (링크 열기)
+          example.invalid/join/demo123 (가상 링크 · 열리지 않음)
         </button>
       </div>
       <div style="text-align:center;font-size:11px;color:var(--ink-muted);margin-top:8px;">약국에서 환자에게 이 문자를 보냅니다</div>
@@ -3417,9 +3425,9 @@ function renderSMSFlow(reg) {
         <div style="width:48px;height:48px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <div style="font-size:16px;font-weight:600;margin-bottom:4px;">동대문건강약국</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-bottom:4px;">서울 동대문구 왕산로 12</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-bottom:16px;">02-2234-5678 · 09:00-21:00</div>
+        <div style="font-size:16px;font-weight:600;margin-bottom:4px;">가상약국 A</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-bottom:4px;">서울 ○○구 ○○로 12 (가상 주소)</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-bottom:16px;">000-0000-0101 · 09:00-21:00</div>
         <div style="font-size:13px;color:var(--ink-soft);margin-bottom:16px;line-height:1.6;">
           이 약국을 <strong>단골약국</strong>으로 등록하면<br>처방전 자동 전송 + 복약 알림을 받으실 수 있습니다.
         </div>
@@ -3461,7 +3469,7 @@ function renderQRFlow(reg) {
       <div style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:12px;">
         <div style="font-size:14px;font-weight:600;margin-bottom:10px;">또는 수동 등록</div>
         <div style="margin-bottom:8px;">
-          <input id="manual-ph-name" type="text" placeholder="약국 이름" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:14px;box-sizing:border-box;margin-bottom:6px;">
+          <input id="manual-ph-name" type="text" placeholder="약국 이름 (예: 가상약국 A)" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:14px;box-sizing:border-box;margin-bottom:6px;">
           <input id="manual-ph-phone" type="tel" placeholder="전화번호 (예: 000-0000-0000)" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:14px;box-sizing:border-box;">
         </div>
         <button onclick="manualRegister()" style="width:100%;padding:12px;background:var(--surface-alt);color:var(--ink);border:1px solid var(--line);border-radius:8px;font-size:13px;cursor:pointer;">수동 등록</button>
@@ -3476,10 +3484,10 @@ function renderQRFlow(reg) {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
         </div>
         <div style="font-size:14px;font-weight:500;color:#6ee7b7;margin-bottom:4px;">QR 인식 완료</div>
-        <div style="font-size:18px;font-weight:600;margin-bottom:12px;">동대문건강약국</div>
+        <div style="font-size:18px;font-weight:600;margin-bottom:12px;">가상약국 A</div>
         <div style="background:var(--surface-alt);border-radius:8px;padding:12px;text-align:left;font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:14px;">
-          <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>주소</span><strong style="color:var(--ink);">왕산로 12</strong></div>
-          <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>전화</span><strong style="color:var(--ink);">02-2234-5678</strong></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>주소</span><strong style="color:var(--ink);">○○로 12 (가상)</strong></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>전화</span><strong style="color:var(--ink);">000-0000-0101</strong></div>
           <div style="display:flex;justify-content:space-between;"><span>영업</span><strong style="color:var(--ink);">09:00-21:00</strong></div>
         </div>
         <button onclick="phRegisterFromChannel('ph1','qr')" style="width:100%;padding:14px;background:#6ee7b7;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;">
@@ -3532,10 +3540,10 @@ window.unregisterPharmacy = function() {
 /* ---------- Rx Routing Demo ---------- */
 let rxStep = 0;
 const HOSPITAL_PHARMACIES = [
-  { id: 'hp1', name: '서울대병원앞 약국', dist: '50m', hours: '08:30-21:00', badge: '' },
-  { id: 'hp2', name: '혜화건강약국', dist: '120m', hours: '09:00-20:00', badge: '공휴일' },
-  { id: 'hp3', name: '대학로온누리약국', dist: '200m', hours: '09:00-19:00', badge: '' },
-  { id: 'hp4', name: '동숭약국', dist: '350m', hours: '08:00-22:00', badge: '야간' },
+  { id: 'hp1', name: '가상약국 G (병원 앞)', dist: '50m', hours: '08:30-21:00', badge: '' },
+  { id: 'hp2', name: '가상약국 H', dist: '120m', hours: '09:00-20:00', badge: '공휴일' },
+  { id: 'hp3', name: '가상약국 I', dist: '200m', hours: '09:00-19:00', badge: '' },
+  { id: 'hp4', name: '가상약국 J', dist: '350m', hours: '08:00-22:00', badge: '야간' },
 ];
 let rxSelectedPh = null;
 
@@ -3572,7 +3580,7 @@ function renderRxRouting() {
           </div>
         </div>
         <div style="background:var(--surface-alt);border-radius:12px;padding:14px;font-size:14px;color:var(--ink);line-height:1.7;margin-bottom:12px;">
-          <strong>서울대병원</strong>에서 처방전이 발행되었습니다.<br><br>
+          <strong>○○병원(가상)</strong>에서 처방전이 발행되었습니다. (시연용 가상 메시지)<br><br>
           환자: <strong>김숙명</strong>님<br>
           처방: 혈압약 외 2건<br>
           발행일: ${new Date().toLocaleDateString('ko-KR')}<br><br>
@@ -3591,8 +3599,8 @@ function renderRxRouting() {
     <div style="max-width:320px;margin:0 auto;">
       <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;">
         <div style="padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:15px;font-weight:600;">서울대병원 근처 약국</span>
-          <span style="font-size:13px;color:var(--ink-muted);">카카오맵</span>
+          <span style="font-size:15px;font-weight:600;">○○병원(가상) 근처 약국</span>
+          <span style="font-size:13px;color:var(--ink-muted);">지도 (시연)</span>
         </div>
 
         <div style="height:130px;background:var(--surface-alt);position:relative;">
@@ -3605,11 +3613,11 @@ function renderRxRouting() {
             <line x1="160" y1="0" x2="160" y2="130" stroke="var(--line)" stroke-width="0.3"/>
             <line x1="240" y1="0" x2="240" y2="130" stroke="var(--line)" stroke-width="0.3"/>
             <rect x="120" y="30" width="80" height="35" rx="3" fill="var(--surface)" stroke="var(--line)" stroke-width="0.5" opacity="0.6"/>
-            <text x="160" y="52" text-anchor="middle" font-size="7" fill="var(--ink-muted)" font-family="Noto Sans KR">서울대병원</text>
-            <circle cx="80" cy="50" r="4" fill="#ff6b6b"/><text x="80" y="42" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">병원앞</text>
-            <circle cx="200" cy="40" r="4" fill="#ff6b6b"/><text x="200" y="32" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">혜화건강</text>
-            <circle cx="250" cy="80" r="4" fill="#ff6b6b"/><text x="250" y="72" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">온누리</text>
-            <circle cx="60" cy="100" r="4" fill="#ff6b6b"/><text x="60" y="92" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">동숭</text>
+            <text x="160" y="52" text-anchor="middle" font-size="7" fill="var(--ink-muted)" font-family="Noto Sans KR">○○병원</text>
+            <circle cx="80" cy="50" r="4" fill="#ff6b6b"/><text x="80" y="42" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">약국G</text>
+            <circle cx="200" cy="40" r="4" fill="#ff6b6b"/><text x="200" y="32" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">약국H</text>
+            <circle cx="250" cy="80" r="4" fill="#ff6b6b"/><text x="250" y="72" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">약국I</text>
+            <circle cx="60" cy="100" r="4" fill="#ff6b6b"/><text x="60" y="92" text-anchor="middle" font-size="6" fill="var(--ink)" font-family="Noto Sans KR">약국J</text>
             <circle cx="160" cy="65" r="5" fill="var(--accent)" stroke="white" stroke-width="1.5"/>
           </svg>
         </div>
@@ -3715,6 +3723,7 @@ function renderRxRouting() {
       <div style="text-align:center;margin-bottom:16px;">
         <div style="font-size:18px;font-weight:600;">복약지도 카드</div>
         <div style="font-size:13px;color:var(--ink-muted);margin-top:4px;">좌우로 넘기세요 · 길게 눌러 텍스트 복사</div>
+        <div style="font-size:11px;color:#ff8a80;margin-top:6px;line-height:1.5;">※ 예시 문구, 약사 감수 전입니다. 실제 복약지도가 아닙니다.</div>
       </div>
 
       <div class="med-cards-scroll" id="med-cards">
@@ -3957,8 +3966,8 @@ function renderGovernance() {
     {
       tier: 'TIER 1',
       title: '약사회 자율 가이드라인',
-      who: '한국약사회 · 대한약학회',
-      role: 'AI 보조 복약지도 품질·책임 기준 자율 제정',
+      who: '한국약사회 · 대한약학회 (제안, 해당 단체와 협의 전)',
+      role: 'AI 보조 복약지도 품질·책임 기준 자율 제정 — MedIT의 제안 구상',
       items: [
         '약사 면허 검증 절차 명시',
         'AI 응답 검토·승인 기준',
@@ -3970,14 +3979,14 @@ function renderGovernance() {
     },
     {
       tier: 'TIER 2',
-      title: 'MedIT 운영 정책',
-      who: 'MedIT · 자문 약사단',
+      title: 'MedIT 운영 정책 (안)',
+      who: 'MedIT · 자문 약사단 (자문 협의 중)',
       role: '기술 구현 + 약사 협업 모델',
       items: [
         'READ-ONLY 연동 원칙',
-        'PII 자동 필터링·암호화',
+        'PII 자동 필터링·암호화 (설계)',
         '약사 최종 책임 명문화',
-        '감사 로그 자동 기록'
+        '감사 로그 자동 기록 (시연)'
       ],
       color: '#059669',
       light: '#6ee7b7'
@@ -4003,6 +4012,9 @@ function renderGovernance() {
       <h1 class="title">약사회 자율 거버넌스</h1>
       <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">
         약사 직역 보호 + 산업 표준화 — <strong style="color:#10B981">3-Tier 자율 가이드라인 모델</strong>로 약사회 주도권 유지.
+      </p>
+      <p style="margin-top:8px;font-size:12px;color:#ff8a80;line-height:1.55;border-left:2px solid rgba(255,138,128,.5);padding-left:8px;">
+        MedIT의 제안 구상입니다. 한국약사회·대한약학회 등 해당 단체와는 협의 전이며, 단체가 참여·동의·인정한 내용이 아닙니다.
       </p>
     </div>
 
@@ -4076,25 +4088,29 @@ function renderInternLog() {
   ];
   
   const pipeline = [
-    { n: '1', t: '수집', d: 'IRB 사전 협의 + 환자/약사 동의 후 가명화' },
+    { n: '1', t: '수집 (계획)', d: 'IRB 사전 협의 + 환자/약사 동의 후 가명화' },
     { n: '2', t: '정제', d: 'PII 자동 제거, 행동 시퀀스 표준화' },
     { n: '3', t: '분석', d: '복약 패턴·약사 의사결정 모델링' },
-    { n: '4', t: '공개', d: 'OSF 사전 등록 + 학술 데이터셋 공유' }
+    { n: '4', t: '공개', d: 'OSF 사전 등록 + 학술 데이터셋 공유 (계획)' }
   ];
   
   $('#view-internlog').innerHTML = `
     <div class="page-header">
       <h1 class="title">인턴·UX 로그 + Glass 실습</h1>
       <p style="color:var(--ink-muted);margin-top:4px;font-size:14px;">
-        약학대학 실습 인턴·UX 행동 로그를 PnP 데이터 흐름에 연계한 <strong style="color:#10B981">연구 데이터셋 구축</strong>.
+        약학대학 실습 인턴·UX 행동 로그를 PnP 데이터 흐름에 연계한 <strong style="color:#10B981">연구 데이터셋 구축 구상</strong>.
       </p>
+      <div style="margin-top:10px;background:rgba(255,138,128,0.12);border:1px solid rgba(255,138,128,0.35);border-radius:8px;padding:10px 12px;font-size:12.5px;line-height:1.6;color:#ffb4ab;">
+        <strong style="color:#ff8a80;">연구 구상 — 이 체험판은 아무것도 수집하지 않습니다.</strong><br>
+        아래 4개 영역과 파이프라인은 IRB 협의 등을 거친 뒤 진행할 계획이며, 현재 수집·분석·공개된 데이터는 없습니다.
+      </div>
     </div>
 
     <!-- 데이터 소스 4종 -->
     <div style="margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">DATA SOURCES</div>
-        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">4가지 연구 데이터 수집 영역</h2>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">DATA SOURCES · 구상</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">4가지 연구 데이터 수집 영역 (구상 · 현재 수집 없음)</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;">
         ${dataSources.map(d => `
@@ -4109,8 +4125,8 @@ function renderInternLog() {
     <!-- 연구 파이프라인 4단계 -->
     <div style="margin-top:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;">
       <div style="margin-bottom:14px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">RESEARCH PIPELINE</div>
-        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수집 → 정제 → 분석 → 공개</h2>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#10B981;letter-spacing:1.5px;">RESEARCH PIPELINE · 계획</div>
+        <h2 style="font-size:16px;font-weight:700;color:var(--ink);margin-top:3px;">수집 → 정제 → 분석 → 공개 (계획)</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;">
         ${pipeline.map((p, i) => `
@@ -4120,7 +4136,7 @@ function renderInternLog() {
               <div style="font-size:13px;font-weight:700;color:var(--ink);">${p.t}</div>
               <div style="font-size:11px;color:var(--ink-muted);">${p.d}</div>
             </div>
-            ${i < pipeline.length - 1 ? '<div style="color:#10B981;font-size:18px;">→</div>' : '<div style="background:#10B981;color:#fff;font-family:JetBrains Mono,monospace;font-size:11px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:1px;">DONE</div>'}
+            ${i < pipeline.length - 1 ? '<div style="color:#10B981;font-size:18px;">→</div>' : ''}
           </div>
         `).join('')}
       </div>
@@ -4137,9 +4153,9 @@ function renderInternLog() {
         <strong style="color:#6ee7b7;">IRB 사전 협의·OSF 사전 등록</strong> 후 본격 진행 예정 (현재 기획 단계).
       </p>
       <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">IRB 사전협의</span>
-        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">OSF 사전등록</span>
-        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">EgoBlur 적용</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">IRB 사전협의 예정</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">OSF 사전등록 예정</span>
+        <span style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);padding:4px 10px;border-radius:99px;font-size:11px;color:#6ee7b7;font-family:'JetBrains Mono',monospace;">EgoBlur 적용 검토</span>
       </div>
     </div>
   `;
