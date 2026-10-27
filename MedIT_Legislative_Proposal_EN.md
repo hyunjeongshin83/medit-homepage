@@ -31,7 +31,7 @@ Adverse event reporting systems worldwide rely on voluntary submissions, but pat
 ### Global comparison
 - Hazell & Shakir, *Drug Safety* 2006: median underreporting rate of 94%
 - Pirmohamed et al., *BMJ* 2004: 6.5% of UK hospital admissions related to ADRs
-- US FDA FAERS: 1,289,133 reports received in 2014 alone (FDA, "reports received and reports entered in FAERS by year"); patient direct reporting via FDA Form 3500B remains a small fraction
+- US FDA FAERS: 1,289,133 reports received in 2014 alone (FDA, "reports received and reports entered in FAERS by year")
 
 **The structural gap**: Patients lack accessible, intuitive channels to report adverse events in their own words.
 
@@ -90,7 +90,7 @@ MedIT addresses this by positioning licensed pharmacists as the primary user for
 
 ### United Kingdom
 - **MHRA** — software-as-medical-device regulation
-- **Yellow Card Scheme** — patient and HCP adverse event reporting (~60,000 reports annually)
+- **Yellow Card Scheme** — patient and HCP adverse event reporting 
 
 ### Japan
 - **PMDA** — two-stage SaMD approval pathway
