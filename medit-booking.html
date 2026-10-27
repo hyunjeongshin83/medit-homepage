@@ -492,7 +492,7 @@ function buildConsultForm(body){
   body.appendChild(el('p','fine','보내 주신 내용은 시연 준비와 이메일 답변에만 쓰며, 접수일부터 3개월 뒤 자동 삭제됩니다.'));
 }
 function buildResult(body, ans){
-  var ok = el('div','okmsg'); add(ok, el('b',null,'상담 내용을 받았습니다.'), ' 대표가 읽고 시연에 반영하며, 필요하면 이메일로 답합니다. 아래는 선택하신 내용에 맞춘 안내입니다.'); ok.style.marginTop='0'; body.appendChild(ok);
+  var ok = el('div','okmsg'); add(ok, el('b',null,'상담 내용을 받았습니다.'), ' 대표가 읽고 시연에 반영하며, 필요하면 이메일로 답합니다. 아래는 선택하신 내용에 맞춰 미리 준비해 둔 자동 안내이며, 계약 조건이 아닙니다.'); ok.style.marginTop='0'; body.appendChild(ok);
   var interest = ans.interest||[], concerns = ans.concerns||[];
   body.appendChild(el('h3',null,'선택하신 형태별 안내'));
   var box = el('div','ans');
