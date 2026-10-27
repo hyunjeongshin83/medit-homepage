@@ -6,6 +6,7 @@
 - Date: June 11, 2026
 - Purpose: Policy reference for US, EU, UK, and global stakeholders
 - Status: Pre-regulatory engagement draft — not FDA submission
+- Citations checked: October 27, 2026 (Korean statutes against the Korea Law Information Center, current versions). This is not legal advice; items marked "primary text to be verified" were not checked against the primary source.
 
 ---
 
@@ -22,14 +23,15 @@ MedIT is a pharmacist-assisted medication information platform, currently at the
 Adverse event reporting systems worldwide rely on voluntary submissions, but patient self-reporting rates remain critically low.
 
 ### Korea (KAERS)
-- 2025: ~270,000 total reports
-- **Patient self-reports: only 100 (0.04%)**
-- Source: Korea Institute of Drug Safety & Risk Management
+- 2025: 277,279 total reports (about 277,000; up about 9.4% from 253,486 in 2024)
+- Reports by reporter type (share of the 277,279 total, calculated; may not sum to exactly 100% because of rounding): regional pharmacovigilance centers 181,898 (65.6%); pharmaceutical companies 86,891 (31.3%); healthcare professionals 6,902 (2.5%); patients/consumers directly 100 (0.04%); other 1,488 (0.5%)
+- **Reports received directly from patients/consumers: only 100 (0.04%)**, so the direct reporting channel is used very little. Reports in which the first reporter was a consumer or non-healthcare professional numbered 30,849 (11.1%), but most appear to have reached KAERS through regional centers or pharmaceutical companies (reporting route to be confirmed against the original data); this indicates that consumers do bring adverse events to others' attention
+- Source: Korea Institute of Drug Safety & Risk Management, "2025 Drug Safety Information Report Trends" (as reported by the Korean trade press Yaksa Gongron, March 10, 2026; cross-checking against the original data is recommended)
 
 ### Global comparison
 - Hazell & Shakir, *Drug Safety* 2006: median underreporting rate of 94%
 - Pirmohamed et al., *BMJ* 2004: 6.5% of UK hospital admissions related to ADRs
-- US FDA FAERS: ~2.6 million reports cumulative; patient direct reporting via FDA Form 3500B remains a small fraction
+- US FDA FAERS: 1,289,133 reports received in 2014 alone (FDA, "reports received and reports entered in FAERS by year"); patient direct reporting via FDA Form 3500B remains a small fraction
 
 **The structural gap**: Patients lack accessible, intuitive channels to report adverse events in their own words.
 
@@ -53,7 +55,7 @@ Each scenario is mapped to a regulatory gap that appears to exist in both Korean
 
 ## 4. Design Principles for Non-Device CDS Compliance
 
-MedIT is designed to align with FDA's Clinical Decision Support (CDS) Software guidance (January 29, 2026 revision, FDA-2017-D-6569) under FD&C Act §520(o)(1)(E):
+MedIT is designed to align with FDA's Clinical Decision Support (CDS) Software guidance (revised guidance issued January 6, 2026 and re-issued January 29, 2026; Docket FDA-2017-D-6569) under FD&C Act §520(o)(1)(E):
 
 ### Criterion 1 — Information Type
 MedIT does **not** acquire, process, or analyze medical images, in vitro diagnostic device signals, or pattern/signal acquisition system data.
@@ -62,12 +64,12 @@ MedIT does **not** acquire, process, or analyze medical images, in vitro diagnos
 The platform is designed to display, analyze, or print medical information about a patient, including medication information from regulatory sources (Korea MFDS, US FDA labels), peer-reviewed clinical literature citations, and clinical practice guidelines.
 
 ### Criterion 3 — HCP Audience
-Responses are designed to be reviewed by licensed pharmacists (HCPs per FDA definition: *"...nurse practitioner, registered nurse... dentist... pharmacist... physician, physician assistant..."*).
+Responses are designed to be reviewed by licensed pharmacists (treated here as HCPs under the FDA guidance's definition of health care professional; the exact wording of that definition is to be confirmed against the primary text).
 
 ### Criterion 4 — Independent Review
 Planned design: all AI-generated drafts would include source citations (PubMed, FDA, regulatory databases), plain-language reasoning summaries, a pharmacist review interface before patient delivery, and exclusion of time-critical/emergency use cases. The current demo screens are rule-based samples.
 
-**Important caveat**: When MedIT provides information directly to patients (as opposed to HCPs), the §520(o)(1)(E) Non-Device CDS exemption does not apply under the 2026 FDA guidance, which states: *"Software functions that support or provide recommendations to patients or caregivers – not HCPs – meet the definition of a device."*
+**Important caveat**: When MedIT provides information directly to patients (as opposed to HCPs), the §520(o)(1)(E) Non-Device CDS exemption is not available for that function. As summarized here (not a direct quotation), the 2026 FDA guidance indicates that a software function intended to support or provide recommendations to a patient fails criterion three (HCP audience) and would not be non-device CDS; the guidance focuses on software intended for HCPs.
 
 MedIT addresses this by positioning licensed pharmacists as the primary user for clinical decision support functions, providing patient-facing content only as general information (FDA general wellness/educational policy), and excluding individualized diagnostic or treatment recommendations from patient-facing outputs.
 
@@ -76,14 +78,14 @@ MedIT addresses this by positioning licensed pharmacists as the primary user for
 ## 5. International Regulatory Context
 
 ### United States
-- **FD&C Act §520(o)** — Non-Device CDS exemption (21st Century Cures Act, 2016)
-- **FDA CDS Guidance** (January 29, 2026 revision)
+- **FD&C Act §520(o)** — Non-Device CDS exemption (21st Century Cures Act, 2016; section numbering — primary text to be verified)
+- **FDA CDS Guidance** (issued January 6, 2026; re-issued January 29, 2026)
 - **HIPAA** — applies to any entity processing US PHI, regardless of national origin
 - **State pharmacy laws** — vary by state; MedIT does not offer services to US residents and does not engage US pharmacist-patient relationships
 
 ### European Union
-- **MDR Rule 11** — software for diagnostic/therapeutic decisions defaults to Class IIa or higher
-- **AI Act (Regulation 2024/1689)** — high-risk classification for medical device AI
+- **MDR Rule 11** — software for diagnostic/therapeutic decisions defaults to Class IIa or higher (primary text to be verified)
+- **AI Act (Regulation 2024/1689)** — high-risk for AI that is a safety component of, or is itself, a medical device requiring third-party conformity assessment (Annex I route, e.g., via MDR); it is not an automatic classification of all medical device AI. Application dates were reportedly postponed by a 2026 amendment (August 2, 2028 reported for Annex I products; secondary source, primary text to be verified)
 - **GDPR Article 9** — special protections for health data
 
 ### United Kingdom
@@ -148,21 +150,23 @@ This white paper does not constitute a regulatory submission. MedIT is not seeki
 ## 10. References
 
 ### Korean Law
-- Pharmaceutical Affairs Act (Law No. 17208)
-- Medical Service Act (Law No. 20670)
-- Digital Medical Products Act (Law No. 20214)
-- Personal Information Protection Act (Law No. 19234)
+Act numbers below are the current versions per the Korea Law Information Center (law.go.kr), last verified October 27, 2026. Amendments with later effective dates exist, so re-check the current version when citing.
+
+- Pharmaceutical Affairs Act (current: Act No. 21525, effective October 8, 2026; Act No. 21937, which restricts wholesaler licensing for telemedicine intermediaries, promulgated September 15, 2026, effective September 16, 2027)
+- Medical Service Act (current: Act No. 21490, effective October 2, 2026; telemedicine amendment Act No. 21238, promulgated December 23, 2025, effective December 24, 2026)
+- Digital Medical Products Act (enacted as Act No. 20139, promulgated January 23, 2024, effective January 24, 2025; current: Act No. 21525, effective October 8, 2026; Articles 33–35 effective January 24, 2026)
+- Personal Information Protection Act (current: Act No. 21445, effective September 11, 2026)
 
 ### US Law and Regulation
-- 21st Century Cures Act (2016), P.L. 114-255
-- FD&C Act §520(o) — Non-Device CDS
-- FDA CDS Guidance (January 29, 2026), Docket FDA-2017-D-6569
+- 21st Century Cures Act (2016), P.L. 114-255 (primary text to be verified)
+- FD&C Act §520(o) — Non-Device CDS (primary text to be verified)
+- FDA CDS Guidance (issued January 6, 2026; re-issued January 29, 2026), Docket FDA-2017-D-6569
 - HIPAA — 45 CFR Parts 160 and 164
 - FDA FAERS — fda.gov/drugs/surveillance/faers
 
 ### International
-- EU MDR 2017/745, Annex VIII Rule 11
-- EU AI Act, Regulation (EU) 2024/1689
+- EU MDR 2017/745, Annex VIII Rule 11 (primary text to be verified)
+- EU AI Act, Regulation (EU) 2024/1689 (the 2026 amendment postponing application dates: primary text to be verified)
 - WHO Programme for International Drug Monitoring
 - ICH E2B(R3) Electronic Transmission of Individual Case Safety Reports
 
