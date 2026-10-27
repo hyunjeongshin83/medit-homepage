@@ -71,6 +71,8 @@
       doneTitle: '접수되었습니다.',
       doneP1: '입력하신 이메일로 순서대로 안내드립니다.',
       doneP2: '며칠이 지나도 답이 없으면 아래 주소로 알려 주세요.',
+      guideIntro: '일정 확정과 시스템·계약 상담은 아래 안내 페이지에서 바로 이어가실 수 있습니다. 이 주소는 신청하신 분만 보시도록 만든 개인용 주소이니 다른 분께 전달하지 마세요.',
+      guideBtn: '예약 안내 · 계약 상담 열기',
       kindLabel: { demo: '데모 시연 예약', pilot: '약국 시범 이용 신청', ask: '문의' },
       watchIntro: '시연 영상과 체험판은 모두 가상 데이터입니다. 실제 환자 정보는 입력하지 마세요.',
       links: { video: '시연 영상 보기', pharm: '약사용 체험판', patient: '환자용 앱 체험판' },
@@ -130,6 +132,8 @@
       doneTitle: 'Request received.',
       doneP1: 'We will reply to the email you entered, in order of arrival.',
       doneP2: 'If you do not hear back after a few days, please write to the address below.',
+      guideIntro: 'You can pick your time and ask system and contract questions on your own guide page (in Korean). The link is personal to you, so please do not share it.',
+      guideBtn: 'Open my booking guide (Korean)',
       kindLabel: { demo: 'Demo booking', pilot: 'Pharmacy pilot request', ask: 'Question' },
       watchIntro: 'The videos and demos use fictional data only. Please do not enter real patient information.',
       links: { video: 'Watch the demo videos', pharm: 'Pharmacist demo', patient: 'Patient app demo' },
@@ -475,7 +479,7 @@
         p.elapsed_ms = Date.now() - t0;
         return send(p);
       }).then(function (x) {
-        if (x.j && x.j.ok) { finish(f, p, userMsg); return; }
+        if (x.j && x.j.ok) { finish(f, p, userMsg, x.j.token); return; }
         var j = x.j || {};
         if (x.s === 429 && j.error === 'too_fast') setStatus(T.err.fast, true);
         else if (x.s === 429) setStatus('', true, T.err.rate + mailFallback(p));
@@ -510,7 +514,7 @@
     });
   }
 
-  function finish(form, p, userMsg) {
+  function finish(form, p, userMsg, token) {
     var when = [p.preferred_date ? fmtDate(p.preferred_date) : '', p.preferred_slot ? slotLabel(p.preferred_slot) : ''].filter(Boolean).join(' · ');
     var kind = T.kindLabel[st.mode] || '';
     var box = h('div', null, [
@@ -523,6 +527,11 @@
     var b = h('div', { class: 'mc-b mc-bot' }, [box]);
     log.replaceChild(b, form);
     scrollEnd();
+    // 데모·시범 신청이면, 신청별 개인용 안내 페이지(일정 고르기·시스템/계약 상담)로 이어지는 버튼을 준다
+    if ((st.mode === 'demo' || st.mode === 'pilot') && typeof token === 'string' && /^[0-9a-f]{32}$/.test(token)) {
+      bot(T.guideIntro);
+      chips([{ label: T.guideBtn, href: 'medit-booking.html?t=' + token, fill: true }]);
+    }
     bot(T.watchNow + ' ' + T.watchIntro);
     chips(demoLinks());
     again();
