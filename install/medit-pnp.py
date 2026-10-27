@@ -238,7 +238,7 @@ def cmd_detect(ctx, a):
         hits = [a.program[:40]]
     ctx.say("약국 프로그램 후보:", ", ".join(hits) if hits else "찾지 못함(--program 이름 으로 직접 알려 줄 수 있습니다)")
     ctx.say("등록된 ODBC 데이터 원본:", ", ".join(dsns) if dsns else "없음")
-    ctx.say("※ 이름만 확인했습니다. 설치 목록 전체나 연결 정보는 읽거나 보내지 않습니다.")
+    ctx.say("※ 설치 목록은 이 컴퓨터 안에서 이름만 대조했습니다. 서버로는 일치한 프로그램 이름, ODBC 원본 개수, 운영체제 종류만 보내며, 접속 정보(주소·계정·비밀번호)는 읽지 않습니다.")
     report(ctx, st, "detect", True, {"programs": hits[:5], "dsn_count": len(dsns), "os": platform.system()[:20]})
     ctx.say("다음:  python medit-pnp.py schema --sample")
     return EXIT_OK, {"ok": True, "programs": hits, "dsn_names": dsns}
