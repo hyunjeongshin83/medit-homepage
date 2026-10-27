@@ -704,12 +704,21 @@ function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pil
     if(!p.consent) return invalid('consent');
 
     btn.disabled = true; setStatus(m('sending'), '');
-    var ctl = ('AbortController' in window) ? new AbortController() : null;
-    var to = setTimeout(function(){ if(ctl) ctl.abort(); }, 15000);
-    fetch(EP, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(p), signal: ctl ? ctl.signal : undefined})
-      .then(function(r){ return r.json().catch(function(){ return {ok:false, error:'server'}; }).then(function(j){ return {s:r.status, j:j}; }); })
+    // 접수 서버는 한동안 쓰이지 않으면 첫 요청이 한 번 실패할 수 있다(2026-10-27 QA에서 확인).
+    // 서버 오류(5xx)일 때만 1.5초 뒤 한 번 더 보낸다. 네트워크 끊김·시간 초과는 중복 접수를 피하려 다시 보내지 않는다.
+    function attempt(){
+      var ctl = ('AbortController' in window) ? new AbortController() : null;
+      var to = setTimeout(function(){ if(ctl) ctl.abort(); }, 15000);
+      return fetch(EP, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(p), signal: ctl ? ctl.signal : undefined})
+        .then(function(r){ return r.json().catch(function(){ return {ok:false, error:'server'}; }).then(function(j){ clearTimeout(to); return {s:r.status, j:j}; }); },
+              function(err){ clearTimeout(to); throw err; });
+    }
+    attempt()
       .then(function(x){
-        clearTimeout(to);
+        if(!(x.j && x.j.ok) && x.s >= 500){ return new Promise(function(res){ setTimeout(res, 1500); }).then(attempt); }
+        return x;
+      })
+      .then(function(x){
         if(x.j && x.j.ok){ done(p); return; }
         var er = x.j && x.j.error;
         if(er === 'invalid' && x.j.field){ invalid(x.j.field); }
@@ -717,7 +726,7 @@ function drawPills(){pctx.clearRect(0,0,pc.width,pc.height);spT++;if(spT>90&&pil
         else if(er === 'too_fast'){ setStatus(m('fast'), 'bad'); t0 = Date.now() - 2000; }
         else { setStatus('', 'bad', m('server') + ' ' + mailLink(p)); }
       })
-      .catch(function(){ clearTimeout(to); setStatus('', 'bad', m('net') + ' ' + mailLink(p)); })
+      .catch(function(){ setStatus('', 'bad', m('net') + ' ' + mailLink(p)); })
       .then(function(){ btn.disabled = false; });
   });
 })();

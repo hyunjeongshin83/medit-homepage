@@ -2604,10 +2604,10 @@ const KAERS_SEEN_KEY = 'medit_kaers_last_seen';
 
 async function fetchKaersFresh(){
   const url = KAERS_REMOTE_URL + '?t=' + Date.now();
-  const resp = await fetch(url, {
-    cache: 'no-store',
-    headers: {'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache'}
-  });
+  // 사용자 지정 헤더(Cache-Control·Pragma)를 넣으면 브라우저가 CORS 사전 요청을 보내는데,
+  // raw.githubusercontent.com 이 이를 403으로 거절해 데모가 항상 실패했다(2026-10-27 QA). 헤더 없이
+  // 주소 뒤 ?t= 값과 cache:'no-store' 만으로 캐시를 피한다.
+  const resp = await fetch(url, {cache: 'no-store'});
   if(!resp.ok) throw new Error('HTTP ' + resp.status);
   return await resp.json();
 }
@@ -2658,12 +2658,21 @@ function updateMeta(){
 async function loadKaersData(){
   updateStatus('원격 데이터 가져오는 중...', '#059669', 'rgba(240,200,102,.15)');
   try{
-    const data = await fetchKaersFresh();
+    let data, fromCopy = false;
+    try{
+      data = await fetchKaersFresh();
+    } catch(remoteErr) {
+      // 약국·병원 망처럼 raw.githubusercontent.com 이 막힌 곳을 위해, 같은 사이트에 둔 사본으로 대신한다.
+      const r2 = await fetch('kaers-sample-data.json?t=' + Date.now(), {cache: 'no-store'});
+      if(!r2.ok) throw remoteErr;
+      data = await r2.json();
+      fromCopy = true;
+    }
     window.KAERS_DATA = data;
-    updateStatus('✓ 실시간 원격 연결됨', 'var(--mint)', 'rgba(16,185,129,.15)');
+    updateStatus(fromCopy ? '✓ 사이트 내 사본 사용 (원격 연결 실패)' : '✓ 실시간 원격 연결됨', 'var(--mint)', 'rgba(16,185,129,.15)');
     updateMeta();
     checkForNewData(data);
-    logRefresh('GitHub raw에서 ' + data.drugs.length + '개 의약품 데이터 가져옴');
+    logRefresh((fromCopy ? '원격 연결에 실패해 사이트 내 사본에서 ' : 'GitHub raw에서 ') + data.drugs.length + '개 의약품 데이터 가져옴');
   } catch(err) {
     window.KAERS_DATA = null;
     // 차분한 노란색 (에러보다는 대기 상태로 표현)
