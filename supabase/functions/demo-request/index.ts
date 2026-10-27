@@ -17,7 +17,11 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = ["https://hyunjeongshin83.github.io"];
-const CONSENT_VERSION = "2026-10-18";
+const CONSENT_VERSION = "2026-10-18"; // 캠퍼스타운 허브 미팅 예약(kind=meeting)이 쓰는 동의 버전
+// 데모·시범 이용 신청(MedIT 홈페이지)이 동의한 개인정보 처리방침 개정 버전 (2026-10-27 전면 개정, 동의 문구 2차)
+const CONSENT_VERSION_MEDIT = "2026-10-27.2";
+// 주민등록번호·외국인등록번호처럼 보이는 숫자(생년월일 6자리 + 1~8로 시작하는 7자리)는 받지 않는다 (개인정보 보호법 제24조의2)
+const LOOKS_LIKE_ID_NUMBER = /(^|[^0-9])\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])[\s-]?[1-8]\d{6}($|[^0-9])/;
 // 자동 점검이 쓰는 주소. 이 주소로 들어온 신청은 운영자 목록에 보이지 않는다.
 // .invalid 는 어디에도 닿지 않는 예약된 도메인이라 실제 사람의 주소와 겹치지 않는다.
 const QA_EMAIL = "qa-auto@campustownhub.invalid";
@@ -167,6 +171,7 @@ Deno.serve(async (req) => {
   }
 
   const message = clean(b.message, 1000) || null;
+  if (message && LOOKS_LIKE_ID_NUMBER.test(message)) return json({ ok: false, error: "invalid", field: "message" }, 400);
 
   if (b.consent !== true) return json({ ok: false, error: "invalid", field: "consent" }, 400);
 
@@ -186,7 +191,7 @@ Deno.serve(async (req) => {
 
     const { data: ins, error } = await sb.from("demo_requests").insert({
       kind, name, org, email, phone, preferred_date, preferred_slot, message,
-      consent_version: CONSENT_VERSION,
+      consent_version: kind === "meeting" ? CONSENT_VERSION : CONSENT_VERSION_MEDIT,
       purge_after: new Date(Date.now() + PURGE_DAYS * 86400e3).toISOString(),
     }).select("access_token").single();
     if (error) throw error;

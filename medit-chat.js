@@ -42,16 +42,18 @@
       f: {
         name: '이름 (필수)', org: '소속 (약국·기관명)', orgPh: '예: ○○약국', email: '이메일 (필수)',
         phone: '전화번호 (선택)', phonePh: '010-0000-0000', msg: '문의 내용 (선택)', msgPh: '궁금한 점을 적어 주세요.',
-        msgHint: '환자 개인정보나 건강정보는 적지 마세요.'
+        msgHint: '환자 정보(이름·연락처·병명·처방), 건강 정보, 주민등록번호 등은 적지 마세요.'
       },
       consent: '개인정보 수집·이용에 동의합니다. (필수)',
+      consentNote: '신청 내용은 국외 서버(Supabase·Google·Anthropic)에서 처리되며, 동의하지 않으시면 이 양식으로 신청하실 수 없습니다. 자세한 내용은 아래 "자세히 보기"와 개인정보 처리방침을 확인해 주세요.',
       detailTitle: '자세히 보기',
       detail: [
-        '수집 항목: 이름, 이메일, (선택) 소속, 전화번호, 희망 날짜와 시간대, 문의 내용',
-        '이용 목적: 데모 일정 조율과 시범 이용 안내 회신',
-        '보유 기간: 접수일부터 3개월 뒤 자동 삭제합니다. 삭제를 원하시면 이메일로 알려 주세요.',
-        '동의하지 않을 권리: 동의하지 않아도 됩니다. 이 경우 이메일로 직접 문의하실 수 있습니다.',
-        '저장 위치: 클라우드 데이터베이스(Supabase, 일본 도쿄 리전). 제3자에게 제공하지 않습니다.'
+        '수집 항목: 필수 — 이름, 이메일 (시범 이용 신청은 소속(약국명)도 필수). 선택 — 소속(데모 신청), 전화번호, 희망 날짜와 시간대, 문의 내용. 선택 항목은 입력하지 않아도 신청할 수 있습니다.',
+        '이용 목적: 데모 일정 조율, 시범 이용 안내, 문의 답변, 접수 알림',
+        '보유 기간: 접수일부터 3개월 뒤 데이터베이스에서 자동 삭제합니다. 메일함 사본은 자동 삭제 대상이 아니며, 삭제를 요청하시면 함께 삭제합니다.',
+        '동의하지 않을 권리: 동의하지 않아도 됩니다. 다만 동의하지 않으면 이 양식으로 신청하거나 예약 안내 페이지를 이용하실 수 없고, 이메일로 직접 문의하셔야 합니다.',
+        '처리 위탁·국외 이전: 신청 내용은 클라우드 저장(Supabase, 일본 도쿄 저장), 메일 발송(Google, 미국), AI 보조 처리(Anthropic, 미국)를 위해 국외 서버로 전송·처리됩니다. 원치 않으시면 양식을 제출하지 마세요. 제3자에게 제공하지 않습니다.',
+        '입력하지 마세요: 환자 정보, 건강 정보, 주민등록번호 등. 만 14세 미만은 이용할 수 없습니다.'
       ],
       policy: '개인정보 처리방침',
       submit: '접수하기', sending: '보내는 중입니다.',
@@ -62,6 +64,7 @@
         org: '시범 이용은 약국 이름을 적어 주세요.',
         phone: '전화번호는 숫자와 하이픈으로 적어 주세요.',
         preferred_date: '희망 날짜를 다시 골라 주세요.',
+        message: '주민등록번호처럼 보이는 숫자가 있어 접수하지 않았습니다. 해당 부분을 지우고 다시 보내 주세요.',
         rate: '같은 이메일로는 하루 3건까지 접수됩니다. 아래 이메일로 직접 보내 주세요.',
         fast: '잠시 뒤에 다시 눌러 주세요.',
         server: '접수에 실패했습니다. 잠시 뒤 다시 시도하거나 이메일로 보내 주세요.',
@@ -103,16 +106,18 @@
       f: {
         name: 'Name (required)', org: 'Organization (pharmacy / institution)', orgPh: 'e.g. ○○ Pharmacy', email: 'Email (required)',
         phone: 'Phone (optional)', phonePh: '+82 10-0000-0000', msg: 'Message (optional)', msgPh: 'Tell us what you would like to know.',
-        msgHint: 'Please do not enter patient personal or health information.'
+        msgHint: 'Please do not enter patient information (name, contact, condition, prescription), health information or resident registration numbers.'
       },
       consent: 'I agree to the collection and use of my personal information. (required)',
+      consentNote: 'Your request is processed on servers abroad (Supabase, Google, Anthropic), and without consent you cannot apply through this form. See "Details" below and the Privacy Policy.',
       detailTitle: 'Details',
       detail: [
-        'Collected: name, email, and (optional) organization, phone, preferred date and time slot, message',
-        'Purpose: arranging the demo schedule and replying about the pilot',
-        'Retention: automatically deleted 3 months after receipt. Email us if you want it deleted sooner.',
-        'Right to refuse: you may decline; in that case you can email us directly.',
-        'Storage: cloud database (Supabase, Tokyo region, Japan). Not provided to third parties.'
+        'Collected: required — name, email (a pilot request also requires the pharmacy or organization name). Optional — organization (demo request), phone, preferred date and time slot, message. Optional items can be left blank.',
+        'Purpose: arranging the demo schedule, pilot information, answering your message, and request notifications',
+        'Retention: automatically deleted from the database 3 months after receipt. Mailbox copies are not covered by the automatic deletion; they are deleted too if you ask.',
+        'Right to refuse: you may decline consent. If you do, you cannot apply through this form or use the booking guide page, and you would need to write to us by email.',
+        'Outsourcing and transfer abroad: your request is sent to and processed on servers abroad for cloud storage (Supabase, stored in Tokyo, Japan), email (Google, US) and AI assistance (Anthropic, US). If you do not want this, please do not submit the form. Not provided to third parties.',
+        'Please do not enter: patient information, health information, resident registration numbers and the like. Not available to children under 14.'
       ],
       policy: 'Privacy policy',
       submit: 'Submit', sending: 'Sending...',
@@ -123,6 +128,7 @@
         org: 'For a pharmacy pilot, please enter the pharmacy name.',
         phone: 'Please use digits and hyphens for the phone number.',
         preferred_date: 'Please pick the date again.',
+        message: 'The message contains digits that look like a resident registration number, so it was not submitted. Please remove them and send again.',
         rate: 'Up to 3 requests per day are accepted for one email address. Please email us directly.',
         fast: 'Please try again in a moment.',
         server: 'Submission failed. Please try again shortly or email us.',
@@ -428,6 +434,7 @@
     f.appendChild(h('div', { class: 'mc-hp', 'aria-hidden': 'true' }, [hp]));
     var consent = h('input', { type: 'checkbox', id: ids + 'c' });
     f.appendChild(h('label', { class: 'mc-consent', for: ids + 'c' }, [consent, h('span', { text: T.consent })]));
+    f.appendChild(h('div', { class: 'mc-hint', text: T.consentNote }));
     var det = h('details', { class: 'mc-det' }, [h('summary', { text: T.detailTitle }), h('ul', null, T.detail.map(function (x) { return h('li', { text: x }); }))]);
     if (hasEl('privacy')) {
       det.appendChild(h('div', null, [h('a', { href: '#privacy', text: T.policy, onclick: closePanel })]));

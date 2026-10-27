@@ -33,7 +33,9 @@ const CONCERNS = [
   "관련 법령·규제",
   "기타",
 ];
-const CONSENT_VERSION = "2026-10-27"; // 개인정보 처리방침에 상담 답변 항목을 더한 날
+const CONSENT_VERSION = "2026-10-27.2"; // 개인정보 처리방침 전면 개정(수탁자·국외 이전·AI 보조 처리 고지)과 상담 동의 문구 2차
+// 주민등록번호·외국인등록번호처럼 보이는 숫자는 받지 않는다 (개인정보 보호법 제24조의2)
+const LOOKS_LIKE_ID_NUMBER = /(^|[^0-9])\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])[\s-]?[1-8]\d{6}($|[^0-9])/;
 const MAX_EVENTS_PER_DAY = 40;
 const LEAD_DAYS = 2; // 오늘로부터 이만큼 뒤부터 고를 수 있다 (자동 회신 작업과 같은 기준)
 
@@ -206,6 +208,9 @@ Deno.serve(async (req) => {
     if (timing && !TIMINGS.includes(timing)) return json({ ok: false, error: "invalid", field: "timing" }, 400);
     const program = clean(a.program, 60);
     const notes = clean(a.notes, 600);
+    if (LOOKS_LIKE_ID_NUMBER.test(notes) || LOOKS_LIKE_ID_NUMBER.test(program)) {
+      return json({ ok: false, error: "sensitive" }, 400);
+    }
 
     const consult = {
       interest,
