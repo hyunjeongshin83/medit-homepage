@@ -11,9 +11,9 @@
 
 ## 1. Executive Summary
 
-MedIT is a pharmacist-assisted medication information platform operated from the Republic of Korea. This white paper presents observed patterns from MedIT's natural-language patient inquiry interface and proposes policy directions for strengthening adverse event reporting and digital pharmacy regulation, drawing parallels between Korea's KAERS system and US FAERS/MedWatch.
+MedIT is a pharmacist-assisted medication information platform, currently at the design and demo stage, operated from the Republic of Korea. This white paper presents illustrative scenarios assumed by the founder (not collected from real patients) and proposes policy directions for strengthening adverse event reporting and digital pharmacy regulation, drawing parallels between Korea's KAERS system and US FAERS/MedWatch.
 
-**Key positioning**: MedIT is designed to support — not replace — the independent professional judgment of licensed pharmacists. Patient-facing responses are reviewed by Korea-licensed pharmacists before delivery. The platform does not provide medical diagnosis, treatment recommendations, or prescriptions.
+**Key positioning**: MedIT is designed to support — not replace — the independent professional judgment of licensed pharmacists. Patient-facing responses are planned to be reviewed by licensed pharmacists at partner pharmacies before delivery; no such review service is operating yet. The platform does not provide medical diagnosis, treatment recommendations, or prescriptions.
 
 ---
 
@@ -35,9 +35,9 @@ Adverse event reporting systems worldwide rely on voluntary submissions, but pat
 
 ---
 
-## 3. Five Patient Inquiry Scenarios (from MedIT Platform)
+## 3. Five Illustrative Inquiry Scenarios (Assumed by the Founder)
 
-These represent real-world patient communication patterns that current regulatory frameworks struggle to address:
+These are illustrative scenarios assumed by the founder (not collected from real patients) that show gaps current regulatory frameworks struggle to address:
 
 | # | Inquiry Type | Example | Regulatory Gap |
 |---|---|---|---|
@@ -47,7 +47,7 @@ These represent real-world patient communication patterns that current regulator
 | 4 | Drug-drug interaction | "Can I take Tylenol and Brufen together?" | Integrated interaction guidance |
 | 5 | High-risk drug monitoring | "I get frequent nosebleeds on warfarin; is it dangerous?" | Active monitoring for high-risk medications |
 
-Each pattern maps to a regulatory gap that exists in both Korean and US systems.
+Each scenario is mapped to a regulatory gap that appears to exist in both Korean and US systems.
 
 ---
 
@@ -59,13 +59,13 @@ MedIT is designed to align with FDA's Clinical Decision Support (CDS) Software g
 MedIT does **not** acquire, process, or analyze medical images, in vitro diagnostic device signals, or pattern/signal acquisition system data.
 
 ### Criterion 2 — Information Display
-The platform displays, analyzes, or prints medical information about a patient, including medication information from regulatory sources (Korea MFDS, US FDA labels), peer-reviewed clinical literature citations, and clinical practice guidelines.
+The platform is designed to display, analyze, or print medical information about a patient, including medication information from regulatory sources (Korea MFDS, US FDA labels), peer-reviewed clinical literature citations, and clinical practice guidelines.
 
 ### Criterion 3 — HCP Audience
-Pharmacist-verified responses are designed for review by licensed pharmacists (HCPs per FDA definition: *"...nurse practitioner, registered nurse... dentist... pharmacist... physician, physician assistant..."*).
+Responses are designed to be reviewed by licensed pharmacists (HCPs per FDA definition: *"...nurse practitioner, registered nurse... dentist... pharmacist... physician, physician assistant..."*).
 
 ### Criterion 4 — Independent Review
-All AI-generated drafts include source citations (PubMed, FDA, regulatory databases), plain-language reasoning summaries, pharmacist review interface before patient delivery, and exclusion of time-critical/emergency use cases.
+Planned design: all AI-generated drafts would include source citations (PubMed, FDA, regulatory databases), plain-language reasoning summaries, a pharmacist review interface before patient delivery, and exclusion of time-critical/emergency use cases. The current demo screens are rule-based samples.
 
 **Important caveat**: When MedIT provides information directly to patients (as opposed to HCPs), the §520(o)(1)(E) Non-Device CDS exemption does not apply under the 2026 FDA guidance, which states: *"Software functions that support or provide recommendations to patients or caregivers – not HCPs – meet the definition of a device."*
 
@@ -79,7 +79,7 @@ MedIT addresses this by positioning licensed pharmacists as the primary user for
 - **FD&C Act §520(o)** — Non-Device CDS exemption (21st Century Cures Act, 2016)
 - **FDA CDS Guidance** (January 29, 2026 revision)
 - **HIPAA** — applies to any entity processing US PHI, regardless of national origin
-- **State pharmacy laws** — vary by state; MedIT does not engage US pharmacist-patient relationships
+- **State pharmacy laws** — vary by state; MedIT does not offer services to US residents and does not engage US pharmacist-patient relationships
 
 ### European Union
 - **MDR Rule 11** — software for diagnostic/therapeutic decisions defaults to Class IIa or higher
@@ -100,7 +100,7 @@ MedIT addresses this by positioning licensed pharmacists as the primary user for
 
 ## 6. HIPAA Considerations
 
-MedIT does not currently process US Protected Health Information (PHI) and does not operate as a HIPAA-covered entity or business associate. The platform complies with Korea's Personal Information Protection Act (PIPA), applies GDPR Article 9 standards where applicable, would establish Business Associate Agreements (BAAs) before processing any US PHI through formal US healthcare partnerships, and uses encryption, access controls, and audit trails consistent with HIPAA Security Rule technical safeguards.
+MedIT does not currently process US Protected Health Information (PHI) and does not operate as a HIPAA-covered entity or business associate. The platform is designed with Korea's Personal Information Protection Act (PIPA) and, where applicable, GDPR Article 9 in mind. No HIPAA-compliant channel is available today. Encryption, access controls, and audit trails consistent with HIPAA Security Rule technical safeguards are design goals, not audited or certified controls, and Business Associate Agreements (BAAs) would have to be established before any US PHI is processed through formal US healthcare partnerships.
 
 US-based partnerships requiring PHI processing would necessitate BAA execution, HIPAA-eligible cloud infrastructure (separate from Korean operations), and HIPAA-compliant messaging channels (KakaoTalk and standard SMS are not HIPAA-compliant).
 
@@ -128,9 +128,9 @@ US-based partnerships requiring PHI processing would necessitate BAA execution, 
 
 ---
 
-## 8. MedIT's Regulatory Engagement Approach
+## 8. MedIT's Regulatory Engagement Approach (Planned)
 
-MedIT pursues responsible engagement through FDA public docket comments (e.g., on CDS guidance), Patient-Focused Drug Development (PFDD) participation, academic publication of underreporting patterns, industry association participation (Consumer Technology Association, digital health groups), and cross-border regulatory dialogue with MFDS, FDA, MHRA, PMDA.
+MedIT plans to consider the following forms of engagement: FDA public docket comments (e.g., on CDS guidance), Patient-Focused Drug Development (PFDD) participation, academic publication on underreporting, participation in industry associations (e.g., Consumer Technology Association, digital health groups), and cross-border regulatory dialogue with MFDS, FDA, MHRA, and PMDA. No such engagement has taken place yet.
 
 This white paper does not constitute a regulatory submission. MedIT is not seeking FDA approval at this stage; the platform is positioned as information provision and pharmacist-assisted services.
 
@@ -179,7 +179,7 @@ This white paper does not constitute a regulatory submission. MedIT is not seeki
 
 **Not FDA approved**: MedIT has not been evaluated or approved by the US Food and Drug Administration. MedIT does not diagnose, treat, cure, or prevent any disease.
 
-**Operator notice**: MedIT is operated from the Republic of Korea by Hyun Jeong Shin (sole proprietor). Korea-licensed pharmacists provide professional consultation. No US pharmacist-patient relationship is formed.
+**Operator notice**: MedIT is operated from the Republic of Korea by Hyun Jeong Shin (sole proprietor). No pharmacist consultation service is operating yet; responses are planned to be reviewed by licensed pharmacists at partner pharmacies, and no partner pharmacy has been contracted. MedIT does not offer services to US residents, and no US pharmacist-patient relationship is formed.
 
 **For US adverse event reporting**, contact FDA MedWatch: 1-800-FDA-1088 or fda.gov/medwatch.
 
@@ -187,6 +187,6 @@ This white paper does not constitute a regulatory submission. MedIT is not seeki
 
 **Contact**: hyunjeong.shin@sookmyung.ac.kr
 
-**MedIT** — Medication Technology Platform · Pharmacist-Verified Information · Adverse Event Safety · Patient KAERS Self-Report Assistance
+**MedIT** — Medication Technology Platform · Pharmacist-Reviewed Information (Planned) · Adverse Event Safety · Patient KAERS Self-Report Assistance
 
 — End of Document —
