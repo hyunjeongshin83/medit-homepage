@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="en" href="https://hyunjeongshin83.github.io/medit-homepage/medit-en.html">
 <link rel="alternate" hreflang="x-default" href="https://hyunjeongshin83.github.io/medit-homepage/">
 <title>MedIT — 메디신 테크놀로지 플랫폼 · Pharmacist-Verified Medication Platform</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/fonts.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#10B981;--mint2:#34d399;--mint-soft:rgba(16,185,129,.08);--mint-border:rgba(16,185,129,.2);--g1:#064e3b;--g2:#047857;--g3:#059669;--g4:#10B981;--g5:#34d399;--g6:#6ee7b7;--g1-s:rgba(6,78,59,.12);--g2-s:rgba(4,120,87,.12);--g3-s:rgba(5,150,105,.12);--g4-s:rgba(16,185,129,.12);--g5-s:rgba(52,211,153,.12);--g6-s:rgba(110,231,183,.12);--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--b3-s:rgba(30,41,59,.12);--b3-border:rgba(30,41,59,.25);--ice:#34d399;--ice-s:rgba(52,211,153,.1);--lav:#6ee7b7;--lav-s:rgba(110,231,183,.1);--coral:#ff8a80;--text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;--card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);--r:16px;--font-head:'HCR Dotum','Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
@@ -99,7 +99,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 @media (max-width:768px){footer{padding-bottom:5.5rem}#bk-submit{width:100%}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1!important;transform:none!important}}
 </style>
-<script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+<script src="vendor/tone/Tone.js"></script>
 
 <style>
 /* 새 로고 스타일 */
@@ -2499,7 +2499,7 @@ function toggleLogoState(el){
 window.KAERS_DATA = null;
 window.KAERS_REFRESH_LOG = [];
 
-const KAERS_REMOTE_URL = 'https://raw.githubusercontent.com/hyunjeongshin83/medit-homepage/main/kaers-sample-data.json';
+const KAERS_REMOTE_URL = 'kaers-sample-data.json';
 const KAERS_SEEN_KEY = 'medit_kaers_last_seen';
 
 async function fetchKaersFresh(){

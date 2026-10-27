@@ -21,7 +21,7 @@
 <link rel="alternate" hreflang="en" href="https://hyunjeongshin83.github.io/medit-homepage/medit-en.html">
 <link rel="alternate" hreflang="x-default" href="https://hyunjeongshin83.github.io/medit-homepage/">
 <title>MedIT 기술 자료 — PnP 아키텍처 · 설치 흐름</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/fonts.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#10B981;--mint2:#34d399;--mint-soft:rgba(16,185,129,.08);--mint-border:rgba(16,185,129,.2);--g1:#064e3b;--g2:#047857;--g3:#059669;--g4:#10B981;--g5:#34d399;--g6:#6ee7b7;--g1-s:rgba(6,78,59,.12);--g2-s:rgba(4,120,87,.12);--g3-s:rgba(5,150,105,.12);--g4-s:rgba(16,185,129,.12);--g5-s:rgba(52,211,153,.12);--g6-s:rgba(110,231,183,.12);--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--b3-s:rgba(30,41,59,.12);--b3-border:rgba(30,41,59,.25);--ice:#34d399;--ice-s:rgba(52,211,153,.1);--lav:#6ee7b7;--lav-s:rgba(110,231,183,.1);--coral:#ff8a80;--text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;--card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);--r:16px;--font-head:'HCR Dotum','Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
@@ -97,7 +97,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 @media (max-width:768px){footer{padding-bottom:5.5rem}#bk-submit{width:100%}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1!important;transform:none!important}}
 </style>
-<script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+<script src="vendor/tone/Tone.js"></script>
 
 <style>
 /* 새 로고 스타일 */
@@ -1426,7 +1426,7 @@ function sendMsg(){
   <div id="demo-06-launcher" style="text-align:center;padding:1rem 0">
     <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">DEMO 06 · INTERACTIVE</div>
     <h3 style="font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--text);margin:0 0 .6rem">KAERS 예시 데이터 연동 응답 (규칙 기반 시연)</h3>
-    <p style="font-size:.85rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 1.5rem">원격 저장소의 시연용 예시 데이터로 약품명을 검색하면, 정해진 규칙(AI 모델 호출 없음)에 따라 약사 검토용 응답 초안 예시가 만들어집니다. 17개 의약품의 시연용 가상 수치가 등록되어 있으며, 실제 KAERS 품목별 원시자료가 아닙니다.</p>
+    <p style="font-size:.85rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 1.5rem">이 사이트에 둔 시연용 예시 데이터로 약품명을 검색하면, 정해진 규칙(AI 모델 호출 없음)에 따라 약사 검토용 응답 초안 예시가 만들어집니다. 17개 의약품의 시연용 가상 수치가 등록되어 있으며, 실제 KAERS 품목별 원시자료가 아닙니다.</p>
     <button onclick="launchKaersDemo()" class="btn btn-mint" style="font-size:.9rem;padding:.85rem 1.8rem">
       체험하기 시작 →
     </button>
@@ -1455,7 +1455,7 @@ function sendMsg(){
     <span id="kaersStatus" style="background:rgba(16,185,129,.1);color:var(--mint);font-family:var(--font-mono);font-size:.7rem;font-weight:600;padding:.22rem .55rem;border-radius:4px;letter-spacing:.05em">데이터 로딩 중...</span>
     <span id="kaersNewBadge" style="display:none;background:var(--mint);color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:800;padding:.22rem .55rem;border-radius:4px;letter-spacing:.1em;animation:kaersPulse 2s ease infinite">NEW</span>
   </div>
-  <p style="margin-bottom:1.5rem"><strong style="color:var(--ice)">원격 예시 데이터 연동</strong> — 체험을 시작할 때 MedIT 원격 저장소에서 시연용 예시 데이터(가상 수치)를 가져와, 정해진 규칙에 따라 약사 검토용 응답 초안 예시를 만듭니다(AI 모델 호출 없음). <strong style="color:var(--mint)">실제로 약품명을 입력해보세요</strong>.</p>
+  <p style="margin-bottom:1.5rem"><strong style="color:var(--ice)">원격 예시 데이터 연동</strong> — 체험을 시작할 때 이 사이트에 둔 시연용 예시 데이터(가상 수치)를 가져와, 정해진 규칙에 따라 약사 검토용 응답 초안 예시를 만듭니다(AI 모델 호출 없음). <strong style="color:var(--mint)">실제로 약품명을 입력해보세요</strong>.</p>
 
   <!-- 검색 입력 -->
   <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1.2rem;margin-bottom:1rem">
@@ -1513,7 +1513,7 @@ function sendMsg(){
       <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;flex:1">
         <div style="background:var(--ice);color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:800;padding:.22rem .55rem;border-radius:4px;letter-spacing:.1em">DEMO</div>
         <div style="font-size:.74rem;color:var(--muted);line-height:1.5">
-          <strong style="color:var(--ice)">갱신 방식:</strong> 체험을 시작할 때 GitHub 원격 저장소에서 시연용 데이터 파일을 가져옵니다. 시연용 파일은 수시로 수동 갱신하며, 갱신 일정을 약속하지 않습니다.
+          <strong style="color:var(--ice)">갱신 방식:</strong> 체험을 시작할 때 이 사이트에 둔 시연용 데이터 파일을 가져옵니다. 시연용 파일은 수시로 수동 갱신하며, 갱신 일정을 약속하지 않습니다.
         </div>
       </div>
       <button onclick="refreshKaersData()" class="btn btn-ghost" style="font-size:.72rem;color:var(--ice)">
@@ -2591,7 +2591,7 @@ function toggleLogoState(el){
 window.KAERS_DATA = null;
 window.KAERS_REFRESH_LOG = [];
 
-const KAERS_REMOTE_URL = 'https://raw.githubusercontent.com/hyunjeongshin83/medit-homepage/main/kaers-sample-data.json';
+const KAERS_REMOTE_URL = 'kaers-sample-data.json';
 const KAERS_SEEN_KEY = 'medit_kaers_last_seen';
 
 async function fetchKaersFresh(){
@@ -2664,7 +2664,7 @@ async function loadKaersData(){
     updateStatus(fromCopy ? '✓ 사이트 내 사본 사용 (원격 연결 실패)' : '✓ 실시간 원격 연결됨', 'var(--mint)', 'rgba(16,185,129,.15)');
     updateMeta();
     checkForNewData(data);
-    logRefresh((fromCopy ? '원격 연결에 실패해 사이트 내 사본에서 ' : 'GitHub raw에서 ') + data.drugs.length + '개 의약품 데이터 가져옴');
+    logRefresh((fromCopy ? '시연 파일을 새로 받지 못해 저장된 사본에서 ' : '이 사이트의 시연 파일에서 ') + data.drugs.length + '개 의약품 데이터 가져옴');
   } catch(err) {
     window.KAERS_DATA = null;
     // 차분한 노란색 (에러보다는 대기 상태로 표현)
