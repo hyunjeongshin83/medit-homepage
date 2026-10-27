@@ -28,7 +28,7 @@
     ko: {
       title: 'MedIT 예약 안내', sub: '데모 예약 · 약국 시범 이용',
       fab: '예약 채팅', openLabel: '예약 채팅 열기', close: '닫기', restart: '처음부터 다시',
-      hello: '안녕하세요, MedIT입니다. 데모 시연 예약과 약국 시범 이용 신청을 이 창에서 받습니다.',
+      hello: '안녕하세요, MedIT 자동 안내 창입니다. 데모 시연 예약과 약국 시범 이용 신청을 이 창에서 받습니다.',
       note: '이 창은 정해진 순서로 접수를 돕는 자동 안내이며, 사람이 실시간으로 답하지 않습니다. 의학적 상담은 하지 않습니다. 대화 내용은 저장되지 않고, 마지막에 “접수하기”를 누른 신청서만 저장되며 3개월 뒤 자동 삭제됩니다.',
       menu: { demo: '데모 시연 예약', pilot: '약국 시범 이용 신청', watch: '시연 영상·체험판 보기', ask: '문의 남기기', mail: '이메일로 문의' },
       pickDate: '원하시는 날짜를 골라 주세요. 안내 시연은 화·목요일에 가능합니다.',
@@ -40,7 +40,7 @@
         ask: '궁금한 점과 답변받을 이메일을 남겨 주세요.'
       },
       f: {
-        name: '이름 (필수)', org: '소속 (약국·기관명)', orgPh: '예: 숙명약국', email: '이메일 (필수)',
+        name: '이름 (필수)', org: '소속 (약국·기관명)', orgPh: '예: ○○약국', email: '이메일 (필수)',
         phone: '전화번호 (선택)', phonePh: '010-0000-0000', msg: '문의 내용 (선택)', msgPh: '궁금한 점을 적어 주세요.',
         msgHint: '환자 개인정보나 건강정보는 적지 마세요.'
       },
@@ -89,7 +89,7 @@
     en: {
       title: 'MedIT booking assistant', sub: 'Demo booking · pharmacy pilot',
       fab: 'Book a demo', openLabel: 'Open the booking chat', close: 'Close', restart: 'Start over',
-      hello: 'Hello, this is MedIT. You can book a demo or request a pharmacy pilot in this window.',
+      hello: 'Hello, this is the MedIT automated guide window. You can book a demo or request a pharmacy pilot in this window.',
       note: 'This window is an automated guide that takes your request step by step; no person replies in real time. We do not give medical advice. The conversation is not stored; only the request you send with “Submit” is saved, and it is deleted automatically after 3 months.',
       menu: { demo: 'Book a demo', pilot: 'Request a pharmacy pilot', watch: 'Watch videos & try demos', ask: 'Leave a question', mail: 'Email us' },
       pickDate: 'Please pick a date. Guided demos are available on Tuesdays and Thursdays.',
@@ -101,7 +101,7 @@
         ask: 'Please leave your question and an email address for the reply.'
       },
       f: {
-        name: 'Name (required)', org: 'Organization (pharmacy / institution)', orgPh: 'e.g. Sookmyung Pharmacy', email: 'Email (required)',
+        name: 'Name (required)', org: 'Organization (pharmacy / institution)', orgPh: 'e.g. ○○ Pharmacy', email: 'Email (required)',
         phone: 'Phone (optional)', phonePh: '+82 10-0000-0000', msg: 'Message (optional)', msgPh: 'Tell us what you would like to know.',
         msgHint: 'Please do not enter patient personal or health information.'
       },
