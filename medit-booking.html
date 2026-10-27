@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0a0f1a">
+<title>예약 안내 · MedIT</title>
+<meta name="description" content="MedIT 데모 예약·약국 시범 이용 신청 후 일정을 고르고, 시스템·계약 상담을 이어서 받는 안내 페이지입니다.">
+<link rel="icon" type="image/png" sizes="64x64" href="media/favicon.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#10B981;--mint2:#34d399;--mint-soft:rgba(16,185,129,.08);--mint-border:rgba(16,185,129,.28);--card:#0e1626;--line:#1a2336;--line2:#232e45;--text:#e8e4dc;--muted:#9a9588;--dim:#6f7a8c;--white:#fff;--coral:#ff8a80;--r:14px;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
+html{scroll-padding-top:84px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--mint2);text-decoration:none}a:hover{text-decoration:underline}
+button{font-family:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--mint2);outline-offset:2px;border-radius:6px}
+.top{position:sticky;top:0;z-index:20;background:rgba(10,15,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1240px;margin:0 auto;padding:.7rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--white);font-weight:700;font-size:1.15rem;text-decoration:none}
+.brand img{width:28px;height:28px;border-radius:7px}.brand b{color:var(--mint)}
+.brand small{font-weight:400;font-size:.82rem;color:var(--muted);margin-left:.2rem;padding-left:.7rem;border-left:1px solid var(--line2)}
+.top a.home{font-size:.85rem;color:var(--muted)}
+.wrap{max-width:1240px;margin:0 auto;padding:1.6rem 1.4rem 4rem;display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:1.6rem;align-items:start}
+/* ── 왼쪽: 안내 ───────────────────────────── */
+.guide{position:sticky;top:76px;max-height:calc(100vh - 92px);overflow:auto;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.g-sec{padding:1.15rem 1.25rem;border-bottom:1px solid var(--line)}.g-sec:last-child{border-bottom:0}
+.g-sec>summary{list-style:none;cursor:pointer}.g-sec>summary::-webkit-details-marker{display:none}
+.g-h{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;font-weight:700;color:var(--mint2);letter-spacing:.02em;margin-bottom:.7rem}
+details.g-sec:not([open])>summary .g-h{margin-bottom:0}
+.g-h::after{content:"";width:8px;height:8px;border-right:2px solid var(--dim);border-bottom:2px solid var(--dim);transform:rotate(45deg);margin-right:3px;transition:transform .2s}
+details.g-sec[open]>summary .g-h::after{transform:rotate(-135deg)}
+div.g-sec .g-h::after{display:none}
+.kv{display:grid;grid-template-columns:5.2rem 1fr;gap:.35rem .6rem;font-size:.88rem}.kv dt{color:var(--muted)}.kv dd{color:var(--text)}.kv dd em{font-style:normal;color:var(--mint2);font-weight:600}
+.tl{list-style:none;position:relative}
+.tl li{position:relative;padding:0 0 .95rem 1.9rem;font-size:.88rem;line-height:1.5}.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:8px;top:1.25rem;bottom:-.1rem;width:1px;background:var(--line2)}.tl li:last-child::before{display:none}
+.tl .dot{position:absolute;left:0;top:.15rem;width:17px;height:17px;border-radius:50%;border:2px solid var(--line2);background:var(--bg2);display:grid;place-items:center;font-size:.62rem;color:var(--bg)}
+.tl li.done .dot{background:var(--mint);border-color:var(--mint)}.tl li.now .dot{border-color:var(--mint2);box-shadow:0 0 0 3px rgba(52,211,153,.15)}
+.tl li.done .t{color:var(--text)}.tl li .t{color:var(--muted);font-weight:600}.tl li.now .t{color:var(--white)}.tl li .s{display:block;font-size:.8rem;color:var(--dim);font-weight:400}
+.ag{list-style:none;counter-reset:ag}
+.ag li{display:grid;grid-template-columns:1.7rem 1fr auto;gap:.5rem;padding:.5rem 0;border-top:1px dashed var(--line);font-size:.86rem;line-height:1.5}.ag li:first-child{border-top:0}
+.ag .n{font-family:var(--font-mono);font-size:.74rem;color:var(--mint);padding-top:.12rem}.ag .m{font-family:var(--font-mono);font-size:.76rem;color:var(--muted);white-space:nowrap;padding-top:.1rem}
+.bar{display:flex;gap:3px;height:6px;margin:.2rem 0 .7rem}.bar i{display:block;background:var(--mint);opacity:.35;border-radius:3px}.bar i:nth-child(2){opacity:.75}.bar i:nth-child(3){opacity:.5}.bar i:nth-child(4){opacity:.9}.bar i:nth-child(5){opacity:.6}
+.note{font-size:.78rem;color:var(--dim);line-height:1.6;margin-top:.6rem}
+.links{display:flex;flex-direction:column;gap:.45rem}
+.lk{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.6rem .8rem;border:1px solid var(--line2);border-radius:10px;font-size:.86rem;color:var(--text);text-decoration:none;background:var(--bg3);transition:border-color .2s}
+.lk:hover{border-color:var(--mint-border);text-decoration:none}.lk span:last-child{color:var(--mint2)}
+.g-foot{font-size:.78rem;color:var(--dim);line-height:1.65}
+/* ── 오른쪽: 카드 ──────────────────────────── */
+.flow{display:flex;flex-direction:column;gap:1rem;min-width:0}
+.hello h1{font-size:clamp(1.35rem,2.6vw,1.8rem);line-height:1.35;color:var(--white);font-weight:800;letter-spacing:-.02em;margin-bottom:.45rem}
+.hello p{color:var(--muted);font-size:.95rem;max-width:620px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1.5rem;transition:border-color .25s,opacity .25s;scroll-margin-top:84px}
+.card[data-state=active]{border-color:var(--mint-border)}
+.card[data-state=locked] .cb{display:none}.card[data-state=locked]{opacity:.78}
+.ch{display:flex;gap:.9rem;align-items:flex-start}
+.num{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-mono);font-weight:600;font-size:.85rem;border:1.5px solid var(--line2);color:var(--muted)}
+.card[data-state=active] .num{border-color:var(--mint);color:var(--mint2)}.card[data-state=done] .num{background:var(--mint);border-color:var(--mint);color:var(--bg)}
+.ch h2{font-size:1.12rem;color:var(--white);font-weight:700;line-height:1.4;letter-spacing:-.01em}
+.ch p{font-size:.9rem;color:var(--muted);margin-top:.2rem}
+.cb{margin-top:1.1rem;padding-left:calc(30px + .9rem)}
+.lockmsg{margin-top:.9rem;padding-left:calc(30px + .9rem);display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;font-size:.88rem;color:var(--muted)}
+.card:not([data-state=locked]) .lockmsg{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:44px;padding:.65rem 1.25rem;border-radius:10px;border:1px solid transparent;font-size:.9rem;font-weight:700;transition:transform .15s,background .2s,border-color .2s}
+.btn-go{background:var(--mint);color:var(--bg)}.btn-go:hover:not(:disabled){background:var(--mint2)}.btn-go:disabled{opacity:.4;cursor:not-allowed}
+.btn-ghost{background:transparent;border-color:var(--line2);color:var(--text)}.btn-ghost:hover{border-color:var(--mint-border)}
+.btn-link{background:none;border:0;color:var(--mint2);font-size:.88rem;font-weight:600;padding:.4rem 0;min-height:auto;text-decoration:underline;text-underline-offset:3px}
+.row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.err{margin-top:.7rem;padding:.65rem .85rem;border-radius:10px;border:1px solid rgba(255,138,128,.35);background:rgba(255,138,128,.07);color:#ffb4ad;font-size:.86rem;line-height:1.55}
+.okmsg{margin-top:.8rem;padding:.7rem .9rem;border-radius:10px;border:1px solid var(--mint-border);background:var(--mint-soft);font-size:.9rem;line-height:1.6;color:var(--text)}
+.okmsg b{color:var(--mint2)}
+/* 달력 */
+.cal{max-width:340px;margin:.3rem 0 .9rem}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:.45rem}
+.cal-h b{font-size:1rem;color:var(--white)}.cal-h button{width:36px;height:36px;border-radius:9px;border:1px solid var(--line2);background:var(--bg3);font-size:1rem}.cal-h button:disabled{opacity:.3;cursor:not-allowed}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-w{text-align:center;font-size:.72rem;color:var(--dim);font-family:var(--font-mono);padding:.2rem 0}.cal-w:first-child{color:#c9756d}
+.day{aspect-ratio:1/1;min-height:40px;border-radius:10px;border:1px solid transparent;background:transparent;font-size:.9rem;color:#566179;display:grid;place-items:center;position:relative}
+.day:disabled{cursor:default}
+.day.av{background:#0d2a2c;border-color:#1b5a4a;color:var(--mint2);font-weight:700}.day.av:hover{border-color:var(--mint)}
+.day.sel{background:var(--mint);border-color:var(--mint);color:var(--bg)}
+.day.pref::after{content:"★";position:absolute;top:1px;right:4px;font-size:.58rem;color:var(--mint2)}.day.sel.pref::after{color:var(--bg)}
+.slots{display:flex;flex-wrap:wrap;gap:.5rem;margin:.1rem 0 .9rem}
+.chip{min-height:44px;padding:.5rem 1rem;border-radius:999px;border:1px solid var(--line2);background:var(--bg3);font-size:.88rem;font-weight:500;transition:border-color .15s,background .15s}
+.chip:hover{border-color:var(--mint-border)}.chip[aria-pressed=true]{background:var(--mint);border-color:var(--mint);color:var(--bg);font-weight:700}
+.lbl{display:block;font-size:.88rem;font-weight:700;color:var(--white);margin:1.1rem 0 .1rem}.lbl small{font-weight:400;color:var(--muted);margin-left:.3rem}
+.hint{font-size:.8rem;color:var(--dim);margin:.05rem 0 .5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.45rem}
+.in{width:100%;border-radius:10px;border:1px solid var(--line2);background:var(--bg3);color:var(--text);padding:.7rem .85rem;font:inherit;font-size:.92rem;margin-top:.4rem}
+.in:focus{outline:2px solid var(--mint2);outline-offset:1px}textarea.in{min-height:92px;resize:vertical}
+.fine{font-size:.8rem;color:var(--dim);margin-top:.9rem;line-height:1.6}
+.consent{display:flex;gap:.65rem;align-items:flex-start;margin-top:1rem;padding:.8rem .9rem;border-radius:10px;border:1px solid var(--line2);background:rgba(255,255,255,.02);font-size:.84rem;line-height:1.65;color:var(--muted);cursor:pointer}
+.consent input{flex:0 0 auto;width:20px;height:20px;margin-top:.15rem;accent-color:#10B981}
+.consent a{color:var(--mint2)}
+.warn{margin:.2rem 0 .2rem;padding:.7rem .9rem;border-radius:10px;background:rgba(255,255,255,.03);border:1px dashed var(--line2);font-size:.84rem;color:var(--muted);line-height:1.65}
+/* 상담 결과 */
+.ans{display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem}
+.ans details{border:1px solid var(--line2);border-radius:12px;background:var(--bg3);overflow:hidden}
+.ans summary{list-style:none;cursor:pointer;padding:.8rem 1rem;font-weight:700;font-size:.92rem;color:var(--white);display:flex;justify-content:space-between;gap:.8rem}
+.ans summary::-webkit-details-marker{display:none}.ans summary::after{content:"+";color:var(--mint2);font-family:var(--font-mono)}.ans details[open] summary::after{content:"−"}
+.ans details>div{padding:0 1rem .95rem;font-size:.89rem;color:#cfcabf;line-height:1.75}
+.ans h3,.sub{font-size:.8rem;color:var(--mint2);font-weight:700;margin:1.2rem 0 .1rem;letter-spacing:.02em}
+.steps{list-style:none;counter-reset:st;margin-top:.5rem}.steps li{counter-increment:st;display:grid;grid-template-columns:1.6rem 1fr;gap:.5rem;padding:.35rem 0;font-size:.9rem}.steps li::before{content:counter(st);font-family:var(--font-mono);color:var(--mint);font-size:.8rem;padding-top:.1rem}
+.bul{margin:.4rem 0 0 1.1rem;font-size:.88rem;color:#cfcabf;line-height:1.75}
+.reqs{margin-top:.4rem}
+.state{padding:2.4rem 1.2rem;text-align:center;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.state h2{color:var(--white);font-size:1.2rem;margin-bottom:.5rem}.state p{color:var(--muted);font-size:.92rem;max-width:520px;margin:0 auto .9rem}
+.sk{height:120px;border-radius:var(--r);background:linear-gradient(90deg,var(--card),#121b2e,var(--card));background-size:200% 100%;animation:sk 1.4s linear infinite;border:1px solid var(--line)}
+@keyframes sk{to{background-position:-200% 0}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hp{position:absolute;left:-9999px;opacity:0}
+@media (max-width:980px){
+  .wrap{grid-template-columns:1fr;padding-top:1.1rem}
+  .guide{position:static;max-height:none;overflow:visible}
+  .flow{order:-1}
+  .cb,.lockmsg{padding-left:0}
+}
+@media (max-width:560px){
+  .top-in,.wrap{padding-left:1rem;padding-right:1rem}.brand small{display:none}
+  .card{padding:1.15rem 1.05rem}.ch{gap:.7rem}
+  .btn{width:100%}.row .btn-link{width:auto}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="index.html"><img src="media/apple-touch-icon.png" alt="" width="28" height="28"><span>Med<b> IT</b></span><small>예약 안내</small></a>
+  <a class="home" href="index.html">홈페이지로</a>
+</div></header>
+
+<div class="wrap" id="app">
+  <!-- 오른쪽 카드가 모바일에서는 먼저 보이도록 DOM 순서는 aside → main 이지만 order 로 바꾼다 -->
+  <aside class="guide" id="guide" aria-label="신청 내용과 진행 안내">
+    <div class="g-sec"><div class="g-h">신청 내용</div>
+      <dl class="kv" id="sum"></dl>
+    </div>
+    <div class="g-sec"><div class="g-h">진행 상황</div>
+      <ol class="tl" id="tl"></ol>
+    </div>
+    <details class="g-sec" id="g-agenda" open>
+      <summary><div class="g-h">안내 시연은 이렇게 진행합니다 · 약 30분</div></summary>
+      <div class="bar" aria-hidden="true"><i style="flex:3"></i><i style="flex:10"></i><i style="flex:7"></i><i style="flex:5"></i><i style="flex:5"></i></div>
+      <ol class="ag">
+        <li><span class="n">01</span><span>MedIT가 해결하려는 문제와 목표</span><span class="m">3분</span></li>
+        <li><span class="n">02</span><span>약사용 화면: 복약 일정 확인, 복약지도 문구 작성, <b>약사가 확인한 뒤에만 발송</b></span><span class="m">10분</span></li>
+        <li><span class="n">03</span><span>환자용 앱: 복약 알림과 복용 기록</span><span class="m">7분</span></li>
+        <li><span class="n">04</span><span>약국 프로그램과의 연동 계획: 현재 설계 단계이며 업체 협의가 필요한 부분을 솔직하게 안내</span><span class="m">5분</span></li>
+        <li><span class="n">05</span><span>질의응답과 약국 시범 이용 안내</span><span class="m">5분</span></li>
+      </ol>
+      <p class="note">시연에는 가상 데이터만 사용하며, 측정된 효과 수치는 아직 없습니다.</p>
+    </details>
+    <details class="g-sec" id="g-watch" open>
+      <summary><div class="g-h">지금 바로 보실 수 있는 시연</div></summary>
+      <div class="links">
+        <a class="lk" href="index.html#demo-videos"><span>시연 영상 · 약 70초 두 편</span><span>보기 →</span></a>
+        <a class="lk" href="medit-app-dark.html"><span>약사용 체험판</span><span>열기 →</span></a>
+        <a class="lk" href="medit-patient.html"><span>환자용 앱 체험판</span><span>열기 →</span></a>
+      </div>
+      <p class="note">모두 시연용 가상 데이터입니다. 실제 환자 정보는 입력하지 마세요.</p>
+    </details>
+    <div class="g-sec"><p class="g-foot">문의: <a href="mailto:hyunjeong.shin@sookmyung.ac.kr">hyunjeong.shin@sookmyung.ac.kr</a><br>입력하신 정보는 일정 조율과 상담에만 쓰며, 접수일부터 3개월 뒤 자동 삭제됩니다. 삭제를 원하시면 이메일로 알려 주세요. 이 페이지 주소는 신청하신 분만 보시도록 만든 개인용 주소이니 다른 분께 전달하지 마세요. <a href="index.html#privacy">개인정보 처리방침</a></p></div>
+  </aside>
+
+  <main class="flow" id="flow" aria-live="polite">
+    <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
+    <p class="sr">불러오는 중입니다</p>
+  </main>
+</div>
+
+<script>
+(function(){
+'use strict';
+var EP = 'https://xaclqvveppvccdpebzsz.supabase.co/functions/v1/demo-booking';
+var MAIL = 'hyunjeong.shin@sookmyung.ac.kr';
+var SLOT_KO = {am:'오전 10~12시', pm1:'오후 1~3시', pm2:'오후 3~5시'};
+var LABEL_KEY = {'오전 (10~12시)':'am','오후 (1~3시)':'pm1','오후 (3~5시)':'pm2','서면으로 먼저 협의':'written'};
+var WD = ['일','월','화','수','목','금','토'];
+
+// ── 상담 답변 문구 ────────────────────────────────────────────
+// 홈페이지(시범 이용·개인정보 처리방침·6대 금지선)에 이미 밝힌 내용과, 앞으로 서면으로 정할 항목만 적는다.
+// 정해지지 않은 가격·계약 조건·일정·실적·승인 사실은 적지 않는다.
+var INTEREST = [
+  ['시범 이용(체험판)', '시범 이용은 이렇게 진행됩니다',
+   '비용도 계약도 없고 언제든 그만두실 수 있습니다. 가상 환자 데이터로 만든 체험판을 약국에서 직접 써 보시고, 시범 기간에 글로 의견을 받습니다. 끝나면 약국이 입력한 자료를 모두 삭제하고 삭제 결과를 이메일로 알려드립니다.'],
+  ['약사용 화면 정식 도입 검토', '정식 도입을 검토하신다면',
+   '아직 계약한 약국은 없고, 정식 도입의 이용 범위·기간·비용은 정해진 것이 없습니다. 시범 이용 결과와 약국의 의견을 반영해 서면으로 함께 정합니다. 실제 환자를 대상으로 한 사용은 법령 검토와 서면 합의를 마친 뒤 따로 논의하며, 지금은 열려 있지 않습니다.'],
+  ['약국 프로그램·POS 연동 협의', '약국 프로그램·POS 연동',
+   '지금은 조제 프로그램이나 POS와 연결하지 않습니다. 연동은 설계 단계이며 프로그램 업체와의 협의가 필요해, 가능 여부와 시기를 지금 약속드릴 수 없습니다. 사용 중인 프로그램 이름을 남겨 주시면 협의 대상으로 기록해 둡니다.'],
+  ['제휴·공동 개발·기타 협력', '제휴·협력',
+   '남겨 주신 내용은 대표가 직접 읽고 이메일로 답합니다. 약국이나 환자를 소개하고 대가를 받는 형태는 하지 않습니다.'],
+  ['아직 잘 모르겠어요', '먼저 둘러보세요',
+   '왼쪽의 시연 영상과 체험판을 먼저 보시면 질의응답이 훨씬 수월합니다. 모두 가상 데이터이며, 궁금한 점은 시연 때 편하게 물어보셔도 됩니다.']
+];
+var ORG_TYPES = ['약국(개인)','약국(체인·다점포)','병원·의원','약국 프로그램·POS 업체','제약사·기관','기타'];
+var TIMINGS = ['바로 시작하고 싶어요','1~3개월 안','알아보는 중이에요'];
+var CONCERNS = [
+  ['비용·계약 방식',
+   '지금은 시범 이용 단계라 비용도 계약도 없습니다. 정식 도입 조건은 아직 정해진 것이 없으며, 이 페이지의 안내는 계약 조건이 아닙니다. 조건이 정해지면 서면으로 따로 안내드리며, 서면 합의 전에는 어떤 조건도 약속하지 않습니다.'],
+  ['환자 개인정보 처리',
+   '시연과 시범 이용에서는 가상 데이터만 쓰고 실제 환자 정보는 받지 않습니다. 체험판 앱은 입력한 내용을 서버로 보내지 않고 브라우저에만 저장합니다. 이 신청으로 받은 정보는 일정 조율과 상담에만 쓰고, 접수일부터 3개월 뒤 자동 삭제하며, 요청하시면 지체 없이 삭제합니다. 실제 환자 정보를 다루게 되는 단계에서는 처리 범위와 책임을 서면으로 먼저 정해야 하며, 지금은 열려 있지 않습니다.'],
+  ['약사 책임 범위·검증 방식',
+   '환자에게 나가는 모든 메시지는 약사가 확인한 뒤에만 발송되도록 설계합니다. AI는 답변 초안을 만들 뿐, 진단·처방·복용 중단 같은 의학적 판단을 하지 않습니다. 약국 이름과 후기는 서면 동의 없이 공개하지 않습니다. 약국과 MedIT의 책임 분담은 서면으로 함께 정할 항목입니다.'],
+  ['약국 프로그램 연동',
+   '지금은 조제 프로그램이나 POS와 연결하지 않습니다. 연동은 설계 단계이고 프로그램 업체와의 협의가 필요해, 가능 여부나 시기를 약속드릴 수 없습니다. 어떤 프로그램을 쓰시는지 알려 주시면 협의 대상으로 기록합니다.'],
+  ['데이터 출처·저작권',
+   '답변의 근거는 식약처 허가사항·DUR 등 공개된 자료를 우선으로 하고, 출처를 답변에 함께 표시하는 것을 원칙으로 합니다. 제3자의 데이터베이스를 쓰게 되면 이용 조건을 확인하고 서면 계약을 먼저 맺겠습니다.'],
+  ['관련 법령·규제',
+   '진단·치료·처방을 하지 않는 복약 안내·알림 도구로 설계하고 있습니다. 약사법·의료법·개인정보 보호법 등 관련 법령은 계속 검토 중이며, 검토가 끝나기 전에는 실제 환자 대상 사용을 열지 않습니다. 의료기기 해당 여부처럼 관계 기관 확인이 필요한 사항은 확정해서 말씀드리지 않고, 확인한 뒤 안내하겠습니다.'],
+  ['기타', '남겨 주신 내용은 대표가 직접 읽고 이메일로 답합니다.']
+];
+var CONTRACT_ITEMS = [
+  '이용 범위와 기간',
+  '실제 환자 정보를 다루게 될 경우의 처리 범위와 책임(개인정보 처리 위탁 등)',
+  '약사 확인 절차와 책임 분담',
+  '답변 근거 자료의 출처와 이용 조건',
+  '이상반응 등 문제가 생겼을 때의 연락과 대응 방식',
+  '약국 이름·후기를 공개할지 여부(서면 동의)',
+  '종료 시 자료 삭제와 삭제 확인 방법'
+];
+var FAQ = [
+  ['AI가 환자에게 바로 답하나요?', '아니요. 환자에게 나가는 모든 메시지는 약사가 확인한 뒤에만 발송되도록 설계합니다. AI는 초안만 만듭니다.'],
+  ['효과가 확인되었나요?', '아직 측정한 수치는 없습니다. 시범 기간에 약국과 함께 처음 측정해 보려는 항목(환자 문의 한 건의 응대 시간, 약사의 초안 검토 시간, 복약 알림 확인율)이 있을 뿐입니다.'],
+  ['실제 환자에게 지금 쓸 수 있나요?', '지금은 열려 있지 않습니다. 시범 이용은 가상 데이터 체험판으로 하며, 실제 환자 대상 사용은 법령 검토와 서면 합의를 마친 뒤 따로 논의합니다.'],
+  ['전화나 방문으로도 상담할 수 있나요?', '전화나 방문 없이 글로 진행합니다. 시연은 온라인 또는 서면 중 편한 쪽으로 맞춥니다.']
+];
+
+// ── 도우미 ───────────────────────────────────────────────────
+var token = (new URLSearchParams(location.search).get('t') || '').trim().toLowerCase();
+var S = {req:null, open:[], month:null, selDate:null, selSlot:null, editDate:false, editConsult:false, wantConsult:false, a:null, busy:false};
+function $(s){return document.querySelector(s);}
+function el(tag, cls, text){var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e;}
+function add(p){for(var i=1;i<arguments.length;i++){var c=arguments[i]; if(c==null) continue; p.appendChild(typeof c==='string'?document.createTextNode(c):c);} return p;}
+function fmtDate(ymd){var p=ymd.split('-'); var d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2])); return (+p[1])+'월 '+(+p[2])+'일('+WD[d.getUTCDay()]+')';}
+function labelText(l){return String(l||'').replace(/[()]/g,'');}
+function reduced(){return window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;}
+function scrollTo(node){ if(node) node.scrollIntoView({behavior: reduced()?'auto':'smooth', block:'start'}); }
+function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
+
+function api(payload){
+  var body = JSON.stringify(Object.assign({token: token}, payload));
+  function once(){
+    return fetch(EP, {method:'POST', headers:{'content-type':'application/json'}, body: body})
+      .then(function(r){return r.json().catch(function(){return {ok:false,error:'bad_response'};}).then(function(d){return {status:r.status, data:d};});});
+  }
+  // 오래 쉰 뒤 첫 호출은 서버 오류로 떨어질 수 있어 한 번만 다시 시도한다
+  return once().catch(function(){return null;}).then(function(res){
+    if(res && res.status < 500) return res;
+    return sleep(1200).then(once).catch(function(){return {status:0, data:{ok:false,error:'network'}};});
+  });
+}
+
+// ── 왼쪽 안내 ────────────────────────────────────────────────
+function renderGuide(){
+  var r = S.req, sum = $('#sum'); sum.textContent='';
+  function row(k, v){var dt=el('dt',null,k), dd=el('dd'); if(typeof v==='string') dd.textContent=v; else dd.appendChild(v); add(sum, dt, dd);}
+  row('신청 유형', r.kind==='pilot' ? '약국 시범 이용 신청' : '데모 시연 예약');
+  if(r.org) row('소속', r.org);
+  var wish = r.preferred_date ? fmtDate(r.preferred_date)+(r.preferred_slot?' '+labelText(r.preferred_slot):'') : (r.preferred_slot ? labelText(r.preferred_slot) : '정하지 않으심');
+  row('희망 일시', wish);
+  var picked;
+  if(r.picked_slot){
+    picked = el('em',null, r.picked_date ? fmtDate(r.picked_date)+' '+labelText(r.picked_slot) : labelText(r.picked_slot));
+  } else picked = '아직 고르지 않으셨어요';
+  row('요청한 일정', picked);
+
+  var tl = $('#tl'); tl.textContent='';
+  var hasPick = !!r.picked_slot, hasConsult = !!r.consult_at;
+  var steps = [
+    ['신청 접수', '접수되었습니다', 'done'],
+    ['일정 요청', hasPick ? '요청하신 일정을 받았습니다' : '오른쪽 1번 카드에서 고르세요', hasPick?'done':'now'],
+    ['시스템·계약 상담', hasConsult ? '답변을 받았습니다' : '오른쪽 2번 카드에서 진행합니다', hasConsult?'done':(hasPick?'now':'')],
+    ['확정 안내', '대표가 확인한 뒤 이메일로 보내드립니다', (hasPick&&hasConsult)?'now':'']
+  ];
+  steps.forEach(function(s){
+    var li = el('li', s[2]); var dot = el('span','dot', s[2]==='done'?'✓':''); dot.setAttribute('aria-hidden','true');
+    var t = el('span','t',s[0]); var sub = el('span','s',s[1]);
+    add(li, dot, t, sub); tl.appendChild(li);
+  });
+}
+
+// ── 오른쪽 카드 ──────────────────────────────────────────────
+function card(id, n, title, desc){
+  var c = el('section','card'); c.id=id;
+  var h = el('div','ch'); add(h, el('div','num',String(n)), add(el('div'), el('h2',null,title), desc?el('p',null,desc):null));
+  c.appendChild(h); return c;
+}
+function renderFlow(){
+  var flow = $('#flow'); flow.textContent='';
+  var r = S.req;
+  var hello = el('div','hello');
+  add(hello, el('h1',null, r.name+'님, 신청이 접수되었습니다'),
+    el('p',null,'아래 두 가지를 차례로 해 주세요. 일정을 요청하시면 이어서 시스템·계약 상담을 바로 받으실 수 있고, 대표가 내용을 확인한 뒤 이메일로 확정 안내를 드립니다.'));
+  flow.appendChild(hello);
+
+  var hasPick = !!r.picked_slot, hasConsult = !!r.consult_at;
+  var c1 = buildDateCard(hasPick);
+  var c2 = buildConsultCard(hasPick, hasConsult);
+  var c3 = buildReadyCard();
+  var c4 = buildFaqCard();
+  add(flow, c1, c2, c3, c4);
+  renderGuide();
+}
+
+// 1. 일정
+function buildDateCard(hasPick){
+  var r = S.req;
+  var state = (hasPick && !S.editDate) ? 'done' : 'active';
+  var c = card('c-date', 1, '일정 고르기', '열려 있는 날짜에서 시간을 골라 요청해 주세요. 요청한 일정은 바로 확정되는 것이 아니라, 대표가 확인한 뒤 이메일로 확정 안내를 드립니다.');
+  c.dataset.state = state;
+  var body = el('div','cb');
+  if(state==='done'){
+    var txt = r.picked_date ? fmtDate(r.picked_date)+' '+labelText(r.picked_slot) : labelText(r.picked_slot);
+    var ok = el('div','okmsg'); add(ok, '요청한 일정: ', el('b',null,txt), '. 확정 여부는 이메일로 알려드립니다.'); body.appendChild(ok);
+    var row = el('div','row'); row.style.marginTop='.7rem';
+    var b = el('button','btn-link','일정 바꾸기'); b.type='button'; b.onclick=function(){S.editDate=true; S.selDate=null; S.selSlot=null; renderFlow(); scrollTo($('#c-date'));};
+    row.appendChild(b); body.appendChild(row);
+    c.appendChild(body); return c;
+  }
+  var open = S.open;
+  // 희망하신 일정이 열려 있으면 한 번에 요청할 수 있게 한다
+  var prefKey = r.preferred_slot ? LABEL_KEY[r.preferred_slot] : null;
+  var prefOpen = r.preferred_date && prefKey && prefKey!=='written' && open.some(function(o){return o.date===r.preferred_date && o.slot===prefKey;});
+  if(prefOpen){
+    var q = el('div','okmsg'); q.style.marginTop='0';
+    add(q, '신청하실 때 적으신 ', el('b',null, fmtDate(r.preferred_date)+' '+SLOT_KO[prefKey]), '이(가) 열려 있습니다.');
+    var qb = el('button','btn btn-go','이 일정으로 요청하기'); qb.type='button'; qb.style.marginTop='.7rem'; qb.style.display='flex';
+    qb.onclick=function(){doPick(r.preferred_date, prefKey, qb);};
+    q.appendChild(qb); body.appendChild(q);
+    body.appendChild(el('p','hint','다른 날짜를 원하시면 아래 달력에서 고르세요.')).style.marginTop='.8rem';
+  }
+  if(!open.length){
+    body.appendChild(el('div','warn','지금 열려 있는 일정이 없습니다. 아래 "서면으로 먼저 협의"를 고르시면 이메일로 가능한 일정을 안내드립니다.'));
+  } else {
+    body.appendChild(buildCalendar(prefOpen?r.preferred_date:null));
+  }
+  var err = el('div'); err.id='date-err'; body.appendChild(err);
+  var row2 = el('div','row'); row2.style.marginTop='.3rem';
+  var go = el('button','btn btn-go','이 일정으로 요청하기'); go.type='button'; go.id='pick-go'; go.disabled = !(S.selDate && S.selSlot);
+  go.onclick=function(){doPick(S.selDate, S.selSlot, go);};
+  var wr = el('button','btn-link','서면으로 먼저 협의하고 싶어요'); wr.type='button';
+  wr.onclick=function(){doPick(null,'written',wr);};
+  if(open.length) row2.appendChild(go);
+  row2.appendChild(wr);
+  body.appendChild(row2);
+  if(hasPick && S.editDate){var cancel=el('button','btn-link','취소'); cancel.type='button'; cancel.onclick=function(){S.editDate=false; renderFlow();}; row2.appendChild(cancel);}
+  body.appendChild(el('p','fine','시연 방식(온라인 또는 서면)은 확정 안내 때 편한 쪽으로 맞춥니다.'));
+  c.appendChild(body); return c;
+}
+function buildCalendar(prefDate){
+  var months = []; S.open.forEach(function(o){var m=o.date.slice(0,7); if(months.indexOf(m)<0) months.push(m);}); months.sort();
+  if(!S.month || months.indexOf(S.month)<0) S.month = (prefDate && months.indexOf(prefDate.slice(0,7))>=0) ? prefDate.slice(0,7) : months[0];
+  var avail = {}; S.open.forEach(function(o){(avail[o.date]=avail[o.date]||[]).push(o.slot);});
+  var wrap = el('div');
+  var cal = el('div','cal');
+  var mi = months.indexOf(S.month), p = S.month.split('-'), Y=+p[0], M=+p[1];
+  var head = el('div','cal-h');
+  var prev = el('button',null,'‹'); prev.type='button'; prev.setAttribute('aria-label','이전 달'); prev.disabled = mi<=0;
+  var next = el('button',null,'›'); next.type='button'; next.setAttribute('aria-label','다음 달'); next.disabled = mi>=months.length-1;
+  prev.onclick=function(){S.month=months[mi-1]; S.selDate=null; S.selSlot=null; renderFlow();};
+  next.onclick=function(){S.month=months[mi+1]; S.selDate=null; S.selSlot=null; renderFlow();};
+  add(head, prev, el('b',null, Y+'년 '+M+'월'), next); cal.appendChild(head);
+  var g = el('div','cal-g'); g.setAttribute('role','grid');
+  WD.forEach(function(w){g.appendChild(el('div','cal-w',w));});
+  var first = new Date(Date.UTC(Y,M-1,1)).getUTCDay(), days = new Date(Date.UTC(Y,M,0)).getUTCDate();
+  for(var i=0;i<first;i++) g.appendChild(el('div'));
+  for(var d=1; d<=days; d++){
+    var ymd = Y+'-'+('0'+M).slice(-2)+'-'+('0'+d).slice(-2);
+    var b = el('button','day',String(d)); b.type='button';
+    if(avail[ymd]){
+      b.className='day av'+(ymd===S.selDate?' sel':'')+(S.req.preferred_date===ymd?' pref':'');
+      b.setAttribute('aria-label', fmtDate(ymd)+' 시연 가능'+(S.req.preferred_date===ymd?', 희망하신 날':''));
+      b.setAttribute('aria-pressed', ymd===S.selDate?'true':'false');
+      (function(ymd){b.onclick=function(){S.selDate=ymd; S.selSlot=null; renderFlow(); var f=$('#c-date .slots .chip'); if(f) f.focus();};})(ymd);
+    } else b.disabled=true;
+    g.appendChild(b);
+  }
+  cal.appendChild(g); wrap.appendChild(cal);
+  if(S.selDate && avail[S.selDate]){
+    var lab = el('div','hint', fmtDate(S.selDate)+' · 시간을 골라 주세요'); lab.style.color='var(--text)'; lab.style.fontWeight='600'; wrap.appendChild(lab);
+    var sl = el('div','slots'); sl.setAttribute('role','group'); sl.setAttribute('aria-label','시간 선택');
+    ['am','pm1','pm2'].forEach(function(k){
+      if(avail[S.selDate].indexOf(k)<0) return;
+      var c = el('button','chip',SLOT_KO[k]); c.type='button'; c.setAttribute('aria-pressed', S.selSlot===k?'true':'false');
+      c.onclick=function(){S.selSlot=k; renderFlow(); var g2=$('#pick-go'); if(g2) g2.focus();};
+      sl.appendChild(c);
+    });
+    wrap.appendChild(sl);
+  } else {
+    var h = el('p','hint','초록색 날짜를 누르면 시간을 고를 수 있습니다.'); wrap.appendChild(h);
+  }
+  return wrap;
+}
+function showErr(id, msg){var box=$('#'+id); if(!box) return; box.textContent=''; if(msg){var e=el('div','err',msg); e.setAttribute('role','alert'); box.appendChild(e);}}
+function doPick(date, slot, btn){
+  if(S.busy) return; S.busy=true; if(btn) btn.disabled=true; showErr('date-err','');
+  api({action:'pick', date:date, slot:slot}).then(function(res){
+    S.busy=false;
+    var d = res.data||{};
+    if(d.ok){
+      S.req.picked_date = d.picked.date; S.req.picked_slot = d.picked.label; S.editDate=false; S.selDate=null; S.selSlot=null;
+      // 고른 시간은 다른 분 목록에서 빠지지만 내 목록에는 남는다 — 다시 불러온다
+      return api({action:'get'}).then(function(g){ if(g.data&&g.data.ok){S.req=g.data.request; S.open=g.data.open;} renderFlow(); nudge(); });
+    }
+    if(res.status===409 && d.open){S.open=d.open; S.selSlot=null; renderFlow(); showErr('date-err','그사이 다른 분이 고르셨거나 닫힌 시간입니다. 다른 시간을 골라 주세요.'); return;}
+    if(btn) btn.disabled=false;
+    showErr('date-err', d.error==='rate_limited' ? '요청이 많아 잠시 멈췄습니다. 내일 다시 시도하시거나 이메일로 알려 주세요.' : '저장하지 못했습니다. 잠시 뒤 다시 시도하시거나 이메일로 알려 주세요.');
+  });
+}
+function nudge(){
+  var c1 = $('#c-date .cb'); if(c1){var n=el('div','okmsg'); add(n, el('b',null,'일정을 요청했습니다.'), ' 이어서 시스템·계약 상담을 진행해 보세요. 3분 정도 걸립니다.');
+    var b=el('button','btn btn-go','상담 시작하기'); b.type='button'; b.style.marginTop='.7rem'; b.onclick=function(){scrollTo($('#c-consult')); var f=$('#c-consult .chip'); if(f) f.focus({preventScroll:true});};
+    n.appendChild(b); c1.appendChild(n);}
+  if(!S.req.consult_at) setTimeout(function(){scrollTo($('#c-consult'));}, 650);
+}
+
+// 2. 시스템·계약 상담
+function buildConsultCard(hasPick, hasConsult){
+  var c = card('c-consult', 2, '시스템·계약 상담', '도입을 생각하시는 방향을 알려 주시면, 지금 정해진 것과 앞으로 서면으로 정할 것을 바로 안내해 드립니다.');
+  var unlocked = hasPick || hasConsult || S.wantConsult;
+  var state = hasConsult && !S.editConsult ? 'done' : (unlocked ? 'active' : 'locked');
+  c.dataset.state = state;
+  var lock = el('div','lockmsg'); add(lock, '일정을 먼저 요청하시면 이어서 열립니다.');
+  var skip = el('button','btn-link','상담부터 할게요'); skip.type='button'; skip.onclick=function(){S.wantConsult=true; renderFlow(); scrollTo($('#c-consult'));};
+  lock.appendChild(skip); c.appendChild(lock);
+  var body = el('div','cb');
+  if(hasConsult && !S.editConsult){ buildResult(body, S.req.consult); }
+  else buildConsultForm(body);
+  c.appendChild(body); return c;
+}
+function toggle(list, v, max){var i=list.indexOf(v); if(i>=0) list.splice(i,1); else if(!max||list.length<max) list.push(v);}
+function chipGroup(label, hint, items, getSel, onTap, single){
+  var wrap = el('div'); var l=el('span','lbl'); add(l, label); if(hint) l.appendChild(el('small',null,hint)); wrap.appendChild(l);
+  var g = el('div','chips'); g.setAttribute('role','group'); g.setAttribute('aria-label',label);
+  items.forEach(function(v){
+    var b = el('button','chip',v); b.type='button'; b.setAttribute('aria-pressed', getSel(v)?'true':'false');
+    b.onclick=function(){onTap(v); var on=getSel(v); if(single){ g.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');}); } b.setAttribute('aria-pressed', on?'true':'false');};
+    g.appendChild(b);
+  });
+  wrap.appendChild(g); return wrap;
+}
+function buildConsultForm(body){
+  if(!S.a){
+    var pr = S.req.consult || {};
+    S.a = {consent:false, interest:(pr.interest||(S.req.kind==='pilot'?['시범 이용(체험판)']:[])).slice(), org_type:pr.org_type||'', program:pr.program||'', timing:pr.timing||'', concerns:(pr.concerns||[]).slice(), notes:pr.notes||''};
+  }
+  var a = S.a;
+  body.appendChild(el('div','warn','가격이나 계약 조건은 아직 정해진 것이 없어, 이 상담에서 약속하지 않습니다. 실제 환자 정보는 적지 마세요.'));
+  body.appendChild(chipGroup('어떤 형태에 관심이 있으세요?','(여러 개 선택)',INTEREST.map(function(x){return x[0];}),
+    function(v){return a.interest.indexOf(v)>=0;}, function(v){toggle(a.interest,v,5);}));
+  body.appendChild(chipGroup('어느 쪽에서 오셨나요?','',ORG_TYPES,
+    function(v){return a.org_type===v;}, function(v){a.org_type = a.org_type===v?'':v;}, true));
+  var pl = el('label','lbl'); pl.htmlFor='f-prog'; add(pl,'사용 중인 약국 프로그램',el('small',null,'(선택)')); body.appendChild(pl);
+  var pi = el('input','in'); pi.id='f-prog'; pi.maxLength=60; pi.placeholder='프로그램 이름. 모르시면 비워 두세요'; pi.value=a.program; pi.autocomplete='off'; pi.oninput=function(){a.program=pi.value;}; body.appendChild(pi);
+  body.appendChild(chipGroup('언제쯤 시작을 생각하세요?','',TIMINGS,
+    function(v){return a.timing===v;}, function(v){a.timing = a.timing===v?'':v;}, true));
+  body.appendChild(chipGroup('가장 궁금한 점은요?','(여러 개 선택)',CONCERNS.map(function(x){return x[0];}),
+    function(v){return a.concerns.indexOf(v)>=0;}, function(v){toggle(a.concerns,v,7);}));
+  var nl = el('label','lbl'); nl.htmlFor='f-notes'; add(nl,'남기실 말씀',el('small',null,'(선택, 600자까지)')); body.appendChild(nl);
+  var ni = el('textarea','in'); ni.id='f-notes'; ni.maxLength=600; ni.value=a.notes; ni.placeholder='시연에서 꼭 보고 싶은 것, 확인하고 싶은 조건 등'; ni.oninput=function(){a.notes=ni.value;}; body.appendChild(ni);
+  var cl = el('label','consent'); var ck = document.createElement('input'); ck.type='checkbox'; ck.id='f-consent'; ck.checked=!!a.consent; ck.onchange=function(){a.consent=ck.checked; if(ck.checked) showErr('cons-err','');};
+  var ct = el('span'); add(ct, '위에 적은 상담 내용(관심 형태, 소속 유형, 사용 중인 프로그램, 시작 시기, 궁금한 점, 남기신 말씀)을 일정 조율과 상담 답변에만 쓰는 데 동의합니다. 접수일부터 3개월 뒤 자동 삭제되며, 동의하지 않으셔도 이메일로 문의하실 수 있습니다. ');
+  var pa = el('a',null,'개인정보 처리방침'); pa.href='index.html#privacy'; pa.target='_blank'; pa.rel='noopener'; ct.appendChild(pa);
+  add(cl, ck, ct); body.appendChild(cl);
+  var hp = el('div'); hp.id='cons-err'; body.appendChild(hp);
+  var row = el('div','row'); row.style.marginTop='1.1rem';
+  var go = el('button','btn btn-go','상담 내용 보내고 안내 받기'); go.type='button';
+  go.onclick=function(){
+    if(S.busy) return;
+    if(!a.interest.length){showErr('cons-err','관심 있는 형태를 하나 이상 골라 주세요.'); return;}
+    if(!a.consent){showErr('cons-err','상담 내용을 보내려면 개인정보 수집·이용 동의에 체크해 주세요.'); return;}
+    S.busy=true; go.disabled=true; showErr('cons-err','');
+    api({action:'consult', consent:true, answers:{interest:a.interest, org_type:a.org_type, program:a.program.trim(), timing:a.timing, concerns:a.concerns, notes:a.notes.trim()}}).then(function(res){
+      S.busy=false; var d=res.data||{};
+      if(d.ok){
+        S.req.consult = {interest:a.interest.slice(), org_type:a.org_type||null, program:a.program.trim()||null, timing:a.timing||null, concerns:a.concerns.slice(), notes:a.notes.trim()||null};
+        S.req.consult_at = new Date().toISOString(); S.editConsult=false; S.a=null; renderFlow(); scrollTo($('#c-consult'));
+        return;
+      }
+      go.disabled=false;
+      showErr('cons-err', d.error==='rate_limited' ? '요청이 많아 잠시 멈췄습니다. 내일 다시 시도하시거나 이메일로 알려 주세요.' : '저장하지 못했습니다. 잠시 뒤 다시 시도하시거나 이메일로 알려 주세요.');
+    });
+  };
+  row.appendChild(go);
+  if(S.req.consult_at){var cn=el('button','btn-link','취소'); cn.type='button'; cn.onclick=function(){S.editConsult=false; S.a=null; renderFlow();}; row.appendChild(cn);}
+  body.appendChild(row);
+  body.appendChild(el('p','fine','보내 주신 내용은 시연 준비와 이메일 답변에만 쓰며, 접수일부터 3개월 뒤 자동 삭제됩니다.'));
+}
+function buildResult(body, ans){
+  var ok = el('div','okmsg'); add(ok, el('b',null,'상담 내용을 받았습니다.'), ' 대표가 읽고 시연에 반영하며, 필요하면 이메일로 답합니다. 아래는 선택하신 내용에 맞춘 안내입니다.'); ok.style.marginTop='0'; body.appendChild(ok);
+  var interest = ans.interest||[], concerns = ans.concerns||[];
+  body.appendChild(el('h3',null,'선택하신 형태별 안내'));
+  var box = el('div','ans');
+  INTEREST.forEach(function(x){ if(interest.indexOf(x[0])>=0) box.appendChild(ansItem(x[1], x[2], true)); });
+  body.appendChild(box);
+  if(ans.program){ var p=el('p','fine'); p.textContent='남겨 주신 약국 프로그램: '+ans.program+' — 연동 협의 대상으로 기록해 두었습니다.'; if(interest.indexOf('약국 프로그램·POS 연동 협의')<0) p.textContent='남겨 주신 약국 프로그램: '+ans.program; body.appendChild(p); }
+  if(concerns.length){
+    body.appendChild(el('h3',null,'궁금하신 점에 대한 답'));
+    var b2 = el('div','ans');
+    CONCERNS.forEach(function(x){ if(concerns.indexOf(x[0])>=0) b2.appendChild(ansItem(x[0], x[1], true)); });
+    body.appendChild(b2);
+  }
+  body.appendChild(el('h3',null,'이렇게 이어집니다'));
+  var st = el('ol','steps');
+  ['대표가 일정과 상담 내용을 확인한 뒤, 이메일로 확정 안내를 드립니다.','안내 시연(약 30분)을 온라인 또는 서면으로 진행합니다.','시범 이용을 원하시면 가상 데이터 체험판으로 시작하고, 의견은 글로 받습니다.','시범이 끝나면 약국이 입력한 자료를 모두 삭제하고 삭제 결과를 이메일로 알려드립니다.'].forEach(function(t){st.appendChild(el('li',null,t));});
+  body.appendChild(st);
+  var det = document.createElement('details'); var sm = el('summary',null,'계약 전에 서면으로 함께 정할 항목'); det.appendChild(sm);
+  var inner = el('div'); inner.appendChild(el('p','fine','아래는 협의 대상 항목의 목록이며, 확정된 조건이 아닙니다.')); inner.firstChild.style.marginTop='0';
+  var ul = el('ul','bul'); CONTRACT_ITEMS.forEach(function(t){ul.appendChild(el('li',null,t));}); inner.appendChild(ul); det.appendChild(inner);
+  var wrapAns = el('div','ans'); wrapAns.style.marginTop='1rem'; wrapAns.appendChild(det); body.appendChild(wrapAns);
+  var row = el('div','row'); row.style.marginTop='.9rem';
+  var ed = el('button','btn-link','답변 고치기'); ed.type='button'; ed.onclick=function(){S.editConsult=true; S.a=null; renderFlow(); scrollTo($('#c-consult'));};
+  row.appendChild(ed); body.appendChild(row);
+}
+function ansItem(title, text, open){
+  var d = document.createElement('details'); if(open) d.open=true;
+  var s = el('summary',null,title); var b = el('div',null,text); add(d, s, b); return d;
+}
+
+// 3. 시연 전에
+function buildReadyCard(){
+  var c = card('c-ready', 3, '시연 전에 확인해 주세요', null); c.dataset.state='plain';
+  var b = el('div','cb'); b.style.marginTop='.6rem';
+  var ul = el('ul','bul');
+  ['시연과 체험판에는 가상 데이터만 있습니다. 실제 환자 정보는 입력하지 마세요.','시연 방식(온라인 또는 서면)은 확정 안내 메일에서 편한 쪽으로 정합니다.','먼저 왼쪽의 시연 영상이나 체험판을 보시면 질의응답이 수월합니다.','일정을 바꾸고 싶으시면 이 페이지에서 다시 고르시거나 이메일로 알려 주세요.'].forEach(function(t){ul.appendChild(el('li',null,t));});
+  b.appendChild(ul); c.appendChild(b); return c;
+}
+// 자주 묻는 질문
+function buildFaqCard(){
+  var c = card('c-faq', '?', '자주 묻는 질문', null); c.dataset.state='plain';
+  var b = el('div','cb'); b.style.marginTop='.6rem';
+  var box = el('div','ans'); FAQ.forEach(function(x){box.appendChild(ansItem(x[0], x[1], false));}); b.appendChild(box);
+  b.appendChild(el('p','fine','이 페이지는 안내와 상담 접수를 위한 것이며 계약이나 의료·법률 자문이 아닙니다.'));
+  c.appendChild(b); return c;
+}
+
+// ── 시작 ─────────────────────────────────────────────────────
+function stateView(title, text, actions){
+  var flow = $('#flow'); flow.textContent='';
+  var s = el('div','state'); add(s, el('h2',null,title), el('p',null,text));
+  var row = el('div','row'); row.style.justifyContent='center'; (actions||[]).forEach(function(a){row.appendChild(a);}); s.appendChild(row); flow.appendChild(s);
+}
+function linkBtn(text, href, ghost){var a=el('a','btn '+(ghost?'btn-ghost':'btn-go'),text); a.href=href; a.style.textDecoration='none'; return a;}
+function boot(){
+  // 작은 화면에서는 안내 두 칸(시연 순서·바로 보기)을 접어 두어 카드가 먼저 보이게 한다
+  if(window.matchMedia && matchMedia('(max-width:980px)').matches){ ['#g-agenda','#g-watch'].forEach(function(s){var d=$(s); if(d) d.open=false;}); }
+  if(!/^[0-9a-f]{32}$/.test(token)){
+    $('#guide').style.display='none'; $('#app').style.gridTemplateColumns='1fr';
+    stateView('신청 후 받으신 주소로 열어 주세요','이 페이지는 데모 예약이나 시범 이용을 신청하신 분께 드리는 안내용 주소로만 열립니다. 신청 직후 화면이나 접수 확인 메일의 버튼으로 다시 열어 주세요.',
+      [linkBtn('데모 예약·시범 이용 신청하기','index.html#book'), linkBtn('이메일로 문의','mailto:'+MAIL, true)]);
+    return;
+  }
+  function load(){
+    api({action:'get'}).then(function(res){
+      var d = res.data||{};
+      if(d.ok){ S.req=d.request; S.open=d.open||[]; renderFlow(); return; }
+      $('#guide').style.display='none'; $('#app').style.gridTemplateColumns='1fr';
+      if(res.status===404){
+        stateView('주소를 확인해 주세요','이 주소로 신청 내용을 찾지 못했습니다. 접수 확인 메일의 버튼으로 다시 열어 보시거나, 아래 이메일로 알려 주세요.',
+          [linkBtn('이메일로 문의','mailto:'+MAIL), linkBtn('홈페이지로','index.html',true)]);
+      } else {
+        var rb = el('button','btn btn-go','다시 불러오기'); rb.type='button'; rb.onclick=function(){$('#flow').textContent=''; $('#flow').appendChild(el('div','sk')); load();};
+        stateView('지금 불러오지 못했습니다','잠시 뒤 다시 시도해 주세요. 계속 안 되면 이메일로 알려 주세요.', [rb, linkBtn('이메일로 문의','mailto:'+MAIL, true)]);
+      }
+    });
+  }
+  load();
+}
+boot();
+})();
+</script>
+</body>
+</html>
