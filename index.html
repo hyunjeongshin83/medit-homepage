@@ -25,12 +25,12 @@
 <link rel="stylesheet" href="vendor/fonts.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#10B981;--mint2:#34d399;--mint-soft:rgba(16,185,129,.08);--mint-border:rgba(16,185,129,.2);--g1:#064e3b;--g2:#047857;--g3:#059669;--g4:#10B981;--g5:#34d399;--g6:#6ee7b7;--g1-s:rgba(6,78,59,.12);--g2-s:rgba(4,120,87,.12);--g3-s:rgba(5,150,105,.12);--g4-s:rgba(16,185,129,.12);--g5-s:rgba(52,211,153,.12);--g6-s:rgba(110,231,183,.12);--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--b3-s:rgba(30,41,59,.12);--b3-border:rgba(30,41,59,.25);--ice:#34d399;--ice-s:rgba(52,211,153,.1);--lav:#6ee7b7;--lav-s:rgba(110,231,183,.1);--coral:#ff8a80;--text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;--card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);--r:16px;--font-head:'HCR Dotum','Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
+:root{--bg:#0a0f1a;--bg2:#0f1525;--bg3:#141c2e;--mint:#00d2b4;--mint2:#00e8c8;--mint-soft:rgba(0,210,180,.08);--mint-border:rgba(0,210,180,.2);--g1:#00443d;--g2:#00806f;--g3:#00a892;--g4:#00d2b4;--g5:#00e8c8;--g6:#72f2de;--g1-s:rgba(0,68,61,.12);--g2-s:rgba(0,128,111,.12);--g3-s:rgba(0,168,146,.12);--g4-s:rgba(0,210,180,.12);--g5-s:rgba(0,232,200,.12);--g6-s:rgba(114,242,222,.12);--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--b3-s:rgba(30,41,59,.12);--b3-border:rgba(30,41,59,.25);--ice:#00e8c8;--ice-s:rgba(0,232,200,.1);--lav:#72f2de;--lav-s:rgba(114,242,222,.1);--coral:#ff8a80;--text:#e8e4dc;--muted:#8a8578;--dim:#5a5550;--white:#fff;--card:rgba(14,22,38,.7);--card-border:rgba(255,255,255,.06);--r:16px;--font-head:'HCR Dotum','Noto Sans KR',sans-serif;--font-body:'Noto Sans KR',sans-serif;--font-mono:'IBM Plex Mono',monospace}
 html{scroll-behavior:smooth;scroll-padding-top:76px}body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:all .3s}nav.scrolled{background:rgba(10,15,26,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:.7rem 0}.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.4rem}.logo em{font-style:normal;color:var(--mint)}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--white)}.nav-cta{background:var(--mint)!important;color:var(--bg)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700!important;font-size:.8rem!important}.nav-cta:hover{background:var(--mint2)!important}.nav-demo{border:1px solid var(--mint-border)!important;color:var(--mint)!important;padding:.5rem 1.2rem;border-radius:8px;font-weight:600!important}.nav-demo:hover{background:var(--mint-soft)!important}.nav-lang{font-size:1.1rem!important;line-height:1!important;padding:.35rem .55rem!important;border:1px solid var(--card-border);border-radius:8px;transition:all .3s;display:inline-flex;align-items:center;justify-content:center;filter:saturate(.85)}.nav-lang:hover{border-color:var(--mint);background:var(--mint-soft);transform:scale(1.08);filter:saturate(1.1)}.mob-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:.5rem}.mob-toggle span{display:block;width:20px;height:2px;background:var(--text);transition:.3s}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-body);border:none;cursor:pointer}.btn-mint{background:var(--mint);color:var(--bg)}.btn-mint:hover{background:var(--mint2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(16,185,129,.25)}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}.btn-outline:hover{border-color:var(--mint);color:var(--mint)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-body);border:none;cursor:pointer}.btn-mint{background:var(--mint);color:var(--bg)}.btn-mint:hover{background:var(--mint2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,210,180,.25)}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--card-border)}.btn-outline:hover{border-color:var(--mint);color:var(--mint)}
 .sec{padding:6rem 2rem;max-width:1200px;margin:0 auto}.sec-tag{font-family:var(--font-head);font-size:.82rem;color:var(--mint);letter-spacing:.02em;margin-bottom:.7rem;font-weight:700}.sec-title{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.3}.sec-desc{font-size:.9rem;color:var(--muted);max-width:580px;line-height:1.8;font-weight:300}.sec-center{text-align:center}.sec-center .sec-desc{margin:0 auto}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none}.hero-content{max-width:780px;position:relative;z-index:1}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(0,210,180,.06) 0%,transparent 70%);pointer-events:none}.hero-content{max-width:780px;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.35rem .9rem;border-radius:100px;border:1px solid var(--mint-border);background:var(--mint-soft);font-size:.75rem;font-family:var(--font-head);color:var(--mint);margin-bottom:2rem;letter-spacing:.04em;font-weight:700;animation:fadeUp .8s ease-out}.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}.hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:1.3rem;animation:fadeUp .8s ease-out .1s both}.hero h1 .hl{color:var(--mint)}.hero .sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 2rem;font-weight:300;line-height:1.9;animation:fadeUp .8s ease-out .2s both}.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .3s both}@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .stat-strip{background:var(--bg2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);display:flex;align-items:center;padding:4rem 2rem}.stat-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;text-align:center;width:100%}.ss-num{font-family:var(--font-head);font-size:clamp(2.4rem,4.2vw,3.4rem);font-weight:800;color:var(--mint);line-height:1;margin-bottom:1rem;white-space:nowrap}.ss-label{font-size:.95rem;color:var(--muted);margin-top:.4rem;line-height:1.6}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;align-items:stretch}
@@ -38,36 +38,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:al
 .step-num{font-family:var(--font-mono,monospace);font-size:1.4rem;font-weight:700;color:var(--mint);margin-bottom:0.75rem;opacity:0.9}
 @media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.grid4{grid-template-columns:1fr}}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.8rem;transition:all .4s;display:flex;flex-direction:column}.card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.card-tag{font-family:var(--font-head);font-size:.78rem;font-weight:700;color:var(--mint);letter-spacing:.02em;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}.card-tag::after{content:'';flex:1;height:1px;background:var(--card-border)}.card-icon{width:50px;height:50px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin-bottom:1rem}.card-icon svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:1.5}.card h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.5rem}.card p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
-.ch-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;transition:all .4s;display:flex;flex-direction:column;height:100%}.ch-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.ch-head{padding:1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--card-border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;color:var(--muted);min-height:48px}.ch-badge{padding:.15rem .5rem;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.1em}.ch-badge.g{color:#6fcf97;border:1px solid rgba(111,207,151,.25)}.ch-badge.y{color:#059669;border:1px solid rgba(240,200,102,.25)}.ch-badge.m{color:var(--mint);border:1px solid var(--mint-border)}.ch-vis{padding:2rem;display:flex;align-items:center;justify-content:center;height:220px}.ch-body{padding:1.3rem;border-top:1px solid var(--card-border);flex:1;display:flex;flex-direction:column}.ch-body h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.4rem}.ch-body p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
+.ch-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;transition:all .4s;display:flex;flex-direction:column;height:100%}.ch-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.ch-head{padding:1rem 1.3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--card-border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;color:var(--muted);min-height:48px}.ch-badge{padding:.15rem .5rem;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.1em}.ch-badge.g{color:#6fcf97;border:1px solid rgba(111,207,151,.25)}.ch-badge.y{color:#00a892;border:1px solid rgba(240,200,102,.25)}.ch-badge.m{color:var(--mint);border:1px solid var(--mint-border)}.ch-vis{padding:2rem;display:flex;align-items:center;justify-content:center;height:220px}.ch-body{padding:1.3rem;border-top:1px solid var(--card-border);flex:1;display:flex;flex-direction:column}.ch-body h3{font-family:var(--font-head);font-size:1.05rem;font-weight:700;margin-bottom:.4rem}.ch-body p{font-size:.8rem;color:var(--muted);line-height:1.7;flex:1}
 .del-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.3rem .8rem;text-align:center;transition:all .4s;display:flex;flex-direction:column;align-items:center}.del-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.del-n{font-family:var(--font-mono);font-size:.7rem;color:var(--mint);letter-spacing:.15em;margin-bottom:.7rem}.del-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin-bottom:.8rem}.del-card h3{font-family:var(--font-head);font-size:.88rem;font-weight:700;margin-bottom:.3rem}.del-card p{font-size:.7rem;color:var(--muted);line-height:1.5;flex:1}
-.demo-bg{background:linear-gradient(135deg,rgba(16,185,129,.04) 0%,rgba(52,211,153,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;padding:6rem 2rem}.demo-preview{background:var(--bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:9/16;max-height:500px;box-shadow:0 20px 60px rgba(0,0,0,.4)}.demo-phone{position:relative;max-width:280px;margin:0 auto}.demo-phone::before{content:'';position:absolute;inset:-4px;border-radius:calc(var(--r) + 4px);border:2px solid var(--mint-border);pointer-events:none}.demo-features{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}.demo-feat{display:flex;align-items:flex-start;gap:.8rem}.demo-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);margin-top:.5rem;flex-shrink:0}.demo-feat-text h4{font-family:var(--font-head);font-size:.9rem;font-weight:700;margin-bottom:.2rem}.demo-feat-text p{font-size:.78rem;color:var(--muted);line-height:1.6}
+.demo-bg{background:linear-gradient(135deg,rgba(0,210,180,.04) 0%,rgba(0,232,200,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;padding:6rem 2rem}.demo-preview{background:var(--bg);border:1px solid var(--card-border);border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:9/16;max-height:500px;box-shadow:0 20px 60px rgba(0,0,0,.4)}.demo-phone{position:relative;max-width:280px;margin:0 auto}.demo-phone::before{content:'';position:absolute;inset:-4px;border-radius:calc(var(--r) + 4px);border:2px solid var(--mint-border);pointer-events:none}.demo-features{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}.demo-feat{display:flex;align-items:flex-start;gap:.8rem}.demo-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);margin-top:.5rem;flex-shrink:0}.demo-feat-text h4{font-family:var(--font-head);font-size:.9rem;font-weight:700;margin-bottom:.2rem}.demo-feat-text p{font-size:.78rem;color:var(--muted);line-height:1.6}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}.team-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;text-align:center;transition:all .4s}.team-card:hover{border-color:var(--mint-border)}.team-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--mint),var(--ice));display:grid;place-items:center;margin:0 auto 1rem;font-family:var(--font-head);font-size:1.4rem;color:var(--bg);font-weight:800}.team-card h3{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.3rem}.team-card .role{font-family:var(--font-mono);font-size:.7rem;color:var(--mint);letter-spacing:.1em;margin-bottom:.6rem}.team-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
-.reg-bg{background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--card-border)}.reg-nums{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}.reg-n{text-align:center;padding:.8rem;background:rgba(16,185,129,.04);border-radius:10px;border:1px solid var(--mint-border)}.reg-n .big{font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)}.reg-n .sm{font-size:.7rem;color:var(--muted);margin-top:.2rem}
-.news-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem;transition:all .4s;text-decoration:none;color:inherit;display:flex;flex-direction:column}.news-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.news-tag{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;padding:.15rem .5rem;border-radius:100px;border:1px solid;width:fit-content;margin-bottom:.8rem}.news-tag.t1{color:var(--mint);border-color:rgba(16,185,129,.2)}.news-tag.t2{color:var(--ice);border-color:rgba(52,211,153,.2)}.news-tag.t3{color:var(--lav);border-color:rgba(110,231,183,.2)}.news-card h3{font-family:var(--font-head);font-size:.9rem;font-weight:700;line-height:1.5;margin-bottom:.6rem}.news-card p{font-size:.75rem;color:var(--muted);line-height:1.7;flex:1}.news-date{font-family:var(--font-mono);font-size:.7rem;color:var(--dim);margin-top:.8rem;letter-spacing:.05em}
-.cta-sec{text-align:center;padding:7rem 2rem;position:relative}.cta-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;max-width:100%;height:600px;background:radial-gradient(circle,rgba(16,185,129,.05),transparent 70%);pointer-events:none}.cta-sec h2{font-family:var(--font-head);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.7rem;line-height:1.25}
+.reg-bg{background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--card-border)}.reg-nums{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}.reg-n{text-align:center;padding:.8rem;background:rgba(0,210,180,.04);border-radius:10px;border:1px solid var(--mint-border)}.reg-n .big{font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--mint)}.reg-n .sm{font-size:.7rem;color:var(--muted);margin-top:.2rem}
+.news-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem;transition:all .4s;text-decoration:none;color:inherit;display:flex;flex-direction:column}.news-card:hover{border-color:var(--mint-border);transform:translateY(-4px)}.news-tag{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;padding:.15rem .5rem;border-radius:100px;border:1px solid;width:fit-content;margin-bottom:.8rem}.news-tag.t1{color:var(--mint);border-color:rgba(0,210,180,.2)}.news-tag.t2{color:var(--ice);border-color:rgba(0,232,200,.2)}.news-tag.t3{color:var(--lav);border-color:rgba(114,242,222,.2)}.news-card h3{font-family:var(--font-head);font-size:.9rem;font-weight:700;line-height:1.5;margin-bottom:.6rem}.news-card p{font-size:.75rem;color:var(--muted);line-height:1.7;flex:1}.news-date{font-family:var(--font-mono);font-size:.7rem;color:var(--dim);margin-top:.8rem;letter-spacing:.05em}
+.cta-sec{text-align:center;padding:7rem 2rem;position:relative}.cta-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;max-width:100%;height:600px;background:radial-gradient(circle,rgba(0,210,180,.05),transparent 70%);pointer-events:none}.cta-sec h2{font-family:var(--font-head);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.7rem;line-height:1.25}
 footer{background:var(--bg2);border-top:1px solid var(--card-border);padding:3rem 2rem 1.5rem}.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}.ft-brand{font-family:var(--font-head);font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:.6rem}.ft-brand em{font-style:normal;color:var(--mint)}.ft-desc{font-size:.75rem;color:var(--muted);line-height:1.7;margin-bottom:.8rem}.ft-col h4{font-family:var(--font-head);font-size:.78rem;font-weight:700;color:var(--white);margin-bottom:.8rem}.ft-col a{display:block;font-size:.75rem;color:var(--muted);text-decoration:none;margin-bottom:.5rem;transition:color .3s}.ft-col a:hover{color:var(--mint)}.ft-bottom{max-width:1200px;margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid var(--card-border);display:flex;justify-content:space-between;font-size:.7rem;color:var(--dim)}
 .kakao-m{background:#fbe64d;border-radius:12px;padding:.8rem;width:100%;max-width:220px;box-shadow:0 8px 30px rgba(0,0,0,.3)}.kakao-sender{display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem;font-size:.7rem;color:#3c1e1e;font-weight:600}.kakao-av{width:24px;height:24px;border-radius:6px;background:var(--mint);display:grid;place-items:center;color:var(--bg);font-size:.7rem;font-weight:800}.kakao-bub{background:#fff;border-radius:0 10px 10px 10px;padding:.6rem;font-size:.7rem;color:#1a1a1a;line-height:1.5}.sms-stack{display:flex;flex-direction:column;gap:.4rem;width:100%;max-width:200px}.sms-msg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.5rem;font-size:.7rem;color:var(--text)}.sms-time{font-family:var(--font-mono);font-size:.7rem;color:var(--mint);margin-bottom:.15rem}.v-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}.v-orb{width:70px;height:70px;border-radius:50%;background:linear-gradient(145deg,#2ecc71,#27ae60);display:grid;place-items:center;position:relative;box-shadow:0 8px 30px rgba(39,174,96,.25)}.v-orb::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(39,174,96,.15);animation:vp 2s ease-in-out infinite}@keyframes vp{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.5}}.v-bars{display:flex;gap:2px;height:16px;align-items:center}.v-bars span{width:2.5px;border-radius:2px;background:rgba(39,174,96,.5);animation:vb .6s ease-in-out infinite alternate}@keyframes vb{from{height:3px}to{height:var(--h,14px)}}
 .rv{opacity:0;transform:translateY(35px);transition:all .7s ease-out}.rv.show{opacity:1;transform:translateY(0)}
 @media(max-width:1024px){.grid3,.team-grid{grid-template-columns:1fr 1fr}.grid5{grid-template-columns:repeat(3,1fr)}.demo-grid{grid-template-columns:1fr}.ft-inner{grid-template-columns:1fr 1fr}.stat-strip-inner{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
 @media(max-width:768px){.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,15,26,.98);flex-direction:column;justify-content:center;gap:1.5rem;z-index:99}.nav-links.open{display:flex}.mob-toggle{display:flex}.grid3,.team-grid,.stat-strip-inner{grid-template-columns:1fr}.grid5{grid-template-columns:1fr 1fr}.ft-inner{grid-template-columns:1fr}.ft-bottom{flex-direction:column;gap:.4rem;text-align:center}.demo-phone{max-width:240px}}
-body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events:none;z-index:10000;transform:translate(-30%,-15%) rotate(-35deg);filter:drop-shadow(0 3px 10px rgba(16,185,129,.35)) drop-shadow(0 1px 2px rgba(0,0,0,.4));transition:transform .3s cubic-bezier(.16,1,.3,1),filter .3s}.xh-cursor.hv{transform:translate(-30%,-15%) rotate(-20deg) scale(1.15);filter:drop-shadow(0 6px 18px rgba(16,185,129,.55)) drop-shadow(0 2px 4px rgba(0,0,0,.5))}.xh-cursor.hv svg{filter:brightness(1.08)}.xh-ring{position:fixed;width:52px;height:52px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s,width .3s}.xh-ring svg{width:100%;height:100%;animation:spinR 6s linear infinite}.xh-ring.hv{opacity:.9;width:72px;height:72px}.xh-ring.click{animation:ringBurst .8s ease-out;opacity:1}@keyframes spinR{to{transform:rotate(360deg)}}@keyframes ringBurst{0%{transform:translate(-50%,-50%) scale(1) rotate(0deg);opacity:1}50%{transform:translate(-50%,-50%) scale(2.2) rotate(180deg);opacity:.6}100%{transform:translate(-50%,-50%) scale(3.5) rotate(360deg);opacity:0}}
+body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events:none;z-index:10000;transform:translate(-30%,-15%) rotate(-35deg);filter:drop-shadow(0 3px 10px rgba(0,210,180,.35)) drop-shadow(0 1px 2px rgba(0,0,0,.4));transition:transform .3s cubic-bezier(.16,1,.3,1),filter .3s}.xh-cursor.hv{transform:translate(-30%,-15%) rotate(-20deg) scale(1.15);filter:drop-shadow(0 6px 18px rgba(0,210,180,.55)) drop-shadow(0 2px 4px rgba(0,0,0,.5))}.xh-cursor.hv svg{filter:brightness(1.08)}.xh-ring{position:fixed;width:52px;height:52px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s,width .3s}.xh-ring svg{width:100%;height:100%;animation:spinR 6s linear infinite}.xh-ring.hv{opacity:.9;width:72px;height:72px}.xh-ring.click{animation:ringBurst .8s ease-out;opacity:1}@keyframes spinR{to{transform:rotate(360deg)}}@keyframes ringBurst{0%{transform:translate(-50%,-50%) scale(1) rotate(0deg);opacity:1}50%{transform:translate(-50%,-50%) scale(2.2) rotate(180deg);opacity:.6}100%{transform:translate(-50%,-50%) scale(3.5) rotate(360deg);opacity:0}}
 .xh-ring2{position:fixed;width:38px;height:38px;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s,width .3s}.xh-ring2 svg{width:100%;height:100%;animation:spinR2 4s linear infinite reverse}.xh-ring2.hv{opacity:.7;width:54px;height:54px}@keyframes spinR2{to{transform:rotate(-360deg)}}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.demo-phone,.mob-toggle{cursor:none}
 #pillCvs{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2}#fieldCvs{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s}#fieldCvs.on{opacity:1}#waveCvs{position:fixed;bottom:0;left:0;width:100%;height:80px;pointer-events:none;z-index:1;opacity:0;transition:opacity 1s}#waveCvs.on{opacity:1}
-.stog{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:rgba(10,15,26,.85);backdrop-filter:blur(16px);cursor:none;display:flex;align-items:center;justify-content:center;gap:2px;transition:.4s}.stog:hover{border-color:var(--mint);transform:scale(1.08)}.stog.active{border-color:var(--mint);box-shadow:0 0 20px rgba(16,185,129,.15)}.stog span{display:block;width:3px;border-radius:2px;background:var(--muted);transition:.4s}.stog.active span{background:var(--mint);animation:sbar .5s ease-in-out infinite alternate}@keyframes sbar{from{height:var(--h,6px)}to{height:calc(var(--h,6px) + 8px)}}.stog span:nth-child(1){--h:5px}.stog span:nth-child(2){--h:12px}.stog span:nth-child(3){--h:8px}.stog span:nth-child(4){--h:14px}
+.stog{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:48px;height:48px;border-radius:50%;border:1px solid var(--card-border);background:rgba(10,15,26,.85);backdrop-filter:blur(16px);cursor:none;display:flex;align-items:center;justify-content:center;gap:2px;transition:.4s}.stog:hover{border-color:var(--mint);transform:scale(1.08)}.stog.active{border-color:var(--mint);box-shadow:0 0 20px rgba(0,210,180,.15)}.stog span{display:block;width:3px;border-radius:2px;background:var(--muted);transition:.4s}.stog.active span{background:var(--mint);animation:sbar .5s ease-in-out infinite alternate}@keyframes sbar{from{height:var(--h,6px)}to{height:calc(var(--h,6px) + 8px)}}.stog span:nth-child(1){--h:5px}.stog span:nth-child(2){--h:12px}.stog span:nth-child(3){--h:8px}.stog span:nth-child(4){--h:14px}
 #prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--mint),var(--ice));z-index:101;width:0;transition:width .15s}
 @media(max-width:768px){body{cursor:auto}.xh-cursor,.xh-ring{display:none}nav *,footer *,.btn,.ch-card,.card,.del-card,.news-card,.team-card,.mob-toggle{cursor:auto}}
 
 /* === 5단계 그라데이션 톤 시스템 (헤더 민트 톤 기반) === */
 /* Tone 1: 다크 + 민트 어센트 (warm dark) — Hero */
-.tone-1{background:radial-gradient(ellipse at top,rgba(16,185,129,.08) 0%,rgba(16,185,129,.03) 30%,var(--bg) 70%)}
+.tone-1{background:radial-gradient(ellipse at top,rgba(0,210,180,.08) 0%,rgba(0,210,180,.03) 30%,var(--bg) 70%)}
 /* Tone 2: 다크 + 아이스 어센트 (cool depth) — Product, Channels */
-.tone-2{background:linear-gradient(180deg,var(--bg) 0%,rgba(52,211,153,.025) 50%,var(--bg2) 100%)}
+.tone-2{background:linear-gradient(180deg,var(--bg) 0%,rgba(0,232,200,.025) 50%,var(--bg2) 100%)}
 /* Tone 3: 민트+아이스 블렌드 (transition glow) — Verified DB, Red Lines */
-.tone-3{background:linear-gradient(180deg,var(--bg2) 0%,rgba(16,185,129,.04) 50%,rgba(52,211,153,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}
+.tone-3{background:linear-gradient(180deg,var(--bg2) 0%,rgba(0,210,180,.04) 50%,rgba(0,232,200,.03) 100%);border-top:1px solid var(--mint-border);border-bottom:1px solid var(--mint-border)}
 /* Tone 4: 라벤더 어센트 (depth) — Adverse Event, Demo */
-.tone-4{background:linear-gradient(180deg,rgba(52,211,153,.02) 0%,rgba(110,231,183,.04) 50%,var(--bg2) 100%);border-top:1px solid rgba(110,231,183,.12)}
+.tone-4{background:linear-gradient(180deg,rgba(0,232,200,.02) 0%,rgba(114,242,222,.04) 50%,var(--bg2) 100%);border-top:1px solid rgba(114,242,222,.12)}
 /* Tone 5: 깊은 다크 + 민트 마무리 (close) — Regulation, Team */
-.tone-5{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 60%,rgba(16,185,129,.04) 100%);border-top:1px solid var(--card-border)}
+.tone-5{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 60%,rgba(0,210,180,.04) 100%);border-top:1px solid var(--card-border)}
 
 /* === 데모 섹션 (DEMO 01~06) 전용 스타일 === */
 .demo-section{background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem;position:relative;scroll-margin-top:80px}
@@ -99,10 +99,10 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1!important;transform:none!important}}
 /* 긴 구간 접기 */
 .fold{margin-top:1.5rem}
-.fold>summary{word-break:keep-all;text-align:center;list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;width:max-content;max-width:100%;margin:0 auto 2rem;padding:.8rem 1.4rem;border:1px solid var(--mint-border);border-radius:999px;color:var(--mint);font-weight:600;font-size:.92rem;background:rgba(16,185,129,.05);transition:background .2s,border-color .2s}
+.fold>summary{word-break:keep-all;text-align:center;list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;width:max-content;max-width:100%;margin:0 auto 2rem;padding:.8rem 1.4rem;border:1px solid var(--mint-border);border-radius:999px;color:var(--mint);font-weight:600;font-size:.92rem;background:rgba(0,210,180,.05);transition:background .2s,border-color .2s}
 .fold>summary::-webkit-details-marker{display:none}
 .fold>summary::after{content:'';width:.55rem;height:.55rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
-.fold>summary:hover{background:rgba(16,185,129,.12)}
+.fold>summary:hover{background:rgba(0,210,180,.12)}
 .fold>summary:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
 .fold[open]>summary::after{transform:rotate(-135deg) translateY(-2px)}
 .fold>summary .fc,.fold[open]>summary .fo{display:none}
@@ -144,7 +144,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <style id="book-css">
 /* ===== 데모 영상 · 약국 시범 이용 · 데모 예약 (2026-10) ===== */
 .team-avatar.dog{width:92px;height:92px;background:none;border-radius:0;display:block;padding:0;margin:0 auto 1rem}
-.team-avatar.dog svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 14px rgba(16,185,129,.28))}
+.team-avatar.dog svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 14px rgba(0,210,180,.28))}
 .vid-wrap{max-width:1100px;margin:0 auto 2.8rem}
 .vid-head{text-align:center;margin-bottom:1.6rem}
 .vid-head h3{font-family:var(--font-head);font-size:1.25rem;font-weight:700;margin:.3rem 0 .5rem}
@@ -246,12 +246,12 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
 </linearGradient>
 <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="0%">
-<stop offset="0%" stop-color="#047857"/>
-<stop offset="50%" stop-color="#10B981"/>
-<stop offset="100%" stop-color="#047857"/>
+<stop offset="0%" stop-color="#00806f"/>
+<stop offset="50%" stop-color="#00d2b4"/>
+<stop offset="100%" stop-color="#00806f"/>
 </linearGradient>
 <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-<stop offset="0%" stop-color="#34d399" stop-opacity=".9"/>
+<stop offset="0%" stop-color="#00e8c8" stop-opacity=".9"/>
 <stop offset="100%" stop-color="#00b89a" stop-opacity=".95"/>
 </linearGradient>
 <clipPath id="bottleClip">
@@ -288,19 +288,19 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <rect x="7.5" y="14" width="1.5" height="18" rx="0.7" fill="rgba(255,255,255,.25)"/>
 <!-- 라벨 (MedIT 텍스트) -->
 <rect x="8" y="17" width="12" height="6" rx="1" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.2)" stroke-width=".3"/>
-<text x="14" y="21.3" text-anchor="middle" font-size="3.6" font-weight="700" fill="#6EE7B7" font-family="sans-serif" letter-spacing="-.1">MedIT</text>
+<text x="14" y="21.3" text-anchor="middle" font-size="3.6" font-weight="700" fill="#72f2de" font-family="sans-serif" letter-spacing="-.1">MedIT</text>
 </svg></div>
 <div class="xh-ring" id="xhr"><svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
 <!-- 메인 점선 원 -->
-<circle cx="26" cy="26" r="24" fill="none" stroke="#10B981" stroke-width="1.4" stroke-dasharray="5 4" opacity=".7"/>
+<circle cx="26" cy="26" r="24" fill="none" stroke="#00d2b4" stroke-width="1.4" stroke-dasharray="5 4" opacity=".7"/>
 <!-- 4방향 작은 점 -->
-<circle cx="26" cy="2" r="1.8" fill="#10B981"/>
-<circle cx="50" cy="26" r="1.8" fill="#10B981"/>
-<circle cx="26" cy="50" r="1.8" fill="#10B981"/>
-<circle cx="2" cy="26" r="1.8" fill="#10B981"/>
+<circle cx="26" cy="2" r="1.8" fill="#00d2b4"/>
+<circle cx="50" cy="26" r="1.8" fill="#00d2b4"/>
+<circle cx="26" cy="50" r="1.8" fill="#00d2b4"/>
+<circle cx="2" cy="26" r="1.8" fill="#00d2b4"/>
 </svg></div>
 <div class="xh-ring2" id="xhr2"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
-<circle cx="19" cy="19" r="17" fill="none" stroke="rgba(16,185,129,.4)" stroke-width=".8" stroke-dasharray="2 8"/>
+<circle cx="19" cy="19" r="17" fill="none" stroke="rgba(0,210,180,.4)" stroke-width=".8" stroke-dasharray="2 8"/>
 </svg></div>
 <canvas id="fieldCvs"></canvas><canvas id="waveCvs"></canvas><canvas id="pillCvs"></canvas>
 <button class="stog" id="tog" onclick="togSound()" title="사운드 ON/OFF"><span style="height:5px"></span><span style="height:12px"></span><span style="height:8px"></span><span style="height:14px"></span></button>
@@ -308,18 +308,18 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <nav id="nav"><div class="nav-inner"><a href="#" class="logo" onclick="toggleLogoState(this); return false;">
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg" style="width:32px;height:32px;vertical-align:middle;transition:transform 0.2s;">
 <g transform="translate(50, 50)" opacity="0.32">
-<rect x="-9" y="-32" width="18" height="7" rx="2.5" fill="#34D399"/>
-<path d="M -16 28 L -16 -10 Q -16 -22 -7 -23 L 7 -23 Q 16 -22 16 -10 L 16 28 Q 16 32 12 32 L -12 32 Q -16 32 -16 28 Z" fill="#34D399"/>
+<rect x="-9" y="-32" width="18" height="7" rx="2.5" fill="#00e8c8"/>
+<path d="M -16 28 L -16 -10 Q -16 -22 -7 -23 L 7 -23 Q 16 -22 16 -10 L 16 28 Q 16 32 12 32 L -12 32 Q -16 32 -16 28 Z" fill="#00e8c8"/>
 </g>
 <g transform="translate(50, 50)">
-<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
-<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
-<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2"/>
+<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#00d2b4"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#00d2b4" stroke-width="2"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#00d2b4" stroke-width="2"/>
 <g class="pulse-icon"><path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g class="check-icon" style="display:none;"><path d="M -22 0 L -16 6 L -7 -6" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
 </g>
 </svg>
-<span class="logo-text"><span style="color:#10B981">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
+<span class="logo-text"><span style="color:#00d2b4">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
 </a><div class="nav-links" id="navLinks"><a href="#for-patients">환자</a><a href="#for-pharmacists">약사</a><a href="#for-partners">파트너</a><a href="#demo" class="nav-demo">데모 체험</a><a href="medit-tech.html">기술 자료</a><a href="#team">팀 소개</a><a href="#book" data-book="demo" class="nav-cta" data-en="Book a Demo">데모 예약</a><a href="medit-en.html" class="nav-lang" id="langToggle" title="English version" aria-label="Switch to English (opens the English page)" hreflang="en" lang="en">🇺🇸</a></div><button class="mob-toggle" aria-label="메뉴 열기" aria-controls="navLinks" aria-expanded="false" onclick="var o=document.getElementById('navLinks').classList.toggle('open');this.setAttribute('aria-expanded',o?'true':'false')"><span></span><span></span><span></span></button></div></nav>
 
 <section class="hero tone-1"><div class="hero-content"><div class="hero-badge"><span class="dot"></span>숙명여자대학교 창업보육센터</div><h1>약을 잊는 사람은<br>없어야 합니다.<br><span class="hl">MedIT이 기억합니다.</span></h1><p class="sub">QR 기반 복약 알림부터 약사 검토 흐름(설계 중)까지.<br>약사와 AI가 함께 만드는 것을 목표로 하는 메디신 테크놀로지 플랫폼입니다.<br><span style="font-size:.7rem;color:var(--dim);display:block;margin-top:.6rem">※ 본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 복약지도는 약사가 담당합니다.</span></p><div class="hero-btns"><a href="#demo" class="btn btn-mint">데모 체험하기 →</a><a href="#product" class="btn btn-outline">솔루션 알아보기</a></div></div></section>
@@ -363,7 +363,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <!-- ============================================ -->
 <!-- FOR PATIENTS · 환자용 -->
 <!-- ============================================ -->
-<section class="sec ko-only" id="for-patients" style="padding:5rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid rgba(16,185,129,.08);border-bottom:1px solid rgba(16,185,129,.08)">
+<section class="sec ko-only" id="for-patients" style="padding:5rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid rgba(0,210,180,.08);border-bottom:1px solid rgba(0,210,180,.08)">
   <div style="max-width:1100px;margin:0 auto;padding:0 1rem">
     <div class="rv" style="margin-bottom:2.5rem">
       <div style="font-family:var(--font-head);font-size:.7rem;color:var(--g4);letter-spacing:.04em;font-weight:700;margin-bottom:.7rem" data-en="For patients">환자용</div>
@@ -374,19 +374,19 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1.2rem;margin-bottom:2.5rem">
       <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.6rem 1.4rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">01 · 약 받기</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약국에서 QR 약봉투<span style="font-size:.7rem;color:var(--lav);font-weight:500;border:1px solid rgba(110,231,183,.25);border-radius:100px;padding:.05rem .5rem;margin-left:.45rem;white-space:nowrap">서비스 준비 중</span></h4>
+        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약국에서 QR 약봉투<span style="font-size:.7rem;color:var(--lav);font-weight:500;border:1px solid rgba(114,242,222,.25);border-radius:100px;padding:.05rem .5rem;margin-left:.45rem;white-space:nowrap">서비스 준비 중</span></h4>
         <p style="color:var(--muted);font-size:.9rem;line-height:1.7">약사님이 조제한 약 봉투에 인쇄된 QR을 스마트폰으로 찍기만 하면 됩니다.</p>
       </div>
 
       <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.6rem 1.4rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">02 · 복용 알림</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">3채널 알림<span style="font-size:.7rem;color:var(--lav);font-weight:500;border:1px solid rgba(110,231,183,.25);border-radius:100px;padding:.05rem .5rem;margin-left:.45rem;white-space:nowrap">서비스 준비 중</span></h4>
+        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">3채널 알림<span style="font-size:.7rem;color:var(--lav);font-weight:500;border:1px solid rgba(114,242,222,.25);border-radius:100px;padding:.05rem .5rem;margin-left:.45rem;white-space:nowrap">서비스 준비 중</span></h4>
         <p style="color:var(--muted);font-size:.9rem;line-height:1.7">카카오톡 · SMS · AI 음성 전화(기획 중) 중 본인이 편한 방식으로 받으실 수 있도록 설계 중입니다. 어르신께는 음성 전화를 권장할 계획입니다.</p>
       </div>
 
       <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.6rem 1.4rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g5);letter-spacing:.15em;font-weight:700;margin-bottom:.5rem">03 · 궁금하신 점</div>
-        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약사 검증 응답<span style="font-size:.7rem;color:var(--lav);font-weight:500;border:1px solid rgba(110,231,183,.25);border-radius:100px;padding:.05rem .5rem;margin-left:.45rem;white-space:nowrap">서비스 준비 중</span></h4>
+        <h4 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.5rem">약사 검증 응답<span style="font-size:.7rem;color:var(--lav);font-weight:500;border:1px solid rgba(114,242,222,.25);border-radius:100px;padding:.05rem .5rem;margin-left:.45rem;white-space:nowrap">서비스 준비 중</span></h4>
         <p style="color:var(--muted);font-size:.9rem;line-height:1.7">약에 대한 질문은 AI가 정리한 후 약사님이 확인한 답변만 받아보실 수 있도록 설계하고 있습니다. (설계 원칙, 시범 이용 전)</p>
       </div>
     </div>
@@ -447,7 +447,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
 <!-- ============================================ -->
 <!-- FOR PARTNERS · 파트너용 -->
 <!-- ============================================ -->
-<section class="sec ko-only" id="for-partners" style="padding:5rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid rgba(16,185,129,.08);border-bottom:1px solid rgba(16,185,129,.08)">
+<section class="sec ko-only" id="for-partners" style="padding:5rem 2rem;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);border-top:1px solid rgba(0,210,180,.08);border-bottom:1px solid rgba(0,210,180,.08)">
   <div style="max-width:1100px;margin:0 auto;padding:0 1rem">
     <div class="rv" style="margin-bottom:2.5rem">
       <div style="font-family:var(--font-head);font-size:.7rem;color:var(--g4);letter-spacing:.04em;font-weight:700;margin-bottom:.7rem" data-en="For partners">파트너용</div>
@@ -473,7 +473,7 @@ body{cursor:none}.xh-cursor{position:fixed;width:34px;height:52px;pointer-events
       </div>
     </div>
 
-    <div class="rv" style="background:var(--card);border:2px solid var(--g4);border-radius:12px;padding:2rem 2rem;text-align:center;box-shadow:0 0 24px rgba(16,185,129,.1)">
+    <div class="rv" style="background:var(--card);border:2px solid var(--g4);border-radius:12px;padding:2rem 2rem;text-align:center;box-shadow:0 0 24px rgba(0,210,180,.1)">
       <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--g4);letter-spacing:.2em;font-weight:700;margin-bottom:.6rem">PNP PLATFORM ARCHITECTURE</div>
       <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:.6rem;letter-spacing:-.02em">기술 안내 자료</h3>
       <p style="color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto">
@@ -1068,7 +1068,7 @@ function sendMsg(){
 }
 </script>
 
-<section class="sec" id="delivery" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag" data-en="Service flow (planned)">서비스 흐름 (계획)</div><h2 class="sec-title">약국과 환자를 디지털로 연결합니다</h2><p class="sec-desc">약국 방문 전 사전 안내 흐름을 디자인합니다. (※ 약 배송은 의료법·약사법 개정에 따라 단계적으로 도입 예정)</p></div><div class="grid5"><div class="del-card rv"><div class="del-n">01 · INQUIRY</div><div class="del-ic" style="background:rgba(16,185,129,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>문의 기록</h3><p>처방전·복용 중인 약에 대한 문의를 약국에 메시지로 전달.</p></div><div class="del-card rv"><div class="del-n">02 · PHOTO</div><div class="del-ic" style="background:rgba(52,211,153,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3>약봉투 촬영</h3><p>약봉투 이미지 텍스트 추출(개발 중).</p></div><div class="del-card rv"><div class="del-n">03 · VERIFY</div><div class="del-ic" style="background:rgba(110,231,183,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>본인 인증</h3><p>휴대폰 본인확인으로 자동 검증합니다.</p></div><div class="del-card rv"><div class="del-n">04 · DISPENSE</div><div class="del-ic" style="background:rgba(16,185,129,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div><h3>약국 조제</h3><p>약사가 확인 후 조제합니다.</p></div><div class="del-card rv"><div class="del-n">05 · GUIDE</div><div class="del-ic" style="background:rgba(16,185,129,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2h-4M9 11V5a3 3 0 116 0v6"/></svg></div><h3>약사 복약지도</h3><p>약사가 환자에게 직접 복약지도 제공.</p></div></div></section>
+<section class="sec" id="delivery" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag" data-en="Service flow (planned)">서비스 흐름 (계획)</div><h2 class="sec-title">약국과 환자를 디지털로 연결합니다</h2><p class="sec-desc">약국 방문 전 사전 안내 흐름을 디자인합니다. (※ 약 배송은 의료법·약사법 개정에 따라 단계적으로 도입 예정)</p></div><div class="grid5"><div class="del-card rv"><div class="del-n">01 · INQUIRY</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>문의 기록</h3><p>처방전·복용 중인 약에 대한 문의를 약국에 메시지로 전달.</p></div><div class="del-card rv"><div class="del-n">02 · PHOTO</div><div class="del-ic" style="background:rgba(0,232,200,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00e8c8" stroke-width="1.5"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3>약봉투 촬영</h3><p>약봉투 이미지 텍스트 추출(개발 중).</p></div><div class="del-card rv"><div class="del-n">03 · VERIFY</div><div class="del-ic" style="background:rgba(114,242,222,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#72f2de" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>본인 인증</h3><p>휴대폰 본인확인으로 자동 검증합니다.</p></div><div class="del-card rv"><div class="del-n">04 · DISPENSE</div><div class="del-ic" style="background:rgba(0,210,180,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 3h6v2H9z"/><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 12h6M12 9v6"/></svg></div><h3>약국 조제</h3><p>약사가 확인 후 조제합니다.</p></div><div class="del-card rv"><div class="del-n">05 · GUIDE</div><div class="del-ic" style="background:rgba(0,210,180,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2b4" stroke-width="1.5"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2h-4M9 11V5a3 3 0 116 0v6"/></svg></div><h3>약사 복약지도</h3><p>약사가 환자에게 직접 복약지도 제공.</p></div></div></section>
 
 <!-- ══ HOME DELIVERY SOLUTION (2026.12.24~) ══ -->
 <section class="sec" id="home-delivery" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem;background:linear-gradient(180deg,var(--bg),var(--bg2))">
@@ -1123,7 +1123,7 @@ function sendMsg(){
         </div>
       </div>
     </div>
-    <div class="rv" style="background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(52,211,153,.06));border:1px solid var(--mint-border);border-radius:var(--r);padding:2rem">
+    <div class="rv" style="background:linear-gradient(135deg,rgba(0,210,180,.06),rgba(0,232,200,.06));border:1px solid var(--mint-border);border-radius:var(--r);padding:2rem">
       <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem">
         <span style="width:8px;height:8px;border-radius:50%;background:var(--ice)"></span>
         MedIT이 목표하는 방향
@@ -1244,7 +1244,7 @@ function sendMsg(){
       <div style="font-size:.7rem;color:var(--muted);margin-top:.2rem">작성된 복약 안내 카드</div>
     </div>
     <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1rem;text-align:center">
-      <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:#059669">2<span style="font-size:.7rem;color:var(--dim);font-weight:400;display:block;margin-top:2px">예시</span></div>
+      <div style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:#00a892">2<span style="font-size:.7rem;color:var(--dim);font-weight:400;display:block;margin-top:2px">예시</span></div>
       <div style="font-size:.7rem;color:var(--muted);margin-top:.2rem">부작용 자가보고</div>
     </div>
   </div>
@@ -1283,15 +1283,15 @@ function sendMsg(){
     <div style="background:var(--bg);border:1px solid var(--card-border);border-radius:10px;padding:1.2rem">
       <div style="font-size:.7rem;color:var(--lav);font-family:var(--font-mono);margin-bottom:.8rem;letter-spacing:.05em">3-TRACK 데이터 흐름 (설계안, 법령 검토 중)</div>
       <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.74rem">
-        <div style="padding:.5rem .7rem;background:rgba(16,185,129,.08);border-left:3px solid var(--mint);border-radius:4px">
+        <div style="padding:.5rem .7rem;background:rgba(0,210,180,.08);border-left:3px solid var(--mint);border-radius:4px">
           <strong style="color:var(--mint);font-size:.7rem;letter-spacing:.05em">TRACK 1</strong><br>
           <span style="color:var(--text)">환자 → KAERS (의무 X · 본인 명의)</span>
         </div>
-        <div style="padding:.5rem .7rem;background:rgba(52,211,153,.08);border-left:3px solid var(--ice);border-radius:4px">
+        <div style="padding:.5rem .7rem;background:rgba(0,232,200,.08);border-left:3px solid var(--ice);border-radius:4px">
           <strong style="color:var(--ice);font-size:.7rem;letter-spacing:.05em">TRACK 2</strong><br>
           <span style="color:var(--text)">처방의사 공유 (매 건 opt-in 동의)</span>
         </div>
-        <div style="padding:.5rem .7rem;background:rgba(110,231,183,.08);border-left:3px solid var(--lav);border-radius:4px">
+        <div style="padding:.5rem .7rem;background:rgba(114,242,222,.08);border-left:3px solid var(--lav);border-radius:4px">
           <strong style="color:var(--lav);font-size:.7rem;letter-spacing:.05em">TRACK 3</strong><br>
           <span style="color:var(--text)">제약사 제공 없음 (향후 도입을 검토하더라도 환자 별도 동의·집계 전용·심의 전제)</span>
         </div>
@@ -1307,7 +1307,7 @@ function sendMsg(){
     <h3>복약 안내 카드 (예시, 약사 검토 전 초안)</h3>
   </div>
   <p style="margin-bottom:1.5rem">약사가 복약지도 때 참고할 환자별 안내 자료를 디지털 카드로 만들어, 확인·수정한 뒤 전달하도록 설계한 화면의 예시입니다. 이 카드는 약사의 복약지도를 대신하지 않으며, 약국명·약사명·면허번호가 표시되어 출처가 명확해지도록 설계합니다.</p>
-  <div style="background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(52,211,153,.05));border:1px solid var(--mint-border);border-radius:12px;padding:1.5rem;max-width:600px;margin:0 auto">
+  <div style="background:linear-gradient(135deg,rgba(0,210,180,.08),rgba(0,232,200,.05));border:1px solid var(--mint-border);border-radius:12px;padding:1.5rem;max-width:600px;margin:0 auto">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--card-border);flex-wrap:wrap;gap:.4rem">
       <div>
         <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text)">복약 안내 카드</div>
@@ -1331,7 +1331,7 @@ function sendMsg(){
 
 <!-- DEMO 06: KAERS 연동 AI 응답 (인터랙티브) -->
 <!-- 풀스크린 앱 데모 (별도 페이지로 열림) -->
-<div class="demo-section" id="demo-fullscreen-apps" style="text-align:center;padding:2.5rem 2rem;background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(52,211,153,.04));border:1px solid var(--mint-border)">
+<div class="demo-section" id="demo-fullscreen-apps" style="text-align:center;padding:2.5rem 2rem;background:linear-gradient(135deg,rgba(0,210,180,.08),rgba(0,232,200,.04));border:1px solid var(--mint-border)">
   <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint);color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:800;padding:.3rem .7rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">FULL-SCREEN APP DEMO</div>
   <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--text);margin:0 0 .6rem">실제 앱 화면 체험하기</h3>
   <p style="font-size:.88rem;color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 1.8rem">약국 운영자용 워크플로우 대시보드와 환자용 복약 관리 앱을 풀스크린으로 직접 체험하실 수 있습니다.</p>
@@ -1357,7 +1357,7 @@ function sendMsg(){
   <!-- 펼쳐진 상태: 전체 데모 콘텐츠 -->
   <div id="demo-06-content" style="display:none">
   <!-- 새 데이터 알림 프롬프트 -->
-  <div id="kaersNewPrompt" style="display:none;background:linear-gradient(135deg,rgba(16,185,129,.18),rgba(52,211,153,.10));border:1px solid var(--mint);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.2rem;animation:kaersSlideDown .4s ease">
+  <div id="kaersNewPrompt" style="display:none;background:linear-gradient(135deg,rgba(0,210,180,.18),rgba(0,232,200,.10));border:1px solid var(--mint);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.2rem;animation:kaersSlideDown .4s ease">
     <div style="display:flex;align-items:flex-start;gap:.8rem;flex-wrap:wrap;justify-content:space-between">
       <div style="flex:1;min-width:240px">
         <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem">
@@ -1373,7 +1373,7 @@ function sendMsg(){
   <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap">
     <div class="demo-tag">DEMO 06</div>
     <h3>KAERS 예시 데이터 연동 응답 시연 (인터랙티브 · 규칙 기반)</h3>
-    <span id="kaersStatus" style="background:rgba(16,185,129,.1);color:var(--mint);font-family:var(--font-mono);font-size:.7rem;font-weight:600;padding:.22rem .55rem;border-radius:4px;letter-spacing:.05em">데이터 로딩 중...</span>
+    <span id="kaersStatus" style="background:rgba(0,210,180,.1);color:var(--mint);font-family:var(--font-mono);font-size:.7rem;font-weight:600;padding:.22rem .55rem;border-radius:4px;letter-spacing:.05em">데이터 로딩 중...</span>
     <span id="kaersNewBadge" style="display:none;background:var(--mint);color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:800;padding:.22rem .55rem;border-radius:4px;letter-spacing:.1em;animation:kaersPulse 2s ease infinite">NEW</span>
   </div>
   <p style="margin-bottom:1.5rem"><strong style="color:var(--ice)">시연용 원격 데이터 연동</strong> — 페이지를 열 때마다 이 사이트에 둔 시연용 샘플 데이터(실제 KAERS 통계가 아님)를 가져와, 정해진 규칙에 따라 응답 예시를 만듭니다(AI 모델을 쓰지 않음). <strong style="color:var(--mint)">실제로 약품명을 입력해보세요</strong>.</p>
@@ -1408,10 +1408,10 @@ function sendMsg(){
       <div style="font-size:.78rem;color:var(--mint);font-family:var(--font-head);font-weight:600;margin-bottom:.6rem" data-en="Step 2 · Sample data match result (synthetic demo figures)">2단계 · 예시 데이터 매칭 결과 (시연용 가상 수치)</div>
       <div id="kaersMatchInfo"></div>
     </div>
-    <div style="background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(52,211,153,.03));border:1px solid var(--mint-border);border-radius:10px;padding:1.2rem">
+    <div style="background:linear-gradient(135deg,rgba(0,210,180,.06),rgba(0,232,200,.03));border:1px solid var(--mint-border);border-radius:10px;padding:1.2rem">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;flex-wrap:wrap;gap:.4rem">
         <div style="font-size:.78rem;color:var(--mint);font-family:var(--font-head);font-weight:600" data-en="Step 3 · Rule-based demo reply (not reviewed by a pharmacist)">3단계 · 규칙 기반 시연 답변 (약사 검토 아님)</div>
-        <div style="background:rgba(240,200,102,.15);color:#059669;font-family:var(--font-mono);font-size:.7rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em">규칙 기반 시연 · 약사 검토 아님</div>
+        <div style="background:rgba(240,200,102,.15);color:#00a892;font-family:var(--font-mono);font-size:.7rem;font-weight:600;padding:.2rem .5rem;border-radius:4px;letter-spacing:.05em">규칙 기반 시연 · 약사 검토 아님</div>
       </div>
       <div id="kaersAIResponse" style="font-size:.84rem;color:var(--text);line-height:1.7"></div>
     </div>
@@ -1431,7 +1431,7 @@ function sendMsg(){
       <span>데이터 소스: <strong style="color:var(--muted)">시연용 예시 데이터</strong> (한국의약품안전관리원 공개 집계 통계 data.go.kr 15117015·15089543·15065145를 참고. 품목별 수치는 공개 API로 제공되지 않음)</span>
       <span id="kaersDataMeta">로딩 중...</span>
     </div>
-    <div style="background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.15);border-radius:8px;padding:.85rem 1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between">
+    <div style="background:rgba(0,232,200,.04);border:1px solid rgba(0,232,200,.15);border-radius:8px;padding:.85rem 1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between">
       <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;flex:1">
         <div style="background:var(--ice);color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:800;padding:.22rem .55rem;border-radius:4px;letter-spacing:.1em">DEMO</div>
         <div style="font-size:.74rem;color:var(--muted);line-height:1.5">
@@ -1453,8 +1453,8 @@ function sendMsg(){
 
 <div class="reg-bg tone-5" id="regulation" style="display:flex;align-items:center"><section class="sec" style="width:100%"><div class="sec-center rv"><div class="sec-tag" data-en="Regulatory strategy">규제 대응</div><h2 class="sec-title">규제를 경쟁력으로</h2><p class="sec-desc">MedIT은 단순한 제품이 아닌, 제도 혁신 플랫폼입니다.</p></div><div class="grid3">
     <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--mint-border);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="1.5"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 011-1h10a1 1 0 011 1v3M9 7h1m4 0h1M9 11h1m4 0h1"/></svg></div><h3>약사법 개정 제안</h3><p><strong style="color:var(--mint)">약사법·의료법 개정 의견서를 작성하고 국민참여입법센터(opinion.lawmaking.go.kr) 제출을 준비하고 있습니다</strong>. 액상 제형 대체 조제, 분말 조제 안전 기준, 전자상거래 배송, 의료법 인증 플랫폼 확장 — 시민 입법의견 형태로 준비 중입니다. <span style="font-size:.7rem;color:var(--dim)">(※ 시민 의견이며 의원 발의나 정부 입법안과 구분됨)</span></p><div class="reg-nums"><div class="reg-n"><div class="big">준비 중</div><div class="sm">시민 입법의견서</div></div><div class="reg-n"><div class="big">4</div><div class="sm">개정 검토 영역</div></div></div></div>
-    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--ice-s);border:1px solid rgba(52,211,153,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ice)" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg></div><h3>의료법 개정 (비대면진료 제도화)</h3><p>2025.12.2 통과된 의료법 개정안(비대면진료 제도화 + 전자처방전·DUR 의무화)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 입법 의견으로 제안합니다(현행법상 일반 대중 약 배송은 허용되지 않습니다). <span style="font-size:.7rem;color:var(--dim)">(2026.12 시행 예정)</span></p><div class="reg-nums"><div class="reg-n"><div class="big">'26.12</div><div class="sm">의료법 시행 예정</div></div><div class="reg-n"><div class="big">5</div><div class="sm">규제 경로 추진 계획</div></div></div></div>
-    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--lav-s);border:1px solid rgba(110,231,183,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lav)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3>해외 벤치마크</h3><p>미국 Non-Device CDS(21st Century Cures Act), EU MDR·AI Act, 일본 PMDA의 SaMD 2단계 승인, 영국 Yellow Card·미국 MedWatch 환자 자발보고 제도를 참고해 한국형 제도를 설계하고 있습니다. (입법 제안서의 해외 입법 목록·참고문헌 기준)</p><div class="reg-nums"><div class="reg-n"><div class="big">4</div><div class="sm">해외 제도 참고</div></div><div class="reg-n"><div class="big">4</div><div class="sm">학술 논문 인용</div></div></div></div>
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--ice-s);border:1px solid rgba(0,232,200,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ice)" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg></div><h3>의료법 개정 (비대면진료 제도화)</h3><p>2025.12.2 통과된 의료법 개정안(비대면진료 제도화 + 전자처방전·DUR 의무화)을 기반으로, 인증 플랫폼을 통한 일반 대중 확대를 입법 의견으로 제안합니다(현행법상 일반 대중 약 배송은 허용되지 않습니다). <span style="font-size:.7rem;color:var(--dim)">(2026.12 시행 예정)</span></p><div class="reg-nums"><div class="reg-n"><div class="big">'26.12</div><div class="sm">의료법 시행 예정</div></div><div class="reg-n"><div class="big">5</div><div class="sm">규제 경로 추진 계획</div></div></div></div>
+    <div class="card rv" style="text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:var(--lav-s);border:1px solid rgba(114,242,222,.15);display:grid;place-items:center;margin:0 auto 14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lav)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3>해외 벤치마크</h3><p>미국 Non-Device CDS(21st Century Cures Act), EU MDR·AI Act, 일본 PMDA의 SaMD 2단계 승인, 영국 Yellow Card·미국 MedWatch 환자 자발보고 제도를 참고해 한국형 제도를 설계하고 있습니다. (입법 제안서의 해외 입법 목록·참고문헌 기준)</p><div class="reg-nums"><div class="reg-n"><div class="big">4</div><div class="sm">해외 제도 참고</div></div><div class="reg-n"><div class="big">4</div><div class="sm">학술 논문 인용</div></div></div></div>
 </div></section></div>
 
 <section class="sec tone-3" id="red-lines" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem">
@@ -1521,7 +1521,7 @@ function sendMsg(){
     </div>
     <div class="card rv" style="border-top:3px solid var(--ice)">
       <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
-        <div style="background:rgba(52,211,153,.1);color:var(--ice);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 2</div>
+        <div style="background:rgba(0,232,200,.1);color:var(--ice);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 2</div>
         <span style="font-size:.7rem;color:var(--muted)">매 건 동의 (opt-in)</span>
       </div>
       <h3 style="margin-top:.3rem">처방 의사 1회 공유</h3>
@@ -1530,7 +1530,7 @@ function sendMsg(){
     </div>
     <div class="card rv" style="border-top:3px solid var(--lav)">
       <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem">
-        <div style="background:rgba(110,231,183,.1);color:var(--lav);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 3</div>
+        <div style="background:rgba(114,242,222,.1);color:var(--lav);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">TRACK 3</div>
         <span style="font-size:.7rem;color:var(--muted)">제공하지 않음</span>
       </div>
       <h3 style="margin-top:.3rem">제약사 제공은 하지 않음</h3>
@@ -1538,7 +1538,7 @@ function sendMsg(){
       <p style="font-size:.7rem;color:var(--dim);margin-top:.6rem">참고: 개인정보 보호법 제28조의2(가명정보의 처리 등)·제23조(민감정보). 법은 통계작성·과학적 연구 등 일정 목적의 가명정보 처리를 정보주체 동의 없이도 허용하지만, 환자 별도 동의와 내부 심의는 법 요건이 아니라 MedIT의 자체 설계(구상)입니다.<br>주체: 환자 별도 동의 + 심의 후 (구상, 현재 없음)</p>
     </div>
   </div>
-  <div class="rv" style="max-width:900px;margin:2rem auto 0;padding:1.2rem 1.5rem;background:rgba(16,185,129,.04);border:1px solid var(--mint-border);border-radius:var(--r);font-size:.78rem;color:var(--muted);line-height:1.7">
+  <div class="rv" style="max-width:900px;margin:2rem auto 0;padding:1.2rem 1.5rem;background:rgba(0,210,180,.04);border:1px solid var(--mint-border);border-radius:var(--r);font-size:.78rem;color:var(--muted);line-height:1.7">
     <strong style="color:var(--mint)">MedIT의 부작용 데이터 원칙:</strong>
     환자는 보고 의무가 없으며, 본인이 원할 때만 자발적으로 보고합니다. AI는 KAERS 4대 최소 요건(보고자·환자·약품·이상사례)만 보조하며, 의학적 판단은 절대 하지 않습니다. 모든 데이터는 환자 본인 명의로 KAERS에 저장되며, MedIT은 보조 시스템일 뿐 보고 주체가 아닙니다.
   </div>
@@ -1611,7 +1611,7 @@ function sendMsg(){
     <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1rem;margin-bottom:1.5rem">
       <div style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem">
         <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap">
-          <div style="background:rgba(110,231,183,.12);color:var(--lav);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">POLYPHARMACY</div>
+          <div style="background:rgba(114,242,222,.12);color:var(--lav);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">POLYPHARMACY</div>
           <h4 style="font-family:var(--font-head);font-size:.92rem;font-weight:700;color:var(--text);margin:0">노인 다약제 복용 현황과 위험</h4>
         </div>
         <div style="display:flex;align-items:baseline;gap:.5rem;margin:1rem 0">
@@ -1629,11 +1629,11 @@ function sendMsg(){
       </div>
       <div style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:1.5rem">
         <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap">
-          <div style="background:rgba(240,200,102,.15);color:#059669;font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">법조문 통념 교정</div>
+          <div style="background:rgba(240,200,102,.15);color:#00a892;font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em">법조문 통념 교정</div>
           <h4 style="font-family:var(--font-head);font-size:.92rem;font-weight:700;color:var(--text);margin:0">약사법 제24조의2 정확한 해석</h4>
         </div>
-        <div style="background:var(--bg);border-left:3px solid #059669;border-radius:6px;padding:.8rem 1rem;margin:.8rem 0">
-          <div style="font-size:.7rem;color:#059669;font-weight:700;letter-spacing:.05em;margin-bottom:.3rem">✗ 흔한 오해</div>
+        <div style="background:var(--bg);border-left:3px solid #00a892;border-radius:6px;padding:.8rem 1rem;margin:.8rem 0">
+          <div style="font-size:.7rem;color:#00a892;font-weight:700;letter-spacing:.05em;margin-bottom:.3rem">✗ 흔한 오해</div>
           <div style="font-size:.74rem;color:var(--muted);line-height:1.6">"약사법 제24조의2는 대면 복약지도 원칙을 정한 조항"</div>
         </div>
         <div style="background:var(--bg);border-left:3px solid var(--mint);border-radius:6px;padding:.8rem 1rem;margin:.8rem 0">
@@ -1696,7 +1696,7 @@ function sendMsg(){
     <!-- 7가지 개정 조항 권고안 -->
     <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
       <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
-        <div style="background:rgba(110,231,183,.12);color:var(--lav);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">PROPOSAL</div>
+        <div style="background:rgba(114,242,222,.12);color:var(--lav);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">PROPOSAL</div>
         <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin:0">7가지 개정 조항 권고안 <span style="font-size:.7rem;font-weight:500;color:var(--dim)">(입법 의견, 현행법 아님)</span></h3>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1rem">
@@ -1741,7 +1741,7 @@ function sendMsg(){
     <!-- 22대 국회 입법 환경 -->
     <div class="rv" style="background:var(--card);border:1px solid var(--card-border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem">
       <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap">
-        <div style="background:rgba(52,211,153,.12);color:var(--ice);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">22ND ASSEMBLY · TIMING</div>
+        <div style="background:rgba(0,232,200,.12);color:var(--ice);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em">22ND ASSEMBLY · TIMING</div>
         <h3 style="font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);margin:0">22대 국회 입법 환경 (시의성)</h3>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1rem">
@@ -1759,9 +1759,9 @@ function sendMsg(){
             <li>• DUR 의무화 의료법 개정안 3건을 통합·조정 (총 12건, 보건복지부 보도자료 기준)</li>
           </ul>
         </div>
-        <div style="background:var(--bg);border:1px solid #059669;border-radius:8px;padding:1.2rem">
+        <div style="background:var(--bg);border:1px solid #00a892;border-radius:8px;padding:1.2rem">
           <div style="display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem">
-            <div style="background:#059669;color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.18rem .5rem;border-radius:4px;letter-spacing:.05em">공포 완료 · 2027.9.16 시행</div>
+            <div style="background:#00a892;color:var(--bg);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.18rem .5rem;border-radius:4px;letter-spacing:.05em">공포 완료 · 2027.9.16 시행</div>
           </div>
           <div style="font-family:var(--font-head);font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.4rem">약사법 개정 (제46조 제5호·제47조 제8항 신설)<br><span style="font-size:.7rem;color:var(--muted);font-weight:400">(비대면진료 중개업자의 의약품 도매상 허가 제한)</span></div>
           <ul style="font-size:.72rem;color:var(--muted);line-height:1.7;list-style:none;padding-left:0">
@@ -1770,7 +1770,7 @@ function sendMsg(){
             <li>• 의료법 제34조의8의 비대면진료 중개업자를 의약품 도매상 허가 결격사유에 추가</li>
             <li>• 도매상이 특수관계 중개업자와 이용계약을 맺은 약국에 의약품을 판매하는 것도 금지 (제47조 제8항 신설)</li>
             <li>• 보건복지부는 2026.10.19 보도자료에서 비대면 전담약국 방지를 위한 약사법 보완 입법을 추진할 예정이라고 밝혔습니다 (정책브리핑)</li>
-            <li>• <strong style="color:#059669">도매업 겸영 제한 방향</strong> — MedIT는 도매·배송을 하지 않는 정보·안전 사업자로 설계</li>
+            <li>• <strong style="color:#00a892">도매업 겸영 제한 방향</strong> — MedIT는 도매·배송을 하지 않는 정보·안전 사업자로 설계</li>
           </ul>
         </div>
         <div style="background:var(--bg);border:1px solid var(--lav);border-radius:8px;padding:1.2rem">
@@ -1789,7 +1789,7 @@ function sendMsg(){
     </div>
 
     <!-- 로드맵 + 다운로드 CTA -->
-    <div class="rv" style="background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(52,211,153,.04));border:1px solid var(--mint-border);border-radius:var(--r);padding:2rem;text-align:center">
+    <div class="rv" style="background:linear-gradient(135deg,rgba(0,210,180,.08),rgba(0,232,200,.04));border:1px solid var(--mint-border);border-radius:var(--r);padding:2rem;text-align:center">
       <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint);font-family:var(--font-mono);font-size:.7rem;font-weight:700;padding:.28rem .65rem;border-radius:4px;letter-spacing:.05em;margin-bottom:1rem">ROADMAP</div>
       <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--text);margin:0 0 .6rem">단계별 입법 로드맵</h3>
       <p style="font-size:.8rem;color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 1.5rem">2026.12.24 비대면진료 시행에 맞춘 18개월 로드맵으로 입법 제안을 진행합니다.</p>
@@ -1815,7 +1815,7 @@ function sendMsg(){
 </div>
 </section>
 
-<section class="sec tone-5" id="team" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag" data-en="About us">팀 소개</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar dog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="안경을 쓴 강아지 마스코트"> <circle cx="50" cy="50" r="50" fill="#6ee7b7"/> <path d="M25 29C10 29 7 57 15 68C21 75 32 64 34 49C35 38 33 29 25 29Z" fill="#047857"/> <path d="M75 29C90 29 93 57 85 68C79 75 68 64 66 49C65 38 67 29 75 29Z" fill="#047857"/> <path d="M24 38C17 40 16 55 20 61C24 64 28 56 29 48C29 43 28 38 24 38Z" fill="#059669"/> <path d="M76 38C83 40 84 55 80 61C76 64 72 56 71 48C71 43 72 38 76 38Z" fill="#059669"/> <ellipse cx="50" cy="56" rx="28" ry="26" fill="#f0fdf4"/> <ellipse cx="50" cy="69" rx="13.5" ry="9.5" fill="#d1fae5"/> <path d="M31 38Q38 34 45 38M55 38Q62 34 69 38" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round"/> <circle cx="38" cy="51" r="10.5" fill="#ffffff" fill-opacity=".55" stroke="#064e3b" stroke-width="3.2"/> <circle cx="62" cy="51" r="10.5" fill="#ffffff" fill-opacity=".55" stroke="#064e3b" stroke-width="3.2"/> <path d="M48.5 50Q50 47.5 51.5 50" fill="none" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/> <path d="M27.5 49L21 46.5M72.5 49L79 46.5" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/> <circle cx="38" cy="52" r="3" fill="#064e3b"/> <circle cx="62" cy="52" r="3" fill="#064e3b"/> <circle cx="39" cy="51" r="1" fill="#fff"/> <circle cx="63" cy="51" r="1" fill="#fff"/> <path d="M43.5 63Q50 58.5 56.5 63Q55.5 69 50 70Q44.5 69 43.5 63Z" fill="#064e3b"/> <path d="M50 70V74M50 74Q45.5 78.5 41.5 75M50 74Q54.5 78.5 58.5 75" fill="none" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M47 77Q50 85.5 53 77Z" fill="#34d399"/> </svg></div><h3>신현정</h3><div class="role">대표 · FOUNDER</div><p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정 의견서 작성 및 국민참여입법센터 제출 준비. <span style="font-size:.7rem;color:var(--dim)">(※ 시민 입법의견 제안)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice));font-size:.95rem;letter-spacing:.02em">개발</div><h3>개발 환경 <span style="font-size:.7rem;color:var(--mint);font-weight:500">1인 + AI 협업</span></h3><div class="role">SOLO + AI-ASSISTED</div><p>대표 신현정이 Claude API를 활용해 직접 개발 중. OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(별도 엔지니어 채용은 시드 라운드 이후 계획)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#059669,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.7rem;color:var(--mint);font-weight:500">협의 중</span></h3><div class="role">ADVISORY</div><p>숙명여자대학교 약학대학 교수님의 연구에 지원 기업으로 참여하고 있습니다. 자문 체계(자문 약사단 등)는 구성 협의 중이며, 서면 합의가 끝나면 안내드립니다.</p></div></div></section>
+<section class="sec tone-5" id="team" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag" data-en="About us">팀 소개</div><h2 class="sec-title">MedIT을 만드는 사람들</h2><p class="sec-desc">환자의 복약 경험을 바꾸기 위해 모인 팀입니다.</p></div><div class="team-grid"><div class="team-card rv"><div class="team-avatar dog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="안경을 쓴 강아지 마스코트"> <circle cx="50" cy="50" r="50" fill="#72f2de"/> <path d="M25 29C10 29 7 57 15 68C21 75 32 64 34 49C35 38 33 29 25 29Z" fill="#00806f"/> <path d="M75 29C90 29 93 57 85 68C79 75 68 64 66 49C65 38 67 29 75 29Z" fill="#00806f"/> <path d="M24 38C17 40 16 55 20 61C24 64 28 56 29 48C29 43 28 38 24 38Z" fill="#00a892"/> <path d="M76 38C83 40 84 55 80 61C76 64 72 56 71 48C71 43 72 38 76 38Z" fill="#00a892"/> <ellipse cx="50" cy="56" rx="28" ry="26" fill="#f0fdf4"/> <ellipse cx="50" cy="69" rx="13.5" ry="9.5" fill="#d1fae5"/> <path d="M31 38Q38 34 45 38M55 38Q62 34 69 38" fill="none" stroke="#00443d" stroke-width="2" stroke-linecap="round"/> <circle cx="38" cy="51" r="10.5" fill="#ffffff" fill-opacity=".55" stroke="#00443d" stroke-width="3.2"/> <circle cx="62" cy="51" r="10.5" fill="#ffffff" fill-opacity=".55" stroke="#00443d" stroke-width="3.2"/> <path d="M48.5 50Q50 47.5 51.5 50" fill="none" stroke="#00443d" stroke-width="3" stroke-linecap="round"/> <path d="M27.5 49L21 46.5M72.5 49L79 46.5" stroke="#00443d" stroke-width="3" stroke-linecap="round"/> <circle cx="38" cy="52" r="3" fill="#00443d"/> <circle cx="62" cy="52" r="3" fill="#00443d"/> <circle cx="39" cy="51" r="1" fill="#fff"/> <circle cx="63" cy="51" r="1" fill="#fff"/> <path d="M43.5 63Q50 58.5 56.5 63Q55.5 69 50 70Q44.5 69 43.5 63Z" fill="#00443d"/> <path d="M50 70V74M50 74Q45.5 78.5 41.5 75M50 74Q54.5 78.5 58.5 75" fill="none" stroke="#00443d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M47 77Q50 85.5 53 77Z" fill="#00e8c8"/> </svg></div><h3>신현정</h3><div class="role">대표 · FOUNDER</div><p>숙명여자대학교 창업보육센터 입주(개인사업자). 디지털 헬스케어 기획 및 규제 전략 설계, 약사법·의료법 개정 의견서 작성 및 국민참여입법센터 제출 준비. <span style="font-size:.7rem;color:var(--dim)">(※ 시민 입법의견 제안)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,var(--lav),var(--ice));font-size:.95rem;letter-spacing:.02em">개발</div><h3>개발 환경 <span style="font-size:.7rem;color:var(--mint);font-weight:500">1인 + AI 협업</span></h3><div class="role">SOLO + AI-ASSISTED</div><p>대표 신현정이 Claude API를 활용해 직접 개발 중. OCR 파이프라인, 3채널 알림, 약사 협업 인터페이스. Flask · Claude API · KakaoTalk API. <span style="color:var(--dim);font-size:.7rem">(별도 엔지니어 채용은 시드 라운드 이후 계획)</span></p></div><div class="team-card rv"><div class="team-avatar" style="background:linear-gradient(135deg,#00a892,var(--coral))">자</div><h3>자문 네트워크 <span style="font-size:.7rem;color:var(--mint);font-weight:500">협의 중</span></h3><div class="role">ADVISORY</div><p>숙명여자대학교 약학대학 교수님의 연구에 지원 기업으로 참여하고 있습니다. 자문 체계(자문 약사단 등)는 구성 협의 중이며, 서면 합의가 끝나면 안내드립니다.</p></div></div></section>
 
 <section class="sec" id="news" style="display:flex;flex-direction:column;justify-content:center;padding-top:4rem;padding-bottom:4rem"><div class="sec-center rv"><div class="sec-tag" data-en="Resources">자료</div><h2 class="sec-title">업계 동향 · 리소스</h2><p class="sec-desc">MedIT이 주목하는 디지털 헬스케어 뉴스</p></div><div class="grid3"><a href="https://www.mt.co.kr/thebio/2026/10/19/2026101908452628295" target="_blank" rel="noopener" class="news-card rv"><div class="news-tag t1">정책</div><h3>비대면진료 하위법령 입법예고 중 — 2026.12.24 시행 예정</h3><p>의료법 시행령(2026.9.23 입법예고, 의견 ~11.2)과 시행규칙(2026.10.19 입법예고, 의견 ~11.9)은 아직 확정 전입니다. 시행규칙안은 초진 비대면진료를 원칙적으로 같은 시·도 의료기관(실거주지를 시스템에 등록하면 그 지역 기준)으로 제한하되 희귀질환자·제1형 당뇨병 환자·등록장애인·장기요양수급자 등은 예외로 두고, 초진 처방은 원칙적으로 7일 이내(진료·처방 이력이 있고 의료인이 지속 필요로 판단하면 1회 30일 이내)로 하며 마약류·비만치료제 등은 원칙적으로 금지합니다. 보도에 따르면 약 배송은 섬·벽지 거주자 등 5개 대상에 한해 원칙적으로 환자가 있는 시·군·구 안의 약국에서만 허용하며(희귀질환자·의료취약지 환자는 시·도까지 예외라는 보도도 있습니다), 시행규칙 입법예고 원문을 확인하기 전이라 내용은 바뀔 수 있습니다. (출처: 초진·처방일수 — 보건복지부 보도자료·머니투데이 2026.10.19, 약 배송 — 데일리팜 2026.10.18·백세시대 2026.10.23 보도)</p><div class="news-date">2026.10.19</div></a><a href="https://www.mfds.go.kr/brd/m_209/view.do?seq=44298" target="_blank" rel="noopener" class="news-card rv"><div class="news-tag t2">규제</div><h3>의료기기법 시행규칙 개정안 입법예고(의견 접수 2026.10.26 마감)</h3><p>의료기기 해당 여부·등급 사전검토 절차와 수수료를 시행규칙에 정하고, 인공지능으로 만든 영상 등으로 전문가가 추천하는 것처럼 오인시키는 광고를 규제 대상으로 명시합니다. (출처: 식약처 공고 제2026-445호)</p><div class="news-date">2026.09.14</div></a><a href="https://dailypharm.com/user/news/340892" target="_blank" rel="noopener" class="news-card rv"><div class="news-tag t3">규제</div><h3>디지털의료제품 허가·심사 규정 개정 — 우수관리체계 특례 확대</h3><p>2026.7.27 개정(보도 기준). 소프트웨어형 디지털의료기기의 임상자료 제출·면제 기준을 구체화하고, 우수관리체계 특례 대상을 등급 미지정까지 넓혔으며 실사용 특례 기간을 1~3년 범위로 확대했다고 합니다. 고시 원문은 확인하지 못했으며 적용 여부는 제품별로 확인해야 합니다. (출처: 데일리팜 2026.7.28 보도 기준)</p><div class="news-date">2026.07.27</div></a></div></section>
 
@@ -1829,27 +1829,27 @@ function sendMsg(){
 <section class="sec" id="disclaimer" style="padding-top:3rem;padding-bottom:3rem">
 
   <!-- US/GLOBAL LEGAL NOTICE — Shown only when language=EN -->
-  <div id="us-legal-panel-2" class="rv us-en-only" style="display:none;background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.2);border-radius:var(--r);padding:2rem;max-width:900px;margin:0 auto 1.5rem">
+  <div id="us-legal-panel-2" class="rv us-en-only" style="display:none;background:rgba(0,232,200,.04);border:1px solid rgba(0,232,200,.2);border-radius:var(--r);padding:2rem;max-width:900px;margin:0 auto 1.5rem">
     <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--ice);margin-bottom:1.2rem;text-align:center">⚠ US & Global Legal Notice</h3>
     <div style="display:grid;grid-template-columns:1fr;gap:1rem">
       <div style="background:rgba(255,138,128,.05);border-left:3px solid var(--coral);border-radius:6px;padding:.9rem 1.1rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--coral);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">MEDICAL DISCLAIMER</div>
         <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">The content provided by MedIT, including any AI-generated or pharmacist-reviewed responses, is for general informational and educational purposes only. <strong style="color:var(--text)">It is not medical advice</strong> and is not a substitute for professional medical advice, diagnosis, or treatment from a licensed physician or pharmacist. Always seek the advice of your physician or pharmacist with any questions regarding a medical condition or medication. Never disregard professional medical advice or delay seeking it because of something you have read on this service. <strong style="color:var(--coral)">If you think you may have a medical emergency, call your doctor or 911 immediately.</strong></p>
       </div>
-      <div style="background:rgba(52,211,153,.05);border-left:3px solid var(--ice);border-radius:6px;padding:.9rem 1.1rem">
+      <div style="background:rgba(0,232,200,.05);border-left:3px solid var(--ice);border-radius:6px;padding:.9rem 1.1rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--ice);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">REGULATORY DISCLAIMER</div>
         <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">MedIT does <strong style="color:var(--text)">not intend to be a medical device</strong>; its classification has not been reviewed by the Korean MFDS. It has <strong style="color:var(--text)">not been evaluated or approved by the U.S. Food and Drug Administration (FDA)</strong>. MedIT does not diagnose, treat, cure, or prevent any disease. Pharmacist review of responses is a planned design feature; no pharmacist consultation service is operating yet, and no pharmacist-patient relationship is formed with users outside Korea.</p>
       </div>
-      <div style="background:rgba(16,185,129,.05);border-left:3px solid var(--mint);border-radius:6px;padding:.9rem 1.1rem">
+      <div style="background:rgba(0,210,180,.05);border-left:3px solid var(--mint);border-radius:6px;padding:.9rem 1.1rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--mint);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">ADVERSE EVENT REPORTING</div>
         <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">To report a suspected side effect of a medication in the <strong style="color:var(--text)">United States</strong>, contact FDA MedWatch at <strong style="color:var(--mint)">1-800-FDA-1088</strong> or <a href="https://www.fda.gov/medwatch" target="_blank" rel="noopener" style="color:var(--mint)">fda.gov/medwatch</a>. In the <strong style="color:var(--text)">United Kingdom</strong>, use the MHRA Yellow Card scheme at <a href="https://yellowcard.mhra.gov.uk" target="_blank" rel="noopener" style="color:var(--mint)">yellowcard.mhra.gov.uk</a>. In the <strong style="color:var(--text)">European Union</strong>, contact your national competent authority via EMA's <a href="https://www.adrreports.eu" target="_blank" rel="noopener" style="color:var(--mint)">adrreports.eu</a>. In <strong style="color:var(--text)">Korea</strong>, report through KAERS at <a href="https://kaers.drugsafe.or.kr" target="_blank" rel="noopener" style="color:var(--mint)">kaers.drugsafe.or.kr</a> or call the Korea Institute of Drug Safety &amp; Risk Management adverse drug reaction helpline at 1644-6223.</p>
       </div>
-      <div style="background:rgba(110,231,183,.05);border-left:3px solid var(--lav);border-radius:6px;padding:.9rem 1.1rem">
+      <div style="background:rgba(114,242,222,.05);border-left:3px solid var(--lav);border-radius:6px;padding:.9rem 1.1rem">
         <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--lav);font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">HIPAA & DATA PRIVACY</div>
         <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">MedIT is currently operated as a Korean sole proprietorship and is <strong style="color:var(--text)">not a HIPAA Covered Entity or Business Associate</strong>. If you are a U.S. healthcare provider, do not transmit Protected Health Information (PHI) to MedIT; no HIPAA-compliant channel is currently available. For data subject rights under GDPR (EU/UK), CCPA (California), or PIPA (Korea), contact <a href="mailto:hyunjeong.shin@sookmyung.ac.kr" style="color:var(--lav)">hyunjeong.shin@sookmyung.ac.kr</a>.</p>
       </div>
-      <div style="background:rgba(240,200,102,.05);border-left:3px solid #059669;border-radius:6px;padding:.9rem 1.1rem">
-        <div style="font-family:var(--font-mono);font-size:.7rem;color:#059669;font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">OPERATOR NOTICE</div>
+      <div style="background:rgba(240,200,102,.05);border-left:3px solid #00a892;border-radius:6px;padding:.9rem 1.1rem">
+        <div style="font-family:var(--font-mono);font-size:.7rem;color:#00a892;font-weight:700;letter-spacing:.05em;margin-bottom:.4rem">OPERATOR NOTICE</div>
         <p style="font-size:.75rem;color:var(--muted);line-height:1.7;margin:0">MedIT is operated from the <strong style="color:var(--text)">Republic of Korea</strong> by Hyunjung Shin (Representative, sole proprietorship), incubated at the Sookmyung Women's University Business Incubator. Services, content, regulatory compliance, and feature availability may differ by jurisdiction. By accessing this site from outside Korea, you acknowledge that some content reflects Korean regulatory context and may not apply to your jurisdiction.</p>
       </div>
     </div>
@@ -1878,17 +1878,17 @@ function sendMsg(){
 <footer><div class="ft-inner"><div><div class="ft-brand">
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:40px;height:40px;vertical-align:middle;margin-right:6px;">
 <g opacity="0.32">
-<rect x="40" y="16" width="20" height="8" rx="3" fill="#34D399"/>
-<path d="M 31 88 L 31 38 Q 31 26 42 25 L 58 25 Q 69 26 69 38 L 69 88 Q 69 92 64 92 L 36 92 Q 31 92 31 88 Z" fill="#34D399"/>
+<rect x="40" y="16" width="20" height="8" rx="3" fill="#00e8c8"/>
+<path d="M 31 88 L 31 38 Q 31 26 42 25 L 58 25 Q 69 26 69 38 L 69 88 Q 69 92 64 92 L 36 92 Q 31 92 31 88 Z" fill="#00e8c8"/>
 </g>
 <g transform="translate(50, 50)">
-<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#10B981"/>
-<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
-<line x1="0" y1="-13" x2="0" y2="13" stroke="#10B981" stroke-width="2"/>
+<path d="M -28 0 a 13 13 0 0 1 13 -13 h 15 v 26 h -15 a 13 13 0 0 1 -13 -13 z" fill="#00d2b4"/>
+<path d="M 0 -13 h 15 a 13 13 0 0 1 13 13 a 13 13 0 0 1 -13 13 h -15 z" fill="#FFFFFF" stroke="#00d2b4" stroke-width="2"/>
+<line x1="0" y1="-13" x2="0" y2="13" stroke="#00d2b4" stroke-width="2"/>
 <path d="M -23 0 L -17 0 Q -15 0 -14 -3 L -12 -8 Q -11 -10 -10 -8 L -7 7 Q -6 9 -5 6 L -3 -1 Q -2.5 -2 -1.5 -2 L 2 -2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>
-<span style="vertical-align:middle;"><span style="color:#10B981">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
+<span style="vertical-align:middle;"><span style="color:#00d2b4">Med</span>&nbsp;<span style="color:#FFFFFF;font-weight:700;">IT</span></span>
 </div><p class="ft-desc">메디신 테크놀로지 플랫폼<br>MedIT (대표 신현정 · 개인사업자)<br>숙명여자대학교 창업보육센터 입주</p><p style="font-size:.7rem;color:var(--dim);line-height:1.7">서울특별시 용산구 청파로47길 46, 202호<br>(청파동2가, 숙명캠퍼스타운)<br>hyunjeong.shin@sookmyung.ac.kr</p></div><div class="ft-col"><h4>제품</h4><a href="#product">솔루션 개요</a><a href="#channels">멀티채널 알림</a><a href="#delivery">배송 플로우</a><a href="#demo">데모 체험</a><a href="#message-flow">복약 안내 카드</a></div><div class="ft-col"><h4>규제 · 리소스</h4><a href="#regulation">약사법 개정 제안</a><a href="#regulation">의료법 개정 분석</a><a href="#policy-insight">정책 인사이트</a><a href="MedIT_Legislative_Proposal.md" download>입법 제안서 (KR / .md)</a><a href="MedIT_Legislative_Proposal_EN.md" download>Policy White Paper (EN / .md)</a></div><div class="ft-col"><h4>정보</h4><a href="#team">팀 소개</a><a href="#privacy">개인정보 처리방침</a><a href="#disclaimer">서비스 면책 안내</a><a href="mailto:hyunjeong.shin@sookmyung.ac.kr">문의하기</a></div></div><div class="ft-bottom"><span>© 2026 MedIT (개인사업자, 대표 신현정). All rights reserved.</span><span>본 서비스는 의학적 진단·치료·처방을 제공하지 않습니다. 일부 기능은 데모·기획 단계입니다.</span></div></footer>
 
 <script>
@@ -1929,11 +1929,11 @@ var lsr=0,lsy=0;window.addEventListener('scroll',function(){changeSec(getSec());
 var fc=document.getElementById('fieldCvs'),fctx=fc.getContext('2d'),pts=[];
 function rsz(){fc.width=innerWidth;fc.height=innerHeight;var wc=document.getElementById('waveCvs');wc.width=innerWidth;wc.height=80}rsz();addEventListener('resize',rsz);
 for(var i=0;i<40;i++)pts.push({x:Math.random()*fc.width,y:Math.random()*fc.height,r:Math.random()*1.2+.4,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,h:165+Math.random()*35,a:Math.random()*.16+.03});
-function drawField(){fctx.clearRect(0,0,fc.width,fc.height);for(var i=0;i<pts.length;i++){var p=pts[i];var dx=mx-p.x,dy=my-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<180&&dist>0){p.vx+=dx/dist*.018;p.vy+=dy/dist*.018}p.vx*=.99;p.vy*=.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>fc.width)p.vx*=-1;if(p.y<0||p.y>fc.height)p.vy*=-1;fctx.beginPath();fctx.arc(p.x,p.y,p.r,0,Math.PI*2);fctx.fillStyle='hsla('+p.h+',70%,55%,'+p.a+')';fctx.fill();for(var j=i+1;j<pts.length;j++){var q=pts[j],d2=Math.sqrt((p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y));if(d2<110){fctx.beginPath();fctx.moveTo(p.x,p.y);fctx.lineTo(q.x,q.y);fctx.strokeStyle='rgba(16,185,129,'+(0.02*(1-d2/110))+')';fctx.lineWidth=.5;fctx.stroke()}}}requestAnimationFrame(drawField)}drawField();
+function drawField(){fctx.clearRect(0,0,fc.width,fc.height);for(var i=0;i<pts.length;i++){var p=pts[i];var dx=mx-p.x,dy=my-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<180&&dist>0){p.vx+=dx/dist*.018;p.vy+=dy/dist*.018}p.vx*=.99;p.vy*=.99;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>fc.width)p.vx*=-1;if(p.y<0||p.y>fc.height)p.vy*=-1;fctx.beginPath();fctx.arc(p.x,p.y,p.r,0,Math.PI*2);fctx.fillStyle='hsla('+p.h+',70%,55%,'+p.a+')';fctx.fill();for(var j=i+1;j<pts.length;j++){var q=pts[j],d2=Math.sqrt((p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y));if(d2<110){fctx.beginPath();fctx.moveTo(p.x,p.y);fctx.lineTo(q.x,q.y);fctx.strokeStyle='rgba(0,210,180,'+(0.02*(1-d2/110))+')';fctx.lineWidth=.5;fctx.stroke()}}}requestAnimationFrame(drawField)}drawField();
 var wc=document.getElementById('waveCvs'),wctx=wc.getContext('2d');
 function drawWave(){wctx.clearRect(0,0,wc.width,wc.height);if(!analyser||!sndOn){requestAnimationFrame(drawWave);return}var buf=new Uint8Array(analyser.frequencyBinCount);analyser.getByteFrequencyData(buf);var bw=wc.width/buf.length*2.5,x=0;for(var i=0;i<buf.length;i++){var h=(buf[i]/255)*60;wctx.fillStyle='hsla('+(170+buf[i]*.3)+',70%,55%,.25)';wctx.fillRect(x,wc.height-h,bw-1,h);x+=bw;if(x>wc.width)break}requestAnimationFrame(drawWave)}drawWave();
 var pc=document.getElementById('pillCvs'),pctx=pc.getContext('2d'),pills=[],flr=0;
-var palettes=[{c:'#10B981',b:'#34d399'},{c:'#34d399',b:'#e8eef4'},{c:'#6ee7b7',b:'#34d399'},{c:'#10B981',b:'#e8eef4'},{c:'#00a892',b:'#6ee7b7'}];
+var palettes=[{c:'#00d2b4',b:'#00e8c8'},{c:'#00e8c8',b:'#e8eef4'},{c:'#72f2de',b:'#00e8c8'},{c:'#00d2b4',b:'#e8eef4'},{c:'#00a892',b:'#72f2de'}];
 function pillRsz(){pc.width=innerWidth;pc.height=innerHeight;flr=pc.height-20}pillRsz();addEventListener('resize',pillRsz);
 function mkPill(x){var pl=palettes[Math.floor(Math.random()*palettes.length)],rnd=Math.random()>.7;return{x:x!==undefined?x:Math.random()*pc.width,y:-30,vx:(Math.random()-.5)*2,vy:Math.random()*1.5,rot:Math.random()*Math.PI*2,vrot:(Math.random()-.5)*.15,w:rnd?18:Math.random()*12+22,h:rnd?18:Math.random()*3+9,rnd:rnd,cc:pl.c,bc:pl.b,alpha:Math.random()*.4+.45,bounces:0,life:1}}
 var spT=0;
@@ -1952,17 +1952,17 @@ var zoneMelodies = {
   TL: { // 좌상단 — "환희의 송가" 첫 어절
     name:'Ode to Joy',
     notes:['E4','E4','F4'],  // 미-미-파
-    color:'#34d399'
+    color:'#00e8c8'
   },
   TR: { // 우상단 — "섬집 아기" 첫 어절
     name:'Korean Lullaby',
     notes:['G4','E4','C4'],  // 솔-미-도
-    color:'#6ee7b7'
+    color:'#72f2de'
   },
   BL: { // 좌하단 — "Amazing Grace" 첫 어절
     name:'Amazing Grace',
     notes:['C4','E4','C4'],  // 도-미-도
-    color:'#10B981'
+    color:'#00d2b4'
   },
   BR: { // 우하단 — MedIT 모티프 첫 어절
     name:'MedIT Theme',
@@ -2583,7 +2583,7 @@ function updateMeta(){
 }
 
 async function loadKaersData(){
-  updateStatus('원격 데이터 가져오는 중...', '#059669', 'rgba(240,200,102,.15)');
+  updateStatus('원격 데이터 가져오는 중...', '#00a892', 'rgba(240,200,102,.15)');
   try{
     let data, fromCopy = false;
     try{
@@ -2596,14 +2596,14 @@ async function loadKaersData(){
       fromCopy = true;
     }
     window.KAERS_DATA = data;
-    updateStatus(fromCopy ? '✓ 사이트 내 사본 사용 (원격 연결 실패)' : '✓ 실시간 원격 연결됨', 'var(--mint)', 'rgba(16,185,129,.15)');
+    updateStatus(fromCopy ? '✓ 사이트 내 사본 사용 (원격 연결 실패)' : '✓ 실시간 원격 연결됨', 'var(--mint)', 'rgba(0,210,180,.15)');
     updateMeta();
     checkForNewData(data);
     logRefresh((fromCopy ? '시연 파일을 새로 받지 못해 저장된 사본에서 ' : '이 사이트의 시연 파일에서 ') + data.drugs.length + '개 의약품 데이터 가져옴');
   } catch(err) {
     window.KAERS_DATA = null;
     // 차분한 노란색 (에러보다는 대기 상태로 표현)
-    updateStatus('데이터 연결 대기 중', '#059669', 'rgba(240,200,102,.15)');
+    updateStatus('데이터 연결 대기 중', '#00a892', 'rgba(240,200,102,.15)');
     const meta = document.getElementById('kaersDataMeta');
     if(meta){
       meta.innerHTML = '<span style="color:var(--muted);font-size:.7rem">원격 데이터를 가져올 수 없습니다.</span> ' +
@@ -2614,7 +2614,7 @@ async function loadKaersData(){
 }
 
 async function refreshKaersData(){
-  updateStatus('새로고침 중...', '#059669', 'rgba(240,200,102,.15)');
+  updateStatus('새로고침 중...', '#00a892', 'rgba(240,200,102,.15)');
   await loadKaersData();
 }
 
@@ -2779,7 +2779,7 @@ function runKaersDemo(){
   resultEl.scrollIntoView({behavior:'smooth', block:'nearest'});
 
   // STEP 02: 자연어 파싱 결과 + KAERS 매칭
-  let matchHTML = '<div style="background:rgba(52,211,153,.04);border-left:3px solid var(--ice);padding:.7rem .9rem;border-radius:6px;margin-bottom:1rem;font-size:.75rem;line-height:1.6">';
+  let matchHTML = '<div style="background:rgba(0,232,200,.04);border-left:3px solid var(--ice);padding:.7rem .9rem;border-radius:6px;margin-bottom:1rem;font-size:.75rem;line-height:1.6">';
   matchHTML += '<strong style="color:var(--ice);font-size:.7rem;font-family:var(--font-mono);letter-spacing:.05em">규칙 기반 문장 분석 결과 (AI 모델 아님)</strong><br>';
   matchHTML += '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem">';
   matchHTML += '<span style="background:var(--bg3);padding:.15rem .5rem;border-radius:4px;font-size:.7rem"><span style="color:var(--dim)">의도:</span> <span style="color:var(--text)">' + escapeHtml(intent.label) + '</span></span>';
@@ -2811,8 +2811,8 @@ function runKaersDemo(){
   matchHTML += '<div style="display:flex;flex-direction:column;gap:.3rem">';
   primaryDrug.common_adverse_events.slice(0,5).forEach(ev => {
     const isHighlight = matchedSymptom && ev.symptom === matchedSymptom.symptom;
-    const sevColor = ev.severity.includes('중대') ? 'var(--coral)' : ev.severity.includes('주의') ? '#059669' : ev.severity.includes('효과') ? 'var(--ice)' : 'var(--mint)';
-    matchHTML += '<div style="display:flex;justify-content:space-between;align-items:center;padding:.4rem .7rem;background:' + (isHighlight ? 'rgba(16,185,129,.12)' : 'var(--bg3)') + ';border-radius:6px;font-size:.74rem;' + (isHighlight ? 'border-left:3px solid var(--mint)' : '') + '">';
+    const sevColor = ev.severity.includes('중대') ? 'var(--coral)' : ev.severity.includes('주의') ? '#00a892' : ev.severity.includes('효과') ? 'var(--ice)' : 'var(--mint)';
+    matchHTML += '<div style="display:flex;justify-content:space-between;align-items:center;padding:.4rem .7rem;background:' + (isHighlight ? 'rgba(0,210,180,.12)' : 'var(--bg3)') + ';border-radius:6px;font-size:.74rem;' + (isHighlight ? 'border-left:3px solid var(--mint)' : '') + '">';
     matchHTML += '<span style="color:var(--text)">' + escapeHtml(ev.symptom) + (isHighlight ? ' <span style="font-size:.7rem;color:var(--mint);font-weight:700;letter-spacing:.05em">← 환자 호소 매칭</span>' : '') + '</span>';
     matchHTML += '<span style="display:flex;gap:.6rem;align-items:center">';
     matchHTML += '<span style="font-family:var(--font-mono);font-size:.72rem;color:' + sevColor + '">' + escapeHtml(ev.severity) + '</span>';
@@ -2829,7 +2829,7 @@ function runKaersDemo(){
 
   // 다중 약품 검출 시
   if(drugMatches.length > 1){
-    matchHTML += '<div style="margin-top:.7rem;padding:.5rem .7rem;background:rgba(110,231,183,.08);border-radius:6px;font-size:.7rem;color:var(--muted)">';
+    matchHTML += '<div style="margin-top:.7rem;padding:.5rem .7rem;background:rgba(114,242,222,.08);border-radius:6px;font-size:.7rem;color:var(--muted)">';
     matchHTML += '<strong style="color:var(--lav)">추가 검출 약품:</strong> ' + drugMatches.slice(1).map(m => escapeHtml(m.matched_name)).join(', ') + ' — 병용 정보는 약사가 검토합니다.';
     matchHTML += '</div>';
   }
@@ -2862,7 +2862,7 @@ function runKaersDemo(){
     aiHTML += '<div style="margin-bottom:.7rem"><strong style="color:var(--ice)">복용 안내:</strong> ' + escapeHtml(primaryDrug.guidance) + '</div>';
   }
 
-  aiHTML += '<div style="margin-bottom:.4rem;padding:.6rem .8rem;background:rgba(16,185,129,.06);border-left:3px solid var(--mint);border-radius:4px;font-size:.78rem">';
+  aiHTML += '<div style="margin-bottom:.4rem;padding:.6rem .8rem;background:rgba(0,210,180,.06);border-left:3px solid var(--mint);border-radius:4px;font-size:.78rem">';
   aiHTML += '<strong style="color:var(--mint)">다음 단계:</strong><br>';
   aiHTML += '• 이 시연 답변은 발송되지 않습니다 (실제 서비스는 약사 검토·승인 후 발송하도록 설계 중입니다)<br>';
   aiHTML += '• 증상이 심해지거나 새로운 증상이 나타나면 즉시 약국·병원 방문<br>';
