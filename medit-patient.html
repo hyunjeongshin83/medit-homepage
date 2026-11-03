@@ -10,19 +10,19 @@
 <link rel="stylesheet" href="vendor/fonts.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-:root{--bg:#0a0e12;--bg2:#0d1117;--sf:rgba(255,255,255,.04);--sf2:rgba(255,255,255,.07);--ink:#e8ecef;--ink2:#c0c8d0;--ink3:#7a8694;--line:rgba(255,255,255,.08);--mint:#00b8a0;--mint-s:rgba(0,184,160,.12);--ice:#00d2b4;--ice-s:rgba(0,210,180,.1);--lav:#72f2de;--lav-s:rgba(114,242,222,.1);--red:#ff6b6b;--red-s:rgba(255,107,107,.1);--g1:#00443d;--g2:#00806f;--g3:#009682;--g4:#00b8a0;--g5:#00d2b4;--g6:#72f2de;--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--r:14px;--font:'HCR Dotum','Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
+:root{color-scheme:light;--bg:#fbfdfd;--bg2:#f1f7f7;--sf:rgba(20,40,50,.03);--sf2:rgba(20,40,50,.06);--ink:#14202b;--ink2:#34444f;--ink3:#5b6a76;--line:rgba(20,40,50,.10);--mint:#00756a;--mint-s:rgba(0,117,106,.10);--ice:#00756a;--ice-s:rgba(0,117,106,.10);--lav:#00756a;--lav-s:rgba(0,117,106,.10);--red:#bd2f25;--red-s:rgba(189,47,37,.08);--g1:#00443d;--g2:#006b5e;--g3:#007a6b;--g4:#00756a;--g5:#00756a;--g6:#00756a;--b1:#0a0f1a;--b2:#0F172A;--b3:#1E293B;--b4:#334155;--b5:#475569;--b6:#64748B;--r:14px;--font:'HCR Dotum','Noto Sans KR',sans-serif;--mono:'IBM Plex Mono',monospace}
 html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--ink);overflow:hidden}
 
 /* LAYOUT */
 .app{display:flex;flex-direction:column;height:100%;max-width:480px;margin:0 auto;background:var(--bg2);position:relative;overflow:hidden}
-.header{padding:24px 20px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);flex-shrink:0;background:linear-gradient(135deg,#0d1117 0%,#1a0d12 100%);z-index:10;position:relative;overflow:hidden}
+.header{padding:24px 20px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);flex-shrink:0;background:linear-gradient(135deg,#f1f7f7 0%,#e3f4f1 100%);z-index:10;position:relative;overflow:hidden}
 .header::before{content:'';position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:140px;height:140px;background-image:url("data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'>%20<defs>%20<linearGradient%20id='cap'%20x1='0%'%20y1='0%'%20x2='100%'%20y2='100%'>%20<stop%20offset='0%'%20stop-color='#334155'/>%20<stop%20offset='100%'%20stop-color='#0F172A'/>%20</linearGradient>%20<linearGradient%20id='rim'%20x1='0%'%20y1='0%'%20x2='100%'%20y2='0%'>%20<stop%20offset='0%'%20stop-color='#00806f'/>%20<stop%20offset='50%'%20stop-color='#00b8a0'/>%20<stop%20offset='100%'%20stop-color='#00806f'/>%20</linearGradient>%20<linearGradient%20id='liq'%20x1='0%'%20y1='0%'%20x2='0%'%20y2='100%'>%20<stop%20offset='0%'%20stop-color='#00d2b4'%20stop-opacity='0.7'/>%20<stop%20offset='100%'%20stop-color='#00b8a0'%20stop-opacity='0.9'/>%20</linearGradient>%20<clipPath%20id='clip'>%20<path%20d='M28%2028%20L28%2084%20Q28%2090%2034%2090%20L66%2090%20Q72%2090%2072%2084%20L72%2028%20Z'/>%20</clipPath>%20</defs>%20<rect%20x='32'%20y='12'%20width='36'%20height='14'%20rx='2'%20fill='url%28#cap%29'/>%20<rect%20x='33'%20y='13.5'%20width='34'%20height='3'%20rx='1.5'%20fill='rgba%28255,255,255,0.25%29'/>%20<rect%20x='32'%20y='25'%20width='36'%20height='2.5'%20fill='url%28#rim%29'/>%20<path%20d='M28%2028%20L28%2084%20Q28%2090%2034%2090%20L66%2090%20Q72%2090%2072%2084%20L72%2028%20Z'%20fill='rgba%28255,255,255,0.08%29'%20stroke='rgba%28255,255,255,0.4%29'%20stroke-width='1.2'/>%20<g%20clip-path='url%28#clip%29'>%20<path%20d='M28%2058%20Q40%2054,%2050%2058%20T72%2058%20L72%2090%20L28%2090%20Z'%20fill='url%28#liq%29'/>%20</g>%20<rect%20x='34'%20y='42'%20width='32'%20height='20'%20rx='1.5'%20fill='rgba%28255,255,255,0.15%29'%20stroke='rgba%28255,255,255,0.35%29'%20stroke-width='0.8'/>%20<text%20x='50'%20y='55'%20text-anchor='middle'%20font-family='sans-serif'%20font-size='8'%20font-weight='700'%20fill='#72f2de'%20letter-spacing='-0.3'>MedIT</text>%20<rect%20x='30'%20y='35'%20width='2.5'%20height='30'%20rx='1.2'%20fill='rgba%28255,255,255,0.2%29'/>%20</svg>");background-repeat:no-repeat;background-position:right center;background-size:contain;opacity:.22;pointer-events:none}
 .header > *{position:relative;z-index:1}
 .header h1{font-family:'HCR Dotum','Noto Sans KR',sans-serif;font-size:20px;font-weight:700;display:flex;align-items:center;gap:6px;letter-spacing:-.01em}
 .header h1 em{font-style:normal;color:var(--mint);font-weight:800;text-shadow:0 0 12px rgba(0,184,160,.5)}
 .header .sub{font-family:var(--mono);font-size:11px;color:var(--g6);letter-spacing:.12em;text-transform:uppercase}
 .content{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px 16px 100px;-webkit-overflow-scrolling:touch}
-.tab-bar{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(13,17,23,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 0 env(safe-area-inset-bottom,8px);z-index:20}
+.tab-bar{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(251,253,253,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:6px 0 env(safe-area-inset-bottom,8px);z-index:20}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;border:none;background:none;color:var(--ink3);font-size:11px;font-family:var(--font);cursor:pointer;transition:.2s}
 .tab.active{color:var(--mint)}
 .tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
@@ -139,7 +139,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 
 <!-- US/Global Legal Notice — Shown only when lang=en -->
 <div id="us-demo-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,138,128,.95);color:#fff;padding:.6rem 1rem;font-family:-apple-system,sans-serif;font-size:.7rem;line-height:1.5;text-align:center;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.2)">
-  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. In case of a medical emergency, call 911 (US). Report adverse events: FDA MedWatch 1-800-FDA-1088. <button onclick="this.parentElement.style.display='none'" style="background:rgba(0,0,0,.2);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.7rem">Dismiss</button>
+  <strong>DEMO ONLY · NOT FDA APPROVED · NOT MEDICAL ADVICE</strong> — Synthetic data, no real patient information. MedIT is operated from the Republic of Korea. In case of a medical emergency, call 911 (US). Report adverse events: FDA MedWatch 1-800-FDA-1088. <button onclick="this.parentElement.style.display='none'" style="background:rgba(20,40,50,.05);color:var(--ink);border:1px solid rgba(20,40,50,.25);border-radius:4px;padding:.15rem .5rem;margin-left:.5rem;cursor:pointer;font-size:.7rem">Dismiss</button>
 </div>
 <script>
 // Auto-show US banner if lang=en
@@ -181,7 +181,7 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--i
 </g>
 </svg>
 </div>
-    <div class="login-title"><span style="color:#00b8a0">Med</span>&nbsp;IT</div>
+    <div class="login-title"><span style="color:var(--mint)">Med</span>&nbsp;IT</div>
     <div class="login-sub">나의 복약을 관리합니다</div>
     <div class="field"><label>전화번호</label><input type="tel" id="l-phone" aria-label="전화번호" placeholder="000-0000-0001" value="000-0000-0001"></div>
     <div class="field"><label>비밀번호</label><input type="password" id="l-pass" aria-label="비밀번호" placeholder="0000" value="0000"></div>
@@ -425,7 +425,7 @@ function renderMeds(){
         '<strong>'+esc(m.type)+'</strong> · '+esc(m.freq)+' · '+esc(m.meal)+'<br>'+
         '복용 시간: '+m.time.replace(',', ' / ')+'<br>'+
         '<span style="color:var(--ink2)">'+esc(m.note)+'</span><br>'+
-        '<span style="color:#ff8a80;font-size:11px">※ '+T('예시 문구, 약사 감수 전 (실제 복약지도 아님)','Sample wording, not yet reviewed by a pharmacist (not real medication guidance)')+'</span>'+
+        '<span style="color:var(--red);font-size:11px">※ '+T('예시 문구, 약사 감수 전 (실제 복약지도 아님)','Sample wording, not yet reviewed by a pharmacist (not real medication guidance)')+'</span>'+
       '</div>'+
       '<div class="med-tag" style="background:'+m.color.replace(')',',0.1)').replace('var(','rgba(')+'12,0.1);color:'+m.color+'">'+esc(m.type)+'</div>'+
     '</div>';
@@ -553,7 +553,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Enter'&&$('#pg-login
     var btn = document.createElement('a');
     btn.href = 'javascript:void(0)';
     btn.id = 'demoLangToggle';
-    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(0,0,0,.7);color:white;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,.3);font-family:sans-serif;';
+    btn.style.cssText = 'position:fixed;top:14px;right:14px;z-index:99999;background:rgba(255,255,255,.94);color:#14202b;padding:6px 12px;border-radius:6px;font-size:14px;text-decoration:none;border:1px solid rgba(20,40,50,.25);font-family:sans-serif;';
     btn.textContent = getLang() === 'en' ? '🇰🇷' : '🇺🇸';
     btn.title = getLang() === 'en' ? '한국어' : 'English';
     btn.onclick = function(){
