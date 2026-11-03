@@ -1,14 +1,14 @@
 /* MedIT — 카카오톡 채널 채팅 버튼 (오른쪽 아래)
- * 누르면 카카오톡 채널 '메디아이티'의 1:1 채팅이 새 창으로 열립니다.
+ * 누르면 카카오톡 채널 '메디아이티' 페이지가 새 창으로 열리고, 거기서 채팅을 시작할 수 있습니다.
  * 이 스크립트는 외부 주소로 데이터를 보내지 않습니다. 링크를 누를 때에만 카카오로 이동합니다. */
 (function () {
   'use strict';
-  var URL_CHAT = 'https://pf.kakao.com/_xfxcxdQC/chat';
+  var URL_CHAT = 'https://pf.kakao.com/_xfxcxdQC';
   var en = (document.documentElement.lang || 'ko').slice(0, 2) === 'en';
-  var LABEL = en ? 'KakaoTalk chat' : '카카오톡 문의';
+  var LABEL = en ? 'KakaoTalk chat' : '카카오톡 채팅';
   var ARIA = en
     ? 'Chat with MedIT on KakaoTalk (opens in a new window). Please do not send patient information.'
-    : '카카오톡 채널 메디아이티로 문의하기 (새 창). 환자 정보는 보내지 마세요.';
+    : '카카오톡 채널 메디아이티와 채팅하기 (새 창). 환자 정보는 보내지 마세요.';
 
   var CSS = [
     '.mk-btn{position:fixed;right:1.5rem;bottom:144px;z-index:1100;display:flex;align-items:center;gap:.5rem;min-height:48px;padding:0 1.15rem 0 .95rem;border-radius:999px;border:1px solid #e0c800;background:#fee500;color:#191600;font-family:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-weight:700;font-size:.9rem;line-height:1;text-decoration:none;cursor:pointer;box-shadow:0 8px 24px rgba(60,50,0,.22);transition:transform .2s,background .2s}',
@@ -34,7 +34,7 @@
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
     a.setAttribute('aria-label', ARIA);
-    a.title = en ? 'KakaoTalk channel chat (no patient information, please)' : '카카오톡 채널 1:1 채팅 (환자 정보는 보내지 마세요)';
+    a.title = en ? 'KakaoTalk channel chat (no patient information, please)' : '카카오톡 채널 채팅 (환자 정보는 보내지 마세요)';
     a.innerHTML =
       '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#191600" d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.88 5.37 4.7 6.78l-.95 3.5a.4.4 0 0 0 .6.44l4.1-2.72c.5.06 1.03.1 1.55.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>' +
       '<span></span>';
