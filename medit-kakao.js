@@ -11,8 +11,8 @@
     : '카카오톡 채널 메디아이티와 채팅하기 (새 창). 환자 정보는 보내지 마세요.';
 
   var CSS = [
-    '.mk-btn{position:fixed;right:1.5rem;bottom:144px;z-index:1100;display:flex;align-items:center;gap:.5rem;min-height:48px;padding:0 1.15rem 0 .95rem;border-radius:999px;border:1px solid #e0c800;background:#fee500;color:#191600;font-family:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-weight:700;font-size:.9rem;line-height:1;text-decoration:none;cursor:pointer;box-shadow:0 8px 24px rgba(60,50,0,.22);transition:transform .2s,background .2s}',
-    '.mk-btn:hover{background:#f5db00;transform:translateY(-1px)}',
+    '.mk-btn{position:fixed;right:1.5rem;bottom:144px;z-index:1100;display:flex;align-items:center;gap:.5rem;min-height:48px;padding:0 1.15rem 0 .95rem;border-radius:999px;border:1px solid #ecd45a;background:#fff4b8;background-image:linear-gradient(135deg,#ffffff 0%,#fffadb 50%,#ffec8a 100%);color:#3c1e1e;font-family:"Noto Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-weight:700;font-size:.9rem;line-height:1;text-decoration:none;cursor:pointer;box-shadow:0 8px 24px rgba(60,50,0,.14);transition:transform .2s,box-shadow .2s}',
+    '.mk-btn:hover{box-shadow:0 10px 28px rgba(60,50,0,.24);transform:translateY(-1px)}',
     '.mk-btn:focus-visible{outline:2px solid #00756a;outline-offset:2px}',
     '.mk-btn svg{width:20px;height:20px;flex:none}',
     '@media(max-width:520px){.mk-btn{right:1rem;width:52px;height:52px;min-height:52px;padding:0;justify-content:center}.mk-btn span{display:none}.mk-btn svg{width:24px;height:24px}}',
@@ -36,7 +36,7 @@
     a.setAttribute('aria-label', ARIA);
     a.title = en ? 'KakaoTalk channel chat (no patient information, please)' : '카카오톡 채널 채팅 (환자 정보는 보내지 마세요)';
     a.innerHTML =
-      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#191600" d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.88 5.37 4.7 6.78l-.95 3.5a.4.4 0 0 0 .6.44l4.1-2.72c.5.06 1.03.1 1.55.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#3c1e1e" d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.88 5.37 4.7 6.78l-.95 3.5a.4.4 0 0 0 .6.44l4.1-2.72c.5.06 1.03.1 1.55.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>' +
       '<span></span>';
     a.lastChild.textContent = LABEL;
 
