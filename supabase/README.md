@@ -51,3 +51,17 @@ Supabase 대시보드 > Table Editor > `demo_requests`. 처리한 건은 `status
 - 환자 데이터 읽기·전송(`sync`)은 잠겨 있습니다. 협약·동의·개인정보 검토 뒤에 구현합니다.
 - 적용 방식: `migrations/20261021c_pnp_install.sql`을 표, 함수 두 묶음, 보기로 나누어 적용했습니다. 이 파일의 마지막에 있는 오래된 기록 정리 작업(cron `purge-pnp-install`)은 2026-10-28에 적용했습니다(매일 03:27 KST, 만료 90일 뒤 시리얼과 2일 지난 실패 기록 삭제).
 - 오입력 제한: 같은 접속지에서 10분에 12번 잘못 입력하면 막힙니다. 허용 출처는 홈페이지 주소 하나와 출처 표시가 없는 설치 프로그램입니다.
+
+## 카카오톡 채널 AI 안내 도우미 (`kakao-bot`)
+
+카카오톡 채널 '메디아이티'로 들어온 질문에, 홈페이지 안내 내용만 근거로 Claude가 답하는 카카오 오픈빌더 스킬 서버입니다. 대화 내용은 저장하지 않습니다.
+
+- 구성: `functions/kakao-bot/index.ts`(Deno 연결), `core.ts`(로직), `knowledge.ts`(홈페이지 안내 내용과 답변 규칙), `test.mjs`(시험)
+- 호출 주소: `https://xaclqvveppvccdpebzsz.supabase.co/functions/v1/kakao-bot?k=<SKILL_TOKEN>` (토큰은 저장소에 적지 않습니다)
+- `verify_jwt`는 꺼야 합니다(카카오가 호출하므로). 대신 `?k=` 토큰을 직접 확인하며, `SKILL_TOKEN`이 없으면 모든 요청을 거절합니다(503).
+- 비밀값은 Supabase 대시보드 > Edge Functions > Secrets 에 직접 입력합니다: `SKILL_TOKEN`(긴 임의 문자열), `ANTHROPIC_API_KEY`, `CLAUDE_MODEL`(선택, 기본 `claude-haiku-5-5`)
+- 5초 제한: 카카오 스킬은 5초 안에 답해야 하므로 콜백(`useCallback`)을 씁니다. 오픈빌더 블록에서 콜백을 켜고, 스킬 데이터의 `text`를 답변 말풍선에 쓰세요. 콜백은 봇을 배포한 뒤에만 시험할 수 있습니다.
+- 안전장치: 질문 300자 제한, 이용자당 1분 6회, 응급·위기 표현은 AI를 거치지 않고 119·109 안내만, 약 복용·증상·진단·처방 질문은 답하지 않음, 답변마다 AI 표시 문구
+- 개인정보: 질문 문장만 Anthropic에 보내고(카카오 이용자 식별값 제외), 실행 기록에는 처리 결과 코드만 남깁니다. 처리방침(2026.11.5 개정)과 함께 유지하세요.
+- 홈페이지 내용이 바뀌면 `knowledge.ts`를 고쳐 다시 배포합니다. 배포 뒤에는 토큰 없이 한 번 호출해 401(토큰 설정됨) 또는 503(비밀값 미설정)이 나오는지, `verify_jwt`가 꺼져 있는지 확인하세요.
+- 시험: `node supabase/functions/kakao-bot/test.mjs` (Node 22 이상, 외부 통신 없음)
